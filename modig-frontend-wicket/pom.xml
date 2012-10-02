@@ -12,40 +12,31 @@
 
     <artifactId>modig-frontend-wicket</artifactId>
     <packaging>war</packaging>
-   	<version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
-   		<wicket.version>6.0.0</wicket.version>
-   		<jetty.version>7.6.3.v20120416</jetty.version>
+        <wicket.version>6.0.0</wicket.version>
+        <jetty.version>7.6.3.v20120416</jetty.version>
         <fiftyfive.version>4.0.1</fiftyfive.version>
-   		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-   	</properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 
     <dependencies>
 
-        <!-- FRONTEND DEPENDENCY -->
+        <!--  WICKET DEPENDENCIES -->
 
         <dependency>
-            <groupId>no.nav.modig</groupId>
-            <artifactId>modig-frontend-bootstrap</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+            <version>${wicket.version}</version>
         </dependency>
 
-
-   		<!--  WICKET DEPENDENCIES -->
-
-   		<dependency>
-   			<groupId>org.apache.wicket</groupId>
-   			<artifactId>wicket-core</artifactId>
-   			<version>${wicket.version}</version>
-   		</dependency>
-
-   		<dependency>
-   			<groupId>org.apache.wicket</groupId>
-   			<artifactId>wicket-extensions</artifactId>
-   			<version>${wicket.version}</version>
-   		</dependency>
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
 
 
         <!-- FIFTYFIVE WICKET DEPENDENCIES -->
@@ -63,133 +54,160 @@
         </dependency>
 
 
-   		<!-- LOGGING DEPENDENCIES - LOG4J -->
+        <!-- LOGGING DEPENDENCIES - LOG4J -->
 
-   		<dependency>
-   			<groupId>org.slf4j</groupId>
-   			<artifactId>slf4j-log4j12</artifactId>
-   			<version>1.6.4</version>
-   		</dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.4</version>
+        </dependency>
 
-   		<dependency>
-   			<groupId>log4j</groupId>
-   			<artifactId>log4j</artifactId>
-   			<version>1.2.16</version>
-   		</dependency>
-
-
-   		<!--  JUNIT DEPENDENCY FOR TESTING -->
-
-   		<dependency>
-   			<groupId>junit</groupId>
-   			<artifactId>junit</artifactId>
-   			<version>4.10</version>
-   			<scope>test</scope>
-   		</dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
 
 
-   		<!--  JETTY DEPENDENCIES FOR TESTING  -->
+        <!--  JUNIT DEPENDENCY FOR TESTING -->
 
-   		<dependency>
-   			<groupId>org.eclipse.jetty.aggregate</groupId>
-   			<artifactId>jetty-all-server</artifactId>
-   			<version>${jetty.version}</version>
-   			<scope>provided</scope>
-   		</dependency>
-
-   	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
 
 
-   	<build>
+        <!--  JETTY DEPENDENCIES FOR TESTING  -->
 
-   		<resources>
+        <dependency>
+            <groupId>org.eclipse.jetty.aggregate</groupId>
+            <artifactId>jetty-all-server</artifactId>
+            <version>${jetty.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
-   			<resource>
-   				<filtering>false</filtering>
-   				<directory>src/main/resources</directory>
-   			</resource>
+    </dependencies>
 
-   			<resource>
-   				<filtering>false</filtering>
-   				<directory>src/main/java</directory>
-   				<includes>
-   					<include>**</include>
-   				</includes>
-   				<excludes>
-   					<exclude>**/*.java</exclude>
-   				</excludes>
-   			</resource>
 
-   		</resources>
+    <build>
 
-   		<testResources>
+        <resources>
 
-   			<testResource>
-   				<filtering>false</filtering>
-   				<directory>src/test/resources</directory>
-   			</testResource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
 
-   			<testResource>
-   				<filtering>false</filtering>
-   				<directory>src/test/java</directory>
-   				<includes>
-   					<include>**</include>
-   				</includes>
-   				<excludes>
-   					<exclude>**/*.java</exclude>
-   				</excludes>
-   			</testResource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
 
-   		</testResources>
+        </resources>
 
-   		<plugins>
+        <testResources>
 
-   			<plugin>
-   				<inherited>true</inherited>
-   				<groupId>org.apache.maven.plugins</groupId>
-   				<artifactId>maven-compiler-plugin</artifactId>
-   				<version>2.5.1</version>
-   				<configuration>
-   					<source>1.7</source>
-   					<target>1.7</target>
-   					<encoding>UTF-8</encoding>
-   					<showWarnings>true</showWarnings>
-   					<showDeprecation>true</showDeprecation>
-   				</configuration>
-   			</plugin>
+            <testResource>
+                <filtering>false</filtering>
+                <directory>src/test/resources</directory>
+            </testResource>
 
-   			<plugin>
-   				<groupId>org.mortbay.jetty</groupId>
-   				<artifactId>jetty-maven-plugin</artifactId>
-   				<version>${jetty.version}</version>
-   				<configuration>
-   					<connectors>
-   						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-   							<port>8080</port>
-   							<maxIdleTime>3600000</maxIdleTime>
-   						</connector>
-   						<connector implementation="org.eclipse.jetty.server.ssl.SslSocketConnector">
-   							<port>8443</port>
-   							<maxIdleTime>3600000</maxIdleTime>
-   							<keystore>${project.build.directory}/test-classes/keystore</keystore>
-   							<password>wicket</password>
-   							<keyPassword>wicket</keyPassword>
-   						</connector>
-   					</connectors>
-   				</configuration>
-   			</plugin>
+            <testResource>
+                <filtering>false</filtering>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
 
-   			<plugin>
-   				<groupId>org.apache.maven.plugins</groupId>
-   				<artifactId>maven-eclipse-plugin</artifactId>
-   				<version>2.9</version>
-   				<configuration>
-   					<downloadSources>true</downloadSources>
-   				</configuration>
-   			</plugin>
+        </testResources>
 
-   		</plugins>
+        <plugins>
 
-   	</build>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>modig-frontend-bootstrap</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/classes/no/nav/modig/frontend/</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.version}</version>
+                <configuration>
+                    <connectors>
+                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                            <port>8080</port>
+                            <maxIdleTime>3600000</maxIdleTime>
+                        </connector>
+                        <connector implementation="org.eclipse.jetty.server.ssl.SslSocketConnector">
+                            <port>8443</port>
+                            <maxIdleTime>3600000</maxIdleTime>
+                            <keystore>${project.build.directory}/test-classes/keystore</keystore>
+                            <password>wicket</password>
+                            <keyPassword>wicket</keyPassword>
+                        </connector>
+                    </connectors>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
 
 </project>

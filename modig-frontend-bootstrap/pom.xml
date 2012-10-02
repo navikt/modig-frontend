@@ -219,7 +219,7 @@
                                     <arguments>
                                         <argument>src/main/nodejs/node_modules/copy.js</argument>
                                         <argument>src/main/bootstrap/js/</argument>
-                                        <argument>src/main/resources/js/bootstrap/</argument>
+                                        <argument>src/main/generated-resources/js/bootstrap/</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
@@ -238,7 +238,7 @@
                                     <arguments>
                                         <argument>src/main/nodejs/node_modules/copy.js</argument>
                                         <argument>src/main/bootstrap/img/</argument>
-                                        <argument>src/main/resources/img/</argument>
+                                        <argument>src/main/generated-resources/img/</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
@@ -257,7 +257,7 @@
                                     <arguments>
                                         <argument>src/main/nodejs/node_modules/concat.js</argument>
                                         <argument>src/main/bootstrap/js/</argument>
-                                        <argument>src/main/resources/js/modig.js</argument>
+                                        <argument>src/main/generated-resources/js/modig.js</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
@@ -276,7 +276,7 @@
                                     <arguments>
                                         <argument>src/main/nodejs/node_modules/uglify-singles.js</argument>
                                         <argument>src/main/bootstrap/js/</argument>
-                                        <argument>src/main/resources/js/bootstrap/</argument>
+                                        <argument>src/main/generated-resources/js/bootstrap/</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
@@ -296,8 +296,8 @@
                                         <argument>src/main/nodejs/node_modules/uglify-js/bin/uglifyjs</argument>
                                         <argument>-nc</argument>
                                         <argument>--output</argument>
-                                        <argument>src/main/resources/js/modig.min.js</argument>
-                                        <argument>src/main/resources/js/modig.js</argument>
+                                        <argument>src/main/generated-resources/js/modig.min.js</argument>
+                                        <argument>src/main/generated-resources/js/modig.js</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
@@ -316,7 +316,7 @@
                                     <arguments>
                                         <argument>src/main/nodejs/node_modules/less/bin/lessc</argument>
                                         <argument>src/main/modig.less</argument>
-                                        <argument>src/main/resources/css/modig.css</argument>
+                                        <argument>src/main/generated-resources/css/modig.css</argument>
                                         <argument>-x</argument><!-- Pakker hver selektor på en linje og fjerner kommentarer -->
                                         <argument>--yui-compress</argument><!-- Fjerner all whitespace -->
                                     </arguments>
