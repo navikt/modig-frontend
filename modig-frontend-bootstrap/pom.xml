@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>modig-frontend-bootstrap</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
    	<version>1.0.0-SNAPSHOT</version>
 
     <properties>
@@ -191,6 +191,144 @@
    		</plugins>
 
    	</build>
+
+    <profiles>
+        <profile>
+            <id>bygg-bootstrap</id>
+            <build>
+
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2</version>
+                        <executions>
+
+
+                            <!-- COPY BOOTSTRAP JAVASCRIPT FILES -->
+
+                            <execution>
+                                <id>copy-js</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>node</executable>
+                                    <arguments>
+                                        <argument>src/main/nodejs/node_modules/copy.js</argument>
+                                        <argument>src/main/bootstrap/js/</argument>
+                                        <argument>src/main/resources/js/bootstrap/</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+
+                            <!-- COPY BOOTSTRAP IMAGES -->
+
+                            <execution>
+                                <id>copy-img</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>node</executable>
+                                    <arguments>
+                                        <argument>src/main/nodejs/node_modules/copy.js</argument>
+                                        <argument>src/main/bootstrap/img/</argument>
+                                        <argument>src/main/resources/img/</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+
+                            <!-- CONCAT BOOTSTRAP JAVASCRIPT FILES -->
+
+                            <execution>
+                                <id>concat</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>node</executable>
+                                    <arguments>
+                                        <argument>src/main/nodejs/node_modules/concat.js</argument>
+                                        <argument>src/main/bootstrap/js/</argument>
+                                        <argument>src/main/resources/js/modig.js</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+
+                            <!-- UGLIFY SINGLE BOOTSTRAP FILES -->
+
+                            <execution>
+                                <id>uglify-singles</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>node</executable>
+                                    <arguments>
+                                        <argument>src/main/nodejs/node_modules/uglify-singles.js</argument>
+                                        <argument>src/main/bootstrap/js/</argument>
+                                        <argument>src/main/resources/js/bootstrap/</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+
+                            <!-- UGLIFY CONCATINATED BOOTSTRAP JAVASCRIPT -->
+
+                            <execution>
+                                <id>uglify</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>node</executable>
+                                    <arguments>
+                                        <argument>src/main/nodejs/node_modules/uglify-js/bin/uglifyjs</argument>
+                                        <argument>-nc</argument>
+                                        <argument>--output</argument>
+                                        <argument>src/main/resources/js/modig.min.js</argument>
+                                        <argument>src/main/resources/js/modig.js</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+
+                            <!-- BUILD CSS FROM LESS WITH COMPRESSION -->
+
+                            <execution>
+                                <id>lessc</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>node</executable>
+                                    <arguments>
+                                        <argument>src/main/nodejs/node_modules/less/bin/lessc</argument>
+                                        <argument>src/main/modig.less</argument>
+                                        <argument>src/main/resources/css/modig.css</argument>
+                                        <argument>-x</argument><!-- Pakker hver selektor på en linje og fjerner kommentarer -->
+                                        <argument>--yui-compress</argument><!-- Fjerner all whitespace -->
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
 
