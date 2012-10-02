@@ -24,6 +24,15 @@
 
     <dependencies>
 
+        <!-- FRONTEND DEPENDENCY -->
+
+        <dependency>
+            <groupId>no.nav.modig</groupId>
+            <artifactId>modig-frontend-bootstrap</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
    		<!--  WICKET DEPENDENCIES -->
 
    		<dependency>
