@@ -67,10 +67,10 @@
                         <executions>
 
 
-                            <!-- COPY BOOTSTRAP JAVASCRIPT FILES -->
+                            <!-- BUILD BOOTSTRAP -->
 
                             <execution>
-                                <id>copy-js</id>
+                                <id>build-bootstrap</id>
                                 <phase>generate-resources</phase>
                                 <goals>
                                     <goal>exec</goal>
@@ -78,113 +78,12 @@
                                 <configuration>
                                     <executable>node</executable>
                                     <arguments>
-                                        <argument>src/main/nodejs/node_modules/copy.js</argument>
-                                        <argument>src/main/bootstrap/js/</argument>
-                                        <argument>src/main/generated-resources/js/bootstrap/</argument>
+                                        <argument>src/main/nodejs/node_modules/build-bootstrap.js</argument>
+                                        <argument>.</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
 
-
-                            <!-- COPY BOOTSTRAP IMAGES -->
-
-                            <execution>
-                                <id>copy-img</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>node</executable>
-                                    <arguments>
-                                        <argument>src/main/nodejs/node_modules/copy.js</argument>
-                                        <argument>src/main/bootstrap/img/</argument>
-                                        <argument>src/main/generated-resources/img/</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-
-
-                            <!-- CONCAT BOOTSTRAP JAVASCRIPT FILES -->
-
-                            <execution>
-                                <id>concat</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>node</executable>
-                                    <arguments>
-                                        <argument>src/main/nodejs/node_modules/concat.js</argument>
-                                        <argument>src/main/bootstrap/js/</argument>
-                                        <argument>src/main/generated-resources/js/modig.js</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-
-
-                            <!-- UGLIFY SINGLE BOOTSTRAP FILES -->
-
-                            <execution>
-                                <id>uglify-singles</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>node</executable>
-                                    <arguments>
-                                        <argument>src/main/nodejs/node_modules/uglify-singles.js</argument>
-                                        <argument>src/main/bootstrap/js/</argument>
-                                        <argument>src/main/generated-resources/js/bootstrap/</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-
-
-                            <!-- UGLIFY CONCATINATED BOOTSTRAP JAVASCRIPT -->
-
-                            <execution>
-                                <id>uglify</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>node</executable>
-                                    <arguments>
-                                        <argument>src/main/nodejs/node_modules/uglify-js/bin/uglifyjs</argument>
-                                        <argument>-nc</argument>
-                                        <argument>--output</argument>
-                                        <argument>src/main/generated-resources/js/modig.min.js</argument>
-                                        <argument>src/main/generated-resources/js/modig.js</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-
-
-                            <!-- BUILD CSS FROM LESS WITH COMPRESSION -->
-
-                            <execution>
-                                <id>lessc</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>node</executable>
-                                    <arguments>
-                                        <argument>src/main/nodejs/node_modules/less/bin/lessc</argument>
-                                        <argument>src/main/modig.less</argument>
-                                        <argument>src/main/generated-resources/css/modig.css</argument>
-                                        <argument>-x</argument>
-                                        <!-- Pakker hver selektor på en linje og fjerner kommentarer -->
-                                        <argument>--yui-compress</argument>
-                                        <!-- Fjerner all whitespace -->
-                                    </arguments>
-                                </configuration>
-                            </execution>
 
                         </executions>
                     </plugin>
