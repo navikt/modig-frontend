@@ -12,6 +12,7 @@
     <modules>
         <module>modig-frontend-bootstrap</module>
         <module>modig-frontend-wicket</module>
+        <module>modig-frontend-testapp</module>
     </modules>
 
 </project>
