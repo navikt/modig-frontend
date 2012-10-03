@@ -1,14 +1,25 @@
 package no.nav.modig.frontend;
 
+import org.apache.wicket.markup.head.HeaderItem;
+import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
+
+import static java.util.Arrays.asList;
 
 
 public class FrontendResources {
     public static final CssResourceReference CSS_RESOURCES = new CssResourceReference(FrontendResources.class, "css/modig.css");
     public static final JavaScriptResourceReference JQUERY_RESOURCE = new JavaScriptResourceReference(FrontendResources.class, "js/jquery/jquery-1.8.2.js");
 
-    public static final JavaScriptResourceReference[] JS_RESOURCES_ALL = {new JavaScriptResourceReference(FrontendResources.class, "js/modig.js")};
+    public static final JavaScriptResourceReference[] JS_RESOURCES_ALL = {new JavaScriptResourceReference(FrontendResources.class, "js/modig.js") {
+        @Override
+        public Iterable<? extends HeaderItem> getDependencies() {
+            return asList(JavaScriptHeaderItem.forReference(JQUERY_RESOURCE));
+        }
+    }};
+
+
     public static final JavaScriptResourceReference JS_AFFIX = new JavaScriptResourceReference(FrontendResources.class, "js/bootstrap/bootstrap-affix.js");
     public static final JavaScriptResourceReference JS_ALERT = new JavaScriptResourceReference(FrontendResources.class, "js/bootstrap/bootstrap-alert.js");
     public static final JavaScriptResourceReference JS_BUTTON = new JavaScriptResourceReference(FrontendResources.class, "js/bootstrap/bootstrap-button.js");
