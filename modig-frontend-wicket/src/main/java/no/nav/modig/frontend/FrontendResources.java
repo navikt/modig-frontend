@@ -11,6 +11,7 @@ import static java.util.Arrays.asList;
 
 
 public class FrontendResources {
+
     public static final CssResourceReference CSS_RESOURCES = new CssResourceReference(CssResourceMarker.class, "modig.css");
     public static final JavaScriptResourceReference JQUERY_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "jquery/jquery-1.8.2.js");
 

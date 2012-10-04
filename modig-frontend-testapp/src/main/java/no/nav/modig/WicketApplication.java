@@ -29,6 +29,11 @@ public class WicketApplication extends WebApplication {
         getResourceSettings().setResourcePollFrequency(Duration.ONE_SECOND);
 
         // MOUNTE PATH TIL CSS OG JAVASCRIPT
-        new FrontendConfigurator().configure(this);
+        new FrontendConfigurator()
+                .addScript(HomePage.JS_RESOURCE)
+                .addCss(HomePage.CSS_RESOURCE)
+//                .withResourcePacking(this.usesDeploymentConfig())
+                .configure(this);
+
     }
 }

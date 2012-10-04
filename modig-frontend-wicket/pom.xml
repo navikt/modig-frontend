@@ -17,18 +17,47 @@
     <properties>
         <wicket.version>6.0.0</wicket.version>
         <jetty.version>7.6.3.v20120416</jetty.version>
-        <fiftyfive.version>4.0.1</fiftyfive.version>
+        <fiftyfive.version>4.0-MOD-SNAPSHOT</fiftyfive.version>
+        <yuicompressor.version>2.4.7</yuicompressor.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 
     <dependencies>
 
+
+        <!-- FRONTEND-BOOTSTRAP DEPENDENCIES -->
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>modig-frontend-bootstrap</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+
+        <!-- FIFTYFIVE-WICKET DEPENDENCY -->
+
+        <dependency>
+            <groupId>com.55minutes</groupId>
+            <artifactId>fiftyfive-wicket-core</artifactId>
+            <version>${fiftyfive.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.55minutes</groupId>
+            <artifactId>fiftyfive-wicket-js</artifactId>
+            <version>${fiftyfive.version}</version>
+        </dependency>
+
+
+        <!-- YUI DEPENDENCY -->
+
+        <dependency>
+            <groupId>com.yahoo.platform.yui</groupId>
+            <artifactId>yuicompressor</artifactId>
+            <version>${yuicompressor.version}</version>
+        </dependency>
+
 
         <!--  WICKET DEPENDENCIES -->
 
@@ -43,33 +72,6 @@
 
     <build>
         <plugins>
-
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-dependency-plugin</artifactId>-->
-                <!--<version>2.4</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>unpack</id>-->
-                        <!--<phase>prepare-package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>unpack</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<artifactItems>-->
-                                <!--<artifactItem>-->
-                                    <!--<groupId>${project.groupId}</groupId>-->
-                                    <!--<artifactId>modig-frontend-bootstrap</artifactId>-->
-                                    <!--<version>${project.version}</version>-->
-                                    <!--<type>jar</type>-->
-                                    <!--<overWrite>false</overWrite>-->
-                                    <!--<outputDirectory>${project.build.directory}/classes/no/nav/modig/frontend/</outputDirectory>-->
-                                <!--</artifactItem>-->
-                            <!--</artifactItems>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
 
             <plugin>
                 <inherited>true</inherited>
