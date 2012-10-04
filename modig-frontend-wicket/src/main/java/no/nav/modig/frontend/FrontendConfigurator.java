@@ -30,6 +30,7 @@ public class FrontendConfigurator {
     private String jsConcatFile = "all.js";
     private String cssConcatFile = "all.css";
 
+    // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER
     private List<JavaScriptResourceReference> jsReferences = new ArrayList<>(asList(FrontendResources.JS_RESOURCES_ALL));
     private List<CssResourceReference> cssReferences = new ArrayList<>(asList(FrontendResources.CSS_RESOURCES));
 
