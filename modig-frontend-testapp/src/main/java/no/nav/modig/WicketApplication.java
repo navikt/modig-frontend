@@ -5,6 +5,8 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.util.file.Path;
 import org.apache.wicket.util.time.Duration;
 
+import static no.nav.modig.frontend.FrontendModules.ALL;
+
 
 public class WicketApplication extends WebApplication {
 
@@ -30,9 +32,10 @@ public class WicketApplication extends WebApplication {
 
         // MOUNTE PATH TIL CSS OG JAVASCRIPT
         new FrontendConfigurator()
-                .addScript(HomePage.JS_RESOURCE)
+                .withModules(ALL)
+                .addScripts(HomePage.JS_RESOURCE)
                 .addCss(HomePage.CSS_RESOURCE)
-//                .withResourcePacking(this.usesDeploymentConfig())
+                .withResourcePacking(this.usesDeploymentConfig())
                 .configure(this);
 
     }

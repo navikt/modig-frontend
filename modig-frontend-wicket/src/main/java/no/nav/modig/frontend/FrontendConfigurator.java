@@ -31,8 +31,10 @@ public class FrontendConfigurator {
     private String cssConcatFile = "all.css";
 
     // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER
-    private List<JavaScriptResourceReference> jsReferences = new ArrayList<>(asList(FrontendResources.JS_RESOURCES_ALL));
-    private List<CssResourceReference> cssReferences = new ArrayList<>(asList(FrontendResources.CSS_RESOURCES));
+    private List<JavaScriptResourceReference> jsReferences = new ArrayList<>();
+    private List<CssResourceReference> cssReferences = new ArrayList<>();
+
+    private List<FrontendModule> modules = new ArrayList<>();
 
     private MergedJavaScriptBuilder scriptBuilder = new MergedJavaScriptBuilder();
     private MergedCssBuilder cssBuilder = new MergedCssBuilder();
@@ -52,14 +54,19 @@ public class FrontendConfigurator {
         return this;
     }
 
-    public FrontendConfigurator addScript(JavaScriptResourceReference resource) {
-        jsReferences.add(resource);
+    public FrontendConfigurator withModules(FrontendModule... frontendModules) {
+        this.modules.addAll(asList(frontendModules));
+        return this;
+    }
+
+    public FrontendConfigurator addScripts(JavaScriptResourceReference... resources) {
+        jsReferences.addAll(asList(resources));
         return this;
     }
 
 
-    public FrontendConfigurator addCss(CssResourceReference resource) {
-        cssReferences.add(resource);
+    public FrontendConfigurator addCss(CssResourceReference... resources) {
+        cssReferences.addAll(asList(resources));
         return this;
     }
 
@@ -77,10 +84,18 @@ public class FrontendConfigurator {
 
 
     public void configure(WebApplication application) {
+        addModules();
         configureJquery(application);
         configureCss(application);
         configureJavascript(application);
         configureResourcePacking(application);
+    }
+
+    private void addModules() {
+        for (FrontendModule module : modules) {
+            jsReferences.addAll(asList(module.getScripts()));
+            cssReferences.addAll(asList(module.getStylesheets()));
+        }
     }
 
 
