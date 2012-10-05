@@ -93,8 +93,8 @@ public class FrontendConfigurator {
 
     private void addModules() {
         for (FrontendModule module : modules) {
-            jsReferences.addAll(asList(module.getScripts()));
-            cssReferences.addAll(asList(module.getStylesheets()));
+            jsReferences.addAll(0, asList(module.getScripts()));
+            cssReferences.addAll(0, asList(module.getStylesheets()));
         }
     }
 
