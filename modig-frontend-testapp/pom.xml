@@ -14,7 +14,7 @@
 
     <properties>
         <fiftyfive.version>4.0-MOD-SNAPSHOT</fiftyfive.version>
-        <wicket.version>6.0.0</wicket.version>
+        <wicket.version>6.1.0</wicket.version>
         <jetty.version>7.6.3.v20120416</jetty.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -34,21 +34,6 @@
             <groupId>no.nav.modig</groupId>
             <artifactId>modig-wicket</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-
-        <!-- FIFTYFIVE-WICKET DEPENDENCY -->
-
-        <dependency>
-            <groupId>com.55minutes</groupId>
-            <artifactId>fiftyfive-wicket-core</artifactId>
-            <version>${fiftyfive.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.55minutes</groupId>
-            <artifactId>fiftyfive-wicket-js</artifactId>
-            <version>${fiftyfive.version}</version>
         </dependency>
 
 
