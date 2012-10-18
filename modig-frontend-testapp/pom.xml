@@ -13,7 +13,7 @@
 
 
     <properties>
-        <fiftyfive.version>4.0-MOD-SNAPSHOT</fiftyfive.version>
+        <fiftyfive.version>4.0-MOD</fiftyfive.version>
         <wicket.version>6.1.0</wicket.version>
         <jetty.version>7.6.3.v20120416</jetty.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
