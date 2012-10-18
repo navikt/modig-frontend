@@ -24,8 +24,6 @@ public class WicketApplication extends WebApplication {
         if (htmlDir != null && !htmlDir.endsWith("/")) {
             htmlDir += "/";
         }
-        getResourceSettings().getResourceFinders().add(new Path(htmlDir + "../../../../modig-frontend-bootstrap/src/main/resources"));
-        getResourceSettings().getResourceFinders().add(new Path(htmlDir + "../../../../modig-frontend-bootstrap/src/main/generated-resources"));
         getResourceSettings().getResourceFinders().add(new Path(htmlDir + "../resources"));
         getResourceSettings().getResourceFinders().add(new Path(htmlDir + "../java"));
         getResourceSettings().setResourcePollFrequency(Duration.ONE_SECOND);

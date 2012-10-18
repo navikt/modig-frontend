@@ -44,25 +44,29 @@
             <artifactId>wicket-core</artifactId>
             <version>${wicket.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-extensions</artifactId>
+            <artifactId>wicket-request</artifactId>
             <version>${wicket.version}</version>
-        </dependency>
-
-
-        <!-- LOGGING DEPENDENCIES - LOG4J -->
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.6.4</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.16</version>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-util</artifactId>
+            <version>${wicket.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+        <!-- JETTY DEPENDENCY -->
+
+        <dependency>
+            <groupId>org.eclipse.jetty.orbit</groupId>
+            <artifactId>javax.servlet</artifactId>
+            <version>2.5.0.v201103041518</version>
+            <scope>provided</scope>
         </dependency>
 
 
