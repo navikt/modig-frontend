@@ -13,9 +13,6 @@
     <version>1.0.1-SNAPSHOT</version>
 
     <properties>
-        <wicket.version>6.0.0</wicket.version>
-        <jetty.version>7.6.3.v20120416</jetty.version>
-        <fiftyfive.version>4.0-MOD</fiftyfive.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -38,7 +35,6 @@
                 <inherited>true</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
@@ -61,7 +57,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2</version>
                         <executions>
 
                             <!-- BUILD BOOTSTRAP -->

@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <artifactId>modig-frontend</artifactId>
         <groupId>no.nav.modig</groupId>
         <version>1.0.1-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <artifactId>modig-frontend-testapp</artifactId>
 
 
     <properties>
-        <fiftyfive.version>4.0-MOD</fiftyfive.version>
-        <wicket.version>6.1.0</wicket.version>
-        <jetty.version>7.6.3.v20120416</jetty.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-
 
         <!-- FRONTEND-WICKET DEPENDENCY -->
 
@@ -31,7 +28,7 @@
         <dependency>
             <groupId>no.nav.modig</groupId>
             <artifactId>modig-wicket</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.6</version>
         </dependency>
 
 
@@ -40,20 +37,17 @@
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
-            <version>${wicket.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-request</artifactId>
-            <version>${wicket.version}</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-util</artifactId>
-            <version>${wicket.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -63,7 +57,6 @@
         <dependency>
             <groupId>org.eclipse.jetty.orbit</groupId>
             <artifactId>javax.servlet</artifactId>
-            <version>2.5.0.v201103041518</version>
             <scope>provided</scope>
         </dependency>
 
@@ -72,8 +65,7 @@
 
         <dependency>
             <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <artifactId>junit-dep</artifactId>
             <scope>test</scope>
         </dependency>
 
@@ -83,7 +75,6 @@
         <dependency>
             <groupId>org.eclipse.jetty.aggregate</groupId>
             <artifactId>jetty-all-server</artifactId>
-            <version>${jetty.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -131,7 +122,6 @@
                 <inherited>true</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
@@ -163,7 +153,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.9</version>
                 <configuration>
                     <downloadSources>true</downloadSources>
                 </configuration>
