@@ -34,6 +34,7 @@ public class FrontendConfigurator {
     private List<JavaScriptResourceReference> jsReferences = new ArrayList<>();
     private List<CssResourceReference> cssReferences = new ArrayList<>();
 
+    private List<MetaTag> metaTagsList = new ArrayList<>();
     private List<FrontendModule> modules = new ArrayList<>();
 
     private MergedJavaScriptBuilder scriptBuilder = new MergedJavaScriptBuilder();
@@ -47,6 +48,7 @@ public class FrontendConfigurator {
         return this;
     }
 
+
     public FrontendConfigurator withResourcePacking(boolean packResources, String jsConcatFile, String cssConcatFile) {
         this.packResources = packResources;
         this.jsConcatFile = jsConcatFile;
@@ -54,10 +56,18 @@ public class FrontendConfigurator {
         return this;
     }
 
+
     public FrontendConfigurator withModules(FrontendModule... frontendModules) {
         this.modules.addAll(asList(frontendModules));
         return this;
     }
+
+
+    public FrontendConfigurator addMetas(MetaTag... metaTags) {
+        metaTagsList.addAll(asList(metaTags));
+        return this;
+    }
+
 
     public FrontendConfigurator addScripts(JavaScriptResourceReference... resources) {
         jsReferences.addAll(asList(resources));
@@ -85,11 +95,13 @@ public class FrontendConfigurator {
 
     public void configure(WebApplication application) {
         addModules();
+        configureMeta(application);
         configureJquery(application);
         configureCss(application);
         configureJavascript(application);
         configureResourcePacking(application);
     }
+
 
     private void addModules() {
         for (FrontendModule module : modules) {
@@ -113,6 +125,18 @@ public class FrontendConfigurator {
             cssBuilder
                     .setPath(basePath + "/css/" + cssConcatFile)
                     .install(application);
+        }
+    }
+
+
+    private void configureMeta(WebApplication application) {
+        for (final MetaTag metaTag : metaTagsList) {
+            application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+                @Override
+                public void renderHead(IHeaderResponse response) {
+                    response.render(metaTag);
+                }
+            });
         }
     }
 

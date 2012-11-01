@@ -15,7 +15,9 @@ import static no.nav.modig.frontend.FrontendResources.JS_TAB;
 import static no.nav.modig.frontend.FrontendResources.JS_TOOLTIP;
 import static no.nav.modig.frontend.FrontendResources.JS_TYPEAHEAD;
 
+
 public class FrontendModules {
+
     public static FrontendModule ALERT = new FrontendModule.With().scripts(JS_ALERT).stylesheets(CSS_RESOURCES).done();
     public static FrontendModule BUTTON = new FrontendModule.With().scripts(JS_BUTTON).stylesheets(CSS_RESOURCES).done();
     public static FrontendModule CAROUSEL = new FrontendModule.With().scripts(JS_CAROUSEL).stylesheets(CSS_RESOURCES).done();

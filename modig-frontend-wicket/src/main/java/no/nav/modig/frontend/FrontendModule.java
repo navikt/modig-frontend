@@ -3,7 +3,9 @@ package no.nav.modig.frontend;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
+
 public class FrontendModule {
+
     private  JavaScriptResourceReference[] scripts;
     private CssResourceReference[] stylesheets;
 
