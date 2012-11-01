@@ -5,7 +5,7 @@
     <groupId>no.nav.modig</groupId>
     <artifactId>modig-frontend</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.5</version>
+    <version>0.0.6-SNAPSHOT</version>
 
     <parent>
         <groupId>no.nav.modig</groupId>
@@ -34,9 +34,9 @@
     </distributionManagement>
 
     <scm>
-        <developerConnection>scm:svn:https://versjonskontroll.adeo.no/svn/applikasjonsrammeverk/modig-frontend/tags/20121101_0_0_5
+        <developerConnection>scm:svn:https://versjonskontroll.adeo.no/svn/applikasjonsrammeverk/modig-frontend/trunk
         </developerConnection>
-        <url>https://versjonskontroll.adeo.no/svn/applikasjonsrammeverk/modig-frontend/tags/20121101_0_0_5</url>
+        <url>https://versjonskontroll.adeo.no/svn/applikasjonsrammeverk/modig-frontend/trunk</url>
     </scm>
 
 </project>
