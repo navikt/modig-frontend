@@ -10,6 +10,7 @@ import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.SharedResourceReference;
 import org.apache.wicket.resource.JQueryResourceReference;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class FrontendConfigurator {
     // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER
     private List<JavaScriptResourceReference> jsReferences = new ArrayList<>();
     private List<CssResourceReference> cssReferences = new ArrayList<>();
+    private List<SharedResourceReference> imgReferences = new ArrayList<>();
 
     private List<MetaTag> metaTagsList = new ArrayList<>();
     private List<FrontendModule> modules = new ArrayList<>();
@@ -81,6 +83,12 @@ public class FrontendConfigurator {
     }
 
 
+    public FrontendConfigurator addImg(SharedResourceReference... resources) {
+        imgReferences.addAll(asList(resources));
+        return this;
+    }
+
+
     public FrontendConfigurator withJquerySource(JquerySource jquerySource) {
         this.jquerySource = jquerySource;
         return this;
@@ -99,6 +107,8 @@ public class FrontendConfigurator {
         configureJquery(application);
         configureCss(application);
         configureJavascript(application);
+        configureBootstrapImages(application);
+        configureImages(application);
         configureResourcePacking(application);
     }
 
@@ -107,6 +117,7 @@ public class FrontendConfigurator {
         for (FrontendModule module : modules) {
             jsReferences.addAll(0, asList(module.getScripts()));
             cssReferences.addAll(0, asList(module.getStylesheets()));
+            imgReferences.addAll(0, asList(module.getImages()));
         }
     }
 
@@ -172,6 +183,19 @@ public class FrontendConfigurator {
                 scriptBuilder.addScript(reference);
             }
         }
+    }
+
+
+    private void configureImages(WebApplication application) {
+        for (final SharedResourceReference reference : imgReferences) {
+            application.mountResource(basePath + "/img/" + reference.getName(), reference);
+        }
+    }
+
+
+    private void configureBootstrapImages(WebApplication application) {
+        application.mountResource(basePath + "/img/" + FrontendResources.ICONS.getName(), FrontendResources.ICONS);
+        application.mountResource(basePath + "/img/" + FrontendResources.ICONS_WHITE.getName(), FrontendResources.ICONS_WHITE);
     }
 
 

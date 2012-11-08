@@ -1,11 +1,13 @@
 package no.nav.modig.frontend;
 
 import css.CssResourceMarker;
+import img.ImgResourceMarker;
 import js.JsResourceMarker;
 import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.SharedResourceReference;
 
 import java.util.ArrayList;
 
@@ -35,6 +37,9 @@ class FrontendResources {
             JS_POPOVER, JS_SCROLLSPY, JS_TAB, JS_TYPEAHEAD,
             JS_AFFIX
     };
+
+    static final SharedResourceReference ICONS = new SharedResourceReference(ImgResourceMarker.class, "glyphicons-halflings.png");
+    static final SharedResourceReference ICONS_WHITE = new SharedResourceReference(ImgResourceMarker.class, "glyphicons-halflings-white.png");
 
 
     private static class JsDepResourceReference extends JavaScriptResourceReference {

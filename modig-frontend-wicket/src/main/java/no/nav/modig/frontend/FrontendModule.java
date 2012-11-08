@@ -2,12 +2,14 @@ package no.nav.modig.frontend;
 
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.SharedResourceReference;
 
 
 public class FrontendModule {
 
     private  JavaScriptResourceReference[] scripts;
     private CssResourceReference[] stylesheets;
+    private SharedResourceReference[] images;
 
     public JavaScriptResourceReference[] getScripts(){
         return scripts;
@@ -17,7 +19,13 @@ public class FrontendModule {
         return stylesheets;
     }
 
+    public SharedResourceReference[] getImages() {
+        return images;
+    }
+
+
     public static class With {
+
         private FrontendModule module = new FrontendModule();
 
         public With scripts(JavaScriptResourceReference... references) {
@@ -27,6 +35,11 @@ public class FrontendModule {
 
         public With stylesheets(CssResourceReference... references) {
             module.stylesheets = references;
+            return this;
+        }
+
+        public With images(SharedResourceReference... references) {
+            module.images = references;
             return this;
         }
 
