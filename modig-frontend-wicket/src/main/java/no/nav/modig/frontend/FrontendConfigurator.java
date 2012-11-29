@@ -26,17 +26,19 @@ public class FrontendConfigurator {
     }
 
     private JquerySource jquerySource = JquerySource.FRONTEND;
-    private String basePath = "/statisk";
+    private String basePath = "";
 
     private String jsConcatFile = "all.js";
     private String cssConcatFile = "all.css";
 
-    // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER
+    // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER - FORVENTET I BOOTSTRAP 3
     private List<JavaScriptResourceReference> jsReferences = new ArrayList<>();
     private List<CssResourceReference> cssReferences = new ArrayList<>();
     private List<SharedResourceReference> imgReferences = new ArrayList<>();
 
     private List<MetaTag> metaTagsList = new ArrayList<>();
+    private List<ConditionalJavascriptResource> conditionalJavascripts = new ArrayList<>();
+    private List<ConditionalCssResource> conditionalCss = new ArrayList<>();
     private List<FrontendModule> modules = new ArrayList<>();
 
     private MergedJavaScriptBuilder scriptBuilder = new MergedJavaScriptBuilder();
@@ -61,6 +63,18 @@ public class FrontendConfigurator {
 
     public FrontendConfigurator withModules(FrontendModule... frontendModules) {
         this.modules.addAll(asList(frontendModules));
+        return this;
+    }
+
+
+    public FrontendConfigurator addConditionalJavascript(ConditionalJavascriptResource... items) {
+        conditionalJavascripts.addAll(asList(items));
+        return this;
+    }
+
+
+    public FrontendConfigurator addConditionalCss(ConditionalCssResource... items) {
+        conditionalCss.addAll(asList(items));
         return this;
     }
 
@@ -104,9 +118,12 @@ public class FrontendConfigurator {
     public void configure(WebApplication application) {
         addModules();
         configureMeta(application);
-        configureJquery(application);
+        configureHtml5shiv(application);
         configureCss(application);
+        configureConditionalCss(application);
+        configureJquery(application);
         configureJavascript(application);
+        configureConditionalJavascript(application);
         configureBootstrapImages(application);
         configureImages(application);
         configureResourcePacking(application);
@@ -146,6 +163,40 @@ public class FrontendConfigurator {
                 @Override
                 public void renderHead(IHeaderResponse response) {
                     response.render(metaTag);
+                }
+            });
+        }
+    }
+
+
+    private void configureHtml5shiv(WebApplication application) {
+        application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+            @Override
+            public void renderHead(IHeaderResponse response) {
+                response.render(ConditionalJavascriptResource.HTML5_SHIV);
+            }
+        });
+    }
+
+
+    private void configureConditionalJavascript(WebApplication application) {
+        for (final ConditionalJavascriptResource item : conditionalJavascripts) {
+            application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+                @Override
+                public void renderHead(IHeaderResponse response) {
+                    response.render(item);
+                }
+            });
+        }
+    }
+
+
+    private void configureConditionalCss(WebApplication application) {
+        for (final ConditionalCssResource item : conditionalCss) {
+            application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+                @Override
+                public void renderHead(IHeaderResponse response) {
+                    response.render(item);
                 }
             });
         }
