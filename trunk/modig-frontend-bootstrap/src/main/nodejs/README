@@ -1,0 +1,8 @@
+INSTALLERING
+
+Kjør filen Installer node-v0.8.11-x86.msi
+
+Css- og js-filer kan bygges enten med Maven exec-plugin og profilen bygg-bootstrap.
+    Slik: mvn exec:exec -Pbygg-bootstrap
+
+Eller ved normalt bygg, f.eks: mvn clean install
