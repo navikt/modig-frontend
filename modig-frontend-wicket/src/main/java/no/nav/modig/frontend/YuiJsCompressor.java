@@ -2,6 +2,8 @@ package no.nav.modig.frontend;
 
 import com.yahoo.platform.yui.compressor.JavaScriptCompressor;
 import org.apache.wicket.javascript.IJavaScriptCompressor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -9,8 +11,8 @@ import java.io.StringWriter;
 
 
 public class YuiJsCompressor implements IJavaScriptCompressor {
+    private static final Logger LOG = LoggerFactory.getLogger(YuiJsCompressor.class);
 
-    static String encoding = "UTF-8";
     static int lineBreak = -1;
     static boolean noMunge = true;
     static boolean preserveSemi = true;
@@ -24,7 +26,7 @@ public class YuiJsCompressor implements IJavaScriptCompressor {
             jsCompressor.compress(stringWriter, lineBreak, !noMunge, false, preserveSemi, disableOptimizations);
             return stringWriter.toString();
         } catch (IOException e) {
-            System.out.println("Kunne ikke komprimere scriptet");
+            LOG.warn("Kunne ikke komprimere scriptet", e);
             return original;
         }
     }

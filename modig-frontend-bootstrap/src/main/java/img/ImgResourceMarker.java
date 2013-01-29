@@ -1,6 +1,6 @@
 package img;
 
-public class ImgResourceMarker {
+public final class ImgResourceMarker {
     private ImgResourceMarker() {
     }
 }

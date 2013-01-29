@@ -1,6 +1,6 @@
 package css;
 
-public class CssResourceMarker {
+public final class CssResourceMarker {
     private CssResourceMarker() {
     }
 }

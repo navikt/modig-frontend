@@ -1,9 +1,9 @@
 package no.nav.modig.frontend;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.SharedResourceReference;
-
 
 public class FrontendModule {
 
@@ -12,15 +12,15 @@ public class FrontendModule {
     private SharedResourceReference[] images;
 
     public JavaScriptResourceReference[] getScripts(){
-        return scripts;
+        return ArrayUtils.clone(scripts);
     }
 
     public CssResourceReference[] getStylesheets(){
-        return stylesheets;
+        return ArrayUtils.clone(stylesheets);
     }
 
     public SharedResourceReference[] getImages() {
-        return images;
+        return ArrayUtils.clone(images);
     }
 
 

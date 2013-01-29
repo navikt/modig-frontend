@@ -1,6 +1,6 @@
 package js;
 
-public class JsResourceMarker {
+public final class JsResourceMarker {
     private JsResourceMarker() {
     }
 }
