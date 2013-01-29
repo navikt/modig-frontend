@@ -3,6 +3,7 @@ package no.nav.modig.frontend;
 import no.nav.modig.wicket.test.FluentWicketTester;
 import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.resource.caching.NoOpResourceCachingStrategy;
 import org.junit.Test;
 
 /**
@@ -37,6 +38,10 @@ public class FrontendTest {
     private class TestApplication extends WebApplication {
         @Override
         protected void init() {
+
+            // Slår av cache-strategien slik at ressursene ikke får versjonerte url-er.
+            getResourceSettings().setCachingStrategy(NoOpResourceCachingStrategy.INSTANCE);
+
             new FrontendConfigurator()
                     .withModules(FrontendModules.ALL)
                     .addCss(TestPage.CSS_RESOURCE_REFERENCE)
