@@ -21,14 +21,6 @@ public class TestPage extends WebPage {
 
     public TestPage(final PageParameters parameters) {
         super(parameters);
-
-        add(new Behavior() {
-            @Override
-            public void renderHead(Component component, IHeaderResponse response) {
-                response.render(CssHeaderItem.forReference(CSS_RESOURCE_REFERENCE));
-                response.render(JavaScriptHeaderItem.forReference(JAVA_SCRIPT_RESOURCE_REFERENCE));
-            }
-        });
     }
 
 
