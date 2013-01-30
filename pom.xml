@@ -10,7 +10,7 @@
     <parent>
         <groupId>no.nav.modig</groupId>
         <artifactId>modig-main</artifactId>
-        <version>0.0.22</version>
+        <version>0.2.0</version>
     </parent>
 
     <modules>
@@ -18,6 +18,21 @@
         <module>modig-frontend-wicket</module>
         <module>modig-frontend-testapp</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>no.nav.modig</groupId>
+                <artifactId>modig-wicket</artifactId>
+                <version>0.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>no.nav.modig</groupId>
+                <artifactId>modig-wicket-test</artifactId>
+                <version>0.2.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <distributionManagement>
         <repository>

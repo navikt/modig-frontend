@@ -77,6 +77,11 @@
 
 
         <!-- TEST DEPENDENCIES -->
+        <dependency>
+            <groupId>no.nav.modig</groupId>
+            <artifactId>modig-wicket-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -94,12 +99,6 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>no.nav.modig</groupId>
-            <artifactId>modig-wicket-test</artifactId>
-            <version>0.0.11</version>
         </dependency>
 
         <dependency>
