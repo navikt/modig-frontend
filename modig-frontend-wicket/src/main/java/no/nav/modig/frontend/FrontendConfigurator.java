@@ -144,15 +144,14 @@ public class FrontendConfigurator {
 
             application.getResourceSettings().setJavaScriptCompressor(new YuiJsCompressor());
             application.getResourceSettings().setCssCompressor(new YuiCssCompressor());
-            if(!jsReferences.isEmpty())
-            {
+            if (!jsReferences.isEmpty()) {
                 scriptBuilder
                         .setPath(basePath + "/js/" + jsConcatFile)
                         .addWicketAjaxLibraries()
                         .install(application);
             }
 
-            if(!cssReferences.isEmpty()) {
+            if (!cssReferences.isEmpty()) {
                 cssBuilder
                         .setPath(basePath + "/css/" + cssConcatFile)
                         .install(application);
