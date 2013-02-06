@@ -1,6 +1,8 @@
 INSTALLERING
 
-Kjør filen Installer node-v0.8.11-x86.msi
+Gjeldende versjon av Twitter Bootstrap er 2.2.2
+
+Kjør filen Installer node-v0.8.18-x64.msi
 
 Css- og js-filer kan bygges enten med Maven exec-plugin og profilen bygg-bootstrap.
     Slik: mvn exec:exec -Pbygg-bootstrap
