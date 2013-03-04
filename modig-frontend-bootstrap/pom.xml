@@ -12,6 +12,11 @@
     <packaging>jar</packaging>
     <version>0.2.2-SNAPSHOT</version>
 
+    <name>${project.artifactId}</name>
+    <description>
+        Dette biblioteket inneholder statiske ressurser for felles utseende og oppførsel i moderniserte applikasjoner i Nav.
+    </description>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

@@ -11,6 +11,12 @@
     <artifactId>modig-frontend-wicket</artifactId>
     <packaging>jar</packaging>
     <version>0.2.2-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+    <description>
+        Dette biblioteket inneholder wicket-bindinger for statiske ressurser.
+
+        Støtter også sammenslåing og komprimering av statiske ressurser.
+    </description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
