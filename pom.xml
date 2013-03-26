@@ -28,7 +28,7 @@
             <dependency>
                 <groupId>no.nav.modig</groupId>
                 <artifactId>modig-wicket-test</artifactId>
-                <version>0.3.0</version>
+                <version>0.3.2-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
