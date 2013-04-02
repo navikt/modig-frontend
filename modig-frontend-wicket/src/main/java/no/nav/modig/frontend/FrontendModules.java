@@ -16,6 +16,7 @@ import static no.nav.modig.frontend.FrontendResources.JS_SCROLLSPY;
 import static no.nav.modig.frontend.FrontendResources.JS_TAB;
 import static no.nav.modig.frontend.FrontendResources.JS_TOOLTIP;
 import static no.nav.modig.frontend.FrontendResources.JS_TYPEAHEAD;
+import static no.nav.modig.frontend.FrontendResources.UNDERSCORE_RESOURCE;
 
 
 public class FrontendModules {
@@ -33,5 +34,7 @@ public class FrontendModules {
     public static final FrontendModule TYPEAHEAD = new FrontendModule.With().scripts(JS_TYPEAHEAD).stylesheets(CSS_RESOURCES).images(ICONS, ICONS_WHITE).done();
     public static final FrontendModule AFFIX = new FrontendModule.With().scripts(JS_AFFIX).stylesheets(CSS_RESOURCES).images(ICONS, ICONS_WHITE).done();
 
-    public static final FrontendModule ALL = new FrontendModule.With().scripts(JS_RESOURCES_ALL).stylesheets(CSS_RESOURCES).images(ICONS, ICONS_WHITE).done();
+    public static final FrontendModule BOOTSTRAP_ALL = new FrontendModule.With().scripts(JS_RESOURCES_ALL).stylesheets(CSS_RESOURCES).images(ICONS, ICONS_WHITE).done();
+
+    public static final FrontendModule UNDERSCORE = new FrontendModule.With().scripts(UNDERSCORE_RESOURCE).done();
 }

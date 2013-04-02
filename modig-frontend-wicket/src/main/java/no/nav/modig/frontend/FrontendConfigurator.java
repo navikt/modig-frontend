@@ -34,6 +34,7 @@ public class FrontendConfigurator {
     // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER - FORVENTET I BOOTSTRAP 3
     private List<JavaScriptResourceReference> jsReferences = new ArrayList<>();
     private List<CssResourceReference> cssReferences = new ArrayList<>();
+    private List<CssResourceReference> priorityCss = new ArrayList<>();
     private List<SharedResourceReference> imgReferences = new ArrayList<>();
 
     private List<MetaTag> metaTagsList = new ArrayList<>();
@@ -97,6 +98,12 @@ public class FrontendConfigurator {
     }
 
 
+    public FrontendConfigurator addPriorityCss(CssResourceReference... resources) {
+        priorityCss.addAll(asList(resources));
+        return this;
+    }
+
+
     public FrontendConfigurator addImg(SharedResourceReference... resources) {
         imgReferences.addAll(asList(resources));
         return this;
@@ -119,6 +126,7 @@ public class FrontendConfigurator {
         addModules();
         configureMeta(application);
         configureHtml5shiv(application);
+        configurePriorityCss(application);
         configureCss(application);
         configureConditionalCss(application);
         configureJquery(application);
@@ -208,6 +216,23 @@ public class FrontendConfigurator {
 
     private void configureCss(WebApplication application) {
         for (final CssResourceReference reference : cssReferences) {
+            application.mountResource(basePath + "/css/" + reference.getName(), reference);
+            application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+                @Override
+                public void renderHead(IHeaderResponse response) {
+                    response.render(CssReferenceHeaderItem.forReference(reference));
+                }
+            });
+
+            if (packResources) {
+                cssBuilder.addCss(reference);
+            }
+        }
+    }
+
+
+    private void configurePriorityCss(WebApplication application) {
+        for (final CssResourceReference reference : priorityCss) {
             application.mountResource(basePath + "/css/" + reference.getName(), reference);
             application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
                 @Override

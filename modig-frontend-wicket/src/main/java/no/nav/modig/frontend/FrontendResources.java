@@ -16,8 +16,10 @@ class FrontendResources {
 
     static final CssResourceReference CSS_RESOURCES = new CssResourceReference(CssResourceMarker.class, "modig.css");
     static final JavaScriptResourceReference JQUERY_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "jquery/jquery-1.8.2.js");
-    protected static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "html5.js");
+    static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "html5.js");
+    static final JavaScriptResourceReference UNDERSCORE_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "underscore.js");
 
+    // BOOTSTRAP JAVASCRIPT
     static final JavaScriptResourceReference JS_TRANSITION = new JsDepResourceReference("bootstrap/bootstrap-transition.js", JQUERY_RESOURCE);
     static final JavaScriptResourceReference JS_ALERT = new JsDepResourceReference("bootstrap/bootstrap-alert.js", JS_TRANSITION, JQUERY_RESOURCE);
     static final JavaScriptResourceReference JS_BUTTON = new JsDepResourceReference("bootstrap/bootstrap-button.js", JQUERY_RESOURCE);

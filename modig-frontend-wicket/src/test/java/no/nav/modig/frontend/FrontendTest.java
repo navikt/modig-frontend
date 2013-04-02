@@ -25,7 +25,7 @@ public class FrontendTest {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
-                        .withModules(FrontendModules.ALL)
+                        .withModules(FrontendModules.BOOTSTRAP_ALL)
                         .addCss(TestPage.CSS_RESOURCE_REFERENCE)
                         .addScripts(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE)
                         .withResourcePacking(false)
@@ -51,7 +51,7 @@ public class FrontendTest {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
-                        .withModules(FrontendModules.ALL)
+                        .withModules(FrontendModules.BOOTSTRAP_ALL)
                         .addCss(TestPage.CSS_RESOURCE_REFERENCE)
                         .addScripts(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE)
                         .withResourcePacking(true)

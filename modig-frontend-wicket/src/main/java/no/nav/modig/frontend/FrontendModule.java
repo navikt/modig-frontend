@@ -7,9 +7,9 @@ import org.apache.wicket.request.resource.SharedResourceReference;
 
 public class FrontendModule {
 
-    private JavaScriptResourceReference[] scripts;
-    private CssResourceReference[] stylesheets;
-    private SharedResourceReference[] images;
+    private JavaScriptResourceReference[] scripts = new JavaScriptResourceReference[]{};
+    private CssResourceReference[] stylesheets = new CssResourceReference[]{};
+    private SharedResourceReference[] images = new SharedResourceReference[]{};
 
     public JavaScriptResourceReference[] getScripts() {
         return ArrayUtils.clone(scripts);
