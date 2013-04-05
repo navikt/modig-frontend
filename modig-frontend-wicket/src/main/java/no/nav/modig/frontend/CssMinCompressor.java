@@ -12,10 +12,10 @@ import java.net.URL;
 
 /**
  * Compresses CSS using cssmin and Rhino
- *
+ * <p/>
  * Using YUIs version of css min found here: https://github.com/yui/ycssmin
  */
-public class CssMinCompressor implements ICssCompressor{
+public class CssMinCompressor implements ICssCompressor {
     private static final String COMPRESS_STRING = "function doIt(input) { return cssmin(input);}";
     private URL rhinoNodeEnvJs = CssMinCompressor.class.getClassLoader().getResource("rhino-node-env.js");
     private URL cssMinJs = CssMinCompressor.class.getClassLoader().getResource("ycssmin/cssmin.js");
@@ -31,11 +31,11 @@ public class CssMinCompressor implements ICssCompressor{
             scope = ctx.initStandardObjects(global);
 
 
-            for(URL url : new URL[]{rhinoNodeEnvJs, cssMinJs}){
+            for (URL url : new URL[]{rhinoNodeEnvJs, cssMinJs}) {
                 InputStreamReader inputStreamReader = new InputStreamReader(url.openConnection().getInputStream());
-                try{
+                try {
                     ctx.evaluateReader(scope, inputStreamReader, url.toString(), 1, null);
-                }finally{
+                } finally {
                     inputStreamReader.close();
                 }
             }

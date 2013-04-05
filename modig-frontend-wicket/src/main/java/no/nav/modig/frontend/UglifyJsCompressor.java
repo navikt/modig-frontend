@@ -12,13 +12,13 @@ import java.net.URL;
 
 /**
  * Compresses CSS using cssmin and Rhino
- *
+ * <p/>
  * Using YUIs version of css min found here: https://github.com/yui/ycssmin
  */
-public class UglifyJsCompressor implements IJavaScriptCompressor{
+public class UglifyJsCompressor implements IJavaScriptCompressor {
     private static final String COMPRESS_STRING = "function doIt(input) { return muglify(input);}";
     private URL rhinoNodeEnvJs = UglifyJsCompressor.class.getClassLoader().getResource("rhino-node-env.js");
-    private URL[] urls1= new URL[]{
+    private URL[] urls1 = new URL[]{
             rhinoNodeEnvJs,
             UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/parse-js.js"),
             UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/process.js"),
@@ -38,11 +38,11 @@ public class UglifyJsCompressor implements IJavaScriptCompressor{
             scope = ctx.initStandardObjects(global);
 
 
-            for(URL url : urls1){
+            for (URL url : urls1) {
                 InputStreamReader inputStreamReader = new InputStreamReader(url.openConnection().getInputStream());
-                try{
+                try {
                     ctx.evaluateReader(scope, inputStreamReader, url.toString(), 1, null);
-                }finally{
+                } finally {
                     inputStreamReader.close();
                 }
             }
