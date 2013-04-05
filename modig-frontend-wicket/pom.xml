@@ -50,11 +50,24 @@
 
         <!-- YUI DEPENDENCY -->
 
+        <!--<dependency>-->
+            <!--<groupId>com.yahoo.platform.yui</groupId>-->
+            <!--<artifactId>yuicompressor</artifactId>-->
+        <!--</dependency>-->
+
+        <!-- COMPRESSION DEPENDENCIES -->
+
         <dependency>
-            <groupId>com.yahoo.platform.yui</groupId>
-            <artifactId>yuicompressor</artifactId>
+            <groupId>org.mozilla</groupId>
+            <artifactId>rhino</artifactId>
+            <version>1.7R3</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.lesscss</groupId>
+            <artifactId>lesscss</artifactId>
+            <version>1.3.3</version>
+        </dependency>
 
         <!--  WICKET DEPENDENCIES -->
 
@@ -68,16 +81,26 @@
             <artifactId>wicket-request</artifactId>
         </dependency>
 
-        <!-- LOGGING DEPENDENCIES -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-util</artifactId>
         </dependency>
+
+        <!-- LOGGING DEPENDENCIES -->
+        <!--<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>slf4j-api</artifactId>-->
+        <!--</dependency>-->
 
         <!-- DIV DEPENDENCIES -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
         </dependency>
 
 

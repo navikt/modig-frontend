@@ -3,16 +3,29 @@ package no.nav.modig.frontend;
 import fiftyfive.wicket.css.MergedCssBuilder;
 import fiftyfive.wicket.js.JavaScriptDependencySettings;
 import fiftyfive.wicket.js.MergedJavaScriptBuilder;
+import org.apache.commons.io.IOUtils;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.html.IHeaderContributor;
+import org.apache.wicket.markup.html.SecurePackageResourceGuard;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.resource.CssPackageResource;
 import org.apache.wicket.request.resource.CssResourceReference;
+import org.apache.wicket.request.resource.IResource;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.PackageResourceReference;
+import org.apache.wicket.request.resource.ResourceReference;
 import org.apache.wicket.request.resource.SharedResourceReference;
 import org.apache.wicket.resource.JQueryResourceReference;
+import org.apache.wicket.util.resource.IResourceStream;
+import org.apache.wicket.util.resource.ResourceStreamNotFoundException;
+import org.apache.wicket.util.resource.StringResourceStream;
+import org.lesscss.LessCompiler;
+import org.lesscss.LessException;
 
+import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,10 +43,12 @@ public class FrontendConfigurator {
 
     private String jsConcatFile = "all.js";
     private String cssConcatFile = "all.css";
+    private String lessCompiledFile = "less.css";
 
     // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER - FORVENTET I BOOTSTRAP 3
     private List<JavaScriptResourceReference> jsReferences = new ArrayList<>();
     private List<CssResourceReference> cssReferences = new ArrayList<>();
+    private List<PackageResourceReference> lessReferences = new ArrayList<>();
     private List<CssResourceReference> priorityCss = new ArrayList<>();
     private List<SharedResourceReference> imgReferences = new ArrayList<>();
 
@@ -97,6 +112,11 @@ public class FrontendConfigurator {
         return this;
     }
 
+    public FrontendConfigurator addLess(PackageResourceReference... resources) {
+        lessReferences.addAll(asList(resources));
+        return this;
+    }
+
 
     public FrontendConfigurator addPriorityCss(CssResourceReference... resources) {
         priorityCss.addAll(asList(resources));
@@ -127,6 +147,7 @@ public class FrontendConfigurator {
         configureMeta(application);
         configureHtml5shiv(application);
         configurePriorityCss(application);
+        configureLess(application);
         configureCss(application);
         configureConditionalCss(application);
         configureJquery(application);
@@ -143,6 +164,7 @@ public class FrontendConfigurator {
             jsReferences.addAll(0, asList(module.getScripts()));
             cssReferences.addAll(0, asList(module.getStylesheets()));
             imgReferences.addAll(0, asList(module.getImages()));
+            lessReferences.addAll(0, asList(module.getLess()));
         }
     }
 
@@ -150,8 +172,8 @@ public class FrontendConfigurator {
     private void configureResourcePacking(WebApplication application) {
         if (packResources) {
 
-            application.getResourceSettings().setJavaScriptCompressor(new YuiJsCompressor());
-            application.getResourceSettings().setCssCompressor(new YuiCssCompressor());
+            application.getResourceSettings().setJavaScriptCompressor(new UglifyJsCompressor());
+            application.getResourceSettings().setCssCompressor(new CssMinCompressor());
             if (!jsReferences.isEmpty()) {
                 scriptBuilder
                         .setPath(basePath + "/js/" + jsConcatFile)
@@ -213,6 +235,51 @@ public class FrontendConfigurator {
         }
     }
 
+    private void configureLess(WebApplication application) {
+        SecurePackageResourceGuard resourceGuard = (SecurePackageResourceGuard) application.getResourceSettings().getPackageResourceGuard();
+        resourceGuard.addPattern("+*.less");
+
+        String less = null;
+        try {
+            StringWriter stringWriter = new StringWriter();
+            for (PackageResourceReference lessReference : lessReferences) {
+                IOUtils.copy(lessReference.getResource().getResourceStream().getInputStream(), stringWriter, "utf-8");
+            }
+            LessCompiler lessCompiler = new LessCompiler();
+            less = lessCompiler.compile(stringWriter.toString());
+
+        } catch (LessException | ResourceStreamNotFoundException | IOException e) {
+            throw new RuntimeException("Could not compile less resources", e);
+        }
+
+        final String finalLess = less;
+        final ResourceReference resRef = new ResourceReference(lessCompiledFile) {
+            @Override
+            public IResource getResource() {
+                return new CssPackageResource(getScope(), getName(), getLocale(), getStyle(), getVariation()) {
+                    @Override
+                    public IResourceStream getResourceStream() {
+                        return new StringResourceStream(finalLess);
+                    }
+
+                    @Override
+                    public IResourceStream getCacheableResourceStream() {
+                        return new StringResourceStream(finalLess);
+                    }
+                };
+            }
+        };
+        application.mountResource(basePath + "/css/" + lessCompiledFile, resRef);
+        application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+            @Override
+            public void renderHead(IHeaderResponse response) {
+                response.render(CssReferenceHeaderItem.forReference(resRef));
+            }
+        });
+        if (packResources) {
+            cssBuilder.addCss(resRef);
+        }
+    }
 
     private void configureCss(WebApplication application) {
         for (final CssResourceReference reference : cssReferences) {
