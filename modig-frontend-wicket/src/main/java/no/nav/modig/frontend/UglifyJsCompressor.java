@@ -26,18 +26,6 @@ public class UglifyJsCompressor implements IJavaScriptCompressor{
             UglifyJsCompressor.class.getClassLoader().getResource("muglify.js")
     };
 
-    private URL[] urls2 = new URL[]{
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/utils.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/ast.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/parse.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/transform.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/scope.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/output.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/compress.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/sourcemap.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("uglify-js/lib/mozilla-ast.js"),
-            UglifyJsCompressor.class.getClassLoader().getResource("muglify.js")
-    };
     private final Function doIt;
     private final Scriptable scope;
 
