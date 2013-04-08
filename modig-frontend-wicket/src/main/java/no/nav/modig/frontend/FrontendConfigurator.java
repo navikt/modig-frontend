@@ -1,8 +1,7 @@
 package no.nav.modig.frontend;
 
-import fiftyfive.wicket.css.MergedCssBuilder;
-import fiftyfive.wicket.js.JavaScriptDependencySettings;
-import fiftyfive.wicket.js.MergedJavaScriptBuilder;
+import no.nav.modig.frontend.merged.MergedCssBuilder;
+import no.nav.modig.frontend.merged.MergedJavaScriptBuilder;
 import no.nav.modig.frontend.compressors.Wro4jCssCompressor;
 import no.nav.modig.frontend.compressors.Wro4jJsCompressor;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
@@ -318,7 +317,7 @@ public class FrontendConfigurator {
 
     private void configureJquery(WebApplication application) {
         // Never use fiftyfive-wicket jquery
-        JavaScriptDependencySettings.get().setJQueryResource(null);
+//        JavaScriptDependencySettings.get().setJQueryResource(null);
 
         switch (jquerySource) {
             case FRONTEND:

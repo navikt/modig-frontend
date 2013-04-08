@@ -34,17 +34,22 @@
         </dependency>
 
 
-        <!-- FIFTYFIVE-WICKET DEPENDENCY -->
-
         <dependency>
-            <groupId>com.55minutes</groupId>
-            <artifactId>fiftyfive-wicket-core</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.55minutes</groupId>
-            <artifactId>fiftyfive-wicket-js</artifactId>
-        </dependency>
+        <!--&lt;!&ndash; FIFTYFIVE-WICKET DEPENDENCY &ndash;&gt;-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.55minutes</groupId>-->
+            <!--<artifactId>fiftyfive-wicket-core</artifactId>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.55minutes</groupId>-->
+            <!--<artifactId>fiftyfive-wicket-js</artifactId>-->
+        <!--</dependency>-->
 
 
         <!-- YUI DEPENDENCY -->
@@ -145,14 +150,6 @@
             <artifactId>logback-core</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- JETTY DEPENDENCY -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
 
