@@ -3,6 +3,8 @@ package no.nav.modig.frontend;
 import fiftyfive.wicket.css.MergedCssBuilder;
 import fiftyfive.wicket.js.JavaScriptDependencySettings;
 import fiftyfive.wicket.js.MergedJavaScriptBuilder;
+import no.nav.modig.frontend.compressors.Wro4jCssCompressor;
+import no.nav.modig.frontend.compressors.Wro4jJsCompressor;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
@@ -163,8 +165,8 @@ public class FrontendConfigurator {
     private void configureResourcePacking(WebApplication application) {
         if (packResources) {
 
-            application.getResourceSettings().setJavaScriptCompressor(new UglifyJsCompressor());
-            application.getResourceSettings().setCssCompressor(new CssMinCompressor());
+            application.getResourceSettings().setJavaScriptCompressor(new Wro4jJsCompressor());
+            application.getResourceSettings().setCssCompressor(new Wro4jCssCompressor());
             if (!jsReferences.isEmpty()) {
                 scriptBuilder
                         .setPath(basePath + "/js/" + jsConcatFile)

@@ -15,6 +15,7 @@ import org.lesscss.LessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
@@ -45,13 +46,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
         resourceResponse.setLastModified(lastModified);
         if (resourceResponse.dataNeedsToBeWritten(attributes)) {
             try {
-                if (lastModified.greaterThan(compiledModifiedTime)) {
-                    String compiled = compileResources();
-
-                    compiledBytes = compressResource(compiled).getBytes();
-                    compiledModifiedTime = lastModified;
-                }
-
+                updateCompiledResource(lastModified);
 
                 resourceResponse.setContentType("text/css");
                 resourceResponse.setContentLength(compiledBytes.length);
@@ -63,12 +58,19 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
                 });
 
             } catch (ResourceStreamException | LessException e) {
-                log.debug(e.getMessage(), e);
                 resourceResponse.setError(500, "Unable to get compiled less");
                 return resourceResponse;
             }
         }
         return resourceResponse;
+    }
+
+    private void updateCompiledResource(Time lastModified) throws ResourceStreamException, LessException {
+        if (lastModified.greaterThan(compiledModifiedTime)) {
+            String compiled = compileResources();
+            compiledBytes = compressResource(compiled).getBytes();
+            compiledModifiedTime = lastModified;
+        }
     }
 
     public String compileResources() throws ResourceStreamException, LessException {
@@ -145,7 +147,12 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
         return new AbstractResourceStream() {
             @Override
             public InputStream getInputStream() throws ResourceStreamNotFoundException {
-                return null;
+                try {
+                    updateCompiledResource(getLastModified());
+                    return new ByteArrayInputStream(compiledBytes);
+                } catch (ResourceStreamException | LessException e) {
+                    throw new ResourceStreamNotFoundException(e);
+                }
             }
 
             @Override

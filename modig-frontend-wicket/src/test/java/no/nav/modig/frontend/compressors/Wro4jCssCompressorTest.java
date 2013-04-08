@@ -1,22 +1,24 @@
-package no.nav.modig.frontend;
+package no.nav.modig.frontend.compressors;
 
+import org.apache.wicket.css.ICssCompressor;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 /**
- * Tests for {@link CssMinCompressor}
+ * Tests for {@link Wro4jCssCompressor}
  */
-public class CssMinCompressorTest {
+public class Wro4jCssCompressorTest {
+
 
     @Test
     public void testSomething() {
-        CssMinCompressor compressor = new CssMinCompressor();
+        ICssCompressor compressor = new Wro4jCssCompressor();
         String compressed = compressor.compress(
                 "body .someClass {\n" +
-                "margin:1px;\n" +
-                "}");
+                        "margin:1px;\n" +
+                        "}");
 
         assertThat(compressed, is("body .someClass{margin:1px}"));
     }

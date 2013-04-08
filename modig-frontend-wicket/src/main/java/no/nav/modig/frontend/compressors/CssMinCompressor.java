@@ -1,4 +1,4 @@
-package no.nav.modig.frontend;
+package no.nav.modig.frontend.compressors;
 
 import org.apache.wicket.css.ICssCompressor;
 import org.mozilla.javascript.Context;

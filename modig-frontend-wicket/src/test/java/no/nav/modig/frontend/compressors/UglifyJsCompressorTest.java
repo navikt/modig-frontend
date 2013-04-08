@@ -1,4 +1,4 @@
-package no.nav.modig.frontend;
+package no.nav.modig.frontend.compressors;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * Tests for {@link UglifyJsCompressor}
+ * Tests for {@link no.nav.modig.frontend.compressors.UglifyJsCompressor}
  */
 public class UglifyJsCompressorTest {
 
