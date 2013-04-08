@@ -41,6 +41,13 @@ class FrontendResources {
     static final PackageResourceReference LESS_BOOTSTRAP_HEROUNIT = new PackageResourceReference(LessResourceMarker.class, "bootstrap/hero-unit.less");
     static final PackageResourceReference LESS_BOOTSTRAP_UTILITIES = new PackageResourceReference(LessResourceMarker.class, "bootstrap/utilities.less");
 
+	// Module responsive
+	static final PackageResourceReference LESS_BOOTSTRAP_RESPONSIVE_UTILITIES = new PackageResourceReference(LessResourceMarker.class, "bootstrap/responsive-utilities.less");
+	static final PackageResourceReference LESS_BOOTSTRAP_RESPONSIVE_1200MIN = new PackageResourceReference(LessResourceMarker.class, "bootstrap/responsive-1200px-min.less");
+	static final PackageResourceReference LESS_BOOTSTRAP_RESPONSIVE_768_979 = new PackageResourceReference(LessResourceMarker.class, "bootstrap/responsive-768px-979px.less");
+	static final PackageResourceReference LESS_BOOTSTRAP_RESPONSIVE_767MAX = new PackageResourceReference(LessResourceMarker.class, "bootstrap/responsive-767px-max.less");
+	static final PackageResourceReference LESS_BOOTSTRAP_RESPONSIVE_NAVBAR = new PackageResourceReference(LessResourceMarker.class, "bootstrap/responsive-navbar.less");
+
     // Module sprites
     static final PackageResourceReference LESS_BOOTSTRAP_SPRITES = new PackageResourceReference(LessResourceMarker.class, "bootstrap/sprites.less");
 

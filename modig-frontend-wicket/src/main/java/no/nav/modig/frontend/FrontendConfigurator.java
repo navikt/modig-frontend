@@ -157,7 +157,7 @@ public class FrontendConfigurator {
             jsReferences.addAll(0, asList(module.getScripts()));
             cssReferences.addAll(0, asList(module.getStylesheets()));
             imgReferences.addAll(0, asList(module.getImages()));
-            lessReferences.addAll(0, asList(module.getLess()));
+            lessReferences.addAll(asList(module.getLess()));
         }
     }
 

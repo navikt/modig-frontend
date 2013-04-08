@@ -40,6 +40,11 @@ import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_PAGINATION;
 import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_POPOVER;
 import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_PROGRESSBARS;
 import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_RESET;
+import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_RESPONSIVE_1200MIN;
+import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_RESPONSIVE_767MAX;
+import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_RESPONSIVE_768_979;
+import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_RESPONSIVE_NAVBAR;
+import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_RESPONSIVE_UTILITIES;
 import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_SCAFFOLDING;
 import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_SPRITES;
 import static no.nav.modig.frontend.FrontendResources.LESS_BOOTSTRAP_TABLES;
@@ -54,24 +59,24 @@ import static no.nav.modig.frontend.FrontendResources.UNDERSCORE_RESOURCE;
 public class FrontendModules {
 
     public static final FrontendModule BOOTSTRAP_CORE = new FrontendModule.With().scripts(JS_BOOTSTRAP_TRANSITION).less(
-            LESS_BOOTSTRAP_RESET,
-            LESS_BOOTSTRAP_NAV_VARIABLES,
-            LESS_BOOTSTRAP_MIXINS,
+		    LESS_BOOTSTRAP_RESET,
+		    LESS_BOOTSTRAP_NAV_VARIABLES,
+		    LESS_BOOTSTRAP_MIXINS,
 
-            LESS_BOOTSTRAP_SCAFFOLDING,
-            LESS_BOOTSTRAP_GRID,
-            LESS_BOOTSTRAP_LAYOUTS,
+		    LESS_BOOTSTRAP_SCAFFOLDING,
+		    LESS_BOOTSTRAP_GRID,
+		    LESS_BOOTSTRAP_LAYOUTS,
 
-            LESS_BOOTSTRAP_TYPE,
-            LESS_BOOTSTRAP_CODE,
-            LESS_BOOTSTRAP_FORMS,
-            LESS_BOOTSTRAP_TABLES,
+		    LESS_BOOTSTRAP_TYPE,
+		    LESS_BOOTSTRAP_CODE,
+		    LESS_BOOTSTRAP_FORMS,
+		    LESS_BOOTSTRAP_TABLES,
 
-            LESS_BOOTSTRAP_COMPONENTANIMATIONS,
-            LESS_BOOTSTRAP_CLOSE,
+		    LESS_BOOTSTRAP_COMPONENTANIMATIONS,
+		    LESS_BOOTSTRAP_CLOSE,
 
-            LESS_BOOTSTRAP_HEROUNIT,
-            LESS_BOOTSTRAP_UTILITIES
+		    LESS_BOOTSTRAP_HEROUNIT,
+		    LESS_BOOTSTRAP_UTILITIES
     ).done();
 
     public static final FrontendModule BOOTSTRAP_SPRITES = new FrontendModule.With().less(LESS_BOOTSTRAP_SPRITES).images(ICONS, ICONS_WHITE).done();
@@ -93,6 +98,13 @@ public class FrontendModules {
     public static final FrontendModule BOOTSTRAP_TYPEAHEAD = new FrontendModule.With().scripts(JS_BOOTSTRAP_TYPEAHEAD).done();
     public static final FrontendModule BOOTSTRAP_AFFIX = new FrontendModule.With().scripts(JS_BOOTSTRAP_AFFIX).done();
     public static final FrontendModule BOOTSTRAP_SCROLLSPY = new FrontendModule.With().scripts(JS_BOOTSTRAP_SCROLLSPY).done();
+
+	public static final FrontendModule BOOTSTRAP_RESPONSIVE = new FrontendModule.With().less(
+			LESS_BOOTSTRAP_RESPONSIVE_UTILITIES,
+			LESS_BOOTSTRAP_RESPONSIVE_1200MIN,
+			LESS_BOOTSTRAP_RESPONSIVE_768_979,
+			LESS_BOOTSTRAP_RESPONSIVE_767MAX,
+			LESS_BOOTSTRAP_RESPONSIVE_NAVBAR).done();
 
 
     public static final FrontendModule UNDERSCORE = new FrontendModule.With().scripts(UNDERSCORE_RESOURCE).done();
