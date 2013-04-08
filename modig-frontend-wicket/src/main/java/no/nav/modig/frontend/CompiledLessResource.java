@@ -92,12 +92,9 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
             } catch (IOException | ResourceStreamNotFoundException e) {
                 throw new ResourceStreamException("Unable to read resource stream", e);
             } finally {
-                try
-                {
+                try {
                     resourceStream.close();
-                }
-                catch (IOException e)
-                {
+                } catch (IOException e) {
                     log.warn("Unable to close the resource stream", e);
                 }
             }
@@ -175,11 +172,11 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
         return compressor;
     }
 
-    private class CacheKey implements Serializable {
+    private static class CacheKey implements Serializable {
     }
 
 
-    private class ResourceStreamException extends Exception {
+    private static final class ResourceStreamException extends Exception {
         private ResourceStreamException(String message) {
             super(message);
         }
