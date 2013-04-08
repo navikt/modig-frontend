@@ -10,7 +10,6 @@
 
     <artifactId>modig-frontend-wicket</artifactId>
     <packaging>jar</packaging>
-    <version>0.3.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <description>
         Dette biblioteket inneholder wicket-bindinger for statiske ressurser.

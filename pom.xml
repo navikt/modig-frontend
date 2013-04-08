@@ -23,12 +23,12 @@
             <dependency>
                 <groupId>no.nav.modig</groupId>
                 <artifactId>modig-wicket</artifactId>
-                <version>0.3.1-SNAPSHOT</version>
+                <version>0.4.0</version>
             </dependency>
             <dependency>
                 <groupId>no.nav.modig</groupId>
                 <artifactId>modig-wicket-test</artifactId>
-                <version>0.3.2-SNAPSHOT</version>
+                <version>0.4.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
