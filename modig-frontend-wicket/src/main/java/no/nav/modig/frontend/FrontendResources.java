@@ -83,7 +83,7 @@ class FrontendResources {
     static final JavaScriptResourceReference JS_BOOTSTRAP_CAROUSEL = new JsDepResourceReference("bootstrap/bootstrap-carousel.js", JS_BOOTSTRAP_TRANSITION, JQUERY_RESOURCE);
 
     //Module dropdown
-    static final PackageResourceReference LESS_BOOTSTRAP_DROPDOWN = new PackageResourceReference(LessResourceMarker.class, "bootstrap/dropdown.less");
+    static final PackageResourceReference LESS_BOOTSTRAP_DROPDOWN = new PackageResourceReference(LessResourceMarker.class, "bootstrap/dropdowns.less");
     static final JavaScriptResourceReference JS_BOOTSTRAP_DROPDOWN = new JsDepResourceReference("bootstrap/bootstrap-dropdown.js", JQUERY_RESOURCE);
 
     //Module modal

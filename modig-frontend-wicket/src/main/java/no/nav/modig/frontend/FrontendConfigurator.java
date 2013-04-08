@@ -3,14 +3,12 @@ package no.nav.modig.frontend;
 import fiftyfive.wicket.css.MergedCssBuilder;
 import fiftyfive.wicket.js.JavaScriptDependencySettings;
 import fiftyfive.wicket.js.MergedJavaScriptBuilder;
-import org.apache.commons.io.IOUtils;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.SecurePackageResourceGuard;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.request.resource.CssPackageResource;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.IResource;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
@@ -18,14 +16,7 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
 import org.apache.wicket.request.resource.SharedResourceReference;
 import org.apache.wicket.resource.JQueryResourceReference;
-import org.apache.wicket.util.resource.IResourceStream;
-import org.apache.wicket.util.resource.ResourceStreamNotFoundException;
-import org.apache.wicket.util.resource.StringResourceStream;
-import org.lesscss.LessCompiler;
-import org.lesscss.LessException;
 
-import java.io.IOException;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -239,36 +230,14 @@ public class FrontendConfigurator {
         SecurePackageResourceGuard resourceGuard = (SecurePackageResourceGuard) application.getResourceSettings().getPackageResourceGuard();
         resourceGuard.addPattern("+*.less");
 
-        String less = null;
-        try {
-            StringWriter stringWriter = new StringWriter();
-            for (PackageResourceReference lessReference : lessReferences) {
-                IOUtils.copy(lessReference.getResource().getResourceStream().getInputStream(), stringWriter, "utf-8");
-            }
-            LessCompiler lessCompiler = new LessCompiler();
-            less = lessCompiler.compile(stringWriter.toString());
-
-        } catch (LessException | ResourceStreamNotFoundException | IOException e) {
-            throw new RuntimeException("Could not compile less resources", e);
-        }
-
-        final String finalLess = less;
+        final CompiledLessResource compiledLessResource = new CompiledLessResource(lessReferences);
         final ResourceReference resRef = new ResourceReference(lessCompiledFile) {
             @Override
             public IResource getResource() {
-                return new CssPackageResource(getScope(), getName(), getLocale(), getStyle(), getVariation()) {
-                    @Override
-                    public IResourceStream getResourceStream() {
-                        return new StringResourceStream(finalLess);
-                    }
-
-                    @Override
-                    public IResourceStream getCacheableResourceStream() {
-                        return new StringResourceStream(finalLess);
-                    }
-                };
+                return compiledLessResource;
             }
         };
+
         application.mountResource(basePath + "/css/" + lessCompiledFile, resRef);
         application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
             @Override
@@ -365,5 +334,6 @@ public class FrontendConfigurator {
                 break;
         }
     }
+
 }
 
