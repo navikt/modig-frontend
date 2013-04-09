@@ -19,6 +19,7 @@ import org.apache.wicket.request.resource.SharedResourceReference;
 import org.apache.wicket.resource.JQueryResourceReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -152,11 +153,14 @@ public class FrontendConfigurator {
 
 
     private void addModules() {
-        for (FrontendModule module : modules) {
+        // Adding modules in reversed sequence so that the final sequence is correct
+        ArrayList<FrontendModule> reversedModules = new ArrayList<>(modules);
+        Collections.reverse(reversedModules);
+        for (FrontendModule module : reversedModules) {
             jsReferences.addAll(0, asList(module.getScripts()));
             cssReferences.addAll(0, asList(module.getStylesheets()));
             imgReferences.addAll(0, asList(module.getImages()));
-            lessReferences.addAll(asList(module.getLess()));
+            lessReferences.addAll(0, asList(module.getLess()));
         }
     }
 
