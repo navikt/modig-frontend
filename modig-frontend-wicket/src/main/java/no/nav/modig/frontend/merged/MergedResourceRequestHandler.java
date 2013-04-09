@@ -83,7 +83,7 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 		this.lastModified = null;
 	}
 
-	private class MergedResponse extends WebResponse {
+	private static class MergedResponse extends WebResponse {
 
 		private int status = 200;
 		private WebResponse wrapped;
