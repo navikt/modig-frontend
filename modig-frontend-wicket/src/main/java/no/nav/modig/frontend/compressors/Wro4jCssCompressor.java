@@ -3,7 +3,7 @@ package no.nav.modig.frontend.compressors;
 import org.apache.wicket.css.ICssCompressor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ro.isdc.wro.model.resource.processor.impl.css.CssCompressorProcessor;
+import ro.isdc.wro.model.resource.processor.impl.css.JawrCssMinifierProcessor;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -15,7 +15,7 @@ import java.io.StringWriter;
 public class Wro4jCssCompressor implements ICssCompressor {
     private static final Logger log = LoggerFactory.getLogger(Wro4jCssCompressor.class);
 
-    private final CssCompressorProcessor processor = new CssCompressorProcessor();
+    private final JawrCssMinifierProcessor processor = new JawrCssMinifierProcessor();
 
     @Override
     public String compress(String original) {

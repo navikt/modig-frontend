@@ -22,4 +22,19 @@ public class Wro4jCssCompressorTest {
 
         assertThat(compressed, is("body .someClass{margin:1px}"));
     }
+
+
+    @Test
+    public void testMediaQuery() {
+        ICssCompressor compressor = new Wro4jCssCompressor();
+        String compressed = compressor.compress(
+                "" +
+                        "@media (max-width:767px) {\n" +
+                        "    body .someClass {\n" +
+                        "    margin:1px;\n" +
+                        "    }\n" +
+                        "}");
+
+        assertThat(compressed, is("@media(max-width:767px){body .someClass{margin:1px;}}"));
+    }
 }
