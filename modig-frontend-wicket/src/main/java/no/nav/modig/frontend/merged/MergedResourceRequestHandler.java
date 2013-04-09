@@ -134,22 +134,30 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 
 		@Override
 		public void addCookie(final Cookie cookie) {
-			if (this.headersOpen) this.wrapped.addCookie(cookie);
+			if (this.headersOpen) {
+                this.wrapped.addCookie(cookie);
+            }
 		}
 
 		@Override
 		public void clearCookie(final Cookie cookie) {
-			if (this.headersOpen) this.wrapped.clearCookie(cookie);
+			if (this.headersOpen) {
+                this.wrapped.clearCookie(cookie);
+            }
 		}
 
 		@Override
 		public void setHeader(String name, String value) {
-			if (this.headersOpen) this.wrapped.setHeader(name, value);
+			if (this.headersOpen) {
+                this.wrapped.setHeader(name, value);
+            }
 		}
 
 		@Override
 		public void addHeader(String name, String value) {
-			if (this.headersOpen) this.wrapped.addHeader(name, value);
+			if (this.headersOpen) {
+                this.wrapped.addHeader(name, value);
+            }
 		}
 
 		@Override
@@ -166,7 +174,9 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 
 		@Override
 		public void setContentType(final String mimeType) {
-			if (this.headersOpen) this.wrapped.setContentType(mimeType);
+			if (this.headersOpen) {
+                this.wrapped.setContentType(mimeType);
+            }
 		}
 
 		@Override

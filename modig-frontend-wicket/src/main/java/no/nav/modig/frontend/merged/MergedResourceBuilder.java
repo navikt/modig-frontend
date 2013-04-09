@@ -40,7 +40,9 @@ public abstract class MergedResourceBuilder {
 	}
 
 	public IRequestMapper buildRequestMapper(final WebApplication app) {
-		if (!this.frozen) assertRequiredOptionsAndFreeze();
+		if (!this.frozen) {
+            assertRequiredOptionsAndFreeze();
+        }
 
 		return new MergedResourceMapper(
 				this.path,
@@ -54,7 +56,9 @@ public abstract class MergedResourceBuilder {
 	}
 
 	public Behavior buildHeaderContributor() {
-		if (!this.frozen) assertRequiredOptionsAndFreeze();
+		if (!this.frozen) {
+            assertRequiredOptionsAndFreeze();
+        }
 		return new Behavior() {
 			@Override
 			public void renderHead(Component comp, IHeaderResponse response) {
