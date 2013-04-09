@@ -16,8 +16,17 @@
 package no.nav.modig.frontend.merged;
 
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.protocol.http.mock.MockHttpServletRequest;
+import org.apache.wicket.protocol.http.mock.MockHttpSession;
 import org.apache.wicket.util.tester.WicketTester;
+import org.apache.wicket.util.time.Duration;
+import org.apache.wicket.util.time.Time;
 import org.junit.Test;
+
+import java.text.DateFormat;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 
 public class MergedJavaScriptBuilderTest extends MergedResourceBuilderTest {
@@ -46,6 +55,28 @@ public class MergedJavaScriptBuilderTest extends MergedResourceBuilderTest {
                 "/no/nav/modig/frontend/merged/js/test.js",
                 "/org/apache/wicket/ajax/res/js/wicket-event-jquery.js",
                 "/org/apache/wicket/ajax/res/js/wicket-ajax-jquery.js");
+    }
+
+    @Test
+    public void answersWith304IfNotChangedSince() throws Exception {
+        WicketTester tester = new WicketTester(new MergedApp());
+
+        MockHttpSession session = new MockHttpSession(tester.getApplication().getServletContext());
+        MockHttpServletRequest request = new MockHttpServletRequest(
+                tester.getApplication(),
+                session,
+                tester.getApplication().getServletContext());
+
+        request.setURL("scripts/all.js");
+        request.setHeader("If-Modified-Since", formatTime(Time.now().add(Duration.days(365))));
+
+        tester.processRequest(request);
+
+        assertThat(tester.getLastResponse().getStatus(), is(304));
+    }
+
+    private String formatTime(Time time) {
+        return DateFormat.getDateInstance(DateFormat.FULL).format(time.getMilliseconds());
     }
 
     /**
