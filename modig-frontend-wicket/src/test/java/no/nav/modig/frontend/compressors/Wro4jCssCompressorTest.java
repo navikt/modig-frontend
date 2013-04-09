@@ -20,7 +20,7 @@ public class Wro4jCssCompressorTest {
                         "margin:1px;\n" +
                         "}");
 
-        assertThat(compressed, is("body .someClass{margin:1px}"));
+        assertThat(compressed, is("body .someClass{margin:1px;}"));
     }
 
 
