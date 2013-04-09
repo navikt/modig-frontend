@@ -1,9 +1,9 @@
 package no.nav.modig.frontend;
 
-import no.nav.modig.frontend.merged.MergedCssBuilder;
-import no.nav.modig.frontend.merged.MergedJavaScriptBuilder;
 import no.nav.modig.frontend.compressors.Wro4jCssCompressor;
 import no.nav.modig.frontend.compressors.Wro4jJsCompressor;
+import no.nav.modig.frontend.merged.MergedCssBuilder;
+import no.nav.modig.frontend.merged.MergedJavaScriptBuilder;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
@@ -11,7 +11,6 @@ import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.SecurePackageResourceGuard;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.resource.CssResourceReference;
-import org.apache.wicket.request.resource.IResource;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
@@ -232,24 +231,24 @@ public class FrontendConfigurator {
     }
 
     private void configureLess(WebApplication application) {
+        // Allowing less files to be loaded as resources
         SecurePackageResourceGuard resourceGuard = (SecurePackageResourceGuard) application.getResourceSettings().getPackageResourceGuard();
         resourceGuard.addPattern("+*.less");
 
         final CompiledLessResource compiledLessResource = new CompiledLessResource(lessReferences);
-        final ResourceReference resRef = new ResourceReference(lessCompiledFile) {
-            @Override
-            public IResource getResource() {
-                return compiledLessResource;
-            }
-        };
+        application.getSharedResources().add("lessResource", compiledLessResource);
 
+        final ResourceReference resRef = new SharedResourceReference("lessResource");
         application.mountResource(basePath + "/css/" + lessCompiledFile, resRef);
+
+        // Adding reference to less file to all pages
         application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
             @Override
             public void renderHead(IHeaderResponse response) {
                 response.render(CssReferenceHeaderItem.forReference(resRef));
             }
         });
+
         if (packResources) {
             cssBuilder.addCss(resRef);
         }
