@@ -40,26 +40,6 @@
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
 
-        <!--&lt;!&ndash; FIFTYFIVE-WICKET DEPENDENCY &ndash;&gt;-->
-
-        <!--<dependency>-->
-            <!--<groupId>com.55minutes</groupId>-->
-            <!--<artifactId>fiftyfive-wicket-core</artifactId>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>com.55minutes</groupId>-->
-            <!--<artifactId>fiftyfive-wicket-js</artifactId>-->
-        <!--</dependency>-->
-
-
-        <!-- YUI DEPENDENCY -->
-
-        <!--<dependency>-->
-            <!--<groupId>com.yahoo.platform.yui</groupId>-->
-            <!--<artifactId>yuicompressor</artifactId>-->
-        <!--</dependency>-->
-
         <!-- COMPRESSION DEPENDENCIES -->
 
         <dependency>
@@ -138,6 +118,11 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
         </dependency>
 
         <dependency>

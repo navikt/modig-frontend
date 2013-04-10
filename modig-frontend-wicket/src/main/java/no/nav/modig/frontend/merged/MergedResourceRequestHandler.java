@@ -1,10 +1,10 @@
 package no.nav.modig.frontend.merged;
 
+import no.nav.modig.frontend.merged.wrapped.WrappedWebRequest;
+import no.nav.modig.frontend.merged.wrapped.WrappedWebResponse;
 import org.apache.wicket.WicketRuntimeException;
 import org.apache.wicket.request.IRequestCycle;
 import org.apache.wicket.request.IRequestHandler;
-import org.apache.wicket.request.IRequestParameters;
-import org.apache.wicket.request.Url;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.handler.resource.ResourceRequestHandler;
 import org.apache.wicket.request.http.WebRequest;
@@ -15,9 +15,7 @@ import org.apache.wicket.util.time.Time;
 
 import javax.servlet.http.Cookie;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.List;
-import java.util.Locale;
 
 
 public class MergedResourceRequestHandler implements IRequestHandler {
@@ -83,14 +81,13 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 		this.lastModified = null;
 	}
 
-	private static class MergedResponse extends WebResponse {
+	private static class MergedResponse extends WrappedWebResponse {
 
 		private int status = 200;
-		private WebResponse wrapped;
 		private boolean headersOpen = true;
 
 		MergedResponse(WebResponse original) {
-			this.wrapped = original;
+			super(original);
 		}
 
 		@Override
@@ -120,16 +117,6 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 		public void write(byte[] array, int offset, int length) {
 			this.headersOpen = false;
 			this.wrapped.write(array, offset, length);
-		}
-
-		@Override
-		public String encodeURL(CharSequence url) {
-			return this.wrapped.encodeURL(url);
-		}
-
-		@Override
-		public Object getContainerResponse() {
-			return this.wrapped.getContainerResponse();
 		}
 
 		@Override
@@ -196,31 +183,6 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 				this.wrapped.setStatus(sc);
 			}
 		}
-
-		@Override
-		public void sendError(int sc, String msg) {
-			this.wrapped.sendError(sc, msg);
-		}
-
-		@Override
-		public void sendRedirect(String url) {
-			this.wrapped.sendRedirect(url);
-		}
-
-		@Override
-		public boolean isRedirect() {
-			return this.wrapped.isRedirect();
-		}
-
-		@Override
-		public String encodeRedirectURL(CharSequence url) {
-			return this.wrapped.encodeRedirectURL(url);
-		}
-
-		@Override
-		public void flush() {
-			this.wrapped.flush();
-		}
 	}
 
 	/**
@@ -229,26 +191,10 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 	 * to fool the individual resources into behaving as a single resource with a single
 	 * modification date.
 	 */
-	private class MergedRequest extends WebRequest {
-		private final WebRequest wrapped;
+	private class MergedRequest extends WrappedWebRequest {
 
 		MergedRequest(WebRequest original) {
-			this.wrapped = original;
-		}
-
-		@Override
-		public Url getUrl() {
-			return this.wrapped.getUrl();
-		}
-
-		@Override
-		public IRequestParameters getPostParameters() {
-			return this.wrapped.getPostParameters();
-		}
-
-		@Override
-		public List<Cookie> getCookies() {
-			return this.wrapped.getCookies();
+			super(original);
 		}
 
 		@Override
@@ -269,36 +215,6 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 				}
 			}
 			return headerTime;
-		}
-
-		@Override
-		public Locale getLocale() {
-			return this.wrapped.getLocale();
-		}
-
-		@Override
-		public String getHeader(final String name) {
-			return this.wrapped.getHeader(name);
-		}
-
-		@Override
-		public List<String> getHeaders(final String name) {
-			return this.wrapped.getHeaders(name);
-		}
-
-		@Override
-		public Charset getCharset() {
-			return this.wrapped.getCharset();
-		}
-
-		@Override
-		public Url getClientUrl() {
-			return this.wrapped.getClientUrl();
-		}
-
-		@Override
-		public Object getContainerRequest() {
-			return this.wrapped.getContainerRequest();
 		}
 	}
 }
