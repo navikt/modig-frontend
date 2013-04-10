@@ -1,8 +1,5 @@
 package no.nav.modig.frontend.merged;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.IRequestMapper;
 import org.apache.wicket.request.mapper.parameter.PageParametersEncoder;
@@ -29,12 +26,7 @@ public abstract class MergedResourceBuilder {
 		return this;
 	}
 
-	public Behavior build(WebApplication app) {
-		install(app);
-		return buildHeaderContributor();
-	}
-
-	public MergedResourceBuilder install(WebApplication app) {
+    public MergedResourceBuilder install(WebApplication app) {
 		app.mount(buildRequestMapper(app));
 		return this;
 	}
@@ -55,30 +47,14 @@ public abstract class MergedResourceBuilder {
 				});
 	}
 
-	public Behavior buildHeaderContributor() {
-		if (!this.frozen) {
-            assertRequiredOptionsAndFreeze();
-        }
-		return new Behavior() {
-			@Override
-			public void renderHead(Component comp, IHeaderResponse response) {
-				for (ResourceReference ref : MergedResourceBuilder.this.references) {
-					newContributor(ref).renderHead(comp, response);
-				}
-			}
-		};
-	}
-
-	protected void add(ResourceReference ref) {
+    protected void add(ResourceReference ref) {
 		if (this.frozen) {
 			throw new IllegalStateException("Resources cannot be added once build() or install() methods have been called.");
 		}
 		this.references.add(ref);
 	}
 
-	protected abstract Behavior newContributor(ResourceReference ref);
-
-	protected void assertRequiredOptionsAndFreeze() {
+    protected void assertRequiredOptionsAndFreeze() {
 		if (null == this.path) {
 			throw new IllegalStateException("path must be set");
 		}
