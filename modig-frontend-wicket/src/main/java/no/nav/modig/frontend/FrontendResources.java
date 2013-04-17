@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 class FrontendResources {
 
-    static final JavaScriptResourceReference JQUERY_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "jquery/jquery-1.8.2.js");
+    static final JavaScriptResourceReference JQUERY_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "jquery/jquery-1.9.1.js");
     static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "html5.js");
     static final JavaScriptResourceReference UNDERSCORE_RESOURCE = new JavaScriptResourceReference(JsResourceMarker.class, "underscore.js");
 
