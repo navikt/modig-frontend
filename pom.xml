@@ -9,13 +9,18 @@
     <parent>
         <groupId>no.nav.modig</groupId>
         <artifactId>modig-main</artifactId>
-        <version>0.4.0</version>
+        <version>0.4.1-alpha.2</version>
     </parent>
 
     <name>${project.artifactId}</name>
     <description>
         Dette biblioteket inneholder statiske ressurser for felles utseende og oppførsel i moderniserte applikasjoner i Nav.
     </description>
+    
+    <properties>
+    	<modig-wicket.version>0.4.0</modig-wicket.version>
+    	<modig-wicket-test.version>0.4.0</modig-wicket-test.version>
+    </properties>
 
     <modules>
         <module>modig-frontend-bootstrap</module>
@@ -28,12 +33,12 @@
             <dependency>
                 <groupId>no.nav.modig</groupId>
                 <artifactId>modig-wicket</artifactId>
-                <version>0.4.0</version>
+                <version>${modig-wicket.version}</version>
             </dependency>
             <dependency>
                 <groupId>no.nav.modig</groupId>
                 <artifactId>modig-wicket-test</artifactId>
-                <version>0.4.0</version>
+                <version>${modig-wicket-test.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

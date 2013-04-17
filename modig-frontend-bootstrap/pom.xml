@@ -16,11 +16,6 @@
         Dette biblioteket inneholder statiske ressurser for felles utseende og oppførsel i moderniserte applikasjoner i Nav.
     </description>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-
     <build>
 
         <resources>
@@ -33,22 +28,6 @@
                 <directory>src/main/generated-resources</directory>
             </resource>
         </resources>
-
-        <plugins>
-            <plugin>
-                <inherited>true</inherited>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <encoding>UTF-8</encoding>
-                    <showWarnings>true</showWarnings>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
-            </plugin>
-        </plugins>
-
     </build>
 
     <profiles>
@@ -61,7 +40,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2</version>
                         <executions>
 
                             <!-- BUILD BOOTSTRAP -->
