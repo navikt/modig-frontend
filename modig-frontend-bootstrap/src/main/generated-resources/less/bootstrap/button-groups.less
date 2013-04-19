@@ -35,6 +35,8 @@
 .btn-group > .btn {
   position: relative;
   .border-radius(0);
+  padding: 7px 14px;
+  text-transform: none;
 }
 .btn-group > .btn + .btn {
   margin-left: -1px;
@@ -140,18 +142,6 @@
   .btn-primary.dropdown-toggle {
     background-color: @btnPrimaryBackgroundHighlight;
   }
-  .btn-warning.dropdown-toggle {
-    background-color: @btnWarningBackgroundHighlight;
-  }
-  .btn-danger.dropdown-toggle {
-    background-color: @btnDangerBackgroundHighlight;
-  }
-  .btn-success.dropdown-toggle {
-    background-color: @btnSuccessBackgroundHighlight;
-  }
-  .btn-info.dropdown-toggle {
-    background-color: @btnInfoBackgroundHighlight;
-  }
   .btn-inverse.dropdown-toggle {
     background-color: @btnInverseBackgroundHighlight;
   }
@@ -185,10 +175,6 @@
 
 // Account for other colors
 .btn-primary,
-.btn-warning,
-.btn-danger,
-.btn-info,
-.btn-success,
 .btn-inverse {
   .caret {
     border-top-color: @white;

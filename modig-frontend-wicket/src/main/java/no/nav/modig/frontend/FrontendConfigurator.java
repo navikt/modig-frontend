@@ -313,8 +313,8 @@ public class FrontendConfigurator {
 
 
     private void configureBootstrapImages(WebApplication application) {
-        application.mountResource(basePath + "/img/" + FrontendResources.ICONS.getName(), FrontendResources.ICONS);
-        application.mountResource(basePath + "/img/" + FrontendResources.ICONS_WHITE.getName(), FrontendResources.ICONS_WHITE);
+        application.mountResource(basePath + "/img/" + BootstrapResources.ICONS.getName(), BootstrapResources.ICONS);
+        application.mountResource(basePath + "/img/" + BootstrapResources.ICONS_WHITE.getName(), BootstrapResources.ICONS_WHITE);
     }
 
 

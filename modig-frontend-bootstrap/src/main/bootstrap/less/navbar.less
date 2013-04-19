@@ -22,10 +22,9 @@
   min-height: @navbarHeight;
   padding-left:  20px;
   padding-right: 20px;
-  #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+  background: #fff;
   border: 1px solid @navbarBorder;
   .border-radius(@baseBorderRadius);
-  .box-shadow(0 1px 4px rgba(0,0,0,.065));
 
   // Prevent floats from breaking the navbar
   .clearfix();
@@ -118,7 +117,7 @@
   select,
   .btn {
     display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 5px;
   }
   input[type="image"],
   input[type="checkbox"],
@@ -146,7 +145,7 @@
     margin-bottom: 0;
     padding: 4px 14px;
     #font > .sans-serif(13px, normal, 1);
-    .border-radius(15px); // redeclare because of specificity of the type attribute
+    .border-radius(1px); // redeclare because of specificity of the type attribute
   }
 }
 
@@ -203,19 +202,10 @@
 .navbar-fixed-top {
   top: 0;
 }
-.navbar-fixed-top,
-.navbar-static-top {
-  .navbar-inner {
-    .box-shadow(~"0 1px 10px rgba(0,0,0,.1)");
-  }
-}
 
 // Fixed to bottom
 .navbar-fixed-bottom {
   bottom: 0;
-  .navbar-inner {
-    .box-shadow(~"0 -1px 10px rgba(0,0,0,.1)");
-  }
 }
 
 
@@ -392,7 +382,7 @@
 .navbar-inverse {
 
   .navbar-inner {
-    #gradient > .vertical(@navbarInverseBackgroundHighlight, @navbarInverseBackground);
+    background: #3e3832;
     border-color: @navbarInverseBorder;
   }
 

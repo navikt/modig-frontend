@@ -11,7 +11,7 @@
 // -------------------------
 @black:                 #000;
 @grayDarker:            #222;
-@grayDark:              #333;
+@grayDark:              #3e3832;
 @gray:                  #555;
 @grayLight:             #999;
 @grayLighter:           #eee;
@@ -23,7 +23,7 @@
 @blue:                  #049cdb;
 @blueDark:              #0064cd;
 @green:                 #46a546;
-@red:                   #9d261d;
+@red:                   #c30000;
 @yellow:                #ffc40d;
 @orange:                #f89406;
 @pink:                  #c3325f;
@@ -32,19 +32,19 @@
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @white;
+@bodyBackground:        #f1f1f1;
 @textColor:             @grayDark;
 
 
 // Links
 // -------------------------
-@linkColor:             #08c;
+@linkColor:             #0067c5;
 @linkColorHover:        darken(@linkColor, 15%);
 
 
 // Typography
 // -------------------------
-@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@sansFontFamily:        Arial, Helvetica, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
@@ -53,7 +53,7 @@
 @baseLineHeight:        20px;
 @altFontFamily:         @serifFontFamily;
 
-@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontFamily:    Modus,Arial,Helvetica,sans-serif; // empty to use BS default, @baseFontFamily
 @headingsFontWeight:    bold;    // instead of browser default, bold
 @headingsColor:         inherit; // empty to use BS default, @textColor
 
@@ -62,17 +62,17 @@
 // -------------------------
 // Based on 14px font-size and 20px line-height
 
-@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
-@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
-@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+@fontSizeLarge:         @baseFontSize * 1.14; // ~16px
+@fontSizeSmall:         @baseFontSize; // ~14px
+@fontSizeMini:          @baseFontSize * 0.86; // ~11px
 
-@paddingLarge:          11px 19px; // 44px
-@paddingSmall:          2px 10px;  // 26px
-@paddingMini:           0 6px;   // 22px
+@paddingLarge:          11px 40px; // 44px
+@paddingSmall:          7px 12px;  // 26px
+@paddingMini:           4px 10px;  // 22px
 
-@baseBorderRadius:      4px;
-@borderRadiusLarge:     6px;
-@borderRadiusSmall:     3px;
+@baseBorderRadius:      1px;
+@borderRadiusLarge:     1px;
+@borderRadiusSmall:     1px;
 
 
 // Tables
@@ -84,12 +84,12 @@
 
 // Buttons
 // -------------------------
-@btnBackground:                     @white;
-@btnBackgroundHighlight:            darken(@white, 10%);
-@btnBorder:                         #ccc;
+@btnBackground:                     #e3e3e3;
+@btnBackgroundHighlight:            #d2d2d2;
+@btnBorder:                         #cfcfcf;
 
-@btnPrimaryBackground:              @linkColor;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+@btnPrimaryBackground:              #00a9e0;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 10%);
 
 @btnInfoBackground:                 #5bc0de;
 @btnInfoBackgroundHighlight:        #2f96b4;
@@ -167,7 +167,7 @@
 
 // Horizontal forms & lists
 // -------------------------
-@horizontalComponentOffset:       180px;
+@horizontalComponentOffset:       100px;
 
 
 // Wells
