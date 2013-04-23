@@ -13,6 +13,7 @@ class FrontendResources {
 	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = jsReference("underscore.js");
 
 	static final PackageResourceReference WICKET_MODAL_WINDOW = lessReference("felles/modal.less");
+	static final PackageResourceReference NAV_DATEPICKER = lessReference("felles/datepicker.less");
 
 
 	private static JavaScriptResourceReference jsReference(String path) {

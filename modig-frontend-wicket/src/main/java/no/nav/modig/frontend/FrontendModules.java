@@ -53,6 +53,7 @@ import static no.nav.modig.frontend.BootstrapResources.LESS_TOOLTIP;
 import static no.nav.modig.frontend.BootstrapResources.LESS_TYPE;
 import static no.nav.modig.frontend.BootstrapResources.LESS_UTILITIES;
 import static no.nav.modig.frontend.BootstrapResources.LESS_WELLS;
+import static no.nav.modig.frontend.FrontendResources.NAV_DATEPICKER;
 import static no.nav.modig.frontend.FrontendResources.UNDERSCORE_RESOURCE;
 import static no.nav.modig.frontend.FrontendResources.WICKET_MODAL_WINDOW;
 
@@ -75,7 +76,9 @@ public class FrontendModules {
 					LESS_CLOSE,
 					LESS_HEROUNIT,
 					LESS_UTILITIES,
-					WICKET_MODAL_WINDOW).done();
+					WICKET_MODAL_WINDOW,
+					NAV_DATEPICKER
+			).done();
 
 	public static final FrontendModule BOOTSTRAP_SPRITES = new FrontendModule.With().less(LESS_SPRITES).images(ICONS, ICONS_WHITE).done();
 	public static final FrontendModule BOOTSTRAP_WELLS = new FrontendModule.With().less(LESS_WELLS).done();
