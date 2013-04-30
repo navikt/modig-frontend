@@ -121,6 +121,9 @@ public class MergedResourceMapper extends AbstractMapper implements IRequestMapp
 		IResource res = ref.getResource();
 		if (res instanceof IStaticCacheableResource) {
 			IResourceStream stream = ((IStaticCacheableResource) res).getCacheableResourceStream();
+            if(stream == null ){
+                throw new RuntimeException("CacheableResourceStream for resource " + ref.getKey().toString() + " not available");
+            }
 			modified = stream.lastModifiedTime();
 		}
 		return modified;
