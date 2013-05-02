@@ -1,0 +1,58 @@
+[class*=knapp-], .dropdown-toggle {
+	display: inline-block;
+	color: @grayDark;
+	cursor: pointer;
+	padding: 11px 40px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: Modus, Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	font-size: 1.14rem;
+	vertical-align: middle;
+	.border-radius(1px);
+	border: 1px solid #dfdfdf;
+	border-bottom: 1px solid #b6b6b6;
+	.buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark);
+	&:hover, &:focus {
+		.buttonBackground(#d3d3d3, #c3c3c3, @grayDark);
+	}
+	.pil {
+		display: inline-block;
+		vertical-align: top;
+		margin: 6px -4px 0 2px;
+		border-top: 6px solid #008fc4;
+		border-right: 6px solid transparent;
+		border-left: 6px solid transparent;
+		content: "";
+	}
+}
+
+.knapp-link {
+	border-color: @blue;
+	background: @blue;
+	color: #fff;
+	&:hover, &:focus {
+		border-color: @blueDark;
+		background: @blueDark;
+		color: #fff;
+	}
+}
+
+.knapp-liten {
+	padding: @paddingSmall;
+	font-size: @fontSizeSmall;
+}
+
+.knapp-mini {
+	padding: @paddingMini;
+	font-size: @fontSizeMini;
+}
+
+.knapp-uthevet {
+	.buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+	&:hover,
+	&:focus {
+		.buttonBackground(#635e5f, #504e4a, #fff);
+	}
+}
