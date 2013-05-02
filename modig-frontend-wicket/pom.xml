@@ -23,7 +23,7 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>modig-frontend-bootstrap</artifactId>
+            <artifactId>modig-frontend-ressurser</artifactId>
             <version>${project.version}</version>
         </dependency>
 
