@@ -1,0 +1,96 @@
+a, span, p, div, th, td, select, input, textarea {
+	font-family: @baseFontFamily;
+	font-size: 1rem;
+}
+
+
+* h1:first-child, * h2:first-child, * h3:first-child {
+	margin-top: 0;
+}
+
+.mini {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.9rem;
+	font-weight: normal;
+}
+
+.liten {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+.normal {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.14rem;
+	font-weight: normal;
+}
+
+.ingress {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.42rem;
+	font-weight: normal;
+}
+
+.stor {
+	font-family: @headingsFontFamily;
+	font-family: @headingsFontFamily;
+	font-size: 2.1rem;
+	font-weight: 600;
+}
+
+.diger {
+	font-family: @headingsFontFamily;
+	font-family: @headingsFontFamily;
+	font-size: 2.7rem;
+	font-weight: 600;
+}
+
+[class*="robust"] {
+	font-family: @headingsFontFamily;
+	font-size: 1.14rem;
+	font-weight: 600;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+[class*="-ikon-"] {
+	background-size: 32px auto;
+	background-repeat: no-repeat;
+	text-align: center;
+	padding-top: 48px;
+}
+
+[class$="-strek"]:not([class*="ikon-"]) {
+	background-image: url(../img/under-dark.png);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	padding-bottom: 12px;
+	margin-bottom: 12px !important;
+	text-align: center;
+}
+
+[class*="strek-ikon-soknad"], [class*="ikon-soknad-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/sirkel-blaa.png);
+	background-position: bottom center, center top;
+	padding-bottom: 12px;
+	margin-bottom: 12px !important;
+}
+
+[class*="ikon-soknad"]:not([class*="strek"]) {
+	background-image: url(../img/sirkel-blaa.png);
+	background-position: center top;
+}
+
+[class*="strek-ikon-vedtak"], [class*="ikon-vedtak-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/sirkel-graa.png);
+	background-position: bottom center, center top;
+	padding-bottom: 12px;
+	margin-bottom: 12px !important;
+}
+
+[class*="ikon-vedtak"]:not([class*="strek"]) {
+	background-image: url(../img/sirkel-graa.png);
+	background-position: center top;
+}
+
