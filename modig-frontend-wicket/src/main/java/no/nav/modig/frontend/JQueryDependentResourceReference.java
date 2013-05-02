@@ -8,12 +8,15 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
 import org.apache.wicket.resource.JQueryResourceReference;
 
-import java.util.Collections;
+import java.util.ArrayList;
 
 
 class JQueryDependentResourceReference extends JavaScriptResourceReference {
-	JQueryDependentResourceReference(String location) {
+	private final JavaScriptResourceReference[] deps;
+
+	JQueryDependentResourceReference(String location, JavaScriptResourceReference... deps) {
 		super(JsResourceMarker.class, location);
+		this.deps = deps;
 	}
 
 	@Override
@@ -24,6 +27,12 @@ class JQueryDependentResourceReference extends JavaScriptResourceReference {
 		} else {
 			wicketJQueryReference = JQueryResourceReference.get();
 		}
-		return Collections.singletonList(JavaScriptHeaderItem.forReference(wicketJQueryReference));
+
+		ArrayList<HeaderItem> headerItems = new ArrayList<>();
+		headerItems.add(JavaScriptHeaderItem.forReference(wicketJQueryReference));
+		for (JavaScriptResourceReference dep : deps) {
+			headerItems.add(JavaScriptHeaderItem.forReference(dep));
+		}
+		return headerItems;
 	}
 }

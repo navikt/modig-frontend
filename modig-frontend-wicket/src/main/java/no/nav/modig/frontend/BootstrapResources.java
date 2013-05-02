@@ -1,7 +1,6 @@
 package no.nav.modig.frontend;
 
 import img.ImgResourceMarker;
-import js.JsResourceMarker;
 import less.LessResourceMarker;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.PackageResourceReference;
@@ -10,16 +9,12 @@ import org.apache.wicket.request.resource.SharedResourceReference;
 
 class BootstrapResources {
 
-	static final JavaScriptResourceReference JQUERY_RESOURCE = FrontendResources.JQUERY_RESOURCE;
-
-
 	// BOOTSTRAP LESS - Core module
 	static final JavaScriptResourceReference JS_TRANSITION = new JQueryDependentResourceReference("bootstrap/bootstrap-transition.js");
 	
 	static final PackageResourceReference LESS_RESET = lessReference("bootstrap/reset.less");
 
 	static final PackageResourceReference LESS_VARIABLES = lessReference("bootstrap/variables.less");
-	static final PackageResourceReference LESS_NAV_VARIABLES = lessReference("felles/variables.less");
 	static final PackageResourceReference LESS_MIXINS = lessReference("bootstrap/mixins.less");
 
 	static final PackageResourceReference LESS_SCAFFOLDING = lessReference("bootstrap/scaffolding.less");
@@ -61,7 +56,7 @@ class BootstrapResources {
 
 	// Module accordion + collapse
 	static final PackageResourceReference LESS_ACCORDION = lessReference("bootstrap/accordion.less");
-	static final JavaScriptResourceReference JS_COLLAPSE = new JsDepResourceReference("bootstrap/bootstrap-collapse.js", JS_TRANSITION, JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_COLLAPSE = new JQueryDependentResourceReference("bootstrap/bootstrap-collapse.js", JS_TRANSITION);
 
 	// Module thumbnails
 	static final PackageResourceReference LESS_THUMBNAILS = lessReference("bootstrap/thumbnails.less");
@@ -74,53 +69,48 @@ class BootstrapResources {
 
 	// Module alert
 	static final PackageResourceReference LESS_ALERTS = lessReference("bootstrap/alerts.less");
-	static final JavaScriptResourceReference JS_ALERT = new JsDepResourceReference("bootstrap/bootstrap-alert.js", JS_TRANSITION, JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_ALERT = new JQueryDependentResourceReference("bootstrap/bootstrap-alert.js", JS_TRANSITION);
 
 	// Module button
 	static final PackageResourceReference LESS_BUTTON = lessReference("bootstrap/buttons.less");
 	static final PackageResourceReference LESS_BUTTON_GROUPS = lessReference("bootstrap/button-groups.less");
-	static final JavaScriptResourceReference JS_BUTTON = new JsDepResourceReference("bootstrap/bootstrap-button.js", JS_TRANSITION, JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_BUTTON = new JQueryDependentResourceReference("bootstrap/bootstrap-button.js", JS_TRANSITION);
 
 	// Module carousel
 	static final PackageResourceReference LESS_CAROUSEL = lessReference("bootstrap/carousel.less");
-	static final JavaScriptResourceReference JS_CAROUSEL = new JsDepResourceReference("bootstrap/bootstrap-carousel.js", JS_TRANSITION, JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_CAROUSEL = new JQueryDependentResourceReference("bootstrap/bootstrap-carousel.js", JS_TRANSITION);
 
 	//Module dropdown
 	static final PackageResourceReference LESS_DROPDOWN = lessReference("bootstrap/dropdowns.less");
-	static final JavaScriptResourceReference JS_DROPDOWN = new JsDepResourceReference("bootstrap/bootstrap-dropdown.js", JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_DROPDOWN = new JQueryDependentResourceReference("bootstrap/bootstrap-dropdown.js");
 
 	//Module modal
 	static final PackageResourceReference LESS_MODAL = lessReference("bootstrap/modal.less");
-	static final JavaScriptResourceReference JS_MODAL = new JsDepResourceReference("bootstrap/bootstrap-modal.js", JS_TRANSITION, JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_MODAL = new JQueryDependentResourceReference("bootstrap/bootstrap-modal.js", JS_TRANSITION);
 
 	//Module tooltip
 	static final PackageResourceReference LESS_TOOLTIP = lessReference("bootstrap/tooltip.less");
-	static final JavaScriptResourceReference JS_TOOLTIP = new JsDepResourceReference("bootstrap/bootstrap-tooltip.js", JS_TRANSITION, JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_TOOLTIP = new JQueryDependentResourceReference("bootstrap/bootstrap-tooltip.js", JS_TRANSITION);
 
 	//Module popover
 	static final PackageResourceReference LESS_POPOVER = lessReference("bootstrap/popover.less");
-	static final JavaScriptResourceReference JS_POPOVER = new JsDepResourceReference("bootstrap/bootstrap-popover.js", JS_TOOLTIP, JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_POPOVER = new JQueryDependentResourceReference("bootstrap/bootstrap-popover.js", JS_TOOLTIP);
 
 	//Module tab
-	static final JavaScriptResourceReference JS_TAB = new JsDepResourceReference("bootstrap/bootstrap-tab.js", JS_TRANSITION, JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_TAB = new JQueryDependentResourceReference("bootstrap/bootstrap-tab.js", JS_TRANSITION);
 
 	//Module typeahead
-	static final JavaScriptResourceReference JS_TYPEAHEAD = new JsDepResourceReference("bootstrap/bootstrap-typeahead.js", JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_TYPEAHEAD = new JQueryDependentResourceReference("bootstrap/bootstrap-typeahead.js");
 
 	//Module affix
-	static final JavaScriptResourceReference JS_AFFIX = new JsDepResourceReference("bootstrap/bootstrap-affix.js", JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_AFFIX = new JQueryDependentResourceReference("bootstrap/bootstrap-affix.js");
 
 	//Module scrollspy
-	static final JavaScriptResourceReference JS_SCROLLSPY = new JsDepResourceReference("bootstrap/bootstrap-scrollspy.js", JQUERY_RESOURCE);
+	static final JavaScriptResourceReference JS_SCROLLSPY = new JQueryDependentResourceReference("bootstrap/bootstrap-scrollspy.js");
 
 	// Bootstrap icons
 	static final SharedResourceReference ICONS = new SharedResourceReference(ImgResourceMarker.class, "glyphicons-halflings.png");
 	static final SharedResourceReference ICONS_WHITE = new SharedResourceReference(ImgResourceMarker.class, "glyphicons-halflings-white.png");
-
-
-	private static JavaScriptResourceReference jsReference(String path) {
-		return new JavaScriptResourceReference(JsResourceMarker.class, path);
-	}
 
 	private static PackageResourceReference lessReference(String path) {
 		return new PackageResourceReference(LessResourceMarker.class, path);

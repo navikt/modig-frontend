@@ -34,7 +34,6 @@ import static no.nav.modig.frontend.BootstrapResources.LESS_MIXINS;
 import static no.nav.modig.frontend.BootstrapResources.LESS_MODAL;
 import static no.nav.modig.frontend.BootstrapResources.LESS_NAVBAR;
 import static no.nav.modig.frontend.BootstrapResources.LESS_NAVS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_NAV_VARIABLES;
 import static no.nav.modig.frontend.BootstrapResources.LESS_PAGER;
 import static no.nav.modig.frontend.BootstrapResources.LESS_PAGINATION;
 import static no.nav.modig.frontend.BootstrapResources.LESS_POPOVER;
@@ -52,33 +51,43 @@ import static no.nav.modig.frontend.BootstrapResources.LESS_THUMBNAILS;
 import static no.nav.modig.frontend.BootstrapResources.LESS_TOOLTIP;
 import static no.nav.modig.frontend.BootstrapResources.LESS_TYPE;
 import static no.nav.modig.frontend.BootstrapResources.LESS_UTILITIES;
+import static no.nav.modig.frontend.BootstrapResources.LESS_VARIABLES;
 import static no.nav.modig.frontend.BootstrapResources.LESS_WELLS;
-import static no.nav.modig.frontend.FrontendResources.NAV_DATEPICKER;
-import static no.nav.modig.frontend.FrontendResources.UNDERSCORE_RESOURCE;
-import static no.nav.modig.frontend.FrontendResources.WICKET_MODAL_WINDOW;
+import static no.nav.modig.frontend.EksternflateResources.EKSTERN_LESS;
+import static no.nav.modig.frontend.EksternflateResources.FOOTER_LESS;
+import static no.nav.modig.frontend.EksternflateResources.PANEL_LESS;
+import static no.nav.modig.frontend.FellesResources.DROPDOWNS_LESS;
+import static no.nav.modig.frontend.FellesResources.DROPDOWN_RESOURCE;
+import static no.nav.modig.frontend.FellesResources.FELLES_LESS;
+import static no.nav.modig.frontend.FellesResources.HTML5_SHIV_RESOURCE;
+import static no.nav.modig.frontend.FellesResources.JQUERY_RESOURCE;
+import static no.nav.modig.frontend.FellesResources.KNAPPER_LESS;
+import static no.nav.modig.frontend.FellesResources.MIXINS_LESS;
+import static no.nav.modig.frontend.FellesResources.MODUS_LESS;
+import static no.nav.modig.frontend.FellesResources.NAV_DATEPICKER;
+import static no.nav.modig.frontend.FellesResources.RESET_LESS;
+import static no.nav.modig.frontend.FellesResources.SKJEMA_LESS;
+import static no.nav.modig.frontend.FellesResources.TOOLTIP_LESS;
+import static no.nav.modig.frontend.FellesResources.TOOLTIP_RESOURCE;
+import static no.nav.modig.frontend.FellesResources.TRANSITIONS_RESOURCE;
+import static no.nav.modig.frontend.FellesResources.TYPOGRAFI_LESS;
+import static no.nav.modig.frontend.FellesResources.UNDERSCORE_RESOURCE;
+import static no.nav.modig.frontend.FellesResources.VARIABLES_LESS;
+import static no.nav.modig.frontend.FellesResources.WICKET_MODAL_WINDOW;
 
 
 public class FrontendModules {
 
+	public static final FrontendModule EKSTERNFLATE = new FrontendModule.With()
+			.scripts(JQUERY_RESOURCE, HTML5_SHIV_RESOURCE, TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
+			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, KNAPPER_LESS,
+					DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS, EKSTERN_LESS).done();
+
 	public static final FrontendModule BOOTSTRAP_CORE = new FrontendModule.With()
 			.scripts(JS_TRANSITION)
-			.less(LESS_RESET,
-					LESS_NAV_VARIABLES,
-					LESS_MIXINS,
-					LESS_SCAFFOLDING,
-					LESS_GRID,
-					LESS_LAYOUTS,
-					LESS_TYPE,
-					LESS_CODE,
-					LESS_FORMS,
-					LESS_TABLES,
-					LESS_COMPONENTANIMATIONS,
-					LESS_CLOSE,
-					LESS_HEROUNIT,
-					LESS_UTILITIES,
-					WICKET_MODAL_WINDOW,
-					NAV_DATEPICKER
-			).done();
+			.less(LESS_RESET, LESS_VARIABLES, LESS_MIXINS, LESS_SCAFFOLDING, LESS_GRID, LESS_LAYOUTS,
+					LESS_TYPE, LESS_CODE, LESS_FORMS, LESS_TABLES, LESS_COMPONENTANIMATIONS, LESS_CLOSE,
+					LESS_HEROUNIT, LESS_UTILITIES, WICKET_MODAL_WINDOW, NAV_DATEPICKER).done();
 
 	public static final FrontendModule BOOTSTRAP_SPRITES = new FrontendModule.With().less(LESS_SPRITES).images(ICONS, ICONS_WHITE).done();
 	public static final FrontendModule BOOTSTRAP_WELLS = new FrontendModule.With().less(LESS_WELLS).done();
@@ -101,11 +110,8 @@ public class FrontendModules {
 	public static final FrontendModule BOOTSTRAP_SCROLLSPY = new FrontendModule.With().scripts(JS_SCROLLSPY).done();
 
 	public static final FrontendModule BOOTSTRAP_RESPONSIVE = new FrontendModule.With().less(
-			LESS_RESPONSIVE_UTILITIES,
-			LESS_RESPONSIVE_1200MIN,
-			LESS_RESPONSIVE_768_979,
-			LESS_RESPONSIVE_767MAX,
-			LESS_RESPONSIVE_NAVBAR).done();
+			LESS_RESPONSIVE_UTILITIES, LESS_RESPONSIVE_1200MIN, LESS_RESPONSIVE_768_979,
+			LESS_RESPONSIVE_767MAX, LESS_RESPONSIVE_NAVBAR).done();
 
 
 	public static final FrontendModule UNDERSCORE = new FrontendModule.With().scripts(UNDERSCORE_RESOURCE).done();

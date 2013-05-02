@@ -6,14 +6,11 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.PackageResourceReference;
 
 
-class FrontendResources {
+class EksternflateResources {
 
-	static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.9.1.js");
-	static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = jsReference("html5.js");
-	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = jsReference("underscore.js");
-
-	static final PackageResourceReference WICKET_MODAL_WINDOW = lessReference("felles/modal.less");
-	static final PackageResourceReference NAV_DATEPICKER = lessReference("felles/datepicker.less");
+	static final PackageResourceReference FOOTER_LESS = lessReference("ekstern/footer.less");
+	static final PackageResourceReference PANEL_LESS = lessReference("ekstern/panel.less");
+	static final PackageResourceReference EKSTERN_LESS = lessReference("ekstern/ekstern.less");
 
 
 	private static JavaScriptResourceReference jsReference(String path) {

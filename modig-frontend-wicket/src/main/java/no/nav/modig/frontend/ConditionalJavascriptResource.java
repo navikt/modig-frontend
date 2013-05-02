@@ -7,7 +7,7 @@ import org.apache.wicket.request.resource.ResourceReference;
 
 public class ConditionalJavascriptResource extends JavaScriptReferenceHeaderItem {
 
-    protected static final ConditionalJavascriptResource HTML5_SHIV = new ConditionalJavascriptResource(FrontendResources.HTML5_SHIV_RESOURCE, "lt IE 9");
+    protected static final ConditionalJavascriptResource HTML5_SHIV = new ConditionalJavascriptResource(FellesResources.HTML5_SHIV_RESOURCE, "lt IE 9");
 
     /**
      * Creates a new {@code JavaScriptReferenceHeaderItem}.

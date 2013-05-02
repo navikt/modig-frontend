@@ -324,7 +324,7 @@ public class FrontendConfigurator {
 
         switch (jquerySource) {
             case FRONTEND:
-                JavaScriptResourceReference jqueryResource = FrontendResources.JQUERY_RESOURCE;
+                JavaScriptResourceReference jqueryResource = FellesResources.JQUERY_RESOURCE;
                 application.getJavaScriptLibrarySettings().setJQueryReference(jqueryResource);
                 application.mountResource(basePath + "/js/" + jqueryResource.getName(), jqueryResource);
                 scriptBuilder.addScript(jqueryResource);
