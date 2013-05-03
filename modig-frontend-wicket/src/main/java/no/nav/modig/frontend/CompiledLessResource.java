@@ -32,7 +32,8 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
     private final List<PackageResourceReference> references;
     private byte[] compiledBytes;
-    private Time compiledModifiedTime = Time.START_OF_UNIX_TIME;
+    private Time compiledTime = Time.START_OF_UNIX_TIME;
+    private int compileCount = 0;
 
     public CompiledLessResource(List<PackageResourceReference> references) {
         this.references = references;
@@ -46,14 +47,14 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
         resourceResponse.setLastModified(lastModified);
         if (resourceResponse.dataNeedsToBeWritten(attributes)) {
             try {
-                updateCompiledResource(lastModified);
+                final byte[] compiledResource = getCompiledResource(lastModified);
 
                 resourceResponse.setContentType("text/css");
-                resourceResponse.setContentLength(compiledBytes.length);
+                resourceResponse.setContentLength(compiledResource.length);
                 resourceResponse.setWriteCallback(new WriteCallback() {
                     @Override
                     public void writeData(Attributes attributes) {
-                        attributes.getResponse().write(compiledBytes);
+                        attributes.getResponse().write(compiledResource);
                     }
                 });
 
@@ -65,12 +66,19 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
         return resourceResponse;
     }
 
-    private void updateCompiledResource(Time lastModified) throws ResourceStreamException, LessException {
-        if (lastModified.greaterThan(compiledModifiedTime)) {
-            String compiled = compileResources();
-            compiledBytes = compressResource(compiled).getBytes();
-            compiledModifiedTime = lastModified;
+    private byte[] getCompiledResource(final Time lastModified) throws ResourceStreamException, LessException {
+        // Double checked locking
+        if (lastModified.greaterThan(compiledTime)) {
+            synchronized (this) {
+                if (lastModified.greaterThan(compiledTime)) {
+                    String compiled = compileResources();
+                    compiledBytes = compressResource(compiled).getBytes();
+                    compiledTime = lastModified;
+                    compileCount++;
+                }
+            }
         }
+        return compiledBytes;
     }
 
     public String compileResources() throws ResourceStreamException, LessException {
@@ -83,7 +91,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
         StringWriter stringWriter = new StringWriter();
         for (PackageResourceReference lessReference : references) {
             IResourceStream resourceStream = lessReference.getResource().getResourceStream();
-            if(resourceStream == null) {
+            if (resourceStream == null) {
                 throw new ResourceStreamException("Unable to find resource");
             }
 
@@ -145,8 +153,8 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
             @Override
             public InputStream getInputStream() throws ResourceStreamNotFoundException {
                 try {
-                    updateCompiledResource(getLastModified());
-                    return new ByteArrayInputStream(compiledBytes);
+                    byte[] compiledResource = getCompiledResource(getLastModified());
+                    return new ByteArrayInputStream(compiledResource);
                 } catch (ResourceStreamException | LessException e) {
                     throw new ResourceStreamNotFoundException(e);
                 }
@@ -170,6 +178,10 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
             compressor = Application.get().getResourceSettings().getCssCompressor();
         }
         return compressor;
+    }
+
+    public int getCompileCount() {
+        return compileCount;
     }
 
     private static class CacheKey implements Serializable {
