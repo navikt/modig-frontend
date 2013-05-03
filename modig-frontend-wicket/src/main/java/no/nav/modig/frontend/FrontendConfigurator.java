@@ -231,6 +231,10 @@ public class FrontendConfigurator {
     }
 
     private void configureLess(WebApplication application) {
+        if(lessReferences.isEmpty()) {
+            return;
+        }
+
         // Allowing less files to be loaded as resources
         SecurePackageResourceGuard resourceGuard = (SecurePackageResourceGuard) application.getResourceSettings().getPackageResourceGuard();
         resourceGuard.addPattern("+*.less");
