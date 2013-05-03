@@ -31,8 +31,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
     private static final Logger log = LoggerFactory.getLogger(CompiledLessResource.class);
 
     private final List<PackageResourceReference> references;
-    private byte[] compiledBytes;
-    private Time compiledTime = Time.START_OF_UNIX_TIME;
+    private CompiledUnit compiledUnit = new CompiledUnit();
     private int compileCount = 0;
 
     public CompiledLessResource(List<PackageResourceReference> references) {
@@ -68,17 +67,17 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
     private byte[] getCompiledResource(final Time lastModified) throws ResourceStreamException, LessException {
         // Double checked locking
-        if (lastModified.greaterThan(compiledTime)) {
+        if (lastModified.greaterThan(compiledUnit.getCompiledTime())) {
             synchronized (this) {
-                if (lastModified.greaterThan(compiledTime)) {
+                if (lastModified.greaterThan(compiledUnit.getCompiledTime())) {
                     String compiled = compileResources();
-                    compiledBytes = compressResource(compiled).getBytes();
-                    compiledTime = lastModified;
-                    compileCount++;
+                    String compressed = compressResource(compiled);
+                    this.compiledUnit = new CompiledUnit(compressed.getBytes(), lastModified);
+                    this.compileCount++;
                 }
             }
         }
-        return compiledBytes;
+        return compiledUnit.getCompiledBytes();
     }
 
     public String compileResources() throws ResourceStreamException, LessException {
@@ -195,6 +194,34 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
         private ResourceStreamException(String message, Throwable cause) {
             super(message, cause);
+        }
+    }
+
+    /**
+     * Contains the compiled bytes and last modified time for the resources at the compilation time.
+     *
+     * Immutable.
+     */
+    private final class CompiledUnit {
+        private final  byte[] compiledBytes;
+        private final Time compiledTime;
+
+        private CompiledUnit() {
+            compiledBytes = new byte[]{};
+            compiledTime = Time.START_OF_UNIX_TIME;
+        }
+
+        private CompiledUnit(byte[] compiledBytes, Time compiledTime) {
+            this.compiledBytes = compiledBytes;
+            this.compiledTime = compiledTime;
+        }
+
+        private byte[] getCompiledBytes() {
+            return compiledBytes;
+        }
+
+        private Time getCompiledTime() {
+            return compiledTime;
         }
     }
 
