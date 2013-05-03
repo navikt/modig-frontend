@@ -32,7 +32,6 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
     private final List<PackageResourceReference> references;
     private CompiledUnit compiledUnit = new CompiledUnit();
-    private int compileCount = 0;
 
     public CompiledLessResource(List<PackageResourceReference> references) {
         this.references = references;
@@ -73,7 +72,6 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
                     String compiled = compileResources();
                     String compressed = compressResource(compiled);
                     this.compiledUnit = new CompiledUnit(compressed.getBytes(), lastModified);
-                    this.compileCount++;
                 }
             }
         }
@@ -180,7 +178,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
     }
 
     public int getCompileCount() {
-        return compileCount;
+        return compiledUnit.getVersion();
     }
 
     private static class CacheKey implements Serializable {
@@ -202,18 +200,21 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
      *
      * Immutable.
      */
-    private final class CompiledUnit {
+    private static final class CompiledUnit {
+        private static int count = 0;
+
         private final  byte[] compiledBytes;
         private final Time compiledTime;
+        private final int version;
 
         private CompiledUnit() {
-            compiledBytes = new byte[]{};
-            compiledTime = Time.START_OF_UNIX_TIME;
+            this(new byte[]{}, Time.START_OF_UNIX_TIME);
         }
 
         private CompiledUnit(byte[] compiledBytes, Time compiledTime) {
             this.compiledBytes = compiledBytes;
             this.compiledTime = compiledTime;
+            version = count++;
         }
 
         private byte[] getCompiledBytes() {
@@ -222,6 +223,10 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
         private Time getCompiledTime() {
             return compiledTime;
+        }
+
+        private int getVersion() {
+            return version;
         }
     }
 
