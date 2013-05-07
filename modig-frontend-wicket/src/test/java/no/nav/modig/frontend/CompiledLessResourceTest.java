@@ -46,6 +46,7 @@ public class CompiledLessResourceTest extends BaseWicketTest {
     @Test
     public void reusesTheCompiledResultIfResourcesAreNotModified() throws InterruptedException {
         createApplication();
+        CompiledLessResource.CompiledUnit.resetCount();
 
         // Wicket tester is not thread safe
         ExecutorService executorService = Executors.newFixedThreadPool(1);

@@ -200,7 +200,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
      *
      * Immutable.
      */
-    private static final class CompiledUnit {
+    static final class CompiledUnit {
         private static int count = 0;
 
         private final  byte[] compiledBytes;
@@ -214,7 +214,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
         private CompiledUnit(byte[] compiledBytes, Time compiledTime) {
             this.compiledBytes = compiledBytes;
             this.compiledTime = compiledTime;
-            version = count++;
+            version = ++count;
         }
 
         private byte[] getCompiledBytes() {
@@ -227,6 +227,9 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
         private int getVersion() {
             return version;
+        }
+        static void resetCount(){
+            count = 0;
         }
     }
 
