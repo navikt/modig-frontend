@@ -70,10 +70,13 @@ a, span, p, div, th, td, select, input, textarea {
 }
 
 [class*="strek-ikon-soknad"], [class*="ikon-soknad-strek"] {
-	background-image: url(../img/under-dark.png), url(../img/sprite.svg);
-	background-position: bottom center, center -33px;
+	background-image: url(../img/under-dark.png), url(../img/soknad.svg);
+	background-position: bottom center, center -1px;
 	padding-bottom: 15px;
 	margin-bottom: 15px !important;
+	&:hover {
+		background-position: bottom center, center -366px;
+	}
 }
 
 [class*="ikon-soknad"]:not([class*="strek"]) {
@@ -82,13 +85,16 @@ a, span, p, div, th, td, select, input, textarea {
 }
 
 [class*="strek-ikon-profil"], [class*="ikon-profil-strek"] {
-	background-image: url(../img/under-dark.png), url(../img/sprite.svg);
-	background-position: bottom center, center -233px;
+	background-image: url(../img/under-dark.png), url(../img/profil.svg);
+	background-position: bottom center, center -1px;
 	padding-bottom: 15px;
 	margin-bottom: 15px !important;
+	&:hover {
+		background-position: bottom center, center -366px;
+	}
 }
 
 [class*="ikon-profil"]:not([class*="strek"]) {
-	background-image: url(../img/sprite.svg);
-	background-position: center top;
+	background-image: url(../img/profil.svg);
+	background-position: center -1px;
 }
