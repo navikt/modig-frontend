@@ -34,6 +34,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
     private final List<PackageResourceReference> references;
     private CompiledUnit compiledUnit = new CompiledUnit();
+    private LessCompiler lessCompiler;
 
     public CompiledLessResource(List<PackageResourceReference> references) {
         this.references = references;
@@ -78,11 +79,23 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
     public String compileResources() {
         try {
             String concatenatedResources = getResourceString();
-            LessCompiler lessCompiler = new LessCompiler();
-            return lessCompiler.compile(concatenatedResources);
+            return getLessCompiler().compile(concatenatedResources);
         } catch (LessException e) {
             throw new WicketRuntimeException("Could not compile concatedated less resources", e);
         }
+    }
+
+    private LessCompiler getLessCompiler() {
+        // Return a fresh instance if in production mode
+        // (Don't keep rhino around)
+        if(Application.get().usesDeploymentConfig()) {
+            return new LessCompiler();
+        }
+
+        if(lessCompiler == null) {
+            lessCompiler = new LessCompiler();
+        }
+        return lessCompiler;
     }
 
     private String getResourceString() {
