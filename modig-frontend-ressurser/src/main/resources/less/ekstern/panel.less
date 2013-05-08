@@ -1,41 +1,37 @@
-.sak [class^="panel-"] {
-	margin-right: 1%;
+[class*="sak-"] [class*="panel-"] {
+	margin-right: 2%;
 }
 
-.sak [class^="panel-"]:last-child {
+[class*="sak-"] [class*="panel-"]:last-child {
 	margin-right: 0;
 }
 
-.sak-kvart [class^="panel-"] {
-	width: 24%;
+.sak-kvart [class*="panel-"] {
+	width: 23%;
 }
 
-.sak-tredel [class^="panel-"] {
-	width: 32.3333%;
+.sak-tredel [class*="panel-"] {
+	width: 31.3333%;
 }
 
-.sak-halv [class^="panel-"] {
-	width: 49%;
+.sak-halv [class*="panel-"] {
+	width: 48%;
 }
 
-.sak-totredel [class^="panel-"] {
-	width: 65.6666%;
+.sak-totredel [class*="panel-"] {
+	width: 64.6666%;
 }
 
-.sak-trekvart [class^="panel-"] {
-	width: 74%;
+.sak-trekvart [class*="panel-"] {
+	width: 73%;
 }
 
-.sak-hel [class^="panel-"] {
+.sak-hel [class*="panel-"] {
 	width: 100%;
 }
 
-[class^="rad"] {
-	padding: 30px;
-}
-
 .rad {
-	text-align: center;
+	padding: 30px;
 }
 
 .rad-logo {
@@ -46,42 +42,66 @@
 	padding: 0 30px;
 }
 
+.rad-plakat {
+	padding: 0 30px;
+}
+
 .rad-belyst {
 	background-color: #fff;
+	padding: 30px;
 }
 
-[class^="panel-mini"] {
+[class*="panel-"] {
 	display: inline-block;
-	text-align: center;
-	h1, h2, h3 {
-		margin-top: 14px;
+	&[class*="-belyst"] {
+		background-color: #fff;
+		padding: 1.5% 2% 3%;
+		border: 1px solid #ddd;
+	}
+	&[class*="-dus"] {
+		background-color: #ddd;
+		padding: 1.5% 2% 3%;
+		border: 1px solid #ddd;
+	}
+	&[class*="-klikk"] {
+		background-color: #fff;
+		padding: 1.5% 2% 3%;
+		border: 1px solid #ddd;
+		cursor: pointer;
+		&:hover {
+			background-color: #ddd;
+		}
 	}
 	p {
-		font-size: 1rem;
+		margin: 0;
+		line-height: 1.4rem;
+		&.ingress {
+			margin: 1.2rem 0;
+		}
 	}
 }
 
-.panel-mini-belyst, .panel-standard-belyst {
-	background-color: #fff;
-	padding: .5% 2% 1%;
-	border: 1px solid #ddd;
+[class*="panel-mini"] {
+	[class*="ikon-"] {
+		margin-top: 4px;
+	}
+	[class*="robust"]:not([class*="ikon-"]) {
+		margin-top: 14px;
+	}
+	.footer {
+		position: absolute;
+		height: 6rem;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		[class*="knapp"] {
+			margin-bottom: 1rem;
+		}
+	}
 }
 
-[class^="panel-standard"] {
-	display: inline-block;
+[class*="panel-standard"] {
 	text-align: left;
-}
-
-[class^="alert"] {
-	display: inline-block;
-	text-align: center;
-	border: 1px solid #ddd;
-	padding: 2%;
-	width: 33.3333%;
-}
-
-.alert-belyst {
-	background-color: #fff;
 }
 
 .plakat {
@@ -96,13 +116,27 @@
 	background-size: 1870px 270px;
 	background-position: -425px 0;
 	margin-bottom: 0;
-	.panel-mini {
+	[class*="panel-mini"] {
 		position: absolute;
 		top: 25px;
 		right: 100px;
 		width: 280px;
-		H1 {
+		h1 {
 			letter-spacing: 0;
 		}
 	}
 }
+
+.oppfordring {
+	float: none;
+	margin: 48px auto 50px;
+	background: #b7b1a9;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+	h1 {
+		font-size: 17px;
+		text-transform: uppercase;
+	}
+}
+

@@ -1,35 +1,18 @@
 div.wicket-mask-dark {
-	background-image: none;
+	background-color: #000;
 	opacity: 0.7;
+	right: 0;
+	bottom: 0;
 }
 
 div.wicket-modal {
+	background: #fff;
+	z-index: 20001;
 	div {
-		&.w_top_1 {
-			display: none;
-		}
-		&.w_right_1 {
-			margin-left: 0;
-		}
-		&.w_content_1 {
-			margin-right: 0;
-		}
-		.w_content_2 {
-			padding-top: 38px;
-		}
-		&.w_content_3 {
-			border: none;
-			padding: 0;
-		}
 		&.w_caption {
-			position: absolute !important;
-			right: 0;
-			top: 0;
-			left: 0;
 			height: 38px;
-			margin-top: 0;
-			background-color: #fff;
 			border-bottom: 1px solid #ddd;
+			text-align: right;
 			&:hover {
 				cursor: move;
 			}
@@ -37,40 +20,11 @@ div.wicket-modal {
 				display: none;
 			}
 		}
-		&.w_bottom_1 {
-			display: none;
-		}
-		&.w_blue {
-			div {
-				&.w_left,
-				&.w_right&.w_top,
-				&.w_bottom,
-				&.w_topLeft,
-				&.w_topRight,
-				&.w_bottomRight,
-				&.w_bottomLeft {
-					background: none !important;
-				}
-			}
-		}
-		&.w_silver {
-			div {
-				&.w_left,
-				&.w_right,
-				&.w_top,
-				&.w_bottom,
-				&.w_topLeft,
-				&.w_topRight,
-				&.w_bottomRight,
-				&.w_bottomLeft {
-					background: none !important;
-				}
-			}
-		}
 		a.w_close {
-			right: 5px;
-			margin-top: 5px;
-			padding: 5px;
+			display: inline-block;
+			width: 26px;
+			height: 26px;
+			margin: 6px;
 			border: 1px solid #ddd;
 			background-color: #fff;
 			background-position: 5px 5px !important;
@@ -79,6 +33,9 @@ div.wicket-modal {
 			&:hover {
 				background-color: #efefef !important;
 			}
+		}
+		&.w_content_container {
+			padding: 14px 20px;
 		}
 	}
 }

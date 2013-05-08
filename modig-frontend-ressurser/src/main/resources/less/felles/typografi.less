@@ -55,7 +55,6 @@ a, span, p, div, th, td, select, input, textarea {
 }
 
 [class*="-ikon-"] {
-	background-size: 32px auto;
 	background-repeat: no-repeat;
 	text-align: center;
 	padding-top: 48px;
@@ -65,32 +64,31 @@ a, span, p, div, th, td, select, input, textarea {
 	background-image: url(../img/under-dark.png);
 	background-position: bottom center;
 	background-repeat: no-repeat;
-	padding-bottom: 12px;
-	margin-bottom: 12px !important;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
 	text-align: center;
 }
 
 [class*="strek-ikon-soknad"], [class*="ikon-soknad-strek"] {
-	background-image: url(../img/under-dark.png), url(../img/sirkel-blaa.png);
-	background-position: bottom center, center top;
-	padding-bottom: 12px;
-	margin-bottom: 12px !important;
+	background-image: url(../img/under-dark.png), url(../img/sprite.svg);
+	background-position: bottom center, center -33px;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
 }
 
 [class*="ikon-soknad"]:not([class*="strek"]) {
-	background-image: url(../img/sirkel-blaa.png);
+	background-image: url(../img/sprite.svg);
 	background-position: center top;
 }
 
-[class*="strek-ikon-vedtak"], [class*="ikon-vedtak-strek"] {
-	background-image: url(../img/under-dark.png), url(../img/sirkel-graa.png);
-	background-position: bottom center, center top;
-	padding-bottom: 12px;
-	margin-bottom: 12px !important;
+[class*="strek-ikon-profil"], [class*="ikon-profil-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/sprite.svg);
+	background-position: bottom center, center -233px;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
 }
 
-[class*="ikon-vedtak"]:not([class*="strek"]) {
-	background-image: url(../img/sirkel-graa.png);
+[class*="ikon-profil"]:not([class*="strek"]) {
+	background-image: url(../img/sprite.svg);
 	background-position: center top;
 }
-

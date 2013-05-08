@@ -78,10 +78,10 @@ import static no.nav.modig.frontend.FellesResources.WICKET_MODAL_WINDOW;
 
 public class FrontendModules {
 
-	public static final FrontendModule EKSTERNFLATE = new FrontendModule.With()
+	public static final FrontendModule SCULPTOR = new FrontendModule.With()
 			.scripts(JQUERY_RESOURCE, HTML5_SHIV_RESOURCE, TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
-			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, KNAPPER_LESS,
-					DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS, EKSTERN_LESS).done();
+			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS,
+					DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, EKSTERN_LESS).done();
 
 	public static final FrontendModule BOOTSTRAP_CORE = new FrontendModule.With()
 			.scripts(JS_TRANSITION)
@@ -114,5 +114,5 @@ public class FrontendModules {
 			LESS_RESPONSIVE_767MAX, LESS_RESPONSIVE_NAVBAR).done();
 
 
-	public static final FrontendModule UNDERSCORE = new FrontendModule.With().scripts(UNDERSCORE_RESOURCE).done();
+	public static final FrontendModule UNDERSCORE = new FrontendModule.With().scripts(JQUERY_RESOURCE, UNDERSCORE_RESOURCE).done();
 }

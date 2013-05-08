@@ -2,42 +2,68 @@
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -40px;
+	margin: 0 auto -142px;
 	.fyllut {
-		height: 40px;
+		height: 142px;
 	}
 }
 
 .liste-vannrett {
 	display: inline-block;
 	list-style: none;
-	:not([class="dropdown"]) li {
+	margin: 0;
+	li {
 		float: left;
-		a {
-			text-decoration: none;
-			white-space: nowrap;
-			padding: 0.8rem 0.5rem 0.4rem;
-			&:before {
-				color: #999;
-				content: "•";
-				list-style-type: none;
-				padding-right: 1rem;
+		&:not([class*="dropdown"]) {
+			margin-top: 12px;
+			a {
+				text-decoration: none;
+				white-space: nowrap;
+				padding: 0.6rem 0.5rem 0.6rem;
+				&:before {
+					color: #999;
+					content: "•";
+					list-style-type: none;
+					padding-right: 1rem;
+				}
+			}
+			&:first-child {
+				a:before {
+					content: "";
+				}
 			}
 		}
-		&:first-child {
+	}
+	.dropdown {
+		float: left;
+		+ li {
 			a:before {
 				content: "";
 			}
 		}
-	}
-	.dropdown + li {
-		a:before {
-			content: "";
+		.dropdown-menu {
+			li {
+				float: none;
+				margin: 0;
+				text-align: left;
+				&.active a {
+					color: #fff;
+				}
+				a {
+					color: @grayDark;
+					&:before {
+						content: "";
+					}
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
 		}
 	}
 }
 
-.innstillinger {
+[class*="innstillinger"] {
 	position: static;
 	top: 0;
 	right: 0;
@@ -48,7 +74,22 @@
 	background: #333;
 	padding: 0;
 	min-height: 40px;
-	.liste-vannrett li a {
+	.logginn, .loggut {
+		float: right;
+		background: none;
+	}
+	.liste-vannrett {
+		li {
+			a {
+				color: #fff;
+			}
+		}
+	}
+}
+
+.innstillinger-innlogget {
+	background: #c30000;
+	.liste-vannrett li:not([class*="dropdown"]) a:before {
 		color: #fff;
 	}
 }
@@ -73,11 +114,9 @@
 		&:last-child {
 			margin-right: 0;
 		}
-		&.active a {
+		&.aktiv a {
 			background: #c30000;
-			.info {
-				color: #fff;
-			}
+			color: #fff;
 		}
 		a {
 			display: block;
@@ -85,31 +124,9 @@
 			padding: 10px 30px;
 			border: 1px solid #ddd;
 			background: #fff;
+			color: #333;
 			text-decoration: none;
-			.info {
-				display: block;
-				color: #333;
-				text-transform: uppercase;
-			}
-			.ikon-steg {
-				display: block;
-				width: 24px;
-				height: 24px;
-				line-height: 17px;
-				text-align: center;
-				font-size: 17px;
-				margin: 0 auto 4px;
-				padding-top: 4px;
-				color: #fff;
-				background-image: url(../img/sirkel-graa.png);
-				background-repeat: no-repeat;
-				background-position: center center;
-				background-size: 24px auto;
-				&.aktiv {
-					color: #c30000;
-					background-image: url(../img/sirkel-hvit.png);
-				}
-			}
+			text-transform: uppercase;
 		}
 	}
 }

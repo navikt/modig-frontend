@@ -1,23 +1,30 @@
+.form-linje {
+	padding: 2px 0.5rem;
+}
+
 form label {
-	display: block;
-	margin-bottom: 10px;
+	font-size: 0.85rem;
+	text-transform: uppercase;
 }
 
 form.horisontal {
 	label {
+		position: relative;
+		padding: 1rem 0 0.5rem;
+		input, select, textarea {
+			margin-left: 1rem;
+		}
 		span {
 			display: inline-block;
 			font-size: 0.85rem;
 			text-transform: uppercase;
-			width: 5rem;
+			width: 11rem;
 		}
 	}
 }
 
 form.vertikal {
 	label {
-		font-size: 0.85rem;
-		text-transform: uppercase;
 		input, select, textarea {
 			display: block;
 			&[type="checkbox"], &[type="radio"] {
