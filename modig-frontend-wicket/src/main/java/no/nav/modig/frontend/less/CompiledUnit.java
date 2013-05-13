@@ -23,7 +23,7 @@ final class CompiledUnit {
     CompiledUnit(byte[] compiledBytes, Time compiledTime) {
         this.compiledBytes = compiledBytes;
         this.compiledTime = compiledTime;
-        version = ++count;
+        version = getNextVersion();
     }
 
     public byte[] getCompiledBytes() {
@@ -38,7 +38,11 @@ final class CompiledUnit {
         return version;
     }
 
-    public static void resetCount() {
+    public static void resetVersion() {
         count = 0;
+    }
+
+    public static int getNextVersion() {
+        return ++count;
     }
 }
