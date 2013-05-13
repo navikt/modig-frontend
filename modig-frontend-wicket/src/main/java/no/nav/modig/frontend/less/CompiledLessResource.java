@@ -19,6 +19,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ public class CompiledLessResource extends AbstractResource implements IStaticCac
 
     private final ResourceBundle resourceBundle;
     private CompiledUnit compiledUnit = new CompiledUnit();
-    private LessCompiler lessCompiler;
+    private WeakReference<LessCompiler> lessCompilerRef;
 
     public CompiledLessResource(List<PackageResourceReference> references) {
         this.resourceBundle = new ResourceBundle(references);
@@ -87,14 +88,14 @@ public class CompiledLessResource extends AbstractResource implements IStaticCac
     }
 
     private LessCompiler getLessCompiler() {
-        // Return a fresh instance if in production mode
-        // (Don't keep rhino around)
-        if (Application.get().usesDeploymentConfig()) {
-            return new LessCompiler();
+        LessCompiler lessCompiler = null;
+        if(lessCompilerRef != null) {
+            lessCompiler = lessCompilerRef.get();
         }
 
         if (lessCompiler == null) {
             lessCompiler = new LessCompiler();
+            lessCompilerRef = new WeakReference<>(lessCompiler);
         }
         return lessCompiler;
     }
