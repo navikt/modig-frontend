@@ -26,6 +26,10 @@ import java.util.List;
 
 /**
  * Resource for compiled less files. Compiles less files and serves them as css.
+ *
+ * NOT A PART OF THE PUBLIC API
+ *
+ * Use {@link FrontendConfigurator} to setup less compilation
  */
 class CompiledLessResource extends AbstractResource implements IStaticCacheableResource {
     private static final long serialVersionUID = 1L;
