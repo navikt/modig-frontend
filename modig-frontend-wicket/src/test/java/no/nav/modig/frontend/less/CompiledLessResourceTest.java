@@ -1,5 +1,6 @@
-package no.nav.modig.frontend;
+package no.nav.modig.frontend.less;
 
+import no.nav.modig.frontend.BaseWicketTest;
 import org.apache.wicket.Application;
 import org.apache.wicket.ThreadContext;
 import org.apache.wicket.markup.html.SecurePackageResourceGuard;
@@ -8,7 +9,6 @@ import org.apache.wicket.protocol.http.mock.MockHttpServletRequest;
 import org.apache.wicket.protocol.http.mock.MockHttpServletResponse;
 import org.apache.wicket.protocol.http.mock.MockHttpSession;
 import org.apache.wicket.request.resource.PackageResourceReference;
-import org.apache.wicket.request.resource.ResourceReference;
 import org.apache.wicket.request.resource.SharedResourceReference;
 import org.junit.Test;
 
@@ -19,16 +19,15 @@ import java.util.concurrent.TimeUnit;
 import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 
 /**
- * Tests for {@link CompiledLessResource}
+ * Tests for {@link no.nav.modig.frontend.less.CompiledLessResource}
  */
 public class CompiledLessResourceTest extends BaseWicketTest {
 
 
-    public static final PackageResourceReference LESS_RESOURCE_1 = new PackageResourceReference(CompiledLessResourceTest.class, "less/file1.less");
-    public static final PackageResourceReference LESS_RESOURCE_2 = new PackageResourceReference(CompiledLessResourceTest.class, "less/file2.less");
+    public static final PackageResourceReference LESS_RESOURCE_1 = new PackageResourceReference(CompiledLessResourceTest.class, "file1.less");
+    public static final PackageResourceReference LESS_RESOURCE_2 = new PackageResourceReference(CompiledLessResourceTest.class, "file2.less");
 
     @Test
     public void compilesLessFiles() {
@@ -46,7 +45,7 @@ public class CompiledLessResourceTest extends BaseWicketTest {
     @Test
     public void reusesTheCompiledResultIfResourcesAreNotModified() throws InterruptedException {
         createApplication();
-        CompiledLessResource.CompiledUnit.resetCount();
+        CompiledUnit.resetCount();
 
         // Wicket tester is not thread safe
         ExecutorService executorService = Executors.newFixedThreadPool(1);

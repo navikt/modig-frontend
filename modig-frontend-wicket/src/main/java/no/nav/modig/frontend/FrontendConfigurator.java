@@ -2,6 +2,7 @@ package no.nav.modig.frontend;
 
 import no.nav.modig.frontend.compressors.Wro4jCssCompressor;
 import no.nav.modig.frontend.compressors.Wro4jJsCompressor;
+import no.nav.modig.frontend.less.CompiledLessResource;
 import no.nav.modig.frontend.merged.MergedCssBuilder;
 import no.nav.modig.frontend.merged.MergedJavaScriptBuilder;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;

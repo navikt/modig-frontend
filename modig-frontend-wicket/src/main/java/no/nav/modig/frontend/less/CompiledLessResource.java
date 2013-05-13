@@ -1,13 +1,11 @@
-package no.nav.modig.frontend;
+package no.nav.modig.frontend.less;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.wicket.Application;
 import org.apache.wicket.WicketRuntimeException;
 import org.apache.wicket.css.ICssCompressor;
 import org.apache.wicket.request.resource.AbstractResource;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.request.resource.caching.IStaticCacheableResource;
-import org.apache.wicket.util.lang.Checks;
 import org.apache.wicket.util.resource.AbstractResourceStream;
 import org.apache.wicket.util.resource.IResourceStream;
 import org.apache.wicket.util.resource.ResourceStreamNotFoundException;
@@ -21,34 +19,33 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
-import java.io.StringWriter;
 import java.util.List;
 
 /**
  * Resource for compiled less files. Compiles less files and serves them as css.
- *
+ * <p/>
  * NOT A PART OF THE PUBLIC API
- *
- * Use {@link FrontendConfigurator} to setup less compilation
+ * <p/>
+ * Use {@link no.nav.modig.frontend.FrontendConfigurator} to setup less compilation
  */
-class CompiledLessResource extends AbstractResource implements IStaticCacheableResource {
+public class CompiledLessResource extends AbstractResource implements IStaticCacheableResource {
     private static final long serialVersionUID = 1L;
 
     private static final Logger log = LoggerFactory.getLogger(CompiledLessResource.class);
 
-    private final List<PackageResourceReference> references;
+    private final ResourceBundle resourceBundle;
     private CompiledUnit compiledUnit = new CompiledUnit();
     private LessCompiler lessCompiler;
 
     public CompiledLessResource(List<PackageResourceReference> references) {
-        this.references = references;
+        this.resourceBundle = new ResourceBundle(references);
     }
 
 
     @Override
     protected ResourceResponse newResourceResponse(Attributes attributes) {
         ResourceResponse resourceResponse = new ResourceResponse();
-        Time lastModified = getLastModified();
+        Time lastModified = resourceBundle.getLastModified();
         resourceResponse.setLastModified(lastModified);
         if (resourceResponse.dataNeedsToBeWritten(attributes)) {
 
@@ -82,7 +79,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
     public String compileResources() {
         try {
-            String concatenatedResources = getResourceString();
+            String concatenatedResources = resourceBundle.getResourceString();
             return getLessCompiler().compile(concatenatedResources);
         } catch (LessException e) {
             throw new WicketRuntimeException("Could not compile concatedated less resources", e);
@@ -92,34 +89,17 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
     private LessCompiler getLessCompiler() {
         // Return a fresh instance if in production mode
         // (Don't keep rhino around)
-        if(Application.get().usesDeploymentConfig()) {
+        if (Application.get().usesDeploymentConfig()) {
             return new LessCompiler();
         }
 
-        if(lessCompiler == null) {
+        if (lessCompiler == null) {
             lessCompiler = new LessCompiler();
         }
         return lessCompiler;
     }
 
-    private String getResourceString() {
-        try {
-            StringWriter stringWriter = new StringWriter();
-            for (PackageResourceReference lessReference : references) {
-                IResourceStream resourceStream = getResourceStream(lessReference);
-                IOUtils.copy(resourceStream.getInputStream(), stringWriter, "utf-8");
-            }
-            return stringWriter.toString();
-        } catch (IOException | ResourceStreamNotFoundException e) {
-            throw new WicketRuntimeException("Could not concatenate resources", e);
-        }
-    }
 
-    private static IResourceStream getResourceStream(PackageResourceReference lessReference) {
-        IResourceStream resourceStream = lessReference.getResource().getResourceStream();
-        Checks.notNull(resourceStream, "Unable to find resource stream for resource reference [{}]", lessReference);
-        return resourceStream;
-    }
 
     private String compressResource(String nonCompressed) {
         ICssCompressor compressor = getCompressor();
@@ -135,17 +115,6 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
             // don't strip the comments
             return nonCompressed;
         }
-    }
-
-    public Time getLastModified() {
-        Time lastModifiedTime = Time.START_OF_UNIX_TIME;
-        for (PackageResourceReference reference : references) {
-            Time resourceLastModifiedTime = getResourceStream(reference).lastModifiedTime();
-            if (resourceLastModifiedTime.after(lastModifiedTime)) {
-                lastModifiedTime = resourceLastModifiedTime;
-            }
-        }
-        return lastModifiedTime;
     }
 
     @Override
@@ -164,7 +133,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
             @Override
             public InputStream getInputStream() throws ResourceStreamNotFoundException {
 
-                byte[] compiledResource = getCompiledResource(getLastModified());
+                byte[] compiledResource = getCompiledResource(resourceBundle.getLastModified());
                 return new ByteArrayInputStream(compiledResource);
             }
 
@@ -175,7 +144,7 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
 
             @Override
             public Time lastModifiedTime() {
-                return getLastModified();
+                return resourceBundle.getLastModified();
             }
         };
     }
@@ -193,45 +162,6 @@ class CompiledLessResource extends AbstractResource implements IStaticCacheableR
     }
 
     private static class CacheKey implements Serializable {
-    }
-
-    /**
-     * Contains the compiled bytes and last modified time for the resources at the compilation time.
-     * <p/>
-     * Immutable.
-     */
-    static final class CompiledUnit {
-        private static int count = 0;
-
-        private final byte[] compiledBytes;
-        private final Time compiledTime;
-        private final int version;
-
-        private CompiledUnit() {
-            this(new byte[]{}, Time.START_OF_UNIX_TIME);
-        }
-
-        private CompiledUnit(byte[] compiledBytes, Time compiledTime) {
-            this.compiledBytes = compiledBytes;
-            this.compiledTime = compiledTime;
-            version = ++count;
-        }
-
-        private byte[] getCompiledBytes() {
-            return compiledBytes;
-        }
-
-        private Time getCompiledTime() {
-            return compiledTime;
-        }
-
-        private int getVersion() {
-            return version;
-        }
-
-        static void resetCount() {
-            count = 0;
-        }
     }
 
 }
