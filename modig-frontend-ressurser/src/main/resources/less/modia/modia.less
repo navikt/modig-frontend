@@ -10,6 +10,12 @@
 		outline:none;
 	}
 	
+	UL {
+		list-style-type: none;
+ 		margin: 0;
+ 		padding: 0;
+	}
+	
 	HEADER {
 		padding: 0.8em 0;
 		
@@ -39,41 +45,34 @@
 	 	}
 	}
 	 	
- 	SECTION > UL, & > UL {
- 		list-style-type: none;
- 		margin: 0;
- 		
- 		> LI {
- 			display: block;
- 			margin: 0;
- 			position: relative;
+ 	& > UL > LI {
+		display: block;
+		margin: 0;
+		position: relative;
+	
+		border-top: 1px solid #FFF;
+		border-bottom: 1px solid #ccc;
 			
- 			border-top: 1px solid #FFF;
- 			border-bottom: 1px solid #ccc;
- 			
-			&:last-of-type {
-				border-bottom: none;
-			}
-		
-			&:hover:not(.selected) {
-				border-top: 1px solid #FFF;
-				background-color: #DADADA;
-			}
-			
-			A, A:visited, A:active {
-				overflow: auto;
-				display: block;
-				padding: 20px 30px;
-				
-				text-decoration: none;
-			}
+		&:last-of-type {
+			border-bottom: none;
 		}
 	
+		&:hover:not(.selected) {
+			border-top: 1px solid #FFF;
+			background-color: #DADADA;
+		}
+		
+		A, A:visited, A:active {
+			overflow: auto;
+			display: block;
+			padding: 20px 30px;
+			
+			text-decoration: none;
+		}
+
 		UL.metadata {
 			margin: 0 37px 0 0;
 			overflow: auto;
-			
-			list-style-type: none;
 			 
 			LI {
 				float: left;
@@ -97,13 +96,13 @@
 .widget-navigasjon {
 	.widget;
 	
-	SECTION > UL > LI, & > UL > LI {
+	& > UL > LI {
 		A:focus {
 			background-color: #00A9E0;
 			color: #FFF;
 			outline:none;
 			
-			.tidsrom {
+			.tidsrom, .subject, UL.metadata {
 				color: #FFF;
 			}
 			
@@ -155,27 +154,27 @@
 		}
 		
 		A.OK .tingstatus {
-			background: url(/img/gron-sjekk.png) bottom center no-repeat;
+			background: url(/intern-arbeidsflate/gfx/gont_ikon.png) bottom center no-repeat;
 		}
 		
 		A.OK:hover .tingstatus {
-			background: url(/img/gron-sjekk-hover.png) bottom center no-repeat;
+			background: url(/intern-arbeidsflate/gfx/gont_ikon_hover.png) bottom center no-repeat;
 		}
 		
 		A.OK:focus .tingstatus {
-			background: url(/img/gron-sjekk-fokus.png) bottom center no-repeat;
+			background: url(/intern-arbeidsflate/gfx/gront_fokus.png) bottom center no-repeat;
 		}
 		
 		A.ERROR .tingstatus {
-			background: url(/img/utropstegn.png) bottom center no-repeat;
+			background: url(/intern-arbeidsflate/gfx/utropstegn.png) bottom center no-repeat;
 		}
 		
 		A.ERROR:hover .tingstatus {
-			background: url(/img/utropstegn-hover.png) bottom center no-repeat;
+			background: url(/intern-arbeidsflate/gfx/utropstegn_hover.png) bottom center no-repeat;
 		}
 		
 		A.ERROR:focus .tingstatus {
-			background: url(/img/utropstegn-fokus.png) bottom center no-repeat;
+			background: url(/intern-arbeidsflate/gfx/utropstegn_fokus.png) bottom center no-repeat;
 		}
 	}
 }
@@ -187,74 +186,5 @@
 		color: #00A9E0;
 		font-size: 1.14em;
 		font-weight: bold;
-	}
-}
-
-/* Liste */
-.liste {
-	margin-bottom: 30px;
-	
-	border: 1px solid #ccc;
-		
-	H3 {
-		width: 100%;
-	 	padding: 0.8em 0;
-	 	margin: 0;
-		
-		text-align: center;
-	 	border-bottom: 1px solid #CCC; 
-	 	background-color: #F5F5F5;
-	}
-	 
-	P {
-		margin: 0.4em 0;
-	}
-	
-	> UL {
-		list-style-type: none;
-		margin: 0;
-		
-		> LI {
-			display: block;
-			margin: 0;
-			position: relative;
-			
-			border-top: 1px solid #FFF;
-			border-bottom: 1px solid #CCC;
-						
-			&:last-of-type {
-				border-bottom: none;
-			}
-			
-			&:hover:not(.selected) {
-				border-top: 1px solid #FFF;
-				background-color: #DADADA;
-			}
-
-            dl,a {
-              padding: 20px 30px;
-            }
-          
-			A, A:visited, A:active {
-				color: #333;
-				overflow: auto;
-				display: block;
-				text-decoration: none;
-			}
-
-            &.expandable  {
-            	background-image: url(/img/pil-hoyre.svg); background-position: 10px 25px;
-            	background-repeat: no-repeat;
-            	
-            	.hidden {
-            		display: none;
-            	}
-            }
-            
-            &.expanded {
-              background-color: #f1f1f1;
-              background-image: url(/img/pil-ned.svg);
-            }
-		}
 	}
 }
