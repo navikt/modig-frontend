@@ -21,6 +21,7 @@ class FellesResources {
 	static final PackageResourceReference VARIABLES_LESS = lessReference("felles/variables.less");
 	static final PackageResourceReference MIXINS_LESS = lessReference("felles/mixins.less");
 	static final PackageResourceReference MODUS_LESS = lessReference("felles/modus.less");
+	static final PackageResourceReference UTILITIES_LESS = lessReference("felles/utilities.less");
 	static final PackageResourceReference TYPOGRAFI_LESS = lessReference("felles/typografi.less");
 	static final PackageResourceReference FELLES_LESS = lessReference("felles/felles.less");
 	static final PackageResourceReference KNAPPER_LESS = lessReference("felles/knapper.less");

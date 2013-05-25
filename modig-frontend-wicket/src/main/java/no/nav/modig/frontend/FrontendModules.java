@@ -59,7 +59,6 @@ import static no.nav.modig.frontend.EksternflateResources.PANEL_LESS;
 import static no.nav.modig.frontend.FellesResources.DROPDOWNS_LESS;
 import static no.nav.modig.frontend.FellesResources.DROPDOWN_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.FELLES_LESS;
-import static no.nav.modig.frontend.FellesResources.HTML5_SHIV_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.JQUERY_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.KNAPPER_LESS;
 import static no.nav.modig.frontend.FellesResources.MIXINS_LESS;
@@ -72,6 +71,7 @@ import static no.nav.modig.frontend.FellesResources.TOOLTIP_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.TRANSITIONS_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.TYPOGRAFI_LESS;
 import static no.nav.modig.frontend.FellesResources.UNDERSCORE_RESOURCE;
+import static no.nav.modig.frontend.FellesResources.UTILITIES_LESS;
 import static no.nav.modig.frontend.FellesResources.VARIABLES_LESS;
 import static no.nav.modig.frontend.FellesResources.WICKET_MODAL_WINDOW;
 import static no.nav.modig.frontend.ModiaResources.MODIA_LESS;
@@ -79,10 +79,15 @@ import static no.nav.modig.frontend.ModiaResources.MODIA_LESS;
 
 public class FrontendModules {
 
-	public static final FrontendModule SCULPTOR = new FrontendModule.With()
-			.scripts(JQUERY_RESOURCE, /*HTML5_SHIV_RESOURCE,*/ TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
+	public static final FrontendModule EKSTERNFLATE = new FrontendModule.With()
+			.scripts(JQUERY_RESOURCE, TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
 			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS,
-					DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, EKSTERN_LESS).done();
+					DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS, EKSTERN_LESS).done();
+
+
+	@Deprecated
+	public static final FrontendModule SCULPTOR = EKSTERNFLATE;
+
 
 	public static final FrontendModule BOOTSTRAP_CORE = new FrontendModule.With()
 			.scripts(JS_TRANSITION)
@@ -91,7 +96,7 @@ public class FrontendModules {
 					LESS_HEROUNIT, LESS_UTILITIES, WICKET_MODAL_WINDOW, NAV_DATEPICKER).done();
 	
 	public static final FrontendModule MODIA = new FrontendModule.With()
-	.scripts(JQUERY_RESOURCE, /*HTML5_SHIV_RESOURCE,*/ TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
+	.scripts(JQUERY_RESOURCE, TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
 	.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS,
 			DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, MODIA_LESS).done();
 

@@ -35,7 +35,7 @@
 }
 
 .rad-logo {
-	background: #fff url(../img/logo.png) no-repeat center;
+	background: #fff url(../img/nav-logo.svg) no-repeat center;
 	height: 100px;
 	text-align: center;
 	vertical-align: middle;
@@ -51,12 +51,24 @@
 	padding: 30px;
 }
 
+.rad-invertert {
+	background-color: @gray;
+	color: @grayLight;
+	h1, h2, h3, h4, h5, h6, p, div, span {
+		color: @grayLight;
+	}
+}
+
 [class*="panel-"] {
 	display: inline-block;
 	&[class*="-belyst"] {
 		background-color: #fff;
 		padding: 1.5% 2% 3%;
 		border: 1px solid #ddd;
+		color: @grayDark;
+		h1, h2, h3, h4, h5, h6, p, div, span {
+			color: @grayDark;
+		}
 	}
 	&[class*="-dus"] {
 		background-color: #ddd;
@@ -69,7 +81,7 @@
 		border: 1px solid #ddd;
 		cursor: pointer;
 		&:hover {
-			background-color: #ddd;
+			background-color: #f1f1f1;
 		}
 	}
 	p {
@@ -82,6 +94,7 @@
 }
 
 [class*="panel-mini"] {
+	text-align: center;
 	[class*="ikon-"] {
 		margin-top: 4px;
 	}
@@ -127,16 +140,31 @@
 	}
 }
 
-.oppfordring {
+.tilbakemelding {
+	position: relative;
+	width: 23%;
 	float: none;
 	margin: 48px auto 50px;
 	background: #b7b1a9;
-	color: #fff;
 	text-align: center;
 	padding: 20px;
+	cursor: pointer;
 	h1 {
-		font-size: 17px;
-		text-transform: uppercase;
+		margin: 0 0 4px;
+	}
+	p {
+		margin: 0;
+	}
+	&:after {
+		width: 0;
+		height: 0;
+		left: 48%;
+		bottom: -10px;
+		margin: 0 auto;
+		position: absolute;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		content: "";
+		border-top: 10px solid #b7b1a9;
 	}
 }
-

@@ -28,13 +28,20 @@
 	}
 }
 
+.knapp-hoved {
+	.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+	&:hover, &:focus {
+		.buttonBackground(darken(@btnPrimaryBackground, 10%), darken(@btnPrimaryBackgroundHighlight, 10%), #fff);
+	}
+}
+
 .knapp-link {
 	border-color: @blue;
-	background: @blue;
+	background: #008fc4;
 	color: #fff;
 	&:hover, &:focus {
 		border-color: @blueDark;
-		background: @blueDark;
+		background: #0067c5;
 		color: #fff;
 	}
 }
