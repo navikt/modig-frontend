@@ -5,7 +5,7 @@
     <parent>
         <artifactId>modig-frontend</artifactId>
         <groupId>no.nav.modig</groupId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.0-alpha.3</version>
     </parent>
 
     <artifactId>modig-frontend-testapp</artifactId>
