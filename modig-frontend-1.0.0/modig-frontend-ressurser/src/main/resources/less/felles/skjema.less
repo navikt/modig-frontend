@@ -1,0 +1,184 @@
+.form-linje {
+	padding: 2px 0.5rem;
+}
+
+form label {
+	font-size: 0.85rem;
+	text-transform: uppercase;
+}
+
+form.horisontal {
+	label {
+		position: relative;
+		padding: 1rem 0 0.5rem;
+		input, select, textarea {
+			margin-left: 1rem;
+		}
+		span {
+			display: inline-block;
+			font-size: 0.85rem;
+			text-transform: uppercase;
+			width: 11rem;
+		}
+	}
+}
+
+form.vertikal {
+	label {
+		input, select, textarea {
+			display: block;
+			&[type="checkbox"], &[type="radio"] {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+//
+// Forms
+// --------------------------------------------------
+
+// GENERAL STYLES
+// --------------
+
+// Make all forms have space below them
+form {
+	margin: 0 0 @baseLineHeight;
+	text-align: left;
+}
+
+// Set font for forms
+label,
+input,
+select,
+textarea {
+	#font > .shorthand(@baseFontSize,normal,@baseLineHeight); // Set size, weight, line-height here
+}
+
+input,
+select,
+textarea {
+	font-family: @baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+}
+
+// Form controls
+// -------------------------
+
+// Shared size and type resets
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+	padding: 4px 6px;
+	.border-radius(@inputBorderRadius);
+}
+
+select {
+	padding: 4px 4px 4px 6px;
+	.border-radius(@inputBorderRadius);
+	border: 1px solid #ccc;
+	border-top: 1px solid #888;
+}
+
+// Everything else
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+	background-color: @inputBackground;
+	border: 1px solid @inputBorder;
+	border-top: 1px solid #969290;
+
+	// Focus state
+	&:focus {
+		border-color: rgba(82, 168, 236, .8);
+		outline: 0;
+		outline: thin dotted    \9; /* IE6-9 */
+	}
+
+	// Position radios and checkboxes better
+	input[type="radio"],
+	input[type="checkbox"] {
+		margin: 4px 0 0;
+		margin-top: 1px    \9; /* IE8-9 */
+		line-height: normal;
+	}
+
+	// Reset width of input images, buttons, radios, checkboxes
+	input[type="file"],
+	input[type="image"],
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	input[type="radio"],
+	input[type="checkbox"] {
+		width: auto; // Override of generic input selector
+	}
+
+	// Make select elements obey height by applying a border
+	select {
+		padding: 0;
+		border: 1px solid @inputBorder;
+		background-color: @inputBackground; // Chrome on Linux and Mobile Safari need background-color
+	}
+
+	// Focus for select, file, radio, and checkbox
+	select:focus,
+	input[type="file"]:focus,
+	input[type="radio"]:focus,
+	input[type="checkbox"]:focus {
+		.tab-focus();
+	}
+
+	// Placeholder
+	// -------------------------
+
+	// Placeholder text gets special styles because when browsers invalidate entire lines if it doesn't understand a selector
+	input,
+	textarea {
+		.placeholder();
+	}
+
+	// DISABLED STATE
+	// --------------
+
+	// Disabled and read-only inputs
+	input[disabled],
+	select[disabled],
+	textarea[disabled],
+	input[readonly],
+	select[readonly],
+	textarea[readonly] {
+		cursor: not-allowed;
+		background-color: @inputDisabledBackground;
+	}
+	// Explicitly reset the colors here
+	input[type="radio"][disabled],
+	input[type="checkbox"][disabled],
+	input[type="radio"][readonly],
+	input[type="checkbox"][readonly] {
+		background-color: transparent;
+	}
+}

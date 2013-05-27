@@ -1,0 +1,190 @@
+/* grundstyling for alle widgets */
+.widget {
+	margin-bottom: 30px;
+	
+	border: 1px solid #ccc;
+	background-color: #F1F1F1;
+	
+	&:focus {
+		border-color: #3e3832;
+		outline:none;
+	}
+	
+	UL {
+		list-style-type: none;
+ 		margin: 0;
+ 		padding: 0;
+	}
+	
+	HEADER {
+		padding: 0.8em 0;
+		
+		background-color: #FFF;
+		text-align: center;
+		border-bottom: 1px solid #ccc;
+		
+		&.selected {
+			background-color: #DADADA;
+		}
+		
+		H3 {
+			margin: 5px 0 0 0;
+		}
+	 	
+	 	.initial {
+	 		margin: 10px auto 0;
+	 		width: 23px;
+	 		height: 23px;
+	 		
+	 		line-height: 22px;
+	 		font-weight: bold;
+	 		background-color: #a1a1a1;
+	 		border-radius: 20px;
+	 		text-align: center;
+	 		color: #fff;
+	 	}
+	}
+	 	
+ 	& > UL > LI {
+		display: block;
+		margin: 0;
+		position: relative;
+	
+		border-top: 1px solid #FFF;
+		border-bottom: 1px solid #ccc;
+			
+		&:last-of-type {
+			border-bottom: none;
+		}
+	
+		&:hover:not(.selected) {
+			border-top: 1px solid #FFF;
+			background-color: #DADADA;
+		}
+		
+		A, A:visited, A:active {
+			overflow: auto;
+			display: block;
+			padding: 20px 30px;
+			
+			text-decoration: none;
+		}
+
+		UL.metadata {
+			margin: 0 37px 0 0;
+			overflow: auto;
+			 
+			LI {
+				float: left;
+				display: inline;
+				padding: 0 8px 0 0;
+				margin-right: 8px;
+				
+				border-right: 1px solid;
+			}
+			
+			LI:last-of-type {
+				margin-right: 0;
+				padding-right: 0;
+				
+				border-right: none;
+			}
+		}
+	}
+}
+
+.widget-navigasjon {
+	.widget;
+	
+	& > UL > LI {
+		A:focus {
+			background-color: #00A9E0;
+			color: #FFF;
+			outline:none;
+			
+			.tidsrom, .subject, UL.metadata {
+				color: #FFF;
+			}
+			
+			.action .tidsrom {
+				color: #FFF;
+			}
+			
+			&:visited, &:selected {
+				color: #FFF;
+			}
+		}
+		
+		A, A:visited, A:active {
+			color: @gray;
+		}
+
+		.tingikon {
+			width: 65%;
+		}
+		
+		.tingstatus {
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			padding-bottom: 30px;
+			min-width: 32px;
+			
+			text-transform: uppercase;
+			text-align: center;
+			font-size: 0.857rem;
+			line-height: 1.2em;
+			font-family: Modus;
+			font-weight:600;
+		}
+
+		.tidsrom {
+			margin: 0 50px 2px 0;
+			
+			line-height: 1.2em;
+			font-size: 0.857rem;
+			text-transform: uppercase;
+		}
+		
+		.subject {
+			margin-top: 0;
+			
+			font-size: 1.14em;
+			font-weight: bold;
+		}
+		
+		A.OK .tingstatus {
+			background: url(/intern-arbeidsflate/gfx/gont_ikon.png) bottom center no-repeat;
+		}
+		
+		A.OK:hover .tingstatus {
+			background: url(/intern-arbeidsflate/gfx/gont_ikon_hover.png) bottom center no-repeat;
+		}
+		
+		A.OK:focus .tingstatus {
+			background: url(/intern-arbeidsflate/gfx/gront_fokus.png) bottom center no-repeat;
+		}
+		
+		A.ERROR .tingstatus {
+			background: url(/intern-arbeidsflate/gfx/utropstegn.png) bottom center no-repeat;
+		}
+		
+		A.ERROR:hover .tingstatus {
+			background: url(/intern-arbeidsflate/gfx/utropstegn_hover.png) bottom center no-repeat;
+		}
+		
+		A.ERROR:focus .tingstatus {
+			background: url(/intern-arbeidsflate/gfx/utropstegn_fokus.png) bottom center no-repeat;
+		}
+	}
+}
+
+.widget-lenke {
+	.widget;
+	
+	A, A:visited, A:active {
+		color: #00A9E0;
+		font-size: 1.14em;
+		font-weight: bold;
+	}
+}
