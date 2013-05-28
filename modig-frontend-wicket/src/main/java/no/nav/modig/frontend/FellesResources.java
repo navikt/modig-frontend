@@ -11,9 +11,8 @@ class FellesResources {
 	static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.9.1.js");
 	static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = jsReference("html5.js");
 	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = jsReference("underscore.js");
-
 	static final JavaScriptResourceReference TRANSITIONS_RESOURCE = jsReference("felles/transitions.js");
-
+	static final JavaScriptResourceReference FELLES_JS_RESOURCE = jsReference("felles/felles.js");
 	static final JavaScriptResourceReference DROPDOWN_RESOURCE = jsReference("felles/dropdown.js");
 	static final JavaScriptResourceReference TOOLTIP_RESOURCE = jsReference("felles/tooltip.js");
 
@@ -30,6 +29,7 @@ class FellesResources {
 	static final PackageResourceReference TOOLTIP_LESS = lessReference("felles/tooltip.less");
 	static final PackageResourceReference NAV_DATEPICKER = lessReference("felles/datepicker.less");
 	static final PackageResourceReference WICKET_MODAL_WINDOW = lessReference("felles/modal.less");
+	static final PackageResourceReference CONTRAST_LESS = lessReference("felles/contrast.less");
 
 
 

@@ -35,11 +35,17 @@
 }
 
 .rad-logo {
-	background: #fff url(../img/nav-logo.svg) no-repeat center;
+	background: #fff;
 	height: 100px;
 	text-align: center;
 	vertical-align: middle;
-	padding: 0 30px;
+	padding: 15px 30px;
+	.logo {
+		display: inline-block;
+		width: 100px;
+		height: 70px;
+		background: url(../img/nav-logo.svg) no-repeat center;
+	}
 }
 
 .rad-plakat {
@@ -77,11 +83,16 @@
 	}
 	&[class*="-klikk"] {
 		background-color: #fff;
+		text-decoration: none;
+		color: @textColor;
 		padding: 1.5% 2% 3%;
 		border: 1px solid #ddd;
 		cursor: pointer;
 		&:hover {
-			background-color: #f1f1f1;
+			background-color: @bodyBackground;
+		}
+		&:visited {
+			color: @textColor;
 		}
 	}
 	p {
