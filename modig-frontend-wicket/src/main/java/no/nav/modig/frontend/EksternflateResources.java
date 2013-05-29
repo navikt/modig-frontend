@@ -12,6 +12,8 @@ class EksternflateResources {
 	static final PackageResourceReference PANEL_LESS = lessReference("ekstern/panel.less");
 	static final PackageResourceReference EKSTERN_LESS = lessReference("ekstern/ekstern.less");
 
+	static final JavaScriptResourceReference TILBAKEMELDING_JS = jsReference("ekstern/tilbakemelding.js");
+
 
 	private static JavaScriptResourceReference jsReference(String path) {
 		return new JavaScriptResourceReference(JsResourceMarker.class, path);
