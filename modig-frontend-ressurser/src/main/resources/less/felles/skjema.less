@@ -1,38 +1,44 @@
 .form-linje {
-	padding: 2px 0.5rem;
+	padding: 5px 0.5rem;
 }
 
-form label {
-	font-size: 0.85rem;
-	text-transform: uppercase;
-}
-
-form.horisontal {
+form {
 	label {
-		position: relative;
-		padding: 1rem 0 0.5rem;
-		input, select, textarea {
-			margin-left: 1rem;
-		}
+		font-size: 0.8rem !important;
+		text-transform: uppercase;
 		span {
-			display: inline-block;
-			font-size: 0.85rem;
+			font-size: 0.8rem !important;
 			text-transform: uppercase;
-			width: 11rem;
 		}
 	}
-}
-
-form.vertikal {
-	label {
-		input, select, textarea {
-			display: block;
-			&[type="checkbox"], &[type="radio"] {
+	&.horisontal {
+		label {
+			position: relative;
+			padding: 1rem 0 0.5rem;
+			input, select, textarea {
+				margin-left: 1rem;
+			}
+			span {
 				display: inline-block;
+				font-size: 0.85rem;
+				text-transform: uppercase;
+				width: 11rem;
+			}
+		}
+	}
+	&.vertikal {
+		label {
+			input, select, textarea {
+				display: block;
+				margin-top: 1px;
+				&[type="checkbox"], &[type="radio"] {
+					display: inline-block;
+				}
 			}
 		}
 	}
 }
+
 
 //
 // Forms

@@ -7,7 +7,7 @@ function removeReadOnly() {
 }
 
 function skjul() {
-	$('.tilbakemelding .ekspandert').slideUp(500);
+	$('.tilbakemelding .ekspandert').slideUp(500).hide();
 }
 
 function hideFormShowError() {

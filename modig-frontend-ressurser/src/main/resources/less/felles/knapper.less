@@ -28,7 +28,7 @@
 	}
 }
 
-.knapp-hoved {
+[class*=knapp-hoved] {
 	.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
 	&:hover, &:focus {
 		.buttonBackground(darken(@btnPrimaryBackground, 10%), darken(@btnPrimaryBackgroundHighlight, 10%), #fff);
@@ -46,7 +46,7 @@
 	}
 }
 
-.knapp-liten {
+.knapp-liten, .knapp-hoved-liten {
 	padding: @paddingSmall;
 	font-size: @fontSizeSmall;
 }
