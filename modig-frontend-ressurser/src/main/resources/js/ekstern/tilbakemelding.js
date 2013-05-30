@@ -3,35 +3,35 @@ $(document).ready(function () {
 });
 
 function removeReadOnly() {
-	$('#tilbakemeldingsfelt').removeAttr('readonly');
+	$('.tilbakemelding #tilbakemeldingsfelt').removeAttr('readonly');
 }
 
-function slideDown() {
-	$('.expanded').slideUp(500);
+function skjul() {
+	$('.tilbakemelding .ekspandert').slideUp(500);
 }
 
 function hideFormShowError() {
-	$('#tilbakemeldingsform').hide();
-	$('#tilbakemeldingsystemfeil').show();
+	$('.tilbakemelding #tilbakemeldingsform').hide();
+	$('.tilbakemelding #tilbakemeldingsystemfeil').show();
 }
 
 function showFormHideError() {
-	$('#tilbakemeldingsform').show();
-	$('#tilbakemeldingsystemfeil').hide();
+	$('.tilbakemelding #tilbakemeldingsform').show();
+	$('.tilbakemelding #tilbakemeldingsystemfeil').hide();
 }
 
 setupJqueryHandlers = function () {
-	$('.collapsed').click(function () {
-		$('.expanded').slideDown(200);
+	$('.tilbakemelding .kollapset').click(function () {
+		$('.tilbakemelding .ekspandert').slideDown(200);
 	});
-	$('.hide-expanded').click(function () {
-		$('.expanded').slideUp(200);
+	$('.tilbakemelding .skjul-ekspandert').click(function () {
+		$('.tilbakemelding .ekspandert').slideUp(200);
 		showFormHideError();
 	});
-	$('.btn').click(function () {
-		$('#tilbakemeldingsfelt').attr('readonly', 'readonly');
+	$('.tilbakemelding .knapp-hoved').click(function () {
+		$('.tilbakemelding #tilbakemeldingsfelt').attr('readonly', 'readonly');
 	});
-	$('#systemfeillukk').click(function () {
+	$('.tilbakemelding #systemfeillukk').click(function () {
 		showFormHideError();
 	});
 };
