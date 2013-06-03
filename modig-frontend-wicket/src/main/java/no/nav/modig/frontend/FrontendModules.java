@@ -62,7 +62,6 @@ import static no.nav.modig.frontend.FellesResources.DROPDOWNS_LESS;
 import static no.nav.modig.frontend.FellesResources.DROPDOWN_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.FELLES_JS_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.FELLES_LESS;
-import static no.nav.modig.frontend.FellesResources.JQUERY_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.KNAPPER_LESS;
 import static no.nav.modig.frontend.FellesResources.MIXINS_LESS;
 import static no.nav.modig.frontend.FellesResources.MODUS_LESS;
@@ -83,7 +82,7 @@ import static no.nav.modig.frontend.ModiaResources.MODIA_LESS;
 public class FrontendModules {
 
 	public static final FrontendModule EKSTERNFLATE = new FrontendModule.With()
-			.scripts(JQUERY_RESOURCE, TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, TILBAKEMELDING_JS)
+			.scripts(TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, TILBAKEMELDING_JS)
 			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS, CONTRAST_LESS,
 					DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS, EKSTERN_LESS).done();
 
