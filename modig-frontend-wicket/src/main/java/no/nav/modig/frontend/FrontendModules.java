@@ -99,7 +99,7 @@ public class FrontendModules {
 					LESS_HEROUNIT, LESS_UTILITIES, WICKET_MODAL_WINDOW, NAV_DATEPICKER).done();
 	
 	public static final FrontendModule MODIA = new FrontendModule.With()
-	.scripts(JQUERY_RESOURCE, TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
+	.scripts(TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
 	.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS,
 			DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, MODIA_LESS).done();
 
@@ -128,5 +128,5 @@ public class FrontendModules {
 			LESS_RESPONSIVE_767MAX, LESS_RESPONSIVE_NAVBAR).done();
 
 
-	public static final FrontendModule UNDERSCORE = new FrontendModule.With().scripts(JQUERY_RESOURCE, UNDERSCORE_RESOURCE).done();
+	public static final FrontendModule UNDERSCORE = new FrontendModule.With().scripts(UNDERSCORE_RESOURCE).done();
 }
