@@ -10,11 +10,11 @@ class FellesResources {
 
 	static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.9.1.js");
 	static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = jsReference("html5.js");
-	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = jsReference("underscore.js");
-	static final JavaScriptResourceReference TRANSITIONS_RESOURCE = jsReference("felles/transitions.js");
-	static final JavaScriptResourceReference FELLES_JS_RESOURCE = jsReference("felles/felles.js");
-	static final JavaScriptResourceReference DROPDOWN_RESOURCE = jsReference("felles/dropdown.js");
-	static final JavaScriptResourceReference TOOLTIP_RESOURCE = jsReference("felles/tooltip.js");
+	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = new JQueryDependentResourceReference("underscore.js");
+	static final JavaScriptResourceReference TRANSITIONS_RESOURCE = new JQueryDependentResourceReference("felles/transitions.js");
+	static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("felles/felles.js");
+	static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("felles/dropdown.js");
+	static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("felles/tooltip.js");
 
 	static final PackageResourceReference RESET_LESS = lessReference("felles/reset.less");
 	static final PackageResourceReference VARIABLES_LESS = lessReference("felles/variables.less");

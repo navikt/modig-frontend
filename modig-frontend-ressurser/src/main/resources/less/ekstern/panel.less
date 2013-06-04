@@ -58,7 +58,7 @@
 }
 
 .rad-invertert {
-	background-color: @gray;
+	background-color: @grayDark;
 	color: @grayLight;
 	h1, h2, h3, h4, h5, h6, p, div, span {
 		color: @grayLight;
@@ -183,9 +183,6 @@
 			border-top: 10px solid #b7b1a9;
 		}
 	}
-	#indikator {
-		display: none;
-	}
 	.ekspandert {
 		margin-top: -75px !important;
 		padding-top: 80px;
@@ -220,6 +217,7 @@
 	}
 	.tilbakemeldingsfeil {
 		display: none;
+		margin: 30px auto 0;
 	}
 	.feedbackPanel {
 		margin: 0;
@@ -245,7 +243,7 @@
 		.lukk {
 			display: inline;
 		}
-		&.kollapset {
+		.kollapset {
 			&:before {
 				background: none repeat scroll 0 0 #a2ad00;
 				border-radius: 50% 50% 50% 50%;
