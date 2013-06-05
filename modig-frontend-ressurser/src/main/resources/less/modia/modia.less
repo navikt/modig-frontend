@@ -265,18 +265,18 @@
 			color: @grayDark;
 		}
 
-		&:focus A, &:focus A:visited, &:focus A:active {
-			background-color: #00A9E0;
-			color: #FFF;
-			outline: none;
-		}
-
 		A, A:visited, A:active {
-			color: #333;
+			color: @grayDark;
 			overflow: auto;
 			display: block;
 			text-decoration: none;
 		}
+
+		&:focus {
+            background-color: #00A9E0;
+            color: #FFF;
+            outline: none;
+        }
 
         &.expandable  {
         	background-image: url(../img/pil-hoyre.svg);
@@ -308,7 +308,6 @@
 			}
 
 			A, A:visited, A:active {
-				color: @grayDark;
 				padding: 20px 30px;
 			}
         }
