@@ -7,7 +7,7 @@ function removeReadOnly() {
 }
 
 function skjul() {
-	$('.tilbakemelding .ekspandert').slideUp(500).hide();
+	$('.tilbakemelding .ekspandert').slideUp(500);
 }
 
 function hideFormShowError() {
@@ -18,6 +18,7 @@ function hideFormShowError() {
 function showFormHideError() {
 	$('.tilbakemelding #tilbakemeldingsform').show();
 	$('.tilbakemelding .tilbakemeldingsfeil').hide();
+	$('.tilbakemelding .feedbackPanel').hide();
 }
 
 setupJqueryHandlers = function () {
@@ -25,7 +26,7 @@ setupJqueryHandlers = function () {
 		$('.tilbakemelding .ekspandert').slideDown(200);
 		return false;
 	});
-	$('.tilbakemelding .skjul-ekspandert').click(function () {
+	$('.tilbakemelding .skjul-ekspandert a').click(function () {
 		$('.tilbakemelding .ekspandert').slideUp(200);
 		showFormHideError();
 		return false;

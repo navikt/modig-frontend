@@ -210,26 +210,27 @@
 			overflow: hidden;
 		}
 		.skjul-ekspandert {
-			display: block;
-			color: @grayLight;
-			padding: 24px 0 30px;
-		}
+		    padding: 24px 0 30px;
+		    a {
+			    color: @grayLight;
+		    }
+	    }
 	}
 	.tilbakemeldingsfeil {
 		display: none;
 		margin: 30px auto 0;
 	}
 	.feedbackPanel {
-		margin: 0;
-		padding: 0;
-		.feedbackPanelERROR {
-			list-style-type: none;
-			background: #c30000;
-			color: #fff;
-			margin: 0 auto;
-			width: 100%;
-			padding: 14px 20px;
-		}
+         margin: 0;
+         padding: 0;
+         .feedbackPanelERROR {
+              list-style-type: none;
+              background: #c30000;
+              color: #fff;
+              margin: 15px auto 0;
+              width: 100%;
+              padding: 14px 20px;
+         }
 	}
 	.lukk {
 		position: absolute;
@@ -244,16 +245,26 @@
 			display: inline;
 		}
 		.kollapset {
-			&:before {
-				background: none repeat scroll 0 0 #a2ad00;
-				border-radius: 50% 50% 50% 50%;
-				padding: 5px 7px;
-				color: white;
-				content: '✔';
-				font-weight: bold;
-				text-align: center;
-			}
-		}
+		    padding-top: 30px;
+
+		    &:before {
+                position: absolute;
+                background: none repeat scroll 0 0 #a2ad00;
+                border-radius: 50% 50% 50% 50%;
+                padding: 5px 7px;
+                margin: -30px 0 0 -10px;
+                color: white;
+                content: '✔';
+                font-weight: bold;
+                text-align: center;
+		    }
+	 }
+	}
+	#ajax-indikator {
+	     background-image: url('../img/ajaxloader/svart/loader_svart_48.gif');
+         width: 48px;
+         height: 48px;
+         margin: 20px auto 0;
 	}
 }
 
