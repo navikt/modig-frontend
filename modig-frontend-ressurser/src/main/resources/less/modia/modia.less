@@ -201,6 +201,11 @@
 
 	border: 1px solid #ccc;
 
+	&:focus {
+		/*border: 1px solid @grayDark;*/
+		outline: 0;
+	}
+
 	H3 {
 		width: 100%;
 	 	padding: 0.8em 0;
@@ -257,6 +262,13 @@
 		&:hover:not(.selected) {
 			border-top: 1px solid #FFF;
 			background-color: #DADADA;
+			/*color: @grayDark;*/
+		}
+
+		&:focus {
+			background-color: #00A9E0;
+			color: #FFF;
+			outline:none;
 		}
 
 		A, A:visited, A:active {
@@ -270,10 +282,39 @@
         	background-image: url(../img/pil-hoyre.svg);
         	background-position: 10px 25px;
         	background-repeat: no-repeat;
+        	padding: 0;
+
+        	& > * {
+        		padding: 0 30px;
+        	}
+
+        	&:last-child {
+        		padding-bottom: 20px;
+        	}
 
         	.hidden {
         		display: none;
+        		padding-bottom: 20px;
         	}
+
+        	A:hover {
+                text-decoration: none;
+            }
+
+        	A:focus {
+				background-color: #00A9E0;
+				color: #FFF;
+				outline:none;
+
+				&:visited, &:selected {
+					color: #FFF;
+				}
+			}
+
+			A, A:visited, A:active {
+				/*color: @grayDark;*/
+				padding: 20px 30px;
+			}
         }
 
         &.expanded {
