@@ -8,6 +8,7 @@ function removeReadOnly() {
 
 function skjul() {
 	$('.tilbakemelding .ekspandert').slideUp(500);
+    $('.tilbakemelding .kollapset').removeClass("reversert");
 }
 
 function hideFormShowError() {
@@ -23,11 +24,12 @@ function showFormHideError() {
 
 setupJqueryHandlers = function () {
 	$('.tilbakemelding .kollapset').click(function () {
+        $(this).addClass("reversert");
 		$('.tilbakemelding .ekspandert').slideDown(200);
 		return false;
 	});
 	$('.tilbakemelding .skjul-ekspandert a').click(function () {
-		$('.tilbakemelding .ekspandert').slideUp(200);
+		skjul();
 		showFormHideError();
 		return false;
 	});
