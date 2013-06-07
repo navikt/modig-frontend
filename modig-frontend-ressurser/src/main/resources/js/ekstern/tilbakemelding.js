@@ -9,19 +9,19 @@ function removeReadOnly() {
 function skjul() {
 	$('.tilbakemelding .ekspandert').slideUp(500);
     var $kollapset = $('.tilbakemelding .kollapset');
-    $kollapset.removeClass("reversert");
+    $kollapset.removeClass('reversert');
     $('html,body').animate({scrollTop: $kollapset.offset().top},'slow');
     return false;
 }
 
 function hideFormShowError() {
-    $('.tilbakemelding .kollapset').addClass("reversert");
+    $('.tilbakemelding .kollapset').addClass('reversert');
 	$('.tilbakemelding #tilbakemeldingsform').hide();
 	$('.tilbakemelding .tilbakemeldingsfeil').show();
 }
 
 function showFormHideError() {
-    $('.tilbakemelding .kollapset').addClass("reversert");
+    $('.tilbakemelding .kollapset').addClass('reversert');
 	$('.tilbakemelding #tilbakemeldingsform').show();
 	$('.tilbakemelding .tilbakemeldingsfeil').hide();
 	$('.tilbakemelding .feedbackPanel').hide();
@@ -29,7 +29,7 @@ function showFormHideError() {
 
 setupJqueryHandlers = function () {
 	$('.tilbakemelding .kollapset').click(function () {
-        $(this).addClass("reversert");
+        $(this).addClass('reversert');
         $('.tilbakemelding .ekspandert').slideDown(200);
         $('html,body').animate({scrollTop: $(this).offset().top},'slow');
 		return false;
