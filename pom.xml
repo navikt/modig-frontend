@@ -25,16 +25,10 @@
     <modules>
         <module>modig-frontend-ressurser</module>
         <module>modig-frontend-wicket</module>
-        <module>modig-frontend-testapp</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>no.nav.modig</groupId>
-                <artifactId>modig-wicket</artifactId>
-                <version>${modig-wicket.version}</version>
-            </dependency>
             <dependency>
                 <groupId>no.nav.modig</groupId>
                 <artifactId>modig-wicket-test</artifactId>
