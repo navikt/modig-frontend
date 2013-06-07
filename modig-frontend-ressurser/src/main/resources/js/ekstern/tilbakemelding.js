@@ -15,6 +15,7 @@ function skjul() {
 }
 
 function hideFormShowError() {
+    $('.tilbakemelding .kollapset').addClass("reversert");
 	$('.tilbakemelding #tilbakemeldingsform').hide();
 	$('.tilbakemelding .tilbakemeldingsfeil').show();
 }
@@ -34,8 +35,8 @@ setupJqueryHandlers = function () {
 		return false;
 	});
 	$('.tilbakemelding .skjul-ekspandert a').click(function () {
-		skjul();
 		showFormHideError();
+		skjul();
 		return false;
 	});
 	$('.tilbakemelding .knapp-hoved').click(function () {
