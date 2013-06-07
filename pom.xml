@@ -16,26 +16,11 @@
     <description>
         Dette biblioteket inneholder statiske ressurser for felles utseende og oppførsel i moderniserte applikasjoner i Nav.
     </description>
-    
-    <properties>
-    	<modig-wicket.version>1.0.0-alpha.1</modig-wicket.version>
-    	<modig-wicket-test.version>1.0.0-alpha.1</modig-wicket-test.version>
-    </properties>
 
     <modules>
         <module>modig-frontend-ressurser</module>
         <module>modig-frontend-wicket</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>no.nav.modig</groupId>
-                <artifactId>modig-wicket-test</artifactId>
-                <version>${modig-wicket-test.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <distributionManagement>
         <repository>

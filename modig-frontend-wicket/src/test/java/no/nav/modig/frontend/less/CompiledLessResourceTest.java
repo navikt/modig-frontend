@@ -1,15 +1,17 @@
 package no.nav.modig.frontend.less;
 
-import no.nav.modig.frontend.BaseWicketTest;
 import org.apache.wicket.Application;
+import org.apache.wicket.Page;
 import org.apache.wicket.ThreadContext;
 import org.apache.wicket.markup.html.SecurePackageResourceGuard;
+import org.apache.wicket.mock.MockHomePage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.http.mock.MockHttpServletRequest;
 import org.apache.wicket.protocol.http.mock.MockHttpServletResponse;
 import org.apache.wicket.protocol.http.mock.MockHttpSession;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.request.resource.SharedResourceReference;
+import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -23,11 +25,12 @@ import static org.junit.Assert.assertThat;
 /**
  * Tests for {@link no.nav.modig.frontend.less.CompiledLessResource}
  */
-public class CompiledLessResourceTest extends BaseWicketTest {
-
+public class CompiledLessResourceTest {
 
     public static final PackageResourceReference LESS_RESOURCE_1 = new PackageResourceReference(CompiledLessResourceTest.class, "file1.less");
     public static final PackageResourceReference LESS_RESOURCE_2 = new PackageResourceReference(CompiledLessResourceTest.class, "file2.less");
+
+    private WicketTester tester;
 
     @Test
     public void compilesLessFiles() {
@@ -36,8 +39,8 @@ public class CompiledLessResourceTest extends BaseWicketTest {
         MockHttpServletRequest request = createMockRequest();
 
         request.setURL("less/less.css");
-        tester.tester.processRequest(request);
-        String response = tester.tester.getLastResponse().getBinaryResponse();
+        tester.processRequest(request);
+        String response = tester.getLastResponse().getBinaryResponse();
 
         assertThat(response, is(".box-2 {\n  display: block;\n  width: 20;\n  height: 20;\n}\n"));
     }
@@ -54,12 +57,12 @@ public class CompiledLessResourceTest extends BaseWicketTest {
                 @Override
                 public void run() {
 
-                        ThreadContext.setApplication(tester.application);
+                        ThreadContext.setApplication(tester.getApplication());
                         MockHttpServletRequest request = createMockRequest();
                         request.setURL("less/less.css");
-                        tester.tester.processRequest(request);
+                        tester.processRequest(request);
 
-                        MockHttpServletResponse lastResponse = tester.tester.getLastResponse();
+                        MockHttpServletResponse lastResponse = tester.getLastResponse();
                         assertThat(lastResponse.getStatus(), is(200));
                         assertThat(lastResponse.getBinaryResponse(), is(".box-2 {\n  display: block;\n  width: 20;\n  height: 20;\n}\n"));
                         ThreadContext.detach();
@@ -72,7 +75,7 @@ public class CompiledLessResourceTest extends BaseWicketTest {
         executorService.shutdown();
         executorService.awaitTermination(100, TimeUnit.SECONDS);
 
-        CompiledLessResource lessResource = (CompiledLessResource) tester.tester.getApplication()
+        CompiledLessResource lessResource = (CompiledLessResource) tester.getApplication()
                 .getSharedResources()
                 .get(Application.class, "lessResource", null, null, null, true)
                 .getResource();
@@ -81,20 +84,26 @@ public class CompiledLessResourceTest extends BaseWicketTest {
     }
 
     private void createApplication() {
-        wicket(new InitListener() {
+        WebApplication webApplication = new WebApplication() {
             @Override
-            public void onInit(WebApplication application) {
-                SecurePackageResourceGuard resourceGuard = (SecurePackageResourceGuard) application.getResourceSettings().getPackageResourceGuard();
+            public Class<? extends Page> getHomePage() {
+                return MockHomePage.class;
+            }
+
+            @Override
+            protected void init() {
+                SecurePackageResourceGuard resourceGuard = (SecurePackageResourceGuard) this.getResourceSettings().getPackageResourceGuard();
                 resourceGuard.addPattern("+*.less");
 
-                application.getSharedResources().add("lessResource", new CompiledLessResource(asList(LESS_RESOURCE_1, LESS_RESOURCE_2)));
-                application.mountResource("less/less.css", new SharedResourceReference("lessResource"));
+                this.getSharedResources().add("lessResource", new CompiledLessResource(asList(LESS_RESOURCE_1, LESS_RESOURCE_2)));
+                this.mountResource("less/less.css", new SharedResourceReference("lessResource"));
             }
-        });
+        };
+        tester = new WicketTester(webApplication);
     }
 
     private MockHttpServletRequest createMockRequest() {
-        WebApplication application = tester.tester.getApplication();
+        WebApplication application = tester.getApplication();
         MockHttpSession session = new MockHttpSession(application.getServletContext());
         return new MockHttpServletRequest(
                 application,

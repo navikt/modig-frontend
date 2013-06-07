@@ -1,17 +1,17 @@
 package no.nav.modig.frontend;
 
-import no.nav.modig.wicket.test.FluentWicketTester;
 import org.apache.wicket.Page;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
 
 public class MetaTagTest {
 
-    private FluentWicketTester tester;
+    private WicketTester tester;
     private WebApplication application;
 
     @Before
@@ -22,7 +22,7 @@ public class MetaTagTest {
                 return HomePage.class;
             }
         };
-        tester = new FluentWicketTester<>(application);
+        tester = new WicketTester(application);
     }
 
     @Test
@@ -35,6 +35,7 @@ public class MetaTagTest {
                     }
                 });
 
-        tester.goTo(HomePage.class).should().containPatterns("<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\"  />");
+        tester.startPage(HomePage.class);
+        tester.assertContains("<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\"  />");
     }
 }

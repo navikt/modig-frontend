@@ -1,22 +1,44 @@
 package no.nav.modig.frontend;
 
 import org.apache.wicket.Component;
+import org.apache.wicket.Page;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
+import org.apache.wicket.mock.MockHomePage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.request.resource.caching.NoOpResourceCachingStrategy;
+import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
 
 /**
  * Tester modig-frontend rammeverket
  */
-public class FrontendTest extends BaseWicketTest{
+public class FrontendTest {
+
+    private WicketTester createTester(final InitListener initListener) {
+        WebApplication application = new WebApplication() {
+            @Override
+            public Class<? extends Page> getHomePage() {
+                return MockHomePage.class;
+            }
+
+            @Override
+            protected void init() {
+                getResourceSettings().setCachingStrategy(NoOpResourceCachingStrategy.INSTANCE);
+                mountPage("/testpage", TestPage.class);
+
+                initListener.onInit(this);
+            }
+        };
+        return new WicketTester(application);
+    }
 
     @Test
     public void addsFrontendScriptsAndStyling() throws Exception {
-        tester = wicket(new InitListener() {
+        WicketTester tester = createTester(new InitListener() {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
@@ -36,13 +58,13 @@ public class FrontendTest extends BaseWicketTest{
             }
         });
 
-        tester.goTo(page);
-        tester.tester.assertResultPage(TestPage.class, "TestPage-expected.html");
+        tester.startPage(page);
+        tester.assertResultPage(TestPage.class, "TestPage-expected.html");
     }
 
     @Test
     public void mergesAllScriptsAndCss() throws Exception {
-        tester = wicket(new InitListener() {
+        WicketTester tester = createTester(new InitListener() {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
@@ -61,13 +83,13 @@ public class FrontendTest extends BaseWicketTest{
                 response.render(JavaScriptHeaderItem.forReference(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE));
             }
         });
-        tester.goTo(page);
-        tester.tester.assertResultPage(TestPage.class, "TestPage-merged-expected.html");
+        tester.startPage(page);
+        tester.assertResultPage(TestPage.class, "TestPage-merged-expected.html");
     }
 
     @Test
     public void addsMetaTags() throws Exception {
-        tester = wicket(new InitListener() {
+        WicketTester tester = createTester(new InitListener() {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
@@ -76,13 +98,13 @@ public class FrontendTest extends BaseWicketTest{
             }
         });
 
-        tester.goTo(TestPage.class);
-        tester.tester.assertResultPage(TestPage.class, "TestPage-meta-expected.html");
+        tester.startPage(TestPage.class);
+        tester.assertResultPage(TestPage.class, "TestPage-meta-expected.html");
     }
 
     @Test
     public void addsConditionalResources() throws Exception {
-        tester = wicket(new InitListener() {
+        WicketTester tester = createTester(new InitListener() {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
@@ -92,8 +114,8 @@ public class FrontendTest extends BaseWicketTest{
             }
         });
 
-        tester.goTo(TestPage.class);
-        tester.tester.assertResultPage(TestPage.class, "TestPage-conditional-expected.html");
+        tester.startPage(TestPage.class);
+        tester.assertResultPage(TestPage.class, "TestPage-conditional-expected.html");
     }
 
 }
