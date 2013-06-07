@@ -8,7 +8,10 @@ function removeReadOnly() {
 
 function skjul() {
 	$('.tilbakemelding .ekspandert').slideUp(500);
-    $('.tilbakemelding .kollapset').removeClass("reversert");
+    var $kollapset = $('.tilbakemelding .kollapset');
+    $kollapset.removeClass("reversert");
+    $('html,body').animate({scrollTop: $kollapset.offset().top},'slow');
+    return false;
 }
 
 function hideFormShowError() {
@@ -25,7 +28,8 @@ function showFormHideError() {
 setupJqueryHandlers = function () {
 	$('.tilbakemelding .kollapset').click(function () {
         $(this).addClass("reversert");
-		$('.tilbakemelding .ekspandert').slideDown(200);
+        $('.tilbakemelding .ekspandert').slideDown(200);
+        $('html,body').animate({scrollTop: $(this).offset().top},'slow');
 		return false;
 	});
 	$('.tilbakemelding .skjul-ekspandert a').click(function () {
