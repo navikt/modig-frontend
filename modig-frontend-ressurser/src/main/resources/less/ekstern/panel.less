@@ -169,6 +169,12 @@
 		p {
 			margin: 0;
 		}
+        &:hover {
+          background-color: @blue;
+          &:after {
+            border-top: 10px solid @blue;
+          }
+        }
 		&:after {
 			width: 0;
 			height: 0;
@@ -182,6 +188,10 @@
 			border-top: 10px solid #b7b1a9;
 		}
         &.reversert {
+            &:hover {
+                background-color: #b7b1a9;
+                cursor: default;
+            }
             &:after {
                 border-bottom: 10px solid #b7b1a9;
                 top: -10px;

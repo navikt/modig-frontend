@@ -20,6 +20,7 @@ function hideFormShowError() {
 }
 
 function showFormHideError() {
+    $('.tilbakemelding .kollapset').addClass("reversert");
 	$('.tilbakemelding #tilbakemeldingsform').show();
 	$('.tilbakemelding .tilbakemeldingsfeil').hide();
 	$('.tilbakemelding .feedbackPanel').hide();
