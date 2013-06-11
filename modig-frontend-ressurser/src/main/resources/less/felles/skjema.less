@@ -1,5 +1,16 @@
 .form-linje {
 	padding: 5px 0.5rem;
+	&.feil {
+		input, textarea {
+			border: 1px solid #fca2a2;
+			border-top: 1px solid #ff0000;
+			background: #fee6e6;
+		}
+		.melding {
+			color: #c30000;
+			text-transform: none;
+		}
+	}
 }
 
 form {
@@ -23,6 +34,9 @@ form {
 				font-size: 0.85rem;
 				text-transform: uppercase;
 				width: 11rem;
+				&.melding {
+					width: auto;
+				}
 			}
 		}
 	}
