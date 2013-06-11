@@ -272,6 +272,10 @@
         	background-repeat: no-repeat;
         	padding: 0;
 
+        	&:focus {
+        	     background-image: url(../img/pil-hoyre-hvit.svg);
+        	}
+
         	& > * {
         		padding: 0 30px;
         	}
@@ -301,8 +305,12 @@
         }
 
         &.expanded {
-          background-color: #f1f1f1;
-          background-image: url(../img/pil-ned.svg);
+            background-color: #f1f1f1;
+            background-image: url(../img/pil-ned.svg);
+
+            &:focus {
+                background-image: url(../img/pil-ned-hvit.svg);
+            }
         }
 	}
 }
