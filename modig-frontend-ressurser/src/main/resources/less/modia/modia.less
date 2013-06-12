@@ -102,7 +102,7 @@
 	
 	& > UL > LI {
 		A:focus {
-			background-color: #00A9E0;
+			background-color: @linkColor;
 			color: #FFF;
 			outline:none;
 			
@@ -191,7 +191,7 @@
 	border: 1px solid #ccc;
 
 	&:focus {
-		border: 1px solid @grayDark;
+		border: 1px solid @linkColor;
 		outline: 0;
 	}
 
@@ -260,12 +260,14 @@
 			text-decoration: none;
 		}
 
-
+        &:focus {
+            background-color: @linkColor;
+            color: #FFF;
+            outline: none;
+        }
 
         &.expandable  {
-        	background-image: url(../img/pil-hoyre.svg);
-        	background-position: 10px 25px;
-        	background-repeat: no-repeat;
+        	background-image: none;
         	padding: 0;
 
         	& > * {
@@ -281,40 +283,119 @@
                 text-decoration: none;
             }
 
-        	A:focus {
-				background-color: #00A9E0;
+            A, A:visited, A:active {
+				padding: 20px 30px;
+
+				background-image: url(../img/pil-hoyre.svg);
+        		background-position: 10px 22px;
+        		background-repeat: no-repeat;
+			}
+
+			A:focus {
+				background-color: @linkColor;
 				color: #FFF;
 				outline:none;
+				background-image: url(../img/pil-hoyre-hvit.svg);
 
 				&:visited, &:selected {
 					color: #FFF;
 				}
 			}
 
-			A, A:visited, A:active {
-				padding: 20px 30px;
+			&.expanded A, &.expanded A:visited, &.expanded A:active {
+	            background-color: #f1f1f1;
+	            background-image: url(../img/pil-ned.svg);
+	            background-position: 10px 25px;
+
+	            &:focus {
+	            	background-color: @linkColor;
+	            	background-image: url(../img/pil-ned-hvit.svg);
+	            }
+	        }
+        }
+	}
+}
+
+/* Lameller */
+.lamell {
+	H1 {
+		margin: 1em 0 0.5em 0;
+	}
+
+	A, A:visited, A:active {
+		color: @linkColor;
+		text-decoration: none;
+	}
+
+	SMALL {
+		color: #666;
+	}
+
+	DL {
+		margin: 0;
+		overflow: auto;
+
+		> * {
+			width: 50%;
+			float: left;
+		}
+
+		> *:nth-child(4n+3),> *:nth-child(4n+4) {
+			position: relative;
+			top: -1rem;
+		}
+
+		> *:nth-child(4n+1) {
+			margin-top: 1rem;
+			clear: left;
+
+			&:before {
+				content: "";
+				display: table;
+				width: 100%;
 			}
-        }
+		}
 
+		> *:nth-child(4n+2) {
+			clear: left;
+		}
 
+		DT {
+			text-transform: uppercase;
+			font-size: 0.857rem;
+		}
 
-        &.expanded {
-            background-color: #f1f1f1;
-            background-image: url(../img/pil-ned.svg);
-        }
+		DD {
+			margin: 3px 0 0 0;
+			position: relative;
 
-        &:focus {
-            background-color: #00A9E0;
-            color: #FFF;
-            outline: none;
+			font-weight: bold;
+		}
+	}
 
-            &.expandable {
-                 background-image: url(../img/pil-hoyre-hvit.svg);
-            }
+	UL.oversikt {
+		list-style-type: none;
+		margin: 1em 0;
 
-            &.expanded {
-                background-image: url(../img/pil-ned-hvit.svg);
-            }
-        }
+		LI	{
+			margin-top: 1em;
+
+			SMALL {
+				text-transform: uppercase;
+				font-size: 1rem;
+			}
+
+			STRONG {
+				display: block;
+
+				font-weight: bold;
+				font-size: 1.29rem;
+			}
+		}
+	}
+
+	ARTICLE[role=region] {
+		margin-bottom: 4em;
+		word-wrap: break-word;
 	}
 }
