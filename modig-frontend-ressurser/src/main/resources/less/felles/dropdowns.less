@@ -88,7 +88,7 @@
 .dropdown-submenu:focus > a {
 	text-decoration: none;
 	color: @dropdownLinkColorHover;
-	background: #008fc4;
+	background: #0067c5;
 }
 
 // Active state
@@ -97,9 +97,9 @@
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
 	color: @dropdownLinkColorActive;
+	background: #0067c5;
 	text-decoration: none;
 	outline: 0;
-	#gradient > .vertical(@dropdownLinkBackgroundActive, darken(@dropdownLinkBackgroundActive, 5%));
 }
 
 // Disabled state
@@ -116,7 +116,6 @@
 .dropdown-menu > .disabled > a:focus {
 	text-decoration: none;
 	background-color: transparent;
-	background-image: none; // Remove CSS gradient
 	.reset-filter();
 	cursor: default;
 }
