@@ -1,3 +1,12 @@
+/* Mixins */
+.kolonne {
+	.border-box;
+	float: left;
+	display: block;
+	min-height: 30px;
+	width: 47.93617021276595%;
+}
+
 /* grundstyling for alle widgets */
 .widget {
 	margin-bottom: 30px;
@@ -212,6 +221,30 @@
 		margin: 0.4em 0;
 	}
 
+	TABLE {
+        float: none;
+        display: inline-block;
+        clear: both;
+        width: 100%;
+        padding-top: 1rem;
+        border-collapse: collapse;
+
+        TH, TD {
+            text-align: left;
+            padding: 0 1rem 0 0;
+        }
+
+        TH {
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 0.857rem;
+        }
+
+        TD {
+            font-weight: bold;
+        }
+    }
+
 	UL {
 		list-style-type: none;
 		margin: 0;
@@ -223,6 +256,7 @@
 		margin: 0;
 		position: relative;
 		padding: 20px 30px;
+		overflow: auto;
 
 		border-top: 1px solid #FFF;
 		border-bottom: 1px solid #CCC;
@@ -302,6 +336,12 @@
 
 /* Lameller */
 .lamell {
+    overflow: auto;
+
+    .oppsummering {
+        .kolonne;
+    }
+
 	H1 {
 		margin: 1em 0 0.5em 0;
 	}
@@ -314,6 +354,10 @@
 	SMALL {
 		color: #666;
 	}
+
+	SECTION {
+        padding-top: 2rem;
+    }
 
 	DL {
 		margin: 0;
