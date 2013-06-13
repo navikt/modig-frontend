@@ -67,6 +67,9 @@
 	h1, h2, h3, h4, h5, h6, p, div, span {
 		color: @grayLight;
 	}
+    [class*="panel-mini"] {
+        border: none;
+    }
 }
 
 [class*="panel-"] {
@@ -201,6 +204,9 @@
             &:hover {
                 background-color: #b7b1a9;
                 cursor: default;
+                h1, p {
+                  color: @grayDark;
+                }
             }
             &:after {
                 border-bottom: 10px solid #b7b1a9;
