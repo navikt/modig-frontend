@@ -32,6 +32,7 @@ setupJqueryHandlers = function () {
         $(this).addClass('reversert');
         $('.tilbakemelding .ekspandert').slideDown(200);
         $('html,body').animate({scrollTop: $(this).offset().top},'slow');
+        $('#tilbakemeldingsfelt').focus();
 		return false;
 	});
 	$('.tilbakemelding .skjul-ekspandert a').click(function () {
