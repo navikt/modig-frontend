@@ -51,8 +51,38 @@ form {
 			}
 		}
 	}
-}
+	input[type="radio"],
+	input[type="checkbox"] {
+		display: inline-block;
+		height: 20px;
+		width: 0;
+		opacity: 0;
+	}
 
+	input[type="radio"] + label {
+		background: url(../img/radio.svg) 0 0 no-repeat;
+	}
+
+	input[type="radio"]:checked + label {
+		background: url(../img/radio_valgt.svg) 0 0 no-repeat;
+	}
+
+	input[type="checkbox"] + label {
+		background: url(../img/check.svg) 0 0 no-repeat;
+	}
+
+	input[type="checkbox"]:checked + label {
+		background: url(../img/check_valgt.svg) 0 0 no-repeat;
+	}
+
+	input[type="radio"] + label,
+	input[type="checkbox"] + label {
+		display: inline-block;
+		position: relative;
+		padding-left: 29px;
+		height: 22px;
+	}
+}
 
 //
 // Forms
@@ -135,14 +165,14 @@ input[type="color"] {
 	&:focus {
 		border-color: rgba(82, 168, 236, .8);
 		outline: 0;
-		outline: thin dotted    \9; /* IE6-9 */
+		outline: thin dotted     \9; /* IE6-9 */
 	}
 
 	// Position radios and checkboxes better
 	input[type="radio"],
 	input[type="checkbox"] {
 		margin: 4px 0 0;
-		margin-top: 1px    \9; /* IE8-9 */
+		margin-top: 1px     \9; /* IE8-9 */
 		line-height: normal;
 	}
 
