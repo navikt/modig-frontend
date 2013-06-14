@@ -93,35 +93,65 @@ h1, h2, h3, h4, h5, h6 {
 
 [class*="strek-ikon-soknad"], [class*="ikon-soknad-strek"] {
 	background-image: url(../img/under-dark.png), url(../img/soknad.svg);
-	background-position: bottom center, center -1px;
+	background-position: bottom center, center 0;
 	padding-bottom: 15px;
 	margin-bottom: 15px !important;
-	&:hover {
-		background-position: bottom center, center -366px;
-	}
 }
 
 [class*="ikon-soknad"]:not([class*="strek"]) {
-	background-image: url(../img/sprite.svg);
-	background-position: center top;
+	background-image: url(../img/soknad.svg);
+	background-position: center 0;
+}
+
+[class*="strek-ikon-soknad-klikk"], [class*="ikon-soknad-klikk-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/soknad_rod.svg);
+	background-position: bottom center, center 0;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
+	&:hover {
+      background-image: url(../img/under-dark.png), url(../img/soknad_hover.svg);
+	}
+}
+
+[class*="ikon-soknad-klikk"]:not([class*="strek"]) {
+	background-image: url(../img/soknad_rod.svg);
+	background-position: center 0;
+    &:hover {
+      background-image: url(../img/soknad_hover.svg);
+    }
 }
 
 
 /* IKON-PROFIL */
 
 [class*="strek-ikon-profil"], [class*="ikon-profil-strek"] {
-	background-image: url(../img/under-dark.png), url(../img/profil.svg);
-	background-position: bottom center, center -1px;
+	background-image: url(../img/under-dark.png), url(../img/brukerprofil.svg);
+	background-position: bottom center, center 0px;
 	padding-bottom: 15px;
 	margin-bottom: 15px !important;
-	&:hover {
-		background-position: bottom center, center -366px;
-	}
 }
 
 [class*="ikon-profil"]:not([class*="strek"]) {
-	background-image: url(../img/profil.svg);
-	background-position: center -1px;
+	background-image: url(../img/brukerprofil.svg);
+	background-position: center 0;
+}
+
+[class*="strek-ikon-profil-klikk"], [class*="ikon-profil-klikk-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/brukerprofil_rod.svg);
+	background-position: bottom center, center 0;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
+	&:hover {
+      background-image: url(../img/under-dark.png), url(../img/brukerprofil_hover.svg);
+	}
+}
+
+[class*="ikon-profil-klikk"]:not([class*="strek"]) {
+	background-image: url(../img/brukerprofil_rod.svg);
+	background-position: center 0;
+    &:hover {
+      background-image: url(../img/brukerprofil_hover.svg);
+    }
 }
 
 
