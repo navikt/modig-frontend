@@ -433,3 +433,141 @@
 		word-wrap: break-word;
 	}
 }
+
+/* Generell styling til lamell-stacken (ej innholdet i en lerret) */
+.lameller {
+	min-height: 100%;
+	margin-bottom: 128px;
+	position: relative;
+
+	background-color: #FFF;
+	border-top: 1px solid #626262;
+
+	.lamell {
+		.border-box;
+		position: relative;
+
+		&.bunn {
+			position: fixed;
+			padding-right: 1px;
+
+			> HEADER {
+				height: 64px;
+
+				background-image: -webkit-linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
+				background-image: linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
+				background-image: -moz-linear-gradient(top, #e5e5e3 1px, #F1F1EF 14px);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e3', endColorstr='#F1F1EF')"; /* IE8+ */
+
+				H1 {
+					line-height: 59px;
+					font-size: 1.8rem;
+				}
+			}
+		}
+
+		.person {
+			margin-left: 0;
+		}
+
+		.close {
+			display: block;
+			position: absolute;
+			right: 30px;
+			top: 15px;
+			padding: 2px;
+			width: 21px;
+			height: 20px;
+			overflow: hidden;
+
+			text-align: center;
+			color: transparent;
+			background: transparent url(/intern-arbeidsflate/gfx/kryss_blaa.png) no-repeat 4px center;
+			border: 1px solid #CCC;
+		}
+
+  		.close:focus, .close:hover {
+			border-color: #00A9E0;
+			background: #00A9E0 url(/intern-arbeidsflate/gfx/kryss_hvit.png) no-repeat 4px center;
+			color: transparent;
+			outline: none;
+		}
+
+		> HEADER {
+			display: block;
+			height: 64px;
+
+			background-image: -webkit-linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
+			background-image: linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
+			background-image: -moz-linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#F1F1EF', endColorstr='#e5e5e3')"; /* IE8+ */
+			background-color: #F1F1EF;
+
+			H1 {
+				margin: 0 auto auto 30px;
+
+				line-height: 59px;
+				font-size: 1.8rem;
+			}
+
+			A H1, A:visited H1 {
+				color: #333;
+			}
+
+			A, A:hover {
+				text-decoration: none;
+				color: #111;
+			}
+		}
+
+		> HEADER:hover {
+			background-image: none;
+			background-color: #DADADA;
+			-ms-filter: "";
+
+			A H1, A:visited H1 {
+				color: #00A9E0;
+			}
+		}
+
+		> HEADER > A:focus {
+			outline: none;
+
+			H1 {
+				color: #00A9E0;
+			}
+		}
+
+		&.selected > HEADER {
+			height: 84px;
+
+			background: none;
+			cursor: default;
+			border-bottom: none;
+			-ms-filter: "";
+
+			H1 {
+				font-size: 2.5rem;
+				line-height: 79px;
+			}
+		}
+
+		.lerret {
+			.border-box;
+			padding: 0 30px 0 30px;
+			width: 100%;
+			min-height: 30px;
+			float: left;
+
+			H1 {
+			    font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			    font-weight: normal;
+			    line-height: 1.2em;
+			    font-size: 1.43rem;
+			    font-weight: 600;
+			    text-transform: uppercase;
+			    margin: 0;
+			}
+		}
+	}
+}
