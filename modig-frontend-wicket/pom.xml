@@ -17,9 +17,6 @@
 
         Bibiloteket inneholder kun funksjonalitet relatert til håndtering av statiske ressurser.
     </description>
-    <properties>
-        <jira-component>modig-frontend-wicket</jira-component>
-    </properties>
 
     <dependencies>
         <!-- FRONTEND-BOOTSTRAP DEPENDENCIES -->
