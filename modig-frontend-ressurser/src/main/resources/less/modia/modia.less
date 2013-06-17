@@ -66,7 +66,7 @@ H3, ._H3 {
 
 		> *:nth-child(4n+3),> *:nth-child(4n+4) {
 			position: relative;
-			top: -1rem;
+			top: -1.1rem;
 		}
 
 		> *:nth-child(4n+1) {
@@ -311,7 +311,6 @@ H3, ._H3 {
 }
 
 
-/* Grundstyling til lister */
 .liste {
 	margin-bottom: 2rem;
 
@@ -385,22 +384,12 @@ H3, ._H3 {
 			border-bottom: none;
 		}
 
-		&:hover:not(.selected) {
-			border-top: 1px solid #FFF;
-			background-color: f1f1f1;
-		}
-
 		A, A:visited, A:active {
 			color: @grayDark;
 			overflow: auto;
 			display: block;
 			text-decoration: none;
 		}
-
-        &:focus {
-            background-color: f1f1f1;
-            outline: none;
-        }
 
         &.expandable  {
         	background-image: none;
@@ -417,7 +406,7 @@ H3, ._H3 {
 
         	A:hover {
                 text-decoration: none;
-                background-color: f1f1f1;
+                background-color: #f1f1f1;
             }
 
             A, A:visited, A:active {
@@ -435,6 +424,7 @@ H3, ._H3 {
 
 			&.expanded {
 			    background-color: #f1f1f1;
+
 			    A, A:visited, A:active {
                     background-image: url(../img/pil-ned.svg);
                     background-position: 10px 25px;
