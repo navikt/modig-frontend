@@ -53,8 +53,8 @@ form {
 	}
 	input[type="radio"],
 	input[type="checkbox"] {
-		display: inline-block;
-		height: 20px;
+		position: absolute;
+		height: 0;
 		width: 0;
 		opacity: 0;
 	}
@@ -79,8 +79,41 @@ form {
 	input[type="checkbox"] + label {
 		display: inline-block;
 		position: relative;
-		padding-left: 29px;
-		height: 22px;
+		padding: 2px 0 0 27px;
+		height: 30px;
+		margin-right: 1rem;
+	}
+
+	.valggruppe {
+		span {
+			display: block;
+			font-size: 0.8rem !important;
+			text-transform: uppercase;
+			margin-bottom: 0.5rem;
+		}
+		label {
+			font-size: 1rem !important;
+			text-transform: none;
+		}
+		.vannrett {
+		}
+		.loddrett {
+			label {
+				display: block!important;
+			}
+		}
+		.kolonner-to {
+			.content-columns(2, 0.5rem);
+			label {
+				display: block!important;
+			}
+		}
+		.kolonner-tre {
+			.content-columns(3, 0.5rem);
+			label {
+				display: block!important;
+			}
+		}
 	}
 }
 
@@ -165,14 +198,14 @@ input[type="color"] {
 	&:focus {
 		border-color: rgba(82, 168, 236, .8);
 		outline: 0;
-		outline: thin dotted     \9; /* IE6-9 */
+		outline: thin dotted      \9; /* IE6-9 */
 	}
 
 	// Position radios and checkboxes better
 	input[type="radio"],
 	input[type="checkbox"] {
 		margin: 4px 0 0;
-		margin-top: 1px     \9; /* IE8-9 */
+		margin-top: 1px      \9; /* IE8-9 */
 		line-height: normal;
 	}
 
