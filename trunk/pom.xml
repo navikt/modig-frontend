@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>modig-frontend</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-alpha.10</version>
+
+    <parent>
+        <groupId>no.nav.modig</groupId>
+        <artifactId>modig-main</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <name>${project.artifactId}</name>
+    <description>
+        Dette biblioteket inneholder statiske ressurser for felles utseende og oppførsel i moderniserte applikasjoner i Nav.
+    </description>
+    <properties>
+        <jira-component>modig-frontend</jira-component>
+    </properties>
+
+    <modules>
+        <module>modig-frontend-ressurser</module>
+        <module>modig-frontend-wicket</module>
+    </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>m2internal</id>
+            <name>NAV Maven2 Internal Repository</name>
+            <url>http://maven.adeo.no/nexus/content/repositories/m2internal</url>
+        </repository>
+        <snapshotRepository>
+            <id>m2snapshot</id>
+            <name>NAV Maven2 Snapshot Repository</name>
+            <url>http://maven.adeo.no/nexus/content/repositories/m2snapshot</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <scm>
+        <developerConnection>scm:svn:https://versjonskontroll.adeo.no/svn/applikasjonsrammeverk/modig-frontend/tags/modig-frontend-1.0.0-alpha.10
+        </developerConnection>
+        <url>https://versjonskontroll.adeo.no/svn/applikasjonsrammeverk/modig-frontend/tags/modig-frontend-1.0.0-alpha.10</url>
+    </scm>
+
+</project>
