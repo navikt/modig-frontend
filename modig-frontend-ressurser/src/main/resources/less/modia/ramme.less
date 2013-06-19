@@ -1,0 +1,286 @@
+/* Stiler for den generelle layouten og oppsettet i MODIA */
+
+HTML {
+	height: 100%;
+	overflow-y: scroll;
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background-color: @grayDark ;
+
+	@media (max-width: 1199px) {
+		font-size: 12px;
+	}
+}
+
+BODY {
+	height: 100%;
+	.clearfix;
+	position: relative;
+	display: table;
+
+	font-size: 1rem;
+	background-color: @grayDark;
+}
+
+.main {
+	position: relative;
+	padding: auto 0;
+	height: 100%;
+	.border-box;
+	.clearfix;
+	display: table-cell;
+
+	background-color: @white;
+}
+
+.navbar {
+	margin-bottom: 0;
+	height: 100px;
+	padding: 20px 30px 10px 102px;
+	.border-box;
+
+	z-index: 1030;
+	background-color: @grayDark ;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	white-space: no-wrap;
+
+	FORM {
+		margin: 0;
+	}
+
+	H1 {
+		display: none;
+	}
+ }
+
+ .personsok-button {
+ 	position: absolute;
+ 	left: 30px;
+ 	width: 52px;
+ 	height: 52px;
+
+ 	text-align: center;
+ 	border-radius: 52px;
+ 	background-color: #a1a1a1;
+ 	background-image: none;
+ 	border: none;
+ 	font-size: 1.43rem;
+
+ 	&:hover {
+ 		background-color: #919191;
+ 		background-image: none;
+ 		border: none;
+ 	}
+
+ 	&:active {
+ 		background-color: #818181;
+ 		background-image: none;
+ 		border: none;
+ 		box-shadow: none;
+ 	}
+
+ 	&:after {
+ 		width: 0;
+ 		height: 0;
+ 		bottom: 10px;
+ 		left: 21px;
+ 		margin: 0 auto;
+ 		position: absolute;
+
+ 		border-left: 5px solid transparent;
+ 		border-right: 5px solid transparent;
+ 		content: "";
+ 		border-top: 5px solid #333; }
+
+ 	&.active:after {
+ 		bottom: 11px;
+
+ 		border-top: none;
+ 		border-bottom: 5px solid #333;
+ 	}
+ }
+
+
+.search-intern {
+	.border-box;
+	width: 43.9%;
+	display: block;
+	position: relative;
+
+  	INPUT[type=text] {
+  		.border-box;
+  		float: left;
+  		height: 52px;
+  		width: 100%;
+  		margin-top: 0;
+  		padding-right: 40px;
+	}
+
+    INPUT[type=button], SUBMIT {
+    	margin: 0;
+    	height: 52px;
+    	padding: 4px 0;
+    	position: absolute;
+    	right: 0;
+    	width: 40px;
+
+    	text-align: center;
+    	color: transparent;
+    	text-shadow: none;
+  		background: transparent url(../img/lupe.png) no-repeat 10px center;
+  		border: none;
+  		background-size: 21px;
+  	}
+
+  	INPUT[type=button]:hover, INPUT[type=button].hover, INPUT[type=button]:active, SUBMIT:hover, SUBMIT:active {
+  		right: 0;
+  		width: 40px;
+  		position: absolute;
+
+  		background: transparent url(../img/lupe-hover.png) no-repeat 10px center;
+  		border: none;
+  		background-size: 21px;
+  	}
+}
+
+.sidebar {
+	.border-box;
+	overflow: visible;
+	height: 100%;
+	display: table-cell;
+	
+	color: @white;
+	background-color: @grayDark;
+	vertical-align: top;
+	
+	 > * {
+	 	.border-box;
+	 	margin: 0 30px;
+	 }
+	 
+	 HR {
+	 	height: 1px;
+	 	width: 20px;
+	 	margin: -5px auto 0;
+	 	
+	 	border: 0;
+	 	color: @white;
+	 	background-color: @white;
+	 }
+	 
+	 P {
+	 	margin: 0;
+	 	line-height: 1.2em;
+	 }
+	 
+	 DL {
+	 	margin-bottom: 10px;
+	 	overflow: auto;
+	 	
+	 	font-weight: bold;
+	 }
+	 
+	 DT {
+	 	width: 120px;
+	 	position: absolute;
+	 	
+	 	color: #B7B1A9;
+	 	font-weight: normal;
+	 }
+	 
+	 DD {
+	 	margin: 0;
+	 	display: block;
+	 	padding-left: 120px;
+	 	
+	 	text-overflow: ellips;
+	 }
+	 
+	 P.dato {
+	 	text-align: center;
+	 }
+	 
+	 .visittkort {
+	 	margin: 100px 30px 30px 30px;
+	 	border: 1px solid #626262;
+	 	padding: 15px 15px 15px 65px;
+	 	min-height: 266px;
+	 	
+	 	background-repeat: no-repeat;
+	 	background-position: 15px 15px;
+	 	background-size: 40px;
+	 	color: #B7B1A9;
+	 
+	 	A, A:visited {
+	 		color: white;
+	 		text-decoration: none;
+	 	}
+	 	
+	 	A:hover, A:active {
+	 		color: #00a9E0;
+	 		text-decoration: none;
+	 	}
+	 	
+		&.mann {
+			background-image: url(../img/mann.svg);
+		}
+		
+		&.kvinne {
+			background-image: url(../img/kvinne.svg);
+		}
+		
+		H1, H2 {
+		    ._H2;
+			margin: 2px 0 5px 0;
+			color: #B7B1A9;
+		}
+		
+		BUTTON {
+			padding: 0;
+			position: relative;
+			
+			background: none;
+			color: #00a9E0;
+			border: none;
+			background: none;
+			font-weight: bold;
+			
+			&:before {
+				bottom: 4px;
+				left: -10px;
+				margin: 0 auto;
+				position: absolute;
+				width: 0;
+				height: 0;
+				
+				content: "";
+				border-top: 5px solid transparent;
+				border-bottom: 5px solid transparent;
+				border-right: 5px solid #00a9E0;
+			}	
+			
+			&:active {
+				box-shadow: none;
+			}	
+		}
+		
+		&.active {
+			margin: 100px 0 16px 0;
+			padding: 15px 30px 30px 96px;
+			
+			border: none;
+			border-top: 1px solid #626262;
+			background-position: 46px 15px;
+		
+			BUTTON:before {
+				left: -12px;
+				
+				border-right: none;
+				border-left: 4px solid #00a9E0;
+			}
+		}
+	}
+}

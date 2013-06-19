@@ -76,7 +76,9 @@ import static no.nav.modig.frontend.FellesResources.UNDERSCORE_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.UTILITIES_LESS;
 import static no.nav.modig.frontend.FellesResources.VARIABLES_LESS;
 import static no.nav.modig.frontend.FellesResources.WICKET_MODAL_WINDOW;
-import static no.nav.modig.frontend.ModiaResources.MODIA_LESS;
+import static no.nav.modig.frontend.ModiaResources.MODIA_KOMPONENTER_LESS;
+import static no.nav.modig.frontend.ModiaResources.MODIA_RAMME_LESS;
+import static no.nav.modig.frontend.ModiaResources.MODIA_COMMON_LESS;
 
 
 public class FrontendModules {
@@ -100,7 +102,7 @@ public class FrontendModules {
 	public static final FrontendModule MODIA = new FrontendModule.With()
 	.scripts(TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, NAV_AJAX_LOADER)
 	.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS,
-			DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, MODIA_LESS).done();
+			DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, MODIA_COMMON_LESS, MODIA_RAMME_LESS, MODIA_KOMPONENTER_LESS).done();
 
 	public static final FrontendModule BOOTSTRAP_SPRITES = new FrontendModule.With().less(LESS_SPRITES).images(ICONS, ICONS_WHITE).done();
 	public static final FrontendModule BOOTSTRAP_WELLS = new FrontendModule.With().less(LESS_WELLS).done();

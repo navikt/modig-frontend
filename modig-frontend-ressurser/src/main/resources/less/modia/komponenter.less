@@ -1,38 +1,4 @@
-/* Mixins */
-.border-box {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-
-.kolonne {
-	.border-box;
-	float: left;
-	display: block;
-	min-height: 30px;
-	width: 47.93617021276595%;
-}
-
-/* Typografi */
-H1, H2, H3 {
-	font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	line-height: 1.2em;
-}
-
-H1 {
-	font-size: 2.5rem;
-}
-
-H2, ._H2 {
-	font-size: 2.0rem;
-}
-
-H3, ._H3 {
-	font-size: 1.43rem;
-	font-weight: 600;
-	text-transform: uppercase;
-}
+/* Stiler til diskrete komponenter i MODIA */
 
 /* Lameller */
 .lamell {
@@ -132,8 +98,8 @@ H3, ._H3 {
 	background-color: #F1F1F1;
 	
 	&:focus {
-		border-color: #3e3832;
-		outline:none;
+		border-color: @linkColor;
+		outline: none;
 	}
 
 	A:hover {
