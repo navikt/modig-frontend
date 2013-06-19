@@ -1,6 +1,6 @@
 $(function () {
 
-    $('.skriftstorrelse').tooltip({
+    $('#link-skriftstorrelse').tooltip({
         trigger: 'click',
         placement: 'bottom',
         html: true
