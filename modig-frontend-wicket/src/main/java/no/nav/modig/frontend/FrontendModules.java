@@ -64,6 +64,7 @@ import static no.nav.modig.frontend.FellesResources.FELLES_LESS;
 import static no.nav.modig.frontend.FellesResources.KNAPPER_LESS;
 import static no.nav.modig.frontend.FellesResources.MIXINS_LESS;
 import static no.nav.modig.frontend.FellesResources.MODUS_LESS;
+import static no.nav.modig.frontend.FellesResources.NAV_AJAX_LOADER;
 import static no.nav.modig.frontend.FellesResources.NAV_DATEPICKER;
 import static no.nav.modig.frontend.FellesResources.RESET_LESS;
 import static no.nav.modig.frontend.FellesResources.SKJEMA_LESS;
@@ -81,7 +82,7 @@ import static no.nav.modig.frontend.ModiaResources.MODIA_LESS;
 public class FrontendModules {
 
 	public static final FrontendModule EKSTERNFLATE = new FrontendModule.With()
-			.scripts(TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE)
+			.scripts(TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, NAV_AJAX_LOADER)
 			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS, CONTRAST_LESS,
 					DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS, EKSTERN_LESS).done();
 
@@ -91,7 +92,7 @@ public class FrontendModules {
 
 
 	public static final FrontendModule BOOTSTRAP_CORE = new FrontendModule.With()
-			.scripts(JS_TRANSITION)
+			.scripts(JS_TRANSITION, NAV_AJAX_LOADER)
 			.less(LESS_RESET, LESS_VARIABLES, LESS_MIXINS, LESS_SCAFFOLDING, LESS_GRID, LESS_LAYOUTS,
 					LESS_TYPE, LESS_CODE, LESS_FORMS, LESS_TABLES, LESS_COMPONENTANIMATIONS, LESS_CLOSE,
 					LESS_HEROUNIT, LESS_UTILITIES, WICKET_MODAL_WINDOW, NAV_DATEPICKER).done();

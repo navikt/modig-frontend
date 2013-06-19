@@ -15,6 +15,7 @@ class FellesResources {
 	static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("felles/felles.js");
 	static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("felles/dropdown.js");
 	static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("felles/tooltip.js");
+	static final JavaScriptResourceReference NAV_AJAX_LOADER = new JQueryDependentResourceReference("felles/navAjaxLoader.js");
 
 	static final PackageResourceReference RESET_LESS = lessReference("felles/reset.less");
 	static final PackageResourceReference VARIABLES_LESS = lessReference("felles/variables.less");
