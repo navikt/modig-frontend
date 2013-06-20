@@ -79,6 +79,14 @@
 	.logginn, .loggut {
 		float: right;
 		background: none;
+		margin-top: 3px;
+		border-color: #e04242;
+		font-size: 0.85rem;
+		&:hover {
+			background-color: @white;
+			color: @red;
+			border-color: #440000;
+		}
 	}
 	* {
 		color: #fff;
@@ -102,12 +110,24 @@
 		font-weight: 600;
 		max-width: 100%;
 	}
+	.liste-vannrett li:hover {
+		a, span {
+			color: #05a8e0;
+		}
+	}
 }
 
 .innstillinger-innlogget {
 	background: @red;
-	.liste-vannrett li:not([class*="dropdown"]) a:before {
-		color: #fff;
+	.liste-vannrett li {
+		&:not([class*="dropdown"]) a:before {
+			color: #fff;
+		}
+		&:hover {
+			a, span {
+				color: @grayDark;
+			}
+		}
 	}
 }
 
@@ -147,7 +167,6 @@
 		}
 	}
 }
-
 
 @media (max-width: 1023px) {
 	.skriftstorrelse {
