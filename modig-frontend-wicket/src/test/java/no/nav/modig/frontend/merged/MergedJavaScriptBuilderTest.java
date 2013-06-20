@@ -15,6 +15,13 @@
  */
 package no.nav.modig.frontend.merged;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+
+import java.lang.reflect.Field;
+import java.text.DateFormat;
+
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.http.mock.MockHttpServletRequest;
 import org.apache.wicket.protocol.http.mock.MockHttpSession;
@@ -22,11 +29,6 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.apache.wicket.util.time.Duration;
 import org.apache.wicket.util.time.Time;
 import org.junit.Test;
-
-import java.text.DateFormat;
-
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
 
 
 public class MergedJavaScriptBuilderTest extends MergedResourceBuilderTest {
@@ -55,6 +57,7 @@ public class MergedJavaScriptBuilderTest extends MergedResourceBuilderTest {
                 "/no/nav/modig/frontend/merged/js/test.js",
                 "/org/apache/wicket/ajax/res/js/wicket-event-jquery.js",
                 "/org/apache/wicket/ajax/res/js/wicket-ajax-jquery.js");
+
     }
 
     @Test
@@ -106,5 +109,23 @@ public class MergedJavaScriptBuilderTest extends MergedResourceBuilderTest {
                 .addScript(MergedJavaScriptBuilderTestPage.JS_REFERENCE)
                 .addWicketAjaxLibraries()
                 .install(app);
+    }
+
+    @Test
+    public void duplicateResourceRemoved() throws Exception {
+        MergedJavaScriptBuilder b1 = new MergedJavaScriptBuilder();
+        b1.setPath("/scripts/all.js");
+        b1.addScript(MergedJavaScriptBuilderTestPage.JS_REFERENCE);
+        b1.assertRequiredOptionsAndFreeze();
+
+        MergedJavaScriptBuilder b2 = new MergedJavaScriptBuilder();
+        b2.setPath("/scripts/all.js");
+        b2.addScript(MergedJavaScriptBuilderTestPage.JS_REFERENCE);
+        b2.addScript(MergedJavaScriptBuilderTestPage.JS_REFERENCE);
+        b2.assertRequiredOptionsAndFreeze();
+
+        Field field = MergedResourceBuilder.class.getDeclaredField("references");
+        field.setAccessible(true);
+        assertEquals(field.get(b1), field.get(b2));
     }
 }
