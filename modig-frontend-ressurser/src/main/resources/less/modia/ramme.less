@@ -15,6 +15,7 @@ HTML {
 
 BODY {
 	height: 100%;
+	width: 100%;
 	.clearfix;
 	position: relative;
 	display: table;
@@ -103,12 +104,23 @@ BODY {
  	}
  }
 
+ .nullstill-button {
+     margin: 12px 0 0 30px;
+     width: 32px;
+     height: 32px;
+     float: left;
+
+     border: none;
+     background: transparent url(../img/nullstill.svg) no-repeat right center;
+     background-size: 32px;
+     color: transparent;
+ }
 
 .search-intern {
-	.border-box;
-	width: 43.9%;
+	width: 140px;
 	display: block;
 	position: relative;
+	float: left;
 
   	INPUT[type=text] {
   		.border-box;
@@ -284,3 +296,181 @@ BODY {
 		}
 	}
 }
+
+/* MEDIA QUERIES */
+
+
+@media (min-width: 1200px) {
+    BODY {
+    	width: 100%;
+    }
+
+    .sidebar {
+    	width: 30.2%;
+    }
+
+    .main, .bunn, #personsok {
+    	width: 69.8%;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+    .sidebar {
+    	width: 32.1%;
+    }
+
+    .main, .bunn, #personsok {
+    	width: 67.9%;
+    }
+
+    .sidebar .visittkort, .sidebar .visittkort.mann, .sidebar .visittkort.kvinne {
+    	padding-left: 25px;
+    	background-image: none;
+    }
+
+    .sidebar .visittkort.active {
+    	padding-left: 56px;
+    	padding-right: 55px;
+    }
+
+    #personsok #personsokPanel .description {
+    	display: none;
+    }
+}
+
+@media (max-width: 959px) {
+    HTML {
+        overflow-y: hidden;
+    }
+	BODY {
+		padding: 0;
+		overflow-x: hidden;
+		position: relative;
+		display: block;
+		overflow-y: auto;
+	}
+
+    .navbar {
+    	position: relative;
+    }
+
+    .main {
+    	margin-top: 0;
+    	width: 100%;
+    	display: block;
+    }
+
+    .bunn {
+    	width: 100%;
+    }
+
+    .navbar FORM .taskbox, .navbar FORM NAV.menu {
+    	width: 26.7%;
+    }
+
+    .navbar {
+    	padding-left: 82px;
+    }
+
+	.personsok-button {
+		width: 32px;
+		height: 32px;
+
+		border-radius: 32px;
+	}
+
+	.nullstill-button {
+        margin-top: 0;
+    }
+
+    .navbar {
+    	height: 80px;
+    }
+
+    .search-intern INPUT[type=text] {
+    	height: 32px;
+    }
+
+    .search-intern INPUT[type=button], .search-intern SUBMIT {
+    	height: 32px;
+
+    	background-position: 10px center;
+    }
+
+	.navbar FORM NAV.menu, .navbar FORM .taskbox {
+		height: 32px;
+	}
+
+	.personsok-button:after, .personsok-button.active:after {
+		bottom: 3px;
+		left: 11px;
+	}
+
+	#personsok #personsokPanel .description {
+    	display: none;
+    }
+
+    .kjerneinfo .grafikk .year P:first-child {
+    	display: none;
+    }
+
+    .kjerneinfo .grafikk .year HR {
+    	display: none;
+    }
+
+    .sidebar {
+    	display: block;
+    	position: absolute;
+    	top: 0;
+    	right: -380px;
+    	width: 400px;
+    	height: 100%;
+    	overflow-x: hidden;
+
+    	z-index: 2500;
+    	background: transparent  url(/modiabrukerdialog/gfx/tapp_liten.png) no-repeat 0px 175px;
+
+    	.visittkort, .visittkort.active {
+    		margin-top: 80px;
+    		margin-right: 0;
+    		border: none;
+    		background-color: #3E3832;
+    	}
+    }
+}
+
+@media (max-width: 767px) {
+	.lameller .lamell .lerret .kolonne {
+		width: 100%;
+		float: none;
+		display: block;
+	}
+
+    .lameller .lamell .lerret .kolonne:last-child {
+    	margin-left: 0;
+    }
+
+    #personsok #personsokPanel .description {
+    	display: none;
+    }
+
+    #personsok #personsokPanel .navnogadresse {
+    	float: none;
+    	display: block;
+    	width: 100%;
+    }
+
+    #personsok #personsokPanel .begrenssoket {
+    	float: none;
+    	width: 100%;
+    	margin: 2rem 0;
+    	display: block;
+    	overflow: auto;
+    }
+
+    #personsok #personsokResult #resultDataTable {
+    	TH, TD {
+			padding: 0.5rem 0 0.5rem 0.5rem;
+    	}
+    }
+}}
