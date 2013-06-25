@@ -8,8 +8,12 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 
 class FellesResources {
 
-	static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.9.1.js");
-	static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = jsReference("html5.js");
+    // WICKET-5250: JavaScriptResourceReference blir komprimert, selv om det finnes en minified versjon
+    // Ettersom alt innholdet i html5shiv ligger i en kommentar blir dette fjernet.
+    // Må bruke en PackageResourceReference frem til WICKET-5250 og WICKET-5251 er løst
+    static final PackageResourceReference HTML5_SHIV_RESOURCE = new PackageResourceReference(JsResourceMarker.class, "html5.js");
+
+    static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.9.1.js");
 	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = new JQueryDependentResourceReference("underscore.js");
 	static final JavaScriptResourceReference TRANSITIONS_RESOURCE = new JQueryDependentResourceReference("felles/transitions.js");
 	static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("felles/felles.js");
