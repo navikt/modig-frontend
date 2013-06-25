@@ -2,12 +2,14 @@ package no.nav.modig.frontend;
 
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
 
 
 public class ConditionalJavascriptResource extends JavaScriptReferenceHeaderItem {
 
-    protected static final ConditionalJavascriptResource HTML5_SHIV = new ConditionalJavascriptResource(FellesResources.HTML5_SHIV_RESOURCE, "lt IE 9");
+    public static final JavaScriptResourceReference HTML_5_SHIV_RESOURCE = FellesResources.HTML5_SHIV_RESOURCE;
+    protected static final ConditionalJavascriptResource HTML5_SHIV = new ConditionalJavascriptResource(HTML_5_SHIV_RESOURCE, "lt IE 9");
 
     /**
      * Creates a new {@code JavaScriptReferenceHeaderItem}.

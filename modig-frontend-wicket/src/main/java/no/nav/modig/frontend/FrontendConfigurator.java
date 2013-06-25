@@ -199,6 +199,8 @@ public class FrontendConfigurator {
 
 
     private void configureHtml5shiv(WebApplication application) {
+        ResourceReference reference = ConditionalJavascriptResource.HTML5_SHIV.getReference();
+        application.mountResource(basePath + "/js/" + reference.getName(), reference);
         application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
             @Override
             public void renderHead(IHeaderResponse response) {
@@ -210,6 +212,7 @@ public class FrontendConfigurator {
 
     private void configureConditionalJavascript(WebApplication application) {
         for (final ConditionalJavascriptResource item : conditionalJavascripts) {
+            application.mountResource(basePath + "/js/" + item.getReference().getName(), item.getReference());
             application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
                 @Override
                 public void renderHead(IHeaderResponse response) {
@@ -222,6 +225,7 @@ public class FrontendConfigurator {
 
     private void configureConditionalCss(WebApplication application) {
         for (final ConditionalCssResource item : conditionalCss) {
+            application.mountResource(basePath + "/css/" + item.getReference().getName(), item.getReference());
             application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
                 @Override
                 public void renderHead(IHeaderResponse response) {
@@ -232,7 +236,7 @@ public class FrontendConfigurator {
     }
 
     private void configureLess(WebApplication application) {
-        if(lessReferences.isEmpty()) {
+        if (lessReferences.isEmpty()) {
             return;
         }
 
