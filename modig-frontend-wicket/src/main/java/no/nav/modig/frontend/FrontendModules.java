@@ -53,6 +53,7 @@ import static no.nav.modig.frontend.BootstrapResources.LESS_TYPE;
 import static no.nav.modig.frontend.BootstrapResources.LESS_UTILITIES;
 import static no.nav.modig.frontend.BootstrapResources.LESS_VARIABLES;
 import static no.nav.modig.frontend.BootstrapResources.LESS_WELLS;
+import static no.nav.modig.frontend.ConditionalCssResource.*;
 import static no.nav.modig.frontend.EksternflateResources.EKSTERN_LESS;
 import static no.nav.modig.frontend.EksternflateResources.FOOTER_LESS;
 import static no.nav.modig.frontend.EksternflateResources.PANEL_LESS;
@@ -85,8 +86,10 @@ public class FrontendModules {
 
 	public static final FrontendModule EKSTERNFLATE = new FrontendModule.With()
 			.scripts(TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, NAV_AJAX_LOADER)
-			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS, CONTRAST_LESS,
-					DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS, EKSTERN_LESS).done();
+			.conditionalCss(IE8_EKSTERNFLATE)
+			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW,
+					KNAPPER_LESS, CONTRAST_LESS, DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS,
+					NAV_DATEPICKER, UTILITIES_LESS, EKSTERN_LESS).done();
 
 
 	@Deprecated

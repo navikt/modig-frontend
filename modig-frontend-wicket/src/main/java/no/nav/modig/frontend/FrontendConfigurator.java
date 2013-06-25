@@ -158,7 +158,9 @@ public class FrontendConfigurator {
         Collections.reverse(reversedModules);
         for (FrontendModule module : reversedModules) {
             jsReferences.addAll(0, asList(module.getScripts()));
+	        conditionalJavascripts.addAll(0, asList(module.getConditionalScripts()));
             cssReferences.addAll(0, asList(module.getStylesheets()));
+	        conditionalCss.addAll(0, asList(module.getConditionalCss()));
             imgReferences.addAll(0, asList(module.getImages()));
             lessReferences.addAll(0, asList(module.getLess()));
         }

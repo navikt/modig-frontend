@@ -47,21 +47,35 @@
 	}
 }
 
-.knapp-liten, .knapp-hoved-liten, .knapp-link-liten {
+[class*=-liten] {
 	padding: @paddingSmall;
 	font-size: @fontSizeSmall;
 	line-height: 1.4rem;
 }
 
-.knapp-mini {
+[class*=-mini] {
 	padding: @paddingMini;
 	font-size: @fontSizeMini;
 }
 
-.knapp-uthevet {
+[class*=knapp-uthevet] {
 	.buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
-	&:hover,
-	&:focus {
+	&:hover, &:focus {
 		.buttonBackground(#635e5f, #504e4a, #fff);
+	}
+}
+
+[class*=knapp-advarsel] {
+	.buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+	&:hover, &:focus {
+		.buttonBackground(darken(@btnDangerBackground, 10%), darken(@btnDangerBackgroundHighlight, 10%), #fff);
+	}
+}
+
+[class*=knapp-deaktivert] {
+	.buttonBackground(@btnBackground, #d9d9d9, #a3a3a3);
+	cursor: default;
+	&:hover, &:focus {
+		.buttonBackground(@btnBackground, #d9d9d9, #a3a3a3);
 	}
 }
