@@ -1,5 +1,7 @@
 package no.nav.modig.frontend.merged;
 
+import java.util.List;
+
 import org.apache.wicket.request.IRequestHandler;
 import org.apache.wicket.request.IRequestMapper;
 import org.apache.wicket.request.Request;
@@ -17,9 +19,6 @@ import org.apache.wicket.util.IProvider;
 import org.apache.wicket.util.resource.IResourceStream;
 import org.apache.wicket.util.time.Time;
 
-import java.util.List;
-
-
 public class MergedResourceMapper extends AbstractMapper implements IRequestMapper {
 
 	protected final String[] mountSegments;
@@ -28,7 +27,7 @@ public class MergedResourceMapper extends AbstractMapper implements IRequestMapp
 	protected final IProvider<? extends IResourceCachingStrategy> cachingStrategy;
 
 	public MergedResourceMapper(String path, List<ResourceReference> resources, IPageParametersEncoder parametersEncoder,
-	                            IProvider<? extends IResourceCachingStrategy> cachingStrategy) {
+			IProvider<? extends IResourceCachingStrategy> cachingStrategy) {
 		// TODO: validate arguments
 		this.resources = resources;
 		this.mountSegments = getMountSegments(path);
@@ -121,9 +120,9 @@ public class MergedResourceMapper extends AbstractMapper implements IRequestMapp
 		IResource res = ref.getResource();
 		if (res instanceof IStaticCacheableResource) {
 			IResourceStream stream = ((IStaticCacheableResource) res).getCacheableResourceStream();
-            if(stream == null ){
-                throw new RuntimeException("CacheableResourceStream for resource " + ref.getKey().toString() + " not available");
-            }
+			if (stream == null) {
+				throw new RuntimeException("CacheableResourceStream for resource " + ref.getKey().toString() + " not available");
+			}
 			modified = stream.lastModifiedTime();
 		}
 		return modified;

@@ -2,21 +2,16 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="34px" height="400px" viewBox="0 0 34 400" enable-background="new 0 0 34 400" xml:space="preserve">
+	 width="34px" height="34px" viewBox="0 0 34 34" enable-background="new 0 0 34 34" xml:space="preserve">
 <g>
-	<path fill="#C22026" d="M17,1C8.163,1,1,8.164,1,17c0,8.837,7.163,16,16,16c8.837,0,16-7.163,16-16C33,8.164,25.837,1,17,1z
-		 M23.298,12.023h-2.273l-0.006-2.271L23.298,12.023z M23.996,24H12.003V9.001h7.993v4.021h4V24z"/>
-	<rect x="14" y="15" fill="#C22026" width="8" height="1"/>
-	<rect x="14" y="17" fill="#C22026" width="8" height="1"/>
-	<rect x="14" y="19" fill="#C22026" width="8" height="1"/>
-	<rect x="14" y="21" fill="#C22026" width="8" height="1"/>
-</g>
-<g>
-	<path fill="#18A8E0" d="M17,366c-8.837,0-16,7.164-16,16s7.163,16,16,16s15.999-7.164,15.999-16S25.837,366,17,366z
-		 M23.298,377.022h-2.273l-0.006-2.271L23.298,377.022z M23.995,389H12.003v-15h7.993v4.021h3.999V389z"/>
-	<rect x="14" y="380" fill="#18A8E0" width="7.999" height="1"/>
-	<rect x="14" y="382" fill="#18A8E0" width="7.999" height="1"/>
-	<rect x="14" y="384" fill="#18A8E0" width="7.999" height="1"/>
-	<rect x="14" y="386" fill="#18A8E0" width="7.999" height="1"/>
+	<polygon fill="#C8C5C4" points="23.006,10.008 23.006,9.999 22.997,9.999 	"/>
+	<path fill="#C8C5C4" d="M17,1C8.163,1,1,8.163,1,17s7.163,16,16,16s16-7.163,16-16S25.837,1,17,1z M19.02,23.248l0.006-2.271h2.273
+		L19.02,23.248z M18,20v3.999l-6.997-0.001V11h10.993L22,20H18z M24,19.999h-1v-9.991H13v-1h10V8.999h1V19.999z"/>
+	<rect x="13" y="17" fill="#C8C5C4" width="1" height="1"/>
+	<rect x="15" y="17" fill="#C8C5C4" width="5" height="1"/>
+	<rect x="13" y="15" fill="#C8C5C4" width="1" height="1"/>
+	<rect x="15" y="15" fill="#C8C5C4" width="5" height="1"/>
+	<rect x="13" y="13" fill="#C8C5C4" width="1" height="1"/>
+	<rect x="15" y="13" fill="#C8C5C4" width="5" height="1"/>
 </g>
 </svg>

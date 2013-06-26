@@ -2,7 +2,7 @@
 	width: 14em;
 	padding: .2em .2em 0;
 	display: none;
-	background: @gray;
+	background: @grayDark;
 	.ui-datepicker-header {
 		position: relative;
 		padding: .2em 0;
@@ -39,7 +39,7 @@
 				width: 43%;
 				height: 1.5em;
 				border: 1px solid #988f86;
-				background: @gray;
+				background: @grayDark;
 				padding: 0;
 				color: #eee;
 				margin: 0 2px;
@@ -51,7 +51,7 @@
 		font-size: .9em;
 		border-collapse: collapse;
 		margin: 0 0 .4em;
-		th {
+		th span {
 			padding: .7em .3em .4em;
 			text-align: center;
 			font-weight: 700;
@@ -75,7 +75,7 @@
 					}
 					&:hover {
 						background: #fff;
-						color: @gray;
+						color: @grayDark;
 					}
 				}
 				&:last-child {
@@ -207,9 +207,19 @@
 	}
 }
 
-input.hasDatepicker {
-	width: 9em;
-}
 img.ui-datepicker-trigger {
 	margin: 0 8px 0 -28px;
 }
+
+.hasDatepicker.placeholder {
+  width: 9em;
+  cursor: text;
+  padding: 4px 4px 4px 4px;
+  color: #999999;
+}
+
+input:placeholder, textarea:placeholder {
+  color:#999999;
+}
+
+

@@ -6,7 +6,9 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.PackageResourceReference;
 
 public class ModiaResources {
-	static final PackageResourceReference MODIA_LESS = lessReference("modia/modia.less");
+	static final PackageResourceReference MODIA_COMMON_LESS = lessReference("modia/common.less");
+    static final PackageResourceReference MODIA_RAMME_LESS = lessReference("modia/ramme.less");
+    static final PackageResourceReference MODIA_KOMPONENTER_LESS = lessReference("modia/komponenter.less");
 
 
 	private static JavaScriptResourceReference jsReference(String path) {

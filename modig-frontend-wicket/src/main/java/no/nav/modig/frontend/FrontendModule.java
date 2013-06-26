@@ -9,7 +9,9 @@ import org.apache.wicket.request.resource.SharedResourceReference;
 public class FrontendModule {
 
     private JavaScriptResourceReference[] scripts = new JavaScriptResourceReference[]{};
+    private ConditionalJavascriptResource[] conditionalScripts = new ConditionalJavascriptResource[]{};
     private CssResourceReference[] stylesheets = new CssResourceReference[]{};
+    private ConditionalCssResource[] conditionalCss = new ConditionalCssResource[]{};
     private SharedResourceReference[] images = new SharedResourceReference[]{};
     private PackageResourceReference[] less = new PackageResourceReference[]{};
 
@@ -17,11 +19,19 @@ public class FrontendModule {
         return ArrayUtils.clone(scripts);
     }
 
-    public CssResourceReference[] getStylesheets() {
+	public ConditionalJavascriptResource[] getConditionalScripts() {
+		return ArrayUtils.clone(conditionalScripts);
+	}
+
+	public CssResourceReference[] getStylesheets() {
         return ArrayUtils.clone(stylesheets);
     }
 
-    public SharedResourceReference[] getImages() {
+	public ConditionalCssResource[] getConditionalCss() {
+		return ArrayUtils.clone(conditionalCss);
+	}
+
+	public SharedResourceReference[] getImages() {
         return ArrayUtils.clone(images);
     }
 
@@ -39,10 +49,20 @@ public class FrontendModule {
             return this;
         }
 
+	    public With conditionalScripts(ConditionalJavascriptResource... references) {
+		    module.conditionalScripts = references;
+		    return this;
+	    }
+
         public With stylesheets(CssResourceReference... references) {
             module.stylesheets = references;
             return this;
         }
+
+	    public With conditionalCss(ConditionalCssResource... references) {
+		    module.conditionalCss = references;
+		    return this;
+	    }
 
         public With less(PackageResourceReference... references) {
             module.less = references;

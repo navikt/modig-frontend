@@ -1,34 +1,117 @@
 .form-linje {
-	padding: 2px 0.5rem;
-}
-
-form label {
-	font-size: 0.85rem;
-	text-transform: uppercase;
-}
-
-form.horisontal {
-	label {
-		position: relative;
-		padding: 1rem 0 0.5rem;
-		input, select, textarea {
-			margin-left: 1rem;
+	padding: 5px 0.5rem;
+	&.feil {
+		input, textarea {
+			border: 1px solid #fca2a2;
+			border-top: 1px solid #ff0000;
+			background: #fee6e6;
 		}
-		span {
-			display: inline-block;
-			font-size: 0.85rem;
-			text-transform: uppercase;
-			width: 11rem;
+		.melding {
+			color: #c30000;
+			text-transform: none;
 		}
 	}
 }
 
-form.vertikal {
+form {
 	label {
-		input, select, textarea {
-			display: block;
-			&[type="checkbox"], &[type="radio"] {
+		font-size: 0.8rem !important;
+		text-transform: uppercase;
+		span {
+			font-size: 0.8rem !important;
+			text-transform: uppercase;
+		}
+	}
+	&.horisontal {
+		label {
+			position: relative;
+			padding: 1rem 0 0.5rem;
+			input, select, textarea {
+				margin-left: 1rem;
+			}
+			span {
 				display: inline-block;
+				font-size: 0.85rem;
+				text-transform: uppercase;
+				width: 11rem;
+				&.melding {
+					width: auto;
+				}
+			}
+		}
+	}
+	&.vertikal {
+		label {
+			input, select, textarea {
+				display: block;
+				margin-top: 1px;
+				&[type="checkbox"], &[type="radio"] {
+					display: inline-block;
+				}
+			}
+		}
+	}
+	input[type="radio"],
+	input[type="checkbox"] {
+		position: absolute;
+		height: 0;
+		width: 0;
+		opacity: 0;
+	}
+
+	input[type="radio"] + label {
+		background: url(../img/radio.svg) 0 0 no-repeat;
+	}
+
+	input[type="radio"]:checked + label {
+		background: url(../img/radio_valgt.svg) 0 0 no-repeat;
+	}
+
+	input[type="checkbox"] + label {
+		background: url(../img/check.svg) 0 0 no-repeat;
+	}
+
+	input[type="checkbox"]:checked + label {
+		background: url(../img/check_valgt.svg) 0 0 no-repeat;
+	}
+
+	input[type="radio"] + label,
+	input[type="checkbox"] + label {
+		display: inline-block;
+		position: relative;
+		padding: 2px 0 0 27px;
+		height: 30px;
+		margin-right: 1rem;
+	}
+
+	.valggruppe {
+		span {
+			display: block;
+			font-size: 0.8rem !important;
+			text-transform: uppercase;
+			margin-bottom: 0.5rem;
+		}
+		label {
+			font-size: 1rem !important;
+			text-transform: none;
+		}
+		.vannrett {
+		}
+		.loddrett {
+			label {
+				display: block!important;
+			}
+		}
+		.kolonner-to {
+			.content-columns(2, 0.5rem);
+			label {
+				display: block!important;
+			}
+		}
+		.kolonner-tre {
+			.content-columns(3, 0.5rem);
+			label {
+				display: block!important;
 			}
 		}
 	}
@@ -80,12 +163,12 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-	padding: 4px 6px;
+	padding: .4rem .7rem .5rem;
 	.border-radius(@inputBorderRadius);
 }
 
 select {
-	padding: 4px 4px 4px 6px;
+	padding: .45rem .35rem .5rem .4rem;
 	.border-radius(@inputBorderRadius);
 	border: 1px solid #ccc;
 	border-top: 1px solid #888;
@@ -115,14 +198,14 @@ input[type="color"] {
 	&:focus {
 		border-color: rgba(82, 168, 236, .8);
 		outline: 0;
-		outline: thin dotted    \9; /* IE6-9 */
+		outline: thin dotted      \9; /* IE6-9 */
 	}
 
 	// Position radios and checkboxes better
 	input[type="radio"],
 	input[type="checkbox"] {
 		margin: 4px 0 0;
-		margin-top: 1px    \9; /* IE8-9 */
+		margin-top: 1px      \9; /* IE8-9 */
 		line-height: normal;
 	}
 

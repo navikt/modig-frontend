@@ -12,6 +12,7 @@
 	display: inline-block;
 	list-style: none;
 	margin: 0;
+	padding-left: 0;
 	li {
 		float: left;
 		&:not([class*="dropdown"]) {
@@ -71,31 +72,67 @@
 	margin-bottom: 0;
 	text-align: center;
 	overflow: visible;
-	background: @gray;
+	background: @grayDark;
+	color: #fff;
 	padding: 0;
 	min-height: 40px;
 	.logginn, .loggut {
 		float: right;
 		background: none;
+		margin-top: 3px;
+		border-color: #e04242;
+		font-size: 0.85rem;
+		&:hover {
+			color: @red;
+			background-color: @white;
+			border-color: @white;
+		}
 	}
-	.liste-vannrett {
-		li {
-			a {
-				color: #fff;
-			}
+	* {
+		color: #fff;
+	}
+	.skriftstorrelse {
+		.smaller {
+			font-size: 8pt;
+			display: inline-block;
+		}
+		.bigger {
+			font-size: 14pt;
+			display: inline-block;
+			margin-top: -5px;
+		}
+	}
+	.tooltip-inner {
+		padding: 15px;
+		text-align: left;
+		font-family: Modus, Arial, Helvetica, sans-serif;
+		font-size: 2.2rem;
+		font-weight: 600;
+		max-width: 100%;
+	}
+	.liste-vannrett li:hover {
+		a, span {
+			color: #05a8e0;
 		}
 	}
 }
 
 .innstillinger-innlogget {
-	background: #c30000;
-	.liste-vannrett li:not([class*="dropdown"]) a:before {
-		color: #fff;
+	background: @red;
+	.liste-vannrett li {
+		&:not([class*="dropdown"]) a:before {
+			color: #fff;
+		}
+		&:hover {
+			a, span {
+				color: #440000;
+			}
+		}
 	}
 }
 
 .begrensning {
-	width: 1200px;
+	width: 960px;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -124,9 +161,15 @@
 			padding: 10px 30px;
 			border: 1px solid #ddd;
 			background: #fff;
-			color: @gray;
+			color: @grayDark;
 			text-decoration: none;
 			text-transform: uppercase;
 		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.skriftstorrelse {
+		display: none;
 	}
 }

@@ -7,6 +7,8 @@ import org.apache.wicket.request.resource.ResourceReference;
 
 public class ConditionalCssResource extends CssReferenceHeaderItem {
 
+	protected static final ConditionalCssResource IE8_EKSTERNFLATE = new ConditionalCssResource(EksternflateResources.IE8_EKSTERN_CSS, "screen", "lt IE 9");
+
     /**
      * Creates a new {@code CSSReferenceHeaderItem}.
      *

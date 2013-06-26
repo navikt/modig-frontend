@@ -1,7 +1,18 @@
-a, span, p, div, th, td, select, input, textarea {
+p, th, td, select, input, textarea {
 	font-family: @baseFontFamily;
 	font-size: 1rem;
 	color: @grayDark;
+}
+
+a {
+	font-family: @baseFontFamily;
+	font-size: 1rem;
+	color: @linkColor;
+	text-decoration: none;
+	&:hover {
+		color: @linkColor;
+		text-decoration: underline;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,15 +48,28 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.8rem !important;
 }
 
+.ingress-liten {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.14rem;
+	font-weight: normal;
+	line-height: 1.6rem !important;
+}
+
+.medium {
+	font-family: @headingsFontFamily;
+	font-size: 1.21rem;
+	font-weight: 600;
+}
+
 .stor {
 	font-family: @headingsFontFamily;
-	font-size: 1.8rem;
+	font-size: 2.1rem;
 	font-weight: 600;
 }
 
 .diger {
 	font-family: @headingsFontFamily;
-	font-size: 2.2rem;
+	font-size: 2.7rem;
 	font-weight: 600;
 }
 
@@ -71,23 +95,77 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 
+
+/* IKON-SØKNAD */
+
 [class*="strek-ikon-soknad"], [class*="ikon-soknad-strek"] {
 	background-image: url(../img/under-dark.png), url(../img/soknad.svg);
-	background-position: bottom center, center -1px;
+	background-position: bottom center, center 0;
 	padding-bottom: 15px;
 	margin-bottom: 15px !important;
-	&:hover {
-		background-position: bottom center, center -366px;
-	}
 }
 
 [class*="ikon-soknad"]:not([class*="strek"]) {
-	background-image: url(../img/sprite.svg);
-	background-position: center top;
+	background-image: url(../img/soknad.svg);
+	background-position: center 0;
 }
 
+[class*="strek-ikon-soknad-klikk"], [class*="ikon-soknad-klikk-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/soknad_rod.svg);
+	background-position: bottom center, center 0;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
+	&:hover {
+      background-image: url(../img/under-dark.png), url(../img/soknad_hover.svg);
+	}
+}
+
+[class*="ikon-soknad-klikk"]:not([class*="strek"]) {
+	background-image: url(../img/soknad_rod.svg);
+	background-position: center 0;
+    &:hover {
+      background-image: url(../img/soknad_hover.svg);
+    }
+}
+
+
+/* IKON-PROFIL */
+
 [class*="strek-ikon-profil"], [class*="ikon-profil-strek"] {
-	background-image: url(../img/under-dark.png), url(../img/profil.svg);
+	background-image: url(../img/under-dark.png), url(../img/brukerprofil.svg);
+	background-position: bottom center, center 0px;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
+}
+
+[class*="ikon-profil"]:not([class*="strek"]) {
+	background-image: url(../img/brukerprofil.svg);
+	background-position: center 0;
+}
+
+[class*="strek-ikon-profil-klikk"], [class*="ikon-profil-klikk-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/brukerprofil_rod.svg);
+	background-position: bottom center, center 0;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
+	&:hover {
+      background-image: url(../img/under-dark.png), url(../img/brukerprofil_hover.svg);
+	}
+}
+
+[class*="ikon-profil-klikk"]:not([class*="strek"]) {
+	background-image: url(../img/brukerprofil_rod.svg);
+	background-position: center 0;
+    &:hover {
+      background-image: url(../img/brukerprofil_hover.svg);
+    }
+}
+
+
+/* IKON-UTROP */
+
+[class*="strek-ikon-utrop"], [class*="ikon-utrop-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/utropstegn.png);
 	background-position: bottom center, center -1px;
 	padding-bottom: 15px;
 	margin-bottom: 15px !important;
@@ -96,7 +174,38 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-[class*="ikon-profil"]:not([class*="strek"]) {
-	background-image: url(../img/profil.svg);
+[class*="ikon-utrop"]:not([class*="strek"]) {
+	background-image: url(../img/utropstegn.png);
 	background-position: center -1px;
+}
+
+[class*="ikon-stjerne"]:not([class*="strek"]) {
+  background-image: url(../img/stjerne.svg);
+  background-position: center -1px;
+}
+
+/* IKON-FEIL */
+
+[class*="strek-ikon-feil"], [class*="ikon-feil-strek"] {
+	background-image: url(../img/under-dark.png), url(../img/utropstegn-sirkel.svg);
+	background-position: bottom center, center -1px;
+	padding-bottom: 15px;
+	margin-bottom: 15px !important;
+}
+
+[class*="ikon-feil"]:not([class*="strek"]) {
+	background-image: url(../img/utropstegn-sirkel.svg);
+	background-position: center -1px;
+}
+
+[class*="ikon-feil-gra"]:not([class*="strek"]) {
+  padding-top: 111px;
+  background-image: url(../img/utropstegn-sirkel-gra.svg);
+  background-position: center -1px;
+}
+
+/* IKON-GRØNT-SJEKK */
+[class*="ikon-gront-sjekk"]:not([class*="strek"]) {
+  background-image: url(../img/gront-sjekk.png);
+  background-position: center 5px;
 }

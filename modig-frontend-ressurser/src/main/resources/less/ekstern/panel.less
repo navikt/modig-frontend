@@ -34,12 +34,22 @@
 	padding: 30px;
 }
 
+[class*="rad"] {
+	border-bottom: 1px solid #ddd;
+}
+
 .rad-logo {
-	background: #fff url(../img/nav-logo.svg) no-repeat center;
+	background: #fff;
 	height: 100px;
 	text-align: center;
 	vertical-align: middle;
-	padding: 0 30px;
+	padding: 15px 30px;
+	.logo {
+		display: inline-block;
+		width: 100px;
+		height: 70px;
+		background: url(../img/nav-logo.svg) no-repeat center;
+	}
 }
 
 .rad-plakat {
@@ -52,19 +62,22 @@
 }
 
 .rad-invertert {
-	background-color: @gray;
+	background-color: @grayDark;
 	color: @grayLight;
 	h1, h2, h3, h4, h5, h6, p, div, span {
 		color: @grayLight;
 	}
+    [class*="panel-mini"] {
+        border: none;
+    }
 }
 
 [class*="panel-"] {
 	display: inline-block;
+	padding: 1.5% 2% 3%;
+	border: 1px solid #ddd;
 	&[class*="-belyst"] {
 		background-color: #fff;
-		padding: 1.5% 2% 3%;
-		border: 1px solid #ddd;
 		color: @grayDark;
 		h1, h2, h3, h4, h5, h6, p, div, span {
 			color: @grayDark;
@@ -72,16 +85,17 @@
 	}
 	&[class*="-dus"] {
 		background-color: #ddd;
-		padding: 1.5% 2% 3%;
-		border: 1px solid #ddd;
 	}
 	&[class*="-klikk"] {
 		background-color: #fff;
-		padding: 1.5% 2% 3%;
-		border: 1px solid #ddd;
+		text-decoration: none;
+		color: @textColor;
 		cursor: pointer;
 		&:hover {
-			background-color: #f1f1f1;
+			background-color: @bodyBackground;
+		}
+		&:visited {
+			color: @textColor;
 		}
 	}
 	p {
@@ -95,6 +109,8 @@
 
 [class*="panel-mini"] {
 	text-align: center;
+	padding: 1.5% 2% 3%;
+	border: 1px solid #ddd;
 	[class*="ikon-"] {
 		margin-top: 4px;
 	}
@@ -115,6 +131,11 @@
 
 [class*="panel-standard"] {
 	text-align: left;
+	padding: 0;
+	border: none;
+	&[class*="-belyst"] {
+		padding: 1.5% 2% 1.5% 3%;
+	}
 }
 
 .plakat {
@@ -130,41 +151,11 @@
 	background-position: -425px 0;
 	margin-bottom: 0;
 	[class*="panel-mini"] {
-		position: absolute;
-		top: 25px;
-		right: 100px;
-		width: 280px;
+		float: right;
+        width: 280px;
+		margin-top: 44px;
 		h1 {
 			letter-spacing: 0;
 		}
-	}
-}
-
-.tilbakemelding {
-	position: relative;
-	width: 23%;
-	float: none;
-	margin: 48px auto 50px;
-	background: #b7b1a9;
-	text-align: center;
-	padding: 20px;
-	cursor: pointer;
-	h1 {
-		margin: 0 0 4px;
-	}
-	p {
-		margin: 0;
-	}
-	&:after {
-		width: 0;
-		height: 0;
-		left: 48%;
-		bottom: -10px;
-		margin: 0 auto;
-		position: absolute;
-		border-left: 10px solid transparent;
-		border-right: 10px solid transparent;
-		content: "";
-		border-top: 10px solid #b7b1a9;
 	}
 }
