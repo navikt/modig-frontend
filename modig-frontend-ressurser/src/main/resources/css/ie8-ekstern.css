@@ -188,6 +188,7 @@ form input[type="checkbox"]:checked + label {
 form input[type="radio"],
 form input[type="checkbox"] {
     width: 20px;
+    height: 20px;
     opacity: 1;
     position: relative;
 }
