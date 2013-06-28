@@ -165,6 +165,21 @@ textarea {
     background-position: center 0;
 }
 
+[class*="strek-ikon-soknad-klikk"], [class*="ikon-soknad-klikk-strek"] {
+    background-image: url(../img/soknad_rod.png);
+    background-position: center 0;
+}
+
+[class*="ikon-profil"] {
+    background-image: url(../img/brukerprofil.png);
+    background-position: center 0;
+}
+
+[class*="strek-ikon-profil-klikk"], [class*="ikon-profil-klikk-strek"] {
+    background-image:  url(../img/brukerprofil_rod.png);
+    background-position: center 0;
+}
+
 .rad-logo .logo {
     background: url(../img/nav-logo.gif) no-repeat center;
 }
