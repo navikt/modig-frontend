@@ -135,12 +135,6 @@
 	}
 }
 
-.begrensning {
-	width: 960px;
-	margin: 0 auto;
-	text-align: center;
-}
-
 .stegindikator {
 	display: table;
 	list-style: none;
@@ -172,8 +166,38 @@
 	}
 }
 
-@media (max-width: 1023px) {
+.begrensning {
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 480px) {
+	.begrensning {
+		width: 100%;
+	}
+	[class*="sak-"] [class*="panel-"] {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.begrensning {
+		width: 90%;
+	}
+	[class*="sak-"] [class*="panel-"] {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.begrensning {
+		width: 90%;
+	}
 	.skriftstorrelse {
 		display: none;
 	}
 }
+
