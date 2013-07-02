@@ -29,6 +29,10 @@ a {
     font-size: 15.96px;
 }
 
+.medium {
+    font-size: 17px;
+}
+
 .ingress {
     font-size: 18.48px;
     line-height: 25.2px !important;
@@ -156,6 +160,11 @@ textarea {
     content: "";
 }
 
+/* fiks for at margin: 0 auto skal midtstille elementet */
+.tilbakemelding .ekspandert .knapp-hoved {
+    width: 8em;
+}
+
 [class*="innstillinger"] .tooltip-inner {
     font-size: 30.8px;
 }
@@ -177,6 +186,11 @@ textarea {
 
 [class*="strek-ikon-profil-klikk"], [class*="ikon-profil-klikk-strek"] {
     background-image:  url(../img/brukerprofil_rod.png);
+    background-position: center 0;
+}
+
+[class*="ikon-feil"] {
+    background-image: url(../img/utropstegn_sirkel.png);
     background-position: center 0;
 }
 
