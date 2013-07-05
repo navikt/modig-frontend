@@ -29,7 +29,7 @@
 	}
 }
 
-[class*=knapp-hoved] {
+[class*=knapp-hoved], [class*=nullstill] {
 	.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
 	&:hover, &:focus {
 		.buttonBackground(darken(@btnPrimaryBackground, 10%), darken(@btnPrimaryBackgroundHighlight, 10%), #fff);
