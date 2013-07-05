@@ -19,7 +19,7 @@
 			var loadImage = obj.loadImage;
 			var css = obj.css;
 			$(this).on(event, function() {
-				var image = '<img src="../img/ajaxloader/' + loadImage + '" style="' + css + '"/>';
+				var image = '<img style="' + css + '" src="' + loadImage + '" />';
 				if (placeElement !== null) {
 					if (placement === 'after') {
 						placeElement.append(image);
