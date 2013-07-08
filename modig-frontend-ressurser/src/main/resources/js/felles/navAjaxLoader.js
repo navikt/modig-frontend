@@ -14,13 +14,15 @@
 
 		return this.each(function() {
 			var event = obj.event;
-			var placeElement = obj.placeElement;
+
 			var placement = obj.placement;
 			var loadImage = obj.loadImage;
 			var css = obj.css;
 			$(this).on(event, function() {
 				var image = '<img style="' + css + '" src="' + loadImage + '" />';
-				if (placeElement !== null) {
+                var placeElement = $(obj.placeElement);
+                var noSnurrePip = $(obj.placeElement).html().indexOf("img") === -1;
+				if (placeElement !== null && noSnurrePip) {
 					if (placement === 'after') {
 						placeElement.append(image);
 					} else {
