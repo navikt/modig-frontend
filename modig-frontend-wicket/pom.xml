@@ -123,27 +123,7 @@
         </dependency>
     </dependencies>
 
-
     <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>analyze</id>
-                        <goals>
-                            <goal>analyze-only</goal>
-                        </goals>
-                        <configuration>
-                            <failOnWarning>true</failOnWarning>
-                            <ignoreNonCompile>true</ignoreNonCompile>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-
-
         <testResources>
             <testResource>
                 <filtering>false</filtering>
@@ -161,6 +141,5 @@
             </testResource>
         </testResources>
     </build>
-
 
 </project>
