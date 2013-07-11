@@ -175,6 +175,49 @@
 	text-align: center;
 }
 
+.informasjonsboks {
+    text-align: center;
+    padding: 30px 30px 40px;
+    background: #3e3832;
+    max-width: 100%;
+    width: 450px;
+    z-index: 10000;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    box-shadow: 0 0 15rem #999;
+
+    h1, p {
+        color: #fff;
+    }
+
+    .knapp-info {
+        margin-top: 10px;
+        color: #fff;
+        background: #3e3832;
+        border: 1px solid #675c53;
+
+        &:hover, &:focus {
+            background: #00A9E0;
+            color: #000;
+        }
+
+        &:first-of-type + a {
+            margin-left: 30px;
+        }
+    }
+}
+
+.wicket-mask-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 480px) {
