@@ -67,7 +67,7 @@ import static no.nav.modig.frontend.FellesResources.JQUERY_VALIDATE;
 import static no.nav.modig.frontend.FellesResources.KNAPPER_LESS;
 import static no.nav.modig.frontend.FellesResources.MIXINS_LESS;
 import static no.nav.modig.frontend.FellesResources.MODUS_LESS;
-import static no.nav.modig.frontend.FellesResources.NAV_AJAX_LOADER;
+import static no.nav.modig.frontend.FellesResources.AJAX_LOADER;
 import static no.nav.modig.frontend.FellesResources.NAV_DATEPICKER;
 import static no.nav.modig.frontend.FellesResources.RESET_LESS;
 import static no.nav.modig.frontend.FellesResources.SKJEMA_LESS;
@@ -87,7 +87,7 @@ import static no.nav.modig.frontend.ModiaResources.MODIA_COMMON_LESS;
 public class FrontendModules {
 
 	public static final FrontendModule EKSTERNFLATE = new FrontendModule.With()
-			.scripts(TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, NAV_AJAX_LOADER)
+			.scripts(TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, AJAX_LOADER)
 			.conditionalCss(IE8_EKSTERNFLATE)
 			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW,
 					KNAPPER_LESS, CONTRAST_LESS, DROPDOWNS_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS, TOOLTIP_LESS,
@@ -105,7 +105,7 @@ public class FrontendModules {
 					LESS_HEROUNIT, LESS_UTILITIES, WICKET_MODAL_WINDOW, NAV_DATEPICKER).done();
 	
 	public static final FrontendModule MODIA = new FrontendModule.With()
-	.scripts(TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, NAV_AJAX_LOADER, JQUERY_UI_DATEPICKER, JQUERY_VALIDATE)
+	.scripts(TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, AJAX_LOADER, JQUERY_UI_DATEPICKER, JQUERY_VALIDATE)
 	.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS,
 			DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, MODIA_COMMON_LESS, MODIA_RAMME_LESS, MODIA_KOMPONENTER_LESS).done();
 
