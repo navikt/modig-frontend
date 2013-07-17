@@ -763,14 +763,15 @@ BODY {
 
     DL {
         .border-box;
-        padding-bottom: 10px;
-        overflow: auto;
+        padding: 0 0 0 10px;
+        margin: 0;
+        float: left;
         width: 100%;
 
         font-weight: bold;
 
         DT {
-            width: 170px;
+            width: 135px;
             position: absolute;
 
             color: #ACA397;
@@ -781,9 +782,8 @@ BODY {
         DD {
             margin: 0;
             display: block;
-            padding-left: 170px;
-
-            text-overflow: ellips;
+            padding-left: 145px;
+            text-overflow: ellipsis;
             text-align: left;
         }
     }
@@ -826,12 +826,69 @@ BODY {
 			display: block;
 			margin-bottom: 10px;
 		}
+
+        .barn {
+            .clearfix;
+            margin-bottom: 40px;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+            
+            DL {
+                width: 80%;  
+            }
+            
+            .barnAlder {
+                float: left;
+                width: 80px;
+                padding-top: 0.7rem;
+
+                SPAN {
+                    display: block;
+                }
+
+                .alder {
+                    font-size: 3.0rem;
+                    font-weight: 700;
+                }
+
+                .alderEnhet {
+                    font-size: 1.1rem;
+                    margin-top: 10px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .boy {
+            .barnAlder {
+                color: #00A9E0;
+            }
+        }
+
+        .girl {
+            .barnAlder {
+                color: #DE4A77;
+            }
+        }
 	}
 
 	.status {
+        width: 20%;
 		background: url(../img/info.svg) no-repeat center 10px;
-		background-size: 20px;
+        background-size: 20px;
 	}
+    
+    .barna, .foreldre {
+        background: url(../img/hjerte.svg) no-repeat center 10px;
+        background-size: 20px;
+    }
+    
+    .barna {
+        width: 40%;
+    }
 }
 
 .flytflate {
