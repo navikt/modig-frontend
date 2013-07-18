@@ -160,6 +160,10 @@ textarea {
     content: "";
 }
 
+.innlogget-navn:before {
+    content: url(../img/dude.png) no-repeat left center;
+}
+
 /* fiks for at margin: 0 auto skal midtstille elementet */
 .tilbakemelding .ekspandert .knapp-hoved {
     width: 8em;
