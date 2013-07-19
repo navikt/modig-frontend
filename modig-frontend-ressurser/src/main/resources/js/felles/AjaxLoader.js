@@ -48,7 +48,7 @@
     };
     
     AjaxLoader.prototype.hideLoader = function hideLoader(placeElement) {
-        var $imageElement = $(placeElement + " #modiaAjaxLoader");
+        var $imageElement = $("#modiaAjaxLoader");
 
         if ($imageElement === null) {
             console.error('Fant ikke snurrepip.');
@@ -66,7 +66,7 @@
             console.error('option "placeElement" må angis for å kunne plassere snurrepip');
         }
         
-        var noSnurrePip = $placeElement.find('#modiaAjaxLoader').length === 0;
+        var noSnurrePip = $('#modiaAjaxLoader').length === 0;
 
         if ($placeElement !== null && noSnurrePip) {
             if (placement === 'append') {
