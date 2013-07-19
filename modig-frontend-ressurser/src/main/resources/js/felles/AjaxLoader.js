@@ -16,6 +16,15 @@
                     self.showLoader(loader.placeElement, loader.placement, loader.imageUrl, loader.css);
                 }
             } 
+        });
+        $(document).ajaxComplete(function (event, jqxhr, settings) {
+            var len = self.loaders.length;
+            for (var i = 0; i < len; i++){
+                var loader = self.loaders[i];
+                if (loader.urlPattern.test(settings.url)){
+                    self.hideLoader(loader.placeElement);
+                }
+            }
         })
     };
     
@@ -38,15 +47,26 @@
 
     };
     
+    AjaxLoader.prototype.hideLoader = function hideLoader(placeElement) {
+        var $imageElement = $(placeElement + " #modiaAjaxLoader");
+
+        if ($imageElement === null) {
+            console.error('Fant ikke snurrepip.');
+            return;
+        }
+
+        $imageElement.remove();
+    };
+    
     AjaxLoader.prototype.showLoader = function showLoader(placeElement, placement, imageUrl, css) {
-        var image = '<img style="' + css + '" src="' + imageUrl + '" />';
+        var image = '<img id="modiaAjaxLoader" style="' + css + '" src="' + imageUrl + '" />';
         var $placeElement = $(placeElement);
         
         if ($placeElement === null) {
             console.error('option "placeElement" må angis for å kunne plassere snurrepip');
         }
         
-        var noSnurrePip = $placeElement.html().indexOf("img") === -1;
+        var noSnurrePip = $placeElement.find('#modiaAjaxLoader').length === 0;
 
         if ($placeElement !== null && noSnurrePip) {
             if (placement === 'append') {
