@@ -1,14 +1,7 @@
 /* Generelle mixins, variabler, typografi og stiler som bruker av andre stilregler */
 
 /* Mixins */
-.border-box {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-
 .kolonne {
-	.border-box;
 	float: left;
 	display: block;
 	min-height: 30px;
@@ -38,18 +31,16 @@ H3, ._H3 {
 
 /* FORMS */
 LABEL {
-    .border-box;
     text-transform: uppercase;
     position: relative;
     margin-top: 1em;
-
     color: #a69d92;
     font-size: 0.857rem;
 }
 
 INPUT.errorJS {
     background-color: #f7cece;
-    border: 1px solid #de1842;
+    border: 1px solid #ff6666;
 }
 
 LABEL.errorJS {
@@ -57,8 +48,7 @@ LABEL.errorJS {
     left: 0;
     bottom: -1.62em;
     white-space: nowrap;
-
-    color: #de1842;
+    color: #ff6666;
     text-transform: none;
 }
 
@@ -74,7 +64,6 @@ INPUT {
 }
 
 INPUT[type=text], INPUT.hasDatepicker, SELECT {
-    .border-box;
     height: 30px;
     margin-top: 3px;
     width: 100%;

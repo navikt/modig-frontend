@@ -3,10 +3,9 @@
 HTML {
 	height: 101%;
 	overflow-y: scroll;
-
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
-	background-color: @grayDark ;
+	background-color: @grayDark;
 
 	@media (max-width: 1199px) {
 		font-size: 12px;
@@ -19,7 +18,6 @@ BODY {
 	.clearfix;
 	position: relative;
 	display: table;
-
 	font-size: 1rem;
 	background-color: @grayDark;
 }
@@ -28,10 +26,8 @@ BODY {
 	position: relative;
 	padding: auto 0;
 	height: 100%;
-	.border-box;
 	.clearfix;
 	display: table-cell;
-
 	background-color: @white;
 }
 
@@ -39,13 +35,8 @@ BODY {
 	margin-bottom: 0;
 	height: 100px;
 	padding: 20px 30px 10px 102px;
-	.border-box;
-
 	z-index: 1030;
-	background-color: @grayDark ;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
+	background-color: @grayDark;
 	white-space: no-wrap;
 
 	FORM {
@@ -55,157 +46,148 @@ BODY {
 	H1 {
 		display: none;
 	}
- }
+}
 
- .personsok-button {
- 	position: absolute;
- 	left: 30px;
- 	width: 52px;
- 	height: 52px;
+.personsok-button {
+	position: absolute;
+	left: 30px;
+	width: 68px;
+	height: 68px;
+	text-align: center;
+	border-radius: 52px;
+	background-color: #a1a1a1;
+	background-image: none;
+	border: none;
+	font-size: 1.43rem;
+	&:hover {
+		background-color: #919191;
+		background-image: none;
+		border: none;
+	}
 
- 	text-align: center;
- 	border-radius: 52px;
- 	background-color: #a1a1a1;
- 	background-image: none;
- 	border: none;
- 	font-size: 1.43rem;
+	&:active {
+		background-color: #818181;
+		background-image: none;
+		border: none;
+		box-shadow: none;
+	}
 
- 	&:hover {
- 		background-color: #919191;
- 		background-image: none;
- 		border: none;
- 	}
+	&:after {
+		width: 0;
+		height: 0;
+		bottom: 14px;
+		left: 30px;
+		margin: 0 auto;
+		position: absolute;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		content: "";
+		border-top: 7px solid #333;
+	}
 
- 	&:active {
- 		background-color: #818181;
- 		background-image: none;
- 		border: none;
- 		box-shadow: none;
- 	}
+	&.active:after {
+		bottom: 11px;
+		border-top: none;
+		border-bottom: 5px solid #333;
+	}
+}
 
- 	&:after {
- 		width: 0;
- 		height: 0;
- 		bottom: 10px;
- 		left: 21px;
- 		margin: 0 auto;
- 		position: absolute;
+.nullstill-button {
+	margin: 12px 0 0 30px;
+	width: 32px;
+	height: 32px;
+	float: left;
 
- 		border-left: 5px solid transparent;
- 		border-right: 5px solid transparent;
- 		content: "";
- 		border-top: 5px solid #333; }
-
- 	&.active:after {
- 		bottom: 11px;
-
- 		border-top: none;
- 		border-bottom: 5px solid #333;
- 	}
- }
-
- .nullstill-button {
-     margin: 12px 0 0 30px;
-     width: 32px;
-     height: 32px;
-     float: left;
-
-     border: none;
-     background: transparent url(../img/nullstill.svg) no-repeat right center;
-     background-size: 32px;
-     color: transparent;
- }
+	border: none;
+	background: transparent url(../img/nullstill.svg) no-repeat right center;
+	background-size: 32px;
+	color: transparent;
+}
 
 .search-intern {
-	width: 12rem;
+	width: 28rem;
 	display: block;
 	position: relative;
 	float: left;
 
-  	INPUT[type=text] {
-  		.border-box;
-  		float: left;
-  		height: 52px;
-  		width: 100%;
-  		margin-top: 0;
-  		padding-right: 0;
-        font-size: 1.14rem;
+	INPUT[type=text] {
+		float: left;
+		height: 66px;
+		width: 100%;
+		margin-top: 3px;
+		padding: 0 70px 0 20px;
+		font-size: 2.14rem;
 	}
 
-    INPUT[type=button], SUBMIT {
-    	margin: 0;
-    	height: 52px;
-    	padding: 4px 0;
-    	position: absolute;
-    	right: 1rem;
-    	width: 2.5rem;
+	INPUT[type=button], SUBMIT {
+		margin: 0;
+		height: 72px;
+		padding: 4px 0;
+		position: absolute;
+		right: 1rem;cur
+		width: 4rem;
+		text-align: center;
+		color: transparent;
+		text-shadow: none;
+		background: transparent url(../img/sok.svg) no-repeat 10px center;
+		border: none;
+		background-size: 42px;
+	}
 
-    	text-align: center;
-    	color: transparent;
-    	text-shadow: none;
-  		background: transparent url(../img/lupe.png) no-repeat 10px center;
-  		border: none;
-  		background-size: 21px;
-  	}
+	INPUT[type=button]:hover, INPUT[type=button].hover, INPUT[type=button]:active, SUBMIT:hover, SUBMIT:active {
+		right: 1rem;
+		width: 4rem;
+		position: absolute;
+		background: transparent url(../img/sok_hover.svg) no-repeat 10px center;
+		border: none;
+		background-size: 42px;
+	}
 
-  	INPUT[type=button]:hover, INPUT[type=button].hover, INPUT[type=button]:active, SUBMIT:hover, SUBMIT:active {
-  		right: 1rem;
-  		width: 2.5rem;
-  		position: absolute;
+	LABEL.errorJS, SPAN.feedbackPanelERROR {
+		color: #ff6666;
+		font-size: @fontSizeMini;
+		background: transparent;
+		white-space: nowrap;
+	}
 
-  		background: transparent url(../img/lupe-hover.png) no-repeat 10px center;
-  		border: none;
-  		background-size: 21px;
-  	}
+	INPUT.errorJS {
+		background-color: #F7CECE;
+		border: 1px solid #ff6666;
+		color: black;
+	}
 
-    LABEL.errorJS, SPAN.feedbackPanelERROR {
-        color: #DE1842;
-        font-size: @fontSizeMini;
-        background: transparent;
-        white-space: nowrap;
-    }
-
-    INPUT.errorJS {
-        background-color: #F7CECE;
-        border: 1px solid #DE1842;
-        color: black;
-    }
-
-    UL.feedbackPanel {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
+	UL.feedbackPanel {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
 }
 
 /* =personsokPanel */
 #personsok {
 	display: none;
-	box-sizing: border-box;
-    position: absolute;
-    width: 100%;
-    padding: 0 30px 14px 30px;
-    left: 0;
-    right: 0;
-    min-width: 100%;
+	position: absolute;
+	width: 100%;
+	padding: 0 30px 14px 30px;
+	left: 0;
+	right: 0;
+	min-width: 100%;
+	background-color: #3E3832;
+	color: #fff;
+	line-height: 1.2em;
+	z-index: 3000;
+	border-top: 1px solid #000;
+	box-shadow: 0px 8px 6px -6px #555;
+	-webkit-box-shadow: -0px 8px 6px -6px #555;
+	-moz-box-shadow: 0px 8px 6px -6px #555;
 
-    background-color: #3E3832;
-    color: #fff;
-    line-height: 1.2em;
-    z-index: 3000;
-    border-top: 1px solid #000;
-    box-shadow: 0px 8px 6px -6px #555;
-    -webkit-box-shadow: -0px 8px 6px -6px #555;
-    -moz-box-shadow: 0px 8px 6px -6px #555;
-
-    H1, H2, H3 {
-        color: #a69d92;
-    }
+	H1, H2, H3 {
+		color: #a69d92;
+	}
 
 	#personsokPanel {
 		UL.feedbackPanel {
 			padding: 1rem 1rem 1rem 2rem;
-
 			list-style-type: none;
 			color: #FFF;
 			background-color: #da153a;
@@ -223,26 +205,25 @@ BODY {
 		}
 
 		.navnogadresse {
-			.border-box;
 			width: 66%;
 			padding-right: 4%;
 			float: left;
-          
-            LABEL {
-              float: left;
-            }
+
+			LABEL {
+				float: left;
+			}
 
 			LABEL.etternavn, LABEL.kontonummer {
 				padding-left: 4%;
-                width: 40%;
+				width: 40%;
 
 				LABEL.errorJS {
 					width: 100%;
 					padding-left: 9%;
-			    }
+				}
 			}
 
-			LABEL.gatenavn, LABEL.poststed,LABEL.postnummer {
+			LABEL.gatenavn, LABEL.poststed, LABEL.postnummer {
 				clear: left;
 			}
 
@@ -253,7 +234,7 @@ BODY {
 				LABEL.errorJS {
 					width: 100%;
 					padding-left: 20%;
-			    }
+				}
 			}
 
 			LABEL.husbokstav {
@@ -263,12 +244,11 @@ BODY {
 				LABEL.errorJS {
 					width: 100%;
 					padding-left: 33%;
-                }
-            }
+				}
+			}
 		}
 
 		.begrenssoket {
-			.border-box;
 			width: 33%;
 			float: left;
 
@@ -294,9 +274,9 @@ BODY {
 				LABEL.errorJS {
 					width: 100%;
 					padding-left: 9%;
-                }
-            }
-        }
+				}
+			}
+		}
 	}
 
 	P#searchErrorMessage {
@@ -308,315 +288,312 @@ BODY {
 		border-top: 1px solid #a69d92;
 	}
 
-    #personsokResult {
-        padding-top: 30px;
-        clear: both;
+	#personsokResult {
+		padding-top: 30px;
+		clear: both;
 
-        #resultDataTable {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
+		#resultDataTable {
+			width: 100%;
+			border-collapse: collapse;
+			table-layout: fixed;
 
-            color: #988f86;
+			color: #988f86;
 
-            THEAD, TR {
-                border-bottom: 1px solid #000;
+			THEAD, TR {
+				border-bottom: 1px solid #000;
 
-                TH, TD {
-                    .border-box;
-                    padding: 0.8rem 0 0.8rem 1rem;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    color: #FFF;
-                    position: relative;
-                }
+				TH, TD {
+					padding: 0.8rem 0 0.8rem 1rem;
+					overflow: hidden;
+					white-space: nowrap;
+					color: #FFF;
+					position: relative;
+				}
 
-                &.ikkeTilgang TD {
-                    color: #988f86;
-                }
-            }
+				&.ikkeTilgang TD {
+					color: #988f86;
+				}
+			}
 
-            TR.headers TH {
-                text-transform: uppercase;
-                font-weight: normal;
-                color: #333;
-                background-color: #988f86;
-                text-align: left;
-            }
+			TR.headers TH {
+				text-transform: uppercase;
+				font-weight: normal;
+				color: #333;
+				background-color: #988f86;
+				text-align: left;
+			}
 
-            TR.header TH A, TR.header TH A:visited,
-            A.wicket_orderNone, A.wicket_orderNone:visited{
-                text-decoration: none;
-                color: #111;
-                margin-right: 1rem;
+			TR.header TH A, TR.header TH A:visited,
+			A.wicket_orderNone, A.wicket_orderNone:visited {
+				text-decoration: none;
+				color: #111;
+				margin-right: 1rem;
 
-                &:after {
-                    width: 0;
-                    height: 0;
-                    position: relative;
-                    top: 0.8rem;
-                    left: 0.2rem;
-                }
-            }
+				&:after {
+					width: 0;
+					height: 0;
+					position: relative;
+					top: 0.8rem;
+					left: 0.2rem;
+				}
+			}
 
-            A.wicket_orderDown, A.wicket_orderDown:visited {
-                text-decoration: none;
-                color: #111;
-                margin-right: 1rem;
+			A.wicket_orderDown, A.wicket_orderDown:visited {
+				text-decoration: none;
+				color: #111;
+				margin-right: 1rem;
 
-                /* Trekantpil laget i CSS*/
-                &:after {
-                    width: 0;
-                    height: 0;
-                    position: relative;
-                    top: 0.8rem;
-                    left: 0.2rem;
+				/* Trekantpil laget i CSS*/
+				&:after {
+					width: 0;
+					height: 0;
+					position: relative;
+					top: 0.8rem;
+					left: 0.2rem;
 
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    content: "";
-                    border-top: 5px solid #333;
-                }
-            }
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					content: "";
+					border-top: 5px solid #333;
+				}
+			}
 
-            A.wicket_orderUp, A.wicket_orderUp:visited{
-                text-decoration: none;
-                color: #111;
-                margin-right: 1rem;
+			A.wicket_orderUp, A.wicket_orderUp:visited {
+				text-decoration: none;
+				color: #111;
+				margin-right: 1rem;
 
-                /* Trekantpil laget i CSS*/
-                &:after {
-                    width: 0;
-                    height: 0;
-                    position: relative;
-                    top: -0.8rem;
-                    left: 0.2rem;
+				/* Trekantpil laget i CSS*/
+				&:after {
+					width: 0;
+					height: 0;
+					position: relative;
+					top: -0.8rem;
+					left: 0.2rem;
 
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    content: "";
-                    border-bottom: 5px solid #333;
-                }
-            }
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					content: "";
+					border-bottom: 5px solid #333;
+				}
+			}
 
-            A.wicket_orderDown, A.wicket_orderUp {
-                font-weight: bold;
-            }
+			A.wicket_orderDown, A.wicket_orderUp {
+				font-weight: bold;
+			}
 
-            TR.header TH A:hover, A.wicket_orderUp:hover {
-                text-decoration: none;
-                font-weight: bold;
-            }
+			TR.header TH A:hover, A.wicket_orderUp:hover {
+				text-decoration: none;
+				font-weight: bold;
+			}
 
-            TBODY {
-                A {
-                    font-weight: bold;
-                    color: #FFF;
-                    text-decoration: none;
-                }
+			TBODY {
+				A {
+					font-weight: bold;
+					color: #FFF;
+					text-decoration: none;
+				}
 
-                TR:hover:not(.ikkeTilgang), TR:focus:not(.ikkeTilgang) {
-                    background-color: #00a9e0;
-                    color: #FFF;
-                    outline: 0;
-                    cursor: pointer;
+				TR:hover:not(.ikkeTilgang), TR:focus:not(.ikkeTilgang) {
+					background-color: #00a9e0;
+					color: #FFF;
+					outline: 0;
+					cursor: pointer;
 
-                    TD {
-                        color: #FFF;
-                    }
+					TD {
+						color: #FFF;
+					}
 
-                    TD.addressColumn, TD.navnColumn {
-                        > *:after {
-                            background: -moz-linear-gradient(left, rgba(0,169,224,0) 0%, rgba(0,169,224,1) 56%, rgba(0,169,224,1) 100%);
-                            background: -webkit-linear-gradient(left, rgba(0,169,224,0) 0%,rgba(0,169,224,1) 56%,rgba(0,169,224,1) 100%);
-                            background: -ms-linear-gradient(left, rgba(0,169,224,0) 0%,rgba(0,169,224,1) 56%,rgba(0,169,224,1) 100%);
-                            background: linear-gradient(left, rgba(0,169,224,0) 0%,rgba(0,169,224,1) 56%,rgba(0,169,224,1) 100%);
-                            filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='#003E3832 ', endColorstr='#3E3832 ',GradientType=1 )";
-                            content: "";
-                        }
-                    }
-                }
+					TD.addressColumn, TD.navnColumn {
+						> *:after {
+							background: -moz-linear-gradient(left, rgba(0, 169, 224, 0) 0%, rgba(0, 169, 224, 1) 56%, rgba(0, 169, 224, 1) 100%);
+							background: -webkit-linear-gradient(left, rgba(0, 169, 224, 0) 0%, rgba(0, 169, 224, 1) 56%, rgba(0, 169, 224, 1) 100%);
+							background: -ms-linear-gradient(left, rgba(0, 169, 224, 0) 0%, rgba(0, 169, 224, 1) 56%, rgba(0, 169, 224, 1) 100%);
+							background: linear-gradient(left, rgba(0, 169, 224, 0) 0%, rgba(0, 169, 224, 1) 56%, rgba(0, 169, 224, 1) 100%);
+							filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='#003E3832 ', endColorstr='#3E3832 ',GradientType=1 )";
+							content: "";
+						}
+					}
+				}
 
-                TD.addressColumn, TD.navnColumn {
-                    position: relative;
+				TD.addressColumn, TD.navnColumn {
+					position: relative;
 
-                     > * {
-                        position: relative;
-                        margin: 0;
-                        padding-top: 0.4rem;
+					> * {
+						position: relative;
+						margin: 0;
+						padding-top: 0.4rem;
 
-                        &:first-of-type {
-                            padding-top: 0;
-                        }
+						&:first-of-type {
+							padding-top: 0;
+						}
 
-                        &:after {
-                            display: block;
-                            position: absolute;
-                            right: 0;
-                            top: 0;
-                            bottom: 0;
-                            width: 50px;
-                            background: -moz-linear-gradient(left, rgba(62,56,50,0) 0%, rgba(62,56,50,1) 56%, rgba(62,56,50,1) 100%);
-                            background: -webkit-linear-gradient(left, rgba(62,56,50,0) 0%,rgba(62,56,50,1) 56%,rgba(62,56,50,1) 100%);
-                            background: -ms-linear-gradient(left, rgba(62,56,50,0) 0%,rgba(62,56,50,1) 56%,rgba(62,56,50,1) 100%);
-                            background: linear-gradient(left, rgba(62,56,50,0) 0%,rgba(62,56,50,1) 56%,rgba(62,56,50,1) 100%);
-                            filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorStr='#003E3832 ', endColorStr='#FF3E3832 ',GradientType=1)";
-                            content: "";
-                            height: 100%;
-                        }
-                    }
-                }
-            }
+						&:after {
+							display: block;
+							position: absolute;
+							right: 0;
+							top: 0;
+							bottom: 0;
+							width: 50px;
+							background: -moz-linear-gradient(left, rgba(62, 56, 50, 0) 0%, rgba(62, 56, 50, 1) 56%, rgba(62, 56, 50, 1) 100%);
+							background: -webkit-linear-gradient(left, rgba(62, 56, 50, 0) 0%, rgba(62, 56, 50, 1) 56%, rgba(62, 56, 50, 1) 100%);
+							background: -ms-linear-gradient(left, rgba(62, 56, 50, 0) 0%, rgba(62, 56, 50, 1) 56%, rgba(62, 56, 50, 1) 100%);
+							background: linear-gradient(left, rgba(62, 56, 50, 0) 0%, rgba(62, 56, 50, 1) 56%, rgba(62, 56, 50, 1) 100%);
+							filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorStr='#003E3832 ', endColorStr='#FF3E3832 ',GradientType=1)";
+							content: "";
+							height: 100%;
+						}
+					}
+				}
+			}
 
-            TD A, TD A:visited {
-                color: #ececec;
-                font-weight: bold;
-            }
+			TD A, TD A:visited {
+				color: #ececec;
+				font-weight: bold;
+			}
 
-            SPAN.personstatus {
-                color: #f89406;
-            }
+			SPAN.personstatus {
+				color: #f89406;
+			}
 
-            DL.adresseList {
-                width: auto;
-                padding-top: 0;
-                margin: 0;
-                position: relative;
-                clear: both;
+			DL.adresseList {
+				width: auto;
+				padding-top: 0;
+				margin: 0;
+				position: relative;
+				clear: both;
 
-                DT {
-                    margin-right: 0.5rem;
-                    display: inline-block;
-                    width: auto;
-                    float: none;
-                }
+				DT {
+					margin-right: 0.5rem;
+					display: inline-block;
+					width: auto;
+					float: none;
+				}
 
-                DD {
-                    max-width: 0;
-                    min-width: 0;
-                    display: inline-block;
-                    width: auto;
-                    float: none;
-                }
-            }
+				DD {
+					max-width: 0;
+					min-width: 0;
+					display: inline-block;
+					width: auto;
+					float: none;
+				}
+			}
 
-            .navnColumn, .navnColumn div, .addressColumn {
-                width: auto;
-            }
+			.navnColumn, .navnColumn div, .addressColumn {
+				width: auto;
+			}
 
-            .fodselsnummerColumn {
-                width: 11rem;
-            }
+			.fodselsnummerColumn {
+				width: 11rem;
+			}
 
-            .navenhetColumn {
-                width: 8rem;
-            }
-        }
+			.navenhetColumn {
+				width: 8rem;
+			}
+		}
 	}
 }
 
 .sidebar {
-	.border-box;
 	overflow: visible;
 	height: 100%;
 	display: table-cell;
-	
+
 	color: @white;
 	background-color: @grayDark;
 	vertical-align: top;
-	
-	 > * {
-	 	.border-box;
-	 	margin: 0 30px;
-	 }
-	 
-	 HR {
-	 	height: 1px;
-	 	width: 20px;
-	 	margin: -5px auto 0;
-	 	
-	 	border: 0;
-	 	color: @white;
-	 	background-color: @white;
-	 }
-	 
-	 P {
-	 	margin: 0;
-	 	line-height: 1.2em;
-	 }
-	 
-	 DL {
-	 	margin-bottom: 10px;
-	 	overflow: auto;
-	 	
-	 	font-weight: bold;
-	 }
-	 
-	 DT {
-	 	width: 170px;
-	 	position: absolute;
-	 	
-	 	color: #B7B1A9;
-	 	font-weight: normal;
-	 }
-	 
-	 DD {
-	 	margin: 0;
-	 	display: block;
-	 	padding-left: 170px;
-	 	
-	 	text-overflow: ellips;
-	 }
-	 
-	 P.dato {
-	 	text-align: center;
-	 }
-	 
-	 .visittkort {
-	 	margin: 100px 30px 30px 30px;
-	 	border: 1px solid #626262;
-	 	padding: 15px 15px 15px 65px;
-	 	min-height: 266px;
-	 	
-	 	background-repeat: no-repeat;
-	 	background-position: 15px 15px;
-	 	background-size: 40px;
-	 	color: #B7B1A9;
-	 
-	 	A, A:visited {
-	 		color: white;
-	 		text-decoration: none;
-	 	}
-	 	
-	 	A:hover, A:active {
-	 		color: #00a9E0;
-	 		text-decoration: none;
-	 	}
-	 	
+
+	> * {
+		margin: 0 30px;
+	}
+
+	HR {
+		height: 1px;
+		width: 20px;
+		margin: -5px auto 0;
+
+		border: 0;
+		color: @white;
+		background-color: @white;
+	}
+
+	P {
+		margin: 0;
+		line-height: 1.2em;
+	}
+
+	DL {
+		margin-bottom: 10px;
+		overflow: auto;
+
+		font-weight: bold;
+	}
+
+	DT {
+		width: 170px;
+		position: absolute;
+
+		color: #B7B1A9;
+		font-weight: normal;
+	}
+
+	DD {
+		margin: 0;
+		display: block;
+		padding-left: 170px;
+
+		text-overflow: ellips;
+	}
+
+	P.dato {
+		text-align: center;
+	}
+
+	.visittkort {
+		margin: 100px 30px 30px 30px;
+		border: 1px solid #626262;
+		padding: 15px 15px 15px 65px;
+		min-height: 266px;
+
+		background-repeat: no-repeat;
+		background-position: 15px 15px;
+		background-size: 40px;
+		color: #B7B1A9;
+
+		A, A:visited {
+			color: white;
+			text-decoration: none;
+		}
+
+		A:hover, A:active {
+			color: #00a9E0;
+			text-decoration: none;
+		}
+
 		&.mann {
 			background-image: url(../img/mann.svg);
 		}
-		
+
 		&.kvinne {
 			background-image: url(../img/kvinne.svg);
 		}
-		
+
 		H1, H2 {
-		    ._H2;
+			._H2;
 			margin: 2px 0 5px 0;
 			color: #B7B1A9;
 		}
 
-       .brukerprofillink, BUTTON {
+		.brukerprofillink, BUTTON {
 			padding: 0;
 			position: relative;
-			
+
 			background: none;
 			color: #00a9E0;
 			border: none;
 			background: none;
 			font-weight: bold;
-			
+
 			&:before {
 				bottom: 4px;
 				left: -10px;
@@ -624,29 +601,29 @@ BODY {
 				position: absolute;
 				width: 0;
 				height: 0;
-				
+
 				content: "";
 				border-top: 5px solid transparent;
 				border-bottom: 5px solid transparent;
 				border-right: 5px solid #00a9E0;
-			}	
-			
+			}
+
 			&:active {
 				box-shadow: none;
-			}	
+			}
 		}
-		
+
 		&.active {
 			margin: 100px 0 16px 0;
 			padding: 15px 30px 30px 96px;
-			
+
 			border: none;
 			border-top: 1px solid #626262;
 			background-position: 46px 15px;
-		
+
 			BUTTON:before {
 				left: -12px;
-				
+
 				border-right: none;
 				border-left: 4px solid #00a9E0;
 			}
@@ -664,7 +641,6 @@ BODY {
 	border-top: 1px solid #626262;
 
 	.lamell {
-		.border-box;
 		position: relative;
 
 		&.bunn {
@@ -706,7 +682,7 @@ BODY {
 			border: 1px solid #CCC;
 		}
 
-  		.close:focus, .close:hover {
+		.close:focus, .close:hover {
 			border-color: #00A9E0;
 			background: #00A9E0 url(../img/kryss_hvit.png) no-repeat 4px center;
 			color: transparent;
@@ -772,60 +748,57 @@ BODY {
 			}
 		}
 
-        .lerret {
-            .border-box;
-            padding: 2rem 30px 30px 30px;
-            width: 100%;
-            min-height: 30px;
-            float: left;
-        }
+		.lerret {
+			padding: 2rem 30px 30px 30px;
+			width: 100%;
+			min-height: 30px;
+			float: left;
+		}
 	}
 }
 
 /* Generelle klasser */
 
-.kjerneinfo	{
+.kjerneinfo {
 	.clearfix;
-	box-sizing: border-box;
 	padding: 30px 0;
 	min-height: 265px;
 
-    display: none;
+	display: none;
 	background: #3E3832;
 	color: #B7B1A9;
 	line-height: 1.2em;
 	border-top: 1px solid #626262;
 
-    DL {
-        .border-box;
-        padding: 0 0 0 10px;
-        margin: 0;
-        float: left;
-        width: 100%;
+	DL {
+		padding: 0 0 0 10px;
+		margin: 0;
+		float: left;
+		width: 100%;
 
-        font-weight: bold;
+		font-weight: bold;
 
-        DT {
-            width: 135px;
-            position: absolute;
+		DT {
+			width: 135px;
+			position: absolute;
 
-            color: #ACA397;
-            font-weight: normal;
-            text-align: left;
-        }
+			color: #ACA397;
+			font-weight: normal;
+			text-align: left;
+		}
 
-        DD {
-            margin: 0;
-            display: block;
-            padding-left: 145px;
-            text-overflow: ellipsis;
-            text-align: left;
-        }
-    }
+		DD {
+			margin: 0;
+			display: block;
+			padding-left: 145px;
+			text-overflow: ellipsis;
+			text-align: left;
+		}
+	}
 
-    H1, H2, H3 {
-        color: #ACA397;
-    }
+	H1, H2, H3 {
+		color: #ACA397;
+	}
 
 	A, A:visited {
 		color: white;
@@ -833,13 +806,12 @@ BODY {
 		font-weight: bold;
 	}
 
-	A:hover	{
+	A:hover {
 		color: #00a9E0;
 		text-decoration: none;
 	}
 
 	.info {
-	    .border-box;
 		float: right;
 		margin: 0 0 0 30px;
 		padding-top: 40px;
@@ -850,7 +822,7 @@ BODY {
 		text-align: center;
 
 		H1 {
-		    ._H3;
+			._H3;
 		}
 
 		P {
@@ -862,68 +834,68 @@ BODY {
 			margin-bottom: 10px;
 		}
 
-        .barn {
-            .clearfix;
-            margin-bottom: 40px;
-            
-            &:last-child {
-                margin-bottom: 0;
-            }
-            
-            DL {
-                width: 80%;  
-            }
-            
-            .barnAlder {
-                float: left;
-                width: 80px;
-                padding-top: 0.7rem;
+		.barn {
+			.clearfix;
+			margin-bottom: 40px;
 
-                SPAN {
-                    display: block;
-                }
+			&:last-child {
+				margin-bottom: 0;
+			}
 
-                .alder {
-                    font-size: 3.0rem;
-                    font-weight: 700;
-                }
+			DL {
+				width: 80%;
+			}
 
-                .alderEnhet {
-                    font-size: 1.1rem;
-                    margin-top: 10px;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                }
-            }
-        }
+			.barnAlder {
+				float: left;
+				width: 80px;
+				padding-top: 0.7rem;
 
-        .boy {
-            .barnAlder {
-                color: #00A9E0;
-            }
-        }
+				SPAN {
+					display: block;
+				}
 
-        .girl {
-            .barnAlder {
-                color: #DE4A77;
-            }
-        }
+				.alder {
+					font-size: 3.0rem;
+					font-weight: 700;
+				}
+
+				.alderEnhet {
+					font-size: 1.1rem;
+					margin-top: 10px;
+					text-transform: uppercase;
+					font-weight: 600;
+				}
+			}
+		}
+
+		.boy {
+			.barnAlder {
+				color: #00A9E0;
+			}
+		}
+
+		.girl {
+			.barnAlder {
+				color: #DE4A77;
+			}
+		}
 	}
 
 	.status {
-        width: 20%;
+		width: 20%;
 		background: url(../img/info.svg) no-repeat center 10px;
-        background-size: 20px;
+		background-size: 20px;
 	}
-    
-    .barna, .foreldre {
-        background: url(../img/hjerte.svg) no-repeat center 10px;
-        background-size: 20px;
-    }
-    
-    .barna {
-        width: 40%;
-    }
+
+	.barna, .foreldre {
+		background: url(../img/hjerte.svg) no-repeat center 10px;
+		background-size: 20px;
+	}
+
+	.barna {
+		width: 40%;
+	}
 }
 
 .flytflate {
@@ -935,7 +907,7 @@ BODY {
 	}
 
 	H3, H1 {
-	    ._H3;
+		._H3;
 		text-transform: uppercase;
 		color: #888;
 		margin: 0;
@@ -948,106 +920,111 @@ BODY {
 }
 
 .default-error {
-    padding-top: 10px;
+	padding-top: 10px;
 
-    SVG {
-        height: 30px;
-        width: 30px;
-        margin: auto;
-        display: block;
+	SVG {
+		height: 30px;
+		width: 30px;
+		margin: auto;
+		display: block;
 
-        PATH {
-          fill: #f88c01;
-        }
-    }
+		PATH {
+			fill: #f88c01;
+		}
+	}
 
-    P {
-        padding-top: 20px;
-        margin: 0;
-        font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        text-align: center;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
+	P {
+		padding-top: 20px;
+		margin: 0;
+		font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-align: center;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
 
-    HR {
-        margin: 25px auto;
-        border-top: 1px solid #808080;
-        width: 30px;
-    }
+	HR {
+		margin: 25px auto;
+		border-top: 1px solid #808080;
+		width: 30px;
+	}
 }
 
 .default-modal {
-    .default-error;
-    width: 400px;
+	.default-error;
+	width: 400px;
 }
 
 .error-panel {
-    background-color: #F5F5F5;
-    padding: 10px 0px;
+	background-color: #F5F5F5;
+	padding: 10px 0px;
 
-    P {
-    padding-top: 10px;
-    }
+	P {
+		padding-top: 10px;
+	}
 }
 
 .feil-lamell {
-    H1 {
-    color: #9B9B9B !important;
-    }
+	H1 {
+		color: #9B9B9B !important;
+	}
 
-    background-color: #F1F1EF;
-    min-height: 400px;
+	background-color: #F1F1EF;
+	min-height: 400px;
 }
 
 .default-cursor {
-    cursor: default !important;
+	cursor: default !important;
 }
 
 /* MEDIA QUERIES */
 @media (min-width: 1200px) {
-    BODY {
-    	width: 100%;
-    }
+	BODY {
+		width: 100%;
+	}
 
-    .sidebar {
-    	width: 30.2%;
-    }
+	.sidebar {
+		width: 30.2%;
+	}
 
-    .main, .bunn, #personsok {
-    	width: 69.8%;
-    }
+	.main, .bunn, #personsok {
+		width: 69.8%;
+	}
 }
 
 @media (min-width: 960px) and (max-width: 1199px) {
-    .sidebar {
-    	width: 32.1%;
-    }
+	.sidebar {
+		width: 32.1%;
+	}
 
-    .main, .bunn, #personsok {
-    	width: 67.9%;
-    }
+	.main, .bunn, #personsok {
+		width: 67.9%;
+	}
 
-    .sidebar .visittkort, .sidebar .visittkort.mann, .sidebar .visittkort.kvinne {
-    	padding-left: 25px;
-    	background-image: none;
-    }
+	.sidebar {
+		.visittkort {
+			padding-left: 25px;
+			background-image: none;
+			&.mann, &.kvinne {
+				padding-left: 25px;
+				background-image: none;
+			}
+			&.active {
+				padding-left: 56px;
+				padding-right: 55px;
+			}
+		}
+	}
 
-    .sidebar .visittkort.active {
-    	padding-left: 56px;
-    	padding-right: 55px;
-    }
-
-    #personsok #personsokPanel .description {
-    	display: none;
-    }
+	#personsok #personsokPanel .description {
+		display: none;
+	}
 }
 
 @media (max-width: 959px) {
-    HTML {
-        overflow-y: hidden;
-    }
+	HTML {
+		overflow-y: hidden;
+	}
 
 	BODY {
 		padding: 0;
@@ -1057,93 +1034,85 @@ BODY {
 		overflow-y: auto;
 	}
 
-    .navbar {
-    	position: relative;
-    }
+	.navbar {
+		position: relative;
+		padding-left: 82px;
+		height: 80px;
+		FORM {
+			.taskbox, NAV.menu {
+				width: 26.7%;
+				height: 32px;
+			}
+		}
+	}
 
-    .main {
-    	margin-top: 0;
-    	width: 100%;
-    	display: block;
-    }
+	.main {
+		margin-top: 0;
+		width: 100%;
+		display: block;
+	}
 
-    .bunn {
-    	width: 100%;
-    }
-
-    .navbar FORM .taskbox, .navbar FORM NAV.menu {
-    	width: 26.7%;
-    }
-
-    .navbar {
-    	padding-left: 82px;
-    }
+	.bunn {
+		width: 100%;
+	}
 
 	.personsok-button {
 		width: 32px;
 		height: 32px;
-
 		border-radius: 32px;
+		&:after, &.active:after {
+			bottom: 3px;
+			left: 11px;
+		}
 	}
 
 	.nullstill-button {
-        margin-top: 0;
-    }
-
-    .navbar {
-    	height: 80px;
-    }
-
-    .search-intern INPUT[type=text] {
-    	height: 32px;
-    }
-
-    .search-intern INPUT[type=button], .search-intern SUBMIT {
-    	height: 32px;
-
-    	background-position: 10px center;
-    }
-
-	.navbar FORM NAV.menu, .navbar FORM .taskbox {
-		height: 32px;
+		margin-top: 0;
 	}
 
-	.personsok-button:after, .personsok-button.active:after {
-		bottom: 3px;
-		left: 11px;
+	.search-intern {
+		INPUT[type=text] {
+			height: 32px;
+		}
+		INPUT[type=button], .search-intern SUBMIT {
+			height: 32px;
+
+			background-position: 10px center;
+		}
 	}
 
 	#personsok #personsokPanel .description {
-    	display: none;
-    }
+		display: none;
+	}
 
-    .kjerneinfo .grafikk .year P:first-child {
-    	display: none;
-    }
+	.kjerneinfo .grafikk .year {
+		P:first-child {
+			display: none;
+		}
+		HR {
+			display: none;
+		}
+	}
 
-    .kjerneinfo .grafikk .year HR {
-    	display: none;
-    }
+	.sidebar {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: -380px;
+		width: 400px;
+		height: 100%;
+		overflow-x: hidden;
 
-    .sidebar {
-    	display: block;
-    	position: absolute;
-    	top: 0;
-    	right: -380px;
-    	width: 400px;
-    	height: 100%;
-    	overflow-x: hidden;
+		z-index: 2500;
+		background: transparent url(../img/tapp_liten.png) no-repeat 0px 175px;
 
-    	z-index: 2500;
-    	background: transparent  url(../img/tapp_liten.png) no-repeat 0px 175px;
-
-    	.visittkort, .visittkort.active {
-    		margin-top: 80px;
-    		margin-right: 0;
-    		border: none;
-    		background-color: #3E3832;
-    	}
-    }
+		.visittkort, .visittkort.active {
+			margin-top: 80px;
+			margin-right: 0;
+			border: none;
+			background-color: #3E3832;
+		}
+	}
 }
 
 @media (max-width: 767px) {
@@ -1153,31 +1122,32 @@ BODY {
 		display: block;
 	}
 
-    .lameller .lamell .lerret .kolonne:last-child {
-    	margin-left: 0;
-    }
+	.lameller .lamell .lerret .kolonne:last-child {
+		margin-left: 0;
+	}
 
-    #personsok #personsokPanel .description {
-    	display: none;
-    }
-
-    #personsok #personsokPanel .navnogadresse {
-    	float: none;
-    	display: block;
-    	width: 100%;
-    }
-
-    #personsok #personsokPanel .begrenssoket {
-    	float: none;
-    	width: 100%;
-    	margin: 2rem 0;
-    	display: block;
-    	overflow: auto;
-    }
-
-    #personsok #personsokResult #resultDataTable {
-    	TH, TD {
-			padding: 0.5rem 0 0.5rem 0.5rem;
-    	}
-    }
+	#personsok {
+		#personsokPanel {
+			.description {
+				display: none;
+			}
+			.navnogadresse {
+				float: none;
+				display: block;
+				width: 100%;
+			}
+			.begrenssoket {
+				float: none;
+				width: 100%;
+				margin: 2rem 0;
+				display: block;
+				overflow: auto;
+			}
+		}
+		#personsokResult #resultDataTable {
+			TH, TD {
+				padding: 0.5rem 0 0.5rem 0.5rem;
+			}
+		}
+	}
 }
