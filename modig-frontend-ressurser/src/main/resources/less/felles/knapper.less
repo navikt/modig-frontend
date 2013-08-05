@@ -47,6 +47,23 @@
 	}
 }
 
+[class*=knapp-lenke] {
+	padding: 0 0 0 2rem;
+	background: none;
+    color: @linkColor;
+    border: none;
+    background: none;
+    font-weight: bold;
+    text-transform: none;
+	&:hover, &:focus {
+		border-color: none;
+		background: none;
+		color: @linkColorHover;
+	}
+}
+
+
+
 [class*=-liten] {
 	padding: @paddingSmall;
 	font-size: @fontSizeSmall;
