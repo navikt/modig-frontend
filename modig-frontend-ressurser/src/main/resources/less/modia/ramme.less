@@ -119,28 +119,25 @@ BODY {
 		font-size: 2.14rem;
 	}
 
+	INPUT[type=image] {
+		float: left;
+		margin: -55px 0 0 260px;
+		width: 46px;
+	}
+
 	INPUT[type=button], SUBMIT, INPUT[type=image], #submitFodselsnummer {
 		margin: 0;
-		height: 72px;
+		height: 52px;
 		padding: 4px 0;
 		position: absolute;
 		right: 1rem;
-		width: 4rem;
+		top: 10px;
 		text-align: center;
-		color: transparent;
-		text-shadow: none;
-		background: none;
-		border: none;
-		background-size: 42px;
 	}
 
 	INPUT[type=button]:hover, INPUT[type=button].hover, INPUT[type=button]:active, SUBMIT:hover, SUBMIT:active {
 		right: 1rem;
-		width: 4rem;
 		position: absolute;
-		background: transparent url(../img/sok_hover.svg) no-repeat 10px center;
-		border: none;
-		background-size: 42px;
 	}
 
 	LABEL.errorJS, SPAN.feedbackPanelERROR {
