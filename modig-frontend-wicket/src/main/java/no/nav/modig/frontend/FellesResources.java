@@ -13,14 +13,14 @@ class FellesResources {
     // Må bruke en PackageResourceReference frem til WICKET-5250 og WICKET-5251 er løst
     static final PackageResourceReference HTML5_SHIV_RESOURCE = new PackageResourceReference(JsResourceMarker.class, "html5.js");
 
-    static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.9.1.js");
+    static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.10.2.js");
 	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = new JQueryDependentResourceReference("underscore.js");
 	static final JavaScriptResourceReference TRANSITIONS_RESOURCE = new JQueryDependentResourceReference("felles/transitions.js");
 	static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("felles/felles.js");
 	static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("felles/dropdown.js");
 	static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("felles/tooltip.js");
 	static final JavaScriptResourceReference AJAX_LOADER = new JQueryDependentResourceReference("felles/AjaxLoader.js");
-    static final JavaScriptResourceReference JQUERY_UI_DATEPICKER = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.10.2.custom.min.js");
+    static final JavaScriptResourceReference JQUERY_UI_DATEPICKER = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.10.3.custom.js");
     static final JavaScriptResourceReference JQUERY_VALIDATE = new JQueryDependentResourceReference("jquery/plugins/jquery.validate.js");
 
 	static final PackageResourceReference RESET_LESS = lessReference("felles/reset.less");

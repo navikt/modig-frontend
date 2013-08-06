@@ -1,10 +1,10 @@
 package no.nav.modig.frontend.compressors;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
-
 import org.apache.wicket.javascript.IJavaScriptCompressor;
 import org.junit.Test;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * Tests for {@link Wro4jJsCompressor}
