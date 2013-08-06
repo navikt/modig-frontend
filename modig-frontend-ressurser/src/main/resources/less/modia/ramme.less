@@ -76,7 +76,7 @@ BODY {
 		width: 0;
 		height: 0;
 		bottom: 14px;
-		left: 30px;
+		left: 27px;
 		margin: 0 auto;
 		position: absolute;
 		border-left: 7px solid transparent;
@@ -93,7 +93,7 @@ BODY {
 }
 
 .nullstill-button {
-	margin: 12px 0 0 30px;
+	margin: 20px 0 0 30px;
 	width: 32px;
 	height: 32px;
 	float: left;
@@ -119,7 +119,7 @@ BODY {
 		font-size: 2.14rem;
 	}
 
-	INPUT[type=button], SUBMIT {
+	INPUT[type=button], SUBMIT, INPUT[type=image], #submitFodselsnummer {
 		margin: 0;
 		height: 72px;
 		padding: 4px 0;
@@ -129,7 +129,7 @@ BODY {
 		text-align: center;
 		color: transparent;
 		text-shadow: none;
-		background: transparent url(../img/sok.svg) no-repeat 10px center;
+		background: none;
 		border: none;
 		background-size: 42px;
 	}
@@ -1065,7 +1065,7 @@ BODY {
 		border-radius: 32px;
 		&:after, &.active:after {
 			bottom: 3px;
-			left: 11px;
+			left: 9px;
 		}
 	}
 
@@ -1076,11 +1076,13 @@ BODY {
 	.search-intern {
 		INPUT[type=text] {
 			height: 32px;
+			font-size: 1.14rem;
+			padding: 0 40px 0 5px;
 		}
-		INPUT[type=button], .search-intern SUBMIT {
+		INPUT[type=button], .search-intern SUBMIT, INPUT[type=image], #submitFodselsnummer {
 			height: 32px;
-
-			background-position: 10px center;
+			margin-top: 3px;
+			right: 0;
 		}
 	}
 
