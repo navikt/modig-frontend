@@ -52,6 +52,24 @@ LABEL.errorJS {
     text-transform: none;
 }
 
+UL.feedbackPanel {
+    padding: 1rem 1rem 1rem 2rem;
+    list-style-type: none;
+    color: #FFF;
+    background-color: #da153a;
+    font: 1.43rem Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    LI:before {
+        content: "* ";
+    }
+
+    A, A:visited {
+        color: #FFF;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
 .description {
     color: #a69d92;
     font-size: 0.714rem;
