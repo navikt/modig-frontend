@@ -107,7 +107,7 @@ BODY {
 }
 
 .search-intern {
-	width: 28rem;
+	width: 12rem;
 	display: block;
 	position: relative;
 	float: left;
@@ -128,11 +128,11 @@ BODY {
 
 	INPUT[type=button], SUBMIT, INPUT[type=image], #submitFodselsnummer {
 		margin: 0;
-		height: 36px;
+		height: 32px;
 		padding: 4px;
 		position: absolute;
 		right: 0;
-		top: 2px;
+		top: 4px;
 		text-align: center;
 	}
 
@@ -544,7 +544,7 @@ BODY {
 		color: #B7B1A9;
 
 		A, A:visited {
-			color: white;
+			color: #00A9E0;
 			text-decoration: none;
 		}
 
@@ -568,7 +568,7 @@ BODY {
 			color: #B7B1A9;
 		}
 
-		.brukerprofillink, BUTTON {
+		BUTTON {
 			padding: 0;
 			position: relative;
 
@@ -673,6 +673,12 @@ BODY {
 			outline: none;
 		}
 
+		.error-panel {
+            padding: 30px 30px 40px 30px;
+            background-color: #FFF;
+            border: 1px solid #DDD;
+        }
+
 		> HEADER {
 			display: block;
 			height: 64px;
@@ -732,12 +738,6 @@ BODY {
 			}
 		}
 
-		.error-panel {
-		    padding: 30px 30px 40px 30px;
-		    background-color: #FFF;
-		    border: 1px solid #DDD;
-		}
-
 		.lerret {
 			padding: 2rem 30px 30px 30px;
 			width: 100%;
@@ -760,20 +760,18 @@ BODY {
 	line-height: 1.2em;
 	border-top: 1px solid #626262;
 
-	DL {
-		padding: 0 0 0 10px;
+	DL, UL {
+		padding: 0;
 		margin: 0;
 		float: left;
 		width: 100%;
-
-		font-weight: bold;
+		list-style-type: none;
 
 		DT {
 			width: 135px;
 			position: absolute;
 
 			color: #ACA397;
-			font-weight: normal;
 			text-align: left;
 		}
 
@@ -783,6 +781,12 @@ BODY {
 			padding-left: 145px;
 			text-overflow: ellipsis;
 			text-align: left;
+		    font-weight: bold;
+		}
+
+		LI {
+		    padding: 0;
+		    margin: 0;
 		}
 	}
 
@@ -804,8 +808,9 @@ BODY {
 	.info {
         .box-sizing(border-box);
         float: right;
-        padding: 40px 0 0 30px;
-        width: 33%;
+        padding: 40px 0 0 0;
+        margin-left: 30px;
+        width: 26%;
         display: block;
         height: 100%;
 
@@ -824,21 +829,41 @@ BODY {
 			margin-bottom: 10px;
 		}
 
+		&.status {
+            background: url(../img/info.svg) no-repeat center 10px;
+            background-size: 20px;
+
+            DL {
+                DT {
+                    width: 8rem;
+                }
+
+                DD {
+                    padding-left: 9rem;
+                }
+            }
+        }
+
 		.barn {
 			.clearfix;
-			margin-bottom: 40px;
+			margin-bottom: 30px;
+			position: relative;
+			text-align: left;
 
 			&:last-child {
 				margin-bottom: 0;
 			}
 
-			DL {
-				width: 80%;
+			.fnr, .navn {
+			    font-weight: bold;
+			}
+
+			UL {
+			    padding-left: 50px;
 			}
 
 			.barnAlder {
-				float: left;
-				width: 80px;
+				position: absolute;
 				padding-top: 0.7rem;
 
 				SPAN {
@@ -872,19 +897,9 @@ BODY {
 		}
 	}
 
-	.status {
-		width: 33%;
-		background: url(../img/info.svg) no-repeat center 10px;
-		background-size: 20px;
-	}
-
 	.barna, .foreldre {
 		background: url(../img/hjerte.svg) no-repeat center 10px;
 		background-size: 20px;
-	}
-
-	.barna {
-		width: 33%;
 	}
 }
 
@@ -1052,7 +1067,7 @@ BODY {
 			padding: 0 40px 0 5px;
 		}
 		INPUT[type=button], .search-intern SUBMIT, INPUT[type=image], #submitFodselsnummer {
-			margin-top: 3px;
+			margin-top: 4px;
 			right: 0;
 			top: 0;
 		}
