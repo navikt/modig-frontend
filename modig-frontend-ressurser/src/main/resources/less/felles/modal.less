@@ -35,10 +35,28 @@ div.wicket-modal {
 		}
 	}
 
-	.begrunnelsestekst {
-		width: 470px;
-		height: 80px;
-	}
+    .bekreft-dialog {
+      .begrunnelsestekst {
+        width: 470px;
+        height: 80px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      BUTTON[class*=knapp-] {
+        display: block;
+        margin: 40px auto 0 auto;
+
+        &.knapp-lenke {
+          padding-left: 0;
+        }
+      }
+
+
+    }
+
+
+
 }
 
 
