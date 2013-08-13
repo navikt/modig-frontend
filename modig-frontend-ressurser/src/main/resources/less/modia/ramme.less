@@ -141,12 +141,23 @@ BODY {
 		position: absolute;
 	}
 
-	LABEL.errorJS, SPAN.feedbackPanelERROR {
+	SPAN.feedbackPanelERROR, UL.feedbackPanel, LI:before {
 		color: #ff6666;
 		font-size: @fontSizeMini;
 		background: transparent;
 		white-space: nowrap;
+        content: "" !important;
+        position: absolute;
+        left: 0;
+        bottom: -0.6em;
 	}
+
+    LABEL.errorJS {
+       color: #ff6666;
+       font-size: @fontSizeMini;
+       background: transparent;
+       white-space: nowrap;
+    }
 
 	INPUT.errorJS {
 		background-color: #F7CECE;
