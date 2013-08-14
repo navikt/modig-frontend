@@ -34,7 +34,7 @@ BODY {
 .navbar {
 	margin-bottom: 0;
 	height: 80px;
-	padding: 20px 30px 10px 70px;
+	padding: 20px 30px 10px 30px;
 	z-index: 1030;
 	background-color: @grayDark;
 	white-space: no-wrap;
@@ -51,18 +51,18 @@ BODY {
 .personsok-button {
 	margin-top: 3px;
 	position: absolute;
-	left: 30px;
+	left: 209px;
 	width: 36px;
 	height: 36px;
 	text-align: center;
 	border-radius: 36px;
-	background-color: #a1a1a1;
+	background-color: #988f86;
 	background-image: none;
 	border: none;
 	font-size: 1.14rem;
 
 	&:hover {
-		background-color: #919191;
+		background-color: #00a9e0;
 		background-image: none;
 		border: none;
 	}
@@ -78,13 +78,13 @@ BODY {
 		width: 0;
 		height: 0;
 		bottom: 6px;
-		left: 13px;
+		left: 14px;
 		margin: 0 auto;
 		position: absolute;
-		border-left: 5px solid transparent;
-		border-right: 5px solid transparent;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
 		content: "";
-		border-top: 5px solid #333;
+		border-top: 4px solid #333;
 	}
 
 	&.active:after {
@@ -95,15 +95,18 @@ BODY {
 }
 
 .nullstill-button {
-	margin: 5px 0 0 20px;
+	margin: 4px 0 0 60px;
 	width: 36px;
 	height: 36px;
 	float: left;
-
 	border: none;
-	background: transparent url(../img/nullstill.svg) no-repeat right center;
+	background: transparent url(../img/nullstill_bruker.svg) no-repeat right center;
 	background-size: 36px;
 	color: transparent;
+	&:hover {
+		background: transparent url(../img/nullstill_bruker_hover.svg) no-repeat right center;
+		background-size: 36px;
+	}
 }
 
 .search-intern {
@@ -128,11 +131,11 @@ BODY {
 
 	INPUT[type=button], SUBMIT, INPUT[type=image], #submitFodselsnummer {
 		margin: 0;
-		height: 31px;
+		height: 28px;
 		padding: 4px;
 		position: absolute;
-		right: 1px;
-		top: 6px;
+		right: 5px;
+		top: 7px;
 		text-align: center;
 	}
 
