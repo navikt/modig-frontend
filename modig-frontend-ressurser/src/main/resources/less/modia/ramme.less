@@ -709,14 +709,12 @@ BODY {
 
 .kjerneinfo {
 	.clearfix;
-	padding: 30px 0;
+	padding: 0;
 	min-height: 265px;
-
 	display: none;
-	background: #3E3832;
-	color: #B7B1A9;
+	background: #3e3832;
+	color: #b7b1a9;
 	line-height: 1.2em;
-	border-top: 1px solid #626262;
 
 	DL, UL {
 		padding: 0;
@@ -728,8 +726,7 @@ BODY {
 		DT {
 			width: 135px;
 			position: absolute;
-
-			color: #ACA397;
+			color: #aca397;
 			text-align: left;
 		}
 
@@ -764,32 +761,46 @@ BODY {
 	}
 
 	.info {
-        .box-sizing(border-box);
+		margin: 0 30px;
+		padding: 47px 0 40px;
         float: right;
-        padding: 40px 0 0 0;
-        margin-left: 30px;
-        width: 26%;
         display: block;
         height: 100%;
-
 		text-align: center;
 
-		H1 {
-			._H3;
+		table {
+			border-collapse: collapse;
+			margin: 1rem auto;
+			tbody {
+				tr:first-child {
+					th, td {
+						padding-top: 0.5rem;
+					}
+				}
+				tr:last-child {
+					th, td {
+						padding-bottom: 0.5rem;
+					}
+				}
+			}
+			th {
+				font-weight: normal;
+				text-align: left;
+			}
+			td {
+				font-weight: bold;
+				padding-left: 0.5rem;
+				text-align: left;
+			}
 		}
 
 		P {
 			margin: 0;
 		}
 
-		A {
-			display: block;
-			margin-bottom: 10px;
-		}
-
 		&.status {
             background: url(../img/info.svg) no-repeat center 10px;
-            background-size: 20px;
+            background-size: 26px;
 
             DL {
                 DT {
@@ -817,7 +828,7 @@ BODY {
 			}
 
 			UL {
-			    padding-left: 40px;
+			    padding-left: 55px;
 			}
 
 			.barnAlder {
@@ -826,6 +837,8 @@ BODY {
 
 				SPAN {
 					display: block;
+					width: 40px;
+					text-align: center;
 				}
 
 				.alder {
@@ -846,20 +859,23 @@ BODY {
 
 		.boy {
 			.barnAlder {
-				color: #00A9E0;
+				color: #00a9e0;
 			}
 		}
 
 		.girl {
 			.barnAlder {
-				color: #DE4A77;
+				color: #de4a77;
 			}
 		}
-	}
 
-	.barna, .foreldre {
-		background: url(../img/hjerte.svg) no-repeat center 10px;
-		background-size: 20px;
+		&.barna, &.foreldre {
+			background: url(../img/hjerte.svg) no-repeat center 10px;
+		}
+
+		&.barna, &.foreldre, &.status {
+			background-size: 26px;
+		}
 	}
 }
 
