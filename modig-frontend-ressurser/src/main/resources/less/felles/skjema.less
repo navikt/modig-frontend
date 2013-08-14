@@ -53,6 +53,20 @@ form {
 			}
 		}
 	}
+	&.dobbeldato {
+		display: inline-block;
+		background: #f1f1f1;
+		padding: 10px 20px 20px;
+		border: 1px solid #ddd;
+		LABEL {
+			padding: 0;
+			width: 9rem;
+			margin: 0 8px 0 0;
+			INPUT {
+				width: 100%;
+			}
+		}
+	}
 	input[type="radio"],
 	input[type="checkbox"] {
 		position: absolute;
@@ -162,12 +176,12 @@ input[type="tel"],
 input[type="color"],
 input.hasDatepicker
 {
-	padding: .4rem .7rem .3rem;
+	padding: .5rem .7rem .5rem;
 	.border-radius(@inputBorderRadius);
 }
 
 select {
-	padding: 0 0 0 .5rem;
+	padding: .5rem .5rem .5rem .7rem;
 	.border-radius(@inputBorderRadius);
 	border: 1px solid #ccc;
 	border-top: 1px solid #888;
