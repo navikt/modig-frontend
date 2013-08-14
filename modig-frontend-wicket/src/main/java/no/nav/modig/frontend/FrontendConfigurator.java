@@ -139,6 +139,7 @@ public class FrontendConfigurator {
         addModules();
         configureMeta(application);
         configureHtml5shiv(application);
+        configureConsolePolyfill(application);
         configurePriorityCss(application);
         configureLess(application);
         configureCss(application);
@@ -150,7 +151,6 @@ public class FrontendConfigurator {
         configureImages(application);
         configureResourcePacking(application);
     }
-
 
     private void addModules() {
         // Adding modules in reversed sequence so that the final sequence is correct
@@ -207,6 +207,18 @@ public class FrontendConfigurator {
             @Override
             public void renderHead(IHeaderResponse response) {
                 response.render(ConditionalJavascriptResource.HTML5_SHIV);
+            }
+        });
+    }
+
+
+    private void configureConsolePolyfill(WebApplication application) {
+        ResourceReference reference = ConditionalJavascriptResource.CONSOLE_POLYFILL.getReference();
+        application.mountResource(basePath + "/js/" + reference.getName(), reference);
+        application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+            @Override
+            public void renderHead(IHeaderResponse response) {
+                response.render(ConditionalJavascriptResource.CONSOLE_POLYFILL);
             }
         });
     }

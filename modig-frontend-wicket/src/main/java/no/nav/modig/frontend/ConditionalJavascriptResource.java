@@ -5,11 +5,14 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
 
+import static no.nav.modig.frontend.FellesResources.CONSOLE_POLYFILL_RESOURCE;
+
 
 public class ConditionalJavascriptResource extends JavaScriptReferenceHeaderItem {
 
     public static final PackageResourceReference HTML_5_SHIV_RESOURCE = FellesResources.HTML5_SHIV_RESOURCE;
     protected static final ConditionalJavascriptResource HTML5_SHIV = new ConditionalJavascriptResource(HTML_5_SHIV_RESOURCE, "lt IE 9");
+    protected static final ConditionalJavascriptResource CONSOLE_POLYFILL = new ConditionalJavascriptResource(CONSOLE_POLYFILL_RESOURCE, "lte IE 9");
 
     /**
      * Creates a new {@code JavaScriptReferenceHeaderItem}.

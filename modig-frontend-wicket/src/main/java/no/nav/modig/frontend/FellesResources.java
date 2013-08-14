@@ -15,16 +15,17 @@ class FellesResources {
 
     static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.10.2.js");
 	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = new JQueryDependentResourceReference("underscore.js");
-	static final JavaScriptResourceReference TRANSITIONS_RESOURCE = new JQueryDependentResourceReference("felles/transitions.js");
-	static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("felles/felles.js");
-	static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("felles/dropdown.js");
-	static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("felles/tooltip.js");
-	static final JavaScriptResourceReference AJAX_LOADER = new JQueryDependentResourceReference("felles/AjaxLoader.js");
+    static final JavaScriptResourceReference TRANSITIONS_RESOURCE = new JQueryDependentResourceReference("felles/transitions.js");
+    static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("felles/felles.js");
+    static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("felles/dropdown.js");
+    static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("felles/tooltip.js");
+    static final JavaScriptResourceReference AJAX_LOADER = new JQueryDependentResourceReference("felles/AjaxLoader.js");
     static final JavaScriptResourceReference JQUERY_UI_DATEPICKER = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.10.3.custom.js");
     static final JavaScriptResourceReference JQUERY_VALIDATE = new JQueryDependentResourceReference("jquery/plugins/jquery.validate.js");
+    static final JavaScriptResourceReference CONSOLE_POLYFILL_RESOURCE = jsReference("console.js");
 
 	static final PackageResourceReference RESET_LESS = lessReference("felles/reset.less");
-	static final PackageResourceReference VARIABLES_LESS = lessReference("felles/variables.less");
+    static final PackageResourceReference VARIABLES_LESS = lessReference("felles/variables.less");
 	static final PackageResourceReference MIXINS_LESS = lessReference("felles/mixins.less");
 	static final PackageResourceReference MODUS_LESS = lessReference("felles/modus.less");
 	static final PackageResourceReference UTILITIES_LESS = lessReference("felles/utilities.less");
