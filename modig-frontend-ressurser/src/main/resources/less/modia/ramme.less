@@ -551,21 +551,10 @@ BODY {
 		border: 1px solid #626262;
 		padding: 15px 15px 15px 65px;
 		min-height: 266px;
-
 		background-repeat: no-repeat;
 		background-position: 15px 15px;
 		background-size: 40px;
 		color: #B7B1A9;
-
-		A, A:visited {
-			color: #00A9E0;
-			text-decoration: none;
-		}
-
-		A:hover, A:active {
-			color: #00a9E0;
-			text-decoration: none;
-		}
 
 		&.mann {
 			background-image: url(../img/mann.svg);
@@ -580,51 +569,6 @@ BODY {
 			font-size: 1.9rem;
 			margin: 2px 0 5px 0;
 			color: #B7B1A9;
-		}
-
-		BUTTON {
-			padding: 0;
-			position: relative;
-
-			background: none;
-			color: #00a9E0;
-			border: none;
-			background: none;
-			font-weight: bold;
-
-			&:before {
-				bottom: 4px;
-				left: -10px;
-				margin: 0 auto;
-				position: absolute;
-				width: 0;
-				height: 0;
-
-				content: "";
-				border-top: 5px solid transparent;
-				border-bottom: 5px solid transparent;
-				border-right: 5px solid #00a9E0;
-			}
-
-			&:active {
-				box-shadow: none;
-			}
-		}
-
-		&.active {
-			margin: 80px 0 16px 0;
-			padding: 15px 45px 30px 96px;
-
-			border: none;
-			border-top: 1px solid #626262;
-			background-position: 46px 15px;
-
-			BUTTON:before {
-				left: -12px;
-
-				border-right: none;
-				border-left: 4px solid #00a9E0;
-			}
 		}
 	}
 }
