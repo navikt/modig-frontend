@@ -24,48 +24,6 @@ form {
 			text-transform: uppercase;
 		}
 	}
-	&.horisontal {
-		label {
-			position: relative;
-			padding: 1rem 0 0.5rem;
-			input, select, textarea {
-				margin-left: 1rem;
-			}
-			span {
-				display: inline-block;
-				font-size: 0.85rem;
-				text-transform: uppercase;
-				width: 11rem;
-				&.melding {
-					width: auto;
-				}
-			}
-		}
-	}
-	&.vertikal {
-		label {
-			input, select, textarea {
-				display: block;
-				&[type="checkbox"], &[type="radio"] {
-					display: inline-block;
-				}
-			}
-		}
-	}
-	&.dobbeldato {
-		display: inline-block;
-		background: #f1f1f1;
-		padding: 10px 20px 20px;
-		border: 1px solid #ddd;
-		LABEL {
-			padding: 0;
-			width: 9rem;
-			margin: 0 8px 0 0;
-			INPUT {
-				width: 100%;
-			}
-		}
-	}
 	input[type="radio"],
 	input[type="checkbox"] {
 		position: absolute;
@@ -131,6 +89,52 @@ form {
 		}
 	}
 }
+
+&.horisontal {
+	label {
+		position: relative;
+		padding: 1rem 0 0.5rem;
+		input, select, textarea {
+			margin-left: 1rem;
+		}
+		span {
+			display: inline-block;
+			font-size: 0.85rem;
+			text-transform: uppercase;
+			width: 11rem;
+			&.melding {
+				width: auto;
+			}
+		}
+	}
+}
+
+&.vertikal {
+	label {
+		input, select, textarea {
+			display: block;
+			&[type="checkbox"], &[type="radio"] {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+&.dobbeldato {
+	display: inline-block;
+	background: #f1f1f1;
+	padding: 10px 20px 20px;
+	border: 1px solid #ddd;
+	LABEL {
+		padding: 0;
+		width: 9rem;
+		margin: 0 8px 0 0;
+		INPUT {
+			width: 100%;
+		}
+	}
+}
+
 
 //
 // Forms
