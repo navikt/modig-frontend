@@ -15,7 +15,6 @@ HTML {
 BODY {
 	height: 100%;
 	width: 100%;
-	.clearfix;
 	position: relative;
 	display: table;
 	font-size: 1rem;
@@ -26,7 +25,6 @@ BODY {
 	position: relative;
 	padding: auto 0;
 	height: 100%;
-	.clearfix;
 	display: table-cell;
 	background-color: @white;
 }
@@ -199,36 +197,37 @@ BODY {
 	}
 
 	#personsokPanel {
+		LABEL {
+			float: left;
+			margin-right: 2%;
+			width: auto;
+			INPUT, SELECT {
+				width: 100%;
+			}
+		}
 		.navnogadresse {
-			width: 60%;
-			padding-right: 2%;
+			width: 48%;
+			margin-right: 2%;
 			float: left;
 
-			LABEL {
-				float: left;
-				INPUT {
-					width: 100%;
-				}
+			LABEL.fornavn {
+				width: 48%;
 			}
 
-			LABEL.etternavn, LABEL.kontonummer {
-				padding-left: 2%;
-				width: 40%;
-
+			LABEL.etternavn {
+				width: 48%;
 				LABEL.errorJS {
 					width: 100%;
 					padding-left: 11%;
 				}
 			}
 
-			LABEL.gatenavn, LABEL.poststed, LABEL.postnummer {
-				clear: left;
+			LABEL.gatenavn {
+				width: 48%;
 			}
 
 			LABEL.husnummer {
-				width: 24%;
-				padding-left: 2%;
-
+				width: 14.5%;
 				LABEL.errorJS {
 					width: 100%;
 					padding-left: 20%;
@@ -236,50 +235,42 @@ BODY {
 			}
 
 			LABEL.husbokstav {
-				width: 16%;
-				padding-left: 2%;
-
+				width: 14.5%;
 				LABEL.errorJS {
 					width: 100%;
 					padding-left: 33%;
 				}
 			}
+
+			LABEL.postnummer {
+				width: 15%;
+			}
+
+			LABEL.kontonummer {
+				width: 48%;
+			}
+
 		}
 
 		.begrenssoket {
-			width: 40%;
+			width: 38%;
+			margin-left: 10%;
 			float: left;
 
 			LABEL {
-				float: left;
-				width: 46%;
-				display: inline;
+				width: 31%;
 			}
-
-			LABEL.navenhet {
-				width: 54%;
-				padding-right: 4%;
-			}
-
-			LABEL.navenhet, LABEL.fodselsdatoFra, LABEL.alderFra, LABEL.kjonn {
+			LABEL.fodselsdatoFra, LABEL.alderFra, LABEL.kjonn {
 				clear: left;
 			}
-
-			LABEL.fodselsdatoTil, LABEL.alderTil {
-				padding-left: 4%;
-				width: 53%;
-
-				LABEL.errorJS {
-					width: 100%;
-					padding-left: 18%;
-				}
-			}
+		}
+		.controls {
+			clear: left;
 		}
 	}
 
 	P#searchErrorMessage {
 		padding: 1.43rem 0;
-
 		color: #a69d92;
 		font: 1.43rem Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
@@ -294,7 +285,6 @@ BODY {
 			width: 100%;
 			border-collapse: collapse;
 			table-layout: fixed;
-
 			color: #988f86;
 
 			THEAD, TR {
@@ -711,7 +701,6 @@ BODY {
 /* Generelle klasser */
 
 .kjerneinfo {
-	.clearfix;
 	padding: 0;
 	min-height: 265px;
 	display: none;
@@ -817,7 +806,6 @@ BODY {
         }
 
 		.barn {
-			.clearfix;
 			margin-bottom: 30px;
 			position: relative;
 			text-align: left;
