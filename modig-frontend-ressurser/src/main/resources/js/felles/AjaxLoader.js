@@ -56,6 +56,11 @@
         }
 
         $imageElement.remove();
+
+        var $placeElement = $(placeElement);
+        if ($placeElement !== null) {
+            $(placeElement).show();
+        }
     };
     
     AjaxLoader.prototype.showLoader = function showLoader(placeElement, placement, imageUrl, css) {
@@ -77,6 +82,9 @@
                 $placeElement.after(image);
             } else if (placement === 'before') {
                 $placeElement.before(image);
+            } else if (placement === 'hide') {
+                $placeElement.before(image);
+                $placeElement.hide();
             } else {
                 $placeElement.prepend(image);
             }
