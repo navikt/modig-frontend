@@ -71,7 +71,14 @@ form {
 		padding: 2px 0 0 27px;
 		height: 30px;
 		margin-right: 1rem;
+        font-family: @headingsFontFamily;
+        font-size: 1rem !important;
 	}
+
+    input[type="radio"]:checked + label,
+    input[type="checkbox"]:checked + label {
+        font-weight: bold;
+    }
 
 	.valggruppe {
 		span {
@@ -195,16 +202,20 @@ input[type="tel"],
 input[type="color"],
 input.hasDatepicker
 {
-	padding: 8px;
+	padding: 7px;
 	line-height: 1.3rem;
 	.border-radius(@inputBorderRadius);
+}
+
+select,
+input.hasDatepicker {
+    border: 1px solid @inputBorder;
+    border-top: 1px solid #969290;
 }
 
 select {
 	padding: 7px;
 	.border-radius(@inputBorderRadius);
-	border: 1px solid #ccc;
-	border-top: 1px solid #888;
 }
 
 // Everything else
