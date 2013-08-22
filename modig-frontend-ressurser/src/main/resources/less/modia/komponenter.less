@@ -6,6 +6,7 @@
     
 	.oppsummering {
 		.kolonne;
+
 	}
 
 	A, A:visited, A:active {
@@ -24,6 +25,10 @@
 	DL {
 		margin: 0;
 		overflow: auto;
+
+        &.oppsummering {
+            margin-bottom: 2rem;
+        }
 
 		> * {
 			width: 50%;
@@ -370,6 +375,18 @@
 
         H4 {
             margin: 10px 0 0 0;
+        }
+
+
+        DL > *:nth-child(4n+1) {
+            margin-top: 1rem;
+            clear: left;
+
+            &:before {
+                content: "";
+                display: table;
+                width: 100%;
+            }
         }
 
         DT {
