@@ -31,8 +31,8 @@ BODY {
 
 .navbar {
 	margin-bottom: 0;
-	height: 80px;
-	padding: 20px 30px 10px 30px;
+	height: 100px;
+	padding: 20px 30px 20px 60px;
 	z-index: 1030;
 	background-color: @grayDark;
 	white-space: no-wrap;
@@ -48,8 +48,8 @@ BODY {
 
 .personsok-button {
     margin: 3px 0 0 20px;
-	width: 36px;
-	height: 36px;
+	width: 45px;
+	height: 45px;
 	text-align: center;
 	border-radius: 36px;
 	background-color: #988f86;
@@ -71,7 +71,7 @@ BODY {
 	}
 
 	&:after {
-        margin: 17px 0 0 -13px; /*N.B. -13px works in IE9.*/
+        margin: 17px 0 0 -14px; /*N.B. -14px works in IE9.*/
 		position: absolute;
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
@@ -87,11 +87,11 @@ BODY {
 
 .nullstill-button {
 	margin: 3px 0 0 10px;
-	width: 36px;
-	height: 37px;
+	width: 45px;
+	height: 45px;
 	border: none;
 	background: transparent url(../img/nullstill_bruker.svg) no-repeat right center;
-	background-size: 36px;
+	background-size: 45px;
 	color: transparent;
 	&:hover {
 		background: transparent url(../img/nullstill_bruker_hover.svg) no-repeat right center;
@@ -100,14 +100,14 @@ BODY {
 }
 
 .search-intern {
-	width: 12rem;
+	width: 13rem;
 	display: block;
 	position: relative;
 	float: left;
 
 	INPUT[type=text] {
 		float: left;
-		height: 36px;
+		height: 45px;
 		width: 100%;
 		margin-top: 3px;
 		padding: 0 40px 0 5px;
@@ -121,11 +121,11 @@ BODY {
 
 	INPUT[type=button], SUBMIT, INPUT[type=image], #submitFodselsnummer {
 		margin: 0;
-		height: 28px;
+		height: 32px;
 		padding: 4px;
 		position: absolute;
 		right: 5px;
-		top: 7px;
+		top: 9px;
 		text-align: center;
 	}
 
@@ -243,7 +243,7 @@ BODY {
 		}
 	}
 
-	P#searchErrorMessage {
+	#searchErrorMessage {
 		padding: 1.43rem 0;
 		color: #a69d92;
 		font: 1.43rem Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -616,6 +616,11 @@ BODY {
             padding: 30px 30px 40px 30px;
             background-color: #FFF;
             border: 1px solid #DDD;
+            padding-bottom: 0;
+
+            H1 {
+                font-size: 1.14rem;
+            }
         }
 
 		> HEADER {
@@ -629,7 +634,7 @@ BODY {
 			background-color: #F1F1EF;
 
 			H1 {
-				margin: 0 auto auto 30px;
+				margin: 0 auto auto 60px;
 
 				line-height: 59px;
 				font-size: 1.8rem;
@@ -678,10 +683,18 @@ BODY {
 		}
 
 		.lerret {
-			padding: 2rem 30px 30px 30px;
+			padding: 2rem 30px 30px 60px;
 			width: 100%;
 			min-height: 30px;
-			float: left;
+
+            .dobbeldato-container {
+                width: 100%;
+                margin-bottom: 1rem;
+
+                .dobbeldato {
+                    width: auto;
+                }
+            }
 		}
 	}
 }
@@ -990,12 +1003,16 @@ BODY {
 	.navbar {
 		position: relative;
 		padding-left: 82px;
-		height: 80px;
+		height: 100px;
 		FORM {
 			.taskbox, NAV.menu {
 				width: 26.7%;
 				height: 32px;
 			}
+
+            .errorJS {
+                bottom: -1.5rem;
+            }
 		}
 	}
 

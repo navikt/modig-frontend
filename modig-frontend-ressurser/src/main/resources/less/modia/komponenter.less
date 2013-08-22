@@ -16,7 +16,7 @@
 	}
 
 	SECTION {
-		padding-top: 2rem;
+		padding-bottom: 2rem;
 	}
 
 	DL {
@@ -33,7 +33,7 @@
 			top: -1.1rem;
 		}
 
-		> *:nth-child(4n+1) {
+		> *:nth-child(4n+5) {
 			margin-top: 1rem;
 			clear: left;
 
@@ -50,7 +50,7 @@
 
 		DT {
 			text-transform: uppercase;
-			font-size: 0.857rem;
+            font-size: 0.857rem;
 		}
 
 		DD {
@@ -62,24 +62,24 @@
 	}
 
 	UL.oversikt {
-		list-style-type: none;
-		margin: 1em 0;
+        list-style-type: none;
+        margin: 1em 0;
 
-		LI {
-			margin-top: 1em;
+        LI {
+            margin-top: 1em;
 
-			SMALL {
-				text-transform: uppercase;
-				font-size: 1rem;
-			}
+            SMALL {
+                text-transform: uppercase;
+                font-size: 1rem;
+            }
 
-			STRONG {
-				display: block;
+            STRONG {
+                display: block;
 
-				font-weight: bold;
-				font-size: 1.29rem;
-			}
-		}
+                font-weight: bold;
+                font-size: 1.29rem;
+            }
+        }
 	}
 
 	ARTICLE[role=region] {
@@ -302,7 +302,7 @@
 		font-size: 1.14rem;
 		width: 100%;
 		padding: 20px 0;
-		margin: 0;
+		margin: 0 !important;
 		text-align: center;
 		border-bottom: 1px solid #CCC;
 		background-color: #F5F5F5;
@@ -332,11 +332,12 @@
 		TH {
 			font-weight: normal;
 			text-transform: uppercase;
-			font-size: 0.857rem;
+			font-size: 0.78rem;
 		}
 
 		TD {
 			font-weight: bold;
+            font-size: 0.92rem;
 		}
 	}
 
@@ -350,7 +351,7 @@
 		display: block;
 		margin: 0;
 		position: relative;
-		padding: 20px 30px;
+		padding: 10px 30px;
 		overflow: auto;
 
 		border-top: 1px solid #FFF;
@@ -364,6 +365,18 @@
 		&:focus {
 			outline: none;
 		}
+
+        H4 {
+            margin: 10px 0 0 0;
+        }
+
+        DT {
+            font-size: 0.78rem;
+        }
+
+        DD {
+            font-size: 0.92rem;
+        }
 
 		A, A:visited, A:active {
 			color: @grayDark;
@@ -391,6 +404,14 @@
 			.hidden {
 				display: none;
 				padding-bottom: 20px;
+
+                TABLE:first-of-type {
+                    margin-top: 4px;
+                }
+
+                DL:first-of-type DT:first-child {
+                    margin-top: 4px;
+                }
 			}
 
 			A:hover {
@@ -399,7 +420,7 @@
 			}
 
 			A, A:visited, A:active {
-				padding: 20px 30px;
+				padding: 20px 30px 10px;
 
 				background-image: url(../img/pil-hoyre.svg);
 				background-position: 10px 22px;
@@ -417,6 +438,7 @@
 				A, A:visited, A:active {
 					background-image: url(../img/pil-ned.svg);
 					background-position: 10px 25px;
+                    padding-bottom: 0;
 				}
 			}
 		}
