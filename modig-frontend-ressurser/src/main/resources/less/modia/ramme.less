@@ -715,6 +715,7 @@ BODY {
 /* Generelle klasser */
 
 .kjerneinfo {
+    position: relative;
 	padding: 0;
 	min-height: 285px;
 	display: none;
@@ -722,6 +723,13 @@ BODY {
 	color: #b7b1a9;
 	line-height: 1.2em;
     overflow: hidden;
+
+    .lukk {
+        position: absolute;
+        display: none;
+        bottom: 30px;
+        right: 60px;
+    }
 
 	DL, UL {
 		padding: 0;
@@ -756,7 +764,6 @@ BODY {
 	}
 
 	A, A:visited {
-		color: white;
 		text-decoration: none;
 		font-weight: bold;
 	}
@@ -1045,10 +1052,6 @@ BODY {
 }
 
 @media (max-width: 1099px) {
-    HTML {
-        overflow-y: hidden;
-    }
-
     BODY {
         padding: 0;
         overflow-x: hidden;
@@ -1082,38 +1085,63 @@ BODY {
         width: 100%;
     }
 
-    .kjerneinfo .grafikk .year {
-        P:first-child {
-            display: none;
+    .kjerneinfo {
+        .lukk {
+            display: block;
         }
-        HR {
-            display: none;
+
+        .grafikk .year {
+            P:first-child {
+                display: none;
+            }
+            HR {
+                display: none;
+            }
         }
     }
 
     .sidebar {
-        display: block;
-        position: absolute;
-        top: 0;
         right: -385px;
         width: 400px;
-        height: 100%;
+        display: block;
+        position: absolute;
+        background: transparent url(../img/tapp_liten.png) no-repeat 0px 108px;
+        box-shadow: none;
+        height: auto;
+        top: 100px;
         overflow-x: hidden;
-        box-shadow: -8px 0px 10px -7px #222;
-
         z-index: 2500;
-        background: #3e3832 url(../img/tapp_liten.png) no-repeat 0px 209px;
 
         .visittkort, .visittkort.active {
-            margin: 100px 0 16px 15px;
+            margin: 0 0 0 15px;
             padding: 15px 15px 15px 65px;
+            border-left: 1px solid #252421;
+            border-bottom: none;
+            border-top: none;
+            border-right: none;
             background-color: #3E3832;
             background-position: 15px 15px;
+        }
+
+        &.expanded {
+            .visittkort {
+                box-shadow: -8px 0px 10px -7px #222;
+            }
         }
     }
 
     .intern #personsok #personsokPanel {
         margin: 0 36.8% 0 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+    .lameller .lamell .lerret {
+        padding-right: 60px;
+    }
+
+    .kjerneinfo {
+        padding-right: 60px;
     }
 }
 
@@ -1160,24 +1188,6 @@ BODY {
 		margin-left: 0;
 	}
 
-    .sidebar {
-        background: transparent url(../img/tapp_liten.png) no-repeat 0px 209px;
-        box-shadow: none;
-
-        .visittkort, .visittkort.active {
-            border-left: 1px solid #252421;
-            border-bottom: none;
-            border-top: none;
-            border-right: none;
-        }
-
-        &.expanded {
-            .visittkort {
-                box-shadow: -8px 0px 10px -7px #222;
-            }
-        }
-    }
-
     .hentperson #personsok #personsokPanel {
         margin: 0 10%;
     }
@@ -1220,6 +1230,10 @@ BODY {
                 padding: 0.5rem 0 0.5rem 0.5rem;
             }
         }
+    }
+
+    .kjerneinfo .lukk {
+        right: 30px;
     }
 
 }
