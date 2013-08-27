@@ -5,12 +5,14 @@ import no.nav.modig.frontend.compressors.Wro4jJsCompressor;
 import no.nav.modig.frontend.less.CompiledLessResource;
 import no.nav.modig.frontend.merged.MergedCssBuilder;
 import no.nav.modig.frontend.merged.MergedJavaScriptBuilder;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.SecurePackageResourceGuard;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.PackageResourceReference;
@@ -230,7 +232,11 @@ public class FrontendConfigurator {
             application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
                 @Override
                 public void renderHead(IHeaderResponse response) {
-                    response.render(item);
+                    // Rendrer ikke conditional js på ajax request da dette feiler i IE og ellers konkateneres unødvendig til siden.
+                    // All js har blitt rendret på siden i alle tilfeller, og vil ikke bli lagt til på ajax-request
+                    if(RequestCycle.get().find(AjaxRequestTarget.class) == null) {
+                        response.render(item);
+                    }
                 }
             });
         }
@@ -243,7 +249,11 @@ public class FrontendConfigurator {
             application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
                 @Override
                 public void renderHead(IHeaderResponse response) {
-                    response.render(item);
+                    // Rendrer ikke conditional css på ajax request da dette feiler i IE og ellers konkateneres unødvendig til siden.
+                    // All css har blitt rendret på siden i alle tilfeller.
+                    if(RequestCycle.get().find(AjaxRequestTarget.class) == null) {
+                        response.render(item);
+                    }
                 }
             });
         }
