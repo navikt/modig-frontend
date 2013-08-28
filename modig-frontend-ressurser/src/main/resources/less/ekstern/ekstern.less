@@ -150,19 +150,22 @@
 
 /* MEDIA QUERIES */
 
-@media only screen and (max-width: 480px) {
-	.rad {
-		padding: 5px;
+@media only screen and (max-width: 1024px) {
+	.diger {
+		font-size: 2.1rem;
 	}
 	.begrensning {
-		width: 100%;
+		width: 90%;
 	}
-	[class*="sak-"] [class*="panel-"] {
-		width: 100%;
+	.skriftstorrelse {
+		display: none;
 	}
 }
 
 @media only screen and (max-width: 768px) {
+	.diger {
+		font-size: 1.8rem;
+	}
 	.rad {
 		padding: 10px;
 	}
@@ -172,14 +175,63 @@
 	[class*="sak-"] [class*="panel-"] {
 		width: 100%;
 	}
+	.minehenvendelser {
+		.rad-overskrift, .tilForsiden {
+			margin-top: 20px;
+		}
+		.tooltiplink {
+			background-size: 90%;
+			margin: 0 0 -8px 7px;
+		}
+	}
+	.footer {
+		padding: 20px 20px 10px;
+		ul.fotlenker {
+			ul.fotlenker li {
+				float: none;
+				a {
+					font-size: 12px;
+				}
+			}
+		}
+	}
 }
 
-@media only screen and (max-width: 1024px) {
-	.begrensning {
-		width: 90%;
+@media only screen and (max-width: 480px) {
+	.diger {
+		font-size: 1.4rem;
 	}
-	.skriftstorrelse {
+	.rad-logo {
 		display: none;
+	}
+	.rad {
+		padding: 5px;
+	}
+	.begrensning {
+		width: 100%;
+	}
+	[class*="sak-"] [class*="panel-"] {
+		width: 100%;
+	}
+	.minehenvendelser {
+		.rad-overskrift, .tilForsiden {
+			margin-top: 10px;
+		}
+		.tooltiplink {
+			background-size: 75%;
+			margin: 0 0 -12px 4px;
+		}
+	}
+	.footer {
+		padding: 10px 10px 5px;
+		ul.fotlenker {
+			ul.fotlenker li {
+				float: none;
+				a {
+					font-size: 11px;
+				}
+			}
+		}
 	}
 }
 
