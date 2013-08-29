@@ -4,7 +4,7 @@
 	height: 100%;
 	margin: 0 auto -142px;
 	.fyllut {
-		height: 162px;
+		height: 142px;
 	}
 }
 
@@ -152,7 +152,7 @@
 
 @media only screen and (max-width: 1024px) {
 	.diger {
-		font-size: 2.1rem;
+		font-size: 2.4rem;
 	}
 	.begrensning {
 		width: 90%;
@@ -170,27 +170,34 @@
 		padding: 10px;
 	}
 	.begrensning {
+		width: 90%;
+	}
+	.sak-kvart [class*="panel-"] {
+		width: 51%;
+	}
+	.sak-tredel [class*="panel-"] {
+		width: 55%;
+	}
+	.sak-halv [class*="panel-"] {
+		width: 65%;
+	}
+	.sak-totredel [class*="panel-"] {
+		width: 75%;
+	}
+	.sak-trekvart [class*="panel-"] {
+		width: 80%;
+	}
+	.sak-hel [class*="panel-"] {
 		width: 100%;
 	}
-	[class*="sak-"] [class*="panel-"] {
-		width: 100%;
-	}
-	.minehenvendelser {
-		.rad-overskrift, .tilForsiden {
-			margin-top: 20px;
-		}
-		.tooltiplink {
-			background-size: 90%;
-			margin: 0 0 -8px 7px;
-		}
-	}
-	.footer {
+	footer.footer {
 		padding: 20px 20px 10px;
 		ul.fotlenker {
-			ul.fotlenker li {
+			li {
 				float: none;
-				a {
-					font-size: 12px;
+				line-height: 1.8rem;
+				a:before {
+					content: normal;
 				}
 			}
 		}
@@ -213,25 +220,8 @@
 	[class*="sak-"] [class*="panel-"] {
 		width: 100%;
 	}
-	.minehenvendelser {
-		.rad-overskrift, .tilForsiden {
-			margin-top: 10px;
-		}
-		.tooltiplink {
-			background-size: 75%;
-			margin: 0 0 -12px 4px;
-		}
-	}
-	.footer {
+	footer.footer {
 		padding: 10px 10px 5px;
-		ul.fotlenker {
-			ul.fotlenker li {
-				float: none;
-				a {
-					font-size: 11px;
-				}
-			}
-		}
 	}
 }
 
