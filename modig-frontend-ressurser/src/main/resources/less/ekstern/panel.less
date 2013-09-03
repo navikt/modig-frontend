@@ -35,11 +35,11 @@
 }
 
 [class*="rad"] {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid @borderColorLight;
 }
 
 .rad-logo {
-	background: #fff;
+	background: @white;
 	height: 100px;
 	text-align: center;
 	vertical-align: middle;
@@ -55,7 +55,7 @@
 }
 
 .rad-belyst {
-	background-color: #fff;
+	background-color: @white;
 	padding: 30px;
 }
 
@@ -73,19 +73,19 @@
 [class*="panel-"] {
 	display: inline-block;
 	padding: 1.5% 2% 3%;
-	border: 1px solid #ddd;
+	border: 1px solid @borderColorLight;
 	&[class*="-belyst"] {
-		background-color: #fff;
+		background-color: @white;
 		color: @grayDark;
 		h1, h2, h3, h4, h5, h6, p, div, span {
 			color: @grayDark;
 		}
 	}
 	&[class*="-dus"] {
-		background-color: #ddd;
+		background-color: @borderColorLight;
 	}
 	&[class*="-klikk"] {
-		background-color: #fff;
+		background-color: @white;
 		text-decoration: none;
 		color: @textColor;
 		cursor: pointer;
@@ -108,7 +108,7 @@
 [class*="panel-mini"] {
 	text-align: center;
 	padding: 1.5% 2% 3%;
-	border: 1px solid #ddd;
+	border: 1px solid @borderColorLight;
 	[class*="ikon-"] {
 		margin-top: 4px;
 	}

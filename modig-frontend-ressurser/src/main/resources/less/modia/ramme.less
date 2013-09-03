@@ -5,8 +5,7 @@ HTML {
 	overflow-y: scroll;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
-	background-color: @grayDark;
-
+	background-color: @modiaBackground;
 	@media (max-width: 1199px) {
 		font-size: 12px;
 	}
@@ -18,7 +17,7 @@ BODY {
 	position: relative;
 	display: table;
 	font-size: 1rem;
-	background-color: @grayDark;
+	background-color: @modiaBackground;
 }
 
 .main {
@@ -34,13 +33,11 @@ BODY {
 	height: 100px;
 	padding: 20px 30px 20px 60px;
 	z-index: 1030;
-	background-color: @grayDark;
+	background-color: @modiaBackground;
 	white-space: no-wrap;
-
 	FORM {
 		margin: 0;
 	}
-
 	H1 {
 		display: none;
 	}
@@ -52,24 +49,21 @@ BODY {
 	height: 45px;
 	text-align: center;
 	border-radius: 36px;
-	background-color: #988f86;
+	background-color: @grayLight;
 	background-image: none;
 	border: none;
 	font-size: 1.14rem;
-
 	&:hover {
 		background-color: #00a9e0;
 		background-image: none;
 		border: none;
 	}
-
 	&:active {
 		background-color: #818181;
 		background-image: none;
 		border: none;
 		box-shadow: none;
 	}
-
 	&:after {
         margin: 17px 0 0 -14px; /*N.B. -14px works in IE9.*/
 		position: absolute;
@@ -78,7 +72,6 @@ BODY {
 		content: "";
 		border-top: 4px solid #333;
 	}
-
 	&.active:after {
 		border-top: none;
 		border-bottom: 5px solid #333;
@@ -104,7 +97,6 @@ BODY {
 	display: block;
 	position: relative;
 	float: left;
-
 	INPUT[type=text] {
 		float: left;
 		height: 45px;
@@ -113,12 +105,10 @@ BODY {
 		padding: 0 40px 0 5px;
 		font-size: 1.14rem;
 	}
-
 	INPUT[type=image] {
 		float: left;
 		margin: -55px 0 0 260px;
 	}
-
 	INPUT[type=button], SUBMIT, INPUT[type=image], #submitFodselsnummer {
 		margin: 0;
 		height: 32px;
@@ -128,14 +118,12 @@ BODY {
 		top: 9px;
 		text-align: center;
 	}
-
 	INPUT[type=button]:hover, INPUT[type=button].hover, INPUT[type=button]:active, SUBMIT:hover, SUBMIT:active {
 		right: 1rem;
 		position: absolute;
 	}
-
 	SPAN.feedbackPanelERROR, UL.feedbackPanel, LI:before {
-		color: #ff6666;
+		color: @errorTextLight;
 		font-size: @fontSizeMini;
 		background: transparent;
 		white-space: nowrap;
@@ -144,13 +132,11 @@ BODY {
         left: 0;
         bottom: -0.6em;
 	}
-
 	INPUT.errorJS {
-		background-color: #F7CECE;
-		border: 1px solid #ff6666;
+		background-color: @errorBackgroundLight;
+		border: 1px solid @errorTextLight;
 		color: black;
 	}
-
 	UL.feedbackPanel {
 		list-style-type: none;
 		padding: 0;
@@ -167,20 +153,18 @@ BODY {
 	left: 0;
 	right: 0;
 	min-width: 100%;
-	background-color: #3E3832;
-	color: #fff;
+	background-color: @modiaBackground;
+	color: @white;
 	line-height: 1.2em;
 	z-index: 3000;
-	border-top: 1px solid #000;
-	border-right: 1px solid #000;
+	border-top: 1px solid @black;
+	border-right: 1px solid @black;
 	box-shadow: 0px 8px 6px -6px #555;
 	-webkit-box-shadow: -0px 8px 6px -6px #555;
 	-moz-box-shadow: 0px 8px 6px -6px #555;
-
 	H1, H2, H3 {
 		color: #a69d92;
 	}
-
 	#personsokPanel {
 		LABEL {
 			float: left;
@@ -194,55 +178,43 @@ BODY {
 			width: 48%;
 			margin-right: 2%;
 			float: left;
-
 			LABEL.fornavn {
 				width: 48%;
 			}
-
 			LABEL.etternavn {
 				width: 48%;
 			}
-
 			LABEL.gatenavn {
 				width: 48%;
 			}
-
 			LABEL.husnummer {
 				width: 14.5%;
 			}
-
 			LABEL.husbokstav {
 				width: 14.5%;
 			}
-
 			LABEL.postnummer {
 				width: 15%;
 			}
-
 			LABEL.kontonummer {
 				width: 48%;
                 margin-bottom: 40px;
 			}
-
 		}
-
 		.begrenssoket {
 			width: 26%;
             min-width: 260px;
 			margin-left: 10%;
 			float: left;
-
 			LABEL {
 				width: 47%;
                 min-width: 120px;
                 margin: 0 3% 1.5rem 0;
 			}
-
             LABEL.navenhet {
                 float: none;
                 display: block;
             }
-
 			LABEL.fodselsdatoFra, LABEL.alderFra, LABEL.kjonn {
 				clear: left;
 			}
@@ -251,56 +223,47 @@ BODY {
 			clear: left;
 		}
 	}
-
 	#searchErrorMessage {
 		padding: 1.43rem 0;
-		color: #a69d92;
+		color:  @grayLight;
 		font: 1.43rem Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
-		border-top: 1px solid #a69d92;
+		border-top: 1px solid @grayLight;
 	}
-
 	#personsokResult {
 		padding-top: 30px;
 		clear: both;
-
 		#resultDataTable {
 			width: 100%;
 			border-collapse: collapse;
 			table-layout: fixed;
-			color: #988f86;
+			color: @grayLight;
             margin-bottom: 30px;
-
 			THEAD, TR {
-				border-bottom: 1px solid #000;
-
+				border-bottom: 1px solid @black;
 				TH, TD {
 					padding: 0.8rem 0 0.8rem 1rem;
 					overflow: hidden;
 					white-space: nowrap;
-					color: #FFF;
+					color: @white;
 					position: relative;
 				}
-
 				&.ikkeTilgang TD {
-					color: #988f86;
+					color: @grayLight;
 				}
 			}
-
 			TR.headers TH {
 				text-transform: uppercase;
 				font-weight: normal;
-				color: #333;
-				background-color: #988f86;
+				color: @grayDarker;
+				background-color: @grayLight;
 				text-align: left;
 			}
-
 			TR.header TH A, TR.header TH A:visited,
 			A.wicket_orderNone, A.wicket_orderNone:visited {
 				text-decoration: none;
-				color: #111;
+				color: @grayDarker;
 				margin-right: 1rem;
-
 				&:after {
 					width: 0;
 					height: 0;
@@ -309,12 +272,10 @@ BODY {
 					left: 0.2rem;
 				}
 			}
-
 			A.wicket_orderDown, A.wicket_orderDown:visited {
 				text-decoration: none;
-				color: #111;
+				color: @grayDarker;
 				margin-right: 1rem;
-
 				/* Trekantpil laget i CSS*/
 				&:after {
 					width: 0;
@@ -322,19 +283,16 @@ BODY {
 					position: relative;
 					top: 0.8rem;
 					left: 0.2rem;
-
 					border-left: 5px solid transparent;
 					border-right: 5px solid transparent;
 					content: "";
 					border-top: 5px solid #333;
 				}
 			}
-
 			A.wicket_orderUp, A.wicket_orderUp:visited {
 				text-decoration: none;
-				color: #111;
+				color: @grayDarker;
 				margin-right: 1rem;
-
 				/* Trekantpil laget i CSS*/
 				&:after {
 					width: 0;
@@ -342,40 +300,33 @@ BODY {
 					position: relative;
 					top: -0.8rem;
 					left: 0.2rem;
-
 					border-left: 5px solid transparent;
 					border-right: 5px solid transparent;
 					content: "";
 					border-bottom: 5px solid #333;
 				}
 			}
-
 			A.wicket_orderDown, A.wicket_orderUp {
 				font-weight: bold;
 			}
-
 			TR.header TH A:hover, A.wicket_orderUp:hover {
 				text-decoration: none;
 				font-weight: bold;
 			}
-
 			TBODY {
 				A {
 					font-weight: bold;
-					color: #FFF;
+					color: @white;
 					text-decoration: none;
 				}
-
 				TR:hover:not(.ikkeTilgang), TR:focus:not(.ikkeTilgang) {
 					background-color: #00a9e0;
-					color: #FFF;
+					color: @white;
 					outline: 0;
 					cursor: pointer;
-
 					TD {
-						color: #FFF;
+						color: @white;
 					}
-
 					TD.addressColumn, TD.navnColumn {
 						> *:after {
 							background: -moz-linear-gradient(left, rgba(0, 169, 224, 0) 0%, rgba(0, 169, 224, 1) 56%, rgba(0, 169, 224, 1) 100%);
@@ -387,7 +338,6 @@ BODY {
 						}
 					}
 				}
-
                 TR.ikkeTilgang:focus {
                     TD.addressColumn, TD.navnColumn {
                         > *:after {
@@ -403,16 +353,13 @@ BODY {
 
 				TD.addressColumn, TD.navnColumn {
 					position: relative;
-
 					> * {
 						position: relative;
 						margin: 0;
 						padding-top: 0.4rem;
-
 						&:first-of-type {
 							padding-top: 0;
 						}
-
 						&:after {
 							display: block;
 							position: absolute;
@@ -431,30 +378,25 @@ BODY {
 					}
 				}
 			}
-
 			TD A, TD A:visited {
 				color: #ececec;
 				font-weight: bold;
 			}
-
 			SPAN.personstatus {
 				color: #f89406;
 			}
-
 			DL.adresseList {
 				width: auto;
 				padding-top: 0;
 				margin: 0;
 				position: relative;
 				clear: both;
-
 				DT {
 					margin-right: 0.5rem;
 					display: inline-block;
 					width: auto;
 					float: none;
 				}
-
 				DD {
 					max-width: 0;
 					min-width: 0;
@@ -463,15 +405,12 @@ BODY {
 					float: none;
 				}
 			}
-
 			.navnColumn, .navnColumn div, .addressColumn {
 				width: auto;
 			}
-
 			.fodselsnummerColumn {
 				width: 11rem;
 			}
-
 			.navenhetColumn {
 				width: 8rem;
 			}
@@ -483,59 +422,46 @@ BODY {
 	overflow: visible;
 	height: 100%;
 	display: table-cell;
-
 	color: @white;
 	background-color: @grayDark;
 	vertical-align: top;
-
 	> * {
 		margin: 0 30px;
 	}
-
 	HR {
 		height: 1px;
 		width: 20px;
 		margin: -5px auto 0;
-
 		border: 0;
 		color: @white;
 		background-color: @white;
 	}
-
 	P {
 		margin: 0;
 		line-height: 1.2em;
 	}
-
 	DL {
 		margin-bottom: 10px;
 		overflow: visible;
-
 		font-weight: bold;
 	}
-
 	DT {
 		width: 95px;
 		position: absolute;
 		padding-bottom: 3px;
-
 		color: #B7B1A9;
 		font-weight: normal;
 	}
-
 	DD {
 		margin: 0;
 		padding-bottom: 3px;
 		display: block;
 		padding-left: 115px;
-
 		text-overflow: ellips;
 	}
-
 	P.dato {
 		text-align: center;
 	}
-
 	.visittkort {
 		margin: 100px 30px 30px 30px;
 		border: 1px solid #626262;
@@ -545,15 +471,12 @@ BODY {
 		background-position: 15px 15px;
 		background-size: 40px;
 		color: #B7B1A9;
-
 		&.mann {
 			background-image: url(../img/mann.svg);
 		}
-
 		&.kvinne {
 			background-image: url(../img/kvinne.svg);
 		}
-
 		H1, H2 {
 			._H2;
 			font-size: 1.9rem;
@@ -568,36 +491,28 @@ BODY {
 	min-height: 100%;
 	margin-bottom: 128px;
 	position: relative;
-
 	background-color: @white;
 	border-top: 1px solid #626262;
-
 	.lamell {
 		position: relative;
-
 		&.bunn {
 			position: fixed;
 			padding-right: 1px;
-
 			> HEADER {
 				height: 64px;
-
 				background-image: -webkit-linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
 				background-image: linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
 				background-image: -moz-linear-gradient(top, #e5e5e3 1px, #F1F1EF 14px);
 				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e3', endColorstr='#F1F1EF')"; /* IE8+ */
-
 				H1 {
 					line-height: 59px;
 					font-size: 1.8rem;
 				}
 			}
 		}
-
 		.person {
 			margin-left: 0;
 		}
-
 		.close {
 			display: block;
 			position: absolute;
@@ -607,102 +522,82 @@ BODY {
 			width: 26px;
 			height: 25px;
 			overflow: hidden;
-
 			text-align: center;
 			color: transparent;
 			background: transparent url(../img/kryss_blaa.png) no-repeat center center;
 			border: 1px solid #CCC;
 		}
-
 		.close:focus, .close:hover {
 			border-color: #00A9E0;
 			background: #00A9E0 url(../img/kryss_hvit.png) no-repeat center center;
 			color: transparent;
 			outline: none;
 		}
-
 		.error-panel {
             padding: 30px 30px 40px 30px;
             background-color: #FFF;
             border: 1px solid #DDD;
             padding-bottom: 0;
-
             H1 {
                 font-size: 1.14rem;
             }
         }
-
 		> HEADER {
 			display: block;
 			height: 64px;
-
 			background-image: -webkit-linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
 			background-image: linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
 			background-image: -moz-linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
 			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#F1F1EF', endColorstr='#e5e5e3')"; /* IE8+ */
 			background-color: #F1F1EF;
-
 			H1 {
 				margin: 0 auto auto 60px;
 
 				line-height: 59px;
 				font-size: 1.8rem;
 			}
-
 			A H1, A:visited H1 {
 				color: #333;
 			}
-
 			A, A:hover {
 				text-decoration: none;
 				color: #111;
 			}
 		}
-
 		> HEADER:hover {
 			background-image: none;
 			background-color: #DADADA;
 			-ms-filter: "";
-
 			A H1, A:visited H1 {
 				color: #00A9E0;
 			}
 		}
-
 		> HEADER > A:focus {
 			outline: none;
-
 			H1 {
 				color: #00A9E0;
 			}
 		}
-
 		&.selected > HEADER {
 			height: 84px;
-
 			background: none;
 			cursor: default;
 			border-bottom: none;
 			-ms-filter: "";
-
 			H1 {
 				font-size: 2.5rem;
 				line-height: 79px;
 			}
 		}
-
 		.lerret {
 			padding: 2rem 30px 30px 60px;
 			width: 100%;
 			min-height: 30px;
-
             .dobbeldato-container {
                 width: 100%;
                 margin-bottom: 1rem;
-
                 .dobbeldato {
                     width: auto;
-
                     LABEL {
                         min-width: 120px;
                     }
@@ -723,27 +618,23 @@ BODY {
 	color: #b7b1a9;
 	line-height: 1.2em;
     overflow: hidden;
-
     .lukk {
         position: absolute;
         display: none;
         bottom: 30px;
         right: 60px;
     }
-
 	DL, UL {
 		padding: 0;
 		margin: 0;
 		width: 100%;
 		list-style-type: none;
-
 		DT {
 			width: 135px;
 			position: absolute;
 			color: #aca397;
 			text-align: left;
 		}
-
 		DD {
 			margin: 0;
 			display: block;
@@ -752,27 +643,22 @@ BODY {
 			text-align: left;
 		    font-weight: bold;
 		}
-
 		LI {
 		    padding: 0;
 		    margin: 0;
 		}
 	}
-
 	H1, H2, H3 {
 		color: #ACA397;
 	}
-
 	A, A:visited {
 		text-decoration: none;
 		font-weight: bold;
 	}
-
 	A:hover {
 		color: #00a9E0;
 		text-decoration: none;
 	}
-
 	.info {
 		margin: 0 30px;
 		padding: 47px 0 40px;
@@ -780,7 +666,6 @@ BODY {
         display: block;
         height: 100%;
 		text-align: center;
-
 		table {
 			border-collapse: collapse;
 			margin: 1rem auto;
@@ -806,60 +691,48 @@ BODY {
 				text-align: left;
 			}
 		}
-
 		P {
 			margin: 0;
 		}
-
 		&.status {
             background: url(../img/info.svg) no-repeat center 10px;
             background-size: 26px;
-
             DL {
                 DT {
                     width: 8rem;
                 }
-
                 DD {
                     padding-left: 9rem;
                 }
             }
         }
-
 		.barn {
 			margin-bottom: 30px;
 			position: relative;
 			text-align: left;
-
 			&:last-child {
 				margin-bottom: 0;
 			}
-
 			.fnr, .navn {
 			    font-weight: bold;
 			}
-
 			UL {
 			    padding-left: 55px;
 			}
-
 			.barnAlder {
 				position: absolute;
 				padding-top: 0.7rem;
-
 				SPAN {
 					display: block;
 					width: 40px;
 					text-align: center;
 				}
-
 				.alder {
 					font-size: 38px;
 					font-weight: 700;
 					padding: 0;
 					margin-top: -1px;
 				}
-
 				.alderEnhet {
 					font-size: 12px;
 					margin-top: 8px;
@@ -868,23 +741,19 @@ BODY {
 				}
 			}
 		}
-
 		.boy {
 			.barnAlder {
 				color: #00a9e0;
 			}
 		}
-
 		.girl {
 			.barnAlder {
 				color: #de4a77;
 			}
 		}
-
 		&.barna, &.foreldre {
 			background: url(../img/hjerte.svg) no-repeat center 10px;
 		}
-
 		&.barna, &.foreldre, &.status {
 			background-size: 26px;
 		}
@@ -893,19 +762,16 @@ BODY {
 
 .flytflate {
 	line-height: 14px;
-
 	DIV {
 		width: 50%;
 		margin-bottom: 20px;
 	}
-
 	H3, H1 {
 		._H3;
 		text-transform: uppercase;
 		color: #888;
 		margin: 0;
 	}
-
 	P {
 		font-weight: bold;
 		margin: 0;
@@ -914,18 +780,15 @@ BODY {
 
 .default-error {
 	padding-top: 10px;
-
 	SVG {
 		height: 30px;
 		width: 30px;
 		margin: auto;
 		display: block;
-
 		PATH {
 			fill: #f88c01;
 		}
 	}
-
 	P {
 		padding-top: 20px;
 		margin: 0;
@@ -935,7 +798,6 @@ BODY {
 		text-transform: uppercase;
 		font-weight: 600;
 	}
-
 	HR {
 		margin: 25px auto;
 		border-top: 1px solid #808080;
@@ -951,7 +813,6 @@ BODY {
 .error-panel {
 	background-color: #F5F5F5;
 	padding: 10px 0px;
-
 	P {
 		padding-top: 10px;
 	}
@@ -961,7 +822,6 @@ BODY {
 	H1 {
 		color: #9B9B9B !important;
 	}
-
 	background-color: #F1F1EF;
 	min-height: 400px;
 }
@@ -976,12 +836,10 @@ BODY {
     .hentperson #personsok #personsokPanel {
         margin: 0 10%;
     }
-
     .intern #personsok #personsokPanel {
         .navnogadresse {
             width: 57%;
         }
-
         .begrenssoket {
             margin-left: 5%;
         }
@@ -992,7 +850,6 @@ BODY {
     .hentperson #personsok #personsokPanel {
         margin: 0 5%;
     }
-
     #personsok #personsokPanel {
         .description {
             display: none;
@@ -1003,7 +860,6 @@ BODY {
 @media (max-width: 1220px) {
     .intern #personsok #personsokPanel {
         margin: 0 30px;
-
         .navnogadresse {
             float: none;
             display: block;
@@ -1023,11 +879,9 @@ BODY {
 	BODY {
 		width: 100%;
 	}
-
 	.sidebar {
 		width: 30.2%;
 	}
-
 	.main, .bunn, #personsok {
 		width: 69.8%;
 	}
@@ -1037,7 +891,6 @@ BODY {
 	.main, .bunn, #personsok {
 		width: 67.9%;
 	}
-
 	.sidebar {
 		width: 32.1%;
 		.visittkort {
@@ -1059,7 +912,6 @@ BODY {
         display: block;
         overflow-y: auto;
     }
-
     .navbar {
         position: relative;
         height: 100px;
@@ -1074,22 +926,18 @@ BODY {
             }
         }
     }
-
     .main {
         margin-top: 0;
         width: 100%;
         display: block;
     }
-
     .bunn {
         width: 100%;
     }
-
     .kjerneinfo {
         .lukk {
             display: block;
         }
-
         .grafikk .year {
             P:first-child {
                 display: none;
@@ -1111,7 +959,6 @@ BODY {
         top: 100px;
         overflow-x: hidden;
         z-index: 2500;
-
         .visittkort, .visittkort.active {
             margin: 0 0 0 15px;
             padding: 15px 15px 15px 65px;
@@ -1122,14 +969,12 @@ BODY {
             background-color: #3E3832;
             background-position: 15px 15px;
         }
-
         &.expanded {
             .visittkort {
                 box-shadow: -8px 0px 10px -7px #222;
             }
         }
     }
-
     .intern #personsok #personsokPanel {
         margin: 0 36.8% 0 30px;
     }
@@ -1139,7 +984,6 @@ BODY {
     .lameller .lamell .lerret {
         padding-right: 60px;
     }
-
     .kjerneinfo {
         padding-right: 60px;
     }
@@ -1151,7 +995,6 @@ BODY {
         .navnogadresse {
             width: 57%;
         }
-
         .begrenssoket {
             margin-left: 5%;
         }
@@ -1161,7 +1004,6 @@ BODY {
 @media (max-width: 900px) {
     .hentperson #personsok #personsokPanel {
         margin: 0 15%;
-
         .navnogadresse {
             float: none;
             display: block;
@@ -1183,57 +1025,45 @@ BODY {
 		float: none;
 		display: block;
 	}
-
 	.lameller .lamell .lerret .kolonne:last-child {
 		margin-left: 0;
 	}
-
     .hentperson #personsok #personsokPanel {
         margin: 0 10%;
     }
-
     .intern #personsok #personsokPanel {
         margin: 0 30px;
     }
-
 	#personsok {
         #personsokPanel {
             .begrenssoket LABEL, LABEL {
                 float: none;
                 width: 100% !important;
                 margin: 0 0 1.5rem;
-
                 INPUT, SELECT {
                     margin-top: 5px;
                 }
             }
-
             LABEL, LABEL SPAN {
                 font-size: 1.14rem !important;
             }
-
             LABEL.husnummer, LABEL.husbokstav {
                 margin: 0 2% 1.5rem 0;
             }
-
             LABEL.postnummer {
                 margin: 0 0 1.5rem;
             }
-
             LABEL.husnummer, LABEL.husbokstav, LABEL.postnummer {
                 width: 31.6% !important;
             }
         }
-
         #personsokResult #resultDataTable {
             TH, TD {
                 padding: 0.5rem 0 0.5rem 0.5rem;
             }
         }
     }
-
     .kjerneinfo .lukk {
         right: 30px;
     }
-
 }

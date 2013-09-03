@@ -1,13 +1,13 @@
 footer.footer {
 	background: @grayDark;
-	border-color: #252525;
+	border-color: @grayDarker;
 	padding: 30px 30px 20px;
 	.begrensning {
 		text-align: center;
 	}
 	p.navn {
 		margin: 0 auto 12px;
-		color: #999;
+		color: @grayLight;
 		text-align: center;
 		background-image: url(../img/under-dark.png);
 		background-position: center bottom;
@@ -15,7 +15,7 @@ footer.footer {
 		padding-bottom: 8px;
 	}
 	p.copy {
-		color: #999;
+		color: @grayDark;
 		margin-top: 10px;
 		font-size: 0.8rem;
 	}
@@ -31,11 +31,11 @@ footer.footer {
 				text-decoration: none;
 				&:before {
 					content: '\2022 ';
-					color: #999;
+					color: @grayDark;
 					padding: 10px;
 				}
 				&:hover {
-					color: #05a8e0;
+					color: @blueDark;
 					text-decoration: none;
 				}
 			}
@@ -45,7 +45,7 @@ footer.footer {
 		}
 	}
 	.alfabet {
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid @black;
 		height: 29px;
 		text-align: center;
 		ul.bokstaver {
@@ -53,23 +53,23 @@ footer.footer {
 			margin: 0;
 			li {
 				float: left;
-				border-left: 1px solid #000;
+				border-left: 1px solid @black;
 				list-style: none;
 				&:before {
 					content: normal;
 				}
 				&:last-child {
-					border-right: 1px solid #000;
+					border-right: 1px solid @black;
 				}
 				a {
 					text-decoration: none;
 					display: block;
 					padding: 6px 9px;
-					color: #ddd;
+					color: @borderColorLight;
 					text-align: center;
 					&:hover {
-						background-color: #ada59b;
-						color: #000;
+						background-color: @grayLight;
+						color: @black;
 						border-top: 1px solid @grayDark;
 					}
 				}

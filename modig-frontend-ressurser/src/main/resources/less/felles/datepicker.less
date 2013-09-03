@@ -18,11 +18,11 @@
 	}
 	.ui-datepicker-prev {
 		left: 8px;
-		border-right: 7px solid #fff;
+		border-right: 7px solid @white;
 	}
 	.ui-datepicker-next {
 		right: 8px;
-		border-left: 7px solid #fff;
+		border-left: 7px solid @white;
 	}
 	.ui-datepicker-title {
 		margin: 0 2.3em;
@@ -38,10 +38,10 @@
 				font-size: 0.9em;
 				width: 43%;
 				height: 1.5em;
-				border: 1px solid #988f86;
+				border: 1px solid @grayLight;
 				background: @grayDark;
 				padding: 0;
-				color: #eee;
+				color: @grayLight;
 				margin: 0 2px;
 			}
 		}
@@ -57,13 +57,13 @@
 			text-align: center;
 			font-weight: 700;
 			border: 0;
-			color: #988f86;
+			color: @grayLight;
 		}
 		tbody {
-			border: 1px solid #000;
+			border: 1px solid @black;
 			td {
-				border-top: 1px solid #000;
-				border-right: 1px solid #000;
+				border-top: 1px solid @black;
+				border-right: 1px solid @black;
 				padding: 1px;
 				span, a {
 					display: block;
@@ -71,28 +71,28 @@
 					text-align: center;
 					text-decoration: none;
 					&.ui-state-active {
-                        background: #fff;
+                        background: @white;
                         color: @grayDark;
 					}
 					&.ui-state-hover {
-                        background: #00a9e0;
-                        color: #fff;
+                        background: @blue;
+                        color: @white;
 					}
 				}
 				&:last-child {
 					border-right: none;
 					span, a {
-						color: #f8026a;
+						color: @pink;
 					}
 				}
                 &.ui-datepicker-unselectable {
-                  color: #988f86;
+                  color: @grayLight;
                   * {
-                    color: #988f86;
+                    color: @grayLight;
                   }
                   span:hover {
                     background: transparent;
-                    color: #988f86;
+                    color: @grayLight;
                   }
                 }
                 &.ui-datepicker-unselectable:last-child {
@@ -213,17 +213,17 @@
 		}
 	}
 	&.ui-widget-content {
-		border: 1px solid #ddd;
-		color: #fff;
+		border: 1px solid @borderColorLight;
+		color: @white;
 		a {
-			color: #fff;
+			color: @white;
 		}
 	}
 	.ui-widget-header {
-		color: #988f86;
+		color: @grayLight;
 		font-weight: bold;
 		a {
-			color: #988f86;
+			color: @grayLight;
 		}
 	}
 }
@@ -236,11 +236,11 @@ img.ui-datepicker-trigger {
   width: 9em;
   cursor: text;
   padding: 7px;
-  color: #999999;
+  color: @grayLight;
 }
 
 input:placeholder, textarea:placeholder {
-  color:#999999;
+  color: @grayLight;
 }
 
 

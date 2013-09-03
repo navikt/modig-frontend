@@ -17,27 +17,29 @@
 @black:                 #000;
 @grayDarker:            #222;
 @grayDark:              #3e3832;
-@grayLight:             #999;
-@grayLighter:           #eee;
+@grayLight:             #b7b1a9;
+@grayLighter:           #f1f1f1;
 @white:                 #fff;
 
 
 // Accent colors
 // -------------------------
-@blue:                  #0fa9e1;
+@blue:                  #0ca9e1;
 @blueDark:              #0067c5;
 @green:                 #46a546;
 @red:                   #c30000;
 @yellow:                #ffc40d;
 @orange:                #f89406;
-@pink:                  #c3325f;
+@pink:                  #df4b78;
 @purple:                #7a43b6;
 
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        #f1f1f1;
+@bodyBackground:        @grayLighter;
+@modiaBackground:       #333;
 @textColor:             @grayDark;
+@borderColorLight:      #d1d1d1;
 
 
 // Links
@@ -84,7 +86,7 @@
 @tableBackground:                   transparent; // overall background-color
 @tableBackgroundAccent:             #f9f9f9; // for striping
 @tableBackgroundHover:              #f5f5f5; // for hover
-@tableBorder:                       #ddd; // table and cell border
+@tableBorder:                       @borderColorLight; // table and cell border
 
 // Buttons
 // -------------------------
@@ -218,7 +220,7 @@
 // Pagination
 // -------------------------
 @paginationBackground:                #fff;
-@paginationBorder:                    #ddd;
+@paginationBorder:                    @borderColorLight;
 @paginationActiveBackground:          #f5f5f5;
 
 
@@ -235,8 +237,10 @@
 @warningBackground:       #fcf8e3;
 @warningBorder:           darken(spin(@warningBackground, -10), 3%);
 
-@errorText:               #b94a48;
-@errorBackground:         #f2dede;
+@errorText:               @red;
+@errorTextLight:          #ff7878;
+@errorBackgroundLight:    #fee6e6;
+@errorBackground:         #f7cece;
 @errorBorder:             darken(spin(@errorBackground, -10), 3%);
 
 @successText:             #468847;
