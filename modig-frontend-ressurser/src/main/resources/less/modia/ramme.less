@@ -54,12 +54,12 @@ BODY {
 	border: none;
 	font-size: 1.14rem;
 	&:hover {
-		background-color: #00a9e0;
+		background-color: @blue;
 		background-image: none;
 		border: none;
 	}
 	&:active {
-		background-color: #818181;
+		background-color: @grayLight;
 		background-image: none;
 		border: none;
 		box-shadow: none;
@@ -70,11 +70,11 @@ BODY {
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
 		content: "";
-		border-top: 4px solid #333;
+		border-top: 4px solid @modiaBackground;
 	}
 	&.active:after {
 		border-top: none;
-		border-bottom: 5px solid #333;
+		border-bottom: 5px solid @modiaBackground;
 	}
 }
 
@@ -135,7 +135,7 @@ BODY {
 	INPUT.errorJS {
 		background-color: @errorBackgroundLight;
 		border: 1px solid @errorTextLight;
-		color: black;
+		color: @black;
 	}
 	UL.feedbackPanel {
 		list-style-type: none;
@@ -163,7 +163,7 @@ BODY {
 	-webkit-box-shadow: -0px 8px 6px -6px #555;
 	-moz-box-shadow: 0px 8px 6px -6px #555;
 	H1, H2, H3 {
-		color: #a69d92;
+		color: @grayLight;
 	}
 	#personsokPanel {
 		LABEL {
@@ -286,7 +286,7 @@ BODY {
 					border-left: 5px solid transparent;
 					border-right: 5px solid transparent;
 					content: "";
-					border-top: 5px solid #333;
+					border-top: 5px solid @modiaBackground;
 				}
 			}
 			A.wicket_orderUp, A.wicket_orderUp:visited {
@@ -303,7 +303,7 @@ BODY {
 					border-left: 5px solid transparent;
 					border-right: 5px solid transparent;
 					content: "";
-					border-bottom: 5px solid #333;
+					border-bottom: 5px solid @modiaBackground;
 				}
 			}
 			A.wicket_orderDown, A.wicket_orderUp {
@@ -320,7 +320,7 @@ BODY {
 					text-decoration: none;
 				}
 				TR:hover:not(.ikkeTilgang), TR:focus:not(.ikkeTilgang) {
-					background-color: #00a9e0;
+					background-color: @blue;
 					color: @white;
 					outline: 0;
 					cursor: pointer;
@@ -379,11 +379,11 @@ BODY {
 				}
 			}
 			TD A, TD A:visited {
-				color: #ececec;
+				color: @grayLighter;
 				font-weight: bold;
 			}
 			SPAN.personstatus {
-				color: #f89406;
+				color: @orange;
 			}
 			DL.adresseList {
 				width: auto;
@@ -449,7 +449,7 @@ BODY {
 		width: 95px;
 		position: absolute;
 		padding-bottom: 3px;
-		color: #B7B1A9;
+		color: @grayLight;
 		font-weight: normal;
 	}
 	DD {
@@ -470,7 +470,7 @@ BODY {
 		background-repeat: no-repeat;
 		background-position: 15px 15px;
 		background-size: 40px;
-		color: #B7B1A9;
+		color: @grayLight;
 		&.mann {
 			background-image: url(../img/mann.svg);
 		}
@@ -481,7 +481,7 @@ BODY {
 			._H2;
 			font-size: 1.9rem;
 			margin: 2px 0 5px 0;
-			color: #B7B1A9;
+			color: @grayLight;
 		}
 	}
 }
@@ -525,18 +525,18 @@ BODY {
 			text-align: center;
 			color: transparent;
 			background: transparent url(../img/kryss_blaa.png) no-repeat center center;
-			border: 1px solid #CCC;
+			border: 1px solid #ccc;
 		}
 		.close:focus, .close:hover {
-			border-color: #00A9E0;
-			background: #00A9E0 url(../img/kryss_hvit.png) no-repeat center center;
+			border-color: @blue;
+			background: @blue url(../img/kryss_hvit.png) no-repeat center center;
 			color: transparent;
 			outline: none;
 		}
 		.error-panel {
             padding: 30px 30px 40px 30px;
-            background-color: #FFF;
-            border: 1px solid #DDD;
+            background-color: @white;
+            border: 1px solid @borderColorLight;
             padding-bottom: 0;
             H1 {
                 font-size: 1.14rem;
@@ -549,7 +549,7 @@ BODY {
 			background-image: linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
 			background-image: -moz-linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
 			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#F1F1EF', endColorstr='#e5e5e3')"; /* IE8+ */
-			background-color: #F1F1EF;
+			background-color: @bodyBackground;
 			H1 {
 				margin: 0 auto auto 60px;
 
@@ -557,7 +557,7 @@ BODY {
 				font-size: 1.8rem;
 			}
 			A H1, A:visited H1 {
-				color: #333;
+				color: @modiaBackground;
 			}
 			A, A:hover {
 				text-decoration: none;
@@ -569,13 +569,13 @@ BODY {
 			background-color: #DADADA;
 			-ms-filter: "";
 			A H1, A:visited H1 {
-				color: #00A9E0;
+				color: @blue;
 			}
 		}
 		> HEADER > A:focus {
 			outline: none;
 			H1 {
-				color: #00A9E0;
+				color: @blue;
 			}
 		}
 		&.selected > HEADER {
@@ -614,8 +614,8 @@ BODY {
 	padding: 0;
 	min-height: 285px;
 	display: none;
-	background: #3e3832;
-	color: #b7b1a9;
+	background: @modiaBackground;
+	color: @grayLight;
 	line-height: 1.2em;
     overflow: hidden;
     .lukk {
@@ -632,7 +632,7 @@ BODY {
 		DT {
 			width: 135px;
 			position: absolute;
-			color: #aca397;
+			color: @grayLight;
 			text-align: left;
 		}
 		DD {
@@ -649,14 +649,14 @@ BODY {
 		}
 	}
 	H1, H2, H3 {
-		color: #ACA397;
+		color: @grayLight;
 	}
 	A, A:visited {
 		text-decoration: none;
 		font-weight: bold;
 	}
 	A:hover {
-		color: #00a9E0;
+		color: @blue;
 		text-decoration: none;
 	}
 	.info {
@@ -743,12 +743,12 @@ BODY {
 		}
 		.boy {
 			.barnAlder {
-				color: #00a9e0;
+				color: @blue;
 			}
 		}
 		.girl {
 			.barnAlder {
-				color: #de4a77;
+				color: @pink;
 			}
 		}
 		&.barna, &.foreldre {
@@ -769,7 +769,7 @@ BODY {
 	H3, H1 {
 		._H3;
 		text-transform: uppercase;
-		color: #888;
+		color: @grayLight;
 		margin: 0;
 	}
 	P {
@@ -786,7 +786,7 @@ BODY {
 		margin: auto;
 		display: block;
 		PATH {
-			fill: #f88c01;
+			fill: @orange;
 		}
 	}
 	P {
@@ -800,7 +800,7 @@ BODY {
 	}
 	HR {
 		margin: 25px auto;
-		border-top: 1px solid #808080;
+		border-top: 1px solid @grayLight;
 		width: 30px;
 	}
 }
@@ -811,7 +811,7 @@ BODY {
 }
 
 .error-panel {
-	background-color: #F5F5F5;
+	background-color: @bodyBackground;
 	padding: 10px 0px;
 	P {
 		padding-top: 10px;
@@ -820,9 +820,9 @@ BODY {
 
 .feil-lamell {
 	H1 {
-		color: #9B9B9B !important;
+		color: @grayLight !important;
 	}
-	background-color: #F1F1EF;
+	background-color: @bodyBackground;
 	min-height: 400px;
 }
 
@@ -966,12 +966,12 @@ BODY {
             border-bottom: none;
             border-top: none;
             border-right: none;
-            background-color: #3E3832;
+            background-color: @modiaBackground;
             background-position: 15px 15px;
         }
         &.expanded {
             .visittkort {
-                box-shadow: -8px 0px 10px -7px #222;
+                box-shadow: -8px 0px 10px -7px @grayDarker;
             }
         }
     }

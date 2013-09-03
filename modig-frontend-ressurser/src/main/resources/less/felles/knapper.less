@@ -11,7 +11,7 @@
 	font-size: 1.14rem;
 	vertical-align: middle;
 	.border-radius(1px);
-	border: 1px solid #dfdfdf;
+	border: 1px solid @borderColorLight;
 	border-bottom: 1px solid #b6b6b6;
 	.buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark);
 	&:hover, &:focus {
@@ -22,7 +22,7 @@
 		display: inline-block;
 		vertical-align: top;
 		margin: 6px -4px 0 2px;
-		border-top: 6px solid #008fc4;
+		border-top: 6px solid @blue;
 		border-right: 6px solid transparent;
 		border-left: 6px solid transparent;
 		content: "";
@@ -37,13 +37,13 @@
 }
 
 [class*=knapp-link] {
-	border-color: @blue;
-	background: #008fc4;
-	color: #fff;
+	border-color: @blueDark;
+	background: @blue;
+	color: @white;
 	&:hover, &:focus {
 		border-color: @blueDark;
-		background: #0067c5;
-		color: #fff;
+		background: @blueDark;
+		color: @white;
 	}
 }
 
