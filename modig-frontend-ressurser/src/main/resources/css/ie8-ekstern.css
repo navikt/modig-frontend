@@ -198,10 +198,6 @@ textarea {
     background-position: center 0;
 }
 
-.rad-logo .logo {
-    background: url(../img/nav-logo.gif) no-repeat center;
-}
-
 form input[type="radio"] + label {
     background: none;
 }

@@ -65,7 +65,7 @@ BODY {
 		box-shadow: none;
 	}
 	&:after {
-        margin: 17px 0 0 -14px; /*N.B. -14px works in IE9.*/
+        margin: 17px 0 0 -10px;
 		position: absolute;
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
@@ -414,74 +414,6 @@ BODY {
 			.navenhetColumn {
 				width: 8rem;
 			}
-		}
-	}
-}
-
-.sidebar {
-	overflow: visible;
-	height: 100%;
-	display: table-cell;
-	color: @white;
-	background-color: @grayDark;
-	vertical-align: top;
-	> * {
-		margin: 0 30px;
-	}
-	HR {
-		height: 1px;
-		width: 20px;
-		margin: -5px auto 0;
-		border: 0;
-		color: @white;
-		background-color: @white;
-	}
-	P {
-		margin: 0;
-		line-height: 1.2em;
-	}
-	DL {
-		margin-bottom: 10px;
-		overflow: visible;
-		font-weight: bold;
-	}
-	DT {
-		width: 95px;
-		position: absolute;
-		padding-bottom: 3px;
-		color: @grayLight;
-		font-weight: normal;
-	}
-	DD {
-		margin: 0;
-		padding-bottom: 3px;
-		display: block;
-		padding-left: 115px;
-		text-overflow: ellips;
-	}
-	P.dato {
-		text-align: center;
-	}
-	.visittkort {
-		margin: 100px 30px 30px 30px;
-		border: 1px solid #626262;
-		padding: 15px 15px 15px 65px;
-		min-height: 266px;
-		background-repeat: no-repeat;
-		background-position: 15px 15px;
-		background-size: 40px;
-		color: @grayLight;
-		&.mann {
-			background-image: url(../img/mann.svg);
-		}
-		&.kvinne {
-			background-image: url(../img/kvinne.svg);
-		}
-		H1, H2 {
-			._H2;
-			font-size: 1.9rem;
-			margin: 2px 0 5px 0;
-			color: @grayLight;
 		}
 	}
 }

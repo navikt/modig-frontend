@@ -11,14 +11,14 @@
 /* Generelle elementer */
 
 HTML {
-    overflow-y: auto;
-    height: 100%;
+	overflow-y: auto;
+	height: 100%;
 }
 
 BODY {
-    height: auto;
-    min-height: 100%;
-    background: @white;
+	height: auto;
+	min-height: 100%;
+	background: @white;
 }
 
 /* Typografi */
@@ -44,59 +44,58 @@ H3, ._H3 {
 
 /* FORMS */
 LABEL {
-    text-transform: uppercase;
-    position: relative;
-    margin-top: 1em;
-    color: @grayLight;
-    font-size: 0.857rem;
+	text-transform: uppercase;
+	position: relative;
+	margin-top: 1em;
+	color: @grayLight;
+	font-size: 0.857rem;
 }
 
 INPUT.errorJS, SELECT.errorJS {
-    background-color: @errorBackgroundLight;
-    border: 1px solid @errorTextLight;
+	background-color: @errorBackgroundLight;
+	border: 1px solid @errorTextLight;
 }
 
 LABEL.errorJS {
-    position: absolute;
-    left: 0;
-    bottom: -2.9rem;
-    white-space: nowrap;
-    color: @errorTextLight;
-    text-transform: none;
+	position: absolute;
+	left: 0;
+	bottom: -2.9rem;
+	white-space: nowrap;
+	color: @errorTextLight;
+	text-transform: none;
 }
 
 UL.feedbackPanel {
-    padding: 1rem 1rem 1rem 2rem;
-    list-style-type: none;
-    color: @white;
-    background-color: #da153a;
-    font: 1.43rem Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    LI:before {
-        content: "* ";
-    }
-    A, A:visited {
-        color: @white;
-        font-weight: bold;
-        text-decoration: underline;
-    }
+	padding: 1rem 1rem 1rem 2rem;
+	list-style-type: none;
+	color: @white;
+	background-color: #da153a;
+	font: 1.43rem Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	LI:before {
+		content: "* ";
+	}
+	A, A:visited {
+		color: @white;
+		font-weight: bold;
+		text-decoration: underline;
+	}
 }
 
 .description {
-    color: @grayLight;
-    font-size: 0.714rem;
-    white-space: nowrap;
-    text-transform: none;
+	color: @grayLight;
+	font-size: 0.714rem;
+	white-space: nowrap;
+	text-transform: none;
 }
 
 .dateGroup INPUT[type=text] {
-    background: @white url(../img/kalender.svg) no-repeat right center;
-    background-size: 21px;
+	background: @white url(../img/kalender.svg) no-repeat right center;
+	background-size: 21px;
 }
 
 [class*=-liten] {
 	margin-top: 2px;
 }
-
 
 /* Spesifikke sider */
 
@@ -166,11 +165,11 @@ UL.feedbackPanel {
 		background-color: @modiaBackground;
 	}
 	.personsok-button {
-        position: absolute;
-        margin-bottom: 3px;
+		position: absolute;
+		margin-bottom: 3px;
 		right: 0;
 		left: auto;
-        bottom: 0;
+		bottom: 0;
 		font-size: 2.0rem;
 		width: 66px;
 		height: 66px;
@@ -179,7 +178,7 @@ UL.feedbackPanel {
 		&:after {
 			bottom: 14px;
 			left: 26px;
-            margin: 0 auto;
+			margin: 0 auto;
 			border-left: 7px solid transparent;
 			border-right: 7px solid transparent;
 			border-top: 7px solid #333;
@@ -208,22 +207,22 @@ UL.feedbackPanel {
 
 /* Individuelle lameller */
 .lamell {
-    .lerret {
-        .oppfolging-lenker {
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid @bodyBackground;
-            DIV {
-                display: inline-block;
-                width: auto;
-                float: none;
-                margin-right: 5rem;
-                DT, DD {
-                    width: auto;
-                }
-            }
-        }
-    }
+	.lerret {
+		.oppfolging-lenker {
+			padding-bottom: 2rem;
+			margin-bottom: 2rem;
+			border-bottom: 1px solid @bodyBackground;
+			DIV {
+				display: inline-block;
+				width: auto;
+				float: none;
+				margin-right: 5rem;
+				DT, DD {
+					width: auto;
+				}
+			}
+		}
+	}
 
 	UL.arbeisdgiver {
 		padding-left: 0;
@@ -247,26 +246,26 @@ UL.feedbackPanel {
 
 	/* Kontrakter */
 	&.kontrakter {
-        H3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.7rem;
-        }
-        SECTION > H1 {
-            font-size: 1.8rem;
-        }
-        .dobbeldato LABEL {
-            color: @textColor;
-        }
-		FORM {
-            width: 50%;
-            H2 {
-                font-size: 1.35rem;
-                font-weight: 700;
-            }
+		H3 {
+			font-size: 1.3rem;
+			margin-bottom: 0.7rem;
 		}
-        .lerret > .default-error {
-            .kolonne;
-        }
+		SECTION > H1 {
+			font-size: 1.8rem;
+		}
+		.dobbeldato LABEL {
+			color: @textColor;
+		}
+		FORM {
+			width: 50%;
+			H2 {
+				font-size: 1.35rem;
+				font-weight: 700;
+			}
+		}
+		.lerret > .default-error {
+			.kolonne;
+		}
 		.kontrakt {
 			.kolonne;
 			&.sykeoppfolging {
@@ -279,18 +278,18 @@ UL.feedbackPanel {
 			}
 			.liste {
 				width: 100%;
-                margin-top: 20px;
+				margin-top: 20px;
 				LI {
 					overflow: auto;
 					width: 100%;
 				}
 			}
-            SECTION {
-                padding-top: 0;
-            }
-            H1 {
-                margin: 2rem 0;
-            }
+			SECTION {
+				padding-top: 0;
+			}
+			H1 {
+				margin: 2rem 0;
+			}
 		}
 	}
 
@@ -299,66 +298,66 @@ UL.feedbackPanel {
 		padding-left: 32px;
 		INPUT[type=radio]~LABEL {
 			margin-left: -30px;
-            padding-left: 30px;
+			padding-left: 30px;
 		}
 		INPUT[type="submit"]:disabled, INPUT[type="button"]:disabled {
 			cursor: default;
 		}
-        #forkastButton {
-            margin-left: 10px;
-        }
+		#forkastButton {
+			margin-left: 10px;
+		}
 		FIELDSET {
 			border: none;
 			border-top: 1px solid @borderColorLight;
 			padding-top: 2rem;
-            padding-bottom: 0;
+			padding-bottom: 0;
 			margin: 0 0 2rem 0;
 			max-width: 45rem;
-            padding-left: 0;
-            &:first-of-type {
-                border-top: none;
-                padding-top: 1px;
-            }
-            &:last-of-type {
-                margin-bottom: 40px;
-            }
+			padding-left: 0;
+			&:first-of-type {
+				border-top: none;
+				padding-top: 1px;
+			}
+			&:last-of-type {
+				margin-bottom: 40px;
+			}
 			LEGEND {
 				._H2;
 				position: absolute;
 			}
-            .gatenavn, .husnummer, .husbokstav, .bolignummer, .poststed, .postnummer {
-                display: inline-block;
-                float: none !important;
-            }
-            .gyldigTil {
-                width: 20%;
-                min-width: 125px;
-            }
-            .poststed {
-                width: 33.5%;
-            }
-            .husnummer, .husbokstav, .bolignummer, .postnummer {
-                width: 12% !important;
-            }
-            .husnummer, .husbokstav, .bolignummer, .poststed {
-                margin-left: 10px;
-            }
-            .bostedfolkeregistre {
-                p {
-                    margin-top: 5px;
-                    margin-bottom: 19px;
-                }
-            }
-            .midlertidigNorge {
-                INPUT[type="radio"]:checked + label + div {
-                    margin-bottom: 24px;
-                }
-            }
+			.gatenavn, .husnummer, .husbokstav, .bolignummer, .poststed, .postnummer {
+				display: inline-block;
+				float: none !important;
+			}
+			.gyldigTil {
+				width: 20%;
+				min-width: 125px;
+			}
+			.poststed {
+				width: 33.5%;
+			}
+			.husnummer, .husbokstav, .bolignummer, .postnummer {
+				width: 12% !important;
+			}
+			.husnummer, .husbokstav, .bolignummer, .poststed {
+				margin-left: 10px;
+			}
+			.bostedfolkeregistre {
+				p {
+					margin-top: 5px;
+					margin-bottom: 19px;
+				}
+			}
+			.midlertidigNorge {
+				INPUT[type="radio"]:checked + label + div {
+					margin-bottom: 24px;
+				}
+			}
 			.endringsinformasjon {
 				font-size: 0.8rem;
 				color: @grayLight;
-                position: relative;
-                top: -7px;
+				position: relative;
+				top: -7px;
 			}
 			.sublegend {
 				margin-top: 4rem;
@@ -386,15 +385,15 @@ UL.feedbackPanel {
 				margin-top: 1rem;
 				text-transform: uppercase;
 				position: relative;
-                min-height: 20px !important;
+				min-height: 20px !important;
 			}
 			LABEL, DIV.label-wrapper {
-                width: 55%;
-                display: block;
+				width: 55%;
+				display: block;
 				float: none;
 				clear: both;
 				color: @textColor;
-                margin-top: 1.5rem;
+				margin-top: 1.5rem;
 				&.selected {
 					font-weight: bold;
 				}
@@ -403,8 +402,8 @@ UL.feedbackPanel {
 				position: absolute;
 				bottom: -23px;
 				margin-left: 0;
-                color: @red;
-                min-height: 25px;
+				color: @red;
+				min-height: 25px;
 			}
 			LABEL.husnummer {
 				width: 16%;
@@ -428,7 +427,7 @@ UL.feedbackPanel {
 			}
 			/* Begrense inputs til adresse uten label */
 			INPUT[aria-label*=adresse] {
-                width: 55%;
+				width: 55%;
 				float: none;
 				clear: both;
 			}
@@ -440,56 +439,56 @@ UL.feedbackPanel {
 					display: block;
 				}
 			}
-            INPUT.adresselinje {
-                margin-bottom: 10px;
-                width: 100%;
-            }
-            LABEL .hiddenlabel {
-                position: absolute;
-                left: -2600px;
-            }
-            #adresseUtlandLand {
-                margin-bottom: 10px;
-            }
-            #kontonummer {
-                &.errorJS {
-                    margin-bottom: 18px;
-                }
-            }
+			INPUT.adresselinje {
+				margin-bottom: 10px;
+				width: 100%;
+			}
+			LABEL .hiddenlabel {
+				position: absolute;
+				left: -2600px;
+			}
+			#adresseUtlandLand {
+				margin-bottom: 10px;
+			}
+			#kontonummer {
+				&.errorJS {
+					margin-bottom: 18px;
+				}
+			}
 			#kontaktinformasjon {
-                LABEL.errorJS {
-                    bottom: -25px;
-                }
+				LABEL.errorJS {
+					bottom: -25px;
+				}
 				LABEL:not(.errorJS), DIV.label-wrapper {
 					float: left;
 					font-size: 0.8rem;
 					line-height: 1.4rem;
 					margin-top: 1.5rem;
 					position: relative;
-                    DIV:not(.endringsinformasjon) {
+					DIV:not(.endringsinformasjon) {
 						position: absolute;
 						width: 10rem;
 					}
-                    .endringsinformasjon {
-                        text-transform: none;
-                        display: inline;
-                        top: 0;
-                    }
+					.endringsinformasjon {
+						text-transform: none;
+						display: inline;
+						top: 0;
+					}
 					INPUT:not(.fallback) {
 						width: 12.5rem;
 						margin-left: 10.5rem;
 					}
-                    INPUT.fallback {
-                        width: 4.2rem;
-                    }
+					INPUT.fallback {
+						width: 4.2rem;
+					}
 					&.epostadresse {
 						INPUT {
 							width: 100%;
 							margin-left: 0;
 						}
-                        LABEL.errorJS {
-                            bottom: -17px;
-                        }
+						LABEL.errorJS {
+							bottom: -17px;
+						}
 					}
 				}
 			}
@@ -512,12 +511,12 @@ UL.feedbackPanel {
 		.arbeidssituasjon {
 			clear: left;
 		}
-        .sykmelding {
-            clear: left;
-            .liste {
-                width: 100%;
-            }
-        }
+		.sykmelding {
+			clear: left;
+			.liste {
+				width: 100%;
+			}
+		}
 		.sykmeldinger {
 			clear: left;
 			float: left;
@@ -533,7 +532,7 @@ UL.feedbackPanel {
 		}
 		.arbeidssituasjon {
 			margin: 0 0 0 3.8%;
-            padding-bottom: 1.3rem;
+			padding-bottom: 1.3rem;
 			float: right;
 			.arbeisdgiver {
 				margin-top: 2rem;
@@ -576,9 +575,9 @@ UL.feedbackPanel {
 				position: absolute;
 				left: 50%;
 			}
-            DL {
-                font-weight: normal;
-            }
+			DL {
+				font-weight: normal;
+			}
 		}
 		.gradering {
 			position: absolute;
@@ -588,6 +587,98 @@ UL.feedbackPanel {
 }
 
 .sidebar {
+	overflow: visible;
+	height: 100%;
+	display: table-cell;
+	color: @white;
+	background-color: @modiaBackground;
+	vertical-align: top;
+	> * {
+		margin: 0 30px;
+	}
+	HR {
+		height: 1px;
+		width: 20px;
+		margin: -5px auto 0;
+		border: 0;
+		color: @white;
+		background-color: @white;
+	}
+	P {
+		margin: 0;
+		line-height: 1.2em;
+	}
+	DL {
+		margin-bottom: 10px;
+		overflow: visible;
+		font-weight: bold;
+	}
+	DT {
+		width: 95px;
+		position: absolute;
+		padding-bottom: 3px;
+		color: @grayLight;
+		font-weight: normal;
+	}
+	DD {
+		margin: 0;
+		padding-bottom: 3px;
+		display: block;
+		padding-left: 115px;
+		text-overflow: ellips;
+	}
+	P.dato {
+		text-align: center;
+	}
+	.visittkort {
+		margin: 100px 30px 30px 30px;
+		border: 1px solid #626262;
+		padding: 15px 15px 15px 65px;
+		min-height: 266px;
+		background-repeat: no-repeat;
+		background-position: 15px 15px;
+		background-size: 40px;
+		color: @grayLight;
+		#toggle-kjerneinfo {
+			display: block;
+			span {
+				padding-left: 0px;
+				&:before {
+					content: url(../img/pil-venstre.svg);
+					position: absolute;
+					margin: 1px 0 0 -15px;
+				}
+			}
+		}
+		&.mann {
+			background-image: url(../img/mann.svg);
+		}
+		&.kvinne {
+			background-size: 55px;
+			background-position: 10px 12px;
+			background-image: url(../img/kvinne.svg);
+		}
+		H1, H2 {
+			._H2;
+			font-size: 1.9rem;
+			margin: 2px 0 5px 0;
+			color: @grayLight;
+		}
+		.knapp-lenke{
+			font-weight: 600;
+			&.brukerprofillink {
+				text-align: left;
+				padding: 0;
+				margin-top: 13px;
+				margin-bottom: 15px;
+			}
+		}
+		&.active {
+			#toggle-kjerneinfo span:before {
+				content: url(../img/pil-hoyre.svg);
+			}
+		}
+	}
 	table {
 		border-collapse: collapse;
 		margin: 1rem 0;
@@ -612,46 +703,5 @@ UL.feedbackPanel {
 			padding-left: 0.5rem;
 			text-align: left;
 		}
-	}
-	.visittkort {
-		padding-bottom: 35px;
-		padding: 20px 15px 15px 70px;
-		background-position: 20px 20px;
-		H1 {
-			margin-top: 7px;
-		}
-
-        [class*="knapp-lenke"] {
-            font-weight: 600;
-        }
-
-		#toggle-kjerneinfo {
-			display: block;
-
-            span {
-                padding-left: 0px;
-                &:before {
-                    content: url(../img/pil-venstre.svg);
-                    position: absolute;
-                    margin: 1px 0 0 -15px;
-                }
-            }
-		}
-		.knapp-lenke.brukerprofillink {
-			text-align: left;
-			padding: 0;
-            margin-top: 13px;
-            margin-bottom: 15px;
-		}
-		&.kvinne {
-			background-size: 55px;
-			background-position: 10px 12px;
-		}
-
-        &.active {
-            #toggle-kjerneinfo span:before {
-                content: url(../img/pil-hoyre.svg);
-            }
-        }
 	}
 }
