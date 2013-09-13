@@ -1,7 +1,7 @@
 .form-linje {
 	padding: 5px 0.5rem;
 	&.feil {
-		input, textarea {
+		input:not([type="submit"]), textarea {
 			border: 1px solid @pink;
 			border-top: 1px solid #ff0000;
 			background: @errorBackground;
