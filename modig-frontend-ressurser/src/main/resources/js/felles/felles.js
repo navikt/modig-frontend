@@ -1,7 +1,7 @@
 $(function () {
 
     $('#link-skriftstorrelse').tooltip({
-        trigger: 'click',
+        trigger: 'hover',
         placement: 'bottom',
         html: true
     });
