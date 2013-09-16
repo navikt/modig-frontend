@@ -47,6 +47,12 @@
       this.options = this.getOptions(options)
       this.enabled = true
 
+      if (this.options.htmlId) {
+          var $template = $(this.options.template);
+          $template.find('.tooltip-inner').attr('id', this.options.htmlId);
+          this.options.template = $template[0].outerHTML;
+      }
+
       triggers = this.options.trigger.split(' ')
 
       for (i = triggers.length; i--;) {
@@ -341,11 +347,12 @@
     animation: true
   , placement: 'top'
   , selector: false
-  , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+  , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner" role="tooltip" aria-live="polite"></div></div>'
   , trigger: 'hover focus'
   , title: ''
   , delay: 0
   , html: false
+  , htmlId: undefined
   , container: false
   }
 
