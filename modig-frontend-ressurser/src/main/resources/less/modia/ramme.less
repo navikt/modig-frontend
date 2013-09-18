@@ -495,19 +495,19 @@ BODY {
 				text-decoration: none;
 				color: #111;
 			}
-		}
-		> HEADER:hover {
-			background-image: none;
-			background-color: #DADADA;
-			-ms-filter: "";
-			A H1, A:visited H1 {
-				color: @blue;
+			&:hover {
+				background-image: none;
+				background-color: #DADADA;
+				-ms-filter: "";
+				A H1, A:visited H1 {
+					color: @blueDark;
+				}
 			}
-		}
-		> HEADER > A:focus {
-			outline: none;
-			H1 {
-				color: @blue;
+			> A:focus {
+				outline: none;
+				H1 {
+					color: @blueDark;
+				}
 			}
 		}
 		&.selected > HEADER {
