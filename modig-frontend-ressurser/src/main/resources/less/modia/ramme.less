@@ -1,37 +1,19 @@
 /* Stiler for den generelle layouten og oppsettet i MODIA */
 
-HTML {
-	height: 101%;
-	overflow-y: scroll;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	background-color: @modiaBackground;
-	@media (max-width: 1199px) {
-		font-size: 12px;
-	}
-}
-
-BODY {
-	height: 100%;
-	width: 100%;
+.main-content {
 	position: relative;
-	display: table;
-	font-size: 1rem;
-	background-color: @modiaBackground;
-}
-
-.main {
-	position: relative;
+	float: left;
+	margin-left: 22.5%;
 	padding: auto 0;
+	width: 52.6%;
 	height: 100%;
 	display: table-cell;
-	background-color: @white;
 }
 
 .navbar {
 	margin-bottom: 0;
-	height: 100px;
-	padding: 20px 30px 20px 60px;
+	height: 140px;
+	padding: 40px 30px 40px 30px;
 	z-index: 1030;
 	background-color: @modiaBackground;
 	white-space: no-wrap;
@@ -43,16 +25,31 @@ BODY {
 	}
 }
 
+.menu-intern .sokeboks {
+	float: left;
+	min-width: 37rem;
+}
+
+.oppgave-panel {
+	float: right;
+	.oppgave-header {
+		height: auto; //101px;
+	}
+	.hent-oppgave, .oppgavevalg {
+		float: left;
+	}
+}
+
 .personsok-button {
-    margin: 3px 0 0 20px;
-	width: 45px;
-	height: 45px;
+	margin: 0 0 0 20px;
+	width: 66px;
+	height: 66px;
+	border-radius: 66px;
 	text-align: center;
-	border-radius: 36px;
 	background-color: @grayLight;
 	background-image: none;
 	border: none;
-	font-size: 1.14rem;
+	font-size: 1.8rem;
 	&:hover {
 		background-color: @blue;
 		background-image: none;
@@ -63,55 +60,57 @@ BODY {
 		background-image: none;
 		border: none;
 		box-shadow: none;
+		&:after {
+			bottom: 14px;
+			border-top: none;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-bottom: 7px solid @modiaBackground;
+		}
 	}
 	&:after {
-        margin: 17px 0 0 -10px;
-		position: absolute;
-		border-left: 4px solid transparent;
-		border-right: 4px solid transparent;
 		content: "";
-		border-top: 4px solid @modiaBackground;
-	}
-	&.active:after {
-		border-top: none;
-		border-bottom: 5px solid @modiaBackground;
+		position: absolute;
+		margin: 28px 0 0 -16px;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-top: 7px solid @modiaBackground;
 	}
 }
 
 .nullstill-button {
-	margin: 3px 0 0 10px;
-	width: 45px;
-	height: 45px;
+	margin: 0 0 0 10px;
+	width: 66px;
+	height: 66px;
 	border: none;
 	background: transparent url(../img/nullstill_bruker.svg) no-repeat right center;
-	background-size: 45px;
+	background-size: 66px;
 	color: transparent;
 	&:hover {
 		background: transparent url(../img/nullstill_bruker_hover.svg) no-repeat right center;
-		background-size: 45px;
+		background-size: 66px;
 	}
 }
 
 .search-intern {
-	width: 13rem;
+	width: 24rem;
 	display: block;
 	position: relative;
 	float: left;
 	INPUT[type=text] {
 		float: left;
-		height: 45px;
+		height: 64px;
 		width: 100%;
-		margin-top: 3px;
-		padding: 0 40px 0 5px;
-		font-size: 1.14rem;
+		padding: 0 40px 0 20px;
+		font-size: 2.14rem;
 	}
 	INPUT[type=image] {
 		float: left;
 		margin: -55px 0 0 260px;
 	}
-	INPUT[type=button], SUBMIT, INPUT[type=image], #submitFodselsnummer {
+	#submitFodselsnummer {
 		margin: 0;
-		height: 32px;
+		height: 46px;
 		padding: 4px;
 		position: absolute;
 		right: 5px;
@@ -127,10 +126,10 @@ BODY {
 		font-size: @fontSizeMini;
 		background: transparent;
 		white-space: nowrap;
-        content: "" !important;
-        position: absolute;
-        left: 0;
-        bottom: -0.6em;
+		content: "" !important;
+		position: absolute;
+		left: 0;
+		bottom: -0.6em;
 	}
 	INPUT.errorJS {
 		background-color: @errorBackgroundLight;
@@ -198,23 +197,23 @@ BODY {
 			}
 			LABEL.kontonummer {
 				width: 48%;
-                margin-bottom: 40px;
+				margin-bottom: 40px;
 			}
 		}
 		.begrenssoket {
 			width: 26%;
-            min-width: 260px;
+			min-width: 260px;
 			margin-left: 10%;
 			float: left;
 			LABEL {
 				width: 47%;
-                min-width: 120px;
-                margin: 0 3% 1.5rem 0;
+				min-width: 120px;
+				margin: 0 3% 1.5rem 0;
 			}
-            LABEL.navenhet {
-                float: none;
-                display: block;
-            }
+			LABEL.navenhet {
+				float: none;
+				display: block;
+			}
 			LABEL.fodselsdatoFra, LABEL.alderFra, LABEL.kjonn {
 				clear: left;
 			}
@@ -225,7 +224,7 @@ BODY {
 	}
 	#searchErrorMessage {
 		padding: 1.43rem 0;
-		color:  @grayLight;
+		color: @grayLight;
 		font: 1.43rem Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 		border-top: 1px solid @grayLight;
@@ -238,7 +237,7 @@ BODY {
 			border-collapse: collapse;
 			table-layout: fixed;
 			color: @grayLight;
-            margin-bottom: 30px;
+			margin-bottom: 30px;
 			THEAD, TR {
 				border-bottom: 1px solid @black;
 				TH, TD {
@@ -338,18 +337,18 @@ BODY {
 						}
 					}
 				}
-                TR.ikkeTilgang:focus {
-                    TD.addressColumn, TD.navnColumn {
-                        > *:after {
-                            background: -moz-linear-gradient(left, rgba(224, 222, 216, 0) 0%, rgba(224, 222, 216, 1) 56%, rgba(224, 222, 216, 1) 100%);
-                            background: -webkit-linear-gradient(left, rgba(224, 222, 216, 0) 0%, rgba(224, 222, 216, 1) 56%, rgba(224, 222, 216, 1) 100%);
-                            background: -ms-linear-gradient(left, rgba(224, 222, 216, 0) 0%, rgba(224, 222, 216, 1) 56%, rgba(224, 222, 216, 1) 100%);
-                            background: linear-gradient(left, rgba(224, 222, 216, 0) 0%, rgba(224, 222, 216, 1) 56%, rgba(224, 222, 216, 1) 100%);
-                            filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0ded8 ', endColorstr='#e0ded8 ',GradientType=1 )";
-                            content: "";
-                        }
-                    }
-                }
+				TR.ikkeTilgang:focus {
+					TD.addressColumn, TD.navnColumn {
+						> *:after {
+							background: -moz-linear-gradient(left, rgba(224, 222, 216, 0) 0%, rgba(224, 222, 216, 1) 56%, rgba(224, 222, 216, 1) 100%);
+							background: -webkit-linear-gradient(left, rgba(224, 222, 216, 0) 0%, rgba(224, 222, 216, 1) 56%, rgba(224, 222, 216, 1) 100%);
+							background: -ms-linear-gradient(left, rgba(224, 222, 216, 0) 0%, rgba(224, 222, 216, 1) 56%, rgba(224, 222, 216, 1) 100%);
+							background: linear-gradient(left, rgba(224, 222, 216, 0) 0%, rgba(224, 222, 216, 1) 56%, rgba(224, 222, 216, 1) 100%);
+							filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0ded8 ', endColorstr='#e0ded8 ',GradientType=1 )";
+							content: "";
+						}
+					}
+				}
 
 				TD.addressColumn, TD.navnColumn {
 					position: relative;
@@ -424,7 +423,6 @@ BODY {
 	margin-bottom: 128px;
 	position: relative;
 	background-color: @white;
-	border-top: 1px solid #626262;
 	.lamell {
 		position: relative;
 		&.bunn {
@@ -466,14 +464,14 @@ BODY {
 			outline: none;
 		}
 		.error-panel {
-            padding: 30px 30px 40px 30px;
-            background-color: @white;
-            border: 1px solid @borderColorLight;
-            padding-bottom: 0;
-            H1 {
-                font-size: 1.14rem;
-            }
-        }
+			padding: 30px 30px 40px 30px;
+			background-color: @white;
+			border: 1px solid @borderColorLight;
+			padding-bottom: 0;
+			H1 {
+				font-size: 1.14rem;
+			}
+		}
 		> HEADER {
 			display: block;
 			height: 64px;
@@ -525,172 +523,21 @@ BODY {
 			padding: 2rem 30px 30px 60px;
 			width: 100%;
 			min-height: 30px;
-            .dobbeldato-container {
-                width: 100%;
-                margin-bottom: 1rem;
-                .dobbeldato {
-                    width: auto;
-                    LABEL {
-                        min-width: 120px;
-                    }
-                }
-            }
+			.dobbeldato-container {
+				width: 100%;
+				margin-bottom: 1rem;
+				.dobbeldato {
+					width: auto;
+					LABEL {
+						min-width: 120px;
+					}
+				}
+			}
 		}
 	}
 }
 
 /* Generelle klasser */
-
-.kjerneinfo {
-    position: relative;
-	padding: 0;
-	min-height: 285px;
-	display: none;
-	background: @modiaBackground;
-	color: @grayLight;
-	line-height: 1.2em;
-    overflow: hidden;
-    .lukk {
-        position: absolute;
-        display: none;
-        bottom: 30px;
-        right: 60px;
-    }
-	DL, UL {
-		padding: 0;
-		margin: 0;
-		width: 100%;
-		list-style-type: none;
-		DT {
-			width: 135px;
-			position: absolute;
-			color: @grayLight;
-			text-align: left;
-		}
-		DD {
-			margin: 0;
-			display: block;
-			padding-left: 145px;
-			text-overflow: ellipsis;
-			text-align: left;
-		    font-weight: bold;
-		}
-		LI {
-		    padding: 0;
-		    margin: 0;
-		}
-	}
-	H1, H2, H3 {
-		color: @grayLight;
-	}
-	A, A:visited {
-		text-decoration: none;
-		font-weight: bold;
-	}
-	A:hover {
-		color: @blue;
-		text-decoration: none;
-	}
-	.info {
-		margin: 0 30px;
-		padding: 47px 0 40px;
-        float: right;
-        display: block;
-        height: 100%;
-		text-align: center;
-		table {
-			border-collapse: collapse;
-			margin: 1rem auto;
-			tbody {
-				tr:first-child {
-					th, td {
-						padding-top: 0.5rem;
-					}
-				}
-				tr:last-child {
-					th, td {
-						padding-bottom: 0.5rem;
-					}
-				}
-			}
-			th {
-				font-weight: normal;
-				text-align: left;
-			}
-			td {
-				font-weight: bold;
-				padding-left: 0.5rem;
-				text-align: left;
-			}
-		}
-		P {
-			margin: 0;
-		}
-		&.status {
-            background: url(../img/info.svg) no-repeat center 10px;
-            background-size: 26px;
-            DL {
-                DT {
-                    width: 8rem;
-                }
-                DD {
-                    padding-left: 9rem;
-                }
-            }
-        }
-		.barn {
-			margin-bottom: 30px;
-			position: relative;
-			text-align: left;
-			&:last-child {
-				margin-bottom: 0;
-			}
-			.fnr, .navn {
-			    font-weight: bold;
-			}
-			UL {
-			    padding-left: 55px;
-			}
-			.barnAlder {
-				position: absolute;
-				padding-top: 0.7rem;
-				SPAN {
-					display: block;
-					width: 40px;
-					text-align: center;
-				}
-				.alder {
-					font-size: 38px;
-					font-weight: 700;
-					padding: 0;
-					margin-top: -1px;
-				}
-				.alderEnhet {
-					font-size: 12px;
-					margin-top: 8px;
-					text-transform: uppercase;
-					font-weight: 600;
-				}
-			}
-		}
-		.boy {
-			.barnAlder {
-				color: @blue;
-			}
-		}
-		.girl {
-			.barnAlder {
-				color: @pink;
-			}
-		}
-		&.barna, &.foreldre {
-			background: url(../img/hjerte.svg) no-repeat center 10px;
-		}
-		&.barna, &.foreldre, &.status {
-			background-size: 26px;
-		}
-	}
-}
 
 .flytflate {
 	line-height: 14px;
@@ -765,64 +612,57 @@ BODY {
 /* MEDIA QUERIES */
 
 @media (max-width: 1500px) {
-    .hentperson #personsok #personsokPanel {
-        margin: 0 10%;
-    }
-    .intern #personsok #personsokPanel {
-        .navnogadresse {
-            width: 57%;
-        }
-        .begrenssoket {
-            margin-left: 5%;
-        }
-    }
+	.hentperson #personsok #personsokPanel {
+		margin: 0 10%;
+	}
+
+	.intern #personsok #personsokPanel {
+		.navnogadresse {
+			width: 57%;
+		}
+		.begrenssoket {
+			margin-left: 5%;
+		}
+	}
 }
 
 @media (max-width: 1300px) {
-    .hentperson #personsok #personsokPanel {
-        margin: 0 5%;
-    }
-    #personsok #personsokPanel {
-        .description {
-            display: none;
-        }
-    }
+	.hentperson #personsok #personsokPanel {
+		margin: 0 5%;
+	}
+
+	#personsok #personsokPanel {
+		.description {
+			display: none;
+		}
+	}
 }
 
 @media (max-width: 1220px) {
-    .intern #personsok #personsokPanel {
-        margin: 0 30px;
-        .navnogadresse {
-            float: none;
-            display: block;
-            width: 100%;
-        }
-        .begrenssoket {
-            float: none;
-            width: 100%;
-            margin: 2rem 0;
-            display: block;
-            overflow: auto;
-        }
-    }
+	.intern #personsok #personsokPanel {
+		margin: 0 30px;
+		.navnogadresse {
+			float: none;
+			display: block;
+			width: 100%;
+		}
+		.begrenssoket {
+			float: none;
+			width: 100%;
+			margin: 2rem 0;
+			display: block;
+			overflow: auto;
+		}
+	}
 }
 
 @media (min-width: 1200px) {
 	BODY {
 		width: 100%;
 	}
-	.sidebar {
-		width: 30.2%;
-	}
-	.main, .bunn, #personsok {
-		width: 69.8%;
-	}
 }
 
 @media (min-width: 1100px) and (max-width: 1199px) {
-	.main, .bunn, #personsok {
-		width: 67.9%;
-	}
 	.sidebar {
 		width: 32.1%;
 		.visittkort {
@@ -837,118 +677,100 @@ BODY {
 }
 
 @media (max-width: 1099px) {
-    BODY {
-        padding: 0;
-        overflow-x: hidden;
-        position: relative;
-        display: block;
-        overflow-y: auto;
-    }
-    .navbar {
-        position: relative;
-        height: 100px;
-        FORM {
-            .taskbox, NAV.menu {
-                width: 26.7%;
-                height: 32px;
-            }
+	BODY {
+		padding: 0;
+		overflow-x: hidden;
+		position: relative;
+		display: block;
+		overflow-y: auto;
+	}
 
-            .errorJS {
-                bottom: -1.5rem;
-            }
-        }
-    }
-    .main {
-        margin-top: 0;
-        width: 100%;
-        display: block;
-    }
-    .bunn {
-        width: 100%;
-    }
-    .kjerneinfo {
-        .lukk {
-            display: block;
-        }
-        .grafikk .year {
-            P:first-child {
-                display: none;
-            }
-            HR {
-                display: none;
-            }
-        }
-    }
+	.navbar {
+		position: relative;
+		height: 100px;
+		FORM {
+			.taskbox, NAV.menu {
+				width: 26.7%;
+				height: 32px;
+			}
 
-    .sidebar {
-        right: -385px;
-        width: 400px;
-        display: block;
-        position: absolute;
-        background: transparent url(../img/tapp_liten.png) no-repeat 0px 108px;
-        box-shadow: none;
-        height: auto;
-        top: 100px;
-        overflow-x: hidden;
-        z-index: 2500;
-        .visittkort, .visittkort.active {
-            margin: 0 0 0 15px;
-            padding: 15px 15px 15px 65px;
-            border-left: 1px solid #252421;
-            border-bottom: none;
-            border-top: none;
-            border-right: none;
-            background-color: @modiaBackground;
-            background-position: 15px 15px;
-        }
-        &.expanded {
-            .visittkort {
-                box-shadow: -8px 0px 10px -7px @grayDarker;
-            }
-        }
-    }
-    .intern #personsok #personsokPanel {
-        margin: 0 36.8% 0 30px;
-    }
+			.errorJS {
+				bottom: -1.5rem;
+			}
+		}
+	}
+
+	.bunn {
+		width: 100%;
+	}
+
+	.sidebar {
+		right: -385px;
+		width: 400px;
+		display: block;
+		position: absolute;
+		background: transparent url(../img/tapp_liten.png) no-repeat 0px 108px;
+		box-shadow: none;
+		height: auto;
+		top: 100px;
+		overflow-x: hidden;
+		z-index: 2500;
+		.visittkort, .visittkort.active {
+			margin: 0 0 0 15px;
+			padding: 15px 15px 15px 65px;
+			border-left: 1px solid #252421;
+			border-bottom: none;
+			border-top: none;
+			border-right: none;
+			background-color: @modiaBackground;
+			background-position: 15px 15px;
+		}
+		&.expanded {
+			.visittkort {
+				box-shadow: -8px 0px 10px -7px @grayDarker;
+			}
+		}
+	}
+
+	.intern #personsok #personsokPanel {
+		margin: 0 36.8% 0 30px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 1099px) {
-    .lameller .lamell .lerret {
-        padding-right: 60px;
-    }
-    .kjerneinfo {
-        padding-right: 60px;
-    }
+	.lameller .lamell .lerret {
+		padding-right: 60px;
+	}
 }
 
 @media (max-width: 1024px) {
-    .hentperson #personsok #personsokPanel {
-        margin: 0 2%;
-        .navnogadresse {
-            width: 57%;
-        }
-        .begrenssoket {
-            margin-left: 5%;
-        }
-    }
+	.hentperson #personsok #personsokPanel {
+		margin: 0 2%;
+		.navnogadresse {
+			width: 57%;
+		}
+		.begrenssoket {
+			margin-left: 5%;
+		}
+	}
 }
 
 @media (max-width: 900px) {
-    .hentperson #personsok #personsokPanel {
-        margin: 0 15%;
-        .navnogadresse {
-            float: none;
-            display: block;
-            width: 100%;
-        }
-        .begrenssoket {
-            float: none;
-            width: 100%;
-            margin: 2rem 0;
-            display: block;
-            overflow: auto;
-        }
-    }
+	.hentperson #personsok #personsokPanel {
+		margin: 0 15%;
+		.navnogadresse {
+			float: none;
+			display: block;
+			width: 100%;
+		}
+		.begrenssoket {
+			float: none;
+			width: 100%;
+			margin: 2rem 0;
+			display: block;
+			overflow: auto;
+		}
+	}
 }
 
 @media (max-width: 767px) {
@@ -957,45 +779,46 @@ BODY {
 		float: none;
 		display: block;
 	}
+
 	.lameller .lamell .lerret .kolonne:last-child {
 		margin-left: 0;
 	}
-    .hentperson #personsok #personsokPanel {
-        margin: 0 10%;
-    }
-    .intern #personsok #personsokPanel {
-        margin: 0 30px;
-    }
+
+	.hentperson #personsok #personsokPanel {
+		margin: 0 10%;
+	}
+
+	.intern #personsok #personsokPanel {
+		margin: 0 30px;
+	}
+
 	#personsok {
-        #personsokPanel {
-            .begrenssoket LABEL, LABEL {
-                float: none;
-                width: 100% !important;
-                margin: 0 0 1.5rem;
-                INPUT, SELECT {
-                    margin-top: 5px;
-                }
-            }
-            LABEL, LABEL SPAN {
-                font-size: 1.14rem !important;
-            }
-            LABEL.husnummer, LABEL.husbokstav {
-                margin: 0 2% 1.5rem 0;
-            }
-            LABEL.postnummer {
-                margin: 0 0 1.5rem;
-            }
-            LABEL.husnummer, LABEL.husbokstav, LABEL.postnummer {
-                width: 31.6% !important;
-            }
-        }
-        #personsokResult #resultDataTable {
-            TH, TD {
-                padding: 0.5rem 0 0.5rem 0.5rem;
-            }
-        }
-    }
-    .kjerneinfo .lukk {
-        right: 30px;
-    }
+		#personsokPanel {
+			.begrenssoket LABEL, LABEL {
+				float: none;
+				width: 100% !important;
+				margin: 0 0 1.5rem;
+				INPUT, SELECT {
+					margin-top: 5px;
+				}
+			}
+			LABEL, LABEL SPAN {
+				font-size: 1.14rem !important;
+			}
+			LABEL.husnummer, LABEL.husbokstav {
+				margin: 0 2% 1.5rem 0;
+			}
+			LABEL.postnummer {
+				margin: 0 0 1.5rem;
+			}
+			LABEL.husnummer, LABEL.husbokstav, LABEL.postnummer {
+				width: 31.6% !important;
+			}
+		}
+		#personsokResult #resultDataTable {
+			TH, TD {
+				padding: 0.5rem 0 0.5rem 0.5rem;
+			}
+		}
+	}
 }
