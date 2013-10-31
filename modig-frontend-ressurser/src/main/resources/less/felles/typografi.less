@@ -161,6 +161,37 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* IKON-INNBOKS */
+
+[class*="strek-ikon-innboks"], [class*="ikon-innboks-strek"] {
+    background-image: url(../img/under-dark.png), url(../img/melding_graa.svg);
+    background-position: bottom center, center 0;
+    padding-bottom: 15px;
+    margin-bottom: 15px !important;
+}
+
+[class*="ikon-innboks"]:not([class*="strek"]) {
+    background-image: url(../img/melding_graa.svg);
+    background-position: center 0;
+}
+
+[class*="strek-ikon-innboks-klikk"], [class*="ikon-innboks-klikk-strek"] {
+    background-image: url(../img/under-dark.png), url(../img/melding_rod.svg);
+    background-position: bottom center, center 0;
+    padding-bottom: 15px;
+    margin-bottom: 15px !important;
+    &:hover {
+        background-image: url(../img/under-dark.png), url(../img/melding_hover.svg);
+    }
+}
+
+[class*="ikon-innboks-klikk"]:not([class*="strek"]) {
+    background-image: url(../img/melding_rod.svg);
+    background-position: center 0;
+    &:hover {
+        background-image: url(../img/melding_hover.svg);
+    }
+}
 
 /* IKON-UTROP */
 
