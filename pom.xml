@@ -27,6 +27,21 @@
         <module>modig-frontend-wicket</module>
     </modules>
 
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<configuration>
+						<goals>deploy</goals>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+
     <scm>
 	    <developerConnection>scm:git:ssh://git@stash.devillo.no:7999/modig/modig-frontend.git</developerConnection>
         <url>http://stash.devillo.no/projects/MODIG/repos/modig-frontend/</url>
