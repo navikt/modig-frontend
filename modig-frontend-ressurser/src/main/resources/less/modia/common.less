@@ -114,7 +114,8 @@ UL.feedbackPanel {
 		margin-left: 40px;
 	}
 	.hent-oppgave {
-		display: none;
+		display: block;
+		margin-left: -8rem;
 	}
 	.search-intern {
 		position: relative;
@@ -612,10 +613,16 @@ UL.feedbackPanel {
 			color: @blue;
 		}
 		&.mann {
-			background-image: url(../img/mann.svg);
+			background-image: url(../img/gubbe.svg);
+			.left {
+				color: #0ca9e1;
+			}
 		}
 		&.kvinne {
-			background-image: url(../img/kvinne.svg);
+			background-image: url(../img/kjerring.svg);
+			.left {
+				color: #df4b78
+			};
 		}
 		H1, H2 {
 			._H2;
@@ -633,13 +640,12 @@ UL.feedbackPanel {
 			text-transform: uppercase;
 			.label, .year {
 				display: block;
-				color: #df4b78;
 			}
 			.label {
 				font-size: 0.7rem;
 			}
 			.year {
-				font-size: 2rem;
+				font-size: 2.5rem;
 				font-weight: 600;
 			}
 		}
@@ -683,7 +689,7 @@ UL.feedbackPanel {
 		}
 	}
 	.kjerneinfo {
-		height: 100%;
+		height: 67%;
 		background: url(../img/tabs-stripe.png) repeat-y;
 		margin: 0;
 		.tabs {
@@ -740,7 +746,49 @@ UL.feedbackPanel {
 			float: left;
 			margin-left: 15px;
 			.info {
-				&.status {
+				.barn {
+					display: table;
+					margin-top: 2rem;
+					clear: both;
+					.barnAlder {
+						float: left;
+						text-align: center;
+						margin-right: 15px;
+						SPAN {
+							display: block;
+							font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+							&.alderEnhet {
+								font-size: 0.7rem;
+								text-transform: uppercase;
+								letter-spacing: 1px;
+							}
+							&.alder {
+								font-size: 2.5rem;
+								font-weight: 600;
+							}
+						}
+					}
+					UL {
+						float: left;
+						list-style: none;
+						padding: 0;
+						margin: 0;
+						font-weight: bold;
+						LI:last-child {
+							font-weight: normal;
+							font-size: 0.7rem;
+						}
+					}
+					&.boy {
+						.barnAlder {
+							color: #0ca9e1;
+						}
+					}
+					&.girl {
+						.barnAlder {
+							color: #df4b78;
+						}
+					}
 				}
 			}
 		}
