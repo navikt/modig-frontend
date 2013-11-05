@@ -91,8 +91,6 @@ form {
 			font-size: 1rem !important;
 			text-transform: none;
 		}
-		.vannrett {
-		}
 		.loddrett {
 			label {
 				display: block !important;
@@ -111,49 +109,49 @@ form {
 			}
 		}
 	}
-}
 
-&.horisontal {
-	label {
-		position: relative;
-		padding: 1rem 0 0.5rem;
-		input, select, textarea {
-			margin-left: 1rem;
-		}
-		span {
-			display: inline-block;
-			font-size: 0.85rem;
-			text-transform: uppercase;
-			width: 11rem;
-			&.melding {
-				width: auto;
+	&.horisontal {
+		label {
+			position: relative;
+			padding: 1rem 0 0.5rem;
+			input, select, textarea {
+				margin-left: 1rem;
 			}
-		}
-	}
-}
-
-&.vertikal {
-	label {
-		input, select, textarea {
-			display: block;
-			&[type="checkbox"], &[type="radio"] {
+			span {
 				display: inline-block;
+				font-size: 0.85rem;
+				text-transform: uppercase;
+				width: 11rem;
+				&.melding {
+					width: auto;
+				}
 			}
 		}
 	}
-}
 
-&.dobbeldato {
-	display: inline-block;
-	background: @bodyBackground;
-	padding: 10px 20px 20px;
-	border: 1px solid @borderColorLight;
-	LABEL {
-		padding: 0;
-		width: 9rem;
-		margin: 0 8px 0 0;
-		INPUT {
-			width: 100%;
+	&.vertikal {
+		label {
+			input, select, textarea {
+				display: block;
+				&[type="checkbox"], &[type="radio"] {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	&.dobbeldato {
+		display: inline-block;
+		background: @bodyBackground;
+		padding: 10px 20px 20px;
+		border: 1px solid @borderColorLight;
+		LABEL {
+			padding: 0;
+			width: 9rem;
+			margin: 0 8px 0 0;
+			INPUT {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -240,14 +238,14 @@ input[type="color"] {
 	&:focus {
 		border-color: rgba(82, 168, 236, .8);
 		outline: 0;
-		outline: thin dotted       \9; /* IE6-9 */
+		outline: thin dotted        \9; /* IE6-9 */
 	}
 
 	// Position radios and checkboxes better
 	input[type="radio"],
 	input[type="checkbox"] {
 		margin: 4px 0 0;
-		margin-top: 1px       \9; /* IE8-9 */
+		margin-top: 1px        \9; /* IE8-9 */
 		line-height: normal;
 	}
 
