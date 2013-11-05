@@ -28,8 +28,8 @@
     </modules>
 
     <scm>
-	    <developerConnection>scm:git:ssh://git@a34apvl029.devillo.no:7999/modig/modig-frontend.git</developerConnection>
-        <url>http://a34apvl029.devillo.no:7990/projects/modig/modig-frontend.git</url>
+	    <developerConnection>scm:git:ssh://git@stash.devillo.no:7999/modig/modig-frontend.git</developerConnection>
+        <url>http://stash.devillo.no/projects/MODIG/repos/modig-frontend/</url>
 		<tag>HEAD</tag>	
     </scm>
 
