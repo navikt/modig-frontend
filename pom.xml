@@ -26,7 +26,7 @@
     </modules>
 
     <scm>
-	    <developerConnection>scm:git:ssh://git@a34apvl029.devillo.no:7999/modig/modig-frontend.git</developerConnection>
+	    <developerConnection>scm:git:http://stash.devillo.no/scm/modig/modig-frontend.git</developerConnection>
         <url>http://a34apvl029.devillo.no:7990/projects/modig/modig-frontend.git</url>
 		<tag>HEAD</tag>	
     </scm>
