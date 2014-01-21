@@ -4,7 +4,7 @@
 
     <artifactId>modig-frontend</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.35</version>
+    <version>1.0.36-SNAPSHOT</version>
 
     <parent>
         <groupId>no.nav.modig</groupId>
@@ -28,6 +28,6 @@
     <scm>
 	    <developerConnection>scm:git:http://stash.devillo.no/scm/modig/modig-frontend.git</developerConnection>
         <url>http://a34apvl029.devillo.no:7990/projects/modig/modig-frontend.git</url>
-		<tag>modig-frontend-1.0.35</tag>	
+		<tag>HEAD</tag>	
     </scm>
 </project>
