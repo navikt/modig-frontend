@@ -19,7 +19,7 @@ public class StaticResourcesCacheFilter implements Filter {
 
     private static final Logger LOG = LoggerFactory.getLogger(StaticResourcesCacheFilter.class);
     // Formatet: 'Tue, 15 Nov 1994 08:12:31 GMT'
-    private static final String PATTERN = "EE, dddd MMM yyyy HHHH:mmmm:ssss zz";
+    private static final String PATTERN = "EE, dd MMM yyyy HH:mm:ss zz";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
