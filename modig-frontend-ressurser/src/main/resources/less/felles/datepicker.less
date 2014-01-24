@@ -72,17 +72,21 @@
 					text-decoration: none;
 					&.ui-state-active {
 						background: @white;
-						color: @grayDark;
+						color: @black;
 					}
 					&.ui-state-hover {
 						background: @blue;
-						color: @white;
+						color: @black;
 					}
 				}
 				&:last-child {
 					border-right: none;
 					span, a {
-						color: @pink;
+						color: @pinkDarker;
+                        &.ui-state-hover {
+                            background: @pinkDarker;
+                            color: @black;
+                        }
 					}
 				}
 				&.ui-datepicker-unselectable {

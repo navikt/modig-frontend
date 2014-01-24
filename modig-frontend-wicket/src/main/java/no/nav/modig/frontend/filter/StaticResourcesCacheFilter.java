@@ -13,9 +13,13 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static org.joda.time.format.DateTimeFormat.forPattern;
+
 public class StaticResourcesCacheFilter implements Filter {
 
     private static final Logger LOG = LoggerFactory.getLogger(StaticResourcesCacheFilter.class);
+    // Formatet: 'Tue, 15 Nov 1994 08:12:31 GMT'
+    private static final String PATTERN = "EE, dd MMM yyyy HH:mm:ss zz";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -28,9 +32,13 @@ public class StaticResourcesCacheFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse)response;
 
         httpResponse.addHeader("Cache-control", "public, max-age=600");
-        httpResponse.addHeader("Expires", new DateTime().plusMinutes(10).toString());
+        httpResponse.addHeader("Expires", convertToHeaderDate(DateTime.now().plusMinutes(10)));
 
         chain.doFilter(request, response);
+    }
+    
+    private String convertToHeaderDate(DateTime dateTime) {
+        return forPattern(PATTERN).print(dateTime);
     }
 
     @Override
