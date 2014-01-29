@@ -67,6 +67,14 @@ form, [ng-form], [data-ng-form] {
 		background: url(../img/check_inactive_valgt.svg) 0 0 no-repeat;
 	}
 
+    input[type="checkbox"].bryter + label {
+      background: url(../img/bryter.svg) 0 0 no-repeat;
+    }
+
+    input[type="checkbox"].bryter:disabled + label {
+      background: url(../img/bryter_valgt.svg) 0 0 no-repeat;
+    }
+
 	input[type="radio"] + label,
 	input[type="checkbox"] + label {
 		display: inline-block;
