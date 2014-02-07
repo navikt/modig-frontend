@@ -13,7 +13,6 @@
     </parent>
 
     <name>${project.artifactId}</name>
-
     <description>
         Dette biblioteket inneholder statiske ressurser for felles utseende og oppførsel i moderniserte applikasjoner i Nav.
     </description>
