@@ -11,7 +11,8 @@ class FellesResources {
     // WICKET-5250: JavaScriptResourceReference blir komprimert, selv om det finnes en minified versjon
     // Ettersom alt innholdet i html5shiv ligger i en kommentar blir dette fjernet.
     // Må bruke en PackageResourceReference frem til WICKET-5250 og WICKET-5251 er løst
-    static final PackageResourceReference HTML5_SHIV_RESOURCE = new PackageResourceReference(JsResourceMarker.class, "html5.js");
+    //static final PackageResourceReference HTML5_SHIV_RESOURCE = new PackageResourceReference(JsResourceMarker.class, "html5.js");
+    static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = jsReference("html5.js");
 
     static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.10.2.js");
 	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = new JQueryDependentResourceReference("underscore.js");
