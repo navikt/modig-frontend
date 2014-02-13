@@ -42,8 +42,8 @@
 
 
     <scm>
-	    <developerConnection>scm:git:http://stash.devillo.no/scm/modig/modig-frontend.git</developerConnection>
-        <url>http://stash.devillo.no/projects/MODIG/repos/modig-frontend/</url>
+	    <developerConnection>scm:git:http://stash.devillo.no/scm/dial/modig-frontend.gitt</developerConnection>
+        <url>http://stash.devillo.no/projects/DIAL/repos/modig-frontend/</url>
 		<tag>HEAD</tag>	
     </scm>
 
