@@ -1,4 +1,6 @@
 /* Generelle mixins, variabler, typografi og stiler som bruker av andre stilregler */
+@sidebarWidth: 24%;
+@mainContentWidth: 100% - (@sidebarWidth * 2);
 
 /* Mixins */
 .kolonne {
@@ -570,18 +572,22 @@ UL.feedbackPanel {
 	}
 }
 
-.sidebar {
+[class*=sidebar-] {
+  position: absolute;
+  top: 0;
+  padding-top: 140px;
+  width: @sidebarWidth;
+  min-height: 100%;
+  z-index: 1;
+}
+
+[class*=sidebar-venstre] {
 	overflow: visible;
 	color: #b7b1a9;
 	background: @modiaBackground url(../img/tabs-stripe.png) repeat-y;
-	position: absolute;
-	padding: 140px 0 20px;
+	padding-bottom: 20px;
 	left: 0;
-    top: 0;
-	width: 24.2%;
 	box-shadow: rgba(100, 100, 100, 0.4) 16px 0px 26px -4px;
-	z-index: 1;
-    min-height: 100%;
 	> * {
 		margin: 0 30px;
 	}
@@ -801,4 +807,9 @@ UL.feedbackPanel {
 		margin-left: 0;
 		margin-right: 0;
 	}
+}
+
+[class*=sidebar-hoyre] {
+  background-color: @modiaBackground;
+  right: 0;
 }

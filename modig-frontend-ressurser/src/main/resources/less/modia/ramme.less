@@ -1,11 +1,9 @@
 /* Stiler for den generelle layouten og oppsettet i MODIA */
-
 .main-content {
 	position: relative;
 	float: left;
-	margin-left: 22.5%;
-	padding: auto 0;
-	width: 52.6%;
+	margin-left: @sidebarWidth;
+	width: @mainContentWidth;
 	height: 100%;
 	display: table-cell;
 }
@@ -429,6 +427,7 @@
 		&.bunn {
 			position: fixed;
 			padding-right: 1px;
+            width: @mainContentWidth;
 			> HEADER {
 				height: 64px;
 				background-image: -webkit-linear-gradient(bottom, #e5e5e3 1px, #F1F1EF 14px);
@@ -482,7 +481,7 @@
 			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#F1F1EF', endColorstr='#e5e5e3')"; /* IE8+ */
 			background-color: @bodyBackground;
 			H1 {
-				margin: 0 auto auto 60px;
+				margin: 0 auto auto 30px;
 
 				line-height: 59px;
 				font-size: 1.8rem;
@@ -521,7 +520,7 @@
 			}
 		}
 		.lerret {
-			padding: 2rem 30px 30px 60px;
+			padding: 2rem 30px 30px 30px;
 			width: 100%;
 			min-height: 30px;
 			.dobbeldato-container {
