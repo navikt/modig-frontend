@@ -53,10 +53,11 @@ import static no.nav.modig.frontend.BootstrapResources.LESS_TYPE;
 import static no.nav.modig.frontend.BootstrapResources.LESS_UTILITIES;
 import static no.nav.modig.frontend.BootstrapResources.LESS_VARIABLES;
 import static no.nav.modig.frontend.BootstrapResources.LESS_WELLS;
-import static no.nav.modig.frontend.ConditionalCssResource.*;
+import static no.nav.modig.frontend.ConditionalCssResource.IE8_EKSTERNFLATE;
 import static no.nav.modig.frontend.EksternflateResources.EKSTERN_LESS;
 import static no.nav.modig.frontend.EksternflateResources.FOOTER_LESS;
 import static no.nav.modig.frontend.EksternflateResources.PANEL_LESS;
+import static no.nav.modig.frontend.FellesResources.AJAX_LOADER;
 import static no.nav.modig.frontend.FellesResources.CONTRAST_LESS;
 import static no.nav.modig.frontend.FellesResources.DROPDOWNS_LESS;
 import static no.nav.modig.frontend.FellesResources.DROPDOWN_RESOURCE;
@@ -68,7 +69,6 @@ import static no.nav.modig.frontend.FellesResources.JQUERY_VALIDATE;
 import static no.nav.modig.frontend.FellesResources.KNAPPER_LESS;
 import static no.nav.modig.frontend.FellesResources.MIXINS_LESS;
 import static no.nav.modig.frontend.FellesResources.MODUS_LESS;
-import static no.nav.modig.frontend.FellesResources.AJAX_LOADER;
 import static no.nav.modig.frontend.FellesResources.NAV_DATEPICKER;
 import static no.nav.modig.frontend.FellesResources.RESET_LESS;
 import static no.nav.modig.frontend.FellesResources.SKJEMA_LESS;
@@ -80,9 +80,6 @@ import static no.nav.modig.frontend.FellesResources.UNDERSCORE_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.UTILITIES_LESS;
 import static no.nav.modig.frontend.FellesResources.VARIABLES_LESS;
 import static no.nav.modig.frontend.FellesResources.WICKET_MODAL_WINDOW;
-import static no.nav.modig.frontend.ModiaResources.MODIA_KOMPONENTER_LESS;
-import static no.nav.modig.frontend.ModiaResources.MODIA_RAMME_LESS;
-import static no.nav.modig.frontend.ModiaResources.MODIA_COMMON_LESS;
 
 
 public class FrontendModules {
@@ -116,7 +113,7 @@ public class FrontendModules {
 	public static final FrontendModule MODIA = new FrontendModule.With()
 	.scripts(TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, AJAX_LOADER, JQUERY_UI_DATEPICKER, JQUERY_VALIDATE)
 	.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS,
-			DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS, MODIA_COMMON_LESS, MODIA_RAMME_LESS, MODIA_KOMPONENTER_LESS).done();
+			DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS).done();
 
 	public static final FrontendModule BOOTSTRAP_SPRITES = new FrontendModule.With().less(LESS_SPRITES).images(ICONS, ICONS_WHITE).done();
 	public static final FrontendModule BOOTSTRAP_WELLS = new FrontendModule.With().less(LESS_WELLS).done();
