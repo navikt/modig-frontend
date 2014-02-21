@@ -173,12 +173,12 @@ textarea {
     font-size: 30.8px;
 }
 
-[class*="ikon-soknad"] {
+[class*="ikon-soknader"] {
     background-image: url(../img/soknad.png);
     background-position: center 0;
 }
 
-[class*="strek-ikon-soknad-klikk"], [class*="ikon-soknad-klikk-strek"] {
+[class*="strek-ikon-soknader-klikk"], [class*="ikon-soknader-klikk-strek"] {
     background-image: url(../img/soknad_rod.png);
     background-position: center 0;
 }
