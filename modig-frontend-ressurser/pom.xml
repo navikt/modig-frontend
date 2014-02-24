@@ -23,63 +23,53 @@
                 <filtering>false</filtering>
                 <directory>src/main/resources</directory>
             </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/generated-resources</directory>
+            </resource>
         </resources>
+
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+
+                    <!-- BUILD BOOTSTRAP -->
+
+                    <execution>
+                        <id>build-bootstrap</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>C:\Program Files\nodejs\node.exe</executable>
+                            <arguments>
+                                <argument>src/main/nodejs/build-frontend.js</argument>
+                                <argument>.</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+
+        </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>build-frontend</id>
-            <build>
-
-                <plugins>
-
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
-                        <executions>
-
-                            <!-- BUILD BOOTSTRAP -->
-
-                            <execution>
-                                <id>build-bootstrap</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>C:\Program Files\nodejs\node.exe</executable>
-                                    <arguments>
-                                        <argument>src/main/nodejs/build-frontend.js</argument>
-                                        <argument>.</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                    </plugin>
-
-                </plugins>
-
-                <resources>
-                    <resource>
-                        <filtering>false</filtering>
-                        <directory>src/main/generated-resources</directory>
-                    </resource>
-                </resources>
-            </build>
-        </profile>
-    </profiles>
 
 
 </project>
