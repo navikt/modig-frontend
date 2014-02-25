@@ -35,7 +35,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
                 <configuration>
-                    <executable>C:\Program Files\nodejs\node.exe</executable>
+                    <executable>/usr/local/bin/node</executable>
                     <arguments>
                         <argument>src/main/nodejs/build-frontend.js</argument>
                         <argument>.</argument>
