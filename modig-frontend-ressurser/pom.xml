@@ -29,32 +29,26 @@
             </resource>
         </resources>
 
-
         <plugins>
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
+                <configuration>
+                    <executable>C:\Program Files\nodejs\node.exe</executable>
+                    <arguments>
+                        <argument>src/main/nodejs/build-frontend.js</argument>
+                        <argument>.</argument>
+                    </arguments>
+                </configuration>
                 <executions>
-
-                    <!-- BUILD BOOTSTRAP -->
-
                     <execution>
                         <id>build-bootstrap</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
-                        <configuration>
-                            <executable>C:\Program Files\nodejs\node.exe</executable>
-                            <arguments>
-                                <argument>src/main/nodejs/build-frontend.js</argument>
-                                <argument>.</argument>
-                            </arguments>
-                        </configuration>
                     </execution>
-
                 </executions>
             </plugin>
 
@@ -70,7 +64,6 @@
 
         </plugins>
     </build>
-
 
 </project>
 
