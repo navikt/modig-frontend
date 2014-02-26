@@ -83,5 +83,47 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>build-frontend-and-copy-to-enonic</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.7</version>
+                        <configuration>
+                            <target name="UploadToDev"
+                                    description="Laster opp de genererte ressursene til Enonics filsystem i utviklingsmiljøet.">
+                                <scp todir="devadm@e32apvl001.oera-t.local:/tmp/testing/scp-test/" password="VilIkkeSjekkInnPassordet!" trust="true">
+                                    <fileset dir="${basedir}/src/main/generated-resources/"/>
+                                </scp>
+                            </target>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.apache.ant</groupId>
+                                <artifactId>ant-jsch</artifactId>
+                                <version>1.9.2</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>jsch</groupId>
+                                <artifactId>jsch</artifactId>
+                                <version>0.1.44</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
 
