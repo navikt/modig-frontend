@@ -1,6 +1,12 @@
 package no.nav.modig.frontend.filter;
 
 import org.joda.time.DateTime;
+<<<<<<< HEAD
+=======
+import org.joda.time.DateTimeZone;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+>>>>>>> bugfix/cacheheader
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,9 +38,25 @@ public class StaticResourcesCacheFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse)response;
 
         httpResponse.addHeader("Cache-control", "public, max-age=600");
+<<<<<<< HEAD
         httpResponse.addHeader("Expires", convertToHeaderDate(DateTime.now().plusMinutes(10)));
+=======
+        httpResponse.addHeader("Expires", convertToHeaderDate(expireDateTime()));
+>>>>>>> bugfix/cacheheader
 
         chain.doFilter(request, response);
+    }
+
+    /**
+     * Hent tiden for når cache-headeren skal utløpe.<br>
+     * - I følge HTTP-spesifikasjonen (http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1)
+     * skal alle HTTP datetime objekter representeres i Greenwich Mean Time (GMT), eller i UTC som tilsvarer det samme.<br>
+     * - Tiden settes også frem i tid basert på hvor lenge det er ønskelig at cache-headeren skal være gyldig.
+     * @return datoobjekt for når cache-headeren skal utløpe.
+     */
+    private DateTime expireDateTime() {
+        DateTime utcTime = new DateTime(DateTimeZone.UTC);
+        return utcTime.plusMinutes(10);
     }
     
     private String convertToHeaderDate(DateTime dateTime) {

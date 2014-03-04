@@ -4,7 +4,11 @@
 
     <artifactId>modig-frontend</artifactId>
     <packaging>pom</packaging>
+<<<<<<< HEAD
     <version>1.1.22-SNAPSHOT</version>
+=======
+    <version>1.1.11.BUGFIX-SNAPSHOT</version>
+>>>>>>> bugfix/cacheheader
 
     <parent>
         <groupId>no.nav.modig</groupId>
@@ -42,9 +46,15 @@
 
 
     <scm>
+<<<<<<< HEAD
 	    <developerConnection>scm:git:http://stash.devillo.no/scm/dial/modig-frontend.git</developerConnection>
         <url>http://stash.devillo.no/projects/DIAL/repos/modig-frontend/</url>
 		<tag>HEAD</tag>	
+=======
+	    <developerConnection>scm:git:http://stash.devillo.no/scm/modig/modig-frontend.git</developerConnection>
+        <url>http://stash.devillo.no/projects/MODIG/repos/modig-frontend/</url>
+		<tag>modig-frontend-1.1.11-BUGFIX</tag>
+>>>>>>> bugfix/cacheheader
     </scm>
 
 </project>
