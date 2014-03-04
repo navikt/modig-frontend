@@ -1,12 +1,7 @@
 package no.nav.modig.frontend.filter;
 
 import org.joda.time.DateTime;
-<<<<<<< HEAD
-=======
 import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
->>>>>>> bugfix/cacheheader
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,12 +33,7 @@ public class StaticResourcesCacheFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse)response;
 
         httpResponse.addHeader("Cache-control", "public, max-age=600");
-<<<<<<< HEAD
-        httpResponse.addHeader("Expires", convertToHeaderDate(DateTime.now().plusMinutes(10)));
-=======
         httpResponse.addHeader("Expires", convertToHeaderDate(expireDateTime()));
->>>>>>> bugfix/cacheheader
-
         chain.doFilter(request, response);
     }
 
