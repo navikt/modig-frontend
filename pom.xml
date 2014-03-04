@@ -4,7 +4,7 @@
 
     <artifactId>modig-frontend</artifactId>
     <packaging>pom</packaging>
-    <version>1.1.20</version>
+    <version>1.1.20.BUGFIX-SNAPSHOT</version>
 
     <parent>
         <groupId>no.nav.modig</groupId>
