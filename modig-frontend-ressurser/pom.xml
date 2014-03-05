@@ -55,7 +55,7 @@
                     <executable>${pathTilNode}</executable>
                     <arguments>
                         <argument>src/main/nodejs/build-frontend.js</argument>
-                        <argument>.</argument>
+                        <argument>${basedir}</argument>
                     </arguments>
                 </configuration>
                 <executions>
