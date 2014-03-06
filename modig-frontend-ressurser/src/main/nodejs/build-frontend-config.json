@@ -6,11 +6,11 @@
 		"js/",
 		"js/bootstrap/", "js/bootstrap/jquery/",
 		"js/modig/", "js/modig/felles/", "js/modig/jquery/",
-		"js/enonic/",
+		"js/enonic/", "js/enonic/libs/", "js/enonic/libs/jquery/", "js/enonic/libs/megamenu/",
 		"less/",
 		"less/bootstrap/",
 		"less/modig/", "less/modig/ekstern/", "less/modig/felles/",
-		"less/enonic/"
+		"less/enonic/", "less/enonic/includes/"
 	],
 
 	"copyFolders"  : [
@@ -20,10 +20,18 @@
 		{ "fromDir": "/resources/js/felles/", "toDir": "/generated-resources/js/modig/felles/" },
 		{ "fromDir": "/resources/js/jquery/", "toDir": "/generated-resources/js/modig/jquery/" },
 
+		{ "fromDir": "/resources/js/enonic/", "toDir": "/generated-resources/js/enonic/" },
+        { "fromDir": "/resources/js/enonic/libs/", "toDir": "/generated-resources/js/enonic/libs/" },
+        { "fromDir": "/resources/js/enonic/libs/megamenu/", "toDir": "/generated-resources/js/enonic/libs/megamenu/" },
+        { "fromDir": "/resources/js/jquery/", "toDir": "/generated-resources/js/enonic/libs/jquery/" },
+
 		{ "fromDir": "/resources/less/bootstrap/", "toDir": "/generated-resources/less/bootstrap/" },
 
 		{ "fromDir": "/resources/less/felles/", "toDir": "/generated-resources/less/modig/felles/" },
 		{ "fromDir": "/resources/less/ekstern/", "toDir": "/generated-resources/less/modig/ekstern/" },
+
+        { "fromDir": "/resources/less/enonic/", "toDir": "/generated-resources/less/enonic/" },
+        { "fromDir": "/resources/less/enonic/includes/", "toDir": "/generated-resources/less/enonic/includes/" },
 
 		{ "fromDir": "/resources/css/", "toDir": "/generated-resources/css/modig/" },
 		{ "fromDir": "/resources/img/", "toDir": "/generated-resources/img/" }
@@ -46,16 +54,23 @@
 	"concatFiles": [
 		{ "fromDir": "/resources/js/bootstrap/", "toFile": "/generated-resources/js/bootstrap/bootstrap.js",
 			"files": "fs.readdirSync(baseFolder + '/resources/js/bootstrap/')" },
+
 		{ "fromDir": "/resources/js/felles/", "toFile": "/generated-resources/js/modig/modig.js",
 			"files": ["transitions.js", "felles.js", "dropdown.js", "tooltip.js", "AjaxLoader.js"] },
 		
-		{ 
+		{ "fromDir": "/resources/js/", "toFile": "/generated-resources/js/enonic/navno.js",
+			"files": ["jquery/jquery-1.10.2.js", "enonic/nav-libs.js", "enonic/nav-global.js",
+                "enonic/nav-carousel.js", "enonic/nav-content.js", "enonic/nav-accordion.js",
+                "enonic/libs/matchmedia.js", "enonic/libs/megamenu/jQuery-accessibleMegaMenu.js"] },
+
+		{
 			"fromDir": "/resources/less/felles/", "toFile": "/generated-resources/less/modig/felles.less",
 			"files": ["reset.less", "variables.less", "mixins.less", "modus.less", "typografi.less", "felles.less",
 					  "knapper.less", "contrast.less", "dropdowns.less", "skjema.less", "tooltip.less", "utilities.less"]
 		},
 		{ "fromDir": "/resources/less/ekstern/", "toFile": "/generated-resources/less/modig/ekstern.less",
 			"files": ["panel.less", "footer.less", "ekstern.less"] },
+
 		{ "fromDir": "/generated-resources/less/modig/", "toFile": "/generated-resources/less/modig/modig.less",
 			"files": ["felles.less", "ekstern.less"] }
 	],
@@ -71,7 +86,12 @@
 		{ "fromDir": "/resources/less/bootstrap/", "mainFile": "/resources/less/bootstrap/bootstrap.less",
 			"builtFile": "/generated-resources/css/bootstrap/bootstrap.css" },
 		{ "fromDir": "/generated-resources/less/modig/", "mainFile": "/generated-resources/less/modig/modig.less",
-			"builtFile": "/generated-resources/css/modig/modig.css" }
+			"builtFile": "/generated-resources/css/modig/modig.css" },
+
+		{ "fromDir": "/generated-resources/less/enonic/", "mainFile": "/resources/less/enonic/nav-old-ie.less",
+			"builtFile": "/generated-resources/css/enonic/nav-old-ie.css" },
+		{ "fromDir": "/generated-resources/less/enonic/", "mainFile": "/resources/less/enonic/nav-responsive.less",
+			"builtFile": "/generated-resources/css/enonic/nav-responsive.css" }
 	]
 }
 
