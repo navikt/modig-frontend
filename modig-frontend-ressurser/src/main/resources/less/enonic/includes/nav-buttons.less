@@ -1,0 +1,114 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.btn-login { // i toolbar i topplinje
+        border:1px solid #5f5e5d;
+        padding: 8px 15px 6px 15px !important;
+        text-transform: uppercase;
+        font-family: @font-family-modus;
+}
+
+.btn {
+    display: inline-block !important;
+	color: @gray-dark;
+	cursor: pointer;
+	padding: 11px 40px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: Modus, Arial, Helvetica, sans-serif;
+	font-weight: 600; 
+	font-size: 1.14em; // TODO? Tilsvarer 18.24 px
+	vertical-align: middle;
+	.border-radius(1px);
+	border: 1px solid @gray-light;
+	border-bottom: 1px solid #b6b6b6;
+	.buttonBackground(@btn-background, @btn-background-highlight, @gray-dark);
+	&:hover, &:focus {
+		.buttonBackground(#d3d3d3, #c3c3c3, @gray-dark);
+		text-decoration: none;
+	}
+    &:active {
+        .buttonBackground(darken(#d3d3d3, 5%), darken(#c3c3c3, 5%), @gray-dark);
+    	text-decoration: none;  
+    }
+
+	/*.pil {
+		display: inline-block; 
+		vertical-align: top;
+		margin: 6px -4px 0 2px;
+		border-top: 6px solid @blue-light;
+		border-right: 6px solid transparent;
+		border-left: 6px solid transparent;
+		content: "";
+	}*/
+}
+
+
+
+
+[class*=btn-main], [class*=btn-clear] {
+	.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
+	&:hover, &:focus {
+		.buttonBackground(darken(@btn-primary-background, 10%), darken(@btn-primary-background-highlight, 10%), #fff);
+	}
+}
+
+[class*=btn-active] {
+	border-color: @blue;
+	background: @blue;
+	color: #fff;
+	&:hover, &:focus {
+		border-color: @blue;
+		background: @blue;
+		color: #fff;
+	}
+}
+
+[class*=btn-link] {
+	padding: 0 0 0 30px;
+	background: none;
+    color: @blue-light;
+    border: none;
+    background: none;
+    font-weight: bold;
+    text-transform: none;
+	&:hover, &:focus {
+		border-color: none;
+		background: none;
+		text-decoration: underline;
+		color: @blue-light;
+	}
+}
+
+// Dårlige og alt for generelle selectorer. Slår inn på alt som f.eks inneholder "-mini".
+// Er mer spesifikk nå på "btn-small"
+.btn-small { // treffer figure-small (article.xsl) og btn-small (content-carousel.xsl)..  Mod ass..
+	padding: @padding-small;
+	font-size: @em-as-14px;
+	line-height: 1.6;
+}
+
+
+[class*=btn-highlighted] {
+	.buttonBackground(@btn-inverse-background, @btn-inverse-background-highlight);
+	&:hover, &:focus {
+		.buttonBackground(#635e5f, #504e4a, #fff);
+	}
+}
+
+[class*=btn-warning] {
+	.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
+	&:hover, &:focus {
+		.buttonBackground(darken(@btn-danger-background, 10%), darken(@btn-danger-background-highlight, 10%), #fff);
+	}
+}
+
+[class*=btn-disabled],[class*=btn-][disabled=disabled] {
+	.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
+	cursor: default;
+	&:hover, &:focus {
+		.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
+	}
+}

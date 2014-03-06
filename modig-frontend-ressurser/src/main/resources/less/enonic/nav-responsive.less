@@ -1,0 +1,49 @@
+/*!
+ * Bootstrap v3
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+@responsive: true; // tar med mediaqueries
+
+// Core variables and mixins
+@import "nav/nav-variables.less"; 			// Modified
+@import "nav/nav-mixins.less"; 				// Modified 
+//@import "nav/nav-mixins-mediaqueries.less";	// CUSTOM. Mq dratt ut i mixin pga Ie8
+@import "nav/nav-normalize.less"; 			// Modified
+@import "nav/nav-grid.less"; 
+
+
+// NAV base styles
+@import "nav/nav-typography.less";
+@import "nav/nav-table.less";
+@import "nav/nav-buttons.less"; 
+@import "nav/nav-breadcrumb.less";			// dekoratør?
+@import "nav/nav-megamenu.less";			// dekoratør?
+@import "nav/nav-linklists.less";
+@import "nav/nav-scaffolding.less";
+
+@import "nav/nav-siteheader.less";			// Brukes av dekoratør + beta
+@import "nav/nav-sitefooter.less";			// Brukes av dekoratør + beta
+@import "nav/nav-sitefooter-alphabet.less"; // A-Å
+
+// modules
+@import "nav/nav-article.less";
+@import "nav/nav-factsheet.less";
+@import "nav/nav-carousel.less";
+@import "nav/nav-accordion.less";
+@import "nav/nav-error.less";
+
+// utilities
+
+@import "nav/nav-utilities.less"; //Accessibility, helper classes for hiding content etc.
+@import "nav/nav-contrast.less";
+@import "nav/nav-print.less"; 				// boostrap 3
+
+@import "nav/nav-webfonts.less";
+
+@import "nav/_temp-beta.less"; // temporært kun for beta (logo, infoboks)

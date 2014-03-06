@@ -1,0 +1,106 @@
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    &.focusable:focus,
+    &.focusable:active {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto;  
+    }
+
+}
+
+
+.muted  { 
+    color: @gray;
+}
+
+.loud {
+    color:@red;
+}
+
+
+/* .tooltip { 
+            opacity: 1;
+            .tooltip-inner {
+                padding: 25px 30px 25px 35px;
+                text-align: left;
+                font-family: Modus, Arial, Helvetica, sans-serif;
+                font-size: 3em;
+                font-weight: 600;
+                width: 530px;
+                max-width: 530px;
+                p:last-child {
+                    margin-bottom: 0.5em;
+                }
+            }
+        }
+
+*/
+
+// Scroll to top link
+//-------------------
+
+/*.top-link-wrapper {
+    position: relative;
+    height: 2em;
+    background-color: @gray;
+    
+    a {
+        border: 1px solid;
+        color: @gray-dark !important;
+        position: absolute;
+        top: -25px;
+        padding: 8px 18px;
+        font-size: @font-size-h4-rem;
+        margin-left: 45%;
+        
+        &:hover {
+            border: 1px solid;   
+        }
+    }
+}*/
+
+
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden, .hide { display: none !important; visibility: hidden; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+.center-block {
+  .center-block();
+}
+
+// Alignment
+//.text-left           { text-align: left; }
+//.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+
+
+/* Contain floats: h5bp.com/q */
+.group:before, .group:after { content: ""; display: table; }
+.group:after { clear: both; }
+.group { *zoom: 1; }
+
+
+@media speech { 
+    .visuallyhidden:after {
+        content: " Visuelt skjult";
+    }
+
+}

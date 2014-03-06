@@ -93,7 +93,7 @@
                         <configuration>
                             <target name="UploadToDev"
                                     description="Laster opp de genererte ressursene til Enonics filsystem i utviklingsmiljøet.">
-                                <scp todir="devadm@e32apvl001.oera-t.local:/tmp/testing/scp-test/" password="VilIkkeSjekkInnPassordet!" trust="true">
+                                <scp todir="admin@portal-admin-u1.adeo.no:/dav/scp-test/" password="password" trust="true">
                                     <fileset dir="${basedir}/src/main/generated-resources/"/>
                                 </scp>
                             </target>

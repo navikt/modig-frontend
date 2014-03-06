@@ -1,0 +1,75 @@
+
+.sitelogo {
+  	a {
+    	position: relative;   // Logo container. Kun relative pga BETA-tekst! Sentrering
+      left:20px;
+  		.beta { // BETA-tekst ved siden av logo
+          color:@red;
+          font-family: @font-family-modus;
+          font-size:1.4em; font-weight:600;text-transform: uppercase;
+          position: relative;
+          top:9px;
+          left:5px;
+  	}
+  }
+}
+
+// Add-on til .hero-banner (tekstboks med betainformasjon som legger seg oppå banner)
+
+.no-flexbox .beta-info-box { 
+  top:31px; // ca vertikal sentrering av infoboks i tilfeller hvor flexbox ikke funker (IE9)
+}
+
+  .beta-info-box { // TEMPORARY beta info
+    position:absolute;
+    right:28px;
+    top:0px;
+    bottom:0px;      
+    .flex-container(); 
+      article {
+        -ms-align-self:center;
+        align-self:center;
+        width:306px;
+        background: #fff;      
+        padding:25px 20px 30px 20px;
+        border:1px solid @gray-light;
+      }
+
+    p, a {
+      font-size: @em-as-12px;
+    }
+    
+    .decorated {
+      margin-bottom: 15px;
+      &:after {
+        margin-top:15px;
+      }
+    }
+      
+    a {
+    display:block;
+    text-align: center;
+        &:hover,
+        &:focus {
+          text-decoration:underline;
+        }
+      
+    }
+  }
+
+  @media (max-width: 920px) { // opprinnelig lg-min: STØRRE enn 768px
+    .beta-info-box {
+      p {
+        display:none;
+      }
+    }   
+} 
+
+
+@media (max-width: @screen-medium)  { // MINDRE enn 48em
+    .beta-info-box {
+     
+        display:none !important;
+     
+    }
+}

@@ -1,0 +1,229 @@
+/*!
+ * Bootstrap v2.3.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+.page-head h1 {          // Hva er dette? = Overskriften på seksjonssider
+    margin: 60px 0 -20px 0;
+    text-align: center;
+}
+
+///////////////////  Media queries  ///////////////////////
+
+// Mobile first
+
+.carousel-inner {
+    .icon-document { background-image: none; }
+    .span4-grid { margin-bottom: 0.9375em; }
+    
+    .item {
+        .hero-link {
+            padding: 1.875em 1.875em 1.875em;
+            p { display: block; }
+            
+            .decorated:after {
+                display: block;   
+            }
+        }
+    }
+}
+
+.carousel-control, .carousel-indicators { display: none; }
+
+.js #navCarousel div.item { display: block; }
+
+
+@media (min-width: @screen-small) and (max-width: @screen-medium) {
+    .no-js #carousel-items .hero-link { min-height: 25em; }
+    .js .item .hero-link p { font-size: @em-as-12px; }
+}
+
+@media (min-width: @screen-medium) { // TODO - sjekk om overlapp med mq over er et issue
+     #carousel-items .item .hero-link-wrapper:first-child { padding-left: 0; }
+     #carousel-items .item .hero-link-wrapper:nth-child(3) { padding-right: 0; }
+     
+    .js #navCarousel div.item { display: none; }
+    .no-js #carousel-items .hero-link { min-height: 24em; }
+    
+    .carousel-inner {
+        overflow: hidden;
+    }
+    .carousel-inner > .item {
+        display: none;
+        position: relative;
+        -webkit-transition: 0.6s ease-in-out left;
+        -moz-transition: 0.6s ease-in-out left;
+        -o-transition: 0.6s ease-in-out left;
+        transition: 0.6s ease-in-out left;
+  
+        .hero-link {
+            height: 20em;   //TODO
+            padding: 5.31em 1.875em 1.875em;
+            
+            p {
+                font-size: @em-as-12px;   
+            }
+        }
+        .icon-document {
+            background-image: url("gfx/icons/dokument_rod.png");
+        }
+    }
+    #navCarousel .carousel-inner > .active,
+    #navCarousel .carousel-inner > .next,
+    #navCarousel .carousel-inner > .prev {
+        display: block;
+    }
+    .carousel-inner > .active {
+        left: 0;
+    }
+    .carousel-inner > .next, .carousel-inner > .prev {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    .carousel-inner > .next, .carousel-inner > .active.right {
+        left: 100%;
+    }
+    .carousel-inner > .prev, .carousel-inner > .active.left {
+        left: -100%;
+    }
+    .carousel-inner > .next.left, .carousel-inner > .prev.right {
+        left: 0;
+    }
+     
+    .carousel-inner .span4-grid { margin-bottom:0; }
+    .carousel-control, .carousel-indicators { display: block; }
+    
+    .carousel-inner .span4-grid { margin-bottom: 0; }
+    .js .carousel-inner > div.item { display: none; }
+    .carousel-control {
+        position: absolute;
+        top: 40%;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+        margin-top: -20px;
+        line-height: 30px;
+    }
+    .carousel-indicators {
+        display: inline-block;
+        list-style: none outside none;
+        margin-top: 28px;
+        position: relative;
+        z-index: 5;
+    }
+}
+@media (min-width: @screen-large) {
+   .no-js #carousel-items .hero-link { min-height: 22em; }
+   #carousel-items .hero-link {
+        p {
+            font-size: @em-as-12px;
+        }
+    }
+}
+@media (min-width: @screen-xl) {
+    #top-scroll-link { display: none; } 
+}
+
+///////////////////////////////////////////////////////////
+
+.carousel-control.right {
+    background: transparent url('gfx/carousel/rod_hoyre.png') no-repeat 0 0;
+    left: auto;
+    right: -25px;
+}
+.carousel-control.right:hover, .carousel-control.right:focus, .carousel-control.right:active {
+    background: transparent url('gfx/carousel/blaa_hoyre.png') no-repeat 0 0;   
+}
+.carousel-control.left {
+    background: transparent url('gfx/carousel/rod_venstre.png') no-repeat 0 0;
+    right: auto;
+    left: -25px;
+}
+.carousel-control.left:hover, .carousel-control.left:focus, .carousel-control.left:active {
+    background: transparent url('gfx/carousel/blaa_venstre.png') no-repeat 0 0;
+}
+.carousel-control.left:active {
+    background: transparent url('gfx/carousel/blaa_venstre_down.png') no-repeat 0 0;   
+}
+.carousel-control.right:active {
+    background: transparent url('gfx/carousel/blaa_hoyre_down.png') no-repeat 0 0;      
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  text-indent: -999px;
+  background-color: @gray-light;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.carousel-indicators .active {
+  background-color: @blue;
+}
+
+.js #navCarousel .carousel-inner > div.active, .js #navCarousel .carousel-inner > div.prev, .js #navCarousel .carousel-inner > div.next { 
+     display: block;
+}
+
+.carousel-label {
+    display: inline-block;
+    position: absolute;
+    top: -1px;
+    left: -75px;
+}
+
+.carousel-dropdown {
+    position: relative;
+    margin: 20px 0 20px;
+}
+
+.carousel-subcontainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-outer { 
+    position: relative;
+    @media (max-width: @screen-large) {
+        
+    }
+}
+
+.carousel {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    text-align:center;
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.js #navCarousel .carousel-onload {
+    display: none;   
+}

@@ -1,0 +1,221 @@
+//--------------------------------------------------------------------
+//
+//	Hode + Fot (felles for beta.nav.no og dekoratør / applikasjoner )
+//
+//--------------------------------------------------------------------
+
+
+.nav  {
+    margin: 0;
+    list-style: none;  
+        a {
+            display: block;          
+            &:hover, 
+            &:focus {
+                text-decoration: none;
+            }
+        }
+}
+
+// Hode (sort topplinje)
+//--------------------------------------------------------------------
+
+.siteheader {
+    .dropdown {
+      > a {
+        outline-offset:-1px;
+      }
+    }
+    .navbar {
+      position:relative;
+      text-align: center;
+      li {
+        display:inline-block;
+      }
+      ul.nav {
+        padding: 0;
+      }
+
+      ul.dropdown-menu {
+        > li {
+          display: block;
+          position: relative;
+        }
+      }
+
+      .pull-right {
+          position:absolute; // logg inn-knapp
+          right:0;
+          padding-top:4px;
+     }
+    }
+} // siteheader end
+
+.site-coltrols-toolbar { // sitter innenfor .siteheader
+      background: @gray-darker;     
+      min-height:42px;
+      
+       a, .link-btn {
+          font-size: @em-as-12px;
+          color:#fff;
+          padding: 12px 24px; // selve navbaren
+        }    
+  }
+
+.sitelogo-small {
+  display:none;
+  img {
+    max-width:50%;
+  }
+}
+
+@media (max-width: (@screen-small)) { 
+	.site-coltrols-toolbar {
+		display:none;
+	}
+	.sitelogo-large {
+		display:none;
+	}
+	.sitelogo-small {
+		display: block;
+	}
+}
+
+
+.sitelogo {
+  text-align:center;
+  padding:15px 0 18px;
+  background-color: #fff;
+  border-bottom:1px solid @gray-light;
+  a {
+    text-decoration: none;
+    display: inline-block;
+      }
+  }
+
+
+
+.text-size-tooltip {
+    
+    padding: 16px 24px;
+    position: absolute;
+    top: 116%;
+    background-color: #000000;
+    color: #ffffff;
+    z-index: 9;
+    left: 25%;
+    text-align: left;
+    
+    p {
+        font-size: @em-as-30px;
+        font-weight: bold;
+        margin: 0;
+    }
+    span {
+        .up-arrow(9px, 6px, 6px, #000000); // mixin
+        position: absolute;
+        right: 50%;
+        top: -8px;
+    }
+}
+
+
+
+// Dropdown - fra collapse-dropdown.less
+//-------------------
+
+
+.dropup,
+.dropdown {
+	position:relative;
+}
+
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+	outline:0;
+}
+
+.caret {
+	display:inline-block;
+	width:0;
+	height:0;
+	vertical-align:top;
+	border-top: 4px solid #fff; 
+	border-right:4px solid transparent;
+	border-left:4px solid transparent;
+	content:"";
+}
+
+.dropdown .caret{
+	margin-top:6px;
+	margin-left:4px;
+}
+
+.dropdown-menu {
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:1000;
+    display:block;
+    float:left;
+    text-align: left; 
+    width:100%;
+    padding:5px 0;
+    margin: 0;
+    list-style:none;
+    background-color:@gray-darker;
+    -webkit-background-clip:padding-box;
+    -moz-background-clip:padding;
+    background-clip:padding-box;
+}
+
+.dropdown-menu.pull-right {
+	right:0;
+	left:auto;
+}
+
+.dropdown-menu .divider {
+	height:1px;
+	margin:9px 1px;
+	overflow:hidden;
+	background-color:@gray-darker;
+	border-bottom:1px solid #000;
+}
+
+.dropdown-menu>li>a {
+	display:block; 
+	padding: 3px 0 3px 27px;
+	clear:both;
+	font-weight:normal;
+	line-height:20px;
+	color:#ffffff;
+	white-space:nowrap;
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-submenu:hover>a,
+.dropdown-submenu:focus>a { 
+	text-decoration:none;
+	color:@blue-light;
+}
+
+.dropdown-menu > li.active > a:after { 
+	.bullet-point(2px, @blue-light, 13%, 40%); // mixin
+	text-decoration:none;
+	outline:0;
+}
+
+.dropdown-menu>.disabled>a,
+.dropdown-menu>.disabled>a:hover,
+.dropdown-menu>.disabled>a:focus{
+	color:@gray-darker;
+}
+
+.open>.dropdown-menu{
+	display:block;
+}
+
+.dropdown-submenu{
+	position:relative;
+}

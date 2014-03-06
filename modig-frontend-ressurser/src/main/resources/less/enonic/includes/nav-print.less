@@ -1,0 +1,193 @@
+//
+// Basic print styles
+// --------------------------------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+
+@media print {
+
+  * {
+    text-shadow: none !important;
+    color: #000 !important; // Black prints faster: h5bp.com/s
+    background: transparent !important;
+    box-shadow: none !important;
+    line-height: 1.25;
+    font-size: 102%;
+    //font-family: "Arial", Times, serif;
+  }
+  
+  p {
+    font-weight: 400;   
+  }
+  h1, h2 ,h3 {
+    font-weight: 600;   
+  }
+
+  a,
+  a:visited, h2 a {
+    text-decoration: underline;
+    color: @blue !important;
+  }
+
+  a[href]:before { //TODO denne gjør noe med breadcrumbs i print
+    //content: " (" attr(href) ")";
+    content: none !important;
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  // Don't show links for images, or javascript/internal links
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group; // h5bp.com/t
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 60% !important;
+  }
+
+  @page {
+    margin: .6cm .5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+
+  // Bootstrap components
+  .navbar {
+    display: none;
+  }
+  .table {
+    td,
+    th {
+      background-color: #fff !important;
+    }
+  }
+  .btn,
+  .dropup > .btn {
+    > .caret {
+      border-top-color: #000 !important;
+    }
+  }
+  .label {
+    border: 1px solid #000;
+  }
+
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table-bordered {
+    th,
+    td {
+      border: 1px solid #ddd !important;
+    }
+  }
+
+
+  //
+  // Custom print styles
+  // --------------------------------------------------
+  //
+
+  .sitenav, .sitefooter, .about-site, .site-coltrols-toolbar, .topnavsection-wrapper, .toolbar, .table-of-contents, .topnavsection, .hero-banner, .related-content {
+      display: none !important;
+  }
+  #ice-panel {
+    display: none;   
+  }
+  #maincontent {
+    .breadcrumbs a {
+        border-bottom: 1px solid @blue;
+    }
+    .col-lg-8 {
+       width: 100%;
+    }
+  }
+  .sitelogo {
+    padding: 0 !important;
+    padding-bottom: 5px !important;
+    text-align: left !important;
+    
+    img {
+        width: 40% !important;
+        height: auto !important;
+    }
+  }
+  .accordion-body {
+       display: block !important;
+       clear: left;
+  }
+  .page-head .breadcrumbs {
+    margin-bottom: -10px !important;
+  }
+  
+  #maincontent {
+     
+     .maincontent {
+         padding: 10px !important;
+         padding: 25px 0 !important;
+     
+        .full-story {
+            padding: 0 !important;
+
+            header {
+                margin-bottom: 0;
+                h1 {
+                    margin-bottom: 8px; 
+                }
+            }
+            .preface {
+                margin-bottom: 12px !important;
+                padding-bottom: 12px !important;   
+            }
+        }
+    }
+  }
+  
+  .content-submenu {
+    display:none !important;
+  }
+
+  article { // Bare på innholdsvisningssider?
+    
+    .article-body {
+        
+        margin-bottom: 20px !important;
+        a {
+            text-decoration: underline;
+            text-decoration-style: solid;
+            color: @blue;   
+        }
+    }
+  }
+  
+  #nav-nvv {
+      display: none !important;   
+  }
+}

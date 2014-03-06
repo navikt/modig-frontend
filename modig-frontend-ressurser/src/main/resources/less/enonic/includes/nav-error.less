@@ -1,0 +1,50 @@
+// ERROR FEILSIDE 404
+//--------------------------------------------------------------------
+
+.error-container {
+    padding:60px 0;
+    text-align:center;
+    h1 {
+        color:#cbc5c3;
+        font-weight: normal;
+        text-transform: uppercase;
+        padding-top:155px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-image: url('gfx/icons/utropstegn_stor.png'); 
+        //background-image: url('gfx/icons/utropstegn_stor.svg'); 
+    }
+
+    .meta {
+        a {
+         position: relative;
+         display: inline-block;   
+         padding-left:30px;
+         &:before {
+                position:absolute;
+                left:13px;
+                top:47%;
+                border:2px solid #857B71;
+                border-radius: 2px;
+                content: " ";
+                display:inline-block;
+
+              }
+        }
+    }
+    .btn {
+        background: #008fc4;
+        color:@gray-lighter;
+        display:inline-block;
+        padding:10px 30px;
+        margin-bottom:24px; // 38 totalt. p har 14 px.
+    }
+    .decorated {
+        margin-bottom:38px;
+        &:after {
+            margin-top:38px;
+        }
+    }
+   
+    
+}

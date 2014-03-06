@@ -1,0 +1,93 @@
+//
+// Scaffolding ("general")
+// --------------------------------------------------
+
+.pagewrapper {
+  height:auto;
+  min-height:100%;
+  margin-bottom:-184px;
+  padding-bottom:184px;
+}
+
+.maincontent { 
+    padding-bottom:60px; // bare på desktop? Nyttig å vite, Nyheter og Snarveier blir klint nedi footeren 
+    padding-top:20px;
+}
+
+
+
+@media (min-width: @screen-large) { 
+    .maincontent {
+        padding-top:60px; // bare på desktop?
+    }
+}
+
+
+div[id*="marker-"]:last-of-type .inner-row, // enonic portlet i ICE mode har id=marker-*
+.inner-row + .inner-row:last-of-type { // hack for å få alt riktig i ICE mode OG vanlig "mode"
+  margin-bottom:0; 
+}
+
+
+.primary { // "loud", hvit bakgrunn // samme som .full-story. Brukes kun på A-Å listeside
+  background:#fff;
+}
+
+article.primary {
+  padding:2em;
+}
+
+.navigator { // WiN
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+
+// MEGA HERO BANNER  (temporær infoboks har egne stiler i beta.less)
+//--------------------------------------------------------------------
+.hero-banner { 
+  text-align: center;
+  border-bottom:1px solid @gray-light;
+  
+  &.nighttime {
+    background: #c7d5d3;
+    background: -moz-linear-gradient(top, #808c89, #c8d6d4);
+    background: -webkit-linear-gradient(top, #808c89, #c8d6d4);
+    background: linear-gradient(top, #808c89, #c8d6d4);
+  }
+  .container { 
+    max-width:1024px; // Bildet er 1024px bredt
+    position:relative;
+  }
+}
+
+
+@media (max-width: @screen-small)  { // MINDRE ENN 620px
+  .hero-banner {
+    display:none !important;
+  }
+}
+
+
+@media (max-width: @screen-medium) {
+    .hero-link {
+      height: auto;
+      padding-bottom:3em;
+  }
+ 
+ }
+
+
+@media (max-width: @screen-xs) { 
+  .hero-link {
+    background-position:center 1em;
+    padding-bottom:1em;
+    p {
+      display: none;
+    }
+    .decorated:after {
+      display:none;
+    }
+  }
+}
