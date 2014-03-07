@@ -6,7 +6,7 @@
 		"js/",
 		"js/bootstrap/", "js/bootstrap/jquery/",
 		"js/modig/", "js/modig/felles/", "js/modig/jquery/",
-		"js/enonic/", "js/enonic/libs/", "js/enonic/libs/jquery/", "js/enonic/libs/megamenu/",
+		"js/enonic/", "js/enonic/libs/", "js/enonic/libs/megamenu/", "js/enonic/libs/jquery/",
 		"less/",
 		"less/bootstrap/",
 		"less/modig/", "less/modig/ekstern/", "less/modig/felles/",
