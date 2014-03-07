@@ -48,7 +48,9 @@
 		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "html5.js" },
 		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "html5.min.js" },
 		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "underscore.js" },
-		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "underscore-min.js" }
+		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "underscore-min.js" },
+
+        { "fromDir": "/resources/js/enonic/libs/", "toDir": "/generated-resources/js/modig/", "file": "jQuery-accessibleMegaMenu.js" }
 	],
 
 	"concatFiles": [
