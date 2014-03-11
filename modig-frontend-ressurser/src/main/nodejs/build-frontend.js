@@ -31,6 +31,7 @@ function clean() {
 			console.log('Sletting av generated-resources OK!');
 		}
 	} catch (err) {
+		console.error(err);
 		throw(err);
 	}
 	for (var i = 0; i < files.length; i++) {
@@ -166,7 +167,7 @@ function readConfigFile(file) {
 		'utf-8',
 		function (err, data) {
 			if (err) {
-				console.log('Error: ' + err);
+				console.error(err);
 				return;
 			}
 			data = JSON.parse(data);
