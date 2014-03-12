@@ -98,6 +98,7 @@ import static no.nav.modig.frontend.FellesResources.JQUERY_UI_DATEPICKER;
 import static no.nav.modig.frontend.FellesResources.JQUERY_VALIDATE;
 import static no.nav.modig.frontend.FellesResources.KNAPPER_LESS;
 import static no.nav.modig.frontend.FellesResources.MIXINS_LESS;
+import static no.nav.modig.frontend.FellesResources.MODERNIZR_RESOURCE;
 import static no.nav.modig.frontend.FellesResources.MODUS_LESS;
 import static no.nav.modig.frontend.FellesResources.NAV_DATEPICKER;
 import static no.nav.modig.frontend.FellesResources.RESET_LESS;
@@ -146,7 +147,7 @@ public class FrontendModules {
                     DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS).done();
 
     public static final FrontendModule ENONIC = new FrontendModule.With()
-            .scripts(NAV_LIBS, NAV_GLOBAL, NAV_CAROUSEL, NAV_CONTENT, NAV_ACCORDION,
+            .scripts(MODERNIZR_RESOURCE, NAV_LIBS, NAV_GLOBAL, NAV_CAROUSEL, NAV_CONTENT, NAV_ACCORDION,
                     MATCH_MEDIA, JQUERY_MEGA_MENU)
             .less(NAV_VARIABLES_LESS, NAV_MIXINS_LESS, NAV_NORMALIZE_LESS, NAV_GRID_LESS,
                     NAV_TYPOGRAPHY_LESS, NAV_TABLE_LESS, NAV_BUTTONS_LESS, NAV_BREADCRUMB_LESS, NAV_MEGAMENU_LESS,
