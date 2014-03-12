@@ -5,7 +5,7 @@ if (args.length < 3) {
 }
 console.log('Arguments: ', args);
 
-var baseFolder = args[2] + '/src/main/';
+var baseFolder = args[2] + '/src/main';
 var fs      = require('fs');
 var util    = require('util');
 var remove  = require('remove');
