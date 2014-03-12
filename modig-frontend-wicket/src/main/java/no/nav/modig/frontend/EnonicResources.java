@@ -7,7 +7,7 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 
 class EnonicResources  {
 
-    static final JavaScriptResourceReference NAV_LIBS = jsReference("enonic/nav-libs.js");
+    static final JavaScriptResourceReference NAV_LIBS = new JQueryDependentResourceReference("enonic/nav-libs.js");
     static final JavaScriptResourceReference NAV_GLOBAL = jsReference("enonic/nav-global.js");
     static final JavaScriptResourceReference NAV_CAROUSEL = jsReference("enonic/nav-carousel.js");
     static final JavaScriptResourceReference NAV_CONTENT = jsReference("enonic/nav-content.js");
