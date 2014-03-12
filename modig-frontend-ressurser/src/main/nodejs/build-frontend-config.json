@@ -61,7 +61,7 @@
 		{ "fromDir": "/resources/js/", "toFile": "/generated-resources/js/enonic/navno.js",
 			"files": ["jquery/jquery-1.10.2.js", "enonic/nav-libs.js", "enonic/nav-global.js",
                 "enonic/nav-carousel.js", "enonic/nav-content.js", "enonic/nav-accordion.js",
-                "enonic/libs/matchmedia.js", "enonic/libs/megamenu/jQuery-accessibleMegaMenu.js"] },
+                "enonic/libs/matchmedia.js", "enonic/libs/megamenu/jquery-accessibleMegaMenu.js"] },
 
 		{
 			"fromDir": "/resources/less/felles/", "toFile": "/generated-resources/less/modig/felles.less",
