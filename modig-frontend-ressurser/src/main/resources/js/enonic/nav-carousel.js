@@ -2,6 +2,8 @@
 //   Carousel stuff   \\
 // ------------------ \\
 
+var navno = window.navno || {};
+
 navno.displayCarousel = function (numArticles) {
   
   var indicators = $('.carousel-indicators');

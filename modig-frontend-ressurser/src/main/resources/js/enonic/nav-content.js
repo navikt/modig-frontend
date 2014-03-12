@@ -2,6 +2,8 @@
 //  ScrollTop stuff   \\
 // ------------------ \\
 
+var navno = window.navno || {};
+
 (function initFactsheetClickScroll() {
   $('nav.table-of-contents li a').click(function (e) {
     var fromLink = $(this);

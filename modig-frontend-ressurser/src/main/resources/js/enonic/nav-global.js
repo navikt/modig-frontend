@@ -4,6 +4,8 @@
  * On global language selector click
  */
 
+var navno = window.navno || {};
+
 (function globalLanguageSelector() {
   
   $('.site-coltrols-toolbar ul li.dropdown').click(function (e) {
