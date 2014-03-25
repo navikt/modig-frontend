@@ -25,7 +25,7 @@
             <resource>
                 <filtering>false</filtering>
                 <directory>src/main/generated-resources</directory>
-                <targetPath>META-INF/resources</targetPath>
+                <targetPath>META-INF/resources/statisk</targetPath>
             </resource>
         </resources>
 
