@@ -25,6 +25,7 @@
             <resource>
                 <filtering>false</filtering>
                 <directory>src/main/generated-resources</directory>
+                <targetPath>META-INF/resources</targetPath>
             </resource>
         </resources>
 
