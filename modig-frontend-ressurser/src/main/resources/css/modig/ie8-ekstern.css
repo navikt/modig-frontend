@@ -1,0 +1,232 @@
+.input-block-level {
+    min-height: 159.6px;
+}
+
+span,
+p,
+div,
+th,
+td,
+select,
+input,
+textarea {
+    font-size: 14px;
+}
+
+a {
+    font-size: 14px;
+}
+
+.mini {
+    font-size: 12.6px;
+}
+
+.liten {
+    font-size: 14px;
+}
+
+.normal {
+    font-size: 15.96px;
+}
+
+.medium {
+    font-size: 17px;
+}
+
+.ingress {
+    font-size: 18.48px;
+    line-height: 25.2px !important;
+}
+
+.stor {
+    font-size: 25.2px;
+}
+
+.diger {
+    font-size: 30.8px;
+}
+
+[class*="robust"] {
+    font-size: 15.96px;
+}
+
+.dropdown-menu li a {
+    line-height: 21px;
+}
+
+.dropdown .nav-header {
+    font-size: 11.9px;
+    line-height: 21px;
+}
+
+[class*=knapp-],
+.dropdown-toggle {
+    font-size: 15.96px;
+}
+
+.knapp-liten,
+.knapp-hoved-liten {
+    padding: 5.6px 14px 7px;
+    font-size: 14px;
+}
+
+.knapp-mini {
+    padding: 5.6px 11.2px;
+}
+
+.dropdown-menu .divider {
+    margin: -4.2px 1px;
+}
+
+.dropdown-menu > li > a {
+    line-height: 19.6px;
+}
+
+[class*="panel-"] p {
+    line-height: 19.6px;
+}
+
+[class*="panel-"] p.ingress {
+    margin: 16.8px 0;
+}
+
+[class*="panel-mini"] .footer {
+    height: 84px;
+}
+
+[class*="panel-mini"] .footer [class*="knapp"] {
+    margin-bottom: 14px;
+}
+
+footer.footer p.copy {
+    font-size: 11.2px;
+}
+
+.form-linje {
+    padding: 5px 7px;
+}
+
+form label {
+    font-size: 11.2px !important;
+}
+
+form label span {
+    font-size: 11.2px !important;
+}
+
+form.horisontal label {
+    padding: 14px 0 7px;
+}
+
+form.horisontal label input,
+form.horisontal label select,
+form.horisontal label textarea {
+    margin-left: 14px;
+}
+
+form.horisontal label span {
+    font-size: 11.9px;
+    width: 114px;
+}
+
+form {
+    margin: 0 0 19.6px;
+}
+
+label,
+input,
+select,
+textarea {
+    line-height: 19.6px;
+}
+
+.innstillinger-innlogget .liste-vannrett {
+    margin-top: 12px;
+}
+
+.innstillinger-innlogget .liste-vannrett a {
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 8.4px 7px 8.4px;
+}
+
+.innstillinger-innlogget .liste-vannrett li a:before {
+    padding-right: 14px;
+    content: "•";
+    list-style-type: none;
+}
+
+.innstillinger-innlogget .liste-vannrett li:first-child a:before {
+    content: "";
+}
+
+.innlogget-navn:before {
+    content: url(../img/dude.png) no-repeat left center;
+}
+
+/* fiks for at margin: 0 auto skal midtstille elementet */
+.tilbakemelding .ekspandert .knapp-hoved {
+    width: 8em;
+}
+
+[class*="innstillinger"] .tooltip-inner {
+    font-size: 30.8px;
+}
+
+[class*="ikon-soknader"] {
+    background-image: url(../img/soknad.png);
+    background-position: center 0;
+}
+
+[class*="strek-ikon-soknader-klikk"], [class*="ikon-soknader-klikk-strek"] {
+    background-image: url(../img/soknad_rod.png);
+    background-position: center 0;
+}
+
+[class*="ikon-profil"] {
+    background-image: url(../img/brukerprofil.png);
+    background-position: center 0;
+}
+
+[class*="strek-ikon-profil-klikk"], [class*="ikon-profil-klikk-strek"] {
+    background-image:  url(../img/brukerprofil_rod.png);
+    background-position: center 0;
+}
+
+[class*="ikon-feil"] {
+    background-image: url(../img/utropstegn_sirkel.png);
+    background-position: center 0;
+}
+
+form input[type="radio"] + label {
+    background: none;
+}
+
+form input[type="radio"]:checked + label {
+    background: none;
+}
+
+form input[type="checkbox"] + label {
+    background: none;
+}
+
+form input[type="checkbox"]:checked + label {
+    background: none;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    position: relative;
+}
+
+form input[type="radio"] {
+    vertical-align: top;
+}
+
+form input[type="radio"] + label,
+form input[type="checkbox"] + label {
+    padding-left: 0;
+}

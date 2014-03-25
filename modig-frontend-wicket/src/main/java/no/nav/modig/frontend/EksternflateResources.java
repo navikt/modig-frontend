@@ -8,10 +8,10 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 
 class EksternflateResources {
 
-	static final PackageResourceReference FOOTER_LESS = lessReference("ekstern/footer.less");
-	static final PackageResourceReference PANEL_LESS = lessReference("ekstern/panel.less");
-	static final PackageResourceReference EKSTERN_LESS = lessReference("ekstern/ekstern.less");
-	static final CssResourceReference IE8_EKSTERN_CSS = cssReference("ie8-ekstern.css");
+	static final PackageResourceReference FOOTER_LESS = lessReference("modig/footer.less");
+	static final PackageResourceReference PANEL_LESS = lessReference("modig/panel.less");
+	static final PackageResourceReference EKSTERN_LESS = lessReference("modig/ekstern.less");
+	static final CssResourceReference IE8_EKSTERN_CSS = cssReference("modig/ie8-ekstern.css");
 
 
 	private static CssResourceReference cssReference(String path) {

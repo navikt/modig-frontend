@@ -1,0 +1,128 @@
+[class*="sak-"] [class*="panel-"] {
+	margin-right: 2%;
+}
+
+[class*="sak-"] [class*="panel-"]:last-child {
+	margin-right: 0;
+}
+
+.sak-kvart [class*="panel-"] {
+	width: 23%;
+}
+
+.sak-tredel [class*="panel-"] {
+	width: 31.3333%;
+}
+
+.sak-halv [class*="panel-"] {
+	width: 48%;
+}
+
+.sak-totredel [class*="panel-"] {
+	width: 64.6666%;
+}
+
+.sak-trekvart [class*="panel-"] {
+	width: 73%;
+}
+
+.sak-hel [class*="panel-"] {
+	width: 100%;
+}
+
+.rad {
+	padding: 30px;
+}
+
+[class*="rad"] {
+	border-bottom: 1px solid @borderColorLight;
+}
+
+.rad-logo {
+	background: @white;
+	text-align: center;
+	vertical-align: middle;
+	padding: 15px 30px 18px;
+}
+
+.rad-belyst {
+	background-color: @white;
+	padding: 30px;
+}
+
+.rad-invertert {
+	background-color: @modiaBackground;
+	color: @grayLight;
+	h1, h2, h3, h4, h5, h6, p, div, span {
+		color: @grayLight;
+	}
+    [class*="panel-mini"] {
+        border: none;
+    }
+}
+
+[class*="panel-"] {
+	display: inline-block;
+	padding: 1.5% 2% 3%;
+	border: 1px solid @borderColorLight;
+	&[class*="-belyst"] {
+		background-color: @white;
+		color: @grayDark;
+		h1, h2, h3, h4, h5, h6, p, div, span {
+			color: @grayDark;
+		}
+	}
+	&[class*="-dus"] {
+		background-color: @borderColorLight;
+	}
+	&[class*="-klikk"] {
+		background-color: @white;
+		text-decoration: none;
+		color: @textColor;
+		cursor: pointer;
+		&:hover {
+			background-color: @bodyBackground;
+		}
+		&:visited {
+			color: @textColor;
+		}
+	}
+	p {
+		margin: 0;
+		line-height: 1.4rem;
+		&.ingress {
+			margin: 1.2rem 0;
+		}
+	}
+}
+
+[class*="panel-mini"] {
+	text-align: center;
+	padding: 1.5% 2% 3%;
+	border: 1px solid @borderColorLight;
+	[class*="ikon-"] {
+		margin-top: 4px;
+	}
+	[class*="robust"]:not([class*="ikon-"]) {
+		margin-top: 14px;
+	}
+	.footer {
+		position: absolute;
+		height: 6rem;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		[class*="knapp"] {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+[class*="panel-standard"] {
+	text-align: left;
+	padding: 0;
+	border: none;
+	&[class*="-belyst"] {
+		padding: 1.5% 2% 1.5% 3%;
+	}
+}

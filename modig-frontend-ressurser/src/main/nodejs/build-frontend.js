@@ -6,12 +6,12 @@ if (args.length < 3) {
 console.log('Arguments: ', args);
 
 var baseFolder = args[2] + '/src/main';
-var fs      = require('fs');
-var util    = require('util');
-var remove  = require('remove');
-var ugly    = require('uglifyjs');
-var less    = require('less');
-var config  = readConfigFile('/nodejs/build-frontend-config.json');
+var fs = require('fs');
+var util = require('util');
+var remove = require('remove');
+var ugly = require('uglifyjs');
+var less = require('less');
+var config = readConfigFile('/nodejs/build-frontend-config.json');
 
 clean();        // SLETTE OG GJENOPPRETTE GENERATED-RESOURCES
 copyFolders();  // KOPIERE KATALOGER
@@ -34,6 +34,7 @@ function clean() {
 		console.error(err);
 		throw(err);
 	}
+	if (!files) return;
 	for (var i = 0; i < files.length; i++) {
 		var file = files[i];
 		fs.mkdirSync(folder + file);
@@ -42,6 +43,7 @@ function clean() {
 
 function copyFolders() {
 	var tasks = config.copyFolders;
+	if (!tasks) return;
 	for (var i = 0; i < tasks.length; i++) {
 		var task = tasks[i];
 		copyFolder(baseFolder + task.fromDir, baseFolder + task.toDir);
@@ -50,6 +52,7 @@ function copyFolders() {
 
 function copyFolder(fromDir, toDir) {
 	var files = fs.readdirSync(fromDir);
+	if (!files) return;
 	for (var i = 0; i < files.length; i++) {
 		var file = files[i];
 		copyFile(fromDir, toDir, file);
@@ -58,6 +61,7 @@ function copyFolder(fromDir, toDir) {
 
 function copyFiles() {
 	var tasks = config.copyFiles;
+	if (!tasks) return;
 	for (var i = 0; i < tasks.length; i++) {
 		var task = tasks[i];
 		copyFile(baseFolder + task.fromDir, baseFolder + task.toDir, task.file);
@@ -74,6 +78,7 @@ function copyFile(fromDir, toDir, file) {
 
 function concatFiles() {
 	var tasks = config.concatFiles;
+	if (!tasks) return;
 	for (var i = 0; i < tasks.length; i++) {
 		var task = tasks[i];
 		concat(baseFolder + task.fromDir, baseFolder + task.toFile, task.files);
@@ -84,6 +89,7 @@ function concat(fromDir, toFile, files) {
 	if (files.indexOf('fs.readdirSync') === 0) {
 		files = eval(files);
 	}
+	if (!files) return;
 	var fullfile = '';
 	for (var i = 0; i < files.length; i++) {
 		var file = files[i];
@@ -94,6 +100,7 @@ function concat(fromDir, toFile, files) {
 
 function uglifyFiles() {
 	var tasks = config.uglify;
+	if (!tasks) return;
 	for (var i = 0; i < tasks.length; i++) {
 		var task = tasks[i];
 		uglifyConcatenated(baseFolder + task.fromFile, baseFolder + task.toFile);
@@ -102,6 +109,7 @@ function uglifyFiles() {
 
 function uglifySingles(fromDir, toDir) {
 	var files = fs.readdirSync(fromDir);
+	if (!files) return;
 	for (var i = 0; i < files.length; i++) {
 		var file = files[i];
 		var ind = file.indexOf('.js');
@@ -126,6 +134,7 @@ function makeUgly(code) {
 
 function removeFiles() {
 	var tasks = config.remove;
+	if (!tasks) return;
 	for (var i = 0; i < tasks.length; i++) {
 		remove.removeSync(baseFolder + tasks[i]);
 	}
@@ -133,6 +142,7 @@ function removeFiles() {
 
 function runLessFiles() {
 	var tasks = config.runLess;
+	if (!tasks) return;
 	for (var i = 0; i < tasks.length; i++) {
 		var task = tasks[i];
 		runLess(baseFolder + task.fromDir, baseFolder + task.mainFile, baseFolder + task.builtFile);
@@ -163,7 +173,7 @@ function runLess(lessDir, lessFile, cssFile) {
 
 function readConfigFile(file) {
 	return JSON.parse(fs.readFileSync(
-		baseFolder + file,
+			baseFolder + file,
 		'utf-8',
 		function (err, data) {
 			if (err) {

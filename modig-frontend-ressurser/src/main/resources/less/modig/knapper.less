@@ -1,0 +1,99 @@
+[class*=knapp-], .dropdown-toggle {
+	display: inline-block;
+	color: @grayDark;
+	cursor: pointer;
+	padding: 11px 40px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: Modus, Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	font-size: 1.14rem;
+	vertical-align: middle;
+	.border-radius(1px);
+	border: 1px solid @borderColorLight;
+	border-bottom: 1px solid #b6b6b6;
+	.buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark);
+	&:hover, &:focus {
+		.buttonBackground(#d3d3d3, #c3c3c3, @grayDark);
+		text-decoration: none;
+	}
+	.pil {
+		display: inline-block;
+		vertical-align: top;
+		margin: 6px -4px 0 2px;
+		border-top: 6px solid @blue;
+		border-right: 6px solid transparent;
+		border-left: 6px solid transparent;
+		content: "";
+	}
+}
+
+[class*=knapp-hoved], [class*=knapp-nullstill] {
+	.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+	&:hover, &:focus {
+		.buttonBackground(darken(@btnPrimaryBackground, 10%), darken(@btnPrimaryBackgroundHighlight, 10%), #fff);
+	}
+}
+
+[class*=knapp-link] {
+	border-color: @blueLight;
+	background: @blueLight;
+	color: @white;
+	&:hover, &:focus {
+		border-color: @blueDark;
+		background: @blueDark;
+		color: @white;
+	}
+}
+
+[class*=knapp-lenke] {
+	padding: 0 0 0 2rem;
+	background: none;
+    color: @blue;
+    border: none;
+    background: none;
+    font-weight: bold;
+    text-transform: none;
+	&:hover, &:focus {
+		border-color: none;
+		background: none;
+		text-decoration: underline;
+		color: @blue;
+	}
+}
+
+
+
+[class*=-liten] {
+	padding: @paddingSmall;
+	font-size: @fontSizeSmall;
+	line-height: 1.4rem;
+}
+
+[class*=-mini] {
+	padding: @paddingMini;
+	font-size: @fontSizeMini;
+}
+
+[class*=knapp-uthevet] {
+	.buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+	&:hover, &:focus {
+		.buttonBackground(#635e5f, #504e4a, #fff);
+	}
+}
+
+[class*=knapp-advarsel] {
+	.buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+	&:hover, &:focus {
+		.buttonBackground(darken(@btnDangerBackground, 10%), darken(@btnDangerBackgroundHighlight, 10%), #fff);
+	}
+}
+
+[class*=knapp-deaktivert],[class*=knapp-][disabled=disabled] {
+	.buttonBackground(@btnBackground, #d9d9d9, #a3a3a3);
+	cursor: default;
+	&:hover, &:focus {
+		.buttonBackground(@btnBackground, #d9d9d9, #a3a3a3);
+	}
+}
