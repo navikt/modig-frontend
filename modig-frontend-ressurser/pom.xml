@@ -5,7 +5,7 @@
     <parent>
         <groupId>no.nav.modig</groupId>
         <artifactId>modig-frontend</artifactId>
-        <version>1.1.22-SNAPSHOT</version>
+        <version>1.1.22</version>
     </parent>
 
     <artifactId>modig-frontend-ressurser</artifactId>
@@ -92,10 +92,9 @@
                         <artifactId>maven-antrun-plugin</artifactId>
                         <version>1.7</version>
                         <configuration>
-                            <target name="UploadToDev"
-                                    description="Laster opp de genererte ressursene til Enonics filsystem i utviklingsmiljøet.">
+                            <target name="UploadToDev" description="Laster opp de genererte ressursene til Enonics filsystem i utviklingsmiljøet.">
                                 <scp todir="admin@portal-admin-u1.adeo.no:/dav/scp-test/" password="password" trust="true">
-                                    <fileset dir="${basedir}/src/main/generated-resources/"/>
+                                    <fileset dir="${basedir}/src/main/generated-resources/" />
                                 </scp>
                             </target>
                         </configuration>
