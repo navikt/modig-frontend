@@ -1,14 +1,54 @@
 // Link lists
 //-------------------------------------
 
-
 .link-list, .link-list-meta {
   margin:0;
   padding:0;
   list-style: none;
   a {
-    font-size:@font-size-base-em;
+    font-size: @em-as-14px;
+    @media (max-width: (@screen-small)) {
+        font-size: @em-as-16px;   
+    }
   }
+}
+
+.link-list.news-mobile {
+    @media (max-width: @screen-small) {
+       li {
+           a {
+                display: inline-block;
+                padding-right: 0;
+                @media (max-width: (@screen-small)) {
+                    padding: 0 15px 12px 3px; // Relativ TODO?
+                }
+                time {
+                    display: block;
+                    padding: 12px 0 2px 0;
+                    margin-right: 10px;
+                    font-size: @em-as-12px;
+                }
+                
+                &:after {
+                    @media (max-width: @screen-small) {
+                        top: 39%;
+                    } 
+                }
+            }
+            span {
+                margin: 0 15px;
+            }
+            
+            &:first-of-type {
+                a {
+                    &:after {
+                        top: 39%;
+                    }
+                }
+            }
+       }
+       
+    }
 }
 
 .link-list li {
@@ -17,9 +57,12 @@
         a {
         display: block;
         color: @text-color;
-        padding: 10px 15px 10px 0; // Relativ TODO?
+        padding: 10px 15px 10px 3px;
+        @media (max-width: (@screen-small)) {
+            padding: 12px 15px 12px 3px; // Relativ TODO?  
+        }
         text-align: left;
-        &:hover,&:focus {
+        &:hover,&:focus, &:hover time, &:focus time {
           color: @link-color;
           text-decoration: none;
         }
@@ -31,7 +74,7 @@
             border-left: 6px solid @blue;
             border-top: 6px solid transparent;
             position: absolute;
-            right: 2px;
+            right: 4px;
             top: 14px; // TODO kontrollsjekke avstand
         }
     }
@@ -50,10 +93,13 @@
 
 // Nyhetsliste med pubdate, midtstilt
 .link-list-meta {
+    @media (max-width: @screen-small) {
+        text-align: left;
+    }
   text-align: center;
   time {
     display:block;
-   font-size:@em-as-12px;
+    font-size:@em-as-12px;
   }
   li {
     margin-bottom: 20px; // TODO kontrollsjekke avstand
@@ -67,6 +113,27 @@
     }
   }
 
+}
+
+.linklists-container {
+    @media (max-width: (@screen-small)) {
+        .col-md-4 { 
+            margin-bottom: 40px; 
+            &:last-child {
+             margin-bottom: 0;   
+            }
+        }
+        padding: 0 1.2em;    
+    }
+    @media (min-width: (@screen-medium)) {
+        .col-md-4 {  
+            //float: none;
+            //display: inline-block;
+            //vertical-align: top;
+            //margin-left: auto; 
+            //margin-right: auto;
+        }   
+    }
 }
 
 
@@ -175,48 +242,63 @@ M: litt mindre padding og font-size (font 12 px)
 [class*='boxcol-'] {
     float: left;
 }
-.boxcol-4 {
-    width: 25%;
-    border-bottom: 1px solid @gray-light;
-    border-right: 1px solid @gray-light;
-    background-color: #fff;
-    display: table;
-    vertical-align: middle;
-    height: 72px;
-    .box-sizing(border-box);
-    position: relative;
-    padding-right: 4.5%;
-    
-    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4)
-    {
-       border-top: 1px solid @gray-light;
-    }
-    &:after {
-        content: " " ;
-        clear:both;
-        display: block;
-        border-bottom: 5px solid transparent;
-        border-left: 5px solid @blue;
-        border-top: 5px solid transparent;
-        position: absolute;
-        right: 8%;
-        top: 26px;       
-    }
-    &:hover {
-        background-color: @gray-lighter;
-        background-image: url('gfx/icons/btn_hover.png'); // parameterize?
-        background-repeat: no-repeat;
-        background-position: 96% 50%;
-        text-decoration: none;
-        
-        span {
-            background-color: @gray-lighter;
-            color: @link-color;       
-        }
-        
-        &:after { display: none; }
-    }
-}
 //
 
-
+// Publiseringskalender
+.events-list {
+    table {
+       width: 100%;  
+       tr {
+           border-bottom: 1px solid @gray-light;
+           &:first-child td {
+                padding-top: 1.2em;   
+           }
+        td {
+            padding: 1.4em 0;
+            
+            &:first-child {
+                width: 64px;
+            }
+            
+            time {
+                display: block;
+                padding: 0.75em 0;
+                border-radius: 4em;
+                background-color: @gray-light; //#BDBCBB;
+                text-align: center;
+                
+                span {
+                    display: block;
+                    font-family: Modus, Arial, Helvetica;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    
+                    &:last-child {
+                        margin-top: -3px;   
+                    }
+                }
+            }
+        }
+        td.event-info { 
+            padding-left: 1em;
+            span {
+                display: block;
+                text-transform: uppercase;
+                //color: #BDBCBB;
+                font-size: @em-as-12px;
+            }
+            h2 {
+                font-size: @em-as-17px;
+                margin: 0;
+                font-family: Modus, Arial;
+                line-height: 1.25;
+            }
+        }
+      }
+    }
+}
+.events-pubtime {
+    text-align: center; 
+    margin-top: 38px;
+    font-size: @em-as-12px;
+}

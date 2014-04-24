@@ -54,25 +54,86 @@
 // Scroll to top link
 //-------------------
 
-/*.top-link-wrapper {
-    position: relative;
-    height: 2em;
-    background-color: @gray;
+// Show when user has scrolled down a bit.
+// Otherwise it will always show, in some cases when the whole page fits in the screen resolution (desktop/tablet frontpage)
+.contentpage .maincontent > .row { // Flytt senere
+    //margin-bottom: 60px;
+}
+.js .top-link-wrapper.hide-on-pageload {
+    display: none;   
+}
+
+.placeholder {
+    margin-bottom: 60px;
+    margin-top: -23px;
     
-    a {
-        border: 1px solid;
-        color: @gray-dark !important;
-        position: absolute;
-        top: -25px;
-        padding: 8px 18px;
-        font-size: @font-size-h4-rem;
-        margin-left: 45%;
-        
-        &:hover {
-            border: 1px solid;   
+    .top-link-wrapper {
+        position: relative;
+        background: transparent;
+        text-align: center;
+    
+        a {
+            display: inline-block;
+            cursor: pointer;
+            padding: 8px 34px 8px 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: Modus, Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 1.14em;
+            border: 1px solid @gray-light;
+            background: #fff url('gfx/icons/pil_til_topp.svg') 90% 15px no-repeat;
+            
+            &:hover, &:focus, &:active { 
+                color: #fff;
+                background: @blue url('gfx/icons/pil_til_topp_hvit.svg') 90% 15px no-repeat;
+            }
         }
     }
-}*/
+    .top-link-wrapper.sticky-top-link {
+        position: fixed;
+        bottom: 0;
+        margin: 0;
+        width: 100%;
+        left: 0;
+        padding: 10px 0;
+        background-color: #f1f1f1;
+        z-index: 10;
+       @media (min-width: @screen-small) {
+           margin-left: 2px;
+           margin-bottom: -1px;
+           padding-bottom: 11px;
+       }
+        a {
+            padding: 0 20px 0 0;
+            border: none;
+            background: url('gfx/icons/pil_til_topp.svg') right 7px no-repeat;
+            
+            &:hover, &:focus, &:active { color: @blue; background-color: #f1f1f1; text-decoration: underline; }
+            
+            @media (max-width: (@screen-small - 0.01)) {
+                padding: 8px 34px 8px 18px;
+                background: @gray-lighter url('gfx/icons/pil_til_topp.svg') 90% 14px no-repeat;
+                border: 1px solid @gray-light;
+                -webkit-box-shadow: 0 0 25px 0 @gray-light;
+                -moz-box-shadow: 0 0 25px 0 @gray-light;
+                box-shadow: 0 0 25px 0 @gray-light;
+            }
+        }
+        -webkit-box-shadow: 0 0 25px 0 @gray-light;
+        -moz-box-shadow: 0 0 25px 0 @gray-light;
+        box-shadow: 0 0 25px 0 @gray-light;
+        
+        @media (max-width: (@screen-small - 0.01)) {
+            background-color: transparent;
+            padding: 0;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+    }
+}
+
 
 
 

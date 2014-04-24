@@ -1,7 +1,18 @@
 
 // Breadcrumbs nav
 // ----------
+
+.page-head {
+    @media (min-width: @screen-small) and (max-width: (@screen-large - 0.01)) {
+        padding-left: 40px;   
+    }
+}
 .breadcrumbs {
+    
+    @media (max-width: (@screen-small - 0.01)) {
+        display: none;   
+    }
+    
     padding-top: 10px;    
     text-align: left;
     margin-bottom:-5px;
@@ -17,6 +28,14 @@
             border-bottom: 1px solid @blue;
             color:@blue;   
         }
+    }
+}
+.aligned-with-content {
+     @media (min-width: @screen-medium) {
+        margin-left: 17%;
+    }
+    @media (min-width: @screen-large) {
+        margin-left: 17.2%;
     }
 }
 

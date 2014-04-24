@@ -14,11 +14,22 @@
     padding-top:20px;
 }
 
-
+.img-svg-responsive {
+    display: block; 
+    max-height: 100%;
+}
 
 @media (min-width: @screen-large) { 
     .maincontent {
         padding-top:60px; // bare på desktop?
+    }
+}
+
+// Når det ikke er relatert innhold i høyre kolonne så sentreres innholdet
+// slik at vi ikke får venstrestilt innhold med kun 66.66% bredde
+.no-related-content {
+    @media (min-width: @screen-medium) {
+        margin-left: 16.6667%;
     }
 }
 
@@ -40,6 +51,21 @@ article.primary {
 .navigator { // WiN
     margin-bottom: 20px;
     display: block;
+}
+
+.selfservices-box-container {
+    @media (max-width: (@screen-small)) {
+        margin-bottom: 30px;
+        .hero-link-wrapper {
+            width: auto;
+            margin: @grid-gutter-width / 2;
+            margin-top: 0;
+            
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 
@@ -70,24 +96,20 @@ article.primary {
 }
 
 
-@media (max-width: @screen-medium) {
+@media (max-width: (@screen-small - 0.01)) {
     .hero-link {
       height: auto;
-      padding-bottom:3em;
-  }
- 
- }
-
-
-@media (max-width: @screen-xs) { 
-  .hero-link {
-    background-position:center 1em;
-    padding-bottom:1em;
-    p {
-      display: none;
-    }
-    .decorated:after {
-      display:none;
-    }
+      background-position:center 1em;
+      padding-bottom: 1.25em;
+      padding-top: 4.25em;
+      
+      p {
+        display: none;
+      }
+      .decorated:after {
+        display:none;
+      }
   }
 }
+
+//@media (max-width: @screen-xs) { .hero-link {}}

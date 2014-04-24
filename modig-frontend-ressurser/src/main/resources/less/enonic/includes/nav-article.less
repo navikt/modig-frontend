@@ -19,6 +19,9 @@
   margin-bottom:20px;
 }
 .tts-panel {
+    @media (max-width: (@screen-medium - 0.01)) {
+        display: none;   
+    }
     //background: transparent url('gfx/tts/hus_hover.png') no-repeat;
     background-color: #fff;
     position: relative;
@@ -106,7 +109,87 @@
       display: none; 
 }
 
+.no-js .mobile-linklist-related ul.init {
+    display: block;   
+}
+.js .mobile-linklist-related ul.init {
+    display: none;
+}
 
+
+.mobile-linklist-related.open .submenu-header {
+    background-color: #fff;
+    a:after {
+        .dropdown-indicator-expanded();
+    }
+}
+
+.mobile-linklist-related {
+    background-color: #fff;
+    margin-bottom: 28px;
+    .submenu-header {
+        background-color: @gray-lighter;
+        border: 1px solid @gray-light;
+        position: relative;
+        a {
+            padding: 12px 28px;
+            display: block;
+            text-decoration: none;
+            color: @gray-dark;
+            &:after {
+                .dropdown-indicator-collapsed();
+            }
+        }
+        h2 {
+         margin: 0;
+        }
+    }
+    nav {
+        position: relative;
+        overflow: hidden;
+        .transition(height .4s ease-in-out);
+        ul {
+            position: absolute;
+            padding: 24px 28px 27px 28px;
+            list-style: none;
+            border: 1px solid @gray-light; 
+            border-top: none;
+            width: 100%;
+            margin: 0;
+            
+            li {
+                position: relative;
+                padding: 12px 0;
+                &:first-child { 
+                    padding-top: 0;
+                    a.selected:after {
+                        top: 23%; 
+                    }
+                }
+                &:last-child { 
+                    padding-bottom: 0;
+                    a.selected:after {
+                        top: 60%;    
+                    }
+                }
+                a {
+                    color: @gray-dark;   
+                    text-decoration: none;
+                    display: block;
+                    &:active, &:hover {
+                        color: @blue;   
+                    }
+                }
+                a.selected {
+                    color: @blue;
+                    &:after {
+                        .bullet-point(3px, @blue, -15px, 44%);
+                    }
+                }
+            }
+        }      
+    }
+}
 
 .article-facts {
     background:#f1f1f1; // TODO variabel?
@@ -149,6 +232,11 @@
     vertical-align: top;
     margin-top: -3px;
     cursor: pointer;
+    z-index: 10;
+    
+    @media (max-width: (@screen-medium - 0.01)) {
+        margin-left: 0;
+    }
     
     >span {
         text-decoration: none;
@@ -225,7 +313,13 @@
 
 // Innholdsvisning (article: kan være nyhet, artikkel, faktaark mm)
 
-.full-article, .article-list {
+@media (max-width: (@screen-small - 0.01)) {
+    .contentpage .container.maincontent {
+        padding: 0 0 60px 0;
+    }
+}
+
+.full-article, .article-list, .events-list {
    padding: 40px 30px;
    background:#fff;
    header {
@@ -275,7 +369,7 @@
   header {
     margin-bottom: 0;
       h2 {
-      font-size:1.1em;
+      font-size: @em-as-17px;
       font-weight: 600; 
       margin-top: 24px; // spacing mot toolbar (lytt etc)
     }
@@ -347,7 +441,7 @@
         margin-bottom:0; // f.eks siste <p>
       }
    h2,.h2,h3,.h3,h4,.h4 { // TODO - skal alt være like stort!?
-        font-size:1.1em;
+        font-size: @em-as-17px;
         font-weight: 600; 
         margin: 28px 0 11px;
         text-transform: none;
@@ -355,6 +449,9 @@
     }
     .selected:after {
         .bullet-point(3px, @blue, -2%, 34%);
+        @media (max-width: (@screen-small - 0.01)) {
+            left: -12px;
+        }
     }
   
 
@@ -402,6 +499,9 @@
 // Print style
 // -----------
 .content-print {
+    @media (max-width: (@screen-medium - 0.01)) {
+        display: none;
+    }
     vertical-align: top;
     position: relative;
     margin-left: 4%;
@@ -466,10 +566,26 @@
                     padding:0;       
             }
 
-
+          time {
+            display: block;
+            margin-top: 15px;
+            text-transform: uppercase;
+            font-family: @font-family-modus;
+            font-size: @em-as-12px;
+            span:first-child {
+               padding-right: 9px;
+            }
+            span:nth-child(2) {
+               padding-left: 9px;
+               position: relative;
+               border-left: 1px solid @gray;
+                //&:after { border: 0.5px solid @gray; content: " "; left: 0; top: 2px; position: absolute; height: 58%;
+             }
+          }
+          
           h2 {
             margin-bottom: 5px;
-            font-size:1.1em;
+            font-size: @em-as-17px;
             a {
                 display: block;
             }
@@ -481,6 +597,13 @@
           
         }
     }
-
-
+   
+   
+// Google Maps
+//--------------------------------------------------------------------
+#office-map {
+    width: 100%;
+    height: 18em; 
+    border: 1px solid @gray-light;
+}
 

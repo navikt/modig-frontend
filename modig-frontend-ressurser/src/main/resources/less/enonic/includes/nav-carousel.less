@@ -8,22 +8,77 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-.page-head h1 {          // Hva er dette? = Overskriften på seksjonssider
-    margin: 60px 0 -20px 0;
+.page-head h1 {
+    margin: 60px 0 20px 0;
     text-align: center;
 }
 
 ///////////////////  Media queries  ///////////////////////
 
-// Mobile first
+.carousel-wrapper {
+    margin-bottom: 60px;
+    
+    .toggle-btn-wrapper {
+        @media (max-width: (@screen-medium - 0.01)) {
+            display: none;   
+        }
+        margin-bottom: 30px;
+        text-align: center;
+        .group {
+            padding: 3px;
+            border: 1px solid @gray-light;
+            border-radius: 1px;
+            display: inline-block;
+            background-color: #fff;
+        }
+    }
+    
+    .btn-small {
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: Modus,Arial,Helvetica,sans-serif;
+        font-weight: 600;
+        vertical-align: middle;
+        color: #fff;
+        border-radius: 1px;
+        
+        min-width: 103px;
+        background-color: @blue;
+        background-image: none;
+    }
+    .carousel-view[data-selected='false'], .list-view[data-selected='false'] {
+        color: @gray-dark;
+        background-color: #fff;
+        
+        &:hover, &:focus, &:active {
+            color: @blue;
+            //background-color: @blue;
+        }
+    }
+}
 
+.carousel-inner.list .item {
+    
+    .hero-link-wrapper {
+        margin-bottom: 1.875em;
+    }
+    &:last-child .hero-link-wrapper {
+        margin-bottom: 0;   
+    }
+}
 .carousel-inner {
     .icon-document { background-image: none; }
-    .span4-grid { margin-bottom: 0.9375em; }
+    //.transition('height .4s ease-in-out');
+    position: relative;
     
     .item {
         .hero-link {
             padding: 1.875em 1.875em 1.875em;
+            width: 100%;
+            
             p { display: block; }
             
             .decorated:after {
@@ -37,13 +92,20 @@
 
 .js #navCarousel div.item { display: block; }
 
-
-@media (min-width: @screen-small) and (max-width: @screen-medium) {
+@media (min-width: @screen-small) {
     .no-js #carousel-items .hero-link { min-height: 25em; }
     .js .item .hero-link p { font-size: @em-as-12px; }
+    .carousel-outer { padding-bottom: 60px; }
+    .js .item .hero-link {padding: 1em; }
+    
+    .item {
+        margin-bottom: 15px;   
+    }
 }
 
 @media (min-width: @screen-medium) { // TODO - sjekk om overlapp med mq over er et issue
+    
+    .carousel-outer { padding-bottom: 0; }
      #carousel-items .item .hero-link-wrapper:first-child { padding-left: 0; }
      #carousel-items .item .hero-link-wrapper:nth-child(3) { padding-right: 0; }
      
@@ -54,6 +116,7 @@
         overflow: hidden;
     }
     .carousel-inner > .item {
+        margin-bottom: 0;
         display: none;
         position: relative;
         -webkit-transition: 0.6s ease-in-out left;
@@ -62,7 +125,7 @@
         transition: 0.6s ease-in-out left;
   
         .hero-link {
-            height: 20em;   //TODO
+            height: 18em;   //TODO
             padding: 5.31em 1.875em 1.875em;
             
             p {
@@ -96,10 +159,10 @@
         left: 0;
     }
      
-    .carousel-inner .span4-grid { margin-bottom:0; }
+    .carousel-inner .hero-link-wrapper { margin-bottom:0; }
     .carousel-control, .carousel-indicators { display: block; }
     
-    .carousel-inner .span4-grid { margin-bottom: 0; }
+    .carousel-inner .hero-link-wrapper { margin-bottom: 0; }
     .js .carousel-inner > div.item { display: none; }
     .carousel-control {
         position: absolute;
@@ -116,6 +179,24 @@
         margin-top: 28px;
         position: relative;
         z-index: 5;
+        padding: 0;
+        
+        .active {
+             background-color: @blue;
+        }
+        
+        li {
+            display: inline-block;
+            float: left;
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+            text-indent: -999px;
+            background-color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 1px solid @gray-light;
+        }
     }
 }
 @media (min-width: @screen-large) {
@@ -125,9 +206,9 @@
             font-size: @em-as-12px;
         }
     }
-}
-@media (min-width: @screen-xl) {
-    #top-scroll-link { display: none; } 
+    .page-head h1 {
+        margin: 60px 0 -20px 0;
+    }
 }
 
 ///////////////////////////////////////////////////////////
@@ -163,48 +244,17 @@
   filter: alpha(opacity=90);
 }
 
-.carousel-indicators li {
-  display: inline-block;
-  float: left;
-  width: 16px;
-  height: 16px;
-  margin-left: 5px;
-  text-indent: -999px;
-  background-color: @gray-light;
-  border-radius: 10px;
-  cursor: pointer;
+#maincontent #navCarousel .carousel-inner > div.item {
+    @media (min-width: @screen-small) and (max-width: (@screen-medium - 0.01)) {
+        .flex-container();
+    }
 }
-.carousel-indicators .active {
-  background-color: @blue;
-}
-
 .js #navCarousel .carousel-inner > div.active, .js #navCarousel .carousel-inner > div.prev, .js #navCarousel .carousel-inner > div.next { 
      display: block;
 }
 
-.carousel-label {
-    display: inline-block;
-    position: absolute;
-    top: -1px;
-    left: -75px;
-}
-
-.carousel-dropdown {
-    position: relative;
-    margin: 20px 0 20px;
-}
-
-.carousel-subcontainer {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
 .carousel-outer { 
     position: relative;
-    @media (max-width: @screen-large) {
-        
-    }
 }
 
 .carousel {
@@ -212,16 +262,6 @@
     position: relative;
     overflow: hidden;
     text-align:center;
-}
-
-.carousel-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 15px;
-  background: #333333;
-  background: rgba(0, 0, 0, 0.75);
 }
 
 .js #navCarousel .carousel-onload {

@@ -2,13 +2,6 @@
 // Buttons
 // --------------------------------------------------
 
-.btn-login { // i toolbar i topplinje
-        border:1px solid #5f5e5d;
-        padding: 8px 15px 6px 15px !important;
-        text-transform: uppercase;
-        font-family: @font-family-modus;
-}
-
 .btn {
     display: inline-block !important;
 	color: @gray-dark;
@@ -82,33 +75,8 @@
 	}
 }
 
-// Dårlige og alt for generelle selectorer. Slår inn på alt som f.eks inneholder "-mini".
-// Er mer spesifikk nå på "btn-small"
 .btn-small { // treffer figure-small (article.xsl) og btn-small (content-carousel.xsl)..  Mod ass..
 	padding: @padding-small;
 	font-size: @em-as-14px;
 	line-height: 1.6;
-}
-
-
-[class*=btn-highlighted] {
-	.buttonBackground(@btn-inverse-background, @btn-inverse-background-highlight);
-	&:hover, &:focus {
-		.buttonBackground(#635e5f, #504e4a, #fff);
-	}
-}
-
-[class*=btn-warning] {
-	.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
-	&:hover, &:focus {
-		.buttonBackground(darken(@btn-danger-background, 10%), darken(@btn-danger-background-highlight, 10%), #fff);
-	}
-}
-
-[class*=btn-disabled],[class*=btn-][disabled=disabled] {
-	.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
-	cursor: default;
-	&:hover, &:focus {
-		.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
-	}
 }

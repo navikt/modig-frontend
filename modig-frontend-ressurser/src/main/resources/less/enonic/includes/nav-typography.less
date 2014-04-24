@@ -4,6 +4,9 @@
 
 p, .paragraph, input, button {
    font-size: @font-size-base-em; // 14px
+   @media (max-width: (@screen-small - 0.01)) {
+      font-size: @em-as-16px;
+   }
 }
 
 p, .paragraph {
@@ -15,8 +18,12 @@ p, .paragraph {
 }
 
  .preface {
-  font-size: 1.125em;
+  font-size: @em-as-18px;
   margin:0;
+  @media (max-width: (@screen-small - 0.01)) {
+      font-size: @em-as-16px;
+      font-weight: 700;
+   }
 }
 
 
@@ -195,7 +202,7 @@ blockquote {
    
 }
 
-
+// Ta bort dette nede
 .content {
   .maincontent {
     padding-top: 40px;

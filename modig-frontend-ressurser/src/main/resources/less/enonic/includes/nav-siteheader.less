@@ -1,86 +1,231 @@
 //--------------------------------------------------------------------
 //
-//	Hode + Fot (felles for beta.nav.no og dekoratør / applikasjoner )
+//  Hode + Fot (felles for beta.nav.no og dekoratør / applikasjoner )
 //
 //--------------------------------------------------------------------
 
-
-.nav  {
-    margin: 0;
-    list-style: none;  
-        a {
-            display: block;          
-            &:hover, 
-            &:focus {
-                text-decoration: none;
-            }
-        }
-}
-
-// Hode (sort topplinje)
-//--------------------------------------------------------------------
-
-.siteheader {
-    .dropdown {
-      > a {
-        outline-offset:-1px;
-      }
-    }
-    .navbar {
-      position:relative;
-      text-align: center;
-      li {
-        display:inline-block;
-      }
-      ul.nav {
-        padding: 0;
-      }
-
-      ul.dropdown-menu {
-        > li {
-          display: block;
-          position: relative;
-        }
-      }
-
-      .pull-right {
-          position:absolute; // logg inn-knapp
-          right:0;
-          padding-top:4px;
-     }
-    }
-} // siteheader end
-
-.site-coltrols-toolbar { // sitter innenfor .siteheader
-      background: @gray-darker;     
-      min-height:42px;
-      
-       a, .link-btn {
-          font-size: @em-as-12px;
-          color:#fff;
-          padding: 12px 24px; // selve navbaren
-        }    
-  }
-
 .sitelogo-small {
-  display:none;
   img {
     max-width:50%;
   }
 }
 
-@media (max-width: (@screen-small)) { 
-	.site-coltrols-toolbar {
-		display:none;
-	}
-	.sitelogo-large {
-		display:none;
-	}
-	.sitelogo-small {
-		display: block;
-	}
+.nav  {
+  margin: 0;
+  list-style: none;
+  a {
+    display: block;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
+// Hode (sort topplinje)
+//--------------------------------------------------------------------
+
+.siteheader { // site-coltrols-toolbar
+  .dropdown {
+    > a {
+      outline-offset:-1px;
+    }
+  }
+  .navbar {
+    position:relative;
+     li {
+        display:inline-block;
+      }
+
+    .nav {
+      padding: 0;  
+      }
+
+     .dropdown-menu {
+      > li {
+        display: block;
+        position: relative;
+        }
+      }
+  } // navbar
+} // siteheader end
+
+
+#text-size-accessibility {
+  display:none;
+}
+
+
+.global-siteheader-toolbar();
+
+
+.global-siteheader-toolbar() when (@responsive = true) { 
+    .site-coltrols-toolbar
+     {
+      display:none;
+    }
+
+    .sitelogo-large {
+      display:none;
+    }
+
+      @media (min-width: @screen-small) {
+    
+      .sitelogo-large {
+        display:block;
+      }
+      .sitelogo-small {
+        display: none;
+      }
+
+      .login-container {
+        width:50%;
+      }
+
+     .siteheader-toolbar-and-login-defaults();
+
+
+  }
+
+  @media (min-width: 48em) {
+      #text-size-accessibility {
+        display: inline-block; // vis "tekststørrelse"-knapp når vindu er bredere enn 48em
+      }
+
+      .login-container {
+        width:40%;
+      }
+      
+  }
+
+
+  @media (min-width: 60em) {
+   
+    .site-coltrols-toolbar {
+      text-align: center;
+
+    }
+    .login-container {
+        width:30%;
+      }
+
+    
+  } // media 60em end
+
+
+  } // mixin responsive true
+
+
+.global-siteheader-toolbar() when (@responsive = false) { // FOR IE8 og dekoratør!
+    .sitelogo-small {
+        display: none;
+    }
+    .login-container {
+        width:30%;
+      }
+
+    .siteheader-toolbar-and-login-defaults();
+
+    .site-coltrols-toolbar {
+    text-align: center;
+     }
+     #text-size-accessibility {
+      display: inline-block;
+    }
+
+
+} // mixin responsive false
+
+
+.siteheader-toolbar-and-login-defaults() {
+  .site-coltrols-toolbar { 
+          display:block;
+          background: @gray-darker;
+          min-height:42px;
+   
+          a, .link-btn {
+            font-size: @em-as-12px;
+            color:#fff;
+            padding: 12px 22px; // dropdown-toggle
+          }
+
+          .settings {
+           display:inline-block;  
+           width:50%; 
+          }
+
+
+          .login-container {
+            position:absolute;
+            top:0;          
+            right:0.9375em;
+
+            span, p {
+              font-size: @em-as-12px;
+            }
+
+            p span, p a {font-size: 1em;} // unngå 0,75em * 0,75em
+
+            .login-details {            
+              width: 70%;
+              float:left;
+              padding-left: 25px;
+              cursor: pointer;
+              color: #fff;
+              font-style: italic;              
+              #name {
+                 display: inline-block;
+                 white-space: nowrap;
+                 overflow: hidden;
+                 text-overflow: ellipsis;
+                 text-align:right;
+                 vertical-align: bottom;
+                 width: 100%;  
+                 padding: 12px 0 12px 0; 
+                 text-transform: capitalize;
+
+                 img {
+                  padding-right: 10px;
+                  margin-top: -3px;
+                 }           
+             }
+           }
+
+           .auth-btns {
+            width: 30%;
+            float:left;
+            padding-top:8px;
+            text-align:right;
+            a {
+              display:inline-block;
+              text-align:center;
+              background: #d1d1d1;
+              text-transform: uppercase;
+              font-family: @font-family-modus;
+              font-weight: bold;
+              padding: 4px 15px 4px 15px;
+              border: none;
+              color: #333;
+              white-space: nowrap;
+
+              &.logout {
+                background-color: #0CA9E0;
+
+                &:hover {
+                  background-color: #5dd0f9;
+                }
+              }
+            }
+          }
+        } // logincontainer - kan gjøres om til mixin for media queries
+
+        .login-details.hidden + .auth-btns { // hvis innloggingsinfo er skjult, skal "logg inn" fortsatt stå til høyre
+             margin-left:70%;
+          }
+
+       
+      }
+} // mixin
 
 .sitelogo {
   text-align:center;
@@ -90,35 +235,85 @@
   a {
     text-decoration: none;
     display: inline-block;
-      }
+  }
+}
+
+
+
+.text-size-tooltip, .login-tooltip {
+  padding: 16px 24px;
+  position: absolute;
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 9;
+  left: 25%;
+  text-align: left;
+  top: 3em;
+  span.arrow {
+    .up-arrow(9px, 6px, 6px, #000000); // mixin
+    position: absolute;
+    right: 50%;
+    top: -8px;
   }
 
+  .bold {
+    font-weight: bold;
+  }
+  .underline {
+    text-decoration: underline;
+  }
+}
 
 
-.text-size-tooltip {
-    
-    padding: 16px 24px;
-    position: absolute;
-    top: 116%;
-    background-color: #000000;
-    color: #ffffff;
-    z-index: 9;
-    left: 25%;
-    text-align: left;
-    
+
+.login-tooltip {
+  right: 0;
+  left:0;
+  
+  .lukk {
+     position: absolute;
+     top: -17px;
+     right: 6px;
+     width: 32px;
+     height: 32px;
+     background-color: transparent;
+     background-repeat: no-repeat;
+     font-size: 2em;
+
+     &:hover {
+      color: #5dd0f9;
+    }
+  }
+    p:last-of-type {
+      margin-bottom: 0;
+    }
     p {
-        font-size: @em-as-30px;
-        font-weight: bold;
-        margin: 0;
+      font-size: 1em;
+      font-style: normal;
     }
     span {
-        .up-arrow(9px, 6px, 6px, #000000); // mixin
-        position: absolute;
-        right: 50%;
-        top: -8px;
+      right: 50%;
     }
 }
 
+@media (max-width: 48em) { 
+  .login-tooltip span {
+    right: 38%;
+  }
+}
+
+.text-size-tooltip p {
+  font-size: @em-as-30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+@media (max-width: 57em) { 
+  .text-size-tooltip {
+    left: 0;
+    right: 26%;
+  }
+}
 
 
 // Dropdown - fra collapse-dropdown.less
@@ -127,95 +322,95 @@
 
 .dropup,
 .dropdown {
-	position:relative;
+ position:relative;
 }
 
 .dropdown-toggle:active,
 .open .dropdown-toggle {
-	outline:0;
+ outline:0;
 }
 
 .caret {
-	display:inline-block;
-	width:0;
-	height:0;
-	vertical-align:top;
-	border-top: 4px solid #fff; 
-	border-right:4px solid transparent;
-	border-left:4px solid transparent;
-	content:"";
+ display:inline-block;
+ width:0;
+ height:0;
+ vertical-align:top;
+ border-top: 4px solid #fff;
+ border-right:4px solid transparent;
+ border-left:4px solid transparent;
+ content:"";
 }
 
 .dropdown .caret{
-	margin-top:6px;
-	margin-left:4px;
+ margin-top:6px;
+ margin-left:4px;
 }
 
 .dropdown-menu {
-    position:absolute;
-    top:100%;
-    left:0;
-    z-index:1000;
-    display:block;
-    float:left;
-    text-align: left; 
-    width:100%;
-    padding:5px 0;
-    margin: 0;
-    list-style:none;
-    background-color:@gray-darker;
-    -webkit-background-clip:padding-box;
-    -moz-background-clip:padding;
-    background-clip:padding-box;
+  position:absolute;
+  top:100%;
+  left:0;
+  z-index:1000;
+  display:block;
+  float:left;
+  text-align: left;
+  width:100%;
+  padding:5px 0;
+  margin: 0;
+  list-style:none;
+  background-color:@gray-darker;
+  -webkit-background-clip:padding-box;
+  -moz-background-clip:padding;
+  background-clip:padding-box;
 }
 
 .dropdown-menu.pull-right {
-	right:0;
-	left:auto;
+  right:0;
+  left:auto;
 }
 
 .dropdown-menu .divider {
-	height:1px;
-	margin:9px 1px;
-	overflow:hidden;
-	background-color:@gray-darker;
-	border-bottom:1px solid #000;
+  height:1px;
+  margin:9px 1px;
+  overflow:hidden;
+  background-color:@gray-darker;
+  border-bottom:1px solid #000;
 }
 
 .dropdown-menu>li>a {
-	display:block; 
-	padding: 3px 0 3px 27px;
-	clear:both;
-	font-weight:normal;
-	line-height:20px;
-	color:#ffffff;
-	white-space:nowrap;
+  display:block;
+  padding: 3px 0 3px 27px;
+  clear:both;
+  font-weight:normal;
+  line-height:20px;
+  color:#ffffff;
+  white-space:nowrap;
 }
 
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus,
 .dropdown-submenu:hover>a,
-.dropdown-submenu:focus>a { 
-	text-decoration:none;
-	color:@blue-light;
+.dropdown-submenu:focus>a {
+  text-decoration:none;
+  color:@blue-light;
 }
 
-.dropdown-menu > li.active > a:after { 
-	.bullet-point(2px, @blue-light, 13%, 40%); // mixin
-	text-decoration:none;
-	outline:0;
+.dropdown-menu > li.active > a:after {
+  .bullet-point(2px, @blue-light, 13%, 40%); // mixin
+  text-decoration:none;
+  outline:0;
 }
 
 .dropdown-menu>.disabled>a,
 .dropdown-menu>.disabled>a:hover,
 .dropdown-menu>.disabled>a:focus{
-	color:@gray-darker;
+  color:@gray-darker;
 }
 
 .open>.dropdown-menu{
-	display:block;
+  display:block;
 }
 
 .dropdown-submenu{
-	position:relative;
+  position:relative;
 }

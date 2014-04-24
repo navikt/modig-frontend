@@ -15,6 +15,7 @@
   color:#fff;
   padding:0 0 20px 0;
     .about-site {
+      padding-top:30px;
       color: @gray-footer-text; //#988F86;
       text-align: center;
         ul {
@@ -68,24 +69,22 @@
 }
 
 // Footerlenker
-@media (max-width: 50.625em) {
+@media (max-width: (@screen-medium - 0.01)) {
  
   //Skal trigges når lenkeliste knekkes over to linjer
  
   .sitefooter .about-site ul li {
     display:block;
     padding:0;
-    
-    &:before {
-        display:none;
-    }
+    margin-bottom: 10px;
     
     > a {   
       padding:.5em 0;
+      font-size: 1em;
     }
     &:before {
       left:50%;
-      top:0;
+      top: -6px;
     }
   }
 }

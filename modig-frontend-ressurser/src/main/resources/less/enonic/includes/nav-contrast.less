@@ -82,6 +82,27 @@
     
     // Artikkel sider
     //-------------------
+    .content-languages {
+      background: url('gfx/lang/language_hc.png') no-repeat 6px 6px;
+      background-color: transparent !important;
+      
+      &:hover, &:focus, &:active {
+         background: transparent url('gfx/lang/language_hover.png') no-repeat 6px 6px !important;
+         color: @blue-light !important;
+         span { 
+             color: @blue-light !important;
+             &:after {
+                 border-top: 4px solid @blue-light;
+             }
+         }
+       }
+       span {
+           color: #ffc40d !important;
+           &:after {
+                border-top: 4px solid #ffc40d;    
+           }
+       }
+    }
     .tts-btn-listen, .tts-btn-collapsed, .tts-btn-expanded {
         background-image: url('gfx/tts/tale_gult.png');
         span { color: #ffc40d !important; }
@@ -90,24 +111,33 @@
             span { color: @blue-light !important; }
         }
     }
-    .content-languages {
-        background-image: url('gfx/tts/spraak_gult.png');
-        span {
-            color: #ffc40d !important;
-            &:after {
-                border-top: 4px solid #ffc40d;
+    #tts-group {
+        .tts-play {
+            background-image: url('gfx/tts/play_hc.png');
+            &:hover, &:focus, &:active {
+                background-color: @blue !important;
             }
         }
-         &:hover, &:focus, &:active {
-            background-image: url('gfx/tts/language_hover.png');
-            span { 
-                color: @blue-light !important;
-                &:after {
-                    border-top: 4px solid @blue-light;
-                 }
+        .tts-stop {
+            background-image: url('gfx/tts/stop_hc.png');
+            &:hover, &:focus, &:active {
+                background-color: @blue !important;
+            }
+        }
+        .tts-help {
+            background-image: url('gfx/tts/help_hc.png');
+            &:hover, &:focus, &:active {
+                background-color: @blue !important;
+            }
+        }
+        .tts-settings {
+            background-image: url('gfx/tts/settings_hc.png');
+            &:hover, &:focus, &:active {
+                background-color: @blue !important;
             }
         }
     }
+    
     #print-page, #print-all {
         background-image: url('gfx/tts/print_gult.png');
         span { color: #ffc40d !important; }

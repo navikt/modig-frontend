@@ -65,7 +65,7 @@
     @media (min-width: @screen-small) { // larger than 480px
       
       body { 
-        background-color:@orange;
+        //background-color:@orange;
        }
 
        .col-sm-12 {
@@ -74,11 +74,15 @@
 
       .make-grid-columns-float(md);
       .make-grid(@grid-columns, md, width);
+
+      .make-grid(@grid-columns, md, offset); // offset for å legge på ekstra luft til venstre for kolonne.
+
+
     }
 
     @media (min-width: @screen-medium) { // equal to or larger than 768px
        body { 
-        background-color:@blue-light;   
+        //background-color:@blue-light;   
        }
 
       // col-lg er ikke i bruk
@@ -91,7 +95,7 @@
 
     @media (min-width: @screen-large) { // equal to or larger than 992px
        body { 
-        background-color:@gray-lighter; 
+        //background-color:@gray-lighter; 
       }
 
       .col-md-1,.col-md-2,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-9,.col-md-10,.col-md-12 {
@@ -125,6 +129,10 @@
 
     .make-grid-columns-float(md);
     .make-grid(@grid-columns, md, width);
+
+    .make-grid(@grid-columns, md, offset); // offset for å legge på ekstra luft til venstre for kolonne.
+    
+
 
     .col-md-1,.col-md-2,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-9,.col-md-10,.col-md-12 {
       padding-left:  (@grid-gutter-width / 2);

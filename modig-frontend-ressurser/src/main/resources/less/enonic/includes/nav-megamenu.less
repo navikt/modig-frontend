@@ -233,7 +233,7 @@
 
     .topnavitem {
       line-height: 1.2; // default er 1.4ish
-        > a {
+        > a, .auth-btns a {
                 display:block;   
                 padding: 15px 35px 15px 20px;//@grid-gutter-width / 2;
                 border-bottom: 1px solid @gray;                     
@@ -247,7 +247,9 @@
                   }
                               
             }
-
+            &.login-container {
+              display: block;
+            }
     } // topnavitem
 
     .accessible-megamenu-panel {
@@ -390,7 +392,7 @@
     .topnavitem {
           line-height:22px;
           display:inline-block;
-          > a {
+          > a, .auth-btns a {
                 display:block;   
                 padding: 10px 40px 10px 10px; 
                 font-size: 1.0652em; // skal være 17px
@@ -405,6 +407,9 @@
                 &:focus {
                     outline-offset: -1px; 
                 }
+              }
+              &.login-container {
+                display: none;
               }
         }
 
