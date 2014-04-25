@@ -82,7 +82,6 @@ public class CompiledLessResource extends AbstractResource implements IStaticCac
     public String compileResources() {
         try {
             String concatenatedResources = resourceBundle.getResourceString();
-	        getLessCompiler().setLessJs(this.getClass().getResource(LESS_REFERENCE));
 	        return getLessCompiler().compile(concatenatedResources);
         } catch (LessException e) {
             throw new WicketRuntimeException("Could not compile concatedated less resources", e);
@@ -97,6 +96,7 @@ public class CompiledLessResource extends AbstractResource implements IStaticCac
 
         if (lessCompiler == null) {
             lessCompiler = new LessCompiler();
+	        lessCompiler.setLessJs(this.getClass().getResource(LESS_REFERENCE));
             lessCompilerRef = new WeakReference<>(lessCompiler);
         }
         return lessCompiler;
