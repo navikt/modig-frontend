@@ -64,41 +64,16 @@
 .grid-setup() when (@responsive = true) { 
     @media (min-width: @screen-small) { // larger than 480px
       
-      body { 
-        //background-color:@orange;
-       }
-
-       .col-sm-12 {
-        margin-bottom: 0;
-       }
-
-      .make-grid-columns-float(md);
-      .make-grid(@grid-columns, md, width);
-
-      .make-grid(@grid-columns, md, offset); // offset for å legge på ekstra luft til venstre for kolonne.
-
 
     }
 
     @media (min-width: @screen-medium) { // equal to or larger than 768px
-       body { 
-        //background-color:@blue-light;   
-       }
-
-      // col-lg er ikke i bruk
-      //.make-grid-columns-float(lg);
-      //.make-grid(@grid-columns, lg, width);
-      //.make-grid(@grid-columns, lg, pull);
-      //.make-grid(@grid-columns, lg, push);
-      //.make-grid(@grid-columns, lg, offset);
-    }
-
-    @media (min-width: @screen-large) { // equal to or larger than 992px
-       body { 
-        //background-color:@gray-lighter; 
-      }
-
-      .col-md-1,.col-md-2,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-9,.col-md-10,.col-md-12 {
+     
+      .make-grid-columns-float(md);
+      .make-grid(@grid-columns, md, width);
+      .make-grid(@grid-columns, md, offset); // offset for å legge på ekstra luft til venstre for kolonne.
+      
+       .col-md-1,.col-md-2,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-9,.col-md-10,.col-md-12 {
         padding-left:  (@grid-gutter-width / 2);
         padding-right: (@grid-gutter-width / 2);
       }
@@ -106,6 +81,36 @@
         margin-left:-(@grid-gutter-width / 2);
         margin-right:-(@grid-gutter-width / 2); 
       }
+      
+      // Nedenforstående bør fikses på annen måte (egen klasse i stedet for overstyring av global setting)
+
+      // .col-md-8 blir brukt i tilfeller hvor det er portlet i region center og east, dvs. artikkel type i midten og undermeny/kapitteloversikt/relatert informasjon i øst.
+      // På stående iPad/tablet (portrait mode) blir artikkelen for smal når den er kun 66%, med 33% portlet i høyre kolonne. Overstyrer derfor standard width på col-md-8 for å tilpasse
+      // stående pad/tablets bedre. Den skal være 100% litt lengre enn den har vært (12 / 12 = 1 = 100%)
+      //.col-md-8 {
+      //  width: percentage((@grid-columns / @grid-columns));
+      // }
+
+    }
+
+    @media (min-width: @screen-large) { // equal to or larger than 992px
+      
+      
+      .col-sm-12 {
+        margin-bottom: 0;
+       }
+      
+
+      // Her havner vi på typisk liggende ipad/tablet (landscape mode)       
+      
+      // Unngås! Bruk evt heller col-lg-8, i stedet for å overstyre md.
+      // .col-md-8 {
+      //    width: percentage((8 / @grid-columns));
+      // }
+       
+       
+       
+     
 
       .inner-row {
       margin-bottom: 60px;

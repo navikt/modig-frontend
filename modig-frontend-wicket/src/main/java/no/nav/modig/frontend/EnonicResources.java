@@ -44,6 +44,7 @@ class EnonicResources  {
     static final PackageResourceReference NAV_PRINT_LESS = lessReference("enonic/includes/nav-print.less");
 
     static final PackageResourceReference NAV_WEBFONTS_LESS = lessReference("enonic/includes/nav-webfonts.less");
+    static final PackageResourceReference NAV_RESPONSIVE_LESS = lessReference("enonic/nav-responsive.less");
 
     private static JavaScriptResourceReference jsReference(String path) {
         return new JavaScriptResourceReference(JsResourceMarker.class, path);
