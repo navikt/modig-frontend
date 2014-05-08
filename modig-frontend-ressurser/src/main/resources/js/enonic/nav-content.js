@@ -2,17 +2,14 @@
 //  ScrollTop stuff   \\
 // ------------------ \\
 
-var navno = window.navno || {};
-
-(function initFactsheetClickScroll() {
+$(function () {
   $('nav.table-of-contents li a').click(function (e) {
     var fromLink = $(this);
     e.preventDefault();
     
     navno[ 'scrollToId'](fromLink);
   });
-}
-());
+});
 
 /*
  * Reusable
@@ -199,14 +196,12 @@ navno.initContentPrintHandler = function () {
 };
 
 
-(function () {
+$(function () {
   
   var hasPrintFired = false;
-  
   var afterPrint = function () {
     
     var timer = setTimeout(function () {
-      
       navno[ 'afterContentPrint']();
     },
     400);
@@ -236,13 +231,11 @@ navno.initContentPrintHandler = function () {
       }
     });
   }
-}
-());
+});
 
-(function initContentPrint() {
+$(function () {
   navno[ 'initContentPrintHandler']();
-}
-());
+});
 
 /////////////////////////////////////////////////
 
@@ -251,7 +244,7 @@ navno.initContentPrintHandler = function () {
 //     Navigator WiN     \\
 // --------------------- \\
 
-(function navigatorWiN() {
+$(function () {
   
   if (document.getElementById("nav-nvv") !== null) {
     
@@ -265,36 +258,101 @@ navno.initContentPrintHandler = function () {
       setCookie(param, results[1], 1, true);
       navno[ 'setVVLink'](results[1]);
     } else {
-      var c_value = navno['getCookie'](param);
+      var c_value = navno[ 'getCookie'](param);
       
       if (c_value !== null && ! isNaN(c_value)) {
         navno[ 'setVVLink'](c_value);
       }
     }
   }
-}
-());
+});
 
 navno.setVVLink = function (c_value) {
   var link = document.getElementById("nav-nvv");
-  link.href = "http://www.nav.no/workinnorway/page?id=" + c_value;
+  link.href = "https://www.nav.no/workinnorway/page?id=" + c_value;
 };
 
 // --------------------- \\
 //         End           \\
 // --------------------- \\
 
+/*
+ * Google Maps API (NAV office)
+ */
+ 
+ navno.initMap = function() {
+ 
+    var officeMap = document.getElementById("office-map");
+    
+    var latlngString = officeMap.getAttribute("data-latlng");
+    
+    var separator = latlngString.indexOf(",");
+    var officelatlng = new google.maps.LatLng(latlngString.substr(0, separator).trim(), latlngString.substr(separator+1, latlngString.length).trim());
+    
+    var styles = [
+      {
+        stylers: [
+          { hue: "#3E3832" },
+          { weight: 1.2 },
+          { saturation: -90 },
+          { gamma: 0.7 }
+          //{ lightness: -10 }
+        ] 
+      }
+    ];
+    
+    var mapOptions = {
+			 center: officelatlng, 
+			 zoom: 15, 
+			 mapTypeId: google.maps.MapTypeId.ROADMAP,
+			 clickable: false
+		  };
+		  
+    var map = new google.maps.Map(officeMap, mapOptions);
+    
+    var marker = new google.maps.Marker({
+      position: officelatlng,
+      map: map,
+      icon: officeMap.getAttribute("data-marker-url"), 
+      title: officeMap.getAttribute("data-marker-title")
+    });
+    
+    map.setOptions({styles: styles});
+ };
+
+$(function () {
+  
+  if ($("#office-map").length > 0) {
+   
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDKiZHl59dNmJJwQhfi0YH5AtrrMkzDtqQ&sensor=false&callback=navno.initMap";
+    document.body.appendChild(script); 
+  }
+});
+//////////////////////// END ////////////////////////
+
+
 
 // ------------------------------ \\
 // Language shortcuts for content \\
 // ------------------------------ \\
 navno.onClickEnterContentLanguage = function (langList, langSelector) {
-
-  var langClick = function (e) {
+  
+  var langClick = function (event) {
     
     var langSelector = $('.content-languages');
     
-    if (!langSelector.hasClass('selected')) {
+    if (typeof event !== "undefined") {
+      event.stopPropagation();
+      
+      var globalLang = $("header.siteheader ul.dropdown-menu");
+      if (! globalLang.hasClass("hidden")) {
+        globalLang.addClass("hidden");
+      }
+    }
+    
+    if (! langSelector.hasClass('selected')) {
       langSelector.addClass('selected');
       langList.removeClass('hide');
     } else {
@@ -312,21 +370,20 @@ navno.contentLanguages = function () {
   if (langSelector.length > 0) {
     
     var langList = langSelector.find("ul.nav");
-    langSelector.on("click", navno['onClickEnterContentLanguage'](langList, langSelector));
+    langSelector.on("click", navno[ 'onClickEnterContentLanguage'](langList, langSelector));
     
     langSelector[0].addEventListener('keypress', function (e) {
       var key = e.which || e.keyCode;
       if (key === 13) {
-        navno['onClickEnterContentLanguage'](langList, langSelector);
+        navno[ 'onClickEnterContentLanguage'](langList, langSelector);
       }
     });
   }
 };
 
-(function initContentLanguages() {
+$(function () {
   navno[ 'contentLanguages']();
-}
-());
+});
 
 // --------------------- \\
 //         End           \\
@@ -342,11 +399,12 @@ navno.initSpeechSynthesisButtons = function () {
   var playBtn = $("#play-btn");
   
   if (playBtn.length > 0) {
-  
+    
     playBtn.click(function (e) {
       e.preventDefault();
       
-      if (!$(this).hasClass('play')) {
+      
+      if (! $(this).hasClass('play')) {
         $(this).addClass('play');
       }
       
@@ -354,9 +412,8 @@ navno.initSpeechSynthesisButtons = function () {
       if ((typeof selection !== "undefined" && selection.toString().length > 0) || (typeof document.selection !== "undefined" && document.selection.toString().length > 0)) {
         
         vFact_doplay();
-        
       } else {
-      
+        
         var pageContent = $('#pagecontent');
         var toolbar = pageContent.find('.toolbar');
         var timePublished = pageContent.find('time.pubdate');
@@ -373,9 +430,9 @@ navno.initSpeechSynthesisButtons = function () {
         
         navno[ 'contentLanguages']();
         
-        navno['initTextToSpeechPanel']();
-        navno['initSpeechSynthesisButtons']();
-        navno['initContentPrintHandler']();
+        navno[ 'initTextToSpeechPanel']();
+        navno[ 'initSpeechSynthesisButtons']();
+        navno[ 'initContentPrintHandler']();
       }
     });
     $('.tts-stop').click(function (e) {
@@ -392,7 +449,8 @@ navno.initTextToSpeechPanel = function () {
   
   var panel = $('.tts-panel');
   var listenButton = panel.find('button.tts-btn-listen');
-  var panelWidth = (listenButton.width()) + 36; // Plus padding
+  var panelWidth = (listenButton.width()) + 36;
+  // Plus padding
   
   var scriptUrl = 'https://speech.leseweb.dk/script/ke857rosk1l7q9llcd0u.js';
   
@@ -400,7 +458,7 @@ navno.initTextToSpeechPanel = function () {
     //e.preventDefault();
     
     var buttonGroup = $('#tts-group');
-    buttonGroup.css('left', panelWidth+'px')
+    buttonGroup.css('left', panelWidth + 'px')
     var trigger = $(this);
     
     
@@ -422,7 +480,7 @@ navno.initTextToSpeechPanel = function () {
           var isScriptLoaded = panel.attr('data-scriptenabled');
           
           if (isScriptLoaded === 'false') {
-          
+            
             $.getScript(scriptUrl).done(function (script, textStatus) {
               navno[ 'initSpeechSynthesisButtons']();
             }).fail(function (jqxhr, settings, exception) {
@@ -432,7 +490,6 @@ navno.initTextToSpeechPanel = function () {
           }
         }
       });
-      
     } else {
       
       panel.animate({
@@ -451,11 +508,94 @@ navno.initTextToSpeechPanel = function () {
   });
 };
 
-(function initTextToSpeech() {
-  navno['initTextToSpeechPanel']();
-}
-());
+$(function () {
+  navno[ 'initTextToSpeechPanel']();
+});
 
-// --------------------- \\
-//         End           \\
-// --------------------- \\
+//////////////////////// END ////////////////////////
+
+
+
+/*
+ * Mobile submenu for page content (undermeny)
+ */
+ 
+ // Accessed by global script. Do nothing on "touchmove"
+ navno.touchMovedOnArticle = false;
+
+$(function () {
+  
+  var container = $("#pagecontent .mobile-linklist-related");
+  if (container.length > 0) {
+    
+    var submenu = container.find("nav.init");
+    submenu.css("height", 0);
+    
+    var submenuHeight = submenu.find("ul").height() + 65;
+    submenu.removeClass("init");
+    
+    var touchEventFired = false;
+    var touchStartX, touchStartY;
+    
+    $("#pagecontent").on("touchstart", function (event) {
+      var pointer = event.originalEvent.targetTouches ? event.originalEvent.targetTouches[0]: event;
+      navno.touchMovedOnArticle = false;
+      touchStartX = pointer.clientX;
+      touchStartY = pointer.clientY;
+    });
+    $("#pagecontent").on("touchmove", function (event) {
+      var pointer = event.originalEvent.targetTouches ? event.originalEvent.targetTouches[0]: event;
+      if (Math.abs(pointer.clientX - touchStartX) > 10 || Math.abs(pointer.clientY - touchStartY) > 10) {
+        navno.touchMovedOnArticle = true;
+      }
+    });
+    
+    container.find(".submenu-header a").on("touchstart touchend", function (event) {
+      event.preventDefault(); // Need to run preventDefault() on touchstart for FireFox
+      
+      if (event.type === "touchend" && !navno.touchMovedOnArticle) {
+        var headerLink = $(this);
+        var newHeight = container.hasClass("open") ? 0: submenuHeight;
+        
+        container.toggleClass("open");
+        submenu.css("height", newHeight);
+        
+        setTimeout(function () {
+          if (container.hasClass("open")) {
+            headerLink.attr("aria-expanded", true).attr("aria-hidden", false);
+            submenu.attr("aria-expanded", true).attr("aria-hidden", false);
+          } else {
+            headerLink.attr("aria-expanded", false).attr("aria-hidden", true);
+            submenu.attr("aria-expanded", false).attr("aria-hidden", true);
+          }
+          
+          // Document had its height changed due to dropdown expansion, 
+          // which changes the offset position of the "go to top" link button.
+          // Updating position of this button element below
+          navno.buttonBottomOffset = navno.topLinkButtonPlaceholder.offset().top + navno.topLinkButtonPlaceholder.height();
+          
+          navno['onScrollAndResize']();
+          
+          var viewPortBottom = $(window).height() + $(window).scrollTop();
+          var headerOffsetBottom = headerLink.parent().offset().top + headerLink.parent().height();  
+          
+          if (headerOffsetBottom > viewPortBottom) {
+            $('html, body').animate({
+              scrollTop: $(window).scrollTop() + 120
+            },
+            {
+              duration: 200,
+              complete: function () { }
+            });
+          }
+        },
+        420);
+      }
+      else if (event.type === "touchstart") {
+        navno.touchMovedOnArticle = false;
+      }
+    });
+  }
+});
+
+//////////////////////// END ////////////////////////

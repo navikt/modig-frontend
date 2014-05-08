@@ -40,6 +40,10 @@ public class FrontendConfigurator {
     private String cssConcatFile = "all.css";
     private String lessCompiledFile = "less.css";
 
+	private Boolean useConsoleLogPolyfill = Boolean.FALSE;
+	private Boolean useHtml5Shiv = Boolean.FALSE;
+
+
     // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER - FORVENTET I BOOTSTRAP 3
     private List<JavaScriptResourceReference> jsReferences = new ArrayList<>();
     private List<CssResourceReference> cssReferences = new ArrayList<>();
@@ -77,6 +81,15 @@ public class FrontendConfigurator {
         return this;
     }
 
+	public FrontendConfigurator withConsoleLogPolyfill(boolean usePolyfill) {
+		this.useConsoleLogPolyfill = usePolyfill;
+		return this;
+	}
+
+	public FrontendConfigurator withHtml5Shiv(boolean useShiv) {
+		this.useHtml5Shiv = useShiv;
+		return this;
+	}
 
     public FrontendConfigurator addConditionalJavascript(ConditionalJavascriptResource... items) {
         conditionalJavascripts.addAll(asList(items));
@@ -203,26 +216,30 @@ public class FrontendConfigurator {
 
 
     private void configureHtml5shiv(WebApplication application) {
-        ResourceReference reference = ConditionalJavascriptResource.HTML5_SHIV.getReference();
-        application.mountResource(basePath + "/js/" + reference.getName(), reference);
-        application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
-            @Override
-            public void renderHead(IHeaderResponse response) {
-                response.render(ConditionalJavascriptResource.HTML5_SHIV);
-            }
-        });
+	    if (useHtml5Shiv) {
+		    ResourceReference reference = ConditionalJavascriptResource.HTML5_SHIV.getReference();
+		    application.mountResource(basePath + "/js/" + reference.getName(), reference);
+		    application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+			    @Override
+			    public void renderHead(IHeaderResponse response) {
+				    response.render(ConditionalJavascriptResource.HTML5_SHIV);
+			    }
+		    });
+	    }
     }
 
 
     private void configureConsolePolyfill(WebApplication application) {
-        ResourceReference reference = ConditionalJavascriptResource.CONSOLE_POLYFILL.getReference();
-        application.mountResource(basePath + "/js/" + reference.getName(), reference);
-        application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
-            @Override
-            public void renderHead(IHeaderResponse response) {
-                response.render(ConditionalJavascriptResource.CONSOLE_POLYFILL);
-            }
-        });
+	    if (useConsoleLogPolyfill) {
+		    ResourceReference reference = ConditionalJavascriptResource.CONSOLE_POLYFILL.getReference();
+		    application.mountResource(basePath + "/js/" + reference.getName(), reference);
+		    application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+			    @Override
+			    public void renderHead(IHeaderResponse response) {
+				    response.render(ConditionalJavascriptResource.CONSOLE_POLYFILL);
+			    }
+		    });
+	    }
     }
 
 

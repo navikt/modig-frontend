@@ -2,9 +2,9 @@
 //   Carousel stuff   \\
 // ------------------ \\
 
-var navno = window.navno || {};
-
 navno.displayCarousel = function (numArticles) {
+  
+  $('.toggle-btn-wrapper').removeClass('hide');
   
   var indicators = $('.carousel-indicators');
   
@@ -13,11 +13,7 @@ navno.displayCarousel = function (numArticles) {
   
   $('#navCarousel').attr("data-size", slidesSize);
   
-  var showAllCount = $('.carousel-submenu .boxcol-4').length;
-  var numRows = Math.ceil(showAllCount / 4);
-  
   var ieControl = $('.col-lg-12 > a.carousel-control');
-  
   if (ieControl.length > 0) {
     ieControl.remove();
     // TODO in bootstrap: IE bug workaround
@@ -25,77 +21,142 @@ navno.displayCarousel = function (numArticles) {
     $('.col-lg-12 > div[id^="marker"] > a.carousel-control').remove();
   }
   
+  // Logikk under for vise karusellen
   if (numArticles > 3) {
+    
+    var inner = $(".carousel-inner");
     
     indicators.removeClass('hide');
     $('.carousel-control').removeClass('hide');
     $('.carousel-dropdown').removeClass('hide');
     
-    var inner = $('.carousel-inner');
-    inner.find('.span4').removeClass('span4-grid');
-    
     // Indicate first slide page
-    var items = inner.find('.item');
-    items.removeClass('active').removeClass('carousel-onload');
+    var items = inner.find('.item')
+    items.removeClass('active').removeClass('carousel-onload').first().addClass('active');
     
-    items.first().addClass('active');
+    var firstSlide = $(".carousel-inner .hero-link-wrapper").first();
     
-    items.find('.featured-content').removeClass('featured-content-grid');
+    var rowMargin = (inner.width() - (firstSlide.width() * 3)) / 2;
     
-    var elemObject = $('.carousel-subcontainer');
-    elemObject.addClass('hide');
+    var collapseHeightAfter = firstSlide.height();
+    var collapseHeightBefore = $('.carousel-outer').height();
+    var slideHeighExpanded = Math.ceil((collapseHeightAfter * slidesSize) + ((slidesSize -1) * rowMargin) + 15);
+    var fadeSpeed = 400;
     
-    $('.carousel-dropdown a.btn').click(function (e) {
-      // Show all
-      var showAllBtn = $(this);
-      
+    var hiddenElements = $("#navCarousel .item[aria-hidden='true']");
+    
+    var carouselView = $('.carousel-view');
+    var listView = $('.carousel-view');
+    
+    var carouselViewPref = localStorage.getItem('carouselView'); // View preference
+    
+    if (carouselViewPref === 'false') {
+        hiddenElements.css("display", "block");
+        inner.addClass("list");
+        inner.css("height", slideHeighExpanded);
+        //inner.removeAttr('style');
+        
+        $(".carousel-control").css("display", "none");
+        $(".carousel-indicators").css("display", "none");
+        
+        $(".list-view").attr('data-selected', true);
+        $(".carousel-view").attr('data-selected', false);
+    }
+    else if (carouselViewPref === null) {
+        localStorage.setItem('carouselView', 'true');
+    }
+    
+    $(".list-view").on("click", function (e) {
       e.preventDefault();
       
-      var height = (numRows * 72) + 1;
+      carouselViewPref = localStorage.getItem('carouselView');
       
-      var arrow = $(this).find('span');
-      
-      if (elemObject.hasClass("hide")) {
-        
-        elemObject.css("height", "0");
-        elemObject.removeClass("hide");
-        
-        elemObject.animate({
-          height: height
-        },
-        {
-          duration: "fast",
-          start: function () {
-            
-            showAllBtn.text(showAllBtn.attr('data-hide-translation'));
-          },
-          complete: function () {
-            elemObject.css("height", height);
-            $('#carousel-boxgrid').attr('aria-expanded', 'true');
-          }
-        });
-      } else {
-        
-        elemObject.animate({
-          height: 0
-        },
-        {
-          duration: "fast",
-          start: function () {
-            showAllBtn.text(showAllBtn.attr('data-show-translation'));
-          },
-          complete: function () {
-            
-            elemObject.addClass('hide');
-            $('#carousel-boxgrid').attr('aria-expanded', 'false');
-          }
-        });
+      if (carouselViewPref !== null && carouselViewPref === 'true') {
+        localStorage.setItem('carouselView', 'false');
       }
+      
+      var thisListView = $(this);
+      
+      if (thisListView.attr('data-selected') === 'true' || carouselView.attr('data-is-sliding') === 'true') {
+        return false;
+      }
+      else {
+        thisListView.attr('data-selected', true).removeAttr('style');
+        $('.carousel-view').attr('data-selected', false);
+      }
+      
+      thisListView.attr('data-is-sliding', true);
+      
+      $(".carousel-control").fadeOut(fadeSpeed);
+      $(".carousel-indicators").fadeOut(fadeSpeed, function() {
+        
+        inner.css("height", collapseHeightBefore);
+        
+        items.css("display", "block");
+        inner.addClass("list");
+        
+        inner.animate({
+          height: slideHeighExpanded
+        },
+        {
+          duration: 500
+        }).promise().done(function () {
+          inner.removeAttr('style');
+          thisListView.attr('data-is-sliding', false);
+        });
+      });
+    });
+    
+    $(".carousel-view").on("click", function (e) {
+      e.preventDefault();
+      
+      carouselViewPref = localStorage.getItem('carouselView');
+      
+      if (carouselViewPref !== null && carouselViewPref === 'false') {
+        localStorage.setItem('carouselView', 'true');
+      }
+      
+      var thisCarouselView = $(this);
+      
+      if ($(this).attr('data-selected') === 'true' || listView.attr('data-is-sliding') === 'true') {
+        return false;
+      }
+      else {
+        thisCarouselView.attr('data-selected', true).removeAttr('style');
+        $('.list-view').attr('data-selected', false);
+      }
+      
+      thisCarouselView.attr('data-is-sliding', true);
+      
+      inner.animate({
+        height: collapseHeightBefore
+      },
+      {
+        duration: 500
+      }).promise().done(function () {
+        
+        //inner.css("height", collapseHeightAfter);
+        inner.removeAttr('style');
+        
+        thisCarouselView.attr('data-is-sliding', false);
+        inner.removeClass("list").find(".item").removeAttr("style");
+        $(".carousel-indicators").fadeIn(fadeSpeed);
+        $(".carousel-control").fadeIn(fadeSpeed);
+      });
+    });
+    
+    $(".hide-all").on("click", function (e) {
+      e.preventDefault();
     });
   }
 };
 
-(function carousel() {
+
+/*
+ * Carousel initialization
+ */
+
+$(function () {
   
   $('.carousel').carousel({
     interval: false
@@ -119,11 +180,14 @@ navno.displayCarousel = function (numArticles) {
     }
     navno[ 'displayCarousel'](items);
   }
-}
-());
+});
 
-(function onFocusedCarousel() {
-  
+
+/*
+ * Using left and right slide controls with keyboard
+ */
+
+$(function () {
   var carousel = $('#navCarousel');
   var slideItems = carousel.find(".item");
   var leftControl = $('.carousel-control.left');
@@ -137,16 +201,16 @@ navno.displayCarousel = function (numArticles) {
       $(rightControl).click();
     }
   });
-}
-());
+});
 
 
 
 navno.dynmaicCarouselBoxHeight = function () {
-
+  
   var rowCount = $('#carousel-items').find('div.item').length;
   var itemsParent = $('#carousel-items');
-  var padding = 54.75; // padding top + bottom
+  var padding = 54.75;
+  // padding top + bottom
   
   for (var i = 0; i < rowCount; i++) {
     
@@ -174,35 +238,38 @@ navno.dynmaicCarouselBoxHeight = function () {
 };
 
 
-(function doMatchMedia() {
+/*
+ * Matchmedia fallback when flexbox is not supported
+ */
+
+$(function () {
   
-  var matchNarrowRange = window.matchMedia('(min-width: 620px) and (max-width: 669px)');
-  var matchMidRange = window.matchMedia('(min-width: 670px) and (max-width: 719px)');
-  var matchWiderRange = window.matchMedia('(min-width: 720px) and (max-width: 768px)');
-  
-  var indicators = $('ol.carousel-indicators');
-  
-  // Need to update resizing of boxes to fit text
-  if (matchNarrowRange.matches || matchMidRange.matches || matchWiderRange.matches) {
-    navno['dynmaicCarouselBoxHeight']();
-  }
-  
-  var mqHandler = function (matchMedia) {
+  if (! Modernizr.flexbox) {
+    var matchNarrowRange = window.matchMedia('(min-width: 620px) and (max-width: 669px)');
+    var matchMidRange = window.matchMedia('(min-width: 670px) and (max-width: 719px)');
+    var matchWiderRange = window.matchMedia('(min-width: 720px) and (max-width: 768px)');
     
-    if (typeof matchMedia === "object" && matchMedia.matches) {
+    var indicators = $('ol.carousel-indicators');
+    
+    // Need to update resizing of boxes to fit text
+    if (matchNarrowRange.matches || matchMidRange.matches || matchWiderRange.matches) {
       navno[ 'dynmaicCarouselBoxHeight']();
-      
-    } else {
-    
-      $('#carousel-items div.item a.hero-link').each(function () {
-        $(this).css("height", "");
-      });
     }
-  };
-  
-  matchNarrowRange.addListener(mqHandler);
-  matchMidRange.addListener(mqHandler);
-  matchWiderRange.addListener(mqHandler);
-  
-}
-());
+    
+    var mqHandler = function (matchMedia) {
+      
+      if (typeof matchMedia === "object" && matchMedia.matches) {
+        navno[ 'dynmaicCarouselBoxHeight']();
+      } else {
+        
+        $('#carousel-items div.item a.hero-link').each(function () {
+          $(this).css("height", "");
+        });
+      }
+    };
+    
+    matchNarrowRange.addListener(mqHandler);
+    matchMidRange.addListener(mqHandler);
+    matchWiderRange.addListener(mqHandler);
+  }
+});

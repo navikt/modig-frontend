@@ -12,6 +12,7 @@ class EnonicResources  {
     static final JavaScriptResourceReference NAV_CAROUSEL = jsReference("enonic/nav-carousel.js");
     static final JavaScriptResourceReference NAV_CONTENT = jsReference("enonic/nav-content.js");
     static final JavaScriptResourceReference NAV_ACCORDION = jsReference("enonic/nav-accordion.js");
+    static final JavaScriptResourceReference NAV_TEMP = jsReference("enonic/temp.js");
 
     static final JavaScriptResourceReference MATCH_MEDIA = jsReference("enonic/libs/matchmedia.js");
     static final JavaScriptResourceReference JQUERY_MEGA_MENU = jsReference("enonic/libs/megamenu/jquery-accessibleMegaMenu.js");
@@ -33,7 +34,7 @@ class EnonicResources  {
     static final PackageResourceReference NAV_SITEFOOTER_LESS = lessReference("enonic/includes/nav-sitefooter.less");
     static final PackageResourceReference NAV_SITEFOOTER_ALPHABET_LESS = lessReference("enonic/includes/nav-sitefooter-alphabet.less");
 
-    static final PackageResourceReference NAV__ARTICLE_LESS = lessReference("enonic/includes/nav-article.less");
+    static final PackageResourceReference NAV_ARTICLE_LESS = lessReference("enonic/includes/nav-article.less");
     static final PackageResourceReference NAV_FACTSHEET_LESS = lessReference("enonic/includes/nav-factsheet.less");
     static final PackageResourceReference NAV_CAROUSEL_LESS = lessReference("enonic/includes/nav-carousel.less");
     static final PackageResourceReference NAV_ACCORDION_LESS = lessReference("enonic/includes/nav-accordion.less");
@@ -44,7 +45,7 @@ class EnonicResources  {
     static final PackageResourceReference NAV_PRINT_LESS = lessReference("enonic/includes/nav-print.less");
 
     static final PackageResourceReference NAV_WEBFONTS_LESS = lessReference("enonic/includes/nav-webfonts.less");
-    static final PackageResourceReference NAV_RESPONSIVE_LESS = lessReference("enonic/nav-responsive.less");
+    static final PackageResourceReference NAV_TEMP_BETA_LESS = lessReference("enonic/includes/_temp-beta.less");
 
     private static JavaScriptResourceReference jsReference(String path) {
         return new JavaScriptResourceReference(JsResourceMarker.class, path);

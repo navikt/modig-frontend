@@ -82,11 +82,13 @@ import static no.nav.modig.frontend.EnonicResources.NAV_SITEFOOTER_ALPHABET_LESS
 import static no.nav.modig.frontend.EnonicResources.NAV_SITEFOOTER_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_SITEHEADER_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_TABLE_LESS;
+import static no.nav.modig.frontend.EnonicResources.NAV_TEMP;
 import static no.nav.modig.frontend.EnonicResources.NAV_TYPOGRAPHY_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_UTILITIES_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_VARIABLES_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_WEBFONTS_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV__ARTICLE_LESS;
+import static no.nav.modig.frontend.EnonicResources.NAV_ARTICLE_LESS;
+import static no.nav.modig.frontend.EnonicResources.NAV_TEMP_BETA_LESS;
 import static no.nav.modig.frontend.FellesResources.AJAX_LOADER;
 import static no.nav.modig.frontend.FellesResources.CONTRAST_LESS;
 import static no.nav.modig.frontend.FellesResources.DROPDOWNS_LESS;
@@ -150,13 +152,13 @@ public class FrontendModules {
 					DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS).done();
 
 	public static final FrontendModule ENONIC = new FrontendModule.With()
-			.scripts(MODERNIZR_RESOURCE, NAV_LIBS, NAV_GLOBAL, NAV_CAROUSEL, NAV_CONTENT, NAV_ACCORDION,
+			.scripts(MODERNIZR_RESOURCE, NAV_LIBS, NAV_GLOBAL, NAV_TEMP, NAV_CAROUSEL, NAV_CONTENT, NAV_ACCORDION,
 					MATCH_MEDIA, JQUERY_MEGA_MENU)
 			.less(NAV_VARIABLES_LESS, NAV_MIXINS_LESS, NAV_NORMALIZE_LESS, NAV_GRID_LESS,
 					NAV_TYPOGRAPHY_LESS, NAV_TABLE_LESS, NAV_BUTTONS_LESS, NAV_BREADCRUMB_LESS, NAV_MEGAMENU_LESS,
-					NAV_LINKLISTS_LESS, NAV_SCAFFOLDING_LESS,
+					NAV_LINKLISTS_LESS, NAV_SCAFFOLDING_LESS, NAV_TEMP_BETA_LESS,
 					NAV_SITEHEADER_LESS, NAV_SITEFOOTER_LESS, NAV_SITEFOOTER_ALPHABET_LESS,
-					NAV__ARTICLE_LESS, NAV_FACTSHEET_LESS, NAV_CAROUSEL_LESS, NAV_ACCORDION_LESS, NAV_ERROR_LESS,
+					NAV_ARTICLE_LESS, NAV_FACTSHEET_LESS, NAV_CAROUSEL_LESS, NAV_ACCORDION_LESS, NAV_ERROR_LESS,
 					NAV_UTILITIES_LESS, NAV_CONTRAST_LESS, NAV_PRINT_LESS, NAV_WEBFONTS_LESS).done();
 
 	public static final FrontendModule LEGACY = new FrontendModule.With()

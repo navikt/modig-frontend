@@ -221,7 +221,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
               else { // desktop
 
              
-               _mobileMenuDisable.call(this,menu,menuToggler);
+               _mobileMenuDisable.call(this,menu,menutoggler);
                _mobileMenuDisable.call(this,searchform,searchtoggler);
 
                  mobilesubmenus.each(function (i, submenu) {   // todo: nødvendig med each her?
@@ -335,9 +335,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
             })
 
             .fail(function() {
-              var html = '<p>En feil oppstod!</p>';
-              //panel.find('p').remove(); // clear previous error msgs
-              panel.append(html);
+              window.location = href;
             })
 
             .done(function (msg) { // todo error handling?
@@ -790,7 +788,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                   _clickHandler.call(that, event);
                 }  
 
-                console.log('default');
+                //console.log('default');
 
                 clearTimeout(this.keydownTimeoutID);
                 keydownSearchString += newString !== keydownSearchString ? newString : '';

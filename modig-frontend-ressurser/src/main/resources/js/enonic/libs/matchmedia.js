@@ -1,7 +1,7 @@
 /*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
 window.matchMedia || (window.matchMedia = function() {
     "use strict";
-    console.log('matchMedia polyfill running...');
+    //console.log('matchMedia polyfill running...');
     // For browsers that support matchMedium api such as IE 9 and webkit
     var styleMedia = (window.styleMedia || window.media);
 
@@ -51,7 +51,7 @@ window.matchMedia || (window.matchMedia = function() {
         return false;
     }
 
-    console.log('matchMedia addListener polyfill running...');
+    //console.log('matchMedia addListener polyfill running...');
 
     var localMatchMedia = window.matchMedia,
         hasMediaQueries = localMatchMedia('only all').matches,
