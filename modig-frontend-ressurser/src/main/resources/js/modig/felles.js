@@ -35,14 +35,17 @@ if (window.navigator.appName == "Microsoft Internet Explorer") {
 }
 
 window.onload = function () {
-    var cookiec = readCookie("contrast");
-    var contrast = cookiec ? cookiec : 'empty';
+    var cookiec = readCookie("highContrast");
+    var contrast = 'empty';
+    if (cookiec === '1') {
+        contrast = 'contrast';
+    }
     setActiveStyleSheet(contrast);
 };
 
 window.onunload = function () {
     var contrast = getActiveContrast();
-    createCookie('contrast', contrast, 365);
+    createCookie('highContrast', contrast === 'contrast' ? '1' : '0', 365);
 };
 
 function createCookie(name, value, days) {
