@@ -15,20 +15,22 @@
  */
 package no.nav.modig.frontend.merged;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-
-import java.lang.reflect.Field;
-import java.text.DateFormat;
-
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.http.mock.MockHttpServletRequest;
 import org.apache.wicket.protocol.http.mock.MockHttpSession;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.util.tester.WicketTester;
 import org.apache.wicket.util.time.Duration;
 import org.apache.wicket.util.time.Time;
 import org.junit.Test;
+
+import java.lang.reflect.Field;
+import java.text.DateFormat;
+import java.util.ArrayList;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 
 public class MergedJavaScriptBuilderTest extends MergedResourceBuilderTest {
@@ -107,7 +109,7 @@ public class MergedJavaScriptBuilderTest extends MergedResourceBuilderTest {
     protected void onAppInit(WebApplication app) {
         new MergedJavaScriptBuilder().setPath("/scripts/all.js")
                 .addScript(MergedJavaScriptBuilderTestPage.JS_REFERENCE)
-                .addWicketAjaxLibraries()
+                .addWicketAjaxLibraries(new ArrayList<JavaScriptResourceReference>())
                 .install(app);
     }
 

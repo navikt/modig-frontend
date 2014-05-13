@@ -1,13 +1,14 @@
 package no.nav.modig.frontend.merged;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.wicket.ajax.WicketAjaxJQueryResourceReference;
 import org.apache.wicket.ajax.WicketEventJQueryResourceReference;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MergedJavaScriptBuilder extends MergedResourceBuilder {
@@ -40,9 +41,12 @@ public class MergedJavaScriptBuilder extends MergedResourceBuilder {
 		return this;
 	}
 
-	public MergedJavaScriptBuilder addWicketAjaxLibraries() {
+	public MergedJavaScriptBuilder addWicketAjaxLibraries(List<JavaScriptResourceReference> resourceReferences) {
 		addScript(WicketEventJQueryResourceReference.get());
 		addScript(WicketAjaxJQueryResourceReference.get());
+		for (JavaScriptResourceReference reference : resourceReferences) {
+			addScript(reference);
+		}
 		return this;
 	}
 

@@ -46,6 +46,7 @@ public class FrontendConfigurator {
 
     // TODO: IMPLEMENTERE Å BRUKE SEPARATE BOOTSTRAP-KOMPONENTER - FORVENTET I BOOTSTRAP 3
     private List<JavaScriptResourceReference> jsReferences = new ArrayList<>();
+    private List<JavaScriptResourceReference> wicketReferences = new ArrayList<>();
     private List<CssResourceReference> cssReferences = new ArrayList<>();
     private List<PackageResourceReference> lessReferences = new ArrayList<>();
     private List<CssResourceReference> priorityCss = new ArrayList<>();
@@ -111,6 +112,12 @@ public class FrontendConfigurator {
 
     public FrontendConfigurator addScripts(JavaScriptResourceReference... resources) {
         jsReferences.addAll(asList(resources));
+        return this;
+    }
+
+
+    public FrontendConfigurator addWicketScripts(JavaScriptResourceReference... resources) {
+        wicketReferences.addAll(asList(resources));
         return this;
     }
 
@@ -190,7 +197,7 @@ public class FrontendConfigurator {
             if (!jsReferences.isEmpty()) {
                 scriptBuilder
                         .setPath(basePath + "/js/" + jsConcatFile)
-                        .addWicketAjaxLibraries()
+                        .addWicketAjaxLibraries(wicketReferences)
                         .install(application);
             }
 
