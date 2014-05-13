@@ -1,3 +1,7 @@
+var navno = navno || {
+};
+
+
 $(function () {
 
     $('#link-skriftstorrelse').tooltip({
@@ -34,21 +38,65 @@ if (window.navigator.appName == "Microsoft Internet Explorer") {
     }
 }
 
-window.onload = function () {
-    var cookiec = readCookie("highContrast");
-    var contrast = 'empty';
-    if (cookiec === '1') {
-        contrast = 'contrast';
+
+
+/*
+ * Cookie handling (parameterized, reusable)
+ * param1: name/key of cookie
+ * param2: value
+ * param3: how many days to expiration
+ * param4: boolean to determine type of cookie, where boolean true is session cookie and boolean false is persistent cookie.
+ */
+navno.setCookie = function (c_name, value, exdays, isSession) {
+
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value;
+    if (isSession) {
+        c_value = escape(value) + ((exdays == null) ? "" : ";domain=.nav.no;path=/;made_write_conn=1295214458;");
+    } else {
+        c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString() + ";domain=.nav.no;path=/;");
     }
-    setActiveStyleSheet(contrast);
+    document.cookie = c_name + "=" + c_value;
+};
+
+navno.getCookie = function (c_name) {
+
+    var c_value = document.cookie;
+    var c_start = c_value.indexOf(" " + c_name + "=");
+
+    var c_start = ((c_start === -1) ? c_value.indexOf(c_name + "=") : c_start);
+
+    if (c_start === -1) {
+        c_value = null;
+    } else {
+        c_start = c_value.indexOf("=", c_start) + 1;
+        var c_end = c_value.indexOf(";", c_start);
+        if (c_end === -1) {
+            c_end = c_value.length;
+        }
+        c_value = unescape(c_value.substring(c_start, c_end));
+    }
+    return c_value
+};
+//////////////////////// END ////////////////////////
+
+window.onload = function () {
+    var hc_value_onload = navno[ 'getCookie']('highContrast');
+
+    if (hc_value_onload === '1') {
+        setActiveStyleSheet('contrast');
+    } else {
+        setActiveStyleSheet('');
+    }
 };
 
 window.onunload = function () {
     var contrast = getActiveContrast();
-    createCookie('highContrast', contrast === 'contrast' ? '1' : '0', 365);
+    navno[ 'setCookie']('highContrast', contrast === 'contrast' ? 1 : 0 , 7, false);
 };
 
-function createCookie(name, value, days) {
+function createCookie(name, value, days, domain) {
     if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
