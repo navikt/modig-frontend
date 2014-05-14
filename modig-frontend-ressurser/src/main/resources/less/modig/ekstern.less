@@ -200,6 +200,23 @@
 			}
 		}
 	}
+
+    .informasjonsboks {
+        position: fixed;
+        top: 10px !important;
+        bottom: 10px !important;
+        right: 10px !important;
+        left: 10px !important;
+        width: auto;
+        z-index: 1050;
+
+        [class*="knapp"]:first-of-type + a {
+            display: block;
+            margin-left: 0;
+            margin-top: 20px;
+            color: #00a9e0;
+        }
+    }
 }
 
 @media only screen and (max-width: 480px) {
