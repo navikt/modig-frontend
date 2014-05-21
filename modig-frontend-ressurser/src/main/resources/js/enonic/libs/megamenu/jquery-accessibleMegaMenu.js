@@ -144,7 +144,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
             keydownTimeoutDuration = 1000,
             keydownSearchString = "",
             isTouch = !!Object.prototype.hasOwnProperty.call(window, "ontouchstart"),// !!window.hasOwnProperty("ontouchstart"),       
-            mobileMenuMq = window.matchMedia("(max-width: 38.75em)"), // Mobile
+            mobileMenuMq = window.matchMedia("(max-width: 48em)"), // Mobile
             _getPlugin,
             _addUniqueId,
             _togglePanel,
@@ -184,12 +184,14 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
         } 
 
         _mobileMenuDisable = function (submenu,expander) {
+
             expander.removeAttr('tabindex aria-haspopup aria-owns aria-controls aria-expanded');
             submenu.removeAttr('role aria-expanded aria-hidden aria-labelledby');
         }   
 
      
-        _mobileMenuInit = function (mobilesubmenus) {   
+        _mobileMenuInit = function (mobilesubmenus) {  
+
           var that = this,
           settings = this.settings,
           nav = this.nav,
@@ -426,14 +428,13 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                 topli = target.closest('.' + settings.topNavItemClass),
                 panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass);
 
-               // console.log('_togglePanel');
-
             _toggleExpandedEventHandlers.call(this, hide);
-           
+
+            if (!menu.hasClass('m-open')) { // listener kjører til mobilmeny er lukka
             $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu, pointerup.outside-accessible-megamenu', _clickOutsideHandler);
+            }
 
             if (hide) {
-
                 topli = menu.find('.' + settings.topNavItemClass + ' .' + settings.openClass + ':first').closest('.' + settings.topNavItemClass);
 
                     topli.find('[aria-expanded]')
@@ -485,6 +486,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
 
         _toggleMobileMenuAndSearch = function (event,hide) {
+
           var target = $(event.target),
               that = this,
               settings = this.settings,
@@ -544,15 +546,15 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
             var target = $(event.target),                        
                 topli = target.closest('.' + this.settings.topNavItemClass),
                 toplink = topli.find('a:first'), // top nav item link
-                panel = target.closest('.' + this.settings.panelClass);
+                panel = target.closest('.' + this.settings.panelClass);    
 
-               // console.log('_clickHandler');
-     
+    
 
             if (topli.length === 1
                     && panel.length === 0
                     && topli.find('.' + this.settings.panelClass).length === 1
                     && target[0] === toplink[0]) {
+
                       event.preventDefault(); // main menu item
                       event.stopPropagation();
 
@@ -560,16 +562,15 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                     _togglePanel.call(this, event);
 
                 } else {
-
                    _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
 
                 }
             }
 
             else if (target.is('[tabindex].mobile-submenu-expander')) { // tabindex kun hvis mobil layout
-   
+
               event.preventDefault();
-              event.stopPropagation();
+              event.stopPropagation();            
               
                if (!target.hasClass(this.settings.openClass)) {
                     _toggleMobilePanel.call(this, event);
@@ -603,13 +604,14 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
          * @private
          */
          _clickOutsideHandler = function (event) {  
+
           var target = $(event.target);
 
-         // console.log('_clickOutsideHandler');
-
             if (this.interactiveArea.has(target).length === 0 && this.mobileMenuTogglers.filter(target).length === 0) {
+
                 event.preventDefault();
                 event.stopPropagation();
+                
                  _togglePanel.call(this, event, true);               
      
                  if (this.settings.enableMobileMenu && this.nav.has('.m-open').length) {
@@ -618,8 +620,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                 }
 
             }
-            
-            
+  
         };
 
         /**
@@ -652,6 +653,10 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                 regex,
                 isTopNavItem = (topli.length === 1 && panel.length === 0),
                 isMobileSubmenuExpander = target.is('.mobile-submenu-expander');
+
+            if ($(event.target).is('input')) {
+              return true;
+            }
 
             if (target.is('.hover:tabbable')) { // todo - kan fjernes?
                 $('html').off('keydown.accessible-megamenu');
@@ -774,6 +779,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                 break;
 
             case Keyboard.SPACE:
+
                 if (isTopNavItem || isMobileSubmenuExpander) {
                     event.preventDefault();
                     _clickHandler.call(that, event);
@@ -787,8 +793,6 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                   event.preventDefault();
                   _clickHandler.call(that, event);
                 }  
-
-                //console.log('default');
 
                 clearTimeout(this.keydownTimeoutID);
                 keydownSearchString += newString !== keydownSearchString ? newString : '';
@@ -847,8 +851,9 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
         };
 
          _toggleExpandedEventHandlers = function (hide) {
-            //var menu = this.menu;
-            if (hide) {
+            var menu = this.menu;
+
+            if (hide && !menu.hasClass('m-open')) {
                 $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu', _clickOutsideHandler);
 
             } else {
@@ -874,9 +879,8 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                     nav = this.nav = $(this.element),
                     menu = this.menu = nav.find('ul').first(),
                     mobileMenuTogglers = this.mobileMenuTogglers = nav.find('button.mobile-toggler'),
-                    interactiveArea = this.interactiveArea = settings.enableMobileMenu ? menu.add(mobileMenuTogglers) : menu,
+                    interactiveArea = this.interactiveArea = settings.enableMobileMenu ? menu.add(mobileMenuTogglers).add($('#sitesearch')) : menu,
                     topnavitems = this.topnavitems = menu.children(); // <li>
- 
 
                 var touchMoved = false,
                     touchEventFired = false,
@@ -965,8 +969,8 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                          var target = $(e.target);
 
-                          if (touchEventFired && !target.is('a:not([aria-expanded])')) { // don't do preventDefault if target is a normal link
- 
+                          if (touchEventFired && !target.is('a:not([aria-expanded])') && !target.is('input')) { // don't do preventDefault if target is a normal link, or search input
+
                             e.preventDefault(); // Don't follow link
                             e.stopImmediatePropagation(); // stop _clickHandler from running twice (abort the next click handler)
                           }

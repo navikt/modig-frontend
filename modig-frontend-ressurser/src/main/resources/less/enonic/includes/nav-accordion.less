@@ -3,6 +3,12 @@
 //-----------------------
 
 .related-content {
+    @media (max-width: (@screen-medium - 0.01)) {
+        margin-top: 30px;
+    }
+    @media (min-width: @screen-medium) and (max-width: @screen-large - 0.01) {
+        margin-top: 40px;
+    }
 	li {
 		font-size:@em-as-14px;
 	}
@@ -100,8 +106,15 @@
 //  Høyremeny artikkel, faktaark mm
 // 	I stor grad lik accordion! TODO: Refactor
 // -------------------------------
-
+body.device-class-mobile, body.device-class-tablet {
+    .related-content.content-submenu {
+        @media (max-width: (@screen-large - 0.01)) {
+            display: none;
+        }      
+    }
+}
 .related-content.content-submenu {
+  
   ul {
     list-style:none;
     padding:0;

@@ -8,10 +8,6 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-.page-head h1 {
-    margin: 60px 0 20px 0;
-    text-align: center;
-}
 
 ///////////////////  Media queries  ///////////////////////
 
@@ -19,17 +15,29 @@
     margin-bottom: 60px;
     
     .toggle-btn-wrapper {
-        @media (max-width: (@screen-medium - 0.01)) {
+        @media (max-width: (@screen-medium)) { // hvis mindre enn, eller lik 768px, skal ikke vises på stående ipad
             display: none;   
         }
         margin-bottom: 30px;
         text-align: center;
-        .group {
+        
+        .btn-group {
             padding: 3px;
             border: 1px solid @gray-light;
             border-radius: 1px;
             display: inline-block;
             background-color: #fff;
+            
+            // box-sizing bug i IE, den må være content-box på dette elementet
+            box-sizing: content-box !important;
+            -webkit-box-sizing: border-box !important;
+            -moz-box-sizing: border-box !important;
+             
+            a {
+            box-sizing: content-box !important;
+            -webkit-box-sizing: border-box !important;
+            -moz-box-sizing: border-box !important;
+            }
         }
     }
     
@@ -65,6 +73,7 @@
     .hero-link-wrapper {
         margin-bottom: 1.875em;
     }
+    
     &:last-child .hero-link-wrapper {
         margin-bottom: 0;   
     }
@@ -75,15 +84,23 @@
     position: relative;
     
     .item {
-        .hero-link {
-            padding: 1.875em 1.875em 1.875em;
-            width: 100%;
+        @media (max-width: (@screen-small - 0.01)) {
+            margin-left:  @grid-gutter-width / 2;
+            margin-right:  @grid-gutter-width / 2;
+        }
+        .hero-link-wrapper {
+            .hero-link {
+                @media (max-width: (@screen-small - 0.01)) {
+                    padding: 1.875em 1.875em 1.875em;
+                    width: 100%;      
+                }
             
-            p { display: block; }
+                p { display: block; }
             
-            .decorated:after {
-                display: block;   
-            }
+                .decorated:after {
+                    display: block;   
+                }
+            }   
         }
     }
 }
@@ -94,8 +111,7 @@
 
 @media (min-width: @screen-small) {
     .no-js #carousel-items .hero-link { min-height: 25em; }
-    .js .item .hero-link p { font-size: @em-as-12px; }
-    .carousel-outer { padding-bottom: 60px; }
+    .js .item .hero-link p { font-size: @em-as-12px; }           
     .js .item .hero-link {padding: 1em; }
     
     .item {
@@ -103,8 +119,8 @@
     }
 }
 
-@media (min-width: @screen-medium) { // TODO - sjekk om overlapp med mq over er et issue
-    
+@media (min-width: (@screen-medium + 0.0652em)) { 
+
     .carousel-outer { padding-bottom: 0; }
      #carousel-items .item .hero-link-wrapper:first-child { padding-left: 0; }
      #carousel-items .item .hero-link-wrapper:nth-child(3) { padding-right: 0; }
@@ -199,6 +215,7 @@
         }
     }
 }
+
 @media (min-width: @screen-large) {
    .no-js #carousel-items .hero-link { min-height: 22em; }
    #carousel-items .hero-link {
@@ -206,9 +223,7 @@
             font-size: @em-as-12px;
         }
     }
-    .page-head h1 {
-        margin: 60px 0 -20px 0;
-    }
+
 }
 
 ///////////////////////////////////////////////////////////
@@ -245,7 +260,7 @@
 }
 
 #maincontent #navCarousel .carousel-inner > div.item {
-    @media (min-width: @screen-small) and (max-width: (@screen-medium - 0.01)) {
+    @media (min-width: @screen-small) and (max-width: (@screen-medium)) {
         .flex-container();
     }
 }

@@ -13,48 +13,10 @@
   }
 }
 
-.link-list.news-mobile {
-    @media (max-width: @screen-small) {
-       li {
-           a {
-                display: inline-block;
-                padding-right: 0;
-                @media (max-width: (@screen-small)) {
-                    padding: 0 15px 12px 3px; // Relativ TODO?
-                }
-                time {
-                    display: block;
-                    padding: 12px 0 2px 0;
-                    margin-right: 10px;
-                    font-size: @em-as-12px;
-                }
-                
-                &:after {
-                    @media (max-width: @screen-small) {
-                        top: 39%;
-                    } 
-                }
-            }
-            span {
-                margin: 0 15px;
-            }
-            
-            &:first-of-type {
-                a {
-                    &:after {
-                        top: 39%;
-                    }
-                }
-            }
-       }
-       
-    }
-}
-
 .link-list li {
     border-bottom: 1px solid @gray-light;
     position: relative;
-        a {
+    a {
         display: block;
         color: @text-color;
         padding: 10px 15px 10px 3px;
@@ -62,11 +24,12 @@
             padding: 12px 15px 12px 3px; // Relativ TODO?  
         }
         text-align: left;
+        
         &:hover,&:focus, &:hover time, &:focus time {
-          color: @link-color;
-          text-decoration: none;
+            color: @link-color;
+            text-decoration: none;
         }
-            &:after {
+        &:after {
             content: " " ;
             clear:both;
             display: block;
@@ -93,22 +56,57 @@
 
 // Nyhetsliste med pubdate, midtstilt
 .link-list-meta {
-    @media (max-width: @screen-small) {
-        text-align: left;
-    }
+    
   text-align: center;
   time {
     display:block;
     font-size:@em-as-12px;
+    @media (max-width: (@screen-small)) {
+        text-align: left;
+        padding: 0;
+        margin-right: 10px;
+        font-size: @em-as-12px;
+    }
   }
   li {
     margin-bottom: 20px; // TODO kontrollsjekke avstand
-    a { position: relative;
+    @media (max-width: @screen-small) {
+        margin: 0;
+        padding: 12px 15px 12px 3px;
+        position: relative;
+        border-bottom: 1px solid @gray-light;
+        text-align: left;
+    }
+    
+    a { 
+        position: relative;
+        
+        @media (max-width: (@screen-small)) {
+            color: @text-color;
+            padding: 0;
+            position: static;
+            display: block;
+            
+            &:hover,&:focus, &:hover time, &:focus time {
+                color: @link-color;
+                text-decoration: none;
+            }
+        }
        
         &:after {
             content: " ";
             display: inline-block;
             border-bottom: 1px solid @link-color;
+            @media (max-width: (@screen-small)) {
+                clear:both;
+                display: block;
+                border-bottom: 6px solid transparent;
+                border-left: 6px solid @blue;
+                border-top: 6px solid transparent;
+                position: absolute;
+                right: 4px;
+                top: 39%;
+            }
         }
     }
   }
@@ -122,18 +120,9 @@
             &:last-child {
              margin-bottom: 0;   
             }
-        }
-        padding: 0 1.2em;    
-    }
-    @media (min-width: (@screen-medium)) {
-        .col-md-4 {  
-            //float: none;
-            //display: inline-block;
-            //vertical-align: top;
-            //margin-left: auto; 
-            //margin-right: auto;
         }   
     }
+  
 }
 
 

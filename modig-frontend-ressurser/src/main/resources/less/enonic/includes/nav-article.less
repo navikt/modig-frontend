@@ -125,6 +125,9 @@
 }
 
 .mobile-linklist-related {
+    @media (min-width: (@screen-large - 0.01)) {
+        display: none;   
+    }
     background-color: #fff;
     margin-bottom: 28px;
     .submenu-header {
@@ -320,7 +323,7 @@
 }
 
 .full-article, .article-list, .events-list {
-   padding: 40px 30px;
+   padding: 40px 25px;
    background:#fff;
    header {
       h1 {
@@ -607,3 +610,41 @@
     border: 1px solid @gray-light;
 }
 
+// Find your office
+//--------------------------------------------------------------------
+.office-search {
+     
+     border: 1px solid @gray-light;
+     background-color: @gray-lighter;
+     
+     
+     h2 {
+       text-transform: uppercase;
+       border-bottom: 1px solid @gray-light;
+       margin: 0;
+       color: #3e3832;
+       padding: 12px 30px;
+       
+       font-size: @em-as-17px;
+       font-weight: 600;
+       
+     }
+     form {
+        position: relative;
+        padding: 22px 30px;
+        
+        input[type='search'] {
+            width: 100%;
+            padding: 10px 0;
+            font-size: @em-as-20px;
+            &:after {
+             .clearfix-old();   
+            }
+        }
+        input[type='submit'] {
+            position: absolute;
+            top: 22px;
+            right: 30px;
+        }
+     }
+}

@@ -363,7 +363,7 @@ if (typeof define !== "undefined" && define.amd) {
   } else {
     window.FastClick = FastClick
   }
-}
+};
 
 
 
@@ -372,11 +372,11 @@ if (typeof define !== "undefined" && define.amd) {
  */
 
 navno.buttonBottomOffset = null;
-navno.topLinkButtonPlaceholder = null;
-navno.topLinkStickyElement = null;
-navno.requiredScrollDistanceForSticky = null;
+navno.topLinkButtonPlaceholder = $('.placeholder');
+navno.topLinkStickyElement = $('#top-scroll-link').parent();
+navno.requiredScrollDistanceForSticky = ($("header.siteheader").height() + 500);
 
-navno.onScrollAndResize = function () {
+navno.onScrollAndResize = function (event) {
   
   var viewPortBottom = $(document).scrollTop() + $(window).height();
   var isBelowPageHeader = ($(document).scrollTop() > navno.requiredScrollDistanceForSticky);
@@ -392,11 +392,7 @@ navno.onScrollAndResize = function () {
 };
 
 $(function () {
-
-	navno.buttonBottomOffset = null;
-	navno.topLinkButtonPlaceholder = $('.placeholder');
-	navno.topLinkStickyElement = $('#top-scroll-link').parent();
-	navno.requiredScrollDistanceForSticky = ($("header.siteheader").height() + 500);
+  
   var footerMenuTop = $('#footer-content-menu').offset().top; // A-Å
   
   FastClick.attach(document.getElementById("top-scroll-link"));

@@ -62,12 +62,8 @@
 //--------------------------------------------------------------------
 
 .grid-setup() when (@responsive = true) { 
-    @media (min-width: @screen-small) { // larger than 480px
-      
-
-    }
-
-    @media (min-width: @screen-medium) { // equal to or larger than 768px
+  
+    @media (min-width: (@screen-medium + 0.0625em)) { // equal to or larger than 769px
      
       .make-grid-columns-float(md);
       .make-grid(@grid-columns, md, width);
@@ -81,16 +77,6 @@
         margin-left:-(@grid-gutter-width / 2);
         margin-right:-(@grid-gutter-width / 2); 
       }
-      
-      // Nedenforstående bør fikses på annen måte (egen klasse i stedet for overstyring av global setting)
-
-      // .col-md-8 blir brukt i tilfeller hvor det er portlet i region center og east, dvs. artikkel type i midten og undermeny/kapitteloversikt/relatert informasjon i øst.
-      // På stående iPad/tablet (portrait mode) blir artikkelen for smal når den er kun 66%, med 33% portlet i høyre kolonne. Overstyrer derfor standard width på col-md-8 for å tilpasse
-      // stående pad/tablets bedre. Den skal være 100% litt lengre enn den har vært (12 / 12 = 1 = 100%)
-      //.col-md-8 {
-      //  width: percentage((@grid-columns / @grid-columns));
-      // }
-
     }
 
     @media (min-width: @screen-large) { // equal to or larger than 992px
@@ -100,20 +86,8 @@
         margin-bottom: 0;
        }
       
-
-      // Her havner vi på typisk liggende ipad/tablet (landscape mode)       
-      
-      // Unngås! Bruk evt heller col-lg-8, i stedet for å overstyre md.
-      // .col-md-8 {
-      //    width: percentage((8 / @grid-columns));
-      // }
-       
-       
-       
-     
-
       .inner-row {
-      margin-bottom: 60px;
+        margin-bottom: 60px;
       }
 
     }
