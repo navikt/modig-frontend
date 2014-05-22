@@ -12,6 +12,7 @@ class EnonicResources  {
     static final JavaScriptResourceReference NAV_CAROUSEL = jsReference("enonic/nav-carousel.js");
     static final JavaScriptResourceReference NAV_CONTENT = jsReference("enonic/nav-content.js");
     static final JavaScriptResourceReference NAV_ACCORDION = jsReference("enonic/nav-accordion.js");
+    static final JavaScriptResourceReference NAV_INNLOGGING = jsReference("enonic/nav-innloggingslinjen.js");
     static final JavaScriptResourceReference NAV_TEMP = jsReference("enonic/temp.js");
 
     static final JavaScriptResourceReference MATCH_MEDIA = jsReference("enonic/libs/matchmedia.js");

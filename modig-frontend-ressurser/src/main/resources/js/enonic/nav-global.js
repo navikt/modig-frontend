@@ -185,12 +185,9 @@ $(function () {
       $('#auth-btns').show();
       $('.login-container #login').removeClass('hidden');
       $('.login-container #login-mobil').removeClass('hidden');
-
       Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.NOT_LOGGED_IN, Innloggingslinje.thirtyMinutes());
       Innloggingslinje.deleteCookie(Innloggingslinje.USERNAME_COOKIE_NAME);
-      Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME);
-
-      
+      Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME); 
     } else if (json.securityLevel >= 3) {
       $('#auth-btns').show();
       var name = json.name.toLowerCase();
@@ -200,8 +197,6 @@ $(function () {
       Innloggingslinje.setCookie(Innloggingslinje.USERNAME_COOKIE_NAME, name, Innloggingslinje.thirtyMinutes());
       $('#login').addClass('hidden');
       $('#login-mobil').addClass('hidden');
-
-
     } else {
       $('#auth-btns').hide();
       Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.SEC_LEVEL_LE_2, Innloggingslinje.thirtyMinutes());
@@ -213,14 +208,14 @@ $(function () {
 });
 
  $(function () {
-  $('.logout-tooltip .lukk').click(function(){
+  $('.logout-tooltip .lukk').on("click", function() {
     $('.logout-tooltip').addClass('hidden');
     $('.logout-tooltip .lukk').addClass('hidden');
   });
 });
 
  $(function () {
-  $('#auth-btns #logout', '#auth-btns #logout-mobil').click(function(e){
+  $('#auth-btns #logout, #auth-btns #logout-mobil').on("click", function(e) {
     e.preventDefault();
     Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME);
     Innloggingslinje.deleteCookie(Innloggingslinje.USERNAME_COOKIE_NAME);
