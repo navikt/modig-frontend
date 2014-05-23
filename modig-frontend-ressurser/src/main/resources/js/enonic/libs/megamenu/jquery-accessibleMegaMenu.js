@@ -222,7 +222,6 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
               else { // desktop
 
-             
                _mobileMenuDisable.call(this,menu,menutoggler);
                _mobileMenuDisable.call(this,searchform,searchtoggler);
 
@@ -919,8 +918,10 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                     var mobilesubmenus = topnavitems.find('.mobile-submenu');
 
+                    if (mobileMenuMq.matches) {
                     _mobileMenuEnable.call(that,menu,$('#toggle-mobile-mainmenu'));
                     _mobileMenuEnable.call(that,$('#sitesearch'),$('#toggle-mobile-search'));
+                    }
 
                      mobilesubmenus.each(function (i, submenu) {               
                         submenu = $(submenu);
@@ -929,10 +930,10 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                         _addUniqueId.call(that, submenu); 
                         _addUniqueId.call(that, expander);
                         
-                        if (mobileMenuMq.matches) {
+                        /*if (mobileMenuMq.matches) {
                         _mobileMenuEnable.call(that,submenu,expander);
 
-                        }
+                        }*/
             
                     });
 

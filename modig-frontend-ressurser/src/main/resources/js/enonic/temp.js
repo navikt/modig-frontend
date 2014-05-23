@@ -372,11 +372,15 @@ if (typeof define !== "undefined" && define.amd) {
  */
 
 navno.buttonBottomOffset = null;
-navno.topLinkButtonPlaceholder = $('.placeholder');
-navno.topLinkStickyElement = $('#top-scroll-link').parent();
-navno.requiredScrollDistanceForSticky = ($("header.siteheader").height() + 500);
+navno.topLinkButtonPlaceholder = null;
+navno.topLinkStickyElement = null;
+navno.requiredScrollDistanceForSticky = null;
 
 navno.onScrollAndResize = function (event) {
+
+  navno.topLinkButtonPlaceholder = $('.placeholder');
+  navno.topLinkStickyElement = $('#top-scroll-link').parent();
+  navno.requiredScrollDistanceForSticky = ($("header.siteheader").height() + 500);
   
   var viewPortBottom = $(document).scrollTop() + $(window).height();
   var isBelowPageHeader = ($(document).scrollTop() > navno.requiredScrollDistanceForSticky);
@@ -391,7 +395,11 @@ navno.onScrollAndResize = function (event) {
   
 };
 
-$(function () {
+function scrollToTopHandler() {
+
+  navno.topLinkButtonPlaceholder = $('.placeholder');
+  navno.topLinkStickyElement = $('#top-scroll-link').parent();
+  navno.requiredScrollDistanceForSticky = ($("header.siteheader").height() + 500);
   
   var footerMenuTop = $('#footer-content-menu').offset().top; // A-Å
   
@@ -400,7 +408,6 @@ $(function () {
   if (($(window).height()*2)+200 < footerMenuTop) {
     navno.topLinkStickyElement.removeClass("hide-on-pageload");
     
-    // Keep document height by preserving the height of where the sticky element resides, so that coordinates of elements doesn't get skewed when button is taken out by "position: fixed",
     $(".placeholder").css("height", navno.topLinkButtonPlaceholder.height());
     navno.buttonBottomOffset = navno.topLinkButtonPlaceholder.offset().top + navno.topLinkButtonPlaceholder.height();
     
@@ -409,7 +416,6 @@ $(function () {
     }
     $(document).on("scroll", navno.onScrollAndResize);
     
-    // REFACTOR: global namespace a "isTouch" variable
     if (!('ontouchstart' in document.documentElement)) {
       $(window).on("resize", function onResize() {
         var thisWindow = $(window);
@@ -448,7 +454,7 @@ $(function () {
       $(document).on("touchmove", navno.onScrollAndResize);
     }
   }
-});
+}
 
 //////////////////////// END ////////////////////////
 
