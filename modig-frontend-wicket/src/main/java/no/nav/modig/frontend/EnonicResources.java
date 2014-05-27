@@ -12,6 +12,7 @@ class EnonicResources  {
     static final JavaScriptResourceReference NAV_CAROUSEL = jsReference("enonic/nav-carousel.js");
     static final JavaScriptResourceReference NAV_CONTENT = jsReference("enonic/nav-content.js");
     static final JavaScriptResourceReference NAV_ACCORDION = jsReference("enonic/nav-accordion.js");
+    static final JavaScriptResourceReference NAV_INNLOGGING = jsReference("enonic/nav-innloggingslinjen.js");
     static final JavaScriptResourceReference NAV_TEMP = jsReference("enonic/temp.js");
 
     static final JavaScriptResourceReference MATCH_MEDIA = jsReference("enonic/libs/matchmedia.js");
@@ -21,6 +22,7 @@ class EnonicResources  {
     static final PackageResourceReference NAV_MIXINS_LESS = lessReference("enonic/includes/nav-mixins.less");
     static final PackageResourceReference NAV_NORMALIZE_LESS = lessReference("enonic/includes/nav-normalize.less");
     static final PackageResourceReference NAV_GRID_LESS = lessReference("enonic/includes/nav-grid.less");
+    static final PackageResourceReference NAV_AUTOCOMPLETE_LESS = lessReference("enonic/includes/nav-jqueryautocomplete.less");
 
     static final PackageResourceReference NAV_TYPOGRAPHY_LESS = lessReference("enonic/includes/nav-typography.less");
     static final PackageResourceReference NAV_TABLE_LESS = lessReference("enonic/includes/nav-table.less");

@@ -61,6 +61,7 @@ import static no.nav.modig.frontend.EnonicResources.JQUERY_MEGA_MENU;
 import static no.nav.modig.frontend.EnonicResources.MATCH_MEDIA;
 import static no.nav.modig.frontend.EnonicResources.NAV_ACCORDION;
 import static no.nav.modig.frontend.EnonicResources.NAV_ACCORDION_LESS;
+import static no.nav.modig.frontend.EnonicResources.NAV_AUTOCOMPLETE_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_BREADCRUMB_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_BUTTONS_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_CAROUSEL;
@@ -71,6 +72,7 @@ import static no.nav.modig.frontend.EnonicResources.NAV_ERROR_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_FACTSHEET_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_GLOBAL;
 import static no.nav.modig.frontend.EnonicResources.NAV_GRID_LESS;
+import static no.nav.modig.frontend.EnonicResources.NAV_INNLOGGING;
 import static no.nav.modig.frontend.EnonicResources.NAV_LIBS;
 import static no.nav.modig.frontend.EnonicResources.NAV_LINKLISTS_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_MEGAMENU_LESS;
@@ -152,9 +154,9 @@ public class FrontendModules {
 					DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS).done();
 
 	public static final FrontendModule ENONIC = new FrontendModule.With()
-			.scripts(MODERNIZR_RESOURCE, NAV_LIBS, NAV_GLOBAL, NAV_TEMP, NAV_CAROUSEL, NAV_CONTENT, NAV_ACCORDION,
+			.scripts(MODERNIZR_RESOURCE, NAV_LIBS, NAV_GLOBAL, NAV_TEMP, NAV_CAROUSEL, NAV_CONTENT, NAV_ACCORDION, NAV_INNLOGGING,
 					MATCH_MEDIA, JQUERY_MEGA_MENU)
-			.less(NAV_VARIABLES_LESS, NAV_MIXINS_LESS, NAV_NORMALIZE_LESS, NAV_GRID_LESS,
+			.less(NAV_VARIABLES_LESS, NAV_MIXINS_LESS, NAV_NORMALIZE_LESS, NAV_GRID_LESS, NAV_AUTOCOMPLETE_LESS,
 					NAV_TYPOGRAPHY_LESS, NAV_TABLE_LESS, NAV_BUTTONS_LESS, NAV_BREADCRUMB_LESS, NAV_MEGAMENU_LESS,
 					NAV_LINKLISTS_LESS, NAV_SCAFFOLDING_LESS, NAV_TEMP_BETA_LESS,
 					NAV_SITEHEADER_LESS, NAV_SITEFOOTER_LESS, NAV_SITEFOOTER_ALPHABET_LESS,

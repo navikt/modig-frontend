@@ -49,6 +49,33 @@
 
 
 
+.sitesearch {  // gjelder både mobil og desktop
+      .input-sitesearch {
+        border:none;
+        box-shadow: none;
+        margin:0;
+        border-radius: 0;
+        &:-moz-placeholder, 
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
+        &::-webkit-input-placeholder,
+        &:input-placeholder  {
+            font-size:@em-as-12px;
+        }
+
+      }
+      .btn-sitesearch {              
+        margin:0;
+        padding:0;
+        border:none;
+        text-indent: -9999em;
+        width:17px;
+      }
+    }
+
+
+
+
 //--------------------------------------------------------------------
 //
 //  Private mixins for responsive / non-responsive megamenu behaviour
@@ -102,20 +129,24 @@
         text-transform: uppercase;
         cursor: pointer;
         &.toggle-mainmenu {
-           padding-left:1em;
+           padding-left:1.2em; // samme som på knapp for søk
            text-align: left;
-              &:before {
-                position:absolute;
-                left:0;
-                top:.33em;
-                content:"\2261";
-                font-size:1.5em;
-              }
+
+          background: transparent url('gfx/mainmenu/meny_mobil_hvit.png') no-repeat left 50%;
+          //background: transparent url('gfx/mainmenu/meny_mobil_hvit.svg') no-repeat left 50%;         
         }
 
-        &.toggle-search {
-          padding-right:1em;
+        &.toggle-search {     
           text-align: right;
+          display:inline-block;
+          span {
+            pointer-events:none; // pga iOS, gjør hele <button> klikkbar
+            display: inline-block;
+            padding-left:1.2em;
+            background: transparent url('gfx/mainmenu/sok_liten_hvit.png') no-repeat left 50%;
+            //background: transparent url('gfx/mainmenu/sok_liten_hvit.svg') no-repeat left 50%;
+          }
+          
         }          
     }
 
@@ -137,30 +168,36 @@
       }
     }
 
-    button.mobile-toggler.m-open {
+    button.toggle-mainmenu.m-open {
       color:@blue-light;
+      background: transparent url('gfx/mainmenu/meny_mobil_blaa.png') no-repeat left 50%;
+      //background: transparent url('gfx/mainmenu/meny_mobil_blaa.svg') no-repeat left 50%;     
+    }
+
+    button.toggle-search.m-open {
+   
+    span {
+        color:@blue-light;
+        background: transparent url('gfx/mainmenu/sok_liten_lyseblaa.png') no-repeat left 50%;
+       // background: transparent url('gfx/mainmenu/sok_liten_lyseblaa.svg') no-repeat left 50%;
+      }
+
     } 
+
 }
 
 
 
 //--------------------------------------------------------------------
 //
-//  MOBILMENY - opp til 620px
+//  MOBILMENY - opp til og med 768px
 //
 //--------------------------------------------------------------------
 
 
 .accessible-megamenu-mobile-mq() when (@responsive = true) { 
 
-@media (max-width: @screen-small) { 
-    
-    form.sitesearch {
-      display: none; // MIDLERTIDIG
-      &.m-open {
-        display: block;
-      }
-    }
+@media (max-width: @screen-medium) { // Mindre enn, eller lik 768px
 
     .js label.mobile-toggler,
     .js input.mobile-toggler {
@@ -175,9 +212,6 @@
       cursor:pointer;
     }
 
-    .mobile-submenu a:active {
-      color:@blue-light;
-    } 
     
 
     .mobile-submenu-expander.open {
@@ -189,8 +223,7 @@
       padding-right:35px;
       li {
         font-size:1em;
-        border-bottom: 1px solid @gray; 
-        margin-left:20px;
+        border-bottom: none;
 
          a {
             padding: 15px 0 15px 60px;
@@ -210,7 +243,8 @@
       background-color:@gray-darker;
     }
 
-    .accessible-megamenu {
+    .accessible-megamenu, 
+    .sitesearch {
         border-top: 1px solid @gray;
         margin-left: -@grid-gutter-width / 2;
         width:90%;
@@ -223,17 +257,58 @@
 
     }
 
-    .device-class-desktop .accessible-megamenu {
-       a {
-            &:active,&:focus,&:hover {
-                color:@blue-light;
-            }  
+    .sitesearch { // kun mobil
+      display:none;
+      &.m-open {
+        display: block;
+        width:100%;      
+      }
+      .inputwrapper {
+        padding: @grid-gutter-width / 2;
+        > div {
+            background: #fff;
+            border:1px solid @gray-light;
         }
+        
+      }
+      .input-sitesearch {
+        .box-sizing(border-box);
+        width:85%;
+        display: inline-block;
+        margin:0;
+        padding: @grid-gutter-width / 2;
+        &:focus {
+          .tab-focus();
+        }
+      }
+      .btn-sitesearch {
+        .box-sizing(border-box);
+        width:15%;
+        display:inline-block;
+        margin:0;
+        padding: @grid-gutter-width / 2;        
+        background: transparent url('gfx/mainmenu/sok_stor_morkeblaa.png') no-repeat right (@grid-gutter-width / 2) center; 
+        background: transparent url('gfx/mainmenu/sok_stor_morkeblaa.svg') no-repeat right (@grid-gutter-width / 2) center; 
+        &:focus {
+          .tab-focus();
+          overflow: hidden;
+        }
+      } 
+      
+    }
+
+ 
+
+    .accessible-megamenu {
+       a:active, a:focus, a:hover, .active a {         
+                color:@blue-light;
+            }   
      }
+
 
     .topnavitem {
       line-height: 1.2; // default er 1.4ish
-        > a, .auth-btns a {
+        > a, #auth-btns a {
                 display:block;   
                 padding: 15px 35px 15px 20px;//@grid-gutter-width / 2;
                 border-bottom: 1px solid @gray;                     
@@ -252,14 +327,65 @@
             }
     } // topnavitem
 
+  .topnavitem.selected-topnavitem.has-children {
+    border-bottom: 1px solid @gray; // skillelinje før neste hovedmenypunkt (etter undermeny)
+  }
+
+
+  .topnavitem.has-children { // mobil!
+      
+      > a, 
+      .mobile-submenu-expander {
+          position:relative;
+      }
+
+      > a:after, 
+      .mobile-submenu-expander:after { 
+          content: " " ;
+          display: inline-block;
+          border-top: 6px solid @blue-light; 
+          border-right: 6px solid transparent;
+          border-left: 6px solid transparent;
+          position: absolute;
+          right: 23px; 
+          top: 40%;
+       }
+      
+      > a.open:after, 
+      .mobile-submenu-expander.open:after {
+          border-bottom: 6px solid @blue-light;
+          border-top:none;
+          border-right: 6px solid transparent;
+          border-left: 6px solid transparent;
+          }
+
+
+      > a:hover:after, .mobile-submenu-expander:hover:after,
+      > a:focus:after, .mobile-submenu-expander:focus:after {
+          border-top: 6px solid @blue-light;
+      }  
+
+      > a.open:hover:after, .mobile-submenu-expander.open:hover:after,
+      > a.open:focus:after, .mobile-submenu-expander.open:focus:after {
+         border-bottom: 6px solid @blue-light; 
+         border-top:none;
+      }   
+    }
+
     .accessible-megamenu-panel {
       > p {
         margin:0; // home-link wrapper
       }
 
       .home-link, .mobile-submenu-expander {
+        display:block;
         padding:15px 35px 15px 40px; // dobbelt så mye padding left som nivået over (topnavitem)
         margin:0;
+      }
+      .home-link {
+        background: transparent url('gfx/mainmenu/hjem_hvit.png') no-repeat (@grid-gutter-width / 2) center;
+        background: transparent url('gfx/mainmenu/hjem_hvit.svg') no-repeat (@grid-gutter-width / 2) center; 
+
       }
     }
      
@@ -284,25 +410,63 @@
     }
 
 
-    } 
+    } // media screen medium
+
+@media (max-width: @screen-xs) { // hack for mindre flater. Søkeknapp må ha større %-andel av bredde, slik at ikon vises
+  
+.sitesearch {
+    .input-sitesearch { 
+      width:80%;
+    }
+
+    .btn-sitesearch {
+      width:20%;
+    }
+  }
+} // media screen xtra small
+
+
 } // mixin
 
 
 //--------------------------------------------------------------------
 //
-//  DESKTOPMENY - responsiv. Fra 621px og opp.
+//  DESKTOPMENY - responsiv. Fra 769px og opp (tidligere 621px).
 //
 //--------------------------------------------------------------------
 
 .accessible-megamenu-desktop-mq() when (@responsive = true) {
 
-    @media (min-width: (@screen-small + 0.0625em)) {
+    @media (min-width: (@screen-medium + 0.0625em)) { // fra 769px og opp
         .mobile-toggler {
             display:none !important;
         }
          .accessible-megamenu-desktop(); 
         }
 
+
+      @media (min-width: 60em) { 
+        .topnavsection {  // menylinje sentreres først ved 960px pga plassmangel
+          .topnav {
+            text-align:center;
+          }
+
+          .topnavitem {
+              > a, 
+              #auth-btns a {
+                    display:block;   
+                    padding: 10px 40px 10px 10px; 
+                  }
+              &.has-children {
+               > a:after {
+                  right:23px;
+                }
+              }
+          }
+        }
+      }
+
+     
 }
 
 
@@ -315,6 +479,28 @@
 .accessible-megamenu-desktop-mq() when (@responsive = false) { 
 
     .accessible-megamenu-desktop();
+
+     .topnavsection {
+          .topnav {
+            text-align:center; // når fixed with (ikke responsiv), skal menylinja alltid være sentrert.
+          }
+          .topnavitem {
+              > a, 
+              #auth-btns a {
+                    display:block;   
+                    padding: 10px 40px 10px 10px; 
+                  }
+
+              &.has-children {
+               > a:after {
+                  right:23px;
+                }
+              }
+          }
+          
+        }
+
+        
 }
 
 
@@ -332,7 +518,7 @@
     .topnavsection {
         overflow:hidden; // nødvendig pga animasjon i hovedmeny
         .topnav { 
-            text-align: center;
+            //text-align: center;
             position: relative;       
         }
         .h4 {
@@ -357,7 +543,7 @@
         border-bottom: 1px solid @gray-light;
         content: "";
         position: absolute;
-        top: 42px;
+        top:  2.625em; // 42px
         width: 100%;
     }
 
@@ -370,13 +556,13 @@
 
           &.js-menu-expanded {
               .panel-wrapper {
-               height: 480px; 
+               height: 30em; // 480px 
               }
           }
           .accessible-megamenu-panel-group {
             display:table-cell;
             width:20%; // 5 kolonner
-            padding: 0 1em; // TODO bruk standardverdi fra variables. Brukte @paddingSmall og "rem" kom ut
+            padding: 0 1em; 
             float: left;
           }
           .accessible-megamenu-panel-group:first-child {
@@ -390,11 +576,11 @@
 
 
     .topnavitem {
-          line-height:22px;
+          line-height: 1.375em; // 22px
           display:inline-block;
-          > a, .auth-btns a {
+          > a, #auth-btns a {
                 display:block;   
-                padding: 10px 40px 10px 10px; 
+                padding: 10px 20px 10px 0px; // 10px 40px 10px 10px;
                 font-size: 1.0652em; // skal være 17px
                 text-transform: uppercase;
                 text-decoration:none;
@@ -413,7 +599,10 @@
               }
         }
 
-    .topnavitem.has-children {
+
+   
+
+    .topnavitem.has-children { // desktop
       margin-right:20px;
       > a {
           position:relative;
@@ -425,7 +614,7 @@
           border-right: 6px solid transparent;
           border-left: 6px solid transparent;
           position: absolute;
-          right: 23px; // 40 (padding right) minus bredden på pil (12px) minus space mellom tekst og pil
+          right: 4px; 
           top: 40%;
        }
       > a.open:after {
@@ -450,7 +639,7 @@
 
     .topnavitem.selected-topnavitem {
         > a {
-            color:@link-color;
+            color:@link-color; // kun på desktopmeny! 
           }
         > a:after {
             border-top: 6px solid @link-color; 
@@ -486,15 +675,16 @@
             display:inline-block;               
             color:@text-color;
             padding: 2px 0 2px 23px;
-            background: transparent url(../img/hjem.png) no-repeat left 3px;
-            background: transparent url(../img/hjem.svg) no-repeat left 3px;
+            background: transparent url('gfx/mainmenu/hjem_sort.png') no-repeat left 3px;
+            background: transparent url('gfx/mainmenu/hjem_sort.svg') no-repeat left 3px;
+
             &:hover,
             &:active,
             &:focus {
               text-decoration:underline;
               color:@link-color;
-              background: transparent url(../img/hjem_hover.png) no-repeat left 3px;
-              background: transparent url(../img/hjem_hover.svg) no-repeat left 3px;
+              background: transparent url('gfx/mainmenu/hjem_blaa.png') no-repeat left 3px;
+              background: transparent url('gfx/mainmenu/hjem_blaa.svg') no-repeat left 3px;             
             }
           } 
     }
@@ -508,7 +698,7 @@
     .no-js {
         .topnavsection {
             .panel-wrapper {
-                  min-height:480px; // TODO - er 480px nok?
+                  min-height:30em; // 480px // TODO - er 480px nok?
             }
             .selected-topnavitem {
                 .accessible-megamenu-panel {
@@ -524,30 +714,19 @@
       position: absolute;
       top:0;
       right:20px;
-      padding: 9px 0 0 0; // TODO Standardverdier
+      padding: 9px 0 0 0; 
       border-bottom:1px solid @text-color;
+      
       .input-sitesearch {
-        border:none;
-        box-shadow: none;
         margin:0 .1em 0 0;
-        border-radius: 0;
-        &:-moz-placeholder, 
-        &::-moz-placeholder,
-        &:-ms-input-placeholder,
-        &::-webkit-input-placeholder,
-        &:input-placeholder  {
-            font-size:@em-as-12px;
-        }
-
       }
+
+
       .btn-sitesearch {
-        background: transparent url(../img/icon-btn-search.png) no-repeat top left;
-        margin:0;
-        padding:0;
-        border:none;
-        text-indent: -9999em;
-        width:17px;
+        background: transparent url('gfx/mainmenu/sok_liten_morkeblaa.png') no-repeat top left;
+        background: transparent url('gfx/mainmenu/sok_liten_morkeblaa.svg') no-repeat top left;
         
       }
     }
-}
+    
+} // desktop end

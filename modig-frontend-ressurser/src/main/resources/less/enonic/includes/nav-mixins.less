@@ -639,11 +639,11 @@
   padding-left:  (@grid-gutter-width / 2);
   padding-right: (@grid-gutter-width / 2);
   
-  @media (max-width: (@screen-small - 0.01)) {
+  /*@media (max-width: (@screen-small - 0.01)) {
      padding-left: 0;
      padding-right: 0;
      margin: 0;
-  }
+  }*/
   .clearfix();
 }
 
@@ -651,9 +651,9 @@
 .make-row(@gutter: @grid-gutter-width) {
   margin-left:  (@gutter / -4);
   margin-right: (@gutter / -4);
-  @media (max-width: (@screen-small - 0.01)) {
+  /*@media (max-width: (@screen-small - 0.01)) {
      margin: 0;
-  }
+  }*/
   .clearfix();
 }
 
@@ -677,10 +677,10 @@
   // Inner gutter via padding
   padding-left:  (@gutter / 4);
   padding-right: (@gutter / 4);
-  @media (max-width: (@screen-small - 0.01)) {
+ /* @media (max-width: (@screen-small - 0.01)) {
      padding-left: 0;
      padding-right: 0;
-  }
+  }*/
 
   // Calculate width based on number of columns available
   @media (min-width: @screen-xs) {
@@ -714,10 +714,11 @@
   // Inner gutter via padding
   padding-left:  (@gutter / 4);
   padding-right: (@gutter / 4);
-  @media (max-width: (@screen-small - 0.01)) {
+  /*@media (max-width: (@screen-small - 0.01)) {
+    
      padding-left: 0;
      padding-right: 0;
-  }
+  }*/
 
   // Calculate width based on number of columns available
   @media (min-width: @screen-medium) {
@@ -800,10 +801,10 @@
       // Inner gutter via padding
       padding-left:  (@grid-gutter-width / 4);
       padding-right: (@grid-gutter-width / 4);
-      @media (max-width: (@screen-small - 0.01)) {
+      /*@media (max-width: (@screen-small - 0.01)) {
         padding-left: 0;
         padding-right: 0;
-      }
+      }*/
     }
   }
   .col(1); // kickstart it
@@ -965,7 +966,7 @@
 
 // Bullet point
 // -------------------------
-.bullet-point(@border-size, @border-color, @left, @top) { // Hvorfor har vi egentlig denne?
+.bullet-point(@border-size, @border-color, @left, @top) { // Hvorfor har vi egentlig denne? Svar: "bullet point" separering mellom lenker er noe som brukes flere plasser og det krever en del css linjer, kan gjenbrukes her
     border: @border-size solid @border-color;
     border-radius: 50% 50% 50% 50%;
     content: " ";

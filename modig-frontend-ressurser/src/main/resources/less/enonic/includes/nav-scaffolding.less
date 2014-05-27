@@ -11,7 +11,23 @@
 
 .maincontent { 
     padding-bottom:60px; // bare på desktop? Nyttig å vite, Nyheter og Snarveier blir klint nedi footeren 
-    padding-top:20px;
+    padding-top:30px;
+       
+}
+
+
+.contentpage {
+    .maincontent {
+        @media (min-width: @screen-small) and (max-width: (@screen-medium + 1)) { 
+            padding: 30px 60px 60px 60px;
+        }
+    }
+}
+
+@media (min-width: 60em) { // samme breakpoint som for venstrestilling av menylinje
+    .maincontent {
+        padding-top:60px; 
+    }
 }
 
 .img-svg-responsive {
@@ -19,9 +35,33 @@
     max-height: 100%;
 }
 
-@media (min-width: @screen-large) { 
-    .maincontent {
-        padding-top:60px; // bare på desktop?
+.service-notification {
+    text-align: center;
+    border-bottom: 1px solid @gray-light;
+    
+    header {
+        padding: 10px 0;
+        
+        h2 {
+            display: inline-block;
+            margin: 0 14px 0 0;
+            text-transform: none;
+            font-size: @em-as-17px;
+            font-weight: normal;
+            color: @red;
+            font-family: Modus, Arial;
+            font-weight: 600;
+        }
+        
+        a {
+            display: inline-block;
+            position: relative;
+            font-size: @em-as-17px;
+            
+            &:first-of-type {
+                margin-right: 32px;   
+            }
+        }
     }
 }
 
@@ -52,21 +92,14 @@ article.primary {
     margin-bottom: 20px;
     display: block;
 }
-
-.selfservices-box-container {
-    @media (max-width: (@screen-small)) {
-        margin-bottom: 30px;
-        .hero-link-wrapper {
-            width: auto;
-            margin: @grid-gutter-width / 2;
-            margin-top: 0;
-            
-            h2 {
-                margin-bottom: 0;
-            }
-        }
+.center-content {
+    margin-left: 16.6667%;
+    @media (max-width: (@screen-large - 0.01)) {
+        margin-left: auto;   
     }
 }
+
+
 
 
 
@@ -89,7 +122,7 @@ article.primary {
 }
 
 
-@media (max-width: @screen-small)  { // MINDRE ENN 620px
+@media (max-width: @screen-medium)  { // MINDRE ENN 768
   .hero-banner {
     display:none !important;
   }
