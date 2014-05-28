@@ -12,14 +12,17 @@
 
     switch(cookieValue) {
       case NOT_LOGGED_IN:
-        removeClassJS("login", "hidden");
-        break;
+      removeClassJS("login", "hidden");
+
+      break;
+
       case SEC_LEVEL_LE_2:
-        document.getElementById("auth-btns").style.display = 'none';
-        break;
+      document.getElementById("auth-btns").style.display = 'none';
+      break;
+
       case SEC_LEV_GE_3:
-        showLoginDetails(getCookie(USERNAME_COOKIE_NAME));
-        break;
+      showLoginDetails(getCookie(USERNAME_COOKIE_NAME));
+      break;
     }
   };
 
@@ -44,10 +47,9 @@
   }
 
   function addName(name) {
-    var nameElement = document.getElementById("name");
-    nameElement.textContent = name;
-    nameElement.innerText = name;
+    document.getElementById("name").innerText = name;
   }
+
 
   function showLoginInfoFirstTime() {
     if (!loginInfoHasBeenShown()) {
@@ -100,9 +102,7 @@
   }
 
   function resetAndHideName() {
-    var nameElement = document.getElementById("name");
-    nameElement.textContent = "";
-    nameElement.innerText = "";
+    document.getElementById("name-container").innerText = "";
   }
 
   return {

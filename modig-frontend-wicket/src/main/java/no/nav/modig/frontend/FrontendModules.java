@@ -61,6 +61,7 @@ import static no.nav.modig.frontend.EnonicResources.JQUERY_MEGA_MENU;
 import static no.nav.modig.frontend.EnonicResources.MATCH_MEDIA;
 import static no.nav.modig.frontend.EnonicResources.NAV_ACCORDION;
 import static no.nav.modig.frontend.EnonicResources.NAV_ACCORDION_LESS;
+import static no.nav.modig.frontend.EnonicResources.NAV_ARTICLE_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_AUTOCOMPLETE_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_BREADCRUMB_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_BUTTONS_LESS;
@@ -84,13 +85,11 @@ import static no.nav.modig.frontend.EnonicResources.NAV_SITEFOOTER_ALPHABET_LESS
 import static no.nav.modig.frontend.EnonicResources.NAV_SITEFOOTER_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_SITEHEADER_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_TABLE_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_TEMP;
+import static no.nav.modig.frontend.EnonicResources.NAV_TEMP_BETA_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_TYPOGRAPHY_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_UTILITIES_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_VARIABLES_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_WEBFONTS_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_ARTICLE_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_TEMP_BETA_LESS;
 import static no.nav.modig.frontend.FellesResources.AJAX_LOADER;
 import static no.nav.modig.frontend.FellesResources.CONTRAST_LESS;
 import static no.nav.modig.frontend.FellesResources.DROPDOWNS_LESS;
@@ -154,7 +153,7 @@ public class FrontendModules {
 					DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS).done();
 
 	public static final FrontendModule ENONIC = new FrontendModule.With()
-			.scripts(MODERNIZR_RESOURCE, NAV_LIBS, NAV_GLOBAL, NAV_TEMP, NAV_CAROUSEL, NAV_CONTENT, NAV_ACCORDION, NAV_INNLOGGING,
+			.scripts(MODERNIZR_RESOURCE, NAV_LIBS, NAV_GLOBAL, NAV_CAROUSEL, NAV_CONTENT, NAV_ACCORDION, NAV_INNLOGGING,
 					MATCH_MEDIA, JQUERY_MEGA_MENU)
 			.less(NAV_VARIABLES_LESS, NAV_MIXINS_LESS, NAV_NORMALIZE_LESS, NAV_GRID_LESS, NAV_AUTOCOMPLETE_LESS,
 					NAV_TYPOGRAPHY_LESS, NAV_TABLE_LESS, NAV_BUTTONS_LESS, NAV_BREADCRUMB_LESS, NAV_MEGAMENU_LESS,

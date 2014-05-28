@@ -13,7 +13,6 @@ class EnonicResources  {
     static final JavaScriptResourceReference NAV_CONTENT = jsReference("enonic/nav-content.js");
     static final JavaScriptResourceReference NAV_ACCORDION = jsReference("enonic/nav-accordion.js");
     static final JavaScriptResourceReference NAV_INNLOGGING = jsReference("enonic/nav-innloggingslinjen.js");
-    static final JavaScriptResourceReference NAV_TEMP = jsReference("enonic/temp.js");
 
     static final JavaScriptResourceReference MATCH_MEDIA = jsReference("enonic/libs/matchmedia.js");
     static final JavaScriptResourceReference JQUERY_MEGA_MENU = jsReference("enonic/libs/megamenu/jquery-accessibleMegaMenu.js");
