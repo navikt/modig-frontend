@@ -920,3 +920,34 @@ $(function () {
 });
 
 //////////////////////// END ////////////////////////
+
+/*
+ * Error page. Set href on "Back" button
+ */
+
+$(function () {
+  
+  var errorBody = $(".error-container");
+  var clickTouchHandeled = false;
+  
+  if (errorBody.length > 0) {
+  
+    if (document.referrer.length > 0) {
+      errorBody.find(".btn").attr("href", document.referrer);
+    }
+    else {
+      
+      errorBody.find(".btn").on("click touchend", function(e) {
+        e.preventDefault();
+        
+        if (clickTouchHandeled === false) {
+          clickTouchHandeled = true;
+        
+          window.history.back();
+        }
+      });
+    }
+  }
+});
+
+//////////////////////// END ////////////////////////

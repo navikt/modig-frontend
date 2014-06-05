@@ -629,6 +629,17 @@
     width: @container-desktop;
 }
 
+.fixed-outer-container-mixin() when (@responsive = false) { 
+  // For å unngå "clipping" / disappearing content ved horisontal scroll, når fixed width.
+  .fixed-outer-container,
+  .sitefooter,
+  .pagewrapper {
+    min-width: @container-desktop;
+  }
+}
+
+
+
 // Grid System
 // -----------
 
@@ -636,14 +647,8 @@
 .container-fixed() {
   margin-right: auto;
   margin-left: auto;
-  padding-left:  (@grid-gutter-width / 2);
-  padding-right: (@grid-gutter-width / 2);
-  
-  /*@media (max-width: (@screen-small - 0.01)) {
-     padding-left: 0;
-     padding-right: 0;
-     margin: 0;
-  }*/
+  padding-left:  1.5625em; // 1.5625 tilsvarer 25px. Verdi her var tidligere (@grid-gutter-width / 2);
+  padding-right: 1.5625em; //(@grid-gutter-width / 2);
   .clearfix();
 }
 
@@ -651,9 +656,6 @@
 .make-row(@gutter: @grid-gutter-width) {
   margin-left:  (@gutter / -4);
   margin-right: (@gutter / -4);
-  /*@media (max-width: (@screen-small - 0.01)) {
-     margin: 0;
-  }*/
   .clearfix();
 }
 

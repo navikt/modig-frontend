@@ -28,11 +28,6 @@
     color: @blue !important;
   }
 
-  a[href]:before { //TODO denne gjør noe med breadcrumbs i print
-    //content: " (" attr(href) ")";
-    content: none !important;
-  }
-
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -115,12 +110,16 @@
   // --------------------------------------------------
   //
 
-  .sitenav, .sitefooter, .about-site, .site-coltrols-toolbar, .topnavsection-wrapper, .toolbar, .table-of-contents, .topnavsection, .hero-banner, .related-content {
+  #ice-panel, .sitenav, .sitefooter, .about-site, .site-coltrols-toolbar, .topnavsection-wrapper, .toolbar, .table-of-contents, .topnavsection, .hero-banner, .related-content, .visuallyhidden {
       display: none !important;
   }
-  #ice-panel {
-    display: none;   
-  }
+
+
+.pagewrapper {
+  padding:0;
+  margin:0;
+}
+
   #maincontent {
     .breadcrumbs a {
         border-bottom: 1px solid @blue;
@@ -147,36 +146,34 @@
     margin-bottom: -10px !important;
   }
   
-  #maincontent {
-     
-     .maincontent {
-         padding: 10px !important;
-         padding: 25px 0 !important;
-     
-        .full-story {
-            padding: 0 !important;
 
-            header {
-                margin-bottom: 0;
-                h1 {
-                    margin-bottom: 8px; 
-                }
-            }
-            .preface {
-                margin-bottom: 12px !important;
-                padding-bottom: 12px !important;   
+     
+ .maincontent {
+     padding: 10px !important;
+     padding: 25px 0 !important;
+ 
+    .full-story {
+        padding: 0 !important;
+
+        header {
+            margin-bottom: 0;
+            h1 {
+                margin-bottom: 8px; 
             }
         }
+        .preface {
+            margin-bottom: 12px !important;
+            padding-bottom: 12px !important;   
+        }
     }
-  }
+}
+  
   
   .content-submenu {
     display:none !important;
   }
 
-  article { // Bare på innholdsvisningssider?
-    
-    .article-body {
+  .article-body {
         
         margin-bottom: 20px !important;
         a {
@@ -184,8 +181,12 @@
             text-decoration-style: solid;
             color: @blue;   
         }
+        a[href]:before { 
+          content: " (" attr(href) ")";
+          content: none !important;
+      }
     }
-  }
+  
   
   #nav-nvv {
       display: none !important;   

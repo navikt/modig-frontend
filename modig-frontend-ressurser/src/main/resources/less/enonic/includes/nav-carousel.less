@@ -68,8 +68,13 @@
     }
 }
 
+.flexbox #navCarousel .hero-links .hero-link-wrapper {
+    @media (min-width: (@screen-large)) {
+        display: inline-block;      
+    }
+}
+
 .carousel-inner.list .item {
-    
     .hero-link-wrapper {
         margin-bottom: 1.875em;
     }
@@ -112,10 +117,13 @@
 @media (min-width: @screen-small) {
     .no-js #carousel-items .hero-link { min-height: 25em; }
     .js .item .hero-link p { font-size: @em-as-12px; }           
-    .js .item .hero-link {padding: 1em; }
+    .js .item .hero-link {
+        padding: 1em;
+        width: 100%;
+    }
     
     .item {
-        margin-bottom: 15px;   
+        margin-bottom: 15px;
     }
 }
 

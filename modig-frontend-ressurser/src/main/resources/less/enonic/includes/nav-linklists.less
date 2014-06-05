@@ -69,7 +69,9 @@
     }
   }
   li {
-    margin-bottom: 20px; // TODO kontrollsjekke avstand
+    margin-bottom: 25px; // TODO kontrollsjekke avstand
+    position: relative;
+    
     @media (max-width: @screen-small) {
         margin: 0;
         padding: 12px 15px 12px 3px;
@@ -78,14 +80,26 @@
         text-align: left;
     }
     
-    a { 
-        position: relative;
+    a {
+        
+        @media (min-width: @screen-medium) {
+            &:before {
+                position:absolute;
+                top: -15px;
+                border:2px solid #857B71;
+                border-radius: 2px;
+                content: " ";
+                display:inline-block;
+                left: 0;
+                margin-left: 49%;
+            }
+        }
         
         @media (max-width: (@screen-small)) {
             color: @text-color;
             padding: 0;
             position: static;
-            display: block;
+            display: block; 
             
             &:hover,&:focus, &:hover time, &:focus time {
                 color: @link-color;
@@ -109,6 +123,11 @@
             }
         }
     }
+  }
+  li:first-child {
+   a:before {
+    border: none;  
+   }
   }
 
 }
@@ -160,6 +179,7 @@
             .hero-link {
                  height:auto;
                  padding-bottom:40px;
+                 -ms-flex:1; // for IE10
             }
         }      
     }

@@ -64,14 +64,14 @@
 }
 
 .placeholder {
-    margin-bottom: 60px;
+    margin-bottom: 60px; 
     margin-top: -23px;
     
     .top-link-wrapper {
         position: relative;
         background: transparent;
         text-align: center;
-    
+        
         a {
             display: inline-block;
             cursor: pointer;
@@ -82,11 +82,19 @@
             font-weight: 600;
             font-size: 1.14em;
             border: 1px solid @gray-light;
-            background: #fff url('gfx/icons/pil_til_topp.svg') 90% 15px no-repeat;
+            background: #fff url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTVweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNSA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNSA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiMyNzY4QjIiIHBvaW50cz0iNy41LDAgMCw4IDQuOTk4LDggNy41LDUuMDIzIDkuOTk3LDggMTUsOCAiLz4NCjwvc3ZnPg0K) 
+                                90% 15px no-repeat;
+            @media (max-width: (@screen-small - 0.01)) {
+                background-position: 85% 15px;   
+            }
             
             &:hover, &:focus, &:active { 
                 color: #fff;
-                background: @blue url('gfx/icons/pil_til_topp_hvit.svg') 90% 15px no-repeat;
+                background: @blue url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTVweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNSA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNSA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNy41LDAgMCw4IDQuOTk4LDggNy41LDUuMDIzIDkuOTk3LDggMTUsOCAiLz4NCjwvc3ZnPg0K) 
+                                90% 15px no-repeat;
+                @media (max-width: (@screen-small - 0.01)) {
+                    background-position: 85% 15px !important;
+                }
             }
         }
     }
@@ -107,13 +115,19 @@
         a {
             padding: 0 20px 0 0;
             border: none;
-            background: url('gfx/icons/pil_til_topp.svg') right 7px no-repeat;
+            //background: url('gfx/icons/pil_til_topp.svg') right 7px no-repeat;
+            background-position: right 7px;
+            background-color: @gray-lighter;
             
-            &:hover, &:focus, &:active { color: @blue; background-color: #f1f1f1; text-decoration: underline; }
+            &:hover, &:focus, &:active { 
+                color: @blue; background-color: #f1f1f1; text-decoration: underline;
+                background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTVweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNSA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNSA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiMyNzY4QjIiIHBvaW50cz0iNy41LDAgMCw4IDQuOTk4LDggNy41LDUuMDIzIDkuOTk3LDggMTUsOCAiLz4NCjwvc3ZnPg0K);
+            } 
             
             @media (max-width: (@screen-small - 0.01)) {
                 padding: 8px 34px 8px 18px;
-                background: @gray-lighter url('gfx/icons/pil_til_topp.svg') 90% 14px no-repeat;
+                //background: @gray-lighter url('gfx/icons/pil_til_topp.svg') 90% 14px no-repeat;
+                background-position: 85% 14px !important;
                 border: 1px solid @gray-light;
                 -webkit-box-shadow: 0 0 25px 0 @gray-light;
                 -moz-box-shadow: 0 0 25px 0 @gray-light;
@@ -134,7 +148,15 @@
     }
 }
 
-
+// Driftsmelding
+.service-notification {
+    @media (max-width: (@screen-medium - 0.01)) {
+        padding: 0 15px;
+        h2 {
+            line-height: 1.7;   
+        }
+    }
+}
 
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */

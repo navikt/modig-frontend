@@ -16,6 +16,13 @@
   .container-width();
 }
 
+// ---------------------------/
+// For å unngå "clipping" / disappearing content ved horisontal scroll, 
+// når fixed width (responsive false).
+// setter inn min-width for .pagewrapper og .sitefooter
+.fixed-outer-container-mixin(); 
+// ---------------------------\
+
 .row { 
   .make-row();
 }

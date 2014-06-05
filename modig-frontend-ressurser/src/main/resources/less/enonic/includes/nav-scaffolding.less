@@ -91,11 +91,18 @@ article.primary {
 .navigator { // WiN
     margin-bottom: 20px;
     display: block;
+    
+    img {
+        @media (max-width: (@screen-large - 0.01)) {
+            margin-left: auto;
+            margin-right: auto;
+        }   
+    }
 }
 .center-content {
     margin-left: 16.6667%;
     @media (max-width: (@screen-large - 0.01)) {
-        margin-left: auto;   
+        margin-left: auto; 
     }
 }
 
@@ -110,19 +117,54 @@ article.primary {
   border-bottom:1px solid @gray-light;
   
   &.nighttime {
-    background: #c7d5d3;
-    background: -moz-linear-gradient(top, #808c89, #c8d6d4);
-    background: -webkit-linear-gradient(top, #808c89, #c8d6d4);
-    background: linear-gradient(top, #808c89, #c8d6d4);
+    //background: #c7d5d3;
+    background: #98B3B7;
+    //background: -moz-linear-gradient(top, #808c89, #c8d6d4);
+    //background: -webkit-linear-gradient(top, #808c89, #c8d6d4);
+    //background: linear-gradient(top, #808c89, #c8d6d4);
   }
-  .container { 
-    max-width:1024px; // Bildet er 1024px bredt
+  .container {
+    max-width:1178px; // Bildet er 1024px bredt
     position:relative;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+    
+    figure {
+        margin: 0 auto; 
+        
+        .img-responsive-dummy {
+            display: block;
+            max-width: 107%;
+            height: auto;
+            visibility: hidden;
+            margin-left: -50px;
+            @media (min-width: 1178px)  {
+                max-width: 100%;
+                margin: 0 auto; 
+            }
+        }
+        .img-responsive {
+           position: absolute;
+           clip: rect(0,1178px,240px,50px);
+           margin-left: -50px;
+           max-width: 107%;
+           top: 0;
+           @media (min-width: @screen-medium) {
+               clip: rect(0,1178px,240px,30px);
+               margin-left: -30px;
+           }
+           @media (min-width: 1178px)  {
+               clip: auto;
+               max-width: 100%;
+               margin: 0 auto;
+           }
+        }
+    }
   }
 }
 
-
-@media (max-width: @screen-medium)  { // MINDRE ENN 768
+@media (max-width: (@screen-medium + 0.0625em))  { // MINDRE ENN 768
   .hero-banner {
     display:none !important;
   }

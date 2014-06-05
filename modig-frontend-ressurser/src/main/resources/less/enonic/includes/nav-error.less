@@ -14,13 +14,18 @@
         background-image: url('gfx/icons/utropstegn_stor.png'); 
         //background-image: url('gfx/icons/utropstegn_stor.svg'); 
     }
-
-    .meta {
-        a {
-         position: relative;
-         display: inline-block;   
-         padding-left:30px;
-         &:before {
+    
+    ul {
+        margin-bottom: 38px;
+        
+          padding:0;
+           li {
+              display:inline-block;
+              position:relative;
+              padding-left:30px;
+              line-height: 1.8;
+              
+              &:before {
                 position:absolute;
                 left:13px;
                 top:47%;
@@ -30,14 +35,26 @@
                 display:inline-block;
 
               }
+              &:first-child {
+                padding-left:0;
+                &:before {
+                    display:none;
+                }
+                
+              }
+          }
         }
-    }
+    
     .btn {
         background: #008fc4;
         color:@gray-lighter;
         display:inline-block;
         padding:10px 30px;
         margin-bottom:24px; // 38 totalt. p har 14 px.
+        
+        &:hover, &:active, &:focus {
+              
+        }
     }
     .decorated {
         margin-bottom:38px;
