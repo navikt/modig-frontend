@@ -8,6 +8,15 @@
 
 * ********************************************************/
 
+/* Normal table */
+.NAVtbl { width: 100%; border-collapse: collapse;}
+.NAVtbl th { text-align: left; color: #675C53;}
+.NAVtbl td { padding:  5px 0px 5px 7px; vertical-align: top;}
+.NAVtbl th div, .NAVnumTbl th div { background-image: url('../bilder/global/dashedhorizontal.gif'); background-repeat: repeat-x; background-position: bottom left; padding: 3px 0px 3px 7px; margin-bottom: 8px; }
+.NAVtbl .NAValternateRow, .NAVnumTbl .NAValternateRow { background-color: #EFEFEE;}
+.NAVtbl tr:nth-child(even), NAVnumTbl tr:nth-child(even) { background-color: #EFEFEE; }
+.NAVtbl td p { padding: 0; margin: 0; }
+
 h2.skjemasteg {
     font-size: 30px;
 	font-weight: 400;
@@ -15,6 +24,7 @@ h2.skjemasteg {
     margin-bottom: 10px;
 	font-family: modus,arial,helvetica,sans-serif;
 }
+
 
 .NAVformBox { background-color: #F1F0ED; padding: 15px 0 15px 0; margin-bottom: 4px; float: left; width: 100%; }
 .NAVformBox label { float: left; width: 200px; margin-left: 10px; }
@@ -35,7 +45,7 @@ h2.skjemasteg {
 
 .form-details .NAVskjemaBakgrunn img.icon {float:left;margin-right:7px}
 
-.form-details .NAVskjemaIndre {color:#675C53;padding:15px;margin-top:3px;overflow:auto; }
+.form-details .NAVskjemaIndre {color:#675C53; background-color: #F6F6F4; padding:15px;margin-top:3px;overflow:auto; }
 
 .form-details .NAVskjemaIndre.checked {background-color: #fff;}
 .form-details .main-form {padding-bottom: 2em;} 
@@ -88,9 +98,9 @@ h2.skjemasteg {
 
 
 
-.form-details .velgBoksLabel {float:left;line-height:1.5;font-weight:400; font-size: 14px; color:#3E3832;}
+.form-details .velgBoksLabel {float:left;line-height:1.5;font-weight:700; font-size: 14px; color:#3E3832;}
 
-.form-details .beskrivele {font-size: 14px;}
+.form-details .beskrivelse {font-size: 12px;}
 
 
 
@@ -896,7 +906,7 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
     -moz-box-sizing: border-box;
     position: relative;
 }
-.MODinnsendingsValg h3 { margin-bottom: 30px; font-size: 20px !important; }
+.MODinnsendingsValg h3 { margin-bottom: 30px; font-size: 22px !important; }
 .MODinnsendingsValg .modbutton { position: absolute; bottom: 40px; }
 .MODinnsendingsValg:first-child { margin-right: 14px; }
 .MODinnsendingListe { line-height: 1.8; margin-bottom: 25px; list-style: disc; padding-left: 22px }
@@ -1033,7 +1043,7 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 
 
-#skjema2011userDetails .addressinputbody .inputfieldset div.zip {float:left;width:100%;}
+#skjema2011userDetails .addressinputbody .inputfieldset div.zip {float:left;width:46%;}
 
 
 

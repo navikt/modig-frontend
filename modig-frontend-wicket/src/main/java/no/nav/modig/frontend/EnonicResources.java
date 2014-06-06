@@ -22,7 +22,7 @@ class EnonicResources  {
     static final PackageResourceReference NAV_NORMALIZE_LESS = lessReference("enonic/includes/nav-normalize.less");
     static final PackageResourceReference NAV_GRID_LESS = lessReference("enonic/includes/nav-grid.less");
     static final PackageResourceReference NAV_RIS_ROS_LESS = lessReference("enonic/includes/nav-forms-klage-ris-ros.less");
-    static final PackageResourceReference NAV_AUTOCOMPLETE_LESS = lessReference("enonic/includes/nav-jqueryautocomplete.less");
+    static final PackageResourceReference NAV_AUTOCOMPLETE_LESS = lessReference("enonic/includes/nav-autocomplete.less");
 
     static final PackageResourceReference NAV_TYPOGRAPHY_LESS = lessReference("enonic/includes/nav-typography.less");
     static final PackageResourceReference NAV_TABLE_LESS = lessReference("enonic/includes/nav-table.less");

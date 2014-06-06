@@ -47,9 +47,8 @@
 //--------------------------------------------------------------------
 
 .grid-mobile-first-defaults() when (@responsive = true) {
-	.inner-row {
-	  margin-bottom: 20px;
-	  }
+	//.inner-row { margin-bottom: 20px;}
+    
 	.row [class*="col-"].spaceous { // klasse for å override padding som per default står på alle gridklasser
 	  padding-right: 0;
 	  padding-left: 0;
@@ -59,6 +58,7 @@
 	.col-sm-12 {
 	  margin-bottom: @grid-gutter-width / 2;
 	}
+    .inner-row { margin-bottom: 60px; }
 }
 
  
@@ -93,9 +93,7 @@
         margin-bottom: 0;
        }
       
-      .inner-row {
-        margin-bottom: 60px;
-      }
+      //.inner-row { margin-bottom: 60px; }
 
     }
 }
