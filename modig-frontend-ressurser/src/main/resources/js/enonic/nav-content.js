@@ -22,7 +22,8 @@ navno.scrollToId = function (fromLink) {
   
   $('html, body').animate({
     scrollTop: $(currentId).offset().top - 25
-  }, {
+  },
+  {
     duration: 1000,
     complete: function () {
       
@@ -279,55 +280,59 @@ navno.setVVLink = function (c_value) {
 /*
  * Google Maps API (NAV office)
  */
- 
- navno.initMap = function() {
- 
-    var officeMap = document.getElementById("office-map");
-    
-    var latlngString = officeMap.getAttribute("data-latlng");
-    
-    var separator = latlngString.indexOf(",");
-    var officelatlng = new google.maps.LatLng(latlngString.substr(0, separator).trim(), latlngString.substr(separator+1, latlngString.length).trim());
-    
-    var styles = [
-      {
-        stylers: [
-          { hue: "#3E3832" },
-          { weight: 1.2 },
-          { saturation: -90 },
-          { gamma: 0.7 }
-          //{ lightness: -10 }
-        ] 
-      }
-    ];
-    
-    var mapOptions = {
-			 center: officelatlng, 
-			 zoom: 15, 
-			 mapTypeId: google.maps.MapTypeId.ROADMAP,
-			 clickable: false
-		  };
-		  
-    var map = new google.maps.Map(officeMap, mapOptions);
-    
-    var marker = new google.maps.Marker({
-      position: officelatlng,
-      map: map,
-      icon: officeMap.getAttribute("data-marker-url"), 
-      title: officeMap.getAttribute("data-marker-title")
-    });
-    
-    map.setOptions({styles: styles});
- };
+
+navno.initMap = function () {
+  
+  var officeMap = document.getElementById("office-map");
+  
+  var latlngString = officeMap.getAttribute("data-latlng");
+  
+  var separator = latlngString.indexOf(",");
+  var officelatlng = new google.maps.LatLng(latlngString.substr(0, separator).trim(), latlngString.substr(separator + 1, latlngString.length).trim());
+  
+  var styles =[ {
+    stylers:[ {
+      hue: "#3E3832"
+    }, {
+      weight: 1.2
+    }, {
+      saturation: -90
+    }, {
+      gamma: 0.7
+    }
+    ]
+    //{ lightness: -10 }]
+  }];
+  
+  var mapOptions = {
+    center: officelatlng,
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    clickable: false
+  };
+  
+  var map = new google.maps.Map(officeMap, mapOptions);
+  
+  var marker = new google.maps.Marker({
+    position: officelatlng,
+    map: map,
+    icon: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9Imxva2FsdCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIyOS4zODRweCIgaGVpZ2h0PSI1MHB4IiB2aWV3Qm94PSIwLjk5OCAtNi4xODkgMjkuMzg0IDUwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAuOTk4IC02LjE4OSAyOS4zODQgNTAiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0MzMDAwMCIgZD0iTTMwLjM4Myw4LjUwM2MwLTguMTE1LTYuNTc3LTE0LjY5Mi0xNC42OTItMTQuNjkyQzcuNTc2LTYuMTg5LDAuOTk4LDAuMzksMC45OTgsOC41MDMNCgljMCwyLjExNiwwLjQ4Nyw0LjEwNSwxLjI5Myw1LjkyM0gyLjI0M0wxNS42OSw0My44MTFsMTMuNDQ1LTI5LjM4NWgtMC4wMThDMjkuOTIsMTIuNjEyLDMwLjM4MywxMC42MTUsMzAuMzgzLDguNTAzeiBNMTUuNzMsMTMuMDk5DQoJYy0yLjA3NywwLTMuNzYxLTEuNjg0LTMuNzYxLTMuNzYxczEuNjg0LTMuNzYxLDMuNzYxLTMuNzYxczMuNzYxLDEuNjg0LDMuNzYxLDMuNzYxUzE3LjgwNywxMy4wOTksMTUuNzMsMTMuMDk5eiIvPg0KPC9zdmc+DQo= ", //officeMap.getAttribute("data-marker-url"),
+    title: officeMap.getAttribute("data-marker-title")
+  });
+  
+  map.setOptions({
+    styles: styles
+  });
+};
 
 $(function () {
   
   if ($("#office-map").length > 0) {
-   
+    
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDKiZHl59dNmJJwQhfi0YH5AtrrMkzDtqQ&sensor=false&callback=navno.initMap";
-    document.body.appendChild(script); 
+    document.body.appendChild(script);
   }
 });
 //////////////////////// END ////////////////////////
@@ -472,7 +477,8 @@ navno.initTextToSpeechPanel = function () {
       
       panel.animate({
         width: (panelWidth + 119) + "px"
-      }, {
+      },
+      {
         duration: "slow",
         
         complete: function () {
@@ -494,7 +500,8 @@ navno.initTextToSpeechPanel = function () {
       
       panel.animate({
         width: panelWidth + "px"
-      }, {
+      },
+      {
         duration: "slow",
         
         complete: function () {
@@ -514,14 +521,53 @@ $(function () {
 
 //////////////////////// END ////////////////////////
 
+/*
+ * Rapporthandbok URL oppdatering
+ */
+
+$(function () {
+  var rates = $("#accordion-rates");
+  if (rates.length > 0) {
+  
+    var link = rates.find('a').first();
+    var ajaxSuccess = false;
+    var html = null;
+    
+    var jqxhr = $.ajax({
+    
+      type: "GET",
+      url: link.attr("data-full-url"),
+      
+      success: function (data) {
+        
+        html = $.parseHTML(data);
+        ajaxSuccess = true;
+        
+      },
+      complete: function () {
+        
+        if (ajaxSuccess) {
+          var fullURL = $(html).find('a').attr("href");
+          
+          if (fullURL != null && fullURL.length > 0) {
+            link.attr('href', fullURL);
+          }
+        }
+      }
+    });
+  }
+});
+
+
+//////////////////////// END ////////////////////////
 
 
 /*
  * Mobile submenu for page content (undermeny)
  */
- 
- // Accessed by global script. Do nothing on "touchmove"
- navno.touchMovedOnArticle = false;
+
+// Accessed by global script. Do nothing on "touchmove"
+navno.touchMovedOnArticle = false;
 
 $(function () {
   
@@ -551,9 +597,10 @@ $(function () {
     });
     
     container.find(".submenu-header a").on("touchstart touchend", function (event) {
-      event.preventDefault(); // Need to run preventDefault() on touchstart for FireFox
+      event.preventDefault();
+      // Need to run preventDefault() on touchstart for FireFox
       
-      if (event.type === "touchend" && !navno.touchMovedOnArticle) {
+      if (event.type === "touchend" && ! navno.touchMovedOnArticle) {
         var headerLink = $(this);
         var newHeight = container.hasClass("open") ? 0: submenuHeight;
         
@@ -569,29 +616,28 @@ $(function () {
             submenu.attr("aria-expanded", false).attr("aria-hidden", true);
           }
           
-          // Document had its height changed due to dropdown expansion, 
+          // Document had its height changed due to dropdown expansion,
           // which changes the offset position of the "go to top" link button.
           // Updating position of this button element below
           navno.buttonBottomOffset = navno.topLinkButtonPlaceholder.offset().top + navno.topLinkButtonPlaceholder.height();
           
-          navno['onScrollAndResize']();
+          navno[ 'onScrollAndResize']();
           
           var viewPortBottom = $(window).height() + $(window).scrollTop();
-          var headerOffsetBottom = headerLink.parent().offset().top + headerLink.parent().height();  
+          var headerOffsetBottom = headerLink.parent().offset().top + headerLink.parent().height();
           
           if (headerOffsetBottom > viewPortBottom) {
             $('html, body').animate({
               scrollTop: $(window).scrollTop() + 120
-            },
-            {
+            }, {
               duration: 200,
-              complete: function () { }
+              complete: function () {
+              }
             });
           }
         },
         420);
-      }
-      else if (event.type === "touchstart") {
+      } else if (event.type === "touchstart") {
         navno.touchMovedOnArticle = false;
       }
     });

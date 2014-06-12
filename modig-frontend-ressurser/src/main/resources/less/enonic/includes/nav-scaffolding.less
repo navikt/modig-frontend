@@ -35,35 +35,7 @@
     max-height: 100%;
 }
 
-.service-notification {
-    text-align: center;
-    border-bottom: 1px solid @gray-light;
-    
-    header {
-        padding: 10px 0;
-        
-        h2 {
-            display: inline-block;
-            margin: 0 14px 0 0;
-            text-transform: none;
-            font-size: @em-as-17px;
-            font-weight: normal;
-            color: @red;
-            font-family: Modus, Arial;
-            font-weight: 600;
-        }
-        
-        a {
-            display: inline-block;
-            position: relative;
-            font-size: @em-as-17px;
-            
-            &:first-of-type {
-                margin-right: 32px;   
-            }
-        }
-    }
-}
+
 
 // Når det ikke er relatert innhold i høyre kolonne så sentreres innholdet
 // slik at vi ikke får venstrestilt innhold med kun 66.66% bredde
@@ -99,6 +71,7 @@ article.primary {
         }   
     }
 }
+
 .center-content {
     margin-left: 16.6667%;
     @media (max-width: (@screen-large - 0.01)) {
@@ -187,4 +160,15 @@ article.primary {
   }
 }
 
-//@media (max-width: @screen-xs) { .hero-link {}}
+
+body > img[src*="ssl-nav.tns-cs.net"] {
+  // hide the TNS scores 1 x 1 px img
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

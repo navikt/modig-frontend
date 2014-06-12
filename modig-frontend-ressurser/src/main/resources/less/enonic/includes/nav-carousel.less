@@ -69,34 +69,54 @@
 }
 
 .flexbox #navCarousel .hero-links .hero-link-wrapper {
-    @media (min-width: (@screen-large)) {
-        display: inline-block;      
+    @media (min-width: (@screen-medium)) {
+        display: inline-flex;
     }
 }
+.no-flexbox #navCarousel .hero-links .hero-link-wrapper {
+    @media (min-width: (@screen-medium)) {
+        display: inline-block;
+    }
+}
+#navCarousel .hero-links .hero-link-wrapper {
+     @media (min-width: (@screen-large)) {
+        display: inline-block;      
+    }  
+} 
 
 .carousel-inner.list .item {
     .hero-link-wrapper {
         margin-bottom: 1.875em;
+        @media (min-width: @screen-small) and (max-width: @screen-medium) {
+            margin-bottom: 15px;
+        }
     }
     
     &:last-child .hero-link-wrapper {
-        margin-bottom: 0;   
+        @media (min-width: (@screen-medium - 0.01)) {
+             margin-bottom: 0;  
+        }
     }
 }
 .carousel-inner {
     .icon-document { background-image: none; }
-    //.transition('height .4s ease-in-out');
+    //.transition('height .4s ease-in-out'); 
     position: relative;
     
     .item {
-        @media (max-width: (@screen-small - 0.01)) {
-            margin-left:  @grid-gutter-width / 2;
-            margin-right:  @grid-gutter-width / 2;
-        }
+      /*  @media (max-width: (@screen-small - 0.01)) {
+           // margin-left:  @grid-gutter-width / 2;   // TODO - trengs denne alltid? Skaper mer luft på sidene på mobil etc
+           // margin-right:  @grid-gutter-width / 2;
+        }*/
         .hero-link-wrapper {
+            @media (min-width: (@screen-medium)) {
+                  float: none;
+                  vertical-align: top;
+                  //display: inline-flex;
+            }
             .hero-link {
                 @media (max-width: (@screen-small - 0.01)) {
-                    padding: 1.875em 1.875em 1.875em;
+                    padding: 1.875em 1.875em 1.875em; // TODO - for mye luft?
                     width: 100%;      
                 }
             
@@ -116,24 +136,32 @@
 
 @media (min-width: @screen-small) {
     .no-js #carousel-items .hero-link { min-height: 25em; }
+     #carousel-items .item .hero-link-wrapper:first-child { padding-left: 0; } 
+     #carousel-items .item .hero-link-wrapper:last-child { padding-right: 0; } 
     .js .item .hero-link p { font-size: @em-as-12px; }           
     .js .item .hero-link {
         padding: 1em;
         width: 100%;
     }
-    
-    .item {
-        margin-bottom: 15px;
-    }
 }
+
+ #carousel-items .item { 
+    // denne fikser issues med padding på :first-child + nth-child(3) 
+    // som er kommentert ut rett under her
+        //.make-row(); // Det tok vekk border på sidene. Jeg gikk bort fra nth-child på en annen måte
+    }
+
 
 @media (min-width: (@screen-medium + 0.0652em)) { 
 
     .carousel-outer { padding-bottom: 0; }
-     #carousel-items .item .hero-link-wrapper:first-child { padding-left: 0; }
-     #carousel-items .item .hero-link-wrapper:nth-child(3) { padding-right: 0; }
+    
+    /*  Erstattet med make-row() over.
+        #carousel-items .item .hero-link-wrapper:first-child { padding-left: 0; }
+        #carousel-items .item .hero-link-wrapper:nth-child(3) { padding-right: 0; }*/ 
      
     .js #navCarousel div.item { display: none; }
+    .js #navCarousel .carousel-inner.list div.item { display: block; }
     .no-js #carousel-items .hero-link { min-height: 24em; }
     
     .carousel-inner {
@@ -150,6 +178,9 @@
   
         .hero-link {
             height: 18em;   //TODO
+            @media (min-width: @screen-medium) and (max-width: @screen-large) {
+             height: 20em;
+            }
             padding: 5.31em 1.875em 1.875em;
             
             p {
@@ -158,6 +189,9 @@
         }
         .icon-document {
             background-image: url("gfx/icons/dokument_rod.png");
+            &:hover, &:focus, &:active {
+                background-image: url("gfx/icons/dokument_hover.png");       
+            }
         }
     }
     #navCarousel .carousel-inner > .active,
@@ -228,7 +262,7 @@
    .no-js #carousel-items .hero-link { min-height: 22em; }
    #carousel-items .hero-link {
         p {
-            font-size: @em-as-12px;
+            font-size: @em-as-14px;
         }
     }
 

@@ -31,15 +31,43 @@
     	text-decoration: none;  
     }
 
-	/*.pil {
-		display: inline-block; 
-		vertical-align: top;
-		margin: 6px -4px 0 2px;
-		border-top: 6px solid @blue-light;
-		border-right: 6px solid transparent;
-		border-left: 6px solid transparent;
-		content: "";
-	}*/
+}
+
+
+.btn-auth {
+	  display:inline-block;
+	  text-align:center;
+	  background: #d1d1d1;
+	  text-transform: uppercase;
+	  font-family: @font-family-modus;
+	  font-weight: bold;
+	  padding: 4px 15px 4px 15px;
+	  border: none;
+	  color: @gray-darker;
+	  white-space: nowrap;
+
+	  &.btn-logout {
+	  	color: @gray-darker;
+	    background-color: #0CA9E0;
+
+	    &:hover, &:focus {
+	      color: @gray-darker;
+	      background-color: #5dd0f9;
+	    }
+	  }
+	  &.btn-login {
+	  	color: @gray-darker;
+	  	&:hover, &:focus {
+	      color: @gray-darker;
+	  }
+	 }
+
+}
+
+.site-coltrols-toolbar .btn-auth {
+	padding: 4px 15px 4px 15px; 
+	// samme padding som over, men må til for å overstyre andre stiler når
+	// knappene står innenfor .site-coltrols-toolbar. Quick fix.
 }
 
 

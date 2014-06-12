@@ -7,17 +7,24 @@
    var SEC_LEVEL_LE_2 = "1";
    var SEC_LEV_GE_3 = "2";
 
+  
+
    var init = function() {
     var cookieValue = getCookie(PREVIOUS_LOGIN_STATE_COOKIE_NAME);
 
     switch(cookieValue) {
       case NOT_LOGGED_IN:
       removeClassJS("login", "hidden");
-
+      if (document.getElementById("mainmenu")) {
+        removeClassJS("login-mobil", "hidden");
+      }
       break;
 
       case SEC_LEVEL_LE_2:
       document.getElementById("auth-btns").style.display = 'none';
+      if (document.getElementById("mainmenu")) {
+        document.getElementById("auth-btns-mobil").style.display = 'none';
+      }
       break;
 
       case SEC_LEV_GE_3:
@@ -37,17 +44,23 @@
     }
   }
 
-  function showLoginDetails(name) {
-    addClassJS("auth-btns", "idporten");
+  function showLoginDetails(urlEncodedName) {
+    addClassJS("auth-btns", "idporten");    
     removeClassJS("logout", "hidden");
-    removeClassJS("logout-mobil", "hidden");
-
+    
+    if (document.getElementById("mainmenu")) {  
+      removeClassJS("logout-mobil", "hidden");
+    }
+  
+  var name = decodeURI(urlEncodedName);
     addName(name);
     removeClassJS("login-details", "hidden");
   }
 
   function addName(name) {
-    document.getElementById("name").innerText = name;
+    var nameElement = document.getElementById("name");
+    nameElement.textContent = name;
+    nameElement.innerText = name;
   }
 
 
@@ -102,7 +115,9 @@
   }
 
   function resetAndHideName() {
-    document.getElementById("name-container").innerText = "";
+    var nameElement = document.getElementById("name");
+    nameElement.textContent = "";
+    nameElement.innerText = "";
   }
 
   return {

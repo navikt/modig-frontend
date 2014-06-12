@@ -51,11 +51,6 @@
 } // siteheader end
 
 
-/*#text-size-accessibility {
-  display:none;
-}*/
-
-
 .global-siteheader-toolbar();
 
 
@@ -63,6 +58,9 @@
     .site-coltrols-toolbar
      {
       display:none;
+      .settings .nav {
+          margin-left:-1.5625em; // trekk "language" mer mot venstre når venstrestilt
+        }
     }
 
     .sitelogo-large {
@@ -86,22 +84,14 @@
 
   }
 
- /* @media (min-width: @screen-medium) {
-      #text-size-accessibility {
-        display: inline-block; // vis "tekststørrelse"-knapp når vindu er bredere enn 48em
-      }
-
-      .login-container {
-        width:40%;
-      }
-      
-  }*/
-
 
   @media (min-width: 60em) { // 960px --> samme media query på sentrering av hovedmenylinje
    
     .site-coltrols-toolbar {
       text-align: center;
+      .settings .nav { 
+        margin-left:0; // oversyr negativ margin på "language" (fra mindre flater)
+      }
 
     }
     .login-container {
@@ -141,6 +131,7 @@
           display:block;
           background: @gray-darker;
           min-height:42px;
+
    
           a, .link-btn {
             font-size: @em-as-12px;
@@ -150,7 +141,7 @@
 
           .settings {
            display:inline-block;  
-           width:50%; 
+           width:50%;            
           }
 
 
@@ -194,7 +185,7 @@
             padding-top:8px;
             text-align:right;
             a {
-              display:inline-block;
+             /* display:inline-block;
               text-align:center;
               background: #d1d1d1;
               text-transform: uppercase;
@@ -211,7 +202,7 @@
                 &:hover {
                   background-color: #5dd0f9;
                 }
-              }
+              }*/
             }
           }
         } // logincontainer - kan gjøres om til mixin for media queries

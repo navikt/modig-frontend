@@ -61,7 +61,7 @@
   time {
     display:block;
     font-size:@em-as-12px;
-    @media (max-width: @screen-medium) { 
+    @media (max-width: (@screen-medium)) { 
         text-align: left;
         padding: 0;
         margin-right: 10px;
@@ -72,7 +72,7 @@
     margin-bottom: 25px; // TODO kontrollsjekke avstand
     position: relative;
     
-    @media (max-width: @screen-medium) {
+    @media (max-width: (@screen-medium)) {
         margin: 0;
         padding: 12px 15px 12px 3px;
         position: relative;
@@ -94,7 +94,7 @@
                 margin-left: 49%;
             }
         }
-        @media (max-width: (@screen-medium) - 0.001) {
+        @media (max-width: (@screen-medium)) {
             &:before {
                 border: none;   
             }
@@ -134,12 +134,11 @@
     border: none;
    }
   }
-
 }
 
 .linklists-container {
     text-align: center;
-    @media (min-width: @screen-small) and (max-width: @screen-medium) {
+    @media (min-width: @screen-small) and (max-width: (@screen-medium)) {
         padding: 0 100px;
     }
     .col-md-4 {
@@ -149,11 +148,11 @@
                 margin-bottom: 0;
             }
         }
-        @media (min-width: @screen-medium + 0.0625em) {
+        @media (min-width: (@screen-medium + 0.0625em)) {
              float: none;
              display: inline-block;
              vertical-align: top;
-             width: 33%;
+             width: 32.8%;
         }
         &:empty {
             display: none;

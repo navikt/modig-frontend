@@ -566,25 +566,25 @@ $(function () {
 
     if (!json.authenticated) {
       Innloggingslinje.resetAndHideName();
-      $('#logout').addClass('hidden');
-      $('#logout-mobil').addClass('hidden');
-      $('#auth-btns').show();
-      $('.login-container #login').removeClass('hidden');
-      $('.login-container #login-mobil').removeClass('hidden');
+      $('#logout, #logout-mobil').addClass('hidden');
+      
+      $('#auth-btns, #auth-btns-mobil').show();
+      $('#login, #login-mobil').removeClass('hidden');
+      
       Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.NOT_LOGGED_IN, Innloggingslinje.thirtyMinutes());
       Innloggingslinje.deleteCookie(Innloggingslinje.USERNAME_COOKIE_NAME);
       Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME); 
     } else if (json.securityLevel >= 3) {
-      $('#auth-btns').show();
+      $('#auth-btns, #auth-btns-mobil').show();
       var name = json.name.toLowerCase();
       Innloggingslinje.showLoginInfoFirstTime();
       Innloggingslinje.showLoginDetails(name);
       Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.SEC_LEV_GE_3, Innloggingslinje.thirtyMinutes());
-      Innloggingslinje.setCookie(Innloggingslinje.USERNAME_COOKIE_NAME, name, Innloggingslinje.thirtyMinutes());
-      $('#login').addClass('hidden');
-      $('#login-mobil').addClass('hidden');
+      Innloggingslinje.setCookie(Innloggingslinje.USERNAME_COOKIE_NAME, encodeURI(name), Innloggingslinje.thirtyMinutes());
+      $('#login, #login-mobil').addClass('hidden');
+      
     } else {
-      $('#auth-btns').hide();
+      $('#auth-btns, #auth-btns-mobil').hide();
       Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.SEC_LEVEL_LE_2, Innloggingslinje.thirtyMinutes());
       Innloggingslinje.deleteCookie(Innloggingslinje.USERNAME_COOKIE_NAME);
       Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME);
@@ -601,7 +601,7 @@ $(function () {
 });
 
  $(function () {
-  $('#auth-btns #logout, #auth-btns #logout-mobil').on("click", function(e) {
+  $('#logout, #logout-mobil').on("click", function(e) {
     e.preventDefault();
     Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME);
     Innloggingslinje.deleteCookie(Innloggingslinje.USERNAME_COOKIE_NAME);
@@ -614,7 +614,7 @@ $(function () {
  $(function () {
 
   var $tooltip = $('.logout-tooltip');  
-  $('.login-container #login-details span').first().on('mouseenter focusin', function () {
+  $('#login-details span').first().on('mouseenter focusin', function () {
     $tooltip.removeClass('hidden');
   }).on('mouseleave focusout', function () {
     $tooltip.addClass('hidden');
@@ -624,7 +624,7 @@ $(function () {
  $(function () {
 
   var $tooltip = $('.login-tooltip');  
-  $('.login-container #login').first().on('mouseenter focusin', function () {
+  $('#login').first().on('mouseenter focusin', function () {
     $tooltip.removeClass('hidden');
   }).on('mouseleave focusout', function () {
     $tooltip.addClass('hidden');

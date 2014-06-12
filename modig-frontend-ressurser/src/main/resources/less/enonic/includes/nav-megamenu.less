@@ -22,7 +22,7 @@
 .menu-link-list .active > a:before,
 .menu-link-list  a:hover:before,
 .menu-link-list a:focus:before {
-    .bullet-point(3px, @link-color, -11px, 13.5px);
+    .bullet-point(3px, @link-color, -11px, 1.35em);
 }
 
 
@@ -98,9 +98,11 @@
 
 
 .accessible-megamenu-mobile-first() when (@responsive = false) {
-  .mobile-toggler {
-    display:none;
+  .mobile-toggler, 
+  .mobile-only {
+   display:none !important;
   }
+
 }
 
 .accessible-megamenu-mobile-first() when (@responsive = true) {
@@ -199,6 +201,10 @@
 
 @media (max-width: @screen-medium) { // Mindre enn, eller lik 768px
 
+    #mainmenu > h1 {
+      display:none; // pga "hovedmeny" ikke skal leses opp av skjermleser når mobilmeny vises
+    }
+
     .js label.mobile-toggler,
     .js input.mobile-toggler {
         display:none;
@@ -264,7 +270,7 @@
         width:100%;      
       }
       .inputwrapper {
-        padding: @grid-gutter-width / 2;
+        padding: (@grid-gutter-width / 2) 1.5625em; // tilsvarende 25px ut til sidene
         > div {
             background: #fff;
             border:1px solid @gray-light;
@@ -308,9 +314,9 @@
 
     .topnavitem {
       line-height: 1.2; // default er 1.4ish
-        > a, #auth-btns a {
+        > a {
                 display:block;   
-                padding: 15px 35px 15px 20px;//@grid-gutter-width / 2;
+                padding: 15px 35px 15px 25px;//@grid-gutter-width / 2;
                 border-bottom: 1px solid @gray;                     
                 font-size: 1.0652em; // skal være 17px
                 text-transform: uppercase;
@@ -322,9 +328,7 @@
                   }
                               
             }
-            &.login-container {
-              display: block;
-            }
+          
     } // topnavitem
 
   .topnavitem.selected-topnavitem.has-children {
@@ -410,7 +414,30 @@
     }
 
 
-    } // media screen medium
+    // Kun for mobil: Språkvalg og logg inn / ut i mobilmeny
+    //-------------------------------------------------------
+
+    .mobile-only {
+      .active-language {
+        text-transform: none;
+        font-weight: normal;
+      }
+      .languages {
+        list-style: none;
+        margin:0;
+        a {
+          display:block;
+        }
+      }
+      .login-container {
+        padding: 15px 35px 15px 25px;
+      }
+
+    }
+
+
+
+    } // media screen max-width medium
 
 @media (max-width: @screen-xs) { // hack for mindre flater. Søkeknapp må ha større %-andel av bredde, slik at ikon vises
   
@@ -438,7 +465,8 @@
 .accessible-megamenu-desktop-mq() when (@responsive = true) {
 
     @media (min-width: (@screen-medium + 0.0625em)) { // fra 769px og opp
-        .mobile-toggler {
+        .mobile-toggler,
+        .mobile-only {
             display:none !important;
         }
          .accessible-megamenu-desktop(); 
@@ -452,8 +480,7 @@
           }
 
           .topnavitem {
-              > a, 
-              #auth-btns a {
+              > a {
                     display:block;   
                     padding: 10px 40px 10px 10px; 
                   }
@@ -485,8 +512,7 @@
             text-align:center; // når fixed with (ikke responsiv), skal menylinja alltid være sentrert.
           }
           .topnavitem {
-              > a, 
-              #auth-btns a {
+              > a {
                     display:block;   
                     padding: 10px 40px 10px 10px; 
                   }
@@ -578,7 +604,7 @@
     .topnavitem {
           line-height: 1.375em; // 22px
           display:inline-block;
-          > a, #auth-btns a {
+          > a {
                 display:block;   
                 padding: 10px 20px 10px 0px; // 10px 40px 10px 10px;
                 font-size: 1.0652em; // skal være 17px
@@ -593,10 +619,7 @@
                 &:focus {
                     outline-offset: -1px; 
                 }
-              }
-              &.login-container {
-                display: none;
-              }
+              }             
         }
 
 

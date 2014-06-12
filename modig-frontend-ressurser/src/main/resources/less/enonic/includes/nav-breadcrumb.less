@@ -2,11 +2,11 @@
 // Breadcrumbs nav
 // ----------
 
-.page-head {
+/*.page-head {
     @media (min-width: @screen-small) and (max-width: (@screen-medium + 0.99)) {
         padding-left: 60px;
     }
-}
+}*/
 .breadcrumbs {
     
     @media (max-width: (@screen-small - 0.01)) {
@@ -19,14 +19,16 @@
     line-height:1.2;
     
     a {
-        border-bottom: 1px solid @gray-dark;
+        //border-bottom: 1px solid @gray-dark;
+        color: @blue;
         text-decoration: none;
         padding-bottom: 1px;      
         &:hover,
         &:focus,
         &:active  {
-            border-bottom: 1px solid @blue;
-            color:@blue;   
+            //border-bottom: 1px solid @blue;
+            //color:@blue;   
+            text-decoration: underline;
         }
     }
 }
@@ -55,12 +57,10 @@
     &:first-child:after { 
         display: none; 
     }
-    &:last-child:after { 
-        .bullet-point(2px, @blue, -14px, 5px); 
-    }
 }
 
 .crumb-current {
+    border-bottom: 1px solid @blue; 
     color: @blue;
 }
 

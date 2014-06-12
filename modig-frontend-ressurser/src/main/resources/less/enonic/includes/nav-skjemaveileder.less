@@ -11,7 +11,7 @@
 /* Normal table */
 .NAVtbl { width: 100%; border-collapse: collapse;}
 .NAVtbl th { text-align: left; color: #675C53;}
-.NAVtbl td { padding:  5px 0px 5px 7px; vertical-align: top;}
+.NAVtbl td { padding:  5px 0px 5px 7px; vertical-align: top; font-family: modus,arial,helvetica,sans-serif; font-size: 12px;}
 .NAVtbl th div, .NAVnumTbl th div { background-image: url('../bilder/global/dashedhorizontal.gif'); background-repeat: repeat-x; background-position: bottom left; padding: 3px 0px 3px 7px; margin-bottom: 8px; }
 .NAVtbl .NAValternateRow, .NAVnumTbl .NAValternateRow { background-color: #EFEFEE;}
 .NAVtbl tr:nth-child(even), NAVnumTbl tr:nth-child(even) { background-color: #EFEFEE; }
@@ -25,11 +25,10 @@ h2.skjemasteg {
 	font-family: modus,arial,helvetica,sans-serif;
 }
 
-
 .NAVformBox { background-color: #F1F0ED; padding: 15px 0 15px 0; margin-bottom: 4px; float: left; width: 100%; }
 .NAVformBox label { float: left; width: 200px; margin-left: 10px; }
 .NAVformBox input, .NAVformBox select, .NAVformBox textarea, .NAVformBox .NAVbtnContainer { float: left; display: inline; }
-.NAVformBox .NAVbtn { margin-left: 5px; margin-right: 0; }
+.NAVformBox .NAVbtn { margin-left: 5px; margin-right: 0; height: 22px; }
 .NAVformBox span { margin-left: 20px; font-weight: bold; }
 .NAVformBox .NAVbtnContainer { margin-left: 205px; float: left; }
 .NAVformBox textarea { width: 200px; height: 60px; }
@@ -45,7 +44,7 @@ h2.skjemasteg {
 
 .form-details .NAVskjemaBakgrunn img.icon {float:left;margin-right:7px}
 
-.form-details .NAVskjemaIndre {color:#675C53; background-color: #F6F6F4; padding:15px;margin-top:3px;overflow:auto; }
+.form-details .NAVskjemaIndre {color:#675C53; background-color: #F6F6F4; padding:15px;margin-top:3px;overflow:hidden; }
 
 .form-details .NAVskjemaIndre.checked {background-color: #fff;}
 .form-details .main-form {padding-bottom: 2em;} 
@@ -60,27 +59,16 @@ h2.skjemasteg {
 
 .form-details .submit input.goback { float: none; cursor:pointer;font-weight:normal;border:none;color:#0074C2;background:transparent;margin:0;padding:0;text-align:left}
 
-
-
 .form-details .attachmentbody {float:left;width:100%;padding-top:2px;}
 
-
-
 .form-details .velgBoks {float:left;margin-right:12px;margin-left:0;}
-
-
 
 .form-details .attachmentList div.brodtekst { background: url(../../images/skjemaveileder/dashedhorizontal.gif ) repeat-x left top; padding-top:10px;margin-top:10px; }
 
 
-
 .form-details .attachmentList .obligatoriskeVedlegg {margin-top:5px;}
 
-
-
 .form-details .attachmentList div.underpunkter div.input-wrapper {float:left;width:100%;margin:.5em 0;height:1.2em;}
-
-
 
 .form-details .attachmentList div.underpunkter input {margin:0 12px 0 0 !important; padding:0 !important;}
 
@@ -541,7 +529,7 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 .form-list div.last {margin-right:0;} /*Used with .form-wrapper - no margin on last div*/
 
-
+.form-list a {font-size: 14px; font-family: modus,arial,helvetica,sans-serif;}
 
 .form-list .form-wrapper {float:left;margin-right:1em;}
 
@@ -587,7 +575,7 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 
 
-.form-list caption.table-heading {font-size:1.4em;color:#675C53;font-weight:bold;text-align:left;padding-left:7px;}
+.form-list caption.table-heading {font-size:14px;color:#675C53;font-weight:bold;text-align:left;padding-left:7px;font-family: modus,arial,helvetica,sans-serif;}
 
 
 
@@ -595,7 +583,7 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 
 
-.form-list input#formSearch {width:35%;}
+.form-list input#formSearch {width:15%;}
 
 
 
@@ -606,25 +594,13 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 .form-list .NAVtbl tr:nth-child(2n) {background-color:#fff !important;}
 
 
+.form-list h2.section-heading, .form-details h2.section-heading { font-size:24px; text-align: center; font-family: modus,arial,helvetica,sans-serif; color:#675C53;margin-bottom:.5em;background: url('../../images/skjemaveileder/dashedhorizontal.gif') repeat-x bottom left; padding: 0 0 4px 3px; color: #675C53;}
 
-
-
-
-
-.form-list h2.section-heading, .form-details h2.section-heading { font-size:1em;color:#675C53;margin-bottom:.5em;background: url('../../images/skjemaveileder/dashedhorizontal.gif') repeat-x bottom left; padding: 0 0 4px 3px; color: #675C53;}
-
-
-
-.form-list label, .form-details label, .form-details h2.section-heading, #userDetails h4 {font-weight:bold;color:#675C53;line-height:1.5}
-
+.form-list label, .form-details label, .form-details h2.section-heading, #userDetails h4 {font-weight:700;color:#675C53;font-family: modus,arial,helvetica,sans-serif; font-size: 16px;}
 
 
 .relationRadioOptions label, .relationRadioOptions input {line-height:2} /*Alternativ 3 på finn adresse-steget*/
-
-
-
-.form-list select, .form-details select {padding:1px}
-
+.form-list select, .form-details select {padding:0px; font-family: modus,arial,helvetica,sans-serif; width: 200px;}
 
 
 .form-list input.text, .form-details input.text, .form-details .zip input.postalcode {padding:2px}
@@ -975,7 +951,7 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 
 
-#skjema2011userDetails .sublabel {float: left; margin-right: 5px; line-height: inherit; font-weight: 700; font-size: 14px;}
+#skjema2011userDetails .sublabel {float: left; margin-right: 5px; line-height: inherit; font-weight: 700; font-size: 14px; font-family: modus,arial,helvetica,sans-serif;}
 
 
 
@@ -1004,13 +980,6 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 #enhetsSelectBox .sublabel,
 
 #userIdNumber .sublabel{width:10em !important}
-
-
-
-
-
-
-
 #skjema2011userDetails div.inputfieldset {float:left;width:50%; margin-right: 5px}
 
 
@@ -1041,17 +1010,11 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 #skjema2011userDetails .addressinputbody .inputfieldset div { border:1px solid #E6E5E0;margin-bottom:5px;padding:3px;}
 
-
-
-#skjema2011userDetails .addressinputbody .inputfieldset div.zip {float:left;width:46%;}
-
-
+#skjema2011userDetails .addressinputbody .inputfieldset div.zip {float:left;width:56%;}
 
 #skjema2011userDetails .addressinputbody .inputfieldset div.area {float:left;width:100%;}
 
-
-
-#skjema2011userDetails .addressinputbody .inputfieldset div input { border:none;width:67%;margin-left:1%;}
+#skjema2011userDetails .addressinputbody .inputfieldset div input { border:none;width:57%;margin-left:1%;}
 
 
 
@@ -1063,7 +1026,7 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 
 
-#skjema2011userDetails .addressinputbody .inputfieldset div label { display:inline-block;font-weight: normal;width:7.5em;background:transparent url(../../images/skjemaveileder/pil-hoyre.gif) no-repeat right 50%}
+#skjema2011userDetails .addressinputbody .inputfieldset div label { display:inline-block;font-weight: normal;width:120px;background:transparent url(../../images/skjemaveileder/pil-hoyre.gif) no-repeat right 50%}
 
 
 
@@ -1131,15 +1094,15 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 #skjema2011userDetails  .moreaddressoptions  .navunit input {float: left;}
 
-#skjema2011userDetails  .moreaddressoptions  .explain-text-address1 {font-weight: normal; margin-top: 0 !important; width: 65%; font-size: 14px;}
-#skjema2011userDetails  .moreaddressoptions  .explain-text-address2 {font-weight: normal; margin-top: 0 !important; width: 65%; font-size: 14px;}
-#skjema2011userDetails  .moreaddressoptions  .help-addressbox-text {margin-left:5px; display: block; font-size: 14px;}
-#skjema2011userDetails  .moreaddressoptions  .help-text {margin-left:114px; font-size: 14px; display: inline-block}
-#skjema2011userDetails  .moreaddressoptions  .addressleft {float: left; width: 40%}
+#skjema2011userDetails  .moreaddressoptions  .explain-text-address1 {font-weight: normal; margin-top: 0 !important; width: 65%; font-size: 14px; font-family: modus,arial,helvetica,sans-serif;}
+#skjema2011userDetails  .moreaddressoptions  .explain-text-address2 {font-weight: normal; margin-top: 0 !important; width: 65%; font-size: 14px; font-family: modus,arial,helvetica,sans-serif;}
+#skjema2011userDetails  .moreaddressoptions  .help-addressbox-text {margin-left:5px; display: block; font-size: 14px; font-family: modus,arial,helvetica,sans-serif;}
+#skjema2011userDetails  .moreaddressoptions  .help-text {margin-left:114px; font-size: 14px; display: inline-block; font-family: modus,arial,helvetica,sans-serif;}
+#skjema2011userDetails  .moreaddressoptions  .addressleft {float: left; width: 40%; font-family: modus,arial,helvetica,sans-serif;}
 
-#skjema2011userDetails  .moreaddressoptions  .addressright {float: left; width: 40%}
+#skjema2011userDetails  .moreaddressoptions  .addressright {float: left; width: 40%; font-family: modus,arial,helvetica,sans-serif;}
 
-#skjema2011userDetails  .moreaddressoptions  .navunitaddressright {float: left; width: 35%; font-size:14px;}
+#skjema2011userDetails  .moreaddressoptions  .navunitaddressright {float: left; width: 35%; font-size:14px; font-family: modus,arial,helvetica,sans-serif;}
 
 #skjema2011userDetails  .moreaddressoptions  .navunitaddressleft {float: left; width: 53%}
 #skjema2011userDetails .top-horizontal-separator {padding-top:1em;margin-top:1em;width:96%;background:url('../../images/skjemaveileder/dashedhorizontal.gif') repeat-x left top;}
@@ -1237,7 +1200,7 @@ a#mainFormPreview, a.attachmentpreview {margin-left:5px;}
 
 .skjema2011form-details .navUnitsSelectBox div {float:left}
 .skjema2011form-details .navUnitsSelectBox select#selectEnhet {width:20em; height: 4em; float: left; margin-right: 83px; margin-left:16px;}
-.skjema2011form-details .velgBoksLabel {float:left;line-height:1.5;margin-bottom:1em;font-weight:400;color:#3E3832;font-size:14px;}
+.skjema2011form-details .velgBoksLabel {float:left;line-height:1.5;margin-bottom:1em;font-weight:400;color:#3E3832;font-size:14px;font-family: modus,arial,helvetica,sans-serif;}
 .NAVerrorBoxWrapper {border:1px dotted; border-color: #CE3231}
 .NAVerrorBoxWrapperComplaint {border:1px dotted; border-color: #CE3231; margin-top: 65px;}
 
