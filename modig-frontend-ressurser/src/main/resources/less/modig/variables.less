@@ -5,6 +5,7 @@
 
 // Global values
 // --------------------------------------------------
+@responsive: true; // tar med mediaqueries
 
 // Icons
 // -------------------------
@@ -21,11 +22,20 @@
 @grayLighter:           #f1f1f1;
 @white:                 #fff;
 
+@gray-darker:            #333; // bakgrunn footer og head (mørk)
+@gray-dark:              #3e3832; // verifisert (tekstfarge)
+@gray:                   #555;
+@gray-light:             #d1d1d1; // linje rundt bokser etc
+@gray-lighter:           #f1f1f1; // body background
+
+@gray-footer-text:		 #b7b1a9; // samme lysegrå farge som MOD på copyrighttext i footer
+
 
 // Accent colors
 // -------------------------
 @blue:                  #0ca9e1;
 @blueLight:             #008fc4;
+@blue-light:		    #0ca9e1;
 @blueDark:              #0067c5;
 @green:                 #46a546;
 @red:                   #c30000;
@@ -43,11 +53,27 @@
 @textColor:             @grayDark;
 @borderColorLight:      #d1d1d1;
 
+@text-color:            @gray-dark;
+
 
 // Links
 // -------------------------
 @linkColor:             #0067c5;
 @linkColorHover:        darken(@linkColor, 15%);
+
+@link-color:            #0067c5; // verifisert
+@link-hover-color:      darken(@link-color, 15%); // Brukes av knapper
+
+
+// Brand colors (bootstrap 3)
+// Ikke endret, brukes av buttons etc
+// -------------------------
+
+@brand-primary:         #428bca;
+@brand-success:         #5cb85c;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+@brand-info:            #5bc0de;
 
 
 // Typography
@@ -66,6 +92,18 @@
 @headingsColor:         inherit; // empty to use BS default, @textColor
 
 
+// family
+// -------------------------
+@font-family-sans-serif:        Arial, Helvetica, sans-serif;
+@font-family-serif:  	        Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:         Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-modus:     	    Modus,Arial,Helvetica,sans-serif; // custom webfont
+
+@headings-font-weight:    		bold;
+@headings-color:          		inherit;
+
+
+
 // Component sizing
 // -------------------------
 // Based on 14px font-size and 20px line-height
@@ -81,6 +119,53 @@
 @baseBorderRadius:      0.15rem;
 @borderRadiusLarge:     1px;
 @borderRadiusSmall:     1px;
+
+
+
+//REM
+
+@font-size-base-rem:         	0.875rem; 	// 14 px HVIS html-elementet har satt 100% font-size.
+@font-size-h1-rem:				2.375rem; 	// 38px
+@font-size-h2-rem:				1.875rem; 	// 30px
+@font-size-h3-rem:				1.25rem;	// 20px
+@font-size-h4-rem:				1rem; 		// 16px
+@font-size-h5-rem:				0.875rem;   // 14px
+@font-size-h6-rem:				0.75rem;	// 12px
+
+@font-size-deci-rem:			0.75rem; 	// 12px topplinje
+@font-size-centi-rem:			0.7rem; 	// copyright-tekst i footer
+
+
+//EM base fonts (1em 16px)
+
+@em-as-38px:			2.375em; // tera
+@em-as-30px:			1.875em; // giga
+@em-as-20px:			1.25em;  // mega
+@em-as-18px:    		1.125em;  // mega
+@em-as-17px:            1.0675em;
+@em-as-16px:			1em;	 // kilo
+@em-as-14px:			0.875em; // hecto
+@em-as-12px:			0.75em;  // deca
+@em-as-11px:    		0.7em;  // deca
+@em-as-10px:			0.625em; // deci
+
+// Vurdere eget oppsett med utgangspunkt i 14px også pga resize / nesting issues?
+
+
+@font-size-base-em:		@em-as-14px; // hecto
+@font-size-h1-em:		@em-as-38px;
+@font-size-h2-em:		@em-as-30px;
+@font-size-h3-em:		@em-as-20px;
+@font-size-h4-em:		@em-as-16px;
+@font-size-h5-em:		@em-as-14px;
+@font-size-h6-em:		@em-as-12px;
+
+@font-size-deca:		@em-as-12px;
+
+
+@line-height-base:        1.428571429; // 20/14
+@line-height-computed:    floor(@font-size-base-rem * @line-height-base); // ~20px
+
 
 
 // Tables
@@ -113,6 +198,58 @@
 
 @btnInverseBackground:              #444;
 @btnInverseBackgroundHighlight:     @grayDarker;
+
+
+// Buttons ENONIC
+// -------------------------
+
+@btn-background:                      #e3e3e3;
+@btn-background-highlight:            #d2d2d2;
+
+@btn-primary-background:              #00a9e0;
+@btn-primary-background-highlight:    spin(@btn-primary-background, 10%);
+
+@btn-inverse-background:              #444;
+@btn-inverse-background-highlight:    @gray-darker;
+
+@btn-success-background:              #62c462;
+@btn-success-background-highlight:    #51a351;
+
+@btn-warning-background:              lighten(@orange, 15%);
+@btn-warning-backgroundHighlight:     @orange;
+
+@btn-danger-background:               #ee5f5b;
+@btn-danger-background-highlight:     #bd362f;
+
+@btnBorder:                      #cfcfcf;
+@btn-font-weight:                normal;
+
+@btn-default-color:              #333;
+@btn-default-bg:                 #fff;
+@btn-default-border:             #ccc;
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @link-color; // @brand-primary;
+@btn-primary-border:             darken(@btn-primary-bg, 5%);
+
+@btn-success-color:              #fff;
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             darken(@btn-success-bg, 5%);
+
+@btn-warning-color:              #fff;
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             darken(@btn-warning-bg, 5%);
+
+@btn-danger-color:               #fff;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@btn-danger-bg, 5%);
+
+@btn-info-color:                 #fff;
+@btn-info-bg:                    @brand-info;
+@btn-info-border:                darken(@btn-info-bg, 5%);
+
+@btn-link-disabled-color:        @gray-light;
+
 
 
 // Forms
@@ -222,6 +359,9 @@
 @navbarInverseBrandColor:                @navbarInverseLinkColor;
 
 
+@navbar-padding-horizontal:        floor(@grid-gutter-width / 2);
+
+
 // Pagination
 // -------------------------
 @paginationBackground:                #fff;
@@ -275,8 +415,38 @@
 
 
 
-// GRID
+// Media queries breakpoints
 // --------------------------------------------------
+
+
+@screen-xxs:                 15em;      //240px; Fra mobil
+@screen-xs:     	         30em;		//480px;  Mobil
+@screen-small:  			 38.75em;	//620px; // Custom
+@screen-medium:	             48em;		//768px; // Tablet
+@screen-large:               62em;		//992px;  // Fra desktop
+@screen-xl:					 75em;		//1200px; // ikke i bruk
+
+
+
+// Grid system
+// --------------------------------------------------
+
+@grid-columns:              12;
+@grid-gutter-width:         1.875em; //30px;
+@grid-float-breakpoint:     @screen-xs; // Point at which the navbar stops collapsing
+
+
+// Container sizes
+// --------------------------------------------------
+
+@container-tablet:             ((720px + @grid-gutter-width));
+@container-sm:                 @container-tablet;
+
+@container-desktop:            ((61.125em + @grid-gutter-width)); // blir 978px + 30px til sammen (1008)
+@container-md:                 @container-desktop;
+
+@container-large-desktop:      ((1140px + @grid-gutter-width));
+@container-lg:                 @container-large-desktop;
 
 
 // Default 940px grid
