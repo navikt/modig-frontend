@@ -91,7 +91,7 @@ public class MergedResourceRequestHandler implements IRequestHandler {
 
         private int status = 200;
         private boolean headersOpen = true;
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        private ByteArrayOutputStream os = new ByteArrayOutputStream();
 
         MergedResponse(WebResponse original) {
             super(original);
