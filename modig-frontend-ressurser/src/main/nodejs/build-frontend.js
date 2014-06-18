@@ -124,7 +124,12 @@ function uglifySingles(fromDir, toDir) {
 
 function uglifyConcatenated(fromFile, toFile) {
 	var code = fs.readFileSync(fromFile, 'utf8');
-	var finalCode = makeUgly(code);
+	var finalCode;
+	try {
+		finalCode = makeUgly(code);
+	} catch(e) {
+		console.log(e);
+	}
 	fs.writeFileSync(toFile, finalCode, 'utf8');
 }
 

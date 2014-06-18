@@ -163,17 +163,21 @@ navno.initContentPrintHandler = function () {
   
   if ($('.toolbar').length > 0) {
     
-    $("#print-page").on("click", function (e) {
-      $(this).addClass('selected');
-      window.print();
-    });
+    var printPageLink = $('#print-page');
     
-    $("#print-page")[0].addEventListener('keypress', function (e) {
-      var key = e.which || e.keyCode;
-      if (key === 13) {
+    if (printPageLink.length > 0) {
+      printPageLink.on("click", function (e) {
+        $(this).addClass('selected');
         window.print();
-      }
-    });
+      });
+    
+      printPageLink[0].addEventListener('keypress', function (e) {
+        var key = e.which || e.keyCode;
+        if (key === 13) {
+          window.print();
+        }
+      });
+    }
     
     if ($('#print-all').length > 0) {
       
@@ -357,6 +361,7 @@ navno.onClickEnterContentLanguage = function (langList, langSelector) {
       }
     }
     
+    
     if (! langSelector.hasClass('selected')) {
       langSelector.addClass('selected');
       langList.removeClass('hide');
@@ -374,13 +379,22 @@ navno.contentLanguages = function () {
   
   if (langSelector.length > 0) {
     
-    var langList = langSelector.find("ul.nav");
+    var langList = langSelector.find("ul");
     langSelector.on("click", navno[ 'onClickEnterContentLanguage'](langList, langSelector));
     
-    langSelector[0].addEventListener('keypress', function (e) {
+    langSelector.on('keyup', function (e) {
+      
       var key = e.which || e.keyCode;
+      
       if (key === 13) {
-        navno[ 'onClickEnterContentLanguage'](langList, langSelector);
+        //navno[ 'onClickEnterContentLanguage'](langList, langSelector);
+        if (! langSelector.hasClass('selected')) {
+          langSelector.addClass('selected');
+          langList.removeClass('hide');
+        } else {
+          langList.addClass('hide');
+          langSelector.removeClass('selected');
+        }
       }
     });
   }
@@ -433,11 +447,14 @@ navno.initSpeechSynthesisButtons = function () {
         toolbar.insertAfter('#pagecontent > header > h1');
         timePublished.insertBefore('#pagecontent > header > h1');
         
-        navno[ 'contentLanguages']();
-        
+        if ($(".content-languages").length > 0) {
+          navno[ 'contentLanguages']();
+        }
         navno[ 'initTextToSpeechPanel']();
         navno[ 'initSpeechSynthesisButtons']();
-        navno[ 'initContentPrintHandler']();
+        if ($("#print-page").length > 0) {
+          navno[ 'initContentPrintHandler']();
+        }
       }
     });
     $('.tts-stop').click(function (e) {

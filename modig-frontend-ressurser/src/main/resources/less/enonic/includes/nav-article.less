@@ -44,6 +44,12 @@
         //width: 54px;
         height: 100%;
         border:0;
+        
+        &:hover, &:focus {
+             background-color: @blue;
+             color: #fff;
+         }
+        
     }
     .tts-btn-group {
          top: 0;
@@ -78,11 +84,6 @@
          background: transparent url('gfx/tts/tale_selected.png') no-repeat 8px center;
          background-color: #000;
          color: #fff;
-         
-         &:hover {
-             background-color: @blue;
-             color: #fff;
-         }
     }
     .tts-btn-collapsed {
         background: transparent url('gfx/tts/tale.png') no-repeat 8px center;
@@ -128,6 +129,7 @@
     @media (min-width: (@screen-large - 0.01)) {
         display: none;   
     }
+    
     background-color: #fff;
     margin-bottom: 28px;
     .submenu-header {
@@ -195,9 +197,9 @@
 }
 
 .article-facts {
-    background:#f1f1f1; // TODO variabel?
+    background:#f1f1f1 url('gfx/icons/info.png') no-repeat center 20px;
     border: 1px solid @gray-light;
-    padding:30px;
+    padding:72px 30px 30px;
     margin-top: 60px;
     h3 {
        text-align: center;
@@ -292,7 +294,7 @@
                 color: #ffffff;
                 
                 &:hover {
-                    color: @blue-light;
+                    color: @blue;
                     text-decoration: none;
                 }
             }
@@ -305,7 +307,7 @@
         span {
             color: @blue;
             &:after {
-                .down-arrow(4px, 4px, 4px, @blue-light);
+                .down-arrow(4px, 4px, 4px, @blue);
             }
         }
     }
@@ -316,11 +318,7 @@
 
 // Innholdsvisning (article: kan være nyhet, artikkel, faktaark mm)
 
-@media (max-width: (@screen-small - 0.01)) {
-    .contentpage .container.maincontent {
-        padding: 0 0 60px 0;
-    }
-}
+
 
 .full-article, .article-list, .events-list {
    padding: 40px 25px;
@@ -367,10 +365,13 @@
 
 .handbook { // extends .full-story & .full-article
    section h2 {
-     font-size: @font-size-h3-em;
+     font-size: @em-as-17px;
+     margin-bottom: 30px;
   }
   .preface-secondary {
          margin-bottom: 30px;  
+         font-size: @em-as-14px;
+         font-weight: bold;
     }
 }
 

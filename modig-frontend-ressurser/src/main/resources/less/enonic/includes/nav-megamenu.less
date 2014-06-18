@@ -15,8 +15,12 @@
 .menu-link-list a {
     color: @gray-dark;
     display: block;
-    padding: 8px 0;
+    padding: 10px 0;
     text-align: left;
+    
+    @media (min-width: @screen-medium) {
+       line-height: 1.5em;   
+    }
 }
 
 .menu-link-list .active > a:before,
@@ -29,6 +33,7 @@
 .menu-link-list .active a,
 .menu-link-list a:hover  {
     color: @link-color;
+    text-decoration: none;
 }
 
 
@@ -101,6 +106,7 @@
   .mobile-toggler, 
   .mobile-only {
    display:none !important;
+   visibility: hidden;
   }
 
 }
@@ -200,6 +206,10 @@
 .accessible-megamenu-mobile-mq() when (@responsive = true) { 
 
 @media (max-width: @screen-medium) { // Mindre enn, eller lik 768px
+
+  @-ms-viewport {
+  width:auto;
+  }
 
     #mainmenu > h1 {
       display:none; // pga "hovedmeny" ikke skal leses opp av skjermleser når mobilmeny vises
@@ -468,6 +478,7 @@
         .mobile-toggler,
         .mobile-only {
             display:none !important;
+            visibility: hidden;
         }
          .accessible-megamenu-desktop(); 
         }

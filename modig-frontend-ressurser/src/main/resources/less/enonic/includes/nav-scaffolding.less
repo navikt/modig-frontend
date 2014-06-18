@@ -16,12 +16,17 @@
 }
 
 
-.contentpage {
-    .maincontent {
-        @media (min-width: @screen-small) and (max-width: (@screen-medium + 1)) { 
-            padding: 30px 60px 60px 60px;
-        }
+@media (max-width: (@screen-small - 0.0625em)) {
+    .contentpage .container.maincontent {
+        padding: 0 0 60px 0;
     }
+}
+
+@media (min-width: @screen-small) and (max-width: (@screen-medium)) { 
+    .contentpage .maincontent {
+        padding: 30px 60px 60px 60px;
+      }
+  
 }
 
 @media (min-width: 60em) { // samme breakpoint som for venstrestilling av menylinje
@@ -90,11 +95,7 @@ article.primary {
   border-bottom:1px solid @gray-light;
   
   &.nighttime {
-    //background: #c7d5d3;
     background: #98B3B7;
-    //background: -moz-linear-gradient(top, #808c89, #c8d6d4);
-    //background: -webkit-linear-gradient(top, #808c89, #c8d6d4);
-    //background: linear-gradient(top, #808c89, #c8d6d4);
   }
   .container {
     max-width:1178px; // Bildet er 1024px bredt

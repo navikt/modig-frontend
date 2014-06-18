@@ -6,26 +6,29 @@
 .article-body table {
   border:1px solid #ddd;
   border-color:#ddd;
-  margin-bottom:30px;
+  width: 100%;
+  line-height: 1.15em;
+  
   tr:first-child {
     th,
     td {
       background-color: #f1f1f1;
       strong {
-        font-size:1.1em;
-        font-weight: 600;
-        font-family: @font-family-modus;      
-      }
+        font-size: 1.1em;
+        font-weight: 700;
+        font-family: Arial, Modus;     
+      } 
     }
   }
   th,
   td {
     border-color:#ddd;
-    padding:15px;
-    vertical-align: middle;
+    padding-top: 0;
+    padding:10px;
+    vertical-align: top;
     font-size: @em-as-14px;
     p {
-      font-size: 1em;
+      font-size: @em-as-12px;
       &:last-child {
         margin:0;
       }

@@ -112,6 +112,19 @@
     top: 32px;
     left:0;
     width: 100%;
+    
+    p {
+        font-family: Modus, Arial;
+        font-size: @em-as-16px;
+        font-weight: 600;
+        color: #b7b1a9;
+        text-transform: uppercase;
+        margin-top: 20px;
+        height: 80px;
+        padding-top: 42px;
+        
+        background: transparent url('gfx/icons/no-content-icon.png') no-repeat 50% 0;
+    }
 
     ul {
       list-style:none;
@@ -119,7 +132,7 @@
       padding:0;
       text-align:left;
       li {
-        
+        position: relative;
         border-bottom: 1px solid #4F4944; // ganske mørk gråfarget linje brukt kun her
           a {
               font-size: @em-as-12px;
@@ -130,8 +143,15 @@
                   &:active {
                     color: @blue-light;
                     text-decoration: none;
-                 } 
+                    &:before {
+                      .bullet-point(3px, @blue-light, -11px, 1.18em);
+                    }
+                 }
+
+
           }
+
+
       }
     }
     .footer-columns { // klasse settes av js for nettlesere som støtter css columns

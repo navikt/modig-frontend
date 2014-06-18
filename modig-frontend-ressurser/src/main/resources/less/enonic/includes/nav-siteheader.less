@@ -393,10 +393,16 @@
   color:@blue-light;
 }
 
-.dropdown-menu > li.active > a:after {
-  .bullet-point(2px, @blue-light, 13%, 40%); // mixin
-  text-decoration:none;
-  outline:0;
+
+.dropdown-menu > li.active {
+  > a {
+    color: @blue-light;
+    &:after {
+      .bullet-point(2px, @blue-light, 13%, 40%); // mixin
+      text-decoration:none;
+      outline:0;
+    }
+  }
 }
 
 .dropdown-menu>.disabled>a,

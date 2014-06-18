@@ -1,13 +1,23 @@
 // Høykontrast
 //-------------------
-.contrast {
+
+@media only screen {
+    .contrast {
     
+
+    // banneren finnes ikke i høykontrast. Skal ha samme bakgrunnsfarge som på vanlig visning.
+    .hero-banner,
+    .hero-banner * {background:#F1F1F1 !important;}
+
+    .siteheader .hero-banner.nighttime,
+    .siteheader .hero-banner.nighttime *  {background-color: #98B3B7 !important;}
+
     // Globalt
     //-------------------
     * {
         background-color: #000 !important;
-	}
-	span, p, div, th, td, section, aside, article, header, footer, li, h1, h2, h3, h4, h5, h6, input, time, figcaption, select, textarea {
+    }
+	span, p, div, th, td, section, aside, article, header, footer, li, h1, h2, h3, h4, h5, h6, input, time, figcaption, select, textarea, label {
 		color: #fff !important;
 	}
     
@@ -64,7 +74,24 @@
          .topnavitem.has-children > a.open:hover:after, .topnavsection .topnav .accessible-megamenu .topnavitem.has-children > a.open:focus:after {
             border-bottom: 6px solid @blue-light;
          }
+
+         .home-link {
+            background-image: url('gfx/mainmenu/hjem_gul.png');
+            &:hover {
+               background-image: url('gfx/mainmenu/hjem_blaa.png');
+            }
+         }
+
     }
+
+    .sitesearch .btn-sitesearch {
+         background-image: url('gfx/mainmenu/sok_liten_gul.png');
+         @media (max-width: @screen-medium) { 
+            background-image: url('gfx/mainmenu/sok_stor_gul.png');
+         }
+    }
+
+
     
     //-------------------\\
     
@@ -159,6 +186,6 @@
     }
     #navCarousel .carousel-indicators li.active {
          background-color: @blue !important;  
-    }
-    
+    }   
+}   
 }

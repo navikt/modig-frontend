@@ -494,13 +494,13 @@ $(function () {
 
 
 $(function () {
-  $("a[href*='//www.nav.no'], a[href*='//tjenester.nav.no']").on('click', function (e) {
-    if ($(this).hasClass('hero-link') && typeof ga !== 'undefined' && ga.hasOwnProperty('loaded') && ga.loaded === true) {
+  $("a[href*='//tjenester.nav.no'][class='hero-link']").on('click', function (e) {
+    if (typeof ga !== 'undefined' && ga.hasOwnProperty('loaded') && ga.loaded === true) {
       e.preventDefault();
       var heroHref = $(this).attr('href');
       ga('send', 'event', 'Forsideboks', 'klikk', $(this).attr('title'), {
         'hitCallback': function () {
-          //return navno[ 'confirmLeaveBetasite'](heroHref);
+          window.location = heroHref;
         }
       });
     }
@@ -555,43 +555,24 @@ $(function () {
 /*
  * Login / Logout
  */
- /*
- * Login / Logout
- */
 
- 
- $(function () {
-  $.get(navno.authServiceUrl + '?randomness=' + Math.random()*10, function(data) {   
-    var json = JSON.parse(data);
+  function shouldShowLoginInfo() {
+    return document.cookie.indexOf(Innloggingslinje.SHOULD_SHOW_LOGIN_TOOLTIP) !== -1;
+  }
 
-    if (!json.authenticated) {
-      Innloggingslinje.resetAndHideName();
-      $('#logout, #logout-mobil').addClass('hidden');
-      
-      $('#auth-btns, #auth-btns-mobil').show();
-      $('#login, #login-mobil').removeClass('hidden');
-      
-      Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.NOT_LOGGED_IN, Innloggingslinje.thirtyMinutes());
-      Innloggingslinje.deleteCookie(Innloggingslinje.USERNAME_COOKIE_NAME);
-      Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME); 
-    } else if (json.securityLevel >= 3) {
-      $('#auth-btns, #auth-btns-mobil').show();
-      var name = json.name.toLowerCase();
-      Innloggingslinje.showLoginInfoFirstTime();
-      Innloggingslinje.showLoginDetails(name);
-      Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.SEC_LEV_GE_3, Innloggingslinje.thirtyMinutes());
-      Innloggingslinje.setCookie(Innloggingslinje.USERNAME_COOKIE_NAME, encodeURI(name), Innloggingslinje.thirtyMinutes());
-      $('#login, #login-mobil').addClass('hidden');
-      
-    } else {
-      $('#auth-btns, #auth-btns-mobil').hide();
-      Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.SEC_LEVEL_LE_2, Innloggingslinje.thirtyMinutes());
-      Innloggingslinje.deleteCookie(Innloggingslinje.USERNAME_COOKIE_NAME);
-      Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME);
-      Innloggingslinje.resetAndHideName();
+  $(function () {
+    if(shouldShowLoginInfo()) {
+      var $tooltip = $('.logout-tooltip');
+      $lukk = $tooltip.find('.lukk'); 
+      $lukk.removeClass('hidden');
+      $tooltip.removeClass('hidden').delay(3000).fadeOut('slow', function() {
+        $tooltip.addClass('hidden').show();
+        $lukk.addClass('hidden');
+      });
+      Innloggingslinje.setCookie(Innloggingslinje.LOGIN_TOOLTIP_HAS_BEEN_SHOWN, "1", 30);
+      Innloggingslinje.deleteCookie(Innloggingslinje.SHOULD_SHOW_LOGIN_TOOLTIP);
     }
   });
-});
 
  $(function () {
   $('.logout-tooltip .lukk').on("click", function() {
@@ -603,9 +584,7 @@ $(function () {
  $(function () {
   $('#logout, #logout-mobil').on("click", function(e) {
     e.preventDefault();
-    Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_INFO_SHOWN_COOKIE_NAME);
-    Innloggingslinje.deleteCookie(Innloggingslinje.USERNAME_COOKIE_NAME);
-    Innloggingslinje.setCookie(Innloggingslinje.PREVIOUS_LOGIN_STATE_COOKIE_NAME, Innloggingslinje.NOT_LOGGED_IN, Innloggingslinje.thirtyMinutes());
+    Innloggingslinje.deleteCookie(Innloggingslinje.LOGIN_TOOLTIP_HAS_BEEN_SHOWN);
     window.location = $(this).attr('href');
   });
 });
@@ -651,7 +630,7 @@ $(function () {
   } else {
     c_value = escape(value) + ((exdays == null) ? "": "; expires=" + exdate.toUTCString() + ";domain=.nav.no;path=/;");
   }
-  document.cookie = c_name + "=" + c_value;
+  document.cookie = c_name + "=" + c_value; 
 };
 
 navno.getCookie = function (c_name) {
@@ -722,9 +701,9 @@ navno.getCookie = function (c_name) {
     $('#high-contrast').find('a').on('click.google-analytics', function () {
       ga('send', 'event', 'Høykontrast', 'klikk', $(this).text());
     });
-    $('#footer-content-menu').find('.letter > a').on('click.google-analytics', function () {
+    /* $('#footer-content-menu').find('.letter > a').on('click.google-analytics', function () { // request må kjøres etter lenkeliste er lastet inn pga ytelse
       ga('send', 'event', 'Innhold A-Å', 'klikk', $(this).text());
-    });
+    });*/
     $('.carousel-control').on('click.google-analytics', function () {
       ga('send', 'event', 'Karusell', 'klikk', 'Høyre/venstre');
     });
@@ -833,6 +812,11 @@ navno.onScrollAndResize = function (event) {
   
 };
 
+function updatedScrollToTopLink() {
+  navno.buttonBottomOffset = navno.topLinkButtonPlaceholder.offset().top + navno.topLinkButtonPlaceholder.height();
+  navno['onScrollAndResize']();
+}
+
 function scrollToTopHandler() {
 
   navno.topLinkButtonPlaceholder = $('.placeholder');
@@ -844,7 +828,7 @@ function scrollToTopHandler() {
   FastClick.attach(document.getElementById("top-scroll-link"));
   
   if (($(window).height()*2)+200 < footerMenuTop) {
-    navno.topLinkStickyElement.removeClass("hide-on-pageload");
+    navno.topLinkButtonPlaceholder.removeClass("hide");
     
     $(".placeholder").css("height", navno.topLinkButtonPlaceholder.height());
     navno.buttonBottomOffset = navno.topLinkButtonPlaceholder.offset().top + navno.topLinkButtonPlaceholder.height();
@@ -951,3 +935,4 @@ $(function () {
 });
 
 //////////////////////// END ////////////////////////
+

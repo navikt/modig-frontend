@@ -92,11 +92,16 @@ h1:first-child, h2:first-child, h3:first-child,
 }
 
 .page-head h1 {
-    margin: 50px 0 20px 0;
+    margin: 50px 0 0 0;
     text-align: center;
-      @media (min-width: @screen-large) {  
-          margin-bottom: -20px;
-      }
+}
+
+@media (max-width: @screen-small) { 
+   .page-head h1 {
+      margin-bottom: 0;
+      margin-top:40px;
+      font-size:1.5em;
+    }
 }
 
 
@@ -215,17 +220,6 @@ blockquote {
 
    
 }
-
-// Ta bort dette nede
-.content {
-  .maincontent {
-    padding-top: 40px;
-  }
-}
-.maincontent {
-  padding-top: 60px;
-}
-
 
 
 
