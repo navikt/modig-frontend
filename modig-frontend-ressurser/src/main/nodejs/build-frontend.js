@@ -135,7 +135,7 @@ function uglifyConcatenated(fromFile, toFile) {
 }
 
 function makeUgly(code) {
-	return ugly.minify(code, {fromString: true, output: {comments: true}}).code;
+	return ugly.minify(code, {fromString: true, output: {comments: false}}).code;
 }
 
 function removeFiles() {

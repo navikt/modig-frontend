@@ -44,7 +44,6 @@
 
 		{ "fromDir": "/resources/img/", "toDir": "/generated-resources/img/" },
 		{ "fromDir": "/resources/img/modig/", "toDir": "/generated-resources/img/modig/" },
-		{ "fromDir": "/resources/img/enonic/", "toDir": "/generated-resources/img/enonic/" },
 		{ "fromDir": "/resources/img/legacy/", "toDir": "/generated-resources/img/legacy/" }
 	],
 

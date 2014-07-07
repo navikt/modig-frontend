@@ -251,3 +251,4 @@ addAutocomplete($('#excaseNAVKontor'), $("#chosennavunit"), $("#excaseNAVKontorS
 addAutocomplete($('#navdepartment1'), $("#chosennavunit"), $("#navdepartment1Selected"), $("#navdepartment1SelectedChangeButton"));
 
 }); // jquery document ready end
+
