@@ -68,6 +68,7 @@ function copyFiles() {
 	}
 }
 
+
 function copyFile(fromDir, toDir, file) {
 	console.log('Kopier ' + fromDir + file + ' -> ' + toDir);
 	if (fs.statSync(fromDir + file).isFile()) {
@@ -141,7 +142,7 @@ function removeFiles() {
 	var tasks = config.remove;
 	if (!tasks) return;
 	for (var i = 0; i < tasks.length; i++) {
-		remove.removeSync(baseFolder + tasks[i]);
+		remove.removeSync(baseFolder + tasks[i].fileName);
 	}
 }
 

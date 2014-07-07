@@ -188,7 +188,7 @@ function transitionAnim() {
           indicators.attr('data-active-slide', (nextSlide));
           
           // Accessibility part
-          indicators.attr('aria-valuenow', (parseInt(nextSlide)+1));
+          //indicators.attr('aria-valuenow', (parseInt(nextSlide)+1));
           indicators.find('li').attr('aria-selected', 'false');
           indicators.find('li.active').attr('aria-selected', 'true');
           
@@ -197,7 +197,7 @@ function transitionAnim() {
           //itemsContainer.find('.item.active').attr('id', 'slide-item-'+nextSlide);
           
           itemsContainer.attr('aria-owns', 'slide-item-'+nextSlide);
-          itemsContainer.attr('aria-valuenow', (parseInt(nextSlide)+1));
+          //itemsContainer.attr('aria-valuenow', (parseInt(nextSlide)+1));
           itemsContainer.find('div.item').each(function() {
           
             if ($(this).hasClass('active')) {
@@ -308,3 +308,245 @@ function transitionAnim() {
 
 }(window.jQuery);
 
+
+
+// ------------------ \\
+//   Carousel stuff   \\
+// ------------------ \\
+
+navno.displayCarousel = function (numArticles) {
+
+  var viewPreferenceKey = "showCarouselView";
+  
+  var indicators = $('.carousel-indicators');
+  
+  var slidesSize = indicators.find('li').length;
+  indicators.attr('data-active-slide', 0);
+  
+  $('#navCarousel').attr("data-size", slidesSize);
+  
+  var ieControl = $('.col-lg-12 > a.carousel-control');
+  if (ieControl.length > 0) {
+    ieControl.remove();
+    // TODO in bootstrap: IE bug workaround
+  } else if ($('.col-lg-12 > div[id^="marker"] > a.carousel-control').length > 0) {
+    $('.col-lg-12 > div[id^="marker"] > a.carousel-control').remove();
+  }
+  
+  // Logikk under for vise karusellen
+  if (numArticles > 3) {
+    
+    var inner = $(".carousel-inner");
+    
+    indicators.removeClass('hide');
+    $('.carousel-control').removeClass('hide');
+    //$('.carousel-dropdown').removeClass('hide');
+    
+    // Indicate first slide page
+    var items = inner.find('.item')
+    items.removeClass('active').removeClass('carousel-onload').first().addClass('active');
+    
+    var firstSlide = $(".carousel-inner .hero-link-wrapper").first();
+    
+    var rowMargin = (inner.width() - (firstSlide.width() * 3)) / 2;
+    
+    var collapseHeightAfter = firstSlide.height();
+    var collapseHeightBefore = $('.carousel-outer').height();
+    var slideHeighExpanded = Math.ceil((collapseHeightAfter * slidesSize) + ((slidesSize -1) * rowMargin) + 15);
+    var fadeSpeed = 400;
+    
+    var hiddenElements = $("#navCarousel .item[aria-hidden='true']");
+    
+    var carouselView = $('.carousel-view');
+    var listView = $('.carousel-view');
+    
+    var carouselViewPref = localStorage.getItem(viewPreferenceKey); // View preference
+    
+    if (carouselViewPref === 'false') {
+        
+        hiddenElements.removeAttr("style");
+        inner.addClass("list");
+        hiddenElements.attr("aria-hidden", false);
+        //inner.css("height", slideHeighExpanded);
+        
+        $(".carousel-control").css("display", "none");
+        $(".carousel-indicators").css("display", "none");
+        
+        $(".list-view").attr('data-selected', true);
+        $(".carousel-view").attr('data-selected', false);
+        
+    }
+    else if (carouselViewPref === 'true') {
+        
+        inner.removeClass("list").find(".item").removeAttr("style");
+        
+        $(".carousel-control").css("display", "");
+        $(".carousel-indicators").css("display", "");
+        
+        $(".list-view").attr('data-selected', false);
+        $(".carousel-view").attr('data-selected', true);
+        
+    }
+    else if (carouselViewPref === null) {
+        localStorage.setItem(viewPreferenceKey, 'false');
+        carouselViewPref = 'false';
+        
+        hiddenElements.removeAttr("style");
+        inner.addClass("list");
+        hiddenElements.attr("aria-hidden", false);
+        //inner.css("height", slideHeighExpanded);
+        
+        $(".carousel-control").css("display", "none");
+        $(".carousel-indicators").css("display", "none");
+        
+        $(".list-view").attr('data-selected', true);
+        $(".carousel-view").attr('data-selected', false);
+        
+    }
+    
+    $(".list-view").on("click", function (e) {
+      e.preventDefault();
+      
+      carouselViewPref = localStorage.getItem(viewPreferenceKey);
+      
+      if (carouselViewPref !== null && carouselViewPref === 'true') {
+        localStorage.setItem(viewPreferenceKey, 'false');
+      }
+      
+      var thisListView = $(this);
+      
+      if (thisListView.attr('data-selected') === 'true' || carouselView.attr('data-is-sliding') === 'true') {
+        return false;
+      }
+      else {
+        thisListView.attr('data-selected', true).removeAttr('style');
+        $('.carousel-view').attr('data-selected', false);
+      } 
+      
+      thisListView.attr('data-is-sliding', true);
+      
+      $(".carousel-control").fadeOut(fadeSpeed);
+      $(".carousel-indicators").fadeOut(fadeSpeed, function() {
+        
+        inner.css("height", collapseHeightBefore);
+        
+        items.css("display", "block");
+        inner.addClass("list");
+        
+        inner.animate({
+          height: slideHeighExpanded
+        },
+        {
+          duration: 500
+        }).promise().done(function () {
+          items.removeAttr("style");
+          hiddenElements.attr("aria-hidden", false);
+          inner.removeAttr('style');
+          thisListView.attr('data-is-sliding', false);
+        });
+      });
+    });
+    
+    $(".carousel-view").on("click", function (e) {
+      e.preventDefault();
+      
+      carouselViewPref = localStorage.getItem(viewPreferenceKey);
+      
+      if (carouselViewPref !== null && carouselViewPref === 'false') {
+        localStorage.setItem(viewPreferenceKey, 'true');
+      }
+      
+      var thisCarouselView = $(this);
+      
+      if ($(this).attr('data-selected') === 'true' || listView.attr('data-is-sliding') === 'true') {
+        return false;
+      }
+      else {
+        thisCarouselView.attr('data-selected', true).removeAttr('style');
+        $('.list-view').attr('data-selected', false);
+      }
+      
+      thisCarouselView.attr('data-is-sliding', true);
+      
+      inner.animate({
+        height: collapseHeightBefore
+      },
+      {
+        duration: 500
+      }).promise().done(function () {
+        
+        hiddenElements.attr("aria-hidden", true);
+        //inner.css("height", collapseHeightAfter);
+        inner.removeAttr('style');
+        
+        thisCarouselView.attr('data-is-sliding', false);
+        inner.removeClass("list").find(".item").removeAttr("style");
+        $(".carousel-indicators").fadeIn(fadeSpeed);
+        $(".carousel-control").fadeIn(fadeSpeed);
+      });
+    });
+    
+    $(".hide-all").on("click", function (e) {
+      e.preventDefault();
+    });
+  }
+};
+
+/*
+ * Carousel initialization
+ */
+ 
+
+ 
+ //////////////////////// END ////////////////////////
+
+/*
+ * Carousel initialization
+ */
+
+$(function () {
+  
+  $('.carousel').carousel({
+    interval: false
+  });
+  
+  
+  var itemsContainer = $('#carousel-items');
+  var items = itemsContainer.find('div.item > div').length;
+  
+  var numSlides = itemsContainer.find('div.item').length;
+  
+  if (items > 3 && items <= 6) {
+    navno[ 'displayCarousel'](items);
+    
+  } else if (items > 6) {
+    var indicators = $('.carousel-indicators');
+    
+    for (var i = 2; i < numSlides; i++) {
+      $('.carousel-indicators').append('<li class="" data-slide-to="' + i + '" data-target="#navCarousel" aria-selected="false" aria-controls="carousel-items" tabindex="0"><span class="visuallyhidden">Indikator som viser posisjonen til de synlige lenkene. Indikatorene er klikkbar for å navigere frem og tilbake i utvalget av lenker.</span></li>');
+    }
+    navno[ 'displayCarousel'](items);
+  }
+});
+
+
+/*
+ * Using left and right slide controls with keyboard
+ * TODO: make this a callable function. Need to check if buttons are showing first (links <= 3)
+ */
+
+$(function () {
+  var carousel = $('#navCarousel');
+  var slideItems = carousel.find(".item");
+  var leftControl = $('.carousel-control.left');
+  var rightControl = $('.carousel-control.right');
+  
+  $(carousel).add(slideItems).add(leftControl).add(rightControl).on("keyup", function (event) {
+    
+    if (event.keyCode == 37) {
+      $(leftControl).click();
+    } else if (event.keyCode == 39) {
+      $(rightControl).click();
+    }
+  });
+});

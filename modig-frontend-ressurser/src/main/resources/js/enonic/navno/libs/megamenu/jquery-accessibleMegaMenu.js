@@ -203,8 +203,11 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
              mobileMenuMq.addListener(function() {
 
-
               if (mobileMenuMq.matches) { // mobil
+
+                $(nav).find('button.mobile-toggler').attr({              
+                "aria-hidden": false
+              });
 
                 _mobileMenuEnable.call(this,menu,menutoggler);
                 _mobileMenuEnable.call(this,searchform,searchtoggler);
@@ -212,6 +215,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                   mobilesubmenus.each(function (i, submenu) {   
                   /*Make headings clickable */            
                         submenu = $(submenu);
+
                         var expander = submenu.prevAll('.mobile-submenu-expander').eq(0); // todo defaults                                            
                             if (!expander.attr('tabindex')) {
                             _mobileMenuEnable.call(this,submenu,expander);
@@ -222,6 +226,10 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
               }
 
               else { // desktop
+
+                $(nav).find('.mobile-toggler').attr({              
+                "aria-hidden": true
+              });
 
                _mobileMenuDisable.call(this,menu,menutoggler);
                _mobileMenuDisable.call(this,searchform,searchtoggler);
@@ -612,6 +620,14 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
           var target = $(event.target);
 
+          if ((window.navigator.msPointerEnabled || window.navigator.pointerEnabled) && target.context.localName === 'html') {
+            // hindre windows phone i å lukke mobilmeny på scroll / touchmove / mspointermove
+            // IE10 bruker msPointerEnabled. IE11 bruker pointerEnabled
+
+            return false; 
+          }
+
+
             if (this.interactiveArea.has(target).length === 0 && this.mobileMenuTogglers.filter(target).length === 0) {
 
                 event.preventDefault();
@@ -922,11 +938,26 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                 if (settings.enableMobileMenu) {
 
-                    var mobilesubmenus = topnavitems.find('.mobile-submenu');
+                    var mobilesubmenus = topnavitems.find('.mobile-submenu:not(.languages)');
 
                     if (mobileMenuMq.matches) {
+    
+                     $(nav).find('button.mobile-toggler').attr({              
+                    "aria-hidden": false
+                  });
+
+                     $(nav).find('label.mobile-toggler, input.mobile-toggler').attr({              
+                    "aria-hidden": true
+                  });
+
                     _mobileMenuEnable.call(that,menu,$('#toggle-mobile-mainmenu'));
                     _mobileMenuEnable.call(that,$('#sitesearch'),$('#toggle-mobile-search'));
+                    }
+
+                    else {
+                      $(nav).find('.mobile-toggler').attr({              
+                    "aria-hidden": true
+                  });
                     }
 
                      mobilesubmenus.each(function (i, submenu) {               

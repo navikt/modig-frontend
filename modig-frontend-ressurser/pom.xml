@@ -24,8 +24,18 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
-                <directory>src/main/generated-resources</directory>
-                <targetPath>META-INF/resources/statisk</targetPath>
+                <directory>src/main/generated-resources/css/enonic</directory>
+                <targetPath>css/enonic</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/generated-resources/js/enonic</directory>
+                <targetPath>js/enonic</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/generated-resources/js/skjemaveileder</directory>
+                <targetPath>js/skjemaveileder</targetPath>
             </resource>
         </resources>
 
