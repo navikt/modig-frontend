@@ -237,7 +237,7 @@
     vertical-align: top;
     margin-top: -3px;
     cursor: pointer;
-    //z-index: 10; // legger seg over mobilmeny, når menyen er nedfelt. Må denne være satt?
+    z-index: 1;
     
     @media (max-width: (@screen-medium - 0.01)) {
         margin-left: 0;
@@ -294,7 +294,7 @@
                 color: #ffffff;
                 
                 &:hover {
-                    color: @blue;
+                    color: @blue-light;
                     text-decoration: none;
                 }
             }
@@ -307,7 +307,7 @@
         span {
             color: @blue;
             &:after {
-                .down-arrow(4px, 4px, 4px, @blue);
+                .down-arrow(4px, 4px, 4px, @blue-light);
             }
         }
     }

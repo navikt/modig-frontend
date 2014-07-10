@@ -3,6 +3,8 @@
 // --------------------------------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
 
+
+
 @media print {
 
   * {
@@ -15,17 +17,15 @@
     //font-family: "Arial", Times, serif;
   }
   
+  html, body {
+    height: 98%;   
+  }
+  
   p {
     font-weight: 400;   
   }
   h1, h2 ,h3 {
     font-weight: 600;   
-  }
-  h1 {
-    //font-size: 20px;   
-  }
-  h3 {
-    //font-size: 13px;   
   }
 
   a,
@@ -122,13 +122,17 @@
 
 
 .pagewrapper {
-  padding:0;
-  margin:0;
+  padding:0 !important;
+  margin:0 !important;
+  
+}
+.pagewrapper.contentpage .maincontent {
+    padding-top: 10px !important;   
 }
 
   #maincontent {
     .breadcrumbs a {
-        border-bottom: 1px solid @blue;
+        //border-bottom: 1px solid @blue;
     }
     .col-lg-8 {
        width: 100%;
@@ -137,10 +141,11 @@
   .sitelogo {
     padding: 0 !important;
     padding-bottom: 5px !important;
-    text-align: left !important;
+    text-align: center !important;
+    border-bottom: 0;
     
     img {
-        width: 40% !important;
+        width: 50% !important;
         height: auto !important;
     }
   }
@@ -148,19 +153,46 @@
        display: block !important;
        clear: left;
   }
-  .page-head .breadcrumbs {
-    margin-bottom: -10px !important;
+  .page-head {
+    display: block !important;
+    margin-left: 0 !important;
+    padding-left: 50px !important;;
+    
+    .breadcrumbs {
+        margin: 20px 0 !important;
+        display: block !important;
+        margin-bottom: -15px !important;
+        
+        .crumb {
+            margin-right: 4%;
+        }
+        
+        a.crumb, a.crumb span {
+           color: @gray-dark !important;    
+        }
+        span.crumb {
+            border-bottom: 0 !important;
+        }
+    }
   }
-  
-  .pubdate {
-     //font-size: 8px;  
-  }
-
+     
+    .contentpage {
+        .maincontent {
+            .col-md-8 {
+                width: 94%;
+            }   
+        }
+    }
      
  .maincontent {
      padding: 10px !important;
-     padding: 25px 0 !important;
- 
+     padding: 0 25px !important;
+     page-break-after: auto;
+     
+     .col-md-4:empty {
+         display: none;  
+     }
+     
     .full-story {
         padding: 0 !important;
 
@@ -182,12 +214,23 @@
   .content-submenu {
     display:none !important;
   }
+  
+  #pagecontent {
+    article h2 a {
+        font-size: 16px !important;   
+    }   
+  }
 
-  .article-body {
-        //font-size: 11px;
+  .article-body, article {
+        
+        p, li, a, span, strong, b, em {
+            font-size: 14px;        
+        }
+        
         margin-bottom: 20px !important;
+        
         a {
-            text-decoration: underline;
+            text-decoration: none !important;
             text-decoration-style: solid;
             color: @blue;   
         }
@@ -202,7 +245,7 @@
       display: none !important;   
   }
 
-  .top-link-wrapper {
+  .top-link-wrapper, .placeholder {
       display: none;
   }
 }

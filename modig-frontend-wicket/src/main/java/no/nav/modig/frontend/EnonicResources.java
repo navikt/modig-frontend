@@ -7,15 +7,11 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 
 class EnonicResources  {
 
-    static final JavaScriptResourceReference NAV_LIBS = new JQueryDependentResourceReference("enonic/nav-libs.js");
-    static final JavaScriptResourceReference NAV_GLOBAL = jsReference("enonic/nav-global.js");
-    static final JavaScriptResourceReference NAV_CAROUSEL = jsReference("enonic/nav-carousel.js");
-    static final JavaScriptResourceReference NAV_CONTENT = jsReference("enonic/nav-content.js");
-    static final JavaScriptResourceReference NAV_ACCORDION = jsReference("enonic/nav-accordion.js");
-    static final JavaScriptResourceReference NAV_INNLOGGING = jsReference("enonic/nav-innloggingslinjen.js");
+    static final JavaScriptResourceReference NAV_GLOBAL = new JQueryDependentResourceReference("enonic/navno/nav-global.js");
+    static final JavaScriptResourceReference NAV_INNLOGGING = jsReference("enonic/navno/nav-innloggingslinjen.js");
 
-    static final JavaScriptResourceReference MATCH_MEDIA = jsReference("enonic/libs/matchmedia.js");
-    static final JavaScriptResourceReference JQUERY_MEGA_MENU = jsReference("enonic/libs/megamenu/jquery-accessibleMegaMenu.js");
+    static final JavaScriptResourceReference MATCH_MEDIA = jsReference("enonic/navno/libs/matchmedia.js");
+    static final JavaScriptResourceReference JQUERY_MEGA_MENU = new JQueryDependentResourceReference("enonic/navno/libs/megamenu/jquery-accessibleMegaMenu.js");
 
     static final PackageResourceReference NAV_VARIABLES_LESS = lessReference("enonic/nav-variables-wicket.less");
     static final PackageResourceReference NAV_MIXINS_LESS = lessReference("enonic/includes/nav-mixins.less");
@@ -47,7 +43,6 @@ class EnonicResources  {
     static final PackageResourceReference NAV_PRINT_LESS = lessReference("enonic/includes/nav-print.less");
 
     static final PackageResourceReference NAV_WEBFONTS_LESS = lessReference("enonic/includes/nav-webfonts.less");
-    static final PackageResourceReference NAV_TEMP_BETA_LESS = lessReference("enonic/includes/_temp-beta.less");
 
     private static JavaScriptResourceReference jsReference(String path) {
         return new JavaScriptResourceReference(JsResourceMarker.class, path);
