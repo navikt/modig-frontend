@@ -96,7 +96,7 @@ function concat(fromDir, toFile, files) {
 		var file = files[i];
 		fullfile += fs.readFileSync(fromDir + file, 'utf8');
 	}
-	fs.appendFileSync(toFile, fullfile, encoding = 'utf8');
+	fs.appendFileSync(toFile, fullfile + '\n', encoding = 'utf8');
 }
 
 function uglifyFiles() {

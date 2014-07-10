@@ -79,10 +79,6 @@
         { "fromDir": "/generated-resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-concat.js",
             "files": ["jquery-tmp.js", "navno-tmp.js"] },
 
-        { "fromDir": "/resources/js/enonic/skjemaveileder/", "toFile": "/generated-resources/js/enonic/skjemaveileder/skjemaveileder-concat.js",
-			"files": ["annenpost.js", "elektroniskinnsending.js", "ettersendelsesveileder.js",
-                      "ettersendelsesveilederarbeidsgiver.js", "felles.js", "skjemavalg.js"] },
-
 		{ "fromDir": "/resources/less/modig/", "toFile": "/generated-resources/less/modig/modig.less",
 			"files": ["reset.less", "variables.less", "mixins.less", "modus.less", "typografi.less", "felles.less",
 					  "knapper.less", "contrast.less", "dropdowns.less", "skjema.less", "tooltip.less", "utilities.less",
@@ -93,8 +89,32 @@
 		{ "fromFile": "/generated-resources/js/bootstrap/bootstrap.js", "toFile": "/generated-resources/js/bootstrap/bootstrap.min.js" },
 		{ "fromFile": "/generated-resources/js/modig/modig.js", "toFile": "/generated-resources/js/modig/modig.min.js" },
 		{ "fromFile": "/generated-resources/js/enonic/navno/navno-concat.js", "toFile": "/generated-resources/js/enonic/navno/navno.min.js" },
-		{ "fromFile": "/generated-resources/js/enonic/skjemaveileder/skjemaveileder-concat.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/skjemaveileder.min.js" },
-		{ "fromFile": "/generated-resources/js/legacy/felles.js", "toFile": "/generated-resources/js/legacy/felles.min.js" }
+		{ "fromFile": "/generated-resources/js/legacy/felles.js", "toFile": "/generated-resources/js/legacy/felles.min.js" },
+
+        {
+            "fromFile": "/generated-resources/js/enonic/skjemaveileder/annenpost.js",
+            "toFile": "/generated-resources/js/enonic/skjemaveileder/annenpost.min.js"
+        },
+        {
+            "fromFile": "/generated-resources/js/enonic/skjemaveileder/elektroniskinnsending.js",
+            "toFile": "/generated-resources/js/enonic/skjemaveileder/elektroniskinnsending.min.js"
+        },
+        {
+            "fromFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveileder.js",
+            "toFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveileder.min.js"
+        },
+        {
+            "fromFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveilederarbeidsgiver.js",
+            "toFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveilederarbeidsgiver.min.js"
+        },
+        {
+            "fromFile": "/generated-resources/js/enonic/skjemaveileder/felles.js",
+            "toFile": "/generated-resources/js/enonic/skjemaveileder/felles.min.js"
+        },
+        {
+            "fromFile": "/generated-resources/js/enonic/skjemaveileder/skjemavalg.js",
+            "toFile": "/generated-resources/js/enonic/skjemaveileder/skjemavalg.min.js"
+        }
 	],
 
 	"runLess": [
