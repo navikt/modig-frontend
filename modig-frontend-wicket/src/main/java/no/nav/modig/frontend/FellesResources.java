@@ -24,7 +24,7 @@ class FellesResources {
     static final JavaScriptResourceReference JQUERY_UI_DATEPICKER = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.10.3.custom.js");
     static final JavaScriptResourceReference JQUERY_VALIDATE = new JQueryDependentResourceReference("jquery/plugins/jquery.validate.js");
     static final JavaScriptResourceReference CONSOLE_POLYFILL_RESOURCE = jsReference("console.js");
-    static final JavaScriptResourceReference MODERNIZR_RESOURCE = jsReference("enonic/libs/modernizr.2.7.1-production.js");
+    static final JavaScriptResourceReference MODERNIZR_RESOURCE = jsReference("enonic/navno/libs/modernizr.2.7.1.min.js");
 
 	static final PackageResourceReference RESET_LESS = lessReference("modig/reset.less");
     static final PackageResourceReference VARIABLES_LESS = lessReference("modig/variables.less");
