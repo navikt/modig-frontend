@@ -5,7 +5,7 @@
 	<artifactId>modig-frontend</artifactId>
 	<groupId>no.nav.modig</groupId>
 	<packaging>pom</packaging>
-	<version>1.1.45-SNAPSHOT</version>
+	<version>1.1.46-SNAPSHOT</version>
 
 	<parent>
 		<groupId>no.nav.sbl</groupId>
