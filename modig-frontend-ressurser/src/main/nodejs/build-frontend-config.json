@@ -98,6 +98,7 @@
 		{ "fromFile": "/generated-resources/js/bootstrap/bootstrap.js", "toFile": "/generated-resources/js/bootstrap/bootstrap.min.js" },
 		{ "fromFile": "/generated-resources/js/modig/modig.js", "toFile": "/generated-resources/js/modig/modig.min.js" },
 		{ "fromFile": "/generated-resources/js/enonic/navno/navno-concat.js", "toFile": "/generated-resources/js/enonic/navno/navno.min.js" },
+		{ "fromFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.js", "toFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.min.js" },
 		{ "fromFile": "/generated-resources/js/legacy/felles.js", "toFile": "/generated-resources/js/legacy/felles.min.js" },
 
         {
