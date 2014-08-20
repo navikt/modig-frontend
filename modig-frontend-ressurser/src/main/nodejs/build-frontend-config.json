@@ -1,7 +1,7 @@
 {
 	"fileStructure": [
 		"/",
-		"css/", "css/bootstrap/", "css/modig/", "css/enonic/", "css/legacy/",
+		"css/", "css/bootstrap/", "css/modig/", "css/enonic/", "css/appres", "css/legacy/",
 		"img/", "img/modig/", "img/legacy/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder",
         "img/enonic/gfx/carousel/", "img/enonic/gfx/icons/", "img/enonic/gfx/mainmenu/", "img/enonic/gfx/tts/",
 		"js/",
@@ -9,11 +9,13 @@
 		"js/modig/", "js/modig/jquery/", "js/enonic/",
 		"js/enonic/navno/", "js/enonic/navno/libs/", "js/enonic/navno/libs/jquery/", "js/enonic/navno/libs/megamenu/",
         "js/enonic/skjemaveileder/",
+        "js/appres/",
 		"js/legacy/",
 		"less/",
 		"less/bootstrap/",
 		"less/modig/",
 		"less/enonic/", "less/enonic/includes/",
+        "less/appres/", "less/appres/includes",
 		"less/legacy/"
 	],
 
@@ -30,13 +32,18 @@
         { "fromDir": "/resources/js/enonic/navno/libs/megamenu/", "toDir": "/generated-resources/js/enonic/navno/libs/megamenu/" },
         { "fromDir": "/resources/js/jquery/", "toDir": "/generated-resources/js/enonic/navno/libs/jquery/" },
 
+        { "fromDir": "/resources/js/legacy/", "toDir": "/generated-resources/js/legacy/" },
+        { "fromDir": "/resources/js/legacy/", "toDir": "/generated-resources/js/appres/" },
+
 		{ "fromDir": "/resources/less/bootstrap/", "toDir": "/generated-resources/less/bootstrap/" },
-		{ "fromDir": "/resources/js/legacy/", "toDir": "/generated-resources/js/legacy/" },
 
 		{ "fromDir": "/resources/less/modig/", "toDir": "/generated-resources/less/modig/" },
 
         { "fromDir": "/resources/less/enonic/", "toDir": "/generated-resources/less/enonic/" },
         { "fromDir": "/resources/less/enonic/includes/", "toDir": "/generated-resources/less/enonic/includes/" },
+
+        { "fromDir": "/resources/less/appres/", "toDir": "/generated-resources/less/appres/" },
+        { "fromDir": "/resources/less/appres/includes/", "toDir": "/generated-resources/less/appres/includes/" },
 
 		{ "fromDir": "/resources/less/legacy/", "toDir": "/generated-resources/less/legacy/" },
 
@@ -99,6 +106,7 @@
 		{ "fromFile": "/generated-resources/js/modig/modig.js", "toFile": "/generated-resources/js/modig/modig.min.js" },
 		{ "fromFile": "/generated-resources/js/enonic/navno/navno-concat.js", "toFile": "/generated-resources/js/enonic/navno/navno.min.js" },
 		{ "fromFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.js", "toFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.min.js" },
+        { "fromFile": "/generated-resources/js/legacy/felles.js", "toFile": "/generated-resources/js/appres/felles.min.js" },
 		{ "fromFile": "/generated-resources/js/legacy/felles.js", "toFile": "/generated-resources/js/legacy/felles.min.js" },
 
         {
@@ -138,6 +146,9 @@
 			"builtFile": "/generated-resources/css/enonic/nav-old-ie.css" },
 		{ "fromDir": "/generated-resources/less/enonic/", "mainFile": "/resources/less/enonic/nav-responsive.less",
 			"builtFile": "/generated-resources/css/enonic/nav-responsive.css" },
+
+        { "fromDir": "/generated-resources/less/appres/", "mainFile": "/resources/less/appres/app-decorator.less",
+            "builtFile": "/generated-resources/css/appres/app-decorator.css" },
 
 		{ "fromDir": "/generated-resources/less/legacy/", "mainFile": "/resources/less/legacy/nav-standard.less",
 			"builtFile": "/generated-resources/css/legacy/nav-standard.css" }
