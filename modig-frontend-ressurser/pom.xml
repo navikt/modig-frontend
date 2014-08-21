@@ -29,6 +29,11 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
+                <directory>src/main/generated-resources/css/appres</directory>
+                <targetPath>css/appres</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
                 <directory>src/main/generated-resources/js/enonic</directory>
                 <targetPath>js/enonic</targetPath>
             </resource>
