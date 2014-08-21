@@ -34,8 +34,8 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
-                <directory>src/main/generated-resources/js/enonic</directory>
-                <targetPath>js/enonic</targetPath>
+                <directory>src/main/generated-resources/js/appres</directory>
+                <targetPath>js/appres</targetPath>
             </resource>
             <resource>
                 <filtering>false</filtering>
