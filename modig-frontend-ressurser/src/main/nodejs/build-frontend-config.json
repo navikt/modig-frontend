@@ -93,9 +93,11 @@
 		{ "fromDir": "/resources/js/modig/", "toFile": "/generated-resources/js/modig/modig.js",
 			"files": ["transitions.js", "felles.js", "dropdown.js", "tooltip.js", "AjaxLoader.js"] },
 
-        { "fromDir": "/generated-resources/js/appres/", "toFile": "/generated-resources/js/appres/app-decorator-concat.js",
-            "files": ["jquery-1.11.1.js", "felles.js", "nav-global.js", "matchmedia.js", "jquery-accessibleMegaMenu.js"] },
+        { "fromDir": "/generated-resources/js/appres/", "toFile": "/generated-resources/js/appres/app-legacy-concat.js",
+            "files": ["jquery-1.11.1.js", "felles.js"] },
 
+        { "fromDir": "/generated-resources/js/appres/", "toFile": "/generated-resources/js/appres/app-navno-concat.js",
+            "files": ["nav-global.js", "matchmedia.js", "jquery-accessibleMegaMenu.js"] },
 
         { "fromDir": "/resources/js/jquery/", "toFile": "/generated-resources/js/enonic/navno/jquery-tmp.js",
             "files": ["jquery-1.11.1.js"] },
@@ -121,7 +123,8 @@
 		{ "fromFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.js", "toFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.min.js" },
 		{ "fromFile": "/generated-resources/js/legacy/felles.js", "toFile": "/generated-resources/js/legacy/felles.min.js" },
 
-        { "fromFile": "/generated-resources/js/appres/app-decorator-concat.js", "toFile": "/generated-resources/js/appres/app-decorator.min.js" },
+        { "fromFile": "/generated-resources/js/appres/app-legacy-concat.js", "toFile": "/generated-resources/js/appres/app-legacy.min.js" },
+        { "fromFile": "/generated-resources/js/appres/app-navno-concat.js", "toFile": "/generated-resources/js/appres/app-navno.min.js" },
         { "fromFile": "/generated-resources/js/appres/nav-innloggingslinjen.js", "toFile": "/generated-resources/js/appres/nav-innloggingslinjen.min.js" },
 
         {
