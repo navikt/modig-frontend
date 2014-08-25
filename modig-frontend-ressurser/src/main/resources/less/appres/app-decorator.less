@@ -18,7 +18,9 @@
 @import "../enonic/includes/nav-contrast.less";
 @import "../enonic/includes/nav-webfonts.less";
 
-@import "../legacy/nav-standard.less"; // CSS for gamle tjenester
+@import "includes/legacy-screen.less"; // CSS for gamle tjenester / dekoratører
+@import "includes/nav-vs-legacy-bugfix.less"; // fiksing av konflikter mellom tjenester og nye nav.no
+@import "includes/legacy-screen-contrast.less"; // Kontrast for gamle tjenester
 
-@import "includes/nav-vs-legacy-bugfix"; // fiksing av konflikter mellom tjenester og nye nav.no
-
+@import "../enonic/includes/nav-print.less"; // samme som på nav.no
+@import "includes/legacy-print.less"; // modifisert (global fontsize) variant av print fra gamle tjenester
