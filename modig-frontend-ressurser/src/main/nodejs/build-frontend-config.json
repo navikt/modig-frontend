@@ -4,6 +4,9 @@
 		"css/", "css/bootstrap/", "css/modig/", "css/enonic/", "css/appres", "css/legacy/",
 		"img/", "img/modig/", "img/legacy/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder",
         "img/enonic/gfx/carousel/", "img/enonic/gfx/icons/", "img/enonic/gfx/mainmenu/", "img/enonic/gfx/tts/",
+        "img/appres/", "img/appres/legacy/", "img/appres/legacy/breadcrumb/", "img/appres/legacy/dittnav/",
+        "img/appres/legacy/fellesinnlogging/", "img/appres/legacy/global/", "img/appres/legacy/ikoner/", "img/appres/legacy/logo/",
+        "img/appres/legacy/tooltip/", "img/appres/legacy/tooltip/hjelpetekst/", "img/appres/legacy/venstremeny/",
 		"js/",
 		"js/bootstrap/", "js/bootstrap/jquery/",
 		"js/modig/", "js/modig/jquery/", "js/enonic/",
@@ -57,6 +60,16 @@
 		{ "fromDir": "/resources/img/enonic/gfx/mainmenu/", "toDir": "/generated-resources/img/enonic/gfx/mainmenu/" },
 		{ "fromDir": "/resources/img/enonic/gfx/tts/", "toDir": "/generated-resources/img/enonic/gfx/tts/" },
 		{ "fromDir": "/resources/img/enonic/skjemaveileder/", "toDir": "/generated-resources/img/enonic/skjemaveileder/" },
+
+        { "fromDir": "/resources/img/appres/legacy/breadcrumb/", "toDir": "/generated-resources/img/appres/legacy/breadcrumb/" },
+        { "fromDir": "/resources/img/appres/legacy/dittnav/", "toDir": "/generated-resources/img/appres/legacy/dittnav/" },
+        { "fromDir": "/resources/img/appres/legacy/fellesinnlogging/", "toDir": "/generated-resources/img/appres/legacy/fellesinnlogging/" },
+        { "fromDir": "/resources/img/appres/legacy/global/", "toDir": "/generated-resources/img/appres/legacy/global/" },
+        { "fromDir": "/resources/img/appres/legacy/ikoner/", "toDir": "/generated-resources/img/appres/legacy/ikoner/" },
+        { "fromDir": "/resources/img/appres/legacy/logo/", "toDir": "/generated-resources/img/appres/legacy/logo/" },
+        { "fromDir": "/resources/img/appres/legacy/tooltip/", "toDir": "/generated-resources/img/appres/legacy/tooltip/" },
+        { "fromDir": "/resources/img/appres/legacy/tooltip/hjelpetekst/", "toDir": "/generated-resources/img/appres/legacy/tooltip/hjelpetekst/" },
+        { "fromDir": "/resources/img/appres/legacy/venstremeny/", "toDir": "/generated-resources/img/appres/legacy/venstremeny/" },
 
 		{ "fromDir": "/resources/img/modig/", "toDir": "/generated-resources/img/modig/" },
 		{ "fromDir": "/resources/img/legacy/", "toDir": "/generated-resources/img/legacy/" }
