@@ -271,3 +271,48 @@
   }
 
 }
+
+
+@media print { // bugfix for stillingssøk spesielt, og dekoratør (nye nav.no) generelt.
+
+  body { // ekstra ledd i selektor her for å overstyrre etterfølgende stillinger.css
+
+    font-size:73%;
+    .pagewrapper,
+    .sitefooter {
+      width: auto;
+      min-width: 0;
+    }
+    .container {
+      width:auto;
+    }
+  }
+
+  .maincontent > .row > div > div,
+  .maincontent > .row > div > nav { // reset font-size for print (fra 73%, som gir liten skrift)
+    font-size: 100%;
+  }
+
+  #alternativebreadcrumb {
+    display:none;
+  }
+
+  #stillingsok { // Spesialhåndtering av print for stillingssøket
+
+    .fasettgruppe,
+    .panel.spesial-app,
+    .panel.mork-bunnpanel,
+    .panel.standard-hoved.relaterte {
+      display: none;
+    }
+
+    .kolonne {
+      width: 100%;
+    }
+
+    .relatert .stillingListeMeny LI A  {
+      height:auto;
+    }
+  }
+
+}
