@@ -117,8 +117,7 @@
 
 		{ "fromDir": "/resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-tmp.js",
 			"files": ["nav-global.js", "nav-carousel.js", "nav-content.js", "nav-accordion.js",
-                      "libs/matchmedia.js", "libs/megamenu/jquery-accessibleMegaMenu.js",
-                      "nav-klage-ris-ros.js"] },
+                      "libs/matchmedia.js", "libs/megamenu/jquery-accessibleMegaMenu.js"] },
 
         { "fromDir": "/generated-resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-concat.js",
             "files": ["jquery-tmp.js", "navno-tmp.js"] },
@@ -132,13 +131,17 @@
 	"uglify": [
 		{ "fromFile": "/generated-resources/js/bootstrap/bootstrap.js", "toFile": "/generated-resources/js/bootstrap/bootstrap.min.js" },
 		{ "fromFile": "/generated-resources/js/modig/modig.js", "toFile": "/generated-resources/js/modig/modig.min.js" },
+
 		{ "fromFile": "/generated-resources/js/enonic/navno/navno-concat.js", "toFile": "/generated-resources/js/enonic/navno/navno.min.js" },
 		{ "fromFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.js", "toFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.min.js" },
+        { "fromFile": "/generated-resources/js/enonic/navno/nav-klage-ris-ros.js", "toFile": "/generated-resources/js/enonic/navno/nav-klage-ris-ros.min.js" },
+
 		{ "fromFile": "/generated-resources/js/legacy/felles.js", "toFile": "/generated-resources/js/legacy/felles.min.js" },
 
         { "fromFile": "/generated-resources/js/appres/app-legacy-concat.js", "toFile": "/generated-resources/js/appres/app-legacy.min.js" },
         { "fromFile": "/generated-resources/js/appres/app-navno-concat.js", "toFile": "/generated-resources/js/appres/app-navno.min.js" },
         { "fromFile": "/generated-resources/js/appres/nav-innloggingslinjen.js", "toFile": "/generated-resources/js/appres/nav-innloggingslinjen.min.js" },
+
 
         {
             "fromFile": "/generated-resources/js/enonic/skjemaveileder/annenpost.js",

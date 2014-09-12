@@ -381,7 +381,7 @@ $(function () {
 // stod inline i XSL
 $(function () {
     
-    var inputAc = $('#velgNavEnhet'),
+    var inputAc = $('#Enhet'),
         inputAcError = $(".enhetError"),
         selectedDep = $("#navEnhetValgt"),
         defaultEpostadresse = $("input[name='to']").val(); // brukes av ros
