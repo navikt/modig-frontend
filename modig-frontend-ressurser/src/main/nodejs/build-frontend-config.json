@@ -3,7 +3,7 @@
 		"/",
 		"css/", "css/bootstrap/", "css/modig/", "css/enonic/", "css/appres", "css/legacy/",
 		"img/", "img/modig/", "img/legacy/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder",
-        "img/enonic/gfx/carousel/", "img/enonic/gfx/icons/", "img/enonic/gfx/mainmenu/", "img/enonic/gfx/tts/",
+        "img/enonic/gfx/carousel/", "img/enonic/gfx/icons/", "img/enonic/gfx/mainmenu/", "img/enonic/gfx/tts/", "img/enonic/gfx/forms/",
         "img/appres/", "img/appres/legacy/", "img/appres/legacy/breadcrumb/", "img/appres/legacy/dittnav/",
         "img/appres/legacy/fellesinnlogging/", "img/appres/legacy/global/", "img/appres/legacy/ikoner/", "img/appres/legacy/logo/",
         "img/appres/legacy/tooltip/", "img/appres/legacy/tooltip/hjelpetekst/", "img/appres/legacy/venstremeny/",
@@ -59,6 +59,7 @@
 		{ "fromDir": "/resources/img/enonic/gfx/icons/", "toDir": "/generated-resources/img/enonic/gfx/icons/" },
 		{ "fromDir": "/resources/img/enonic/gfx/mainmenu/", "toDir": "/generated-resources/img/enonic/gfx/mainmenu/" },
 		{ "fromDir": "/resources/img/enonic/gfx/tts/", "toDir": "/generated-resources/img/enonic/gfx/tts/" },
+        { "fromDir": "/resources/img/enonic/gfx/forms/", "toDir": "/generated-resources/img/enonic/gfx/forms/" },
 		{ "fromDir": "/resources/img/enonic/skjemaveileder/", "toDir": "/generated-resources/img/enonic/skjemaveileder/" },
 
         { "fromDir": "/resources/img/appres/legacy/breadcrumb/", "toDir": "/generated-resources/img/appres/legacy/breadcrumb/" },
