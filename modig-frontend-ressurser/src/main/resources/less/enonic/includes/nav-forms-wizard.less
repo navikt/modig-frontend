@@ -1,10 +1,61 @@
 
 
-//
-// CUSTOM
+// Generelt - kan flyttes
+
+.leading-icon {
+  padding-top: 52px; //plass til ikon på 32px
+}
+
+.leading-icon.icon-mail {
+  background: url(../../../img/enonic/gfx/forms/melding_graa.svg) center 0 no-repeat; // 32px
+}
+
+
+// Spesielt for skjema / temavelger
 //
 
 .form-standard {
+
+  .error-msg-block {
+    background-color: @red;
+    color: #fff;
+  }
+
+
+  .form-group {
+
+    padding:15px 0;
+    margin:0;
+
+    p:last-of-type {
+      margin-bottom:0;
+    }
+
+    &.other {
+      border-bottom: 1px solid @gray-light;
+      border-top: 1px solid @gray-light;
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+
+  }
+
+
+  input:focus + label {
+    .tab-focus();
+    font-weight:bold;
+  }
+
+  label,
+  .label {
+    margin-bottom:5px;
+  }
+
+  fieldset {
+    border-bottom: 1px solid @gray-light;
+    margin-bottom: 15px;
+  }
 
   input[type="radio"],
   input[type="checkbox"] {
@@ -13,65 +64,49 @@
   }
 
   input[type="radio"] + label {
-    background: url(../../../img/enonic/gfx/forms/radio.svg) 0 0 no-repeat;
+    background: url(../../../img/enonic/gfx/forms/radio.svg) left center no-repeat;
   }
 
   input[type="radio"]:checked + label {
-    background: url(../../../img/enonic/gfx/forms/radio_valgt.svg) 0 0 no-repeat;
+    background: url(../../../img/enonic/gfx/forms/radio_valgt.svg) left center no-repeat;
   }
 
   input[type="radio"]:disabled:checked + label {
-    background: url(../../../img/enonic/gfx/forms/radio_inactive_valgt.svg) 0 0 no-repeat;
+    background: url(../../../img/enonic/gfx/forms/radio_inactive_valgt.svg) left center no-repeat;
   }
 
   input[type="radio"]:disabled + label {
-    background: url(../../../img/enonic/gfx/forms/radio_inactive.svg) 0 0 no-repeat;
+    background: url(../../../img/enonic/gfx/forms/radio_inactive.svg) left center no-repeat;
   }
 
   input[type="checkbox"] + label {
-    background: url(../../../img/enonic/gfx/forms/check.svg) 0 0 no-repeat;
+    background: url(../../../img/enonic/gfx/forms/check.svg) left center no-repeat;
   }
 
   input[type="checkbox"]:disabled + label {
-    background: url(../../../img/enonic/gfx/forms/check_inactive.svg) 0 0 no-repeat;
+    background: url(../../../img/enonic/gfx/forms/check_inactive.svg) left center no-repeat;
   }
 
   input[type="checkbox"]:checked + label {
-    background: url(../../../img/enonic/gfx/forms/check_valgt.svg) 0 0 no-repeat;
+    background: url(../../../img/enonic/gfx/forms/check_valgt.svg) left center no-repeat;
   }
 
   input[type="checkbox"]:disabled:checked + label {
-    background: url(../../../img/enonic/gfx/forms/check_inactive_valgt.svg) 0 0 no-repeat;
+    background: url(../../../img/enonic/gfx/forms/check_inactive_valgt.svg) left center no-repeat;
   }
 
-  input[type=checkbox].bryter {
-    heigth: 0;
-    width: 0;
-    &+label {
-      background: url(../../../img/enonic/gfx/forms/bryter.svg) 0 0 no-repeat;
-      height: 32px;
-      color: #333333;
-      margin: 0 0 0.75em;
-      padding: 7px 0 0 65px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    &:checked + label {
-      background: url(../../../img/enonic/gfx/forms/bryter_valgt.svg) 0 0 no-repeat;
-    }
-  }
 
   input[type="radio"] + label,
-  input[type="checkbox"] + label {
-    display: inline-block;
-    position: relative;
-    padding: 2px 0 0 32px;
-    min-height: 30px;
-    margin-right: 1rem;
+  input[type="checkbox"] + label,
+  .label {
+    display: block;
+    //position: relative;
+    padding-left: 32px;
+    //min-height: 30px;
+    //margin-right: 1rem;
     //font-family: @sansFontFamily;
-    font-size: 1rem !important;
-    text-transform: none;
+    //font-size: 1rem !important;
+    //text-transform: none;
   }
 
   input[type="radio"]:checked + label,
