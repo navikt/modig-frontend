@@ -117,7 +117,7 @@
             "files": ["jquery-1.11.1.js"] },
 
 		{ "fromDir": "/resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-tmp.js",
-			"files": ["nav-global.js", "nav-carousel.js", "nav-content.js", "nav-accordion.js",
+			"files": ["nav-global.js", "nav-carousel.js", "nav-content.js", "nav-accordion.js", "nav-temavelger.js",
                       "libs/matchmedia.js", "libs/megamenu/jquery-accessibleMegaMenu.js"] },
 
         { "fromDir": "/generated-resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-concat.js",
