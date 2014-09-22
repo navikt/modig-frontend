@@ -7,12 +7,8 @@
 // --------------------------------------------------
 @responsive: true; // tar med mediaqueries
 
-
-// Colors
-// -------------------------
-
 @gray-darker:            #333; // bakgrunn footer og head (mørk)
-@gray-dark:              #3E3832; // verifisert (tekstfarge) 
+@gray-dark:              #3E3832; // verifisert (tekstfarge)
 @gray:                   #555;
 @gray-light:             #d1d1d1; // linje rundt bokser etc
 @gray-lighter:           #F1F1F1; // body background
@@ -22,7 +18,7 @@
 
 @red:                    #C30000; // verifisert(rødfarge)
 @blue:					 #0067c5;
-@blue-light:		     #0CA9E1; //#05a8e0; 
+@blue-light:		     #0CA9E1; //#05a8e0;
 @orange:                 #f89406;
 
 
@@ -51,7 +47,7 @@
 
 
 // -------------------------
-// Typography 
+// Typography
 // -------------------------
 
 // family
@@ -74,12 +70,12 @@
 //REM
 
 @font-size-base-rem:         	0.875rem; 	// 14 px HVIS html-elementet har satt 100% font-size.
-@font-size-h1-rem:				2.375rem; 	// 38px 
+@font-size-h1-rem:				2.375rem; 	// 38px
 @font-size-h2-rem:				1.875rem; 	// 30px
 @font-size-h3-rem:				1.25rem;	// 20px
-@font-size-h4-rem:				1rem; 		// 16px 
+@font-size-h4-rem:				1rem; 		// 16px
 @font-size-h5-rem:				0.875rem;   // 14px
-@font-size-h6-rem:				0.75rem;	// 12px	
+@font-size-h6-rem:				0.75rem;	// 12px
 
 @font-size-deci-rem:			0.75rem; 	// 12px topplinje
 @font-size-centi-rem:			0.7rem; 	// copyright-tekst i footer
@@ -88,7 +84,7 @@
 //EM base fonts (1em 16px)
 
 @em-as-38px:			2.375em; // tera
-@em-as-30px:			1.875em; // giga	
+@em-as-30px:			1.875em; // giga
 @em-as-20px:			1.25em;  // mega
 @em-as-18px:    		1.125em;  // mega
 @em-as-17px:            1.0675em;
@@ -229,8 +225,8 @@
 @input-color-placeholder:        @gray-light;
 
 @input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
-//@input-height-large:             (floor(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
-//@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+@input-height-large:             (floor(@em-as-18px * @line-height-large) + (@padding-large-vertical * 2) + 2);
+@input-height-small:             (floor(@em-as-12px * @line-height-small) + (@padding-small-vertical * 2) + 2);
 
 @legend-color:                   @gray-dark;
 @legend-border-color:            #e5e5e5;
@@ -416,7 +412,7 @@
 @screen-small:  			 38.75em;	//620px; // Custom
 @screen-medium:	             48em;		//768px; // Tablet
 @screen-large:               62em;		//992px;  // Fra desktop
-@screen-xl:					 75em;		//1200px; // ikke i bruk				
+@screen-xl:					 75em;		//1200px; // ikke i bruk
 
 
 
@@ -424,7 +420,7 @@
 // --------------------------------------------------
 
 @grid-columns:              12;
-@grid-gutter-width:         1.875em; //30px; 
+@grid-gutter-width:         1.875em; //30px;
 @grid-float-breakpoint:     @screen-xs; // Point at which the navbar stops collapsing
 
 
