@@ -78,6 +78,7 @@ import static no.nav.modig.frontend.EnonicResources.NAV_NORMALIZE_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_PRINT_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_RIS_ROS_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_SCAFFOLDING_LESS;
+import static no.nav.modig.frontend.EnonicResources.NAV_SERVICE_NOTIFICATION_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_SITEFOOTER_ALPHABET_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_SITEFOOTER_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_SITEHEADER_LESS;
@@ -156,7 +157,7 @@ public class FrontendModules {
 					MATCH_MEDIA, JQUERY_MEGA_MENU)
 			.less(NAV_VARIABLES_LESS, NAV_MIXINS_LESS, NAV_NORMALIZE_LESS, NAV_GRID_LESS, NAV_AUTOCOMPLETE_LESS,
 					NAV_TYPOGRAPHY_LESS, NAV_TABLE_LESS, NAV_BUTTONS_LESS, NAV_BREADCRUMB_LESS, NAV_MEGAMENU_LESS,
-					NAV_LINKLISTS_LESS, NAV_SCAFFOLDING_LESS, NAV_RIS_ROS_LESS,
+					NAV_LINKLISTS_LESS, NAV_SCAFFOLDING_LESS, NAV_RIS_ROS_LESS, NAV_SERVICE_NOTIFICATION_LESS,
 					NAV_SITEHEADER_LESS, NAV_SITEFOOTER_LESS, NAV_SITEFOOTER_ALPHABET_LESS,
 					NAV_ARTICLE_LESS, NAV_FACTSHEET_LESS, NAV_CAROUSEL_LESS, NAV_ACCORDION_LESS, NAV_ERROR_LESS,
 					NAV_UTILITIES_LESS, NAV_CONTRAST_LESS, NAV_PRINT_LESS, NAV_WEBFONTS_LESS).done();

@@ -37,6 +37,7 @@ class EnonicResources  {
     static final PackageResourceReference NAV_CAROUSEL_LESS = lessReference("enonic/includes/nav-carousel.less");
     static final PackageResourceReference NAV_ACCORDION_LESS = lessReference("enonic/includes/nav-accordion.less");
     static final PackageResourceReference NAV_ERROR_LESS = lessReference("enonic/includes/nav-error.less");
+    static final PackageResourceReference NAV_SERVICE_NOTIFICATION_LESS = lessReference("enonic/includes/nav-service-notification.less");
 
     static final PackageResourceReference NAV_UTILITIES_LESS = lessReference("enonic/includes/nav-utilities.less");
     static final PackageResourceReference NAV_CONTRAST_LESS = lessReference("enonic/includes/nav-contrast.less");
