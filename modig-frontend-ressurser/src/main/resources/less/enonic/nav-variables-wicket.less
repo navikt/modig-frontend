@@ -1,11 +1,15 @@
-//
-// Variables
-// --------------------------------------------------
-
 
 // Global values
 // --------------------------------------------------
 @responsive: true; // tar med mediaqueries
+
+.define-basepath-if-not-defined() {
+  @baseImagePath: '../';
+}
+.define-basepath-if-not-defined();
+
+// Colors
+// -------------------------
 
 @gray-darker:            #333; // bakgrunn footer og head (mørk)
 @gray-dark:              #3E3832; // verifisert (tekstfarge)
