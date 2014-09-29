@@ -395,15 +395,15 @@ $(function () {
       complete: function () {
     
         if (hasNotification) {
-          var notificationEl = $("#driftsmelding");
+          var notificationEl = $(".service-notification");
         
           notificationEl.removeAttr('data-url').find('span').remove();
-          notificationEl.append($(html).find('header')).slideDown(800);
+          notificationEl.append($(html).find(".service-notification")).slideDown(800);
         
           //notificationEl.find("a.close").on("click", function(e) {  e.preventDefault(); $("#driftsmelding").slideUp(); });
         }
         else {
-          $("#driftsmelding").remove();
+          $(".service-notification").remove();
         }
       }
     }); 
