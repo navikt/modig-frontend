@@ -73,7 +73,7 @@
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/venstremeny/", "toDir": "/generated-resources/img/appres/legacy/venstremeny/" },
 
 		{ "fromDir": "/resources/META-INF/resources/img/modig/", "toDir": "/generated-resources/img/modig/" },
-		{ "fromDir": "/resources/META-INF/resources/img/legacy/", "toDir": "/generated-resources/img/legacy/" }
+		{ "fromDir": "/resources/META-INF/resources/img/appres/legacy/", "toDir": "/generated-resources/img/appres/legacy/" }
 	],
 
 	"copyFiles"  : [
