@@ -2,7 +2,7 @@
 	"fileStructure": [
 		"/",
 		"css/", "css/bootstrap/", "css/modig/", "css/enonic/", "css/appres", "css/legacy/",
-		"img/", "img/modig/", "img/legacy/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder",
+		"img/", "img/modig/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder",
         "img/enonic/gfx/carousel/", "img/enonic/gfx/icons/", "img/enonic/gfx/mainmenu/", "img/enonic/gfx/tts/", "img/enonic/gfx/forms/",
         "img/appres/", "img/appres/legacy/", "img/appres/legacy/breadcrumb/", "img/appres/legacy/dittnav/",
         "img/appres/legacy/fellesinnlogging/", "img/appres/legacy/global/", "img/appres/legacy/ikoner/", "img/appres/legacy/logo/",
