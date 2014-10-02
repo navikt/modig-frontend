@@ -8,7 +8,7 @@
 
 .leading-icon.icon-mail {
   background: url('@{baseImagePath}img/enonic/gfx/forms/melding_graa.png') center 0 no-repeat; // 32px
- // background: url('@{baseImagePath}img/enonic/gfx/forms/melding_graa.svg') center 0 no-repeat; // 32px
+  // background: url('@{baseImagePath}img/enonic/gfx/forms/melding_graa.svg') center 0 no-repeat; // 32px
 }
 
 
@@ -20,11 +20,14 @@
   .error-msg-block {
     background-color: @red;
     color: #fff;
+    padding:15px 0;
+    p:last-of-type {
+      margin-bottom:0;
+    }
   }
 
 
   .form-group {
-
     padding:15px 0;
     margin:0;
 
@@ -33,11 +36,17 @@
     }
 
     &.other {
+      padding:20px 0;
+      margin-top:5px;
       border-bottom: 1px solid @gray-light;
       border-top: 1px solid @gray-light;
       &:last-of-type {
         border-bottom: none;
       }
+    }
+
+    h3, .h3 {
+      margin-top:0;
     }
 
   }
@@ -52,10 +61,10 @@
     cursor: pointer;
   }
 
-  label,
+  /*abel,
   .label {
     margin-bottom:5px;
-  }
+  }*/
 
   fieldset {
     border-bottom: 1px solid @gray-light;
@@ -108,7 +117,7 @@
   .label {
     display: block;
     //position: relative;
-    padding-left: 32px;
+    padding: 1px 0 1px 32px;
     //min-height: 30px;
     //margin-right: 1rem;
     //font-family: @sansFontFamily;

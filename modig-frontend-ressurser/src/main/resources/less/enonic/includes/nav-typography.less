@@ -65,6 +65,9 @@ a:focus {
   text-decoration: underline;
 }
 
+a.regular {
+  text-decoration: underline;
+}
 
 // Headings
 // -------------------------
@@ -164,6 +167,15 @@ hr {
   border: 0;
   border-top: 1px solid @gray-light;
   border-bottom: 1px solid #fff;
+}
+
+.hr { // brukes og opprinnelig laget for understrek og spacing på no/NAV-og-samfunn/kontakt-nav/kontakt-oss/ny-melding-til-nav/familie
+  border-bottom: 1px solid @gray-light;
+  padding-bottom:20px;
+  margin-bottom:20px;
+  p:last-of-type {
+    margin-bottom:0;
+  }
 }
 
 // Abbreviations and acronyms

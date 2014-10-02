@@ -6,6 +6,7 @@
     text-decoration: none;
 }
 
+// basic standard knapp
 .btn {
     display: inline-block !important;
 	color: @gray-dark;
@@ -33,6 +34,34 @@
 
 }
 
+// knappestørrelser
+//-----------------------------
+
+.btn-small {
+  padding: 7px 20px;
+  font-size: @em-as-14px;
+  line-height: 1.6;
+}
+
+//knappefarger
+//-----------------------------
+
+.btn-primary { // lyseblå
+  background: #008fc4;
+  color:@gray-lighter;
+    &:hover, &:active, &:focus {
+      background: @blue;
+      color: #fff;
+    }
+}
+
+.btn-success { // grønn?
+
+}
+
+.btn-danger { // rød
+
+}
 
 .btn-auth {
 	  display:inline-block;
@@ -105,8 +134,4 @@
 
 
 
-.btn-small { // treffer figure-small (article.xsl) og btn-small (content-carousel.xsl)..  Mod ass..
-	padding: 7px 20px;
-	font-size: @em-as-14px;
-	line-height: 1.6;
-}
+

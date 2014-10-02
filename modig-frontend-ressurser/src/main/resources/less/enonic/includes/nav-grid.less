@@ -58,7 +58,13 @@
 	.col-sm-12 {
 	  margin-bottom: @grid-gutter-width / 2;
 	}
-    .inner-row { margin-bottom: 60px; }
+
+    .inner-row {
+      margin-bottom: 60px;
+      &.tight {
+        margin-bottom: 40px;
+      }
+    }
 }
 
  
@@ -92,8 +98,6 @@
       .col-sm-12 {
         margin-bottom: 0;
        }
-      
-      //.inner-row { margin-bottom: 60px; }
 
     }
 }
@@ -127,7 +131,10 @@
       margin-right:-(@grid-gutter-width / 2); 
     }
 
-    .inner-row {
+  .inner-row {
     margin-bottom: 60px;
+    &.tight {
+      margin-bottom: 40px;
     }
+  }
 }
