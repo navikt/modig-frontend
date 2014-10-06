@@ -5,409 +5,413 @@
 //--------------------------------------------------------------------
 
 .sitelogo-small {
-  img {
-    max-width:70%;
-  }
+	img {
+		max-width: 70%;
+	}
 }
 
-.nav  {
-  margin: 0;
-  list-style: none;
-  a {
-    display: block;
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
+.nav {
+	margin: 0;
+	list-style: none;
+	a {
+		display: block;
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
 }
 
 // Hode (sort topplinje)
 //--------------------------------------------------------------------
 
-.siteheader { // site-coltrols-toolbar
-  .dropdown {
-    > a {
-      outline-offset:-1px;
-    }
-  }
-  .navbar {
-    position:relative;
-     li {
-        display:inline-block;
-      }
+.siteheader {
+	// site-coltrols-toolbar
+	.dropdown {
+		> a {
+			outline-offset: -1px;
+		}
+	}
+	.navbar {
+		position: relative;
+		li {
+			display: inline-block;
+		}
 
-    .nav {
-      padding: 0;  
-      }
+		.nav {
+			padding: 0;
+		}
 
-     .dropdown-menu {
-      > li {
-        display: block;
-        position: relative;
-        }
-      }
-  } // navbar
-} // siteheader end
+		.dropdown-menu {
+			> li {
+				display: block;
+				position: relative;
+			}
+		}
+	}
+	// navbar
+}
 
+// siteheader end
 
 .global-siteheader-toolbar();
 
+.global-siteheader-toolbar() when (@responsive = true) {
+	.site-coltrols-toolbar {
+		display: none;
+		.settings .nav {
+			margin-left: -1.5625em; // trekk "language" mer mot venstre når venstrestilt
+		}
+	}
 
-.global-siteheader-toolbar() when (@responsive = true) { 
-    .site-coltrols-toolbar
-     {
-      display:none;
-      .settings .nav {
-          margin-left:-1.5625em; // trekk "language" mer mot venstre når venstrestilt
-        }
-    }
+	.sitelogo-large {
+		display: none;
+	}
 
-    .sitelogo-large {
-      display:none;
-    }
+	@media (min-width: (@screen-medium + 0.0625em)) {
 
-      @media (min-width: (@screen-medium + 0.0625em)) {
+		.sitelogo-large {
+			display: block;
+		}
 
-      .sitelogo-large {
-        display:block;
-      }
-      .sitelogo-small {
-        display: none;
-      }
+		.sitelogo-small {
+			display: none;
+		}
 
-      .login-container {
-        width:40%;
-      }
+		.login-container {
+			width: 40%;
+		}
 
-     .siteheader-toolbar-and-login-defaults();
+		.siteheader-toolbar-and-login-defaults();
 
-  }
+	}
 
+	@media (min-width: 60em) {
+		// 960px --> samme media query på sentrering av hovedmenylinje
+		.site-coltrols-toolbar {
+			text-align: center;
+			.settings .nav {
+				margin-left: 0; // oversyr negativ margin på "language" (fra mindre flater)
+			}
 
-  @media (min-width: 60em) { // 960px --> samme media query på sentrering av hovedmenylinje
-   
-    .site-coltrols-toolbar {
-      text-align: center;
-      .settings .nav { 
-        margin-left:0; // oversyr negativ margin på "language" (fra mindre flater)
-      }
+		}
 
-    }
-    .login-container {
-        width:30%;
-      }
+		.login-container {
+			width: 30%;
+		}
 
-    
-  } // media 60em end
+	}
+	// media 60em end
 
+}
 
-  } // mixin responsive true
+// mixin responsive true
 
+.global-siteheader-toolbar() when (@responsive = false) {
+	// FOR IE8 og dekoratør!
+	.sitelogo-small {
+		display: none;
+	}
+	.login-container {
+		width: 30%;
+	}
 
-.global-siteheader-toolbar() when (@responsive = false) { // FOR IE8 og dekoratør!
-    .sitelogo-small {
-        display: none;
-    }
-    .login-container {
-        width:30%;
-      }
+	.siteheader-toolbar-and-login-defaults();
 
-    .siteheader-toolbar-and-login-defaults();
+	.site-coltrols-toolbar {
+		text-align: center;
+	}
+	#text-size-accessibility {
+		display: inline-block;
+	}
 
-    .site-coltrols-toolbar {
-    text-align: center;
-     }
-     #text-size-accessibility {
-      display: inline-block;
-    }
+}
 
-
-} // mixin responsive false
-
+// mixin responsive false
 
 .siteheader-toolbar-and-login-defaults() {
-  .site-coltrols-toolbar { 
-          display:block;
-          background: @gray-darker;
-          min-height:42px;
+	.site-coltrols-toolbar {
+		display: block;
+		background: @gray-darker;
+		min-height: 42px;
 
-   
-          a, .link-btn {
-            font-size: @em-as-12px;
-            color:#fff;
-            padding: 12px 22px; // dropdown-toggle
-          }
+		a, .link-btn {
+			font-size: @em-as-12px;
+			color: #fff;
+			padding: 12px 22px; // dropdown-toggle
+		}
 
-          .settings {
-           display:inline-block;  
-           width:50%;            
-          }
+		.settings {
+			display: inline-block;
+			width: 50%;
+		}
 
+		.login-container {
+			position: absolute;
+			top: 0;
+			right: 0.9375em;
 
-          .login-container {
-            position:absolute;
-            top:0;          
-            right:0.9375em;
+			p span, p a {
+				font-size: 1em;
+			}
+			// unngå 0,75em * 0,75em
 
+			#login-details {
+				width: 70%;
+				float: left;
+				padding-left: 25px;
+				cursor: pointer;
+				color: #fff;
+				font-style: italic;
+				#name-container {
+					display: inline-block;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					text-align: right;
+					vertical-align: bottom;
+					width: 100%;
+					padding: 12px 0 12px 0;
+					text-transform: capitalize;
+					font-size: @em-as-12px;
 
-            p span, p a {font-size: 1em;} // unngå 0,75em * 0,75em
+					img {
+						padding-right: 10px;
+						margin-top: -3px;
+					}
+				}
+			}
 
-            #login-details {            
-              width: 70%;
-              float:left;
-              padding-left: 25px;
-              cursor: pointer;
-              color: #fff;
-              font-style: italic;              
-              #name-container {
-                 display: inline-block;
-                 white-space: nowrap;
-                 overflow: hidden;
-                 text-overflow: ellipsis;
-                 text-align:right;
-                 vertical-align: bottom;
-                 width: 100%;  
-                 padding: 12px 0 12px 0; 
-                 text-transform: capitalize;
-                 font-size: @em-as-12px;
+			#auth-btns {
+				width: 30%;
+				float: left;
+				padding-top: 8px;
+				text-align: right;
+				a {
+					/* display:inline-block;
+					  text-align:center;
+					  background: #d1d1d1;
+					  text-transform: uppercase;
+					  font-family: @font-family-modus;
+					  font-weight: bold;
+					  padding: 4px 15px 4px 15px;
+					  border: none;
+					  color: #333;
+					  white-space: nowrap;
 
-                 img {
-                  padding-right: 10px;
-                  margin-top: -3px;
-                 }           
-             }
-           }
+					  &#logout {
+						background-color: #0CA9E0;
 
-           #auth-btns {
-            width: 30%;
-            float:left;
-            padding-top:8px;
-            text-align:right;
-            a {
-             /* display:inline-block;
-              text-align:center;
-              background: #d1d1d1;
-              text-transform: uppercase;
-              font-family: @font-family-modus;
-              font-weight: bold;
-              padding: 4px 15px 4px 15px;
-              border: none;
-              color: #333;
-              white-space: nowrap;
+						&:hover {
+						  background-color: #5dd0f9;
+						}
+					  }*/
+				}
+			}
+		}
+		// logincontainer - kan gjøres om til mixin for media queries
 
-              &#logout {
-                background-color: #0CA9E0;
+		#login-details.hidden + #auth-btns {
+			// hvis innloggingsinfo er skjult, skal "logg inn" fortsatt stå til høyre
+			margin-left: 70%;
+		}
+	}
+}
 
-                &:hover {
-                  background-color: #5dd0f9;
-                }
-              }*/
-            }
-          }
-        } // logincontainer - kan gjøres om til mixin for media queries
-
-        #login-details.hidden + #auth-btns { // hvis innloggingsinfo er skjult, skal "logg inn" fortsatt stå til høyre
-             margin-left:70%;
-          }
-      }
-} // mixin
+// mixin
 
 .sitelogo {
-  text-align:center;
-  padding:15px 0 18px;
-  background-color: #fff;
-  border-bottom:1px solid @gray-light;
-  a {
-    text-decoration: none;
-    display: inline-block;
-  }
+	text-align: center;
+	padding: 15px 0 18px;
+	background-color: #fff;
+	border-bottom: 1px solid @gray-light;
+	a {
+		text-decoration: none;
+		display: inline-block;
+	}
 }
 
 .text-size-tooltip, .login-tooltip, .logout-tooltip {
-  padding: 16px 24px;
-  position: absolute;
-  background-color: #000000;
-  color: #ffffff;
-  z-index: 9;
-  left: 25%;
-  text-align: left;
-  top: 3em;
-  span.arrow {
-    .up-arrow(9px, 6px, 6px, #000000); // mixin
-    position: absolute;
-    right: 50%;
-    top: -8px;
-  }
+	padding: 16px 24px;
+	position: absolute;
+	background-color: #000000;
+	color: #ffffff;
+	z-index: 9;
+	left: 25%;
+	text-align: left;
+	top: 3em;
+	span.arrow {
+		.up-arrow(9px, 6px, 6px, #000000); // mixin
+		position: absolute;
+		right: 50%;
+		top: -8px;
+	}
 }
 
 .logout-tooltip {
-  right: 0;
-  left:0;
-  
-  .lukk {
-     position: absolute;
-     top: -17px;
-     right: 6px;
-     width: 32px;
-     height: 32px;
-     background-color: transparent;
-     background-repeat: no-repeat;
-     font-size: 2em;
-     text-decoration: none;
+	right: 0;
+	left: 0;
 
-     &:hover {
-      color: #5dd0f9;
-    }
-  }
-    p:last-of-type {
-      margin-bottom: 0;
-    }
-    p {
-      font-size: 1em;
-      font-style: normal;
-      font-size: @em-as-12px;
-    }
-    span {
-      right: 50%;
-    }
+	.lukk {
+		position: absolute;
+		top: -17px;
+		right: 6px;
+		width: 32px;
+		height: 32px;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		font-size: 2em;
+		text-decoration: none;
+
+		&:hover {
+			color: #5dd0f9;
+		}
+	}
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+	p {
+		font-size: 1em;
+		font-style: normal;
+		font-size: @em-as-12px;
+	}
+	span {
+		right: 50%;
+	}
 }
 
 .login-tooltip {
-  width: 55%;
-  left: 45%;
+	width: 55%;
+	left: 45%;
 
-  p {
-    margin: 0;
-    font-size: @em-as-12px;
-  }
+	p {
+		margin: 0;
+		font-size: @em-as-12px;
+	}
 
-  span.arrow {
-    right: 12%;
-  }
+	span.arrow {
+		right: 12%;
+	}
 }
 
-@media (max-width: @screen-medium) { 
-  .login-tooltip span {
-    right: 38%;
-  }
+@media (max-width: @screen-medium) {
+	.login-tooltip span {
+		right: 38%;
+	}
 }
 
 .text-size-tooltip p {
-  font-size: @em-as-30px;
-  font-weight: bold;
-  margin: 0;
+	font-size: @em-as-30px;
+	font-weight: bold;
+	margin: 0;
 }
 
-@media (max-width: 57em) { 
-  .text-size-tooltip {
-    left: 0;
-    right: 26%;
-  }
+@media (max-width: 57em) {
+	.text-size-tooltip {
+		left: 0;
+		right: 26%;
+	}
 }
-
 
 // Dropdown - fra collapse-dropdown.less
 //-------------------
 
-
 .dropup,
 .dropdown {
- position:relative;
+	position: relative;
 }
 
 .dropdown-toggle:active,
 .open .dropdown-toggle {
- outline:0;
+	outline: 0;
 }
 
 .caret {
- display:inline-block;
- width:0;
- height:0;
- vertical-align:top;
- border-top: 4px solid #fff;
- border-right:4px solid transparent;
- border-left:4px solid transparent;
- content:"";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: top;
+	border-top: 4px solid #fff;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: "";
 }
 
-.dropdown .caret{
- margin-top:6px;
- margin-left:4px;
+.dropdown .caret {
+	margin-top: 6px;
+	margin-left: 4px;
 }
 
 .dropdown-menu {
-  position:absolute;
-  top:100%;
-  left:0;
-  z-index:1000;
-  display:block;
-  float:left;
-  text-align: left;
-  width:100%;
-  padding:5px 0;
-  margin: 0;
-  list-style:none;
-  background-color:@gray-darker;
-  -webkit-background-clip:padding-box;
-  -moz-background-clip:padding;
-  background-clip:padding-box;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	float: left;
+	text-align: left;
+	width: 100%;
+	padding: 5px 0;
+	margin: 0;
+	list-style: none;
+	background-color: @gray-darker;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
 }
 
 .dropdown-menu.pull-right {
-  right:0;
-  left:auto;
+	right: 0;
+	left: auto;
 }
 
 .dropdown-menu .divider {
-  height:1px;
-  margin:9px 1px;
-  overflow:hidden;
-  background-color:@gray-darker;
-  border-bottom:1px solid #000;
+	height: 1px;
+	margin: 9px 1px;
+	overflow: hidden;
+	background-color: @gray-darker;
+	border-bottom: 1px solid #000;
 }
 
-.dropdown-menu>li>a {
-  display:block;
-  padding: 3px 0 3px 27px;
-  clear:both;
-  font-weight:normal;
-  line-height:20px;
-  color:#ffffff;
-  white-space:nowrap;
+.dropdown-menu > li > a {
+	display: block;
+	padding: 3px 0 3px 27px;
+	clear: both;
+	font-weight: normal;
+	line-height: 20px;
+	color: #ffffff;
+	white-space: nowrap;
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus,
-.dropdown-submenu:hover>a,
-.dropdown-submenu:focus>a {
-  text-decoration:none;
-  color:@blue-light;
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+	text-decoration: none;
+	color: @blue-light;
 }
-
 
 .dropdown-menu > li.active {
-  > a {
-    color: @blue-light;
-    &:after {
-      .bullet-point(2px, @blue-light, 13%, 40%); // mixin
-      text-decoration:none;
-      outline:0;
-    }
-  }
+	> a {
+		color: @blue-light;
+		&:after {
+			.bullet-point(2px, @blue-light, 13%, 40%); // mixin
+			text-decoration: none;
+			outline: 0;
+		}
+	}
 }
 
-.dropdown-menu>.disabled>a,
-.dropdown-menu>.disabled>a:hover,
-.dropdown-menu>.disabled>a:focus{
-  color:@gray-darker;
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+	color: @gray-darker;
 }
 
-.open>.dropdown-menu{
-  display:block;
+.open > .dropdown-menu {
+	display: block;
 }
 
-.dropdown-submenu{
-  position:relative;
+.dropdown-submenu {
+	position: relative;
 }

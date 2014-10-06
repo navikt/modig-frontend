@@ -3,32 +3,32 @@
 // --------------------------------------------------
 
 * {
-  .box-sizing(border-box);
+	.box-sizing(border-box);
 }
 
-
-.img-responsive, .article-body img { // f.eks på "full" og "wide" i editor
-  .img-responsive();
+.img-responsive, .article-body img {
+	// f.eks på "full" og "wide" i editor
+	.img-responsive();
 }
 
 .container {
-  .container-fixed();
-  .container-width();
+	.container-fixed();
+	.container-width();
 }
 
 // ---------------------------/
 // For å unngå "clipping" / disappearing content ved horisontal scroll, 
 // når fixed width (responsive false).
 // setter inn min-width for .pagewrapper og .sitefooter
-.fixed-outer-container-mixin(); 
+.fixed-outer-container-mixin();
 // ---------------------------\
 
-.row { 
-  .make-row();
+.row {
+	.make-row();
 }
 
-.make-grid-columns(); // ikke noe float, padding h+v i stedet for margin left
-
+.make-grid-columns();
+// ikke noe float, padding h+v i stedet for margin left
 
 //--------------------------------------------------------------------
 //
@@ -36,9 +36,9 @@
 //
 //--------------------------------------------------------------------
 
-.grid-mobile-first-defaults(); // if @responsive = true.
-.grid-setup(); 
-
+.grid-mobile-first-defaults();
+// if @responsive = true.
+.grid-setup();
 
 //--------------------------------------------------------------------
 //
@@ -48,60 +48,59 @@
 
 .grid-mobile-first-defaults() when (@responsive = true) {
 	//.inner-row { margin-bottom: 20px;}
-    
-	.row [class*="col-"].spaceous { // klasse for å override padding som per default står på alle gridklasser
-	  padding-right: 0;
-	  padding-left: 0;
+
+	.row [class*="col-"].spaceous {
+		// klasse for å override padding som per default står på alle gridklasser
+		padding-right: 0;
+		padding-left: 0;
 	}
 	.make-grid-columns-float(sm); // setter opp FLOAT på col-sm-1 til col-sm-11
 	.make-grid(@grid-columns, sm, width); // setter opp BREDDE på col-sm-1 til col-sm-11
 	.col-sm-12 {
-	  margin-bottom: @grid-gutter-width / 2;
+		margin-bottom: @grid-gutter-width / 2;
 	}
-
-    .inner-row {
-      margin-bottom: 60px;
-      &.tight {
-        margin-bottom: 40px;
-      }
-    }
+	.inner-row {
+		margin-bottom: 60px;
+		&.tight {
+			margin-bottom: 40px;
+		}
+	}
 }
 
- 
 //--------------------------------------------------------------------
 //
 //  Mobile first responsive grid - several screen sizes
 //
 //--------------------------------------------------------------------
 
-.grid-setup() when (@responsive = true) { 
-  
-    @media (min-width: (@screen-medium + 0.0625em)) { // equal to or larger than 769px
-     
-      .make-grid-columns-float(md);
-      .make-grid(@grid-columns, md, width);
-      .make-grid(@grid-columns, md, offset); // offset for å legge på ekstra luft til venstre for kolonne.
-      
-       .col-md-1,.col-md-2,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-9,.col-md-10,.col-md-12 {
-        padding-left:  (@grid-gutter-width / 2);
-        padding-right: (@grid-gutter-width / 2);
-      }
-      .row {
-        margin-left:-(@grid-gutter-width / 2);
-        margin-right:-(@grid-gutter-width / 2); 
-      }
-    }
+.grid-setup() when (@responsive = true) {
 
-    @media (min-width: @screen-large) { // equal to or larger than 992px
-      
-      
-      .col-sm-12 {
-        margin-bottom: 0;
-       }
+	@media (min-width: (@screen-medium + 0.0625em)) {
+		// equal to or larger than 769px
+		.make-grid-columns-float(md);
+		.make-grid(@grid-columns, md, width);
+		.make-grid(@grid-columns, md, offset); // offset for å legge på ekstra luft til venstre for kolonne.
+		.col-md-1, .col-md-2, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-9, .col-md-10, .col-md-12 {
+			padding-left: (@grid-gutter-width / 2);
+			padding-right: (@grid-gutter-width / 2);
+		}
 
-    }
+		.row {
+			margin-left: -(@grid-gutter-width / 2);
+			margin-right: -(@grid-gutter-width / 2);
+		}
+	}
+
+	@media (min-width: @screen-large) {
+		// equal to or larger than 992px
+		.col-sm-12 {
+			margin-bottom: 0;
+		}
+
+		//.inner-row { margin-bottom: 60px; }
+
+	}
 }
-
 
 //--------------------------------------------------------------------
 //
@@ -109,32 +108,32 @@
 //
 //--------------------------------------------------------------------
 
-.grid-setup() when (@responsive = false) { // IE8 grid, ikke responsiv
+.grid-setup() when (@responsive = false) {
+	// IE8 grid, ikke responsiv
 
-  body .maincontent { // sterkere selector enn hva som er default i scaffolding
-        padding-top:60px;
-    }
+	body .maincontent {
+		// sterkere selector enn hva som er default i scaffolding
+		padding-top: 60px;
+	}
 
-    .make-grid-columns-float(md);
-    .make-grid(@grid-columns, md, width);
+	.make-grid-columns-float(md);
+	.make-grid(@grid-columns, md, width);
 
-    .make-grid(@grid-columns, md, offset); // offset for å legge på ekstra luft til venstre for kolonne.
-    
+	.make-grid(@grid-columns, md, offset); // offset for å legge på ekstra luft til venstre for kolonne.
 
+	.col-md-1, .col-md-2, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-9, .col-md-10, .col-md-12 {
+		padding-left: (@grid-gutter-width / 2);
+		padding-right: (@grid-gutter-width / 2);
+	}
+	.row {
+		margin-left: -(@grid-gutter-width / 2);
+		margin-right: -(@grid-gutter-width / 2);
+	}
 
-    .col-md-1,.col-md-2,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-9,.col-md-10,.col-md-12 {
-      padding-left:  (@grid-gutter-width / 2);
-      padding-right: (@grid-gutter-width / 2);
-    }
-    .row {
-      margin-left:-(@grid-gutter-width / 2);
-      margin-right:-(@grid-gutter-width / 2); 
-    }
-
-  .inner-row {
-    margin-bottom: 60px;
-    &.tight {
-      margin-bottom: 40px;
-    }
-  }
+	.inner-row {
+		margin-bottom: 60px;
+		&.tight {
+			margin-bottom: 40px;
+		}
+	}
 }
