@@ -698,8 +698,15 @@ navno.getCookie = function (c_name) {
     $('.visuallyhidden.focusable').eq(0).one('focus.google-analytics', function () {
       ga('send', 'event', 'Tastatur', 'focus', $(this).text());
     });
-    $('#high-contrast').find('a').on('click.google-analytics', function () {
-      ga('send', 'event', 'Høykontrast', 'klikk', $(this).text());
+    $('#high-contrast').find('button').on('click.google-analytics', function () {
+        var mode = '';
+        if ($('body').hasClass('contrast')) {
+            mode = 'av';
+        }
+        else {
+            mode = 'på';
+        }
+      ga('send', 'event', 'Høykontrast ' + mode, 'klikk', $(this).text());
     });
     /* $('#footer-content-menu').find('.letter > a').on('click.google-analytics', function () { // request må kjøres etter lenkeliste er lastet inn pga ytelse
       ga('send', 'event', 'Innhold A-Å', 'klikk', $(this).text());
