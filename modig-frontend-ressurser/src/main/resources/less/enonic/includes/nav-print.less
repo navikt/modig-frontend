@@ -193,8 +193,9 @@
 		padding: 0 25px !important;
 		page-break-after: auto;
 
-		.col-md-4:empty {
-			display: none;
+		.col-md-4:empty,
+        .col-md-4:first-of-type{
+			width:auto; // skjuler venstrekol hvis tom, eller har skjult innhold. Eks venstremeny i tjenester.
 		}
 
 		.full-story {
