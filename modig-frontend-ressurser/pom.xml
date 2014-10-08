@@ -24,6 +24,16 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
+                <directory>src/main/generated-resources/img/enonic</directory>
+                <targetPath>img/enonic</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/generated-resources/img/appres/legacy</directory>
+                <targetPath>img/appres/legacy</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
                 <directory>src/main/generated-resources/css/enonic</directory>
                 <targetPath>css/enonic</targetPath>
             </resource>
