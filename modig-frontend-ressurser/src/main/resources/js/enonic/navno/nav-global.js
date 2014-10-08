@@ -398,8 +398,9 @@ $(function () {
           var notificationEl = $(".service-notification");
         
           notificationEl.removeAttr('data-url').find('span').remove();
-          notificationEl.append($(html).find(".service-notification")).slideDown(800);
-        
+          notificationEl.append($(html).find("section"));
+          $('#driftsmelding').slideDown(800);
+            
           //notificationEl.find("a.close").on("click", function(e) {  e.preventDefault(); $("#driftsmelding").slideUp(); });
         }
         else {
