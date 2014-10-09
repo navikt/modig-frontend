@@ -393,10 +393,10 @@ var navno = navno || {
  */
 
 $(function () {
-
-	var url = $("#driftsmelding").attr("data-url");
-	var html = null;
-	var hasNotification = false; // Har driftsmelding
+    var notificationEl = $("#driftsmelding"),
+	    url = notificationEl.data("url"),
+	    html = null,
+	    hasNotification = false; // Har driftsmelding
 
 	if (typeof url !== 'undefined' && url.length > 0) {
 
@@ -409,9 +409,9 @@ $(function () {
 			},
 			complete: function () {
 				if (hasNotification) {
-					var notificationEl = $(".service-notification");
+
 					notificationEl.removeAttr('data-url').find('span').remove();
-					notificationEl.append($(html).find(".service-notification")).slideDown(800);
+					notificationEl.append($(html).find("section")).slideDown(800);
 				}
 				else {
 					$(".service-notification").remove();
