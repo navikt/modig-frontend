@@ -237,15 +237,35 @@
 	background-color: #000000;
 	color: #ffffff;
 	z-index: 9;
-	left: 25%;
 	text-align: left;
-	top: 3em;
 	span.arrow {
 		.up-arrow(9px, 6px, 6px, #000000); // mixin
 		position: absolute;
 		right: 50%;
 		top: -8px;
 	}
+}
+
+.login-tooltip, .logout-tooltip {
+  left: 25%;
+  top: 3em;
+}
+
+#text-size-accessibility {
+  position: relative;
+}
+
+.text-size-tooltip {
+  width:30em;
+  top:2.5em;
+  right:-11em;
+}
+
+
+.text-size-tooltip p {
+  font-size: @em-as-30px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .logout-tooltip {
@@ -300,18 +320,7 @@
 	}
 }
 
-.text-size-tooltip p {
-	font-size: @em-as-30px;
-	font-weight: bold;
-	margin: 0;
-}
 
-@media (max-width: 57em) {
-	.text-size-tooltip {
-		left: 0;
-		right: 26%;
-	}
-}
 
 // Dropdown - fra collapse-dropdown.less
 //-------------------

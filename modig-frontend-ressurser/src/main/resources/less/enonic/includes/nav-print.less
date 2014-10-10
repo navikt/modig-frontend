@@ -252,4 +252,23 @@
 	.top-link-wrapper, .placeholder {
 		display: none;
 	}
+
+    // søkeresultatside
+    // ----------------------------------
+
+  form.sokeForm,
+  form.sokeForm + section.col-md-4,
+  .sokeresultatContainer #id2a,
+  .sokeresultatContainer .flereResultater  {
+    display:none;
+  }
+
+  form.sokeForm + section.col-md-4 + .col-md-8 {
+    width:auto; // søkeresultatkolonne tar all tilgjengelig plass
+  }
+
+  .sokeresultatContainer .sokeresultatliste li {
+    padding-left:0; // fjerner plass for bakgrunnsbilde (bildet vises uansett ikke)
+  }
+
 }
