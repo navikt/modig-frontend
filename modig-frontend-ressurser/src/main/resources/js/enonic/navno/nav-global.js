@@ -398,7 +398,7 @@ $(function () {
 	    html = null,
 	    hasNotification = false; // Har driftsmelding
 
-	if (typeof url !== 'undefined' && url.length > 0) {
+	if (typeof url !== 'undefined') {
 
 		var jqxhr = $.ajax({
 			type    : "GET",
