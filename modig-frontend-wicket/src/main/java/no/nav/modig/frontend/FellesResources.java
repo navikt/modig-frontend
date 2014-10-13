@@ -14,14 +14,14 @@ class FellesResources {
     //static final PackageResourceReference HTML5_SHIV_RESOURCE = new PackageResourceReference(JsResourceMarker.class, "html5.js");
     static final JavaScriptResourceReference HTML5_SHIV_RESOURCE = jsReference("html5.js");
 
-    static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.10.2.js");
+    static final JavaScriptResourceReference JQUERY_RESOURCE = jsReference("jquery/jquery-1.11.1.js");
 	static final JavaScriptResourceReference UNDERSCORE_RESOURCE = new JQueryDependentResourceReference("underscore.js");
     static final JavaScriptResourceReference TRANSITIONS_RESOURCE = new JQueryDependentResourceReference("modig/transitions.js");
     static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("modig/felles.js");
     static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("modig/dropdown.js");
     static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("modig/tooltip.js");
     static final JavaScriptResourceReference AJAX_LOADER = new JQueryDependentResourceReference("modig/AjaxLoader.js");
-    static final JavaScriptResourceReference JQUERY_UI_DATEPICKER = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.10.3.custom.js");
+    static final JavaScriptResourceReference JQUERY_UI_DATEPICKER = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.11.1.custom.js");
     static final JavaScriptResourceReference JQUERY_VALIDATE = new JQueryDependentResourceReference("jquery/plugins/jquery.validate.js");
     static final JavaScriptResourceReference CONSOLE_POLYFILL_RESOURCE = jsReference("console.js");
     static final JavaScriptResourceReference MODERNIZR_RESOURCE = jsReference("enonic/navno/libs/modernizr.2.7.1.min.js");
