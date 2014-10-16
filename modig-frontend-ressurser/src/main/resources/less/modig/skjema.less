@@ -72,7 +72,7 @@ form, [ng-form], [data-ng-form] {
 	}
 
     input[type=checkbox].bryter {
-      heigth: 0;
+      height: 0;
       width: 0;
       &+label {
         background: url(../img/bryter.svg) 0 0 no-repeat;
@@ -171,11 +171,11 @@ form, [ng-form], [data-ng-form] {
 		background: @bodyBackground;
 		padding: 10px 20px 20px;
 		border: 1px solid @borderColorLight;
-		LABEL {
+		label {
 			padding: 0;
 			width: 9rem;
 			margin: 0 8px 0 0;
-			INPUT {
+			input {
 				width: 100%;
 			}
 		}
@@ -225,8 +225,7 @@ input[type="color"],
 input.hasDatepicker {
 	padding: 7px;
 	line-height: 1.1rem;
-	-webkit-border-radius: @inputBorderRadius;
-	-moz-border-radius: @inputBorderRadius;
+	.border-radius(@inputBorderRadius);
 }
 
 select,
