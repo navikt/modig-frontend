@@ -17,9 +17,9 @@ clean();        // SLETTE OG GJENOPPRETTE GENERATED-RESOURCES
 copyFolders();  // KOPIERE KATALOGER
 copyFiles();    // KOPIERE FILER
 concatFiles();  // SLÅ SAMMEN FILER
-uglifyFiles();  // MINIFIERE FILER
-removeFiles();  // SLETTE FILER
-runLessFiles(); // SLÅ SAMMEN OG MINIFIERE LESS-FILER
+uglifyFiles();  // MINIFISERE FILER
+removeFiles();  // SLETTE TEMP-FILER
+runLessFiles(); // SLÅ SAMMEN OG MINIFISERE LESS-FILER
 
 
 function clean() {
