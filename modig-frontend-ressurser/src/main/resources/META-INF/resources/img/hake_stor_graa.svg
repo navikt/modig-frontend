@@ -3,6 +3,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-<circle fill="#D1D1D1" stroke="#D1D1D1" stroke-miterlimit="10" cx="32" cy="32" r="31.5"/>
-<polygon fill="#FFFFFF" points="39.6,20.8 30.4,37.9 26.4,29 21.9,29 21.8,29 28.3,43.2 28.3,43.2 32.4,43.2 44.2,20.8 "/>
+<path fill="#BDBCBB" d="M32,0C14.3,0,0,14.3,0,32c0,17.7,14.3,32,32,32s32-14.3,32-32C64,14.3,49.7,0,32,0z M32.3,43.7h-4.7l0,0
+	l-7.4-16.1l0,0h5.1L30,37.7l10.5-19.4h5.2L32.3,43.7z"/>
 </svg>
