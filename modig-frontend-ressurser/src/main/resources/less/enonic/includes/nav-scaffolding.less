@@ -28,6 +28,11 @@
         }
       }
 	}
+
+  .col-sm-12 > .inner-row > .primary {
+    margin-left: -1.5625em; // gjør at hvit innholdsboks går helt ut til kant på mobil, uten grå ramme forårsaket av padding på .container
+    margin-right: -1.5625em;
+  }
 }
 
 @media (min-width: @screen-small) and (max-width: (@screen-medium)) {
