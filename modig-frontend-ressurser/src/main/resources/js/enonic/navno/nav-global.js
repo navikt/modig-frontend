@@ -910,12 +910,13 @@ $(function () {
 
 	$('#top-scroll-link').on("click", function (e) {
 		e.preventDefault();
-
+        var pageTop = $('#page-top');
 		$('html, body').animate({
-			scrollTop: $('#page-top').offset().top
+			scrollTop: pageTop.offset().top
 		}, {
 			duration: 250
 		});
+        pageTop.attr('tabindex', '-1').focus();
 	});
 });
 

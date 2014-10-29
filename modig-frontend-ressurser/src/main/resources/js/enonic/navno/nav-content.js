@@ -26,7 +26,7 @@ navno.scrollToId = function (fromLink) {
   {
     duration: 1000,
     complete: function () {
-      
+
       var toc = $('nav.table-of-contents');
       
       var previousId = toc.attr('data-selected-id');
@@ -37,6 +37,7 @@ navno.scrollToId = function (fromLink) {
       
       window.setTimeout(function () {
         $(currentId)[0].focus();
+        window.location.hash = currentId;
       },
       0);
       
