@@ -31,10 +31,26 @@
 	color: @red;
 }
 
+.leading-icon {
+  padding-top: 52px; //plass til ikon på 32px
+}
+
+.leading-icon.icon-mail {
+  background: url('@{baseImagePath}img/enonic/gfx/forms/melding_graa.png') center 0 no-repeat; // 32px
+  // background: url('@{baseImagePath}img/enonic/gfx/forms/melding_graa.svg') center 0 no-repeat; // 32px
+}
+
 .decorated {
 	text-align: center;
 	margin-bottom: 20px;
 	display: block;
+}
+
+.decorated + .description { // brukt til beskrivelse for temavelgeren (skriv til oss)
+  font-weight:400;
+  padding-bottom: 30px;
+  margin:0;
+  border-bottom: 1px solid @gray-light;
 }
 
 .decorated:after {
