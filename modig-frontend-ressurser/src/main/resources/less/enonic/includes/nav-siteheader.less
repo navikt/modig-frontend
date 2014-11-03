@@ -87,6 +87,7 @@
 	}
 
 	@media (min-width: 60em) {
+
 		// 960px --> samme media query på sentrering av hovedmenylinje
 		.site-coltrols-toolbar {
 			text-align: center;
@@ -95,6 +96,14 @@
 			}
 
 		}
+
+      // Todo textsize tooltip
+      .text-size-tooltip {
+          right:-11em;
+          span.arrow {
+            right:50%;
+          }
+      }
 
 		.login-container {
 			width: 30%;
@@ -187,26 +196,6 @@
 				float: left;
 				padding-top: 8px;
 				text-align: right;
-				a {
-					/* display:inline-block;
-					  text-align:center;
-					  background: #d1d1d1;
-					  text-transform: uppercase;
-					  font-family: @font-family-modus;
-					  font-weight: bold;
-					  padding: 4px 15px 4px 15px;
-					  border: none;
-					  color: #333;
-					  white-space: nowrap;
-
-					  &#logout {
-						background-color: #0CA9E0;
-
-						&:hover {
-						  background-color: #5dd0f9;
-						}
-					  }*/
-				}
 			}
 		}
 		// logincontainer - kan gjøres om til mixin for media queries
@@ -216,109 +205,119 @@
 			margin-left: 70%;
 		}
 	}
+
+
+
+
+  .text-size-tooltip, .login-tooltip, .logout-tooltip {
+    padding: 16px 24px;
+    position: absolute;
+    background-color: #000000;
+    color: #ffffff;
+    z-index: 9;
+    text-align: left;
+    span.arrow {
+      .up-arrow(9px, 6px, 6px, #000000); // mixin
+      position: absolute;
+      top: -8px;
+    }
+  }
+
+
+  .login-tooltip, .logout-tooltip {
+    left: 25%;
+    top: 3em;
+    span.arrow {
+      right: 50%;
+    }
+  }
+
+  .text-size-tooltip {
+    width:30em;
+    top:2.5em;
+    //right:-11em;
+    span.arrow {
+      right:85%;
+    }
+    p {
+      font-size: @em-as-30px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+
+  #text-size-accessibility {
+    position: relative;
+  }
+
+
+  .logout-tooltip {
+    right: 0;
+    left: 0;
+
+    .lukk {
+      position: absolute;
+      top: -17px;
+      right: 6px;
+      width: 32px;
+      height: 32px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      font-size: 2em;
+      text-decoration: none;
+
+      &:hover {
+        color: #5dd0f9;
+      }
+    }
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+    p {
+      font-size: 1em;
+      font-style: normal;
+      font-size: @em-as-12px;
+    }
+    span {
+      right: 50%;
+    }
+  }
+
+  .login-tooltip {
+    width: 55%;
+    left: 45%;
+
+    p {
+      margin: 0;
+      font-size: @em-as-12px;
+    }
+
+    span.arrow {
+      right: 12%;
+    }
+  }
+
 }
 
 // mixin
 
 .sitelogo {
-	text-align: center;
-	padding: 15px 0 18px;
-	background-color: #fff;
-	border-bottom: 1px solid @gray-light;
-	a {
-		text-decoration: none;
-		display: inline-block;
-	}
+  text-align: center;
+  padding: 15px 0 18px;
+  background-color: #fff;
+  border-bottom: 1px solid @gray-light;
+  a {
+    text-decoration: none;
+    display: inline-block;
+  }
 }
 
-.text-size-tooltip, .login-tooltip, .logout-tooltip {
-	padding: 16px 24px;
-	position: absolute;
-	background-color: #000000;
-	color: #ffffff;
-	z-index: 9;
-	text-align: left;
-	span.arrow {
-		.up-arrow(9px, 6px, 6px, #000000); // mixin
-		position: absolute;
-		right: 50%;
-		top: -8px;
-	}
-}
-
-.login-tooltip, .logout-tooltip {
-  left: 25%;
-  top: 3em;
-}
-
-#text-size-accessibility {
-  position: relative;
-}
-
-.text-size-tooltip {
-  width:30em;
-  top:2.5em;
-  right:-11em;
-}
-
-
-.text-size-tooltip p {
-  font-size: @em-as-30px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.logout-tooltip {
-	right: 0;
-	left: 0;
-
-	.lukk {
-		position: absolute;
-		top: -17px;
-		right: 6px;
-		width: 32px;
-		height: 32px;
-		background-color: transparent;
-		background-repeat: no-repeat;
-		font-size: 2em;
-		text-decoration: none;
-
-		&:hover {
-			color: #5dd0f9;
-		}
-	}
-	p:last-of-type {
-		margin-bottom: 0;
-	}
-	p {
-		font-size: 1em;
-		font-style: normal;
-		font-size: @em-as-12px;
-	}
-	span {
-		right: 50%;
-	}
-}
-
-.login-tooltip {
-	width: 55%;
-	left: 45%;
-
-	p {
-		margin: 0;
-		font-size: @em-as-12px;
-	}
-
-	span.arrow {
-		right: 12%;
-	}
-}
-
+/*
 @media (max-width: @screen-medium) {
 	.login-tooltip span {
 		right: 38%;
 	}
-}
+}*/
 
 
 
