@@ -70,6 +70,8 @@
 
 	@media (min-width: (@screen-medium + 0.0625em)) {
 
+      .siteheader-toolbar-and-login-defaults();
+
 		.sitelogo-large {
 			display: block;
 		}
@@ -81,8 +83,6 @@
 		.login-container {
 			width: 40%;
 		}
-
-		.siteheader-toolbar-and-login-defaults();
 
 	}
 
@@ -101,7 +101,7 @@
       .text-size-tooltip {
           right:-11em;
           span.arrow {
-            right:50%;
+            right:48%;
           }
       }
 
@@ -109,23 +109,21 @@
 			width: 30%;
 		}
 
-	}
-	// media 60em end
+	} // media 60em end
 
-}
-
-// mixin responsive true
+} // mixin responsive true end
 
 .global-siteheader-toolbar() when (@responsive = false) {
 	// FOR IE8 og dekoratør!
-	.sitelogo-small {
+
+  .siteheader-toolbar-and-login-defaults();
+
+    .sitelogo-small {
 		display: none;
 	}
 	.login-container {
 		width: 30%;
 	}
-
-	.siteheader-toolbar-and-login-defaults();
 
 	.site-coltrols-toolbar {
 		text-align: center;
@@ -297,9 +295,9 @@
     }
   }
 
-}
+} // mixin siteheader-toolbar-and-login-defaults end
 
-// mixin
+
 
 .sitelogo {
   text-align: center;
