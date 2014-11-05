@@ -30,6 +30,16 @@
 	.bullet-point(3px, @link-color, -11px, 1.35em);
 }
 
+
+.input-sitesearch:focus { // må sette fokusstiler pga bakgrunnsbilde/farge og null border på inputs for søk
+    .tab-focus();
+}
+
+.btn-sitesearch:focus{
+  .tab-focus();
+  overflow: hidden;
+}
+
 .menu-link-list .active a,
 .menu-link-list a:hover {
 	color: @link-color;
@@ -284,9 +294,7 @@
 				display: inline-block;
 				margin: 0;
 				padding: @grid-gutter-width / 2;
-				&:focus {
-					.tab-focus();
-				}
+
 			}
 			.btn-sitesearch {
 				.box-sizing(border-box);
@@ -296,10 +304,6 @@
 				padding: @grid-gutter-width / 2;
 				background: transparent url('@{baseImagePath}img/enonic/gfx/mainmenu/sok_stor_morkeblaa.png') no-repeat right (@grid-gutter-width / 2) center;
 				//background: transparent url('../../../img/enonic/gfx/mainmenu/sok_stor_morkeblaa.svg') no-repeat right (@grid-gutter-width / 2) center;
-				&:focus {
-					.tab-focus();
-					overflow: hidden;
-				}
 			}
 
 		}
