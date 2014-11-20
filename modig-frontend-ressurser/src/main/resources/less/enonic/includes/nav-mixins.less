@@ -2,9 +2,6 @@
 // Mixins
 // --------------------------------------------------
 
-// Utilities
-// -------------------------
-
 // Clearfix
 // Source: http://nicolasgallagher.com/micro-clearfix-hack/
 //
@@ -24,15 +21,6 @@
 	&:after {
 		clear: both;
 	}
-}
-
-.clearfix-old() {
-	content: " ";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
 }
 
 // WebKit-style focus
@@ -57,12 +45,8 @@
 	height: @height;
 }
 
-.square(@size) {
-	.size(@size; @size);
-}
-
 // Placeholder text
-.placeholder(@color: @input-color-placeholder) {
+.placeholder(@color: @gray-lighter) {
 	&:-moz-placeholder {
 		color: @color;
 	}
@@ -88,24 +72,6 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-}
-
-// CSS image replacement
-//
-// Heads up! v3 launched with with only `.hide-text()`, but per our pattern for
-// mixins being reused as classes with the same name, this doesn't hold up. As
-// of v3.0.1 we have added `.text-hide()` and deprecated `.hide-text()`. Note
-// that we cannot chain the mixins together in Less, so they are repeated.
-//
-// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
-
-// Deprecated as of v3.0.1 (will be removed in v4)
-.hide-text() {
-	font: ~"0/0" a;
-	color: transparent;
-	text-shadow: none;
-	background-color: transparent;
-	border: 0;
 }
 
 // New mixin to use as of v3.0.1
@@ -412,13 +378,13 @@
 
 // Button backgrounds
 // ------------------
-.buttonBackground(@startColor, @endColor, @textColor: #fff) {
+.buttonBackground(@startColor, @endColor, @text-color: #fff) {
 	// gradientBar will set the background to a pleasing blend of these, to support IE<=9
-	.gradientBar(@startColor, @endColor, @textColor);
+	.gradientBar(@startColor, @endColor, @text-color);
 
 	// in these cases the gradient won't cover the background, so we override
 	&:hover, &:focus, &:active, &.aktiv, &.disabled, &[disabled] {
-		color: @textColor;
+		color: @text-color;
 		background-color: @endColor;
 	}
 
@@ -430,8 +396,8 @@
 }
 
 // Gradient Bar Colors for buttons and alerts
-.gradientBar(@primaryColor, @secondaryColor, @textColor: #fff) {
-	color: @textColor;
+.gradientBar(@primaryColor, @secondaryColor, @text-color: #fff) {
+	color: @text-color;
 	#gradient > .vertical(@primaryColor, @secondaryColor);
 	border-color: @secondaryColor @secondaryColor darken(@secondaryColor, 15%);
 	border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) fadein(rgba(0, 0, 0, .1), 15%);
@@ -538,39 +504,6 @@
 	}
 }
 
-// Button sizes
-// -------------------------
-.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
-	padding: @padding-vertical @padding-horizontal;
-	font-size: @font-size;
-	line-height: @line-height;
-	border-radius: @border-radius;
-}
-
-// Pagination
-// -------------------------
-.pagination-size(@padding-vertical; @padding-horizontal; @font-size; @border-radius) {
-	> li {
-		> a,
-		> span {
-			padding: @padding-vertical @padding-horizontal;
-			font-size: @font-size;
-		}
-		&:first-child {
-			> a,
-			> span {
-				.border-left-radius(@border-radius);
-			}
-		}
-		&:last-child {
-			> a,
-			> span {
-				.border-right-radius(@border-radius);
-			}
-		}
-	}
-}
-
 // Labels
 // -------------------------
 .label-variant(@color) {
@@ -583,14 +516,6 @@
 	}
 }
 
-// Navbar vertical align
-// -------------------------
-// Vertically center elements in the navbar.
-// Example: an element has a height of 30px, so write out `.navbar-vertical-align(30px);` to calculate the appropriate top margin.
-.navbar-vertical-align(@element-height) {
-	margin-top: ((@navbar-height - @element-height) / 2);
-	margin-bottom: ((@navbar-height - @element-height) / 2);
-}
 
 // Progress bars
 // -------------------------
@@ -871,84 +796,6 @@
 	.make-grid(@index - 1, @class, @type);
 }
 
-// Form validation states
-//
-// Used in forms.less to generate the form validation CSS for warnings, errors,
-// and successes.
-
-.form-control-validation(@text-color: #555; @border-color: #ccc; @background-color: #f5f5f5) {
-	// Color the label and help text
-	.help-block,
-	.control-label,
-	.radio,
-	.checkbox,
-	.radio-inline,
-	.checkbox-inline {
-		color: @text-color;
-	}
-	// Set the border and box shadow on specific inputs to match
-	.form-control {
-		border-color: @border-color;
-		.box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075)); // Redeclare so transitions work
-		&:focus {
-			border-color: darken(@border-color, 10%);
-			@shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten(@border-color, 20%);
-			.box-shadow(@shadow);
-		}
-	}
-	// Set validation states also for addons
-	.input-group-addon {
-		color: @text-color;
-		border-color: @border-color;
-		background-color: @background-color;
-	}
-}
-
-// Form control focus state
-//
-// Generate a customized focus state and for any input with the specified color,
-// which defaults to the `@input-focus-border` variable.
-//
-// We highly encourage you to not customize the default value, but instead use
-// this to tweak colors on an as-needed basis. This aesthetic change is based on
-// WebKit's default styles, but applicable to a wider range of browsers. Its
-// usability and accessibility should be taken into account with any change.
-//
-// Example usage: change the default blue border and shadow to white for better
-// contrast against a dark gray background.
-
-.form-control-focus(@color: @input-border-focus) {
-	@color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
-	&:focus {
-		border-color: @color;
-		outline: 0;
-		.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
-	}
-}
-
-// Form control sizing
-//
-// Relative text size, padding, and border-radii changes for form controls. For
-// horizontal sizing, wrap controls in the predefined grid classes. `<select>`
-// element gets special love because it's special, and that's a fact!
-
-.input-size(@input-height; @padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
-	height: @input-height;
-	padding: @padding-vertical @padding-horizontal;
-	font-size: @font-size;
-	line-height: @line-height;
-	border-radius: @border-radius;
-
-	select& {
-		height: @input-height;
-		line-height: @input-height;
-	}
-
-	textarea& {
-		height: auto;
-	}
-}
-
 //--------------------------------------------------------
 //
 //
@@ -963,7 +810,7 @@
 .dropdown-indicator-collapsed() {
 	content: " ";
 	display: inline-block;
-	border-top: 6px solid @blue; // Pil ned
+	border-top: 6px solid @blue-light; // Pil ned
 	border-right: 6px solid transparent;
 	border-left: 6px solid transparent;
 	position: absolute;
@@ -972,7 +819,7 @@
 }
 
 .dropdown-indicator-expanded() {
-	border-bottom: 6px solid @blue; // Pil opp
+	border-bottom: 6px solid @blue-light; // Pil opp
 	border-top: none;
 	border-right: 6px solid transparent;
 	border-left: 6px solid transparent;
@@ -1030,7 +877,7 @@
 	// Hover/focus state
 	&:hover, &:focus {
 		//background-color: #000;
-		background-color: @blue;
+		background-color: @blue-light;
 		color: #fff;
 		.transition(background-position .1s linear);
 	}
@@ -1040,7 +887,7 @@
 	}
 	// Active state
 	&.active, &:active {
-		background-color: @blue;
+		background-color: @blue-light;
 		color: #fff;
 		outline: 0;
 	}

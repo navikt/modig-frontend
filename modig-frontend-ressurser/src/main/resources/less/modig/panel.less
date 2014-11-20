@@ -35,7 +35,7 @@
 }
 
 [class*="rad"] {
-	border-bottom: 1px solid @borderColorLight;
+	border-bottom: 1px solid @gray-lighter;
 }
 
 .rad-logo {
@@ -51,10 +51,10 @@
 }
 
 .rad-invertert {
-	background-color: @modiaBackground;
-	color: @grayLight;
+	background-color: @gray-darker;
+	color: @gray-light;
 	h1, h2, h3, h4, h5, h6, p, div, span {
-		color: @grayLight;
+		color: @gray-light;
 	}
     [class*="panel-mini"] {
         border: none;
@@ -64,27 +64,27 @@
 [class*="panel-"] {
 	display: inline-block;
 	padding: 1.5% 2% 3%;
-	border: 1px solid @borderColorLight;
+	border: 1px solid @gray-lighter;
 	&[class*="-belyst"] {
 		background-color: @white;
-		color: @grayDark;
+		color: @gray-dark;
 		h1, h2, h3, h4, h5, h6, p, div, span {
-			color: @grayDark;
+			color: @gray-dark;
 		}
 	}
 	&[class*="-dus"] {
-		background-color: @borderColorLight;
+		background-color: @gray-lighter;
 	}
 	&[class*="-klikk"] {
 		background-color: @white;
 		text-decoration: none;
-		color: @textColor;
+		color: @text-color;
 		cursor: pointer;
 		&:hover {
-			background-color: @bodyBackground;
+			background-color: @gray-lightest;
 		}
 		&:visited {
-			color: @textColor;
+			color: @text-color;
 		}
 	}
 	p {
@@ -99,7 +99,7 @@
 [class*="panel-mini"] {
 	text-align: center;
 	padding: 1.5% 2% 3%;
-	border: 1px solid @borderColorLight;
+	border: 1px solid @gray-lighter;
 	[class*="ikon-"] {
 		margin-top: 4px;
 	}

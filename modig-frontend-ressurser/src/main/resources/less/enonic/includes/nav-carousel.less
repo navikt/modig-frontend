@@ -23,7 +23,7 @@
         
         .btn-group {
             padding: 3px;
-            border: 1px solid @gray-light;
+            border: 1px solid @gray-lighter;
             border-radius: 1px;
             display: inline-block;
             background-color: #fff;
@@ -54,7 +54,7 @@
         border-radius: 1px;
         
         min-width: 103px;
-        background-color: @blue;
+        background-color: @blue-light;
         background-image: none;
     }
     .carousel-view[data-selected='false'], .list-view[data-selected='false'] {
@@ -62,7 +62,7 @@
         background-color: #fff;
         
         &:hover, &:focus, &:active {
-            color: @blue;
+            color: @blue-light;
         }
     }
 }
@@ -140,7 +140,7 @@
     .no-js #carousel-items .hero-link { min-height: 25em; }
      //#carousel-items .item .hero-link-wrapper:first-child { padding-left: 0; } 
      //#carousel-items .item .hero-link-wrapper:last-child { padding-right: 0; } 
-    .js .item .hero-link p { font-size: @em-as-12px; }           
+    .js .item .hero-link p { font-size: @rem-as-12px; }           
     .js .item .hero-link {
         padding: 1em;
         width: 100%;
@@ -165,7 +165,7 @@
             height: auto; 
             padding: 5.31em 1.875em 1.875em;
             p {
-                font-size: @em-as-12px;   
+                font-size: @rem-as-12px;   
             }
         }
 
@@ -258,7 +258,7 @@
         padding: 0;
         
         .active {
-             background-color: @blue;
+             background-color: @blue-light;
         }
         
         li {
@@ -271,7 +271,7 @@
             background-color: #fff;
             border-radius: 10px;
             cursor: pointer;
-            border: 1px solid @gray-light;
+            border: 1px solid @gray-lighter;
         }
     }
 }
@@ -280,7 +280,7 @@
    .no-js #carousel-items .hero-link { min-height: 22em; }
    #carousel-items .hero-link {
         p {
-            font-size: @em-as-14px;
+            font-size: @rem-as-14px;
         }
     }
 
@@ -383,10 +383,10 @@
             
             p { // flles
                 @media (min-width: @screen-small) {
-                    font-size: @em-as-12px;
+                    font-size: @rem-as-12px;
                 }
                 @media (min-width: @screen-large) {
-                    font-size: @em-as-14px;
+                    font-size: @rem-as-14px;
                 }
             }
             

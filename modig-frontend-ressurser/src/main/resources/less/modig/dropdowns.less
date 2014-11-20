@@ -20,7 +20,7 @@
 	width: 0;
 	height: 0;
 	vertical-align: top;
-	border-top: 6px solid @blue;
+	border-top: 6px solid @blue-light;
 	border-right: 6px solid transparent;
 	border-left: 6px solid transparent;
 	content: "";
@@ -38,14 +38,14 @@
 	position: absolute;
 	top: 100%;
 	left: 0;
-	z-index: @zindexDropdown;
+	z-index: 1000;
 	display: none; // none by default, but block on "open" of the menu
 	float: left;
 	min-width: 160px;
 	padding: 5px 0;
 	margin: 0; // override default ul
 	list-style: none;
-	background-color: @dropdownBackground;
+	background-color: @white;
 	.border-radius(1px);
 	.box-shadow(0 5px 10px rgba(0,0,0,.2));
 	-webkit-background-clip: padding-box;
@@ -60,7 +60,7 @@
 
 	// Dividers (basically an hr) within the dropdown
 	.divider {
-		.nav-divider(@dropdownDividerTop, @dropdownDividerBottom);
+		.nav-divider(#e5e5e5, @white);
 	}
 
 	// Links within the dropdown menu
@@ -69,8 +69,8 @@
 		padding: 3px 20px;
 		clear: both;
 		font-weight: normal;
-		line-height: @baseLineHeight;
-		color: @dropdownLinkColor;
+		line-height: @base-line-height;
+		color: @gray-dark;
 		white-space: nowrap;
 	}
 }
@@ -82,8 +82,8 @@
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a {
 	text-decoration: none;
-	color: @dropdownLinkColorHover;
-	background: @blueDark;
+	color: @white;
+	background: @blue-dark;
 }
 
 // Active state
@@ -91,8 +91,8 @@
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-	color: @dropdownLinkColorActive;
-	background: @blueDark;
+	color: @white;
+	background: @blue-dark;
 	text-decoration: none;
 	outline: 0;
 }
@@ -103,7 +103,7 @@
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
-	color: @grayLight;
+	color: @gray-light;
 }
 
 // Nuke hover/focus effects
@@ -119,7 +119,7 @@
 .open {
 	// IE7's z-index only goes to the nearest positioned ancestor, which would
 	// make the menu appear below buttons that appeared later on the page
-	*z-index: @zindexDropdown;
+	*z-index: 1000;
 
 	& > .dropdown-menu {
 		display: block;
@@ -191,13 +191,13 @@
 	border-color: transparent;
 	border-style: solid;
 	border-width: 5px 0 5px 5px;
-	border-left-color: darken(@dropdownBackground, 20%);
+	border-left-color: darken(@white, 20%);
 	margin-top: 5px;
 	margin-right: -10px;
 }
 
 .dropdown-submenu:hover > a:after {
-	border-left-color: @dropdownLinkColorHover;
+	border-left-color: @white;
 }
 
 // Left aligned submenus
@@ -227,5 +227,5 @@
 .typeahead {
 	z-index: 1051;
 	margin-top: 2px; // give it some space to breathe
-	.border-radius(@baseBorderRadius);
+	.border-radius(1px);
 }

@@ -29,7 +29,6 @@ public class FrontendTest {
             protected void init() {
                 getResourceSettings().setCachingStrategy(NoOpResourceCachingStrategy.INSTANCE);
                 mountPage("/testpage", TestPage.class);
-
                 initListener.onInit(this);
             }
         };
@@ -42,9 +41,7 @@ public class FrontendTest {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
-                        .withModules(FrontendModules.BOOTSTRAP_CORE)
 		                .withHtml5Shiv(true)
-		                .withConsoleLogPolyfill(true)
                         .addCss(TestPage.CSS_RESOURCE_REFERENCE)
                         .addScripts(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE)
                         .withResourcePacking(false)
@@ -59,7 +56,6 @@ public class FrontendTest {
                 response.render(JavaScriptHeaderItem.forReference(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE));
             }
         });
-
         tester.startPage(page);
         tester.assertResultPage(TestPage.class, "TestPage-expected.html");
     }
@@ -70,9 +66,7 @@ public class FrontendTest {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
-                        .withModules(FrontendModules.BOOTSTRAP_CORE)
 		                .withHtml5Shiv(true)
-		                .withConsoleLogPolyfill(true)
                         .addCss(TestPage.CSS_RESOURCE_REFERENCE)
                         .addScripts(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE)
                         .withResourcePacking(true)
@@ -99,11 +93,9 @@ public class FrontendTest {
                 new FrontendConfigurator()
                         .addMetas(MetaTag.VIEWPORT_SCALE_1)
 		                .withHtml5Shiv(true)
-		                .withConsoleLogPolyfill(true)
                         .configure(application);
             }
         });
-
         tester.startPage(TestPage.class);
         tester.assertResultPage(TestPage.class, "TestPage-meta-expected.html");
     }
@@ -115,15 +107,10 @@ public class FrontendTest {
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
 		                .withHtml5Shiv(true)
-		                .withConsoleLogPolyfill(true)
-                        .addConditionalCss(new ConditionalCssResource(TestPage.CSS_RESOURCE_REFERENCE, "", "lt IE 8"))
-                        .addConditionalJavascript(new ConditionalJavascriptResource(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE, "lt IE 8"))
                         .configure(application);
             }
         });
-
         tester.startPage(TestPage.class);
         tester.assertResultPage(TestPage.class, "TestPage-conditional-expected.html");
     }
-
 }

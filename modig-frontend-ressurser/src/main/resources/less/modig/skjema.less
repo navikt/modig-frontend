@@ -5,11 +5,9 @@
 			border: 1px solid #fca292;
 			border-top: 1px solid @red;
 		}
-
         input:not([type="submit"]) {
-            background-color: red;//@errorBackgroundLight;
+            background-color: red;
         }
-
 		.melding {
 			color: @red;
 			text-transform: none;
@@ -21,15 +19,13 @@ form, [ng-form], [data-ng-form] {
 	margin: 0;
 	text-align: left;
 	label {
-		font-size: 0.85rem !important;
+		font-size: 0.85rem;
         margin-bottom: 8px;
-
         &:last-child {
             margin-bottom: 0;
         }
-
 		span {
-			font-size: 0.85rem !important;
+			font-size: 0.85rem;
             margin-bottom: 8px;
 		}
 	}
@@ -96,8 +92,8 @@ form, [ng-form], [data-ng-form] {
 		padding: 2px 0 0 32px;
 		min-height: 30px;
 		margin-right: 1rem;
-		font-family: @sansFontFamily;
-		font-size: 1rem !important;
+		font-family: @font-family-sans-serif;
+		font-size: 1rem;
         text-transform: none;
 	}
 
@@ -109,29 +105,29 @@ form, [ng-form], [data-ng-form] {
 	.valggruppe {
 		span {
 			display: block;
-			font-size: 0.8rem !important;
+			font-size: 0.8rem;
 			text-transform: uppercase;
 			margin-bottom: 0.5rem;
 		}
 		label {
-			font-size: 1rem !important;
+			font-size: 1rem;
 			text-transform: none;
 		}
 		.loddrett {
 			label {
-				display: block !important;
+				display: block;
 			}
 		}
 		.kolonner-to {
 			.content-columns(2, 0.5rem);
 			label {
-				display: block !important;
+				display: block;
 			}
 		}
 		.kolonner-tre {
 			.content-columns(3, 0.5rem);
 			label {
-				display: block !important;
+				display: block;
 			}
 		}
 	}
@@ -168,9 +164,9 @@ form, [ng-form], [data-ng-form] {
 
 	&.dobbeldato {
 		display: inline-block;
-		background: @bodyBackground;
+		background: @gray-lightest;
 		padding: 10px 20px 20px;
-		border: 1px solid @borderColorLight;
+		border: 1px solid @gray-lighter;
 		label {
 			padding: 0;
 			width: 9rem;
@@ -194,13 +190,13 @@ label,
 input,
 select,
 textarea {
-	#font > .shorthand(@baseFontSize,normal,@baseLineHeight); // Set size, weight, line-height here
+	#font > .shorthand(@rem-as-14px,normal,@base-line-height); // Set size, weight, line-height here
 }
 
 input,
 select,
 textarea {
-	font-family: @baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+	font-family: @font-family-sans-serif; // And only set font-family here for those that need it (note the missing label element)
 }
 
 // Form controls
@@ -225,18 +221,18 @@ input[type="color"],
 input.hasDatepicker {
 	padding: 7px;
 	line-height: 1.1rem;
-	.border-radius(@inputBorderRadius);
+	.border-radius(1px);
 }
 
 select,
 input.hasDatepicker {
-	border: 1px solid @inputBorder;
-	border-top: 1px solid @grayLight;
+	border: 1px solid @input-border;
+	border-top: 1px solid @gray-light;
 }
 
 select {
 	padding: 7px;
-	.border-radius(@inputBorderRadius);
+	.border-radius(1px);
 }
 
 // Everything else
@@ -255,9 +251,9 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-	background-color: @inputBackground;
-	border: 1px solid @inputBorder;
-	border-top: 1px solid @grayLight;
+	background-color: @input-bg;
+	border: 1px solid @input-border;
+	border-top: 1px solid @gray-light;
 
 	// Focus state
 	&:focus {
@@ -288,8 +284,8 @@ input[type="color"] {
 	// Make select elements obey height by applying a border
 	select {
 		padding: 0;
-		border: 1px solid @inputBorder;
-		background-color: @inputBackground; // Chrome on Linux and Mobile Safari need background-color
+		border: 1px solid @input-border;
+		background-color: @input-bg; // Chrome on Linux and Mobile Safari need background-color
 	}
 
 	// Focus for select, file, radio, and checkbox
@@ -313,7 +309,7 @@ input[type="color"] {
 	// --------------
 
 	&:disabled {
-		background-color: @inputDisabledBackground;
+		background-color: @input-bg-disabled;
 	}
 
 	// Disabled and read-only inputs
@@ -324,7 +320,7 @@ input[type="color"] {
 	select[readonly],
 	textarea[readonly] {
 		cursor: not-allowed;
-		background-color: @inputDisabledBackground;
+		background-color: @input-bg-disabled;
 	}
 	// Explicitly reset the colors here
 	input[type="radio"][disabled],

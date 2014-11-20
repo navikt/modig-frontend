@@ -169,7 +169,6 @@ public class FrontendConfigurator {
         configureJquery(application);
         configureJavascript(application);
         configureConditionalJavascript(application);
-        configureBootstrapImages(application);
         configureImages(application);
         configureResourcePacking(application);
     }
@@ -366,12 +365,6 @@ public class FrontendConfigurator {
         for (final SharedResourceReference reference : imgReferences) {
             application.mountResource(basePath + "/img/" + reference.getName(), reference);
         }
-    }
-
-
-    private void configureBootstrapImages(WebApplication application) {
-        application.mountResource(basePath + "/img/" + BootstrapResources.ICONS.getName(), BootstrapResources.ICONS);
-        application.mountResource(basePath + "/img/" + BootstrapResources.ICONS_WHITE.getName(), BootstrapResources.ICONS_WHITE);
     }
 
 

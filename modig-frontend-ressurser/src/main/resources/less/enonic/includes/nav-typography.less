@@ -2,7 +2,7 @@
 // -------------------------
 
 p, .paragraph, input, button, .article-body li {
-	font-size: @em-as-16px;
+	font-size: @rem-as-16px;
 }
 
 .article-body li li {
@@ -20,19 +20,19 @@ p, .paragraph {
 }
 
 .preface {
-	font-size: @em-as-16px;
+	font-size: @rem-as-16px;
 	font-weight: 700;
 	margin: 0;
 }
 
 @media (min-width: (@screen-medium + 0.0625em)) {
 	.preface {
-		font-size: @em-as-18px;
+		font-size: @rem-as-18px;
 		font-weight: 400;
 	}
 
 	p, .paragraph, input, button, .article-body li {
-		font-size: @font-size-base-em; // 14px
+		font-size: @rem-as-14px; // 14px
 	}
 
 }
@@ -87,34 +87,34 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-	font-size: @font-size-h1-em;
+	font-size: @rem-as-38px;
 	font-weight: 600;
 }
 
 h2, .h2 {
-	font-size: @font-size-h2-em;
+	font-size: @rem-as-30px;
 	font-weight: 400;
 }
 
 h3, .h3 {
-	font-size: @font-size-h3-em;
+	font-size: @rem-as-20px;
 	font-weight: normal;
 }
 
 h4, .h4 {
-	font-size: @font-size-h4-em;
+	font-size: @rem-as-16px;
 	font-weight: 600;
 	text-transform: uppercase;
 }
 
 h5, .h5 {
-	font-size: @font-size-h5-em;
+	font-size: @rem-as-14px;
 	font-weight: 600;
 	text-transform: uppercase;
 }
 
 h6, .h6 {
-	font-size: @font-size-h6-em;
+	font-size: @rem-as-12px;
 }
 
 
@@ -133,7 +133,7 @@ h1:first-child, h2:first-child, h3:first-child,
 	.page-head h1 {
 		margin-bottom: 0;
 		margin-top: 40px;
-		font-size: @em-as-24px;
+		font-size: @rem-as-24px;
 	}
 
   .contentpage .page-head h1 {
@@ -141,7 +141,7 @@ h1:first-child, h2:first-child, h3:first-child,
   }
 
   h2, .h2 {
-    font-size: @em-as-24px;
+    font-size: @rem-as-24px;
   }
 
 }
@@ -207,7 +207,7 @@ dd {
 hr {
 	margin: 1.42857143em 0;
 	border: 0;
-	border-top: 1px solid @gray-light;
+	border-top: 1px solid @gray-lighter;
 	border-bottom: 1px solid #fff;
 }
 
@@ -216,12 +216,11 @@ abbr[title],
 	// Added data-* attribute to help out our tooltip plugin, per https://github.com/twitter/bootstrap/issues/5257
 abbr[data-original-title] {
 	cursor: help;
-	border-bottom: 1px dotted @gray-light;
+	border-bottom: 1px dotted @gray-lighter;
 }
 
 // Blockquotes
 blockquote {
-	//font-size: @font-size-h4-em;
 	font-weight: normal;
 	font-family: @font-family-modus;
 	margin-top: 23px;
