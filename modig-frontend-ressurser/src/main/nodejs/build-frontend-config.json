@@ -1,42 +1,40 @@
 {
 	"fileStructure": [
 		"/",
-		"css/", "css/modig/", "css/enonic/", "css/appres",
-		"img/", "img/modig/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder",
+		"css/", "css/nav_frontend/", "css/appres",
+		"img/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder",
         "img/enonic/gfx/carousel/", "img/enonic/gfx/icons/", "img/enonic/gfx/mainmenu/", "img/enonic/gfx/tts/", "img/enonic/gfx/forms/",
         "img/appres/", "img/appres/legacy/", "img/appres/legacy/breadcrumb/", "img/appres/legacy/dittnav/",
         "img/appres/legacy/fellesinnlogging/", "img/appres/legacy/global/", "img/appres/legacy/ikoner/", "img/appres/legacy/logo/",
         "img/appres/legacy/tooltip/", "img/appres/legacy/tooltip/hjelpetekst/", "img/appres/legacy/venstremeny/",
 		"js/",
-		"js/modig/", "js/modig/jquery/", "js/enonic/",
-		"js/enonic/navno/", "js/enonic/navno/libs/", "js/enonic/navno/libs/jquery/", "js/enonic/navno/libs/megamenu/",
-        "js/enonic/skjemaveileder/",
+		"js/nav_frontend/", "js/nav_frontend/libs/", "js/nav_frontend/libs/jquery/", "js/nav_frontend/libs/jquery/plugins/", "js/nav_frontend/libs/megamenu/",
+		"js/enonic/", "js/enonic/navno/", "js/enonic/skjemaveileder/",
         "js/appres/",
 		"less/",
-		"less/modig/",
-		"less/enonic/", "less/enonic/includes/",
+		"less/nav_frontend/", "less/nav_frontend/includes/",
+		"less/navno/", "less/navno/includes/",
         "less/appres/", "less/appres/includes"
 	],
 
 	"copyFolders"  : [
-		{ "fromDir": "/resources/js/modig/", "toDir": "/generated-resources/js/modig/" },
-		{ "fromDir": "/resources/js/jquery/", "toDir": "/generated-resources/js/modig/jquery/" },
+		{ "fromDir": "/resources/js/nav_frontend/", "toDir": "/generated-resources/js/nav_frontend/" },
+		{ "fromDir": "/resources/js/nav_frontend/libs/", "toDir": "/generated-resources/js/nav_frontend/libs/" },
+		{ "fromDir": "/resources/js/nav_frontend/libs/jquery/", "toDir": "/generated-resources/js/nav_frontend/libs/jquery/" },
+		{ "fromDir": "/resources/js/nav_frontend/libs/jquery/plugins/", "toDir": "/generated-resources/js/nav_frontend/libs/jquery/plugins/" },
+		{ "fromDir": "/resources/js/nav_frontend/libs/megamenu/", "toDir": "/generated-resources/js/nav_frontend/libs/megamenu/" },
 
 		{ "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/enonic/navno/" },
 		{ "fromDir": "/resources/js/enonic/skjemaveileder/", "toDir": "/generated-resources/js/enonic/skjemaveileder/" },
-        { "fromDir": "/resources/js/enonic/navno/libs/", "toDir": "/generated-resources/js/enonic/navno/libs/" },
-        { "fromDir": "/resources/js/enonic/navno/libs/megamenu/", "toDir": "/generated-resources/js/enonic/navno/libs/megamenu/" },
-        { "fromDir": "/resources/js/jquery/", "toDir": "/generated-resources/js/enonic/navno/libs/jquery/" },
 
-		{ "fromDir": "/resources/less/modig/", "toDir": "/generated-resources/less/modig/" },
+		{ "fromDir": "/resources/less/nav_frontend/", "toDir": "/generated-resources/less/nav_frontend/" },
+		{ "fromDir": "/resources/less/nav_frontend/includes/", "toDir": "/generated-resources/less/nav_frontend/includes/" },
 
-        { "fromDir": "/resources/less/enonic/", "toDir": "/generated-resources/less/enonic/" },
-        { "fromDir": "/resources/less/enonic/includes/", "toDir": "/generated-resources/less/enonic/includes/" },
+        { "fromDir": "/resources/less/navno/", "toDir": "/generated-resources/less/navno/" },
+        { "fromDir": "/resources/less/navno/includes/", "toDir": "/generated-resources/less/navno/includes/" },
 
         { "fromDir": "/resources/less/appres/", "toDir": "/generated-resources/less/appres/" },
         { "fromDir": "/resources/less/appres/includes/", "toDir": "/generated-resources/less/appres/includes/" },
-
-		{ "fromDir": "/resources/css/modig/", "toDir": "/generated-resources/css/modig/" },
 
 		{ "fromDir": "/resources/META-INF/resources/img/", "toDir": "/generated-resources/img/" },
 		{ "fromDir": "/resources/META-INF/resources/img/enonic/", "toDir": "/generated-resources/img/enonic/" },
@@ -48,6 +46,7 @@
         { "fromDir": "/resources/META-INF/resources/img/enonic/gfx/forms/", "toDir": "/generated-resources/img/enonic/gfx/forms/" },
 		{ "fromDir": "/resources/META-INF/resources/img/enonic/skjemaveileder/", "toDir": "/generated-resources/img/enonic/skjemaveileder/" },
 
+		{ "fromDir": "/resources/META-INF/resources/img/appres/legacy/", "toDir": "/generated-resources/img/appres/legacy/" },
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/breadcrumb/", "toDir": "/generated-resources/img/appres/legacy/breadcrumb/" },
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/dittnav/", "toDir": "/generated-resources/img/appres/legacy/dittnav/" },
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/fellesinnlogging/", "toDir": "/generated-resources/img/appres/legacy/fellesinnlogging/" },
@@ -56,80 +55,69 @@
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/logo/", "toDir": "/generated-resources/img/appres/legacy/logo/" },
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/tooltip/", "toDir": "/generated-resources/img/appres/legacy/tooltip/" },
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/tooltip/hjelpetekst/", "toDir": "/generated-resources/img/appres/legacy/tooltip/hjelpetekst/" },
-        { "fromDir": "/resources/META-INF/resources/img/appres/legacy/venstremeny/", "toDir": "/generated-resources/img/appres/legacy/venstremeny/" },
-
-		{ "fromDir": "/resources/META-INF/resources/img/modig/", "toDir": "/generated-resources/img/modig/" },
-		{ "fromDir": "/resources/META-INF/resources/img/appres/legacy/", "toDir": "/generated-resources/img/appres/legacy/" }
+        { "fromDir": "/resources/META-INF/resources/img/appres/legacy/venstremeny/", "toDir": "/generated-resources/img/appres/legacy/venstremeny/" }
 	],
 
 	"copyFiles"  : [
-		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "console.js" },
-		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "html5.js" },
-		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "html5.min.js" },
-		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "underscore.js" },
-		{ "fromDir": "/resources/js/", "toDir": "/generated-resources/js/modig/", "file": "underscore-min.js"},
+        { "fromDir": "/resources/js/nav_frontend/libs/jquery/", "toDir": "/generated-resources/js/appres/", "file": "jquery-1.11.1.js"},
+		{ "fromDir": "/resources/js/nav_frontend/libs/megamenu/", "toDir": "/generated-resources/js/appres/", "file": "jquery-accessibleMegaMenu.js"},
+		{ "fromDir": "/resources/js/nav_frontend/libs/", "toDir": "/generated-resources/js/appres/", "file": "matchmedia.js"},
+        { "fromDir": "/resources/js/nav_frontend/libs/", "toDir": "/generated-resources/js/appres/", "file": "modernizr.2.7.1.min.js"},
+        { "fromDir": "/resources/js/nav_frontend/", "toDir": "/generated-resources/js/appres/", "file": "nav-global.js"},
+        { "fromDir": "/resources/js/nav_frontend/", "toDir": "/generated-resources/js/appres/", "file": "innloggingslinjen.js"},
 
-        { "fromDir": "/resources/js/legacy/", "toDir": "/generated-resources/js/appres/", "file": "felles.js"},
-        { "fromDir": "/resources/js/jquery/", "toDir": "/generated-resources/js/appres/", "file": "jquery-1.11.1.js"},
-        { "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/appres/", "file": "nav-global.js"},
-        { "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/appres/", "file": "nav-innloggingslinjen.js"},
-        { "fromDir": "/resources/js/enonic/navno/libs/megamenu/", "toDir": "/generated-resources/js/appres/", "file": "jquery-accessibleMegaMenu.js"},
-        { "fromDir": "/resources/js/enonic/navno/libs/", "toDir": "/generated-resources/js/appres/", "file": "matchmedia.js"},
-        { "fromDir": "/resources/js/enonic/navno/libs/", "toDir": "/generated-resources/js/appres/", "file": "modernizr.2.7.1.min.js"}
-
+        { "fromDir": "/resources/js/nav_frontend/", "toDir": "/generated-resources/js/enonic/navno/", "file": "nav-global.js"},
+        { "fromDir": "/resources/js/nav_frontend/libs/", "toDir": "/generated-resources/js/enonic/navno/", "file": "matchmedia.js"},
+        { "fromDir": "/resources/js/nav_frontend/libs/megamenu/", "toDir": "/generated-resources/js/enonic/navno/", "file": "jquery-accessibleMegaMenu.js"}
 
     ],
 
 	"concatFiles": [
-		{ "fromDir": "/resources/js/modig/", "toFile": "/generated-resources/js/modig/modig.js",
+		{ "fromDir": "/resources/js/nav_frontend/", "toFile": "/generated-resources/js/nav_frontend/nav_frontend.js",
 			"files": ["transitions.js", "felles.js", "dropdown.js", "tooltip.js", "AjaxLoader.js"] },
 
         { "fromDir": "/generated-resources/js/appres/", "toFile": "/generated-resources/js/appres/app-legacy-concat.js",
-            "files": ["jquery-1.11.1.js", "felles.js"] },
+            "files": ["jquery-1.11.1.js"] },
 
         { "fromDir": "/generated-resources/js/appres/", "toFile": "/generated-resources/js/appres/app-navno-concat.js",
             "files": ["nav-global.js", "matchmedia.js", "jquery-accessibleMegaMenu.js"] },
 
-        { "fromDir": "/resources/js/jquery/", "toFile": "/generated-resources/js/enonic/navno/jquery-tmp.js",
+        { "fromDir": "/resources/js/nav_frontend/libs/jquery/", "toFile": "/generated-resources/js/enonic/navno/jquery-tmp.js",
             "files": ["jquery-1.11.1.js"] },
 
-		{ "fromDir": "/resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-tmp.js",
-			"files": ["nav-global.js", "nav-carousel.js", "nav-content.js", "nav-accordion.js",
-                      "libs/matchmedia.js", "libs/megamenu/jquery-accessibleMegaMenu.js"] },
+		{ "fromDir": "/generated-resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-tmp.js",
+			"files": ["nav-global.js", "nav-carousel.js", "nav-content.js", "nav-accordion.js", "matchmedia.js", "jquery-accessibleMegaMenu.js"] },
 
         { "fromDir": "/generated-resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-concat.js",
-            "files": ["jquery-tmp.js", "navno-tmp.js"] },
-
-		{ "fromDir": "/resources/less/modig/", "toFile": "/generated-resources/less/modig/modig.less",
-			"files": ["reset.less", "variables.less", "mixins.less", "modus.less", "typografi.less", "felles.less",
-					  "knapper.less", "contrast.less", "dropdowns.less", "skjema.less", "tooltip.less", "utilities.less",
-					  "panel.less", "footer.less", "ekstern.less"] }
+            "files": ["jquery-tmp.js", "navno-tmp.js"] }
 	],
 
+
 	"uglify": [
-		{ "fromFile": "/generated-resources/js/modig/modig.js", "toFile": "/generated-resources/js/modig/modig.min.js" },
+		{ "fromFile": "/generated-resources/js/nav_frontend/nav_frontend.js", "toFile": "/generated-resources/js/nav_frontend/nav_frontend.min.js" },
 
 		{ "fromFile": "/generated-resources/js/enonic/navno/navno-concat.js", "toFile": "/generated-resources/js/enonic/navno/navno.min.js" },
-		{ "fromFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.js", "toFile": "/generated-resources/js/enonic/navno/nav-innloggingslinjen.min.js" },
+		{ "fromFile": "/generated-resources/js/nav_frontend/innloggingslinjen.js", "toFile": "/generated-resources/js/enonic/navno/innloggingslinjen.min.js" },
         { "fromFile": "/generated-resources/js/enonic/navno/nav-klage-ris-ros.js", "toFile": "/generated-resources/js/enonic/navno/nav-klage-ris-ros.min.js" },
 
         { "fromFile": "/generated-resources/js/appres/app-legacy-concat.js", "toFile": "/generated-resources/js/appres/app-legacy.min.js" },
         { "fromFile": "/generated-resources/js/appres/app-navno-concat.js", "toFile": "/generated-resources/js/appres/app-navno.min.js" },
-        { "fromFile": "/generated-resources/js/appres/nav-innloggingslinjen.js", "toFile": "/generated-resources/js/appres/nav-innloggingslinjen.min.js" },
+        { "fromFile": "/generated-resources/js/nav_frontend/innloggingslinjen.js", "toFile": "/generated-resources/js/appres/innloggingslinjen.min.js" },
 
         { "fromFile": "/generated-resources/js/enonic/skjemaveileder/annenpost.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/annenpost.min.js" },
         { "fromFile": "/generated-resources/js/enonic/skjemaveileder/elektroniskinnsending.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/elektroniskinnsending.min.js" },
         { "fromFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveileder.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveileder.min.js" },
-        { "fromFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveilederarbeidsgiver.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveilederarbeidsgiver.min.js" },
+
+        { "fromFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveilederarbeidsgiver.js",
+	        "toFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveilederarbeidsgiver.min.js" },
+
         { "fromFile": "/generated-resources/js/enonic/skjemaveileder/felles.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/felles.min.js" },
         { "fromFile": "/generated-resources/js/enonic/skjemaveileder/skjemavalg.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/skjemavalg.min.js" }
 	],
 
 	"runLess": [
-		{ "fromDir": "/generated-resources/less/modig/", "mainFile": "/generated-resources/less/modig/modig.less", "builtFile": "/generated-resources/css/modig/modig.css" },
-
-		{ "fromDir": "/generated-resources/less/enonic/", "mainFile": "/resources/less/enonic/nav-old-ie.less", "builtFile": "/generated-resources/css/enonic/nav-old-ie.css" },
-		{ "fromDir": "/generated-resources/less/enonic/", "mainFile": "/resources/less/enonic/nav-responsive.less", "builtFile": "/generated-resources/css/enonic/nav-responsive.css" },
+		{ "fromDir": "/generated-resources/less/nav_frontend/", "mainFile": "/generated-resources/less/nav_frontend/responsive.less",
+			"builtFile": "/generated-resources/css/nav_frontend/nav_frontend.css" },
 
         { "fromDir": "/generated-resources/less/appres/", "mainFile": "/resources/less/appres/app-decorator.less", "builtFile": "/generated-resources/css/appres/app-decorator.css" }
 	],

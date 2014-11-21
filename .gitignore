@@ -6,4 +6,4 @@ target/
 .idea/
 generated-resources
 Thumbs.db
-path_til_node.properties
+modig-frontend-ressurser/path_til_node.properties

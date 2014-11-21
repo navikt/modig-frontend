@@ -41,7 +41,6 @@ public class FrontendTest {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
-		                .withHtml5Shiv(true)
                         .addCss(TestPage.CSS_RESOURCE_REFERENCE)
                         .addScripts(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE)
                         .withResourcePacking(false)
@@ -66,7 +65,6 @@ public class FrontendTest {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
-		                .withHtml5Shiv(true)
                         .addCss(TestPage.CSS_RESOURCE_REFERENCE)
                         .addScripts(TestPage.JAVA_SCRIPT_RESOURCE_REFERENCE)
                         .withResourcePacking(true)
@@ -92,7 +90,6 @@ public class FrontendTest {
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
                         .addMetas(MetaTag.VIEWPORT_SCALE_1)
-		                .withHtml5Shiv(true)
                         .configure(application);
             }
         });
@@ -106,7 +103,6 @@ public class FrontendTest {
             @Override
             public void onInit(WebApplication application) {
                 new FrontendConfigurator()
-		                .withHtml5Shiv(true)
                         .configure(application);
             }
         });
