@@ -5,12 +5,14 @@ import no.nav.modig.frontend.compressors.Wro4jJsCompressor;
 import no.nav.modig.frontend.less.CompiledLessResource;
 import no.nav.modig.frontend.merged.MergedCssBuilder;
 import no.nav.modig.frontend.merged.MergedJavaScriptBuilder;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.head.CssReferenceHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.SecurePackageResourceGuard;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.PackageResourceReference;
@@ -48,6 +50,8 @@ public class FrontendConfigurator {
     private List<SharedResourceReference> imgReferences = new ArrayList<>();
 
     private List<MetaTag> metaTagsList = new ArrayList<>();
+    private List<ConditionalJavascriptResource> conditionalJavascripts = new ArrayList<>();
+    private List<ConditionalCssResource> conditionalCss = new ArrayList<>();
     private List<FrontendModule> modules = new ArrayList<>();
 
     private MergedJavaScriptBuilder scriptBuilder = new MergedJavaScriptBuilder();
@@ -72,6 +76,17 @@ public class FrontendConfigurator {
 
     public FrontendConfigurator withModules(FrontendModule... frontendModules) {
         this.modules.addAll(asList(frontendModules));
+        return this;
+    }
+
+    public FrontendConfigurator addConditionalJavascript(ConditionalJavascriptResource... items) {
+        conditionalJavascripts.addAll(asList(items));
+        return this;
+    }
+
+
+    public FrontendConfigurator addConditionalCss(ConditionalCssResource... items) {
+        conditionalCss.addAll(asList(items));
         return this;
     }
 
@@ -134,8 +149,10 @@ public class FrontendConfigurator {
         configurePriorityCss(application);
         configureLess(application);
         configureCss(application);
+        configureConditionalCss(application);
         configureJquery(application);
         configureJavascript(application);
+        configureConditionalJavascript(application);
         configureImages(application);
         configureResourcePacking(application);
     }
@@ -146,7 +163,9 @@ public class FrontendConfigurator {
         Collections.reverse(reversedModules);
         for (FrontendModule module : reversedModules) {
             jsReferences.addAll(0, asList(module.getScripts()));
+	        conditionalJavascripts.addAll(0, asList(module.getConditionalScripts()));
             cssReferences.addAll(0, asList(module.getStylesheets()));
+	        conditionalCss.addAll(0, asList(module.getConditionalCss()));
             imgReferences.addAll(0, asList(module.getImages()));
             lessReferences.addAll(0, asList(module.getLess()));
         }
@@ -180,6 +199,40 @@ public class FrontendConfigurator {
                 @Override
                 public void renderHead(IHeaderResponse response) {
                     response.render(metaTag);
+                }
+            });
+        }
+    }
+
+
+    private void configureConditionalJavascript(WebApplication application) {
+        for (final ConditionalJavascriptResource item : conditionalJavascripts) {
+            application.mountResource(basePath + "/js/" + item.getReference().getName(), item.getReference());
+            application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+                @Override
+                public void renderHead(IHeaderResponse response) {
+                    // Rendrer ikke conditional js på ajax request da dette feiler i IE og ellers konkateneres unødvendig til siden.
+                    // All js har blitt rendret på siden i alle tilfeller, og vil ikke bli lagt til på ajax-request
+                    if(RequestCycle.get().find(AjaxRequestTarget.class) == null) {
+                        response.render(item);
+                    }
+                }
+            });
+        }
+    }
+
+
+    private void configureConditionalCss(WebApplication application) {
+        for (final ConditionalCssResource item : conditionalCss) {
+            application.mountResource(basePath + "/css/" + item.getReference().getName(), item.getReference());
+            application.getHeaderContributorListenerCollection().add(new IHeaderContributor() {
+                @Override
+                public void renderHead(IHeaderResponse response) {
+                    // Rendrer ikke conditional css på ajax request da dette feiler i IE og ellers konkateneres unødvendig til siden.
+                    // All css har blitt rendret på siden i alle tilfeller.
+                    if(RequestCycle.get().find(AjaxRequestTarget.class) == null) {
+                        response.render(item);
+                    }
                 }
             });
         }
