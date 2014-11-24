@@ -9,12 +9,14 @@
         "img/appres/legacy/tooltip/", "img/appres/legacy/tooltip/hjelpetekst/", "img/appres/legacy/venstremeny/",
 		"js/",
 		"js/nav_frontend/", "js/nav_frontend/libs/", "js/nav_frontend/libs/jquery/", "js/nav_frontend/libs/jquery/plugins/", "js/nav_frontend/libs/megamenu/",
+		"js/nav_extra/",
 		"js/enonic/", "js/enonic/navno/", "js/enonic/skjemaveileder/",
         "js/appres/",
 		"less/",
 		"less/nav_frontend/", "less/nav_frontend/includes/",
+		"less/nav_extra/",
 		"less/navno/", "less/navno/includes/",
-        "less/appres/", "less/appres/includes"
+        "less/appres/", "less/appres/includes/"
 	],
 
 	"copyFolders"  : [
@@ -23,6 +25,9 @@
 		{ "fromDir": "/resources/js/nav_frontend/libs/jquery/", "toDir": "/generated-resources/js/nav_frontend/libs/jquery/" },
 		{ "fromDir": "/resources/js/nav_frontend/libs/jquery/plugins/", "toDir": "/generated-resources/js/nav_frontend/libs/jquery/plugins/" },
 		{ "fromDir": "/resources/js/nav_frontend/libs/megamenu/", "toDir": "/generated-resources/js/nav_frontend/libs/megamenu/" },
+
+		{ "fromDir": "/resources/js/nav_extra/", "toDir": "/generated-resources/js/nav_extra/" },
+		{ "fromDir": "/resources/less/nav_extra/", "toDir": "/generated-resources/less/nav_extra/" },
 
 		{ "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/enonic/navno/" },
 		{ "fromDir": "/resources/js/enonic/skjemaveileder/", "toDir": "/generated-resources/js/enonic/skjemaveileder/" },
@@ -73,9 +78,6 @@
     ],
 
 	"concatFiles": [
-		{ "fromDir": "/resources/js/nav_frontend/", "toFile": "/generated-resources/js/nav_frontend/nav_frontend.js",
-			"files": ["transitions.js", "felles.js", "dropdown.js", "tooltip.js", "AjaxLoader.js"] },
-
         { "fromDir": "/generated-resources/js/appres/", "toFile": "/generated-resources/js/appres/app-legacy-concat.js",
             "files": ["jquery-1.11.1.js"] },
 
@@ -94,8 +96,6 @@
 
 
 	"uglify": [
-		{ "fromFile": "/generated-resources/js/nav_frontend/nav_frontend.js", "toFile": "/generated-resources/js/nav_frontend/nav_frontend.min.js" },
-
 		{ "fromFile": "/generated-resources/js/enonic/navno/navno-concat.js", "toFile": "/generated-resources/js/enonic/navno/navno.min.js" },
 		{ "fromFile": "/generated-resources/js/nav_frontend/innloggingslinjen.js", "toFile": "/generated-resources/js/enonic/navno/innloggingslinjen.min.js" },
         { "fromFile": "/generated-resources/js/enonic/navno/nav-klage-ris-ros.js", "toFile": "/generated-resources/js/enonic/navno/nav-klage-ris-ros.min.js" },
