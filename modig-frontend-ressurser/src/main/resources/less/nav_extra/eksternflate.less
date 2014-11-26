@@ -1,98 +1,3 @@
-.omslag {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -142px;
-	.fyllut {
-		height: 142px;
-	}
-}
-
-.liste-vannrett {
-	display: inline-block;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-	li {
-		float: left;
-		&:not([class*="dropdown"]) {
-			margin-top: 12px;
-			&:before {
-				color: @gray-light;
-				content: "•";
-				list-style-type: none;
-				padding: 0 0.4rem;
-			}
-			&:first-child:before {
-				content: none;
-			}
-			a {
-				text-decoration: none;
-				padding: 0.6rem 0.5rem 0.6rem;
-			}
-		}
-	}
-	.dropdown {
-		float: left;
-		+ li {
-			a:before {
-				content: "";
-			}
-		}
-		.dropdown-menu {
-			li {
-				float: none;
-				margin: 0;
-				text-align: left;
-				&.active a {
-					color: @white;
-				}
-				a {
-					color: @gray-dark;
-					&:before {
-						content: "";
-					}
-					&:hover {
-						color: @white;
-					}
-				}
-			}
-		}
-	}
-}
-
-.stegindikator {
-	display: table;
-	list-style: none;
-	margin: 10px auto 0;
-	padding: 0;
-	background: url(../img/stripe-ccc.png) repeat-x center center;
-
-	li {
-		display: block;
-		float: left;
-		margin-right: 20px;
-		&:last-child {
-			margin-right: 0;
-		}
-		&.aktiv a {
-			background: @red;
-			color: @white;
-		}
-
-		a {
-			display: block;
-			position: relative;
-			padding: 10px 30px;
-			border: 1px solid @gray-lighter;
-			background: @white;
-			color: @gray-dark;
-			text-decoration: none;
-			text-transform: uppercase;
-		}
-	}
-}
-
 .begrensning {
 	width: 960px;
 	margin: 0 auto;
@@ -227,9 +132,6 @@
 @media only screen and (max-width: 480px) {
 	.diger {
 		font-size: 1.4rem;
-	}
-	.rad-logo {
-		display: none;
 	}
 	.rad {
 		padding: 5px;

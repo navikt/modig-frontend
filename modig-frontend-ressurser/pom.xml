@@ -34,7 +34,7 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
-                <directory>src/main/generated-resources/css/enonic</directory>
+                <directory>src/main/generated-resources/css/appres</directory>
                 <targetPath>css/enonic</targetPath>
             </resource>
             <resource>

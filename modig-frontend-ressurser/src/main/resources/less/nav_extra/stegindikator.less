@@ -1,0 +1,31 @@
+.stegindikator {
+	display: table;
+	list-style: none;
+	margin: 10px auto 0;
+	padding: 0;
+	background: url(../img/stripe-ccc.png) repeat-x center center;
+
+	li {
+		display: block;
+		float: left;
+		margin-right: 20px;
+		&:last-child {
+			margin-right: 0;
+		}
+		&.aktiv a {
+			background: @red;
+			color: @white;
+		}
+
+		a {
+			display: block;
+			position: relative;
+			padding: 10px 30px;
+			border: 1px solid @gray-lighter;
+			background: @white;
+			color: @gray-dark;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+}
