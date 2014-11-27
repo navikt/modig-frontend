@@ -8,14 +8,13 @@
 	text-decoration: none;
 	font-family: Modus, Arial, Helvetica, sans-serif;
 	font-weight: 600;
-	font-size: 1.14rem;
+	font-size: @rem-as-18px;
 	vertical-align: middle;
-	.border-radius(1px);
+	border-radius: 1px;
 	border: 1px solid @gray-lighter;
 	border-bottom: 1px solid #b6b6b6;
 	.buttonBackground(@btn-background, #d2d2d2, @gray-dark);
 	&:hover, &:focus {
-		.buttonBackground(#d3d3d3, #c3c3c3, @gray-dark);
 		text-decoration: none;
 	}
 	.pil {
@@ -29,7 +28,24 @@
 	}
 }
 
-[class*=knapp-hoved], [class*=knapp-nullstill] {
+.dropdown-toggle {
+	&:hover, &:focus {
+		.buttonBackground(#d3d3d3, #c3c3c3, @gray-dark);
+	}
+}
+
+[class*=knapp-][class*=-liten] {
+	padding: 5px 20px 6px;
+	font-size: @rem-as-14px;
+	line-height: 1.4rem;
+}
+
+[class*=knapp-][class*=-mini] {
+	padding: .3rem .8rem;
+	font-size: @rem-as-12px;
+}
+
+.knapp-hoved {
 	.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
 	&:hover, &:focus {
 		.buttonBackground(darken(@btn-primary-background, 10%), darken(@btn-primary-background-highlight, 10%), #fff);
@@ -50,10 +66,10 @@
 [class*=knapp-lenke] {
 	padding: 0 0 0 2rem;
 	background: none;
-    color: @blue-light;
-    border: none;
-    font-weight: bold;
-    text-transform: none;
+	color: @blue-light;
+	border: none;
+	font-weight: bold;
+	text-transform: none;
 	&:hover, &:focus {
 		border-color: none;
 		background: none;
@@ -62,34 +78,21 @@
 	}
 }
 
-
-
-[class*=-liten] {
-	padding: 5px 20px 6px;
-	font-size: @rem-as-14px;
-	line-height: 1.4rem;
-}
-
-[class*=-mini] {
-	padding: .3rem .8rem;
-	font-size: @rem-as-12px;
-}
-
-[class*=knapp-uthevet] {
+.knapp-uthevet {
 	.buttonBackground(@btn-inverse-background, @btn-primary-background-highlight);
 	&:hover, &:focus {
 		.buttonBackground(#635e5f, #504e4a, #fff);
 	}
 }
 
-[class*=knapp-advarsel] {
+.knapp-advarsel {
 	.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
 	&:hover, &:focus {
 		.buttonBackground(darken(@btn-danger-background, 10%), darken(@btn-danger-background-highlight, 10%), #fff);
 	}
 }
 
-[class*=knapp-deaktivert],[class*=knapp-][disabled=disabled] {
+.knapp-deaktivert, [class*=knapp-][disabled=disabled] {
 	.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
 	cursor: default;
 	&:hover, &:focus {

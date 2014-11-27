@@ -54,7 +54,7 @@ public class FrontendModules {
     public static final FrontendModule DROPDOWNS_LESS = new FrontendModule.With().less(NavExtraResources.DROPDOWNS_LESS_RESOURCE).done();
     public static final FrontendModule KNAPPER_LESS = new FrontendModule.With().less(NavExtraResources.KNAPPER_LESS_RESOURCE).done();
     public static final FrontendModule WICKET_MODAL_WINDOW = new FrontendModule.With().less(NavExtraResources.WICKET_MODAL_WINDOW_RESOURCE).done();
-    public static final FrontendModule PANEL_LESS = new FrontendModule.With().less(NavExtraResources.PANEL_LESS_RESOURCE).done();
+    public static final FrontendModule MODIG_GRID_LESS = new FrontendModule.With().less(NavExtraResources.MODIG_GRID_LESS_RESOURCE).done();
     public static final FrontendModule SKJEMA_LESS = new FrontendModule.With().less(NavExtraResources.SKJEMA_LESS_RESOURCE).done();
     public static final FrontendModule TOOLTIP_LESS = new FrontendModule.With().less(NavExtraResources.TOOLTIP_LESS_RESOURCE).done();
 
