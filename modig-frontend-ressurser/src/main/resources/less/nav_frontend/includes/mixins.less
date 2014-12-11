@@ -560,6 +560,14 @@
 	width: @container-desktop;
 }
 
+.fixed-outer-container-mixin() when (@responsive = false) {
+	// For å unngå "clipping" / disappearing content ved horisontal scroll, når fixed width.
+	.fixed-outer-container,
+	.sitefooter,
+	.pagewrapper {
+		min-width: @container-desktop;
+	}
+}
 
 // Grid System
 // -----------
