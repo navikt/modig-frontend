@@ -1,5 +1,5 @@
 .rad {
-	padding: 30px;
+	padding: 20px 0;
 	border-bottom: 1px solid @gray-lighter;
 	.invertert {
 		background-color: @gray-darker;
@@ -8,44 +8,53 @@
 			color: @gray-light;
 		}
 	}
+	.begrensning {
+		width: auto;
+		margin: 0 20px;
+		text-align: center;
+	}
+	&.belyst {
+		background: #fff;
+	}
 }
 
-.begrensning {
-	width: 960px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-[class*="sak-"] [class*="panel-"] {
-	margin-right: 2%;
-}
-
-[class*="sak-"] [class*="panel-"]:last-child {
-	margin-right: 0;
-}
-
-.sak-kvart [class*="panel-"] {
-	width: 23%;
-}
-
-.sak-tredel [class*="panel-"] {
-	width: 31.3333%;
-}
-
-.sak-halv [class*="panel-"] {
-	width: 48%;
-}
-
-.sak-totredel [class*="panel-"] {
-	width: 64.6666%;
-}
-
-.sak-trekvart [class*="panel-"] {
-	width: 73%;
-}
-
-.sak-hel [class*="panel-"] {
-	width: 100%;
+.sak {
+	.panel {
+		margin-right: 2%;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&.kvart {
+		.panel {
+			width: 23%;
+		}
+	}
+	&.tredel {
+		.panel {
+			width: 31.3333%;
+		}
+	}
+	&.halv {
+		.panel {
+			width: 48%;
+		}
+	}
+	&.totredel {
+		.panel {
+			width: 64.6666%;
+		}
+	}
+	&.trekvart {
+		.panel {
+			width: 73%;
+		}
+	}
+	&.hel {
+		.panel {
+			width: 100%;
+		}
+	}
 }
 
 

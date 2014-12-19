@@ -29,21 +29,33 @@
 				background-color: transparent;
 			}
 		}
-		&.aktiv .steg {
-			background: @red;
-			color: @white;
-		}
-		.steg {
+		&.steg {
 			display: block;
 			position: relative;
-			padding: 10px 30px;
+			padding: 8px 12px;
 			border: 1px solid @gray-lighter;
 			background: @white;
 			color: @gray-dark;
 			text-decoration: none;
 			text-transform: uppercase;
 			font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-size: 1rem;
+			font-size: 0.9rem;
+			&.aktiv {
+				padding: 8px 24px;
+				background: @red;
+				color: @white;
+			}
+		}
+	}
+}
+
+@media (min-width: 62em) {
+	// 992px
+	.stegindikator li.steg {
+		padding: 10px 50px;
+		font-size: 1rem;
+		&.aktiv {
+			padding: 10px 50px;
 		}
 	}
 }

@@ -1,19 +1,23 @@
-.panel-mini {
-	text-align: center;
-	padding: 1.5% 2% 3%;
-	border: 1px solid @gray;
-}
-
-.panel-standard {
-	text-align: left;
-	border: none;
-	&.belyst {
-		padding: 1.5% 2% 1.5% 3%;
+.panel {
+	&.mini {
+		text-align: center;
+		padding: 1.5% 4% 5%;
+		border: 1px solid @gray;
 	}
-}
-
-.belyst {
-	background: @white;
+	&.standard {
+		text-align: left;
+		border: none;
+		&.belyst {
+			padding: 1.5% 4% 6% 5%;
+		}
+		.panelheading {
+			font-size: @rem-as-14px;
+			font-weight: bold;
+		}
+	}
+	&.belyst {
+		background: @white;
+	}
 }
 
 .informasjonsboks {
@@ -33,12 +37,10 @@
 	h1, p {
 		color: @white;
 	}
-
 	p {
 		margin-bottom: 30px;
 	}
-
-	.knapp-info {
+	.knapp .info {
 		color: @white;
 		background: @gray-dark;
 		border: 1px solid #675c53;
@@ -48,8 +50,7 @@
 			color: @white;
 		}
 	}
-
-	[class*="knapp"]:first-of-type + a {
+	.knapp:first-of-type + a {
 		margin-left: 30px;
 	}
 }
@@ -87,58 +88,50 @@
 	.begrensning {
 		width: 90%;
 	}
-	.sak-kvart [class*="panel-"] {
+	.sak-kvart .panel {
 		width: 51%;
 	}
-	.sak-tredel [class*="panel-"] {
+	.sak-tredel .panel {
 		width: 55%;
 	}
-	.sak-halv [class*="panel-"] {
+
+	.sak-halv .panel {
 		width: 65%;
 	}
-	.sak-totredel [class*="panel-"] {
+
+	.sak-totredel .panel {
 		width: 75%;
 	}
-	.sak-trekvart [class*="panel-"] {
+
+	.sak-trekvart .panel {
 		width: 80%;
 	}
-	.sak-hel [class*="panel-"] {
+
+	.sak-hel .panel {
 		width: 100%;
 	}
-	footer.footer {
-		padding: 20px 20px 10px;
-		ul.fotlenker {
-			li {
-				float: none;
-				line-height: 1.8rem;
-				a:before {
-					content: normal;
-				}
-			}
+
+	.informasjonsboks {
+		position: fixed;
+		top: 10px !important;
+		bottom: 10px !important;
+		right: 10px !important;
+		left: 10px !important;
+		width: auto;
+		z-index: 1050;
+
+		h1 {
+			font-size: 24px;
+			margin-top: 15px;
+		}
+
+		.knapp:first-of-type + a {
+			display: block;
+			margin-left: 0;
+			margin-top: 20px;
+			color: #00a9e0;
 		}
 	}
-
-    .informasjonsboks {
-        position: fixed;
-        top: 10px !important;
-        bottom: 10px !important;
-        right: 10px !important;
-        left: 10px !important;
-        width: auto;
-        z-index: 1050;
-
-        h1 {
-            font-size: 24px;
-            margin-top: 15px;
-        }
-
-        [class*="knapp"]:first-of-type + a {
-            display: block;
-            margin-left: 0;
-            margin-top: 20px;
-            color: #00a9e0;
-        }
-    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -151,30 +144,24 @@
 	.begrensning {
 		width: 100%;
 	}
-	[class*="sak-"] [class*="panel-"] {
+	.sak .panel {
 		width: 100%;
-	}
-	footer.footer {
-		padding: 10px 10px 5px;
 	}
 }
 
 .feilside {
-    .diger {
-      color: rgb(167, 167, 167);
-    }
-
-    .luftig-horisontalt {
-      margin-left: 1em;
-      margin-right: 1em;
-    }
-
-    .luftig-vertikalt {
-      margin-top: 2em;
-      margin-bottom: 2em;
-    }
-
-    .panel-mini {
-      color: rgb(128, 128, 128);
-    }
+	.diger {
+		color: rgb(167, 167, 167);
+	}
+	.luftig-horisontalt {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	.luftig-vertikalt {
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+	.panel .mini {
+		color: rgb(128, 128, 128);
+	}
 }

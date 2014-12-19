@@ -1,4 +1,4 @@
-[class*=knapp-], .dropdown-toggle {
+.knapp, .dropdown-toggle {
 	display: inline-block;
 	color: @gray-dark;
 	cursor: pointer;
@@ -34,68 +34,53 @@
 	}
 }
 
-[class*=knapp-][class*=-liten] {
-	padding: 5px 20px 6px;
-	font-size: @rem-as-14px;
-	line-height: 1.4rem;
-}
-
-[class*=knapp-][class*=-mini] {
-	padding: .3rem .8rem;
-	font-size: @rem-as-12px;
-}
-
-.knapp-hoved {
-	.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
-	&:hover, &:focus {
-		.buttonBackground(darken(@btn-primary-background, 10%), darken(@btn-primary-background-highlight, 10%), #fff);
+.knapp {
+	&.liten {
+		padding: 5px 20px 6px;
+		font-size: @rem-as-14px;
+		line-height: 1.4rem;
 	}
-}
-
-[class*=knapp-link] {
-	border-color: @blue;
-	background: @blue;
-	color: @white;
-	&:hover, &:focus {
-		border-color: @blue-dark;
-		background: @blue-dark;
-		color: @white;
+	&.mini {
+		padding: .3rem .8rem;
+		font-size: @rem-as-12px;
 	}
-}
-
-[class*=knapp-lenke] {
-	padding: 0 0 0 2rem;
-	background: none;
-	color: @blue-light;
-	border: none;
-	font-weight: bold;
-	text-transform: none;
-	&:hover, &:focus {
-		border-color: none;
+	&.hoved {
+		.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
+		&:hover, &:focus {
+			.buttonBackground(darken(@btn-primary-background, 10%), darken(@btn-primary-background-highlight, 10%), #fff);
+		}
+	}
+	&.lenke {
 		background: none;
-		text-decoration: underline;
-		color: @blue-light;
+		color: @blue-dark;
+		border: none;
+		font-weight: bold;
+		text-transform: none;
+		&:hover, &:focus {
+			border-color: transparent;
+			background: none;
+			text-decoration: underline;
+			color: @blue-dark;
+		}
 	}
-}
-
-.knapp-uthevet {
-	.buttonBackground(@btn-inverse-background, @btn-primary-background-highlight);
-	&:hover, &:focus {
-		.buttonBackground(#635e5f, #504e4a, #fff);
+	&.uthevet {
+		.buttonBackground(@btn-inverse-background, @btn-primary-background-highlight);
+		&:hover, &:focus {
+			.buttonBackground(#635e5f, #504e4a, #fff);
+		}
 	}
-}
-
-.knapp-advarsel {
-	.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
-	&:hover, &:focus {
-		.buttonBackground(darken(@btn-danger-background, 10%), darken(@btn-danger-background-highlight, 10%), #fff);
+	&.advarsel {
+		.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
+		&:hover, &:focus {
+			.buttonBackground(darken(@btn-danger-background, 10%), darken(@btn-danger-background-highlight, 10%), #fff);
+		}
 	}
-}
-
-.knapp-deaktivert, [class*=knapp-][disabled=disabled] {
-	.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
-	cursor: default;
-	&:hover, &:focus {
+	&.deaktivert, &[disabled=disabled] {
 		.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
+		cursor: default;
+		&:hover, &:focus {
+			.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
+		}
 	}
 }
+

@@ -9,8 +9,8 @@
 
 	<parent>
 		<groupId>no.nav.sbl</groupId>
-		<artifactId>nav-sbl-main</artifactId>
-		<version>3.7</version>
+		<artifactId>mor-pom</artifactId>
+		<version>2</version>
 	</parent>
 
 	<name>${project.artifactId}</name>

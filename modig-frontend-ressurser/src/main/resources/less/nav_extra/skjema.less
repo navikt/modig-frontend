@@ -5,9 +5,9 @@
 			border: 1px solid #fca292;
 			border-top: 1px solid @red;
 		}
-        input:not([type="submit"]) {
-            background-color: red;
-        }
+		input:not([type="submit"]) {
+			background-color: red;
+		}
 		.melding {
 			color: @red;
 			text-transform: none;
@@ -19,14 +19,12 @@ form, [ng-form], [data-ng-form] {
 	margin: 0;
 	text-align: left;
 	label {
-		font-size: 0.85rem;
-        margin-bottom: 8px;
-        &:last-child {
-            margin-bottom: 0;
-        }
+		font-size: @rem-as-14px;
+		&:last-child {
+			margin-bottom: 0;
+		}
 		span {
 			font-size: 0.85rem;
-            margin-bottom: 8px;
 		}
 	}
 	input[type="radio"],
@@ -67,23 +65,23 @@ form, [ng-form], [data-ng-form] {
 		background: url(../img/check_inactive_valgt.svg) 0 0 no-repeat;
 	}
 
-    input[type=checkbox].bryter {
-      height: 0;
-      width: 0;
-      &+label {
-        background: url(../img/bryter.svg) 0 0 no-repeat;
-        height: 32px;
-        color: #333333;
-        margin: 0 0 0.75em;
-        padding: 7px 0 0 65px;
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-      &:checked + label {
-        background: url(../img/bryter_valgt.svg) 0 0 no-repeat;
-      }
-    }
+	input[type=checkbox].bryter {
+		height: 0;
+		width: 0;
+		& + label {
+			background: url(../img/bryter.svg) 0 0 no-repeat;
+			height: 32px;
+			color: #333;
+			margin: 0 0 0.75em;
+			padding: 7px 0 0 65px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&:checked + label {
+			background: url(../img/bryter_valgt.svg) 0 0 no-repeat;
+		}
+	}
 
 	input[type="radio"] + label,
 	input[type="checkbox"] + label {
@@ -94,7 +92,7 @@ form, [ng-form], [data-ng-form] {
 		margin-right: 1rem;
 		font-family: @font-family-sans-serif;
 		font-size: 1rem;
-        text-transform: none;
+		text-transform: none;
 	}
 
 	input[type="radio"]:checked + label,
@@ -170,7 +168,6 @@ form, [ng-form], [data-ng-form] {
 		label {
 			padding: 0;
 			width: 9rem;
-			margin: 0 8px 0 0;
 			input {
 				width: 100%;
 			}
@@ -261,14 +258,14 @@ input[type="color"] {
 	&:focus {
 		border-color: rgba(82, 168, 236, .8);
 		outline: 0;
-		outline: thin dotted        \9; /* IE6-9 */
+		outline: thin dotted \9; /* IE6-9 */
 	}
 
 	// Position radios and checkboxes better
 	input[type="radio"],
 	input[type="checkbox"] {
 		margin: 4px 0 0;
-		margin-top: 1px        \9; /* IE8-9 */
+		margin-top: 1px \9; /* IE8-9 */
 		line-height: normal;
 	}
 

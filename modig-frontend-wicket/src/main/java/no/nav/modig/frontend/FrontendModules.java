@@ -23,6 +23,7 @@ import static no.nav.modig.frontend.NavFrontendResources.MODERNIZR_RESOURCE;
 import static no.nav.modig.frontend.NavFrontendResources.MODUS_LESS_RESOURCE;
 import static no.nav.modig.frontend.NavFrontendResources.NAV_GLOBAL_RESOURCE;
 import static no.nav.modig.frontend.NavFrontendResources.NORMALIZE_LESS_RESOURCE;
+import static no.nav.modig.frontend.NavFrontendResources.SCAFFOLDING_LESS_RESOURCE;
 import static no.nav.modig.frontend.NavFrontendResources.SITEFOOTER_ALPHABET_LESS_RESOURCE;
 import static no.nav.modig.frontend.NavFrontendResources.SITEFOOTER_LESS_RESOURCE;
 import static no.nav.modig.frontend.NavFrontendResources.SITEHEADER_LESS_RESOURCE;
@@ -36,7 +37,7 @@ public class FrontendModules {
     public static final FrontendModule NAV_FRONTEND = new FrontendModule.With()
             .scripts(MODERNIZR_RESOURCE, NAV_GLOBAL_RESOURCE, MATCH_MEDIA_RESOURCE, JQUERY_MEGA_MENU_RESOURCE, INNLOGGING_RESOURCE)
             .less(NORMALIZE_LESS_RESOURCE, VARIABLES_LESS_RESOURCE, MIXINS_LESS_RESOURCE, MODUS_LESS_RESOURCE, TYPOGRAPHY_LESS_RESOURCE,
-                    GRID_LESS_RESOURCE, MEGAMENU_LESS_RESOURCE, SITEHEADER_LESS_RESOURCE, SITEFOOTER_LESS_RESOURCE,
+                    GRID_LESS_RESOURCE, MEGAMENU_LESS_RESOURCE, SCAFFOLDING_LESS_RESOURCE, SITEHEADER_LESS_RESOURCE, SITEFOOTER_LESS_RESOURCE,
                     SITEFOOTER_ALPHABET_LESS_RESOURCE, UTILITIES_LESS_RESOURCE, CONTRAST_LESS_RESOURCE)
             .done();
 
