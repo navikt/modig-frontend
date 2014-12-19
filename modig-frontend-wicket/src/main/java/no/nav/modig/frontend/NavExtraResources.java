@@ -16,7 +16,7 @@ public class NavExtraResources {
    	static final PackageResourceReference EKSTERNFLATE_LESS_RESOURCE = lessReference("nav_extra/eksternflate.less");
    	static final PackageResourceReference STEGINDIKATOR_LESS_RESOURCE = lessReference("nav_extra/stegindikator.less");
    	static final PackageResourceReference DATEPICKER_LESS_RESOURCE = lessReference("nav_extra/datepicker.less");
-    static final PackageResourceReference DROPDOWNS_LESS_RESOURCE = lessReference("nav_extra/dropdowns.less");
+    static final PackageResourceReference DROPDOWN_LESS_RESOURCE = lessReference("nav_extra/dropdown.less");
     static final PackageResourceReference KNAPPER_LESS_RESOURCE = lessReference("nav_extra/knapper.less");
    	static final PackageResourceReference WICKET_MODAL_WINDOW_RESOURCE = lessReference("nav_extra/modal.less");
     static final PackageResourceReference MODIG_GRID_LESS_RESOURCE = lessReference("nav_extra/modig-grid.less");

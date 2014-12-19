@@ -2,7 +2,7 @@ package no.nav.modig.frontend;
 
 import static no.nav.modig.frontend.NavExtraResources.AJAX_LOADER_RESOURCE;
 import static no.nav.modig.frontend.NavExtraResources.DATEPICKER_LESS_RESOURCE;
-import static no.nav.modig.frontend.NavExtraResources.DROPDOWNS_LESS_RESOURCE;
+import static no.nav.modig.frontend.NavExtraResources.DROPDOWN_LESS_RESOURCE;
 import static no.nav.modig.frontend.NavExtraResources.DROPDOWN_RESOURCE;
 import static no.nav.modig.frontend.NavExtraResources.JQUERY_UI_DATEPICKER_RESOURCE;
 import static no.nav.modig.frontend.NavExtraResources.KNAPPER_LESS_RESOURCE;
@@ -45,14 +45,14 @@ public class FrontendModules {
 			.scripts(TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, AJAX_LOADER_RESOURCE, JQUERY_UI_DATEPICKER_RESOURCE,
                     JQUERY_VALIDATE_RESOURCE)
 			.less(NORMALIZE_LESS_RESOURCE, VARIABLES_LESS_RESOURCE, MIXINS_LESS_RESOURCE, MODUS_LESS_RESOURCE, TYPOGRAPHY_LESS_RESOURCE,
-                    WICKET_MODAL_WINDOW_RESOURCE, KNAPPER_LESS_RESOURCE, DROPDOWNS_LESS_RESOURCE, SKJEMA_LESS_RESOURCE, TOOLTIP_LESS_RESOURCE,
+                    WICKET_MODAL_WINDOW_RESOURCE, KNAPPER_LESS_RESOURCE, DROPDOWN_LESS_RESOURCE, SKJEMA_LESS_RESOURCE, TOOLTIP_LESS_RESOURCE,
                     DATEPICKER_LESS_RESOURCE, UTILITIES_LESS_RESOURCE).done();
 
     public static final FrontendModule EKSTERNFLATE = new FrontendModule.With().less(NavExtraResources.EKSTERNFLATE_LESS_RESOURCE).done();
     public static final FrontendModule STEGINDIKATOR = new FrontendModule.With().less(NavExtraResources.STEGINDIKATOR_LESS_RESOURCE).done();
     public static final FrontendModule AJAX_LOADER = new FrontendModule.With().less(NavExtraResources.AJAX_LOADER_RESOURCE).done();
     public static final FrontendModule DATEPICKER_LESS = new FrontendModule.With().less(NavExtraResources.DATEPICKER_LESS_RESOURCE).done();
-    public static final FrontendModule DROPDOWNS_LESS = new FrontendModule.With().less(NavExtraResources.DROPDOWNS_LESS_RESOURCE).done();
+    public static final FrontendModule DROPDOWNS_LESS = new FrontendModule.With().less(NavExtraResources.DROPDOWN_LESS_RESOURCE).done();
     public static final FrontendModule KNAPPER_LESS = new FrontendModule.With().less(NavExtraResources.KNAPPER_LESS_RESOURCE).done();
     public static final FrontendModule WICKET_MODAL_WINDOW = new FrontendModule.With().less(NavExtraResources.WICKET_MODAL_WINDOW_RESOURCE).done();
     public static final FrontendModule MODIG_GRID_LESS = new FrontendModule.With().less(NavExtraResources.MODIG_GRID_LESS_RESOURCE).done();
