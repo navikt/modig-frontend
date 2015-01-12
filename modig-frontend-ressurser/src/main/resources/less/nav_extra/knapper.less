@@ -1,40 +1,10 @@
-.knapp, .dropdown-toggle {
-	display: inline-block;
-	color: @gray-dark;
-	cursor: pointer;
-	padding: 11px 40px;
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	font-family: Modus, Arial, Helvetica, sans-serif;
-	font-weight: 600;
-	font-size: @rem-as-18px;
-	vertical-align: middle;
-	border-radius: 1px;
-	border: 1px solid @gray-lighter;
-	border-bottom: 1px solid #b6b6b6;
-	.buttonBackground(@btn-background, #d2d2d2, @gray-dark);
-	&:hover, &:focus {
-		text-decoration: none;
-	}
-	.pil {
-		display: inline-block;
-		vertical-align: top;
-		margin: 6px -4px 0 2px;
-		border-top: 6px solid @blue-light;
-		border-right: 6px solid transparent;
-		border-left: 6px solid transparent;
-		content: "";
-	}
-}
-
-.dropdown-toggle {
-	&:hover, &:focus {
-		.buttonBackground(#d3d3d3, #c3c3c3, @gray-dark);
-	}
-}
-
 .knapp {
+	font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border: 1px solid @gray-lighter;
+	.buttonBackground(@gray-lightest, darken(@gray-lightest, 10%), @text-color);
+	&:hover, &:focus {
+		.buttonBackground(darken(@gray-lightest, 5%), darken(@gray-lightest, 15%), @text-color);
+	}
 	&.liten {
 		padding: 5px 20px 6px;
 		font-size: @rem-as-14px;
@@ -45,6 +15,7 @@
 		font-size: @rem-as-12px;
 	}
 	&.hoved {
+		border: 1px solid @blue-dark;
 		.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
 		&:hover, &:focus {
 			.buttonBackground(darken(@btn-primary-background, 10%), darken(@btn-primary-background-highlight, 10%), #fff);
@@ -81,6 +52,12 @@
 		&:hover, &:focus {
 			.buttonBackground(@btn-background, #d9d9d9, #a3a3a3);
 		}
+	}
+	&.dropdown-toggle {
+		display: inline-block;
+		cursor: pointer;
+		padding-left: 10px;
+		text-transform: uppercase;
 	}
 }
 

@@ -22,6 +22,7 @@ public class NavExtraResources {
     static final PackageResourceReference MODIG_GRID_LESS_RESOURCE = lessReference("nav_extra/modig-grid.less");
    	static final PackageResourceReference SKJEMA_LESS_RESOURCE = lessReference("nav_extra/skjema.less");
     static final PackageResourceReference TOOLTIP_LESS_RESOURCE = lessReference("nav_extra/tooltip.less");
+    static final PackageResourceReference TABLES_LESS_RESOURCE = lessReference("nav_extra/tables.less");
 
     private static PackageResourceReference lessReference(String path) {
    		return new PackageResourceReference(LessResourceMarker.class, path);
