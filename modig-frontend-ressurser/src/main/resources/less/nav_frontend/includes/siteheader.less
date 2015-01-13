@@ -70,7 +70,7 @@
 
 	@media (min-width: (@screen-medium + 0.0625em)) {
 
-      .siteheader-toolbar-and-login-defaults();
+		.siteheader-toolbar-and-login-defaults();
 
 		.sitelogo-large {
 			display: block;
@@ -94,31 +94,33 @@
 			.settings .nav {
 				margin-left: 0; // oversyr negativ margin på "language" (fra mindre flater)
 			}
-
 		}
 
-      // Todo textsize tooltip
-      .text-size-tooltip {
-          right:-11em;
-          span.arrow {
-            right:48%;
-          }
-      }
+		// Todo textsize tooltip
+		.text-size-tooltip {
+			right: -11em;
+			span.arrow {
+				right: 48%;
+			}
+		}
 
 		.login-container {
 			width: 30%;
 		}
 
-	} // media 60em end
+	}
+	// media 60em end
 
-} // mixin responsive true end
+}
+
+// mixin responsive true end
 
 .global-siteheader-toolbar() when (@responsive = false) {
 	// FOR IE8 og dekoratør!
 
-  .siteheader-toolbar-and-login-defaults();
+	.siteheader-toolbar-and-login-defaults();
 
-    .sitelogo-small {
+	.sitelogo-small {
 		display: none;
 	}
 	.login-container {
@@ -142,15 +144,14 @@
 		background: @gray-darker;
 		min-height: 42px;
 
-		a, .link-btn {
-			font-size: @rem-as-12px;
-			color: #fff;
-			padding: 1em 22px;
-		}
-
 		.settings {
 			display: inline-block;
 			width: 50%;
+			a, .link-btn {
+				font-size: @rem-as-12px;
+				color: #fff;
+				padding: 1em 22px;
+			}
 		}
 
 		.login-container {
@@ -204,110 +205,104 @@
 		}
 	}
 
+	.text-size-tooltip, .login-tooltip, .logout-tooltip {
+		padding: 16px 24px;
+		position: absolute;
+		background-color: #000000;
+		color: #ffffff;
+		z-index: 9;
+		text-align: left;
+		span.arrow {
+			.up-arrow(9px, 6px, 6px, #000000); // mixin
+			position: absolute;
+			top: -8px;
+		}
+	}
 
+	.login-tooltip, .logout-tooltip {
+		left: 25%;
+		top: 3em;
+		span.arrow {
+			right: 50%;
+		}
+	}
 
+	.text-size-tooltip {
+		width: 30em;
+		top: 2.5em;
+		//right:-11em;
+		span.arrow {
+			right: 85%; // mobile first. Endres på min-width.
+		}
+		p {
+			font-size: @rem-as-30px;
+			font-weight: bold;
+			margin: 0;
+		}
+	}
 
-  .text-size-tooltip, .login-tooltip, .logout-tooltip {
-    padding: 16px 24px;
-    position: absolute;
-    background-color: #000000;
-    color: #ffffff;
-    z-index: 9;
-    text-align: left;
-    span.arrow {
-      .up-arrow(9px, 6px, 6px, #000000); // mixin
-      position: absolute;
-      top: -8px;
-    }
-  }
+	#text-size-accessibility {
+		position: relative;
+	}
 
+	.logout-tooltip {
+		right: 0;
+		left: 0;
 
-  .login-tooltip, .logout-tooltip {
-    left: 25%;
-    top: 3em;
-    span.arrow {
-      right: 50%;
-    }
-  }
+		.lukk {
+			position: absolute;
+			top: -17px;
+			right: 6px;
+			width: 32px;
+			height: 32px;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			font-size: 2em;
+			text-decoration: none;
 
-  .text-size-tooltip {
-    width:30em;
-    top:2.5em;
-    //right:-11em;
-    span.arrow {
-      right:85%; // mobile first. Endres på min-width.
-    }
-    p {
-      font-size: @rem-as-30px;
-      font-weight: bold;
-      margin: 0;
-    }
-  }
+			&:hover {
+				color: #5dd0f9;
+			}
+		}
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+		p {
+			font-style: normal;
+			font-size: @rem-as-12px;
+		}
+		span {
+			right: 50%;
+		}
+	}
 
-  #text-size-accessibility {
-    position: relative;
-  }
+	.login-tooltip {
+		width: 55%;
+		left: 45%;
 
+		p {
+			margin: 0;
+			font-size: @rem-as-12px;
+		}
 
-  .logout-tooltip {
-    right: 0;
-    left: 0;
+		span.arrow {
+			right: 12%;
+		}
+	}
 
-    .lukk {
-      position: absolute;
-      top: -17px;
-      right: 6px;
-      width: 32px;
-      height: 32px;
-      background-color: transparent;
-      background-repeat: no-repeat;
-      font-size: 2em;
-      text-decoration: none;
+}
 
-      &:hover {
-        color: #5dd0f9;
-      }
-    }
-    p:last-of-type {
-      margin-bottom: 0;
-    }
-    p {
-      font-size: 1em;
-      font-style: normal;
-      font-size: @rem-as-12px;
-    }
-    span {
-      right: 50%;
-    }
-  }
-
-  .login-tooltip {
-    width: 55%;
-    left: 45%;
-
-    p {
-      margin: 0;
-      font-size: @rem-as-12px;
-    }
-
-    span.arrow {
-      right: 12%;
-    }
-  }
-
-} // mixin siteheader-toolbar-and-login-defaults end
-
-
+// mixin siteheader-toolbar-and-login-defaults end
 
 .sitelogo {
-  text-align: center;
-  padding: 15px 0 18px;
-  background-color: #fff;
-  border-bottom: 1px solid @gray-lighter;
-  a {
-    text-decoration: none;
-    display: inline-block;
-  }
+	text-align: center;
+	padding: 15px 0 18px;
+	background-color: #fff;
+	border-bottom: 1px solid @gray-lighter;
+	a {
+		text-decoration: none;
+		display: inline-block;
+	}
 }
 
 /*
@@ -316,8 +311,6 @@
 		right: 38%;
 	}
 }*/
-
-
 
 // Dropdown - fra collapse-dropdown.less
 //-------------------
@@ -344,10 +337,8 @@
 }
 
 .dropdown .caret {
-	margin-top: 6px;
-    margin-top:0.375rem;
-	margin-left: 4px;
-    margin-left:0.25rem;
+	margin-top: 0.375rem;
+	margin-left: 0.25rem;
 }
 
 .dropdown-menu {
