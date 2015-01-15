@@ -98,6 +98,7 @@ public class FrontendModules {
 
     public static final FrontendModule SPRAKVELGER = new FrontendModule.With()
             .less(NavExtraResources.SPRAKVELGER_LESS_RESOURCE)
+            .scripts(NavExtraResources.SPRAKVELGER_JS_RESOURCE)
             .done();
 
     public static final FrontendModule TRANSITIONS_JS = new FrontendModule.With()

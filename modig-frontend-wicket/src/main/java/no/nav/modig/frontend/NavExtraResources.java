@@ -6,12 +6,13 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 
 public class NavExtraResources {
 
-    static final JavaScriptResourceReference AJAX_LOADER_RESOURCE = new JQueryDependentResourceReference("nav_extra/AjaxLoader.js");
-    static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("nav_extra/dropdown.js");
-    static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("nav_extra/felles.js");
-    static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("nav_extra/tooltip.js");
-    static final JavaScriptResourceReference TRANSITIONS_RESOURCE = new JQueryDependentResourceReference("nav_extra/transitions.js");
     static final JavaScriptResourceReference JQUERY_UI_DATEPICKER_RESOURCE = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.11.1.custom.js");
+    static final JavaScriptResourceReference TRANSITIONS_RESOURCE = new JQueryDependentResourceReference("nav_extra/transitions.js");
+    static final JavaScriptResourceReference AJAX_LOADER_RESOURCE = new JQueryDependentResourceReference("nav_extra/AjaxLoader.js");
+    static final JavaScriptResourceReference FELLES_JS_RESOURCE = new JQueryDependentResourceReference("nav_extra/felles.js");
+    static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("nav_extra/dropdown.js");
+    static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("nav_extra/tooltip.js");
+    static final JavaScriptResourceReference SPRAKVELGER_JS_RESOURCE = new JQueryDependentResourceReference("nav_extra/sprakvelger.js");
 
    	static final PackageResourceReference EKSTERNFLATE_LESS_RESOURCE = lessReference("nav_extra/eksternflate.less");
    	static final PackageResourceReference STEGINDIKATOR_LESS_RESOURCE = lessReference("nav_extra/stegindikator.less");
