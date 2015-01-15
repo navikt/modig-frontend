@@ -96,6 +96,10 @@ public class FrontendModules {
             .less(NavExtraResources.TABLES_LESS_RESOURCE)
             .done();
 
+    public static final FrontendModule SPRAKVELGER = new FrontendModule.With()
+            .less(NavExtraResources.SPRAKVELGER_LESS_RESOURCE)
+            .done();
+
     public static final FrontendModule TRANSITIONS_JS = new FrontendModule.With()
             .scripts(NavExtraResources.TRANSITIONS_RESOURCE)
             .done();
