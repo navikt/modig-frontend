@@ -25,6 +25,7 @@ public class NavExtraResources {
     static final PackageResourceReference TOOLTIP_LESS_RESOURCE = lessReference("nav_extra/tooltip.less");
     static final PackageResourceReference TABLES_LESS_RESOURCE = lessReference("nav_extra/tables.less");
     static final PackageResourceReference SPRAKVELGER_LESS_RESOURCE = lessReference("nav_extra/sprakvelger.less");
+    static final PackageResourceReference RELATED_CONTENT_LESS_RESOURCE = lessReference("nav_extra/related-content.less");
 
     private static PackageResourceReference lessReference(String path) {
    		return new PackageResourceReference(LessResourceMarker.class, path);

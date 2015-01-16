@@ -101,6 +101,10 @@ public class FrontendModules {
             .scripts(NavExtraResources.SPRAKVELGER_JS_RESOURCE)
             .done();
 
+    public static final FrontendModule RELATED_CONTENT = new FrontendModule.With()
+            .less(NavExtraResources.RELATED_CONTENT_LESS_RESOURCE)
+            .done();
+
     public static final FrontendModule TRANSITIONS_JS = new FrontendModule.With()
             .scripts(NavExtraResources.TRANSITIONS_RESOURCE)
             .done();
