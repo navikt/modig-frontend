@@ -3,26 +3,25 @@ a.knapp {
 }
 
 .knapp {
-	font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: @rem-as-16px;
-	font-weight: 600;
+	font-weight: 800;
 	.buttonBackground(@gray-lighter, @gray-light, @text-color);
 	padding: 8px 40px;
 	text-decoration: none;
 	text-transform: uppercase;
 	white-space: nowrap;
-	//box-shadow: 2px 2px 2px #d5d5d5;
-	&.liten {
-		padding: 5px 20px;
-		font-size: @rem-as-14px;
-		line-height: 1.4rem;
-	}
-	&.mini {
-		padding: 3px 10px;
-		font-size: @rem-as-12px;
-	}
 	&.hoved {
 		.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
+	}
+	&.fare {
+		.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
+	}
+	&.inaktiv, &[disabled=disabled] {
+		color: #a3a3a3;
+		background: @btn-background;
+		border: 1px solid #d9d9d9;
+		cursor: default;
 	}
 	&.lenke {
 		background: none;
@@ -38,17 +37,14 @@ a.knapp {
 			color: @blue-dark;
 		}
 	}
-	&.uthevet {
-		.buttonBackground(@btn-inverse-background, darken(@btn-inverse-background, 10%));
+	&.liten {
+		padding: 5px 20px;
+		font-size: @rem-as-14px;
+		line-height: 1.4rem;
 	}
-	&.advarsel {
-		.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
-	}
-	&.deaktivert, &[disabled=disabled] {
-		color: #a3a3a3;
-		background: @btn-background;
-		border: 1px solid #d9d9d9;
-		cursor: default;
+	&.mini {
+		padding: 3px 10px;
+		font-size: @rem-as-12px;
 	}
 	&.dropdown-toggle {
 		display: inline-block;
