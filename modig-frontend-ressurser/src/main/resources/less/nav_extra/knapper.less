@@ -3,7 +3,7 @@ a.knapp {
 }
 
 .knapp {
-	font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: @rem-as-16px;
 	font-weight: 600;
 	.buttonBackground(@gray-lighter, @gray-light, @text-color);
@@ -11,7 +11,32 @@ a.knapp {
 	text-decoration: none;
 	text-transform: uppercase;
 	white-space: nowrap;
-	//box-shadow: 2px 2px 2px #d5d5d5;
+	&.hoved {
+		.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
+	}
+	&.fare {
+		.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
+	}
+	&.inaktiv, &[disabled=disabled] {
+		color: #a3a3a3;
+		background: @btn-background;
+		border: 1px solid #d9d9d9;
+		cursor: default;
+	}
+	&.lenke {
+		background: none;
+		color: @blue-dark;
+		border: none;
+		font-weight: bold;
+		text-transform: none;
+		padding: 0;
+		&:hover, &:focus {
+			border-color: transparent;
+			background: none;
+			text-decoration: underline;
+			color: @blue-dark;
+		}
+	}
 	&.liten {
 		padding: 5px 20px;
 		font-size: @rem-as-14px;
@@ -20,34 +45,6 @@ a.knapp {
 	&.mini {
 		padding: 3px 10px;
 		font-size: @rem-as-12px;
-	}
-	&.hoved {
-		.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
-	}
-	&.lenke {
-		background: none;
-		color: @blue-dark;
-		border: none;
-		font-weight: bold;
-		text-transform: none;
-		&:hover, &:focus {
-			border-color: transparent;
-			background: none;
-			text-decoration: underline;
-			color: @blue-dark;
-		}
-	}
-	&.uthevet {
-		.buttonBackground(@btn-inverse-background, darken(@btn-inverse-background, 10%));
-	}
-	&.advarsel {
-		.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
-	}
-	&.deaktivert, &[disabled=disabled] {
-		color: #a3a3a3;
-		background: @btn-background;
-		border: 1px solid #d9d9d9;
-		cursor: default;
 	}
 	&.dropdown-toggle {
 		display: inline-block;
