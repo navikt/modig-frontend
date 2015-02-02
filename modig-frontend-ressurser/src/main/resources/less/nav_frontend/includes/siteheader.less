@@ -139,6 +139,15 @@
 // mixin responsive false
 
 .siteheader-toolbar-and-login-defaults() {
+
+  .settings a,
+  .settings .link-btn {
+      font-size: @rem-as-12px;
+      color: #fff;
+      padding: 1em 22px;
+      text-decoration: none;
+    }
+
 	.site-coltrols-toolbar {
 		display: block;
 		background: @gray-darker;
@@ -147,12 +156,6 @@
 		.settings {
 			display: inline-block;
 			width: 50%;
-			a, .link-btn {
-				font-size: @rem-as-12px;
-				color: #fff;
-				padding: 1em 22px;
-                text-decoration: none;
-			}
 		}
 
 		.login-container {
