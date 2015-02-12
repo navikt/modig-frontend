@@ -1,7 +1,7 @@
 {
-  "name": "modig-frontend",
+  "name": "modig-frontend-nav_frontend",
   "version": "0.0.4",
-  "description": "Felles resursser for alle appene",
+  "description": "navfrontend ressurser",
   "main": "index.js",
   "scripts": {
     "test": "run test"
