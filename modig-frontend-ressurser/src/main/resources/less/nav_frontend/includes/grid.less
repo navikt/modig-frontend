@@ -155,10 +155,8 @@
       float:none;
     }
     &.col-md-4 {
-
-      width: 18.75em; // tilsvarende 33.3% og ca 300px på desktop
-      //width:auto;
-     // max-width: 18.75em;
+      width: 18.75em; // tilsvarende 33.3% og ca 300px på desktop. Brukt i skjemaveileder.
+      box-sizing:content-box; // default padding legger seg ellers til som en del av de 18.75 em-ene, slik at boksen ser smalere ut (hvis bakgrunnsfarge).
     }
     &.col-md-8 {
       width:auto;
