@@ -1,1 +1,5 @@
 modig-frontend-wicket/
+modig-frontend-ressurser/src/main/java
+modig-frontend-ressurser/src/main/nodejs
+pom.xml
+*.iml
