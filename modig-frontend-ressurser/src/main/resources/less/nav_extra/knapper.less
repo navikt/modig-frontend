@@ -7,7 +7,7 @@ a.knapp {
 	font-size: @rem-as-16px;
 	font-weight: 600;
 	.buttonBackground(@gray-lighter, @gray-light, @text-color);
-	padding: 8px 40px;
+	padding: .5rem 1rem;
 	text-decoration: none;
 	text-transform: uppercase;
 	white-space: nowrap;
@@ -52,5 +52,11 @@ a.knapp {
 		padding-left: 10px;
 		text-transform: uppercase;
 	}
+}
+
+@media (min-width: @screen-small) {
+  .knapp {
+    padding: 8px 40px; // normal padding på større flater
+  }
 }
 
