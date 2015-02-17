@@ -1,66 +1,69 @@
 .stegindikator {
-	display: table;
-	list-style: none;
-	margin: 10px auto;
-	padding: 0;
-	li {
-		display: block;
-		position: relative;
-		float: left;
-		margin-right: 10px;
-		padding: 8px 12px;
-		border: 1px solid @gray-lighter;
-		background: #f9f9f9;
-		color: @gray-dark;
-		text-decoration: none;
-		text-transform: uppercase;
-		font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 0.9rem;
-		&.aktiv {
-			background: @red;
-			color: @white;
+  display: table;
+  list-style: none;
+  margin: 10px auto;
+  padding: 0;
+  li {
+    display: block;
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: 1px solid @gray-lighter;
+    background: #f9f9f9;
+    color: @gray-dark;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    &.aktiv {
+      background: @red;
+      color: @white;
 
-          a {
-            color: @white;
-            font-size: 0.9rem;
-          }
-		}
-		&:after {
-			content: "";
-			display: block;
-			position: absolute;
-			height: 1px;
-			right: -10px;
-			top: 21px;
-			width: 10px;
-			background-color: #ccc;
-		}
-		&:last-child {
-			margin-right: 0;
-			&:after {
-				display: inline;
-				position: static;
-				height: auto;
-				width: auto;
-				background-color: transparent;
-			}
-		}
-        a {
-          color: @text-color;
-        }
-	}
+      a {
+        color: @white;
+        font-size: 0.9rem;
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      right: -10px;
+      top: 21px;
+      width: 10px;
+      background-color: #ccc;
+    }
+    &:last-child {
+      margin-right: 0;
+      &:after {
+        display: inline;
+        position: static;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+      }
+    }
+    a {
+      color: @text-color;
+    }
+  }
 }
 
 @media (min-width: 62em) {
-	// 992px
-	.stegindikator li {
-		padding: 10px 50px;
-		font-size: 1rem;
-        a {
-          font-size: 1rem;
-        }
-		&.aktiv {
-			padding: 10px 50px;
-		}
-	}
+  // 992px
+  .stegindikator li {
+    padding: 10px 50px;
+    font-size: 1rem;
+    a {
+      font-size: 1rem;
+    }
+    &.aktiv {
+      padding: 10px 50px;
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
 }
