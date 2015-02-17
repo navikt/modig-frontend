@@ -1,1 +1,0 @@
-require('./modig-frontend-ressurser/src/main/resources/js/nav_frontend');
