@@ -48,7 +48,7 @@
 
 // Typography
 // -------------------------
-@base-line-height:        1.4rem;
+
 
 // family
 // -------------------------
@@ -77,6 +77,7 @@
 @line-height-base:        1.428571429; // 20/14
 @line-height-computed:    floor(@rem-as-14px * @line-height-base); // ~20px
 
+@base-line-height:        @line-height-base;
 
 // Buttons
 // -------------------------
@@ -94,7 +95,7 @@
 @input-bg-disabled:              @gray-lightest;
 @input-color:                    @gray;
 @input-border:                   #ccc;
-@input-height:                   @base-line-height + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+@input-height:                   @line-height-base + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
 
 // Z-index master list
