@@ -2,20 +2,17 @@
 	"fileStructure": [
 		"/",
 		"css/", "css/nav_frontend/", "css/appres",
-		"img/", "img/navno/", "img/navno/gfx/", "img/navno/gfx/skjemaveileder-v2",
-        "img/navno/gfx/carousel/", "img/navno/gfx/icons/", "img/navno/gfx/mainmenu/", "img/navno/gfx/tts/", "img/navno/gfx/forms/",
+		"img/",
         "img/appres/", "img/appres/legacy/", "img/appres/legacy/breadcrumb/", "img/appres/legacy/dittnav/",
         "img/appres/legacy/fellesinnlogging/", "img/appres/legacy/global/", "img/appres/legacy/ikoner/", "img/appres/legacy/logo/",
         "img/appres/legacy/tooltip/", "img/appres/legacy/tooltip/hjelpetekst/", "img/appres/legacy/venstremeny/",
 		"js/",
 		"js/nav_frontend/", "js/nav_frontend/libs/", "js/nav_frontend/libs/jquery/", "js/nav_frontend/libs/jquery/plugins/", "js/nav_frontend/libs/megamenu/",
 		"js/nav_extra/",
-		"js/enonic/", "js/enonic/navno/", "js/enonic/skjemaveileder/",
         "js/appres/",
 		"less/",
 		"less/nav_frontend/", "less/nav_frontend/includes/",
 		"less/nav_extra/",
-		"less/navno/", "less/navno/includes/",
         "less/appres/", "less/appres/includes/"
 	],
 
@@ -29,26 +26,11 @@
 		{ "fromDir": "/resources/js/nav_extra/", "toDir": "/generated-resources/js/nav_extra/" },
 		{ "fromDir": "/resources/less/nav_extra/", "toDir": "/generated-resources/less/nav_extra/" },
 
-		{ "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/enonic/navno/" },
-		{ "fromDir": "/resources/js/enonic/skjemaveileder/", "toDir": "/generated-resources/js/enonic/skjemaveileder/" },
-
 		{ "fromDir": "/resources/less/nav_frontend/", "toDir": "/generated-resources/less/nav_frontend/" },
 		{ "fromDir": "/resources/less/nav_frontend/includes/", "toDir": "/generated-resources/less/nav_frontend/includes/" },
 
-        { "fromDir": "/resources/less/navno/", "toDir": "/generated-resources/less/navno/" },
-        { "fromDir": "/resources/less/navno/includes/", "toDir": "/generated-resources/less/navno/includes/" },
-
         { "fromDir": "/resources/less/appres/", "toDir": "/generated-resources/less/appres/" },
         { "fromDir": "/resources/less/appres/includes/", "toDir": "/generated-resources/less/appres/includes/" },
-
-		{ "fromDir": "/resources/META-INF/resources/img/", "toDir": "/generated-resources/img/" },
-		{ "fromDir": "/resources/META-INF/resources/img/navno/", "toDir": "/generated-resources/img/navno/" },
-		{ "fromDir": "/resources/META-INF/resources/img/navno/gfx/carousel/", "toDir": "/generated-resources/img/navno/gfx/carousel/" },
-		{ "fromDir": "/resources/META-INF/resources/img/navno/gfx/icons/", "toDir": "/generated-resources/img/navno/gfx/icons/" },
-		{ "fromDir": "/resources/META-INF/resources/img/navno/gfx/mainmenu/", "toDir": "/generated-resources/img/navno/gfx/mainmenu/" },
-		{ "fromDir": "/resources/META-INF/resources/img/navno/gfx/tts/", "toDir": "/generated-resources/img/navno/gfx/tts/" },
-        { "fromDir": "/resources/META-INF/resources/img/navno/gfx/forms/", "toDir": "/generated-resources/img/navno/gfx/forms/" },
-		{ "fromDir": "/resources/META-INF/resources/img/navno/gfx/skjemaveileder-v2/", "toDir": "/generated-resources/img/navno/gfx/skjemaveileder-v2/" },
 
 		{ "fromDir": "/resources/META-INF/resources/img/appres/legacy/", "toDir": "/generated-resources/img/appres/legacy/" },
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/breadcrumb/", "toDir": "/generated-resources/img/appres/legacy/breadcrumb/" },
@@ -68,11 +50,8 @@
 		{ "fromDir": "/resources/js/nav_frontend/libs/", "toDir": "/generated-resources/js/appres/", "file": "matchmedia.js"},
         { "fromDir": "/resources/js/nav_frontend/libs/", "toDir": "/generated-resources/js/appres/", "file": "modernizr.2.7.1.min.js"},
         { "fromDir": "/resources/js/nav_frontend/", "toDir": "/generated-resources/js/appres/", "file": "nav-global.js"},
-        { "fromDir": "/resources/js/nav_frontend/", "toDir": "/generated-resources/js/appres/", "file": "innloggingslinjen.js"},
+        { "fromDir": "/resources/js/nav_frontend/", "toDir": "/generated-resources/js/appres/", "file": "innloggingslinjen.js"}
 
-        { "fromDir": "/resources/js/nav_frontend/", "toDir": "/generated-resources/js/enonic/navno/", "file": "nav-global.js"},
-        { "fromDir": "/resources/js/nav_frontend/libs/", "toDir": "/generated-resources/js/enonic/navno/", "file": "matchmedia.js"},
-        { "fromDir": "/resources/js/nav_frontend/libs/megamenu/", "toDir": "/generated-resources/js/enonic/navno/", "file": "jquery-accessibleMegaMenu.js"}
 
     ],
 
@@ -81,37 +60,20 @@
             "files": ["jquery-1.11.1.js"] },
 
         { "fromDir": "/generated-resources/js/appres/", "toFile": "/generated-resources/js/appres/app-navno-concat.js",
-            "files": ["nav-global.js", "matchmedia.js", "jquery-accessibleMegaMenu.js"] },
+            "files": ["nav-global.js", "matchmedia.js", "jquery-accessibleMegaMenu.js"] }
 
-        { "fromDir": "/resources/js/nav_frontend/libs/jquery/", "toFile": "/generated-resources/js/enonic/navno/jquery-tmp.js",
-            "files": ["jquery-1.11.1.js"] },
 
-		{ "fromDir": "/generated-resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-tmp.js",
-			"files": ["nav-global.js", "nav-carousel.js", "nav-content.js", "nav-accordion.js", "matchmedia.js", "jquery-accessibleMegaMenu.js"] },
 
-        { "fromDir": "/generated-resources/js/enonic/navno/", "toFile": "/generated-resources/js/enonic/navno/navno-concat.js",
-            "files": ["jquery-tmp.js", "navno-tmp.js"] }
 	],
 
 
 	"uglify": [
-		{ "fromFile": "/generated-resources/js/enonic/navno/navno-concat.js", "toFile": "/generated-resources/js/enonic/navno/navno.min.js" },
-		{ "fromFile": "/generated-resources/js/nav_frontend/innloggingslinjen.js", "toFile": "/generated-resources/js/enonic/navno/innloggingslinjen.min.js" },
-        { "fromFile": "/generated-resources/js/enonic/navno/nav-klage-ris-ros.js", "toFile": "/generated-resources/js/enonic/navno/nav-klage-ris-ros.min.js" },
 
         { "fromFile": "/generated-resources/js/appres/app-legacy-concat.js", "toFile": "/generated-resources/js/appres/app-legacy.min.js" },
         { "fromFile": "/generated-resources/js/appres/app-navno-concat.js", "toFile": "/generated-resources/js/appres/app-navno.min.js" },
-        { "fromFile": "/generated-resources/js/nav_frontend/innloggingslinjen.js", "toFile": "/generated-resources/js/appres/innloggingslinjen.min.js" },
+        { "fromFile": "/generated-resources/js/nav_frontend/innloggingslinjen.js", "toFile": "/generated-resources/js/appres/innloggingslinjen.min.js" }
 
-        { "fromFile": "/generated-resources/js/enonic/skjemaveileder/annenpost.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/annenpost.min.js" },
-        { "fromFile": "/generated-resources/js/enonic/skjemaveileder/elektroniskinnsending.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/elektroniskinnsending.min.js" },
-        { "fromFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveileder.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveileder.min.js" },
 
-        { "fromFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveilederarbeidsgiver.js",
-	        "toFile": "/generated-resources/js/enonic/skjemaveileder/ettersendelsesveilederarbeidsgiver.min.js" },
-
-        { "fromFile": "/generated-resources/js/enonic/skjemaveileder/felles.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/felles.min.js" },
-        { "fromFile": "/generated-resources/js/enonic/skjemaveileder/skjemavalg.js", "toFile": "/generated-resources/js/enonic/skjemaveileder/skjemavalg.min.js" }
 	],
 
 	"runLess": [
@@ -119,11 +81,6 @@
 			"builtFile": "/generated-resources/css/nav_frontend/nav_frontend.css" },
 
         { "fromDir": "/generated-resources/less/appres/", "mainFile": "/resources/less/appres/app-decorator.less", "builtFile": "/generated-resources/css/appres/app-decorator.css" }
-	],
-
-    "remove": [
-        { "fileName": "/generated-resources/js/enonic/navno/navno-tmp.js" },
-        { "fileName": "/generated-resources/js/enonic/navno/jquery-tmp.js" }
-    ]
+	]
 }
 
