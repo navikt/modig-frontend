@@ -1,132 +1,22 @@
 package no.nav.modig.frontend;
 
-import static no.nav.modig.frontend.BootstrapResources.ICONS;
-import static no.nav.modig.frontend.BootstrapResources.ICONS_WHITE;
-import static no.nav.modig.frontend.BootstrapResources.JS_AFFIX;
-import static no.nav.modig.frontend.BootstrapResources.JS_ALERT;
-import static no.nav.modig.frontend.BootstrapResources.JS_BUTTON;
-import static no.nav.modig.frontend.BootstrapResources.JS_CAROUSEL;
-import static no.nav.modig.frontend.BootstrapResources.JS_COLLAPSE;
-import static no.nav.modig.frontend.BootstrapResources.JS_DROPDOWN;
-import static no.nav.modig.frontend.BootstrapResources.JS_MODAL;
-import static no.nav.modig.frontend.BootstrapResources.JS_POPOVER;
-import static no.nav.modig.frontend.BootstrapResources.JS_SCROLLSPY;
-import static no.nav.modig.frontend.BootstrapResources.JS_TAB;
-import static no.nav.modig.frontend.BootstrapResources.JS_TOOLTIP;
-import static no.nav.modig.frontend.BootstrapResources.JS_TRANSITION;
-import static no.nav.modig.frontend.BootstrapResources.JS_TYPEAHEAD;
-import static no.nav.modig.frontend.BootstrapResources.LESS_ACCORDION;
-import static no.nav.modig.frontend.BootstrapResources.LESS_ALERTS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_BREADCRUMBS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_BUTTON;
-import static no.nav.modig.frontend.BootstrapResources.LESS_BUTTON_GROUPS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_CAROUSEL;
-import static no.nav.modig.frontend.BootstrapResources.LESS_CLOSE;
-import static no.nav.modig.frontend.BootstrapResources.LESS_CODE;
-import static no.nav.modig.frontend.BootstrapResources.LESS_COMPONENTANIMATIONS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_DROPDOWN;
-import static no.nav.modig.frontend.BootstrapResources.LESS_FORMS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_GRID;
-import static no.nav.modig.frontend.BootstrapResources.LESS_HEROUNIT;
-import static no.nav.modig.frontend.BootstrapResources.LESS_LABELBADGES;
-import static no.nav.modig.frontend.BootstrapResources.LESS_LAYOUTS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_MIXINS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_MODAL;
-import static no.nav.modig.frontend.BootstrapResources.LESS_NAVBAR;
-import static no.nav.modig.frontend.BootstrapResources.LESS_NAVS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_PAGER;
-import static no.nav.modig.frontend.BootstrapResources.LESS_PAGINATION;
-import static no.nav.modig.frontend.BootstrapResources.LESS_POPOVER;
-import static no.nav.modig.frontend.BootstrapResources.LESS_PROGRESSBARS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_RESET;
-import static no.nav.modig.frontend.BootstrapResources.LESS_RESPONSIVE_1200MIN;
-import static no.nav.modig.frontend.BootstrapResources.LESS_RESPONSIVE_767MAX;
-import static no.nav.modig.frontend.BootstrapResources.LESS_RESPONSIVE_768_979;
-import static no.nav.modig.frontend.BootstrapResources.LESS_RESPONSIVE_NAVBAR;
-import static no.nav.modig.frontend.BootstrapResources.LESS_RESPONSIVE_UTILITIES;
-import static no.nav.modig.frontend.BootstrapResources.LESS_SCAFFOLDING;
-import static no.nav.modig.frontend.BootstrapResources.LESS_SPRITES;
-import static no.nav.modig.frontend.BootstrapResources.LESS_TABLES;
-import static no.nav.modig.frontend.BootstrapResources.LESS_THUMBNAILS;
-import static no.nav.modig.frontend.BootstrapResources.LESS_TOOLTIP;
-import static no.nav.modig.frontend.BootstrapResources.LESS_TYPE;
-import static no.nav.modig.frontend.BootstrapResources.LESS_UTILITIES;
-import static no.nav.modig.frontend.BootstrapResources.LESS_VARIABLES;
-import static no.nav.modig.frontend.BootstrapResources.LESS_WELLS;
+import static no.nav.modig.frontend.BootstrapResources.*;
 import static no.nav.modig.frontend.ConditionalCssResource.IE8_EKSTERNFLATE;
-import static no.nav.modig.frontend.EksternflateResources.EKSTERN_LESS;
-import static no.nav.modig.frontend.EksternflateResources.FOOTER_LESS;
-import static no.nav.modig.frontend.EksternflateResources.PANEL_LESS;
-import static no.nav.modig.frontend.EnonicResources.JQUERY_MEGA_MENU;
-import static no.nav.modig.frontend.EnonicResources.MATCH_MEDIA;
-import static no.nav.modig.frontend.EnonicResources.NAV_ACCORDION_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_ARTICLE_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_AUTOCOMPLETE_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_BREADCRUMB_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_BUTTONS_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_CAROUSEL_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_CONTRAST_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_ERROR_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_FACTSHEET_LESS;
+import static no.nav.modig.frontend.EksternflateResources.*;
 import static no.nav.modig.frontend.EnonicResources.NAV_GLOBAL;
-import static no.nav.modig.frontend.EnonicResources.NAV_GRID_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_INNLOGGING;
-import static no.nav.modig.frontend.EnonicResources.NAV_LINKLISTS_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_MEGAMENU_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_MIXINS_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_NORMALIZE_LESS;
 import static no.nav.modig.frontend.EnonicResources.NAV_PRINT_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_RIS_ROS_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_SCAFFOLDING_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_SERVICE_NOTIFICATION_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_SITEFOOTER_ALPHABET_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_SITEFOOTER_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_SITEHEADER_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_TABLE_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_TYPOGRAPHY_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_UTILITIES_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_VARIABLES_LESS;
-import static no.nav.modig.frontend.EnonicResources.NAV_WEBFONTS_LESS;
-import static no.nav.modig.frontend.FellesResources.AJAX_LOADER;
-import static no.nav.modig.frontend.FellesResources.CONTRAST_LESS;
-import static no.nav.modig.frontend.FellesResources.DROPDOWNS_LESS;
-import static no.nav.modig.frontend.FellesResources.DROPDOWN_RESOURCE;
-import static no.nav.modig.frontend.FellesResources.FELLES_JS_RESOURCE;
-import static no.nav.modig.frontend.FellesResources.FELLES_LESS;
-import static no.nav.modig.frontend.FellesResources.HTML5_SHIV_RESOURCE;
-import static no.nav.modig.frontend.FellesResources.JQUERY_UI_DATEPICKER;
-import static no.nav.modig.frontend.FellesResources.JQUERY_VALIDATE;
-import static no.nav.modig.frontend.FellesResources.KNAPPER_LESS;
-import static no.nav.modig.frontend.FellesResources.MIXINS_LESS;
-import static no.nav.modig.frontend.FellesResources.MODERNIZR_RESOURCE;
-import static no.nav.modig.frontend.FellesResources.MODUS_LESS;
-import static no.nav.modig.frontend.FellesResources.NAV_DATEPICKER;
-import static no.nav.modig.frontend.FellesResources.RESET_LESS;
-import static no.nav.modig.frontend.FellesResources.SKJEMA_LESS;
-import static no.nav.modig.frontend.FellesResources.TOOLTIP_LESS;
-import static no.nav.modig.frontend.FellesResources.TOOLTIP_RESOURCE;
-import static no.nav.modig.frontend.FellesResources.TRANSITIONS_RESOURCE;
-import static no.nav.modig.frontend.FellesResources.TYPOGRAFI_LESS;
-import static no.nav.modig.frontend.FellesResources.UNDERSCORE_RESOURCE;
-import static no.nav.modig.frontend.FellesResources.UTILITIES_LESS;
-import static no.nav.modig.frontend.FellesResources.VARIABLES_LESS;
-import static no.nav.modig.frontend.FellesResources.WICKET_MODAL_WINDOW;
-import static no.nav.modig.frontend.LegacyResources.LEGACY_FELLES;
-import static no.nav.modig.frontend.LegacyResources.LEGACY_STANDARD_IE8_CSS;
-import static no.nav.modig.frontend.LegacyResources.LEGACY_STANDARD_LESS;
+import static no.nav.modig.frontend.FellesResources.*;
+import static no.nav.modig.frontend.LegacyResources.*;
 
 
 public class FrontendModules {
 
 	public static final FrontendModule EKSTERNFLATE = new FrontendModule.With()
-			.scripts(MODERNIZR_RESOURCE, TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE,
-					AJAX_LOADER, NAV_GLOBAL, NAV_INNLOGGING, MATCH_MEDIA, JQUERY_MEGA_MENU)
+			.scripts(TRANSITIONS_RESOURCE, FELLES_JS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, AJAX_LOADER)
 			.conditionalCss(IE8_EKSTERNFLATE)
-			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, NAV_NORMALIZE_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW,
-					KNAPPER_LESS, CONTRAST_LESS, DROPDOWNS_LESS, PANEL_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_MIXINS_LESS, NAV_VARIABLES_LESS,
-                    NAV_GRID_LESS, NAV_MEGAMENU_LESS,
-					NAV_SITEHEADER_LESS, NAV_SITEFOOTER_LESS, NAV_SITEFOOTER_ALPHABET_LESS, NAV_UTILITIES_LESS, NAV_BUTTONS_LESS,
-					NAV_DATEPICKER, UTILITIES_LESS, EKSTERN_LESS).done();
+			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW,
+					KNAPPER_LESS, CONTRAST_LESS, DROPDOWNS_LESS, PANEL_LESS, SKJEMA_LESS, TOOLTIP_LESS,
+					UTILITIES_LESS, EKSTERN_LESS).done();
 
 
 	public static final FrontendModule EKSTERNFLATE_CSS = new FrontendModule.With()
@@ -134,7 +24,7 @@ public class FrontendModules {
 			.conditionalCss(IE8_EKSTERNFLATE)
 			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS,
 					KNAPPER_LESS, CONTRAST_LESS, PANEL_LESS, FOOTER_LESS, SKJEMA_LESS,
-					UTILITIES_LESS, EKSTERN_LESS).done();
+					NAV_DATEPICKER, UTILITIES_LESS, EKSTERN_LESS).done();
 
 
 	@Deprecated
@@ -151,16 +41,6 @@ public class FrontendModules {
 			.scripts(TRANSITIONS_RESOURCE, DROPDOWN_RESOURCE, TOOLTIP_RESOURCE, AJAX_LOADER, JQUERY_UI_DATEPICKER, JQUERY_VALIDATE)
 			.less(RESET_LESS, VARIABLES_LESS, MIXINS_LESS, MODUS_LESS, TYPOGRAFI_LESS, FELLES_LESS, WICKET_MODAL_WINDOW, KNAPPER_LESS,
 					DROPDOWNS_LESS, SKJEMA_LESS, TOOLTIP_LESS, NAV_DATEPICKER, UTILITIES_LESS).done();
-
-	public static final FrontendModule ENONIC = new FrontendModule.With()
-			.scripts(MODERNIZR_RESOURCE, NAV_GLOBAL, NAV_INNLOGGING,
-					MATCH_MEDIA, JQUERY_MEGA_MENU)
-			.less(NAV_VARIABLES_LESS, NAV_MIXINS_LESS, NAV_NORMALIZE_LESS, NAV_GRID_LESS, NAV_AUTOCOMPLETE_LESS,
-					NAV_TYPOGRAPHY_LESS, NAV_TABLE_LESS, NAV_BUTTONS_LESS, NAV_BREADCRUMB_LESS, NAV_MEGAMENU_LESS,
-					NAV_LINKLISTS_LESS, NAV_SCAFFOLDING_LESS, NAV_RIS_ROS_LESS, NAV_SERVICE_NOTIFICATION_LESS,
-					NAV_SITEHEADER_LESS, NAV_SITEFOOTER_LESS, NAV_SITEFOOTER_ALPHABET_LESS,
-					NAV_ARTICLE_LESS, NAV_FACTSHEET_LESS, NAV_CAROUSEL_LESS, NAV_ACCORDION_LESS, NAV_ERROR_LESS,
-					NAV_UTILITIES_LESS, NAV_CONTRAST_LESS, NAV_PRINT_LESS, NAV_WEBFONTS_LESS).done();
 
 	public static final FrontendModule LEGACY = new FrontendModule.With()
 			.scripts(MODERNIZR_RESOURCE, LEGACY_FELLES, NAV_GLOBAL)
