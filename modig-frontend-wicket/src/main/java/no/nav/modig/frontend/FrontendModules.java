@@ -34,11 +34,13 @@ import static no.nav.modig.frontend.NavFrontendResources.VARIABLES_LESS_RESOURCE
 
 public class FrontendModules {
 
-    public static final FrontendModule NAV_FRONTEND = new FrontendModule.With()
-            .scripts(MODERNIZR_RESOURCE, NAV_GLOBAL_RESOURCE, MATCH_MEDIA_RESOURCE, JQUERY_MEGA_MENU_RESOURCE, INNLOGGING_RESOURCE)
-            .less(NORMALIZE_LESS_RESOURCE, VARIABLES_LESS_RESOURCE, MIXINS_LESS_RESOURCE, MODUS_LESS_RESOURCE, TYPOGRAPHY_LESS_RESOURCE,
-                    GRID_LESS_RESOURCE, MEGAMENU_LESS_RESOURCE, SCAFFOLDING_LESS_RESOURCE, SITEHEADER_LESS_RESOURCE, SITEFOOTER_LESS_RESOURCE,
-                    SITEFOOTER_ALPHABET_LESS_RESOURCE, UTILITIES_LESS_RESOURCE, CONTRAST_LESS_RESOURCE)
+    public static final FrontendModule MIXINS = new FrontendModule.With()
+            .scripts()
+            .less(MIXINS_LESS_RESOURCE)
+            .done();
+
+    public static final FrontendModule VARIABLES = new FrontendModule.With()
+            .less(VARIABLES_LESS_RESOURCE)
             .done();
 
     public static final FrontendModule MODIA = new FrontendModule.With()
