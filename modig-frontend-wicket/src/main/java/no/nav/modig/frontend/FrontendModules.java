@@ -34,13 +34,8 @@ import static no.nav.modig.frontend.NavFrontendResources.VARIABLES_LESS_RESOURCE
 
 public class FrontendModules {
 
-    public static final FrontendModule MIXINS = new FrontendModule.With()
-            .scripts()
-            .less(MIXINS_LESS_RESOURCE)
-            .done();
-
-    public static final FrontendModule VARIABLES = new FrontendModule.With()
-            .less(VARIABLES_LESS_RESOURCE)
+    public static final FrontendModule NAV_FRONTEND = new FrontendModule.With()
+            .less(VARIABLES_LESS_RESOURCE, MIXINS_LESS_RESOURCE)
             .done();
 
     public static final FrontendModule MODIA = new FrontendModule.With()
