@@ -26,7 +26,7 @@
 //--------------------------------------------------------------------
 
 .siteheader {
-	// site-coltrols-toolbar
+
 	.dropdown {
 		> a {
 			outline-offset: -1px;
@@ -57,7 +57,7 @@
 .global-siteheader-toolbar();
 
 .global-siteheader-toolbar() when (@responsive = true) {
-	.site-coltrols-toolbar {
+	.site-controls-toolbar {
 		display: none;
 		.settings .nav {
 			margin-left: -1.5625em; // trekk "language" mer mot venstre når venstrestilt
@@ -80,16 +80,12 @@
 			display: none;
 		}
 
-		.login-container {
-			width: 40%;
-		}
-
 	}
 
 	@media (min-width: 60em) {
 
 		// 960px --> samme media query på sentrering av hovedmenylinje
-		.site-coltrols-toolbar {
+		.site-controls-toolbar {
 			text-align: center;
 			.settings .nav {
 				margin-left: 0; // oversyr negativ margin på "language" (fra mindre flater)
@@ -102,10 +98,6 @@
 			span.arrow {
 				right: 48%;
 			}
-		}
-
-		.login-container {
-			width: 30%;
 		}
 
 	}
@@ -123,11 +115,8 @@
 	.sitelogo-small {
 		display: none;
 	}
-	.login-container {
-		width: 30%;
-	}
 
-	.site-coltrols-toolbar {
+	.site-controls-toolbar {
 		text-align: center;
 	}
 	#text-size-accessibility {
@@ -148,7 +137,7 @@
       text-decoration: none;
     }
 
-	.site-coltrols-toolbar {
+	.site-controls-toolbar {
 		display: block;
 		background: @gray-darker;
 		min-height: 42px;
@@ -158,55 +147,7 @@
 			width: 50%;
 		}
 
-		.login-container {
-			position: absolute;
-			top: 0;
-			right: 0.9375em;
 
-			p span, p a {
-				font-size: 1em;
-			}
-			// unngå 0,75em * 0,75em
-
-			#login-details {
-				width: 70%;
-				float: left;
-				padding-left: 25px;
-				cursor: pointer;
-				color: #fff;
-				font-style: italic;
-				#name-container {
-					display: inline-block;
-					white-space: nowrap;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					text-align: right;
-					vertical-align: bottom;
-					width: 100%;
-					padding: 1em 0;
-					text-transform: capitalize;
-					font-size: @rem-as-12px;
-
-					img {
-						padding-right: 10px;
-						margin-top: -3px;
-					}
-				}
-			}
-
-			#auth-btns {
-				width: 30%;
-				float: left;
-				padding-top: 0.6em;
-				text-align: right;
-			}
-		}
-		// logincontainer - kan gjøres om til mixin for media queries
-
-		#login-details.hidden + #auth-btns {
-			// hvis innloggingsinfo er skjult, skal "logg inn" fortsatt stå til høyre
-			margin-left: 70%;
-		}
 	}
 
 	.text-size-tooltip, .login-tooltip, .logout-tooltip {
@@ -220,14 +161,6 @@
 			.up-arrow(9px, 6px, 6px, #000000); // mixin
 			position: absolute;
 			top: -8px;
-		}
-	}
-
-	.login-tooltip, .logout-tooltip {
-		left: 25%;
-		top: 3em;
-		span.arrow {
-			right: 50%;
 		}
 	}
 
@@ -249,50 +182,7 @@
 		position: relative;
 	}
 
-	.logout-tooltip {
-		right: 0;
-		left: 0;
 
-		.lukk {
-			position: absolute;
-			top: -17px;
-			right: 6px;
-			width: 32px;
-			height: 32px;
-			background-color: transparent;
-			background-repeat: no-repeat;
-			font-size: 2em;
-			text-decoration: none;
-
-			&:hover {
-				color: #5dd0f9;
-			}
-		}
-		p:last-of-type {
-			margin-bottom: 0;
-		}
-		p {
-			font-style: normal;
-			font-size: @rem-as-12px;
-		}
-		span {
-			right: 50%;
-		}
-	}
-
-	.login-tooltip {
-		width: 55%;
-		left: 45%;
-
-		p {
-			margin: 0;
-			font-size: @rem-as-12px;
-		}
-
-		span.arrow {
-			right: 12%;
-		}
-	}
 
 }
 
@@ -309,12 +199,6 @@
 	}
 }
 
-/*
-@media (max-width: @screen-medium) {
-	.login-tooltip span {
-		right: 38%;
-	}
-}*/
 
 // Dropdown - fra collapse-dropdown.less
 //-------------------
