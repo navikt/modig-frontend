@@ -68,10 +68,6 @@ public class FrontendModules {
             .scripts(NavExtraResources.DROPDOWN_RESOURCE)
             .done();
 
-    public static final FrontendModule KNAPPER = new FrontendModule.With()
-            .less(NavExtraResources.KNAPPER_LESS_RESOURCE)
-            .done();
-
     public static final FrontendModule WICKET_MODAL_WINDOW = new FrontendModule.With()
             .less(NavExtraResources.WICKET_MODAL_WINDOW_RESOURCE)
             .done();
