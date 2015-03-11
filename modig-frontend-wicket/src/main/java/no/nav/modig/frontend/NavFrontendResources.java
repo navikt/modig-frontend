@@ -29,6 +29,7 @@ public class NavFrontendResources {
 	static final PackageResourceReference MEGAMENU_LESS_RESOURCE = lessReference("nav_frontend/includes/megamenu.less");
 	static final PackageResourceReference SCAFFOLDING_LESS_RESOURCE = lessReference("nav_frontend/includes/scaffolding.less");
 	static final PackageResourceReference SITEHEADER_LESS_RESOURCE = lessReference("nav_frontend/includes/siteheader.less");
+    static final PackageResourceReference SITEHEADER_LOGIN_LESS_RESOURCE = lessReference("nav_frontend/includes/siteheader-login.less");
 	static final PackageResourceReference SITEFOOTER_LESS_RESOURCE = lessReference("nav_frontend/includes/sitefooter.less");
 	static final PackageResourceReference SITEFOOTER_ALPHABET_LESS_RESOURCE = lessReference("nav_frontend/includes/sitefooter-alphabet.less");
 	static final PackageResourceReference CONTRAST_LESS_RESOURCE = lessReference("nav_frontend/includes/contrast.less");
