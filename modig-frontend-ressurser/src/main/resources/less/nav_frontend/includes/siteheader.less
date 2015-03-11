@@ -57,7 +57,7 @@
 .global-siteheader-toolbar();
 
 .global-siteheader-toolbar() when (@responsive = true) {
-	.site-controls-toolbar {
+	.site-coltrols-toolbar {
 		display: none;
 		.settings .nav {
 			margin-left: -1.5625em; // trekk "language" mer mot venstre når venstrestilt
@@ -85,7 +85,7 @@
 	@media (min-width: 60em) {
 
 		// 960px --> samme media query på sentrering av hovedmenylinje
-		.site-controls-toolbar {
+		.site-coltrols-toolbar {
 			text-align: center;
 			.settings .nav {
 				margin-left: 0; // oversyr negativ margin på "language" (fra mindre flater)
@@ -116,7 +116,7 @@
 		display: none;
 	}
 
-	.site-controls-toolbar {
+	.site-coltrols-toolbar {
 		text-align: center;
 	}
 	#text-size-accessibility {
@@ -137,7 +137,7 @@
       text-decoration: none;
     }
 
-	.site-controls-toolbar {
+	.site-coltrols-toolbar {
 		display: block;
 		background: @gray-darker;
 		min-height: 42px;
