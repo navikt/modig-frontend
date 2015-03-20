@@ -86,20 +86,24 @@
 .logout-tooltip {
   right: 0;
   left: 0;
+  padding-right:30px;
 
   .lukk {
     position: absolute;
-    top: -17px;
-    right: 6px;
-    width: 32px;
-    height: 32px;
-    background-color: transparent;
-    background-repeat: no-repeat;
+    top: 8px;
+    right: 14px;
+    width: auto;
+    height: auto;
+    padding:0;
+    line-height:1;
     font-size: 2em;
+    color:#fff;
     text-decoration: none;
+    background: none; // dagpenger har en klasse som heter .lukk, med bakgrunnsbilde (svg)
 
-    &:hover {
+    &:hover, &:focus {
       color: #5dd0f9;
+      background: none;
     }
   }
   p:last-of-type {
