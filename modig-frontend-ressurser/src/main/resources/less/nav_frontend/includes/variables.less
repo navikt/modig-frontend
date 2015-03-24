@@ -1,7 +1,12 @@
 
 // Global values
 // --------------------------------------------------
-@responsive: true; // tar med mediaqueries
+
+.define-responsive-if-not-defined() {
+  @responsive: true; // tar med min-width mediaqueries
+}
+.define-responsive-if-not-defined(); // exposes a variable ("responsive) only if it's not already in this scope.
+
 
 .define-basepath-if-not-defined() {
   @baseImagePath: '../';
@@ -83,7 +88,7 @@
 // Buttons
 // -------------------------
 @btn-background:                      #e3e3e3;
-@btn-primary-background:              #00a9e0;
+@btn-primary-background:              #0067c5;
 @btn-primary-background-highlight:    spin(@btn-primary-background, 10%);
 @btn-inverse-background:              #444;
 @btn-danger-background:               #ee5f5b;

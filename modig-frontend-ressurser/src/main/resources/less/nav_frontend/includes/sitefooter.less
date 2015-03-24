@@ -15,6 +15,9 @@
 	position: relative;
 	color: #fff;
 	padding: 0 0 20px 0;
+  &.no-menu {
+    padding-bottom: 54px; // footer er like høy, selv om A-Å ikke vises. Unngår lys glippe (body background) under footer, om den blir for lav.
+  }
 	.about-site {
 		padding-top: 30px;
 		color: @gray-light; //#988F86;
