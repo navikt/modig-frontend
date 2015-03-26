@@ -1,0 +1,19 @@
+{
+  "name": "modig-frontend",
+  "version": "1.0.0",
+  "description": "Felles resursser for alle appene",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://stash.devillo.no/scm/felles/modig-frontend.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "",
+  "private": true
+}
+
