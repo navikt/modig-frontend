@@ -8,6 +8,11 @@
     position: relative;
     float: left;
     margin-right: 10px;
+
+    //
+    //  TODO: Vurdere å sette padding på <a> i stedet for <li> for større klikkflate. Klassen .steg kan brukes (finnes på <a> eller <span>, som første barn inne i <li>)
+    //
+
     padding: 8px 12px;
     border: 1px solid @gray-lighter;
     background: #f9f9f9;
@@ -23,6 +28,7 @@
       a {
         color: @white;
         font-size: 0.9rem;
+        text-decoration: none;
       }
     }
     &:after {
