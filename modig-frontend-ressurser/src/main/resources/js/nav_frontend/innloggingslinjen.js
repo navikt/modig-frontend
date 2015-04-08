@@ -1,12 +1,11 @@
 //////////////////////// END ////////////////////////
 
-var navno = navno || {};
-var Innloggingslinje = (function() {
+ var Innloggingslinje = (function() {
 
   var SHOULD_SHOW_LOGIN_TOOLTIP = "should_show_login_tooltip";
   var LOGIN_TOOLTIP_HAS_BEEN_SHOWN = "login_tooltip_hasbeenshown";
   var NAVStatusAJAX = createXMLHttpRequest();
-
+ 
   function init() {
    try {
        NAVStatusAJAX.open('GET', navno.authServiceUrl + '?randomness=' + Math.random()*10, false);
@@ -14,7 +13,6 @@ var Innloggingslinje = (function() {
 
        if (NAVStatusAJAX.readyState == 4 && NAVStatusAJAX.status == 200) {
         var json = JSON.parse(NAVStatusAJAX.responseText);
-        navno.securityLevel = json.securityLevel;
         if (!json.authenticated) {
           onNotAuthenticated();
         } else if (json.securityLevel == 2) {
@@ -43,13 +41,13 @@ var Innloggingslinje = (function() {
   }
 
   function onAuthenticatedWithSecLevelThreeOrHigher(urlEncodedName) {
-    addClassJS("auth-btns", "idporten");
+    addClassJS("auth-btns", "idporten");    
     removeClassJS("logout", "hidden");
-
-    if (document.getElementById("mainmenu")) {
+    
+    if (document.getElementById("mainmenu")) {  
       removeClassJS("logout-mobil", "hidden");
     }
-
+  
     var name = decodeURI(urlEncodedName);
     addName(name);
     removeClassJS("login-details", "hidden");
