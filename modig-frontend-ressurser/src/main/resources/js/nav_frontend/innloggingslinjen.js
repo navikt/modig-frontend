@@ -14,7 +14,7 @@ var Innloggingslinje = (function () {
 
             if (NAVStatusAJAX.readyState == 4 && NAVStatusAJAX.status == 200) {
                 var json = JSON.parse(NAVStatusAJAX.responseText);
-                navno.securityLevel = json.securityLevel;
+                navno.securityLevel = parseInt(json.securityLevel);
                 if (!json.authenticated) {
                     onNotAuthenticated();
                 } else if (json.securityLevel == 2) {
