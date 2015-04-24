@@ -8,13 +8,13 @@
 }
 
 .menu-link-list li {
-	border-bottom: 1px solid @gray-lighter;
+	border-bottom: 1px solid @gray-icon;
 	position: relative;
 	font-size: @rem-as-12px;
 }
 
 .menu-link-list a {
-	color: @gray-dark;
+	color: @gray-inactive;
 	display: block;
 	padding: 10px 0;
 	text-align: left;
@@ -49,7 +49,7 @@
 
 .topnavsection-wrapper {
 	background-color: #fff;
-	border-bottom: 1px solid @gray-lighter;
+	border-bottom: 1px solid @gray-icon;
 	position: relative;
 	z-index: 1;
 }
@@ -168,7 +168,7 @@
 			display: block;
 		}
 		&:checked ~ label.toggle-mainmenu {
-			color: @blue-light;
+			color: @blue-interaction;
 		}
 	}
 
@@ -177,12 +177,12 @@
 			display: block;
 		}
 		&:checked ~ label.toggle-search {
-			color: @blue-light;
+			color: @blue-interaction;
 		}
 	}
 
 	button.toggle-mainmenu.m-open {
-		color: @blue-light;
+		color: @blue-interaction;
 		background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/meny_mobil_blaa.png') no-repeat left 50%;
 		//background: transparent url('../../../img/navno/gfx/mainmenu/meny_mobil_blaa.svg') no-repeat left 50%;
 	}
@@ -190,7 +190,7 @@
 	button.toggle-search.m-open {
 
 		span {
-			color: @blue-light;
+			color: @blue-interaction;
 			background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/sok_liten_lyseblaa.png') no-repeat left 50%;
 			// background: transparent url('../../../img/navno/gfx/mainmenu/sok_liten_lyseblaa.svg') no-repeat left 50%;
 		}
@@ -231,7 +231,7 @@
 		}
 
 		.mobile-submenu-expander.open {
-			color: @blue-light;
+			color: @blue-interaction;
 		}
 
 		.mobile-submenu {
@@ -258,16 +258,16 @@
 		.topnavsection {
 			// wrapper rundt meny
 			position: relative;
-			background-color: @gray-darker;
+			background-color: @gray-inactive;
 		}
 
 		.accessible-megamenu,
 		.sitesearch {
-			border-top: 1px solid @gray;
+			border-top: 1px solid @gray-icon;
 			margin-left: -1.5625em; //-@grid-gutter-width / 2;
 			width: 90%;
 			position: absolute;
-			background-color: @gray-darker;
+			background-color: @gray-inactive;
 			color: #fff;
 			a, a:active, a:hover {
 				color: #fff;
@@ -286,7 +286,7 @@
 				padding: (@grid-gutter-width / 2) 1.5625em; // tilsvarende 25px ut til sidene
 				> div {
 					background: #fff;
-					border: 1px solid @gray-lighter;
+					border: 1px solid @gray-icon;
                     white-space: nowrap;
 				}
 
@@ -311,7 +311,7 @@
 
 		.accessible-megamenu {
 			a:active, a:focus, a:hover, .active a {
-				color: @blue-light;
+				color: @blue-interaction;
 			}
 		}
 
@@ -320,23 +320,21 @@
 			> a {
 				display: block;
 				padding: 15px 35px 15px 25px; //@grid-gutter-width / 2;
-				border-bottom: 1px solid @gray;
+				border-bottom: 1px solid @gray-icon;
 				font-size: 1.0652em; // skal være 17px
 				text-transform: uppercase;
 				text-decoration: none;
 				font-family: @font-family-modus;
 				font-weight: 600;
 				&.open {
-					color: @blue-light;
+					color: @blue-interaction;
 				}
-
 			}
-
 		}
 
 		// topnavitem
 		.topnavitem.selected-topnavitem.has-children {
-			border-bottom: 1px solid @gray; // skillelinje før neste hovedmenypunkt (etter undermeny)
+			border-bottom: 1px solid @gray-icon; // skillelinje før neste hovedmenypunkt (etter undermeny)
 		}
 
 		.topnavitem.has-children {
@@ -351,7 +349,7 @@
 			.mobile-submenu-expander:after {
 				content: " ";
 				display: inline-block;
-				border-top: 6px solid @blue-light;
+				border-top: 6px solid @blue-interaction;
 				border-right: 6px solid transparent;
 				border-left: 6px solid transparent;
 				position: absolute;
@@ -361,7 +359,7 @@
 
 			> a.open:after,
 			.mobile-submenu-expander.open:after {
-				border-bottom: 6px solid @blue-light;
+				border-bottom: 6px solid @blue-interaction;
 				border-top: none;
 				border-right: 6px solid transparent;
 				border-left: 6px solid transparent;
@@ -369,12 +367,12 @@
 
 			> a:hover:after, .mobile-submenu-expander:hover:after,
 			> a:focus:after, .mobile-submenu-expander:focus:after {
-				border-top: 6px solid @blue-light;
+				border-top: 6px solid @blue-interaction;
 			}
 
 			> a.open:hover:after, .mobile-submenu-expander.open:hover:after,
 			> a.open:focus:after, .mobile-submenu-expander.open:focus:after {
-				border-bottom: 6px solid @blue-light;
+				border-bottom: 6px solid @blue-interaction;
 				border-top: none;
 			}
 		}
@@ -497,7 +495,6 @@
 			}
 		}
 	}
-
 }
 
 //--------------------------------------------------------------------
@@ -526,9 +523,7 @@
 				}
 			}
 		}
-
 	}
-
 }
 
 //--------------------------------------------------------------------
@@ -567,7 +562,7 @@
 	}
 
 	.topnavsection:after {
-		border-bottom: 1px solid @gray-lighter;
+		border-bottom: 1px solid @gray-icon;
 		content: "";
 		position: absolute;
 		top: 2.625em; // 42px
@@ -675,8 +670,7 @@
 		// submenu-branch // accessible-megamenu-panel
 		visibility: hidden;
 		position: absolute;
-		top: 60px;
-        top:3.75rem;
+        top: 3.75rem;
 		left: 0;
 		width: 100%;
 		padding: 0 (@grid-gutter-width / 2);
@@ -725,9 +719,7 @@
 			.selected-topnavitem {
 				.accessible-megamenu-panel {
 					visibility: visible;
-
 				}
-
 			}
 		}
 	}
@@ -749,7 +741,6 @@
 
 		}
 	}
-
 }
 
 // desktop end

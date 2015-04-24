@@ -26,7 +26,6 @@
 //--------------------------------------------------------------------
 
 .siteheader {
-
 	.dropdown {
 		> a {
 			outline-offset: -1px;
@@ -41,7 +40,6 @@
 		.nav {
 			padding: 0;
 		}
-
 		.dropdown-menu {
 			> li {
 				display: block;
@@ -69,21 +67,16 @@
 	}
 
 	@media (min-width: (@screen-medium + 0.0625em)) {
-
 		.siteheader-toolbar-and-login-defaults();
-
 		.sitelogo-large {
 			display: block;
 		}
-
 		.sitelogo-small {
 			display: none;
 		}
-
 	}
 
 	@media (min-width: 60em) {
-
 		// 960px --> samme media query på sentrering av hovedmenylinje
 		.site-coltrols-toolbar {
 			text-align: center;
@@ -99,66 +92,56 @@
 				right: 48%;
 			}
 		}
-
 	}
 	// media 60em end
-
 }
 
 // mixin responsive true end
 
 .global-siteheader-toolbar() when (@responsive = false) {
 	// FOR IE8 og dekoratør!
-
 	.siteheader-toolbar-and-login-defaults();
-
 	.sitelogo-small {
 		display: none;
 	}
-
 	.site-coltrols-toolbar {
 		text-align: center;
 	}
 	#text-size-accessibility {
 		display: inline-block;
 	}
-
 }
 
 // mixin responsive false
 
 .siteheader-toolbar-and-login-defaults() {
-
   .settings a,
   .settings .link-btn {
       font-size: @rem-as-12px;
-      color: #fff;
+      color: @white;
       padding: 1em 22px;
       text-decoration: none;
     }
 
 	.site-coltrols-toolbar {
 		display: block;
-		background: @gray-darker;
+		background: @gray-inactive;
 		min-height: 42px;
-
 		.settings {
 			display: inline-block;
 			width: 50%;
 		}
-
-
 	}
 
 	.text-size-tooltip, .login-tooltip, .logout-tooltip {
 		padding: 16px 24px;
 		position: absolute;
-		background-color: #000000;
-		color: #ffffff;
+		background-color: @black;
+		color: @white;
 		z-index: 9;
 		text-align: left;
 		span.arrow {
-			.up-arrow(9px, 6px, 6px, #000000); // mixin
+			//.up-arrow(9px, 6px, 6px, @black); // mixin
 			position: absolute;
 			top: -8px;
 		}
@@ -177,13 +160,9 @@
 			margin: 0;
 		}
 	}
-
 	#text-size-accessibility {
 		position: relative;
 	}
-
-
-
 }
 
 // mixin siteheader-toolbar-and-login-defaults end
@@ -191,8 +170,8 @@
 .sitelogo {
 	text-align: center;
 	padding: 15px 0 18px;
-	background-color: #fff;
-	border-bottom: 1px solid @gray-lighter;
+	background-color: @white;
+	border-bottom: 1px solid @gray-icon;
 	a {
 		text-decoration: none;
 		display: inline-block;
@@ -218,7 +197,7 @@
 	width: 0;
 	height: 0;
 	vertical-align: top;
-	border-top: 4px solid #fff;
+	border-top: 4px solid @white;
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
 	content: "";
@@ -241,7 +220,7 @@
 	padding: 5px 0;
 	margin: 0;
 	list-style: none;
-	background-color: @gray-darker;
+	background-color: @gray-inactive;
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
@@ -256,8 +235,8 @@
 	height: 1px;
 	margin: 9px 1px;
 	overflow: hidden;
-	background-color: @gray-darker;
-	border-bottom: 1px solid #000;
+	background-color: @gray-inactive;
+	border-bottom: 1px solid @black;
 }
 
 .dropdown-menu > li > a {
@@ -266,7 +245,7 @@
 	clear: both;
 	font-weight: normal;
 	line-height: 20px;
-	color: #ffffff;
+	color: @white;
 	white-space: nowrap;
 }
 
@@ -275,14 +254,14 @@
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a {
 	text-decoration: none;
-	color: @blue-light;
+	color: @blue-interaction;
 }
 
 .dropdown-menu > li.active {
 	> a {
-		color: @blue-light;
+		color: @blue-interaction;
 		&:after {
-			.bullet-point(2px, @blue-light, 13%, 40%); // mixin
+			.bullet-point(2px, @blue-interaction, 13%, 40%); // mixin
 			text-decoration: none;
 			outline: 0;
 		}
@@ -292,7 +271,7 @@
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
-	color: @gray-darker;
+	color: @gray-inactive;
 }
 
 .open > .dropdown-menu {

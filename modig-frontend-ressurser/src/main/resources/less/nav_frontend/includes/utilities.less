@@ -30,11 +30,11 @@
 }
 
 .muted {
-	color: @gray;
+	color: @gray-inactive;
 }
 
 .loud {
-	color: @red;
+	color: @red-nav;
 }
 
 .illuminated { // I bruk av skjemaveileder + aap
@@ -65,11 +65,11 @@
 	font-weight: 400;
 	padding-bottom: 30px;
 	margin: 0;
-	border-bottom: 1px solid @gray-lighter;
+	border-bottom: 1px solid @gray-icon;
 }
 
 .decorated:after {
-	border-top: 1px solid #808080;
+	border-top: 1px solid @gray-icon;
 	clear: both;
 	content: " ";
 	display: block;
@@ -105,15 +105,15 @@
 			font-family: Modus, Arial, Helvetica, sans-serif;
 			font-weight: 600;
 			font-size: 1.14em;
-			border: 1px solid @gray-lighter;
-			background: #fff url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTVweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNSA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNSA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiMyNzY4QjIiIHBvaW50cz0iNy41LDAgMCw4IDQuOTk4LDggNy41LDUuMDIzIDkuOTk3LDggMTUsOCAiLz4NCjwvc3ZnPg0K) 90% 15px no-repeat;
+			border: 1px solid @gray-icon;
+			background: @white url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTVweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNSA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNSA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiMyNzY4QjIiIHBvaW50cz0iNy41LDAgMCw4IDQuOTk4LDggNy41LDUuMDIzIDkuOTk3LDggMTUsOCAiLz4NCjwvc3ZnPg0K) 90% 15px no-repeat;
 			@media (max-width: (@screen-small - 0.01)) {
 				background-position: 85% 15px;
 			}
 
 			&:hover, &:focus, &:active {
 				color: #fff;
-				background: @blue-light url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTVweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNSA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNSA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNy41LDAgMCw4IDQuOTk4LDggNy41LDUuMDIzIDkuOTk3LDggMTUsOCAiLz4NCjwvc3ZnPg0K) 90% 15px no-repeat;
+				background: @blue-interaction url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTVweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNSA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNSA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNy41LDAgMCw4IDQuOTk4LDggNy41LDUuMDIzIDkuOTk3LDggMTUsOCAiLz4NCjwvc3ZnPg0K) 90% 15px no-repeat;
 				@media (max-width: (@screen-small - 0.01)) {
 					background-position: 85% 15px !important;
 				}
@@ -127,7 +127,7 @@
 		width: 100%;
 		left: 0;
 		padding: 10px 0;
-		background-color: #f1f1f1;
+		background-color: @gray-background;
 		z-index: 10;
 		@media (min-width: @screen-small) {
 			margin-left: 2px;
@@ -139,11 +139,11 @@
 			border: none;
 			//background: url('@{baseImagePath}img/enonic/gfx/icons/pil_til_topp.svg') right 7px no-repeat;
 			background-position: right 7px;
-			background-color: @gray-lightest;
+			background-color: @gray-background;
 
 			&:hover, &:focus, &:active {
-				color: @blue-light;
-				background-color: #f1f1f1;
+				color: @blue-interaction;
+				background-color: @gray-background;
 				text-decoration: underline;
 				background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTVweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxNSA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNSA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiMyNzY4QjIiIHBvaW50cz0iNy41LDAgMCw4IDQuOTk4LDggNy41LDUuMDIzIDkuOTk3LDggMTUsOCAiLz4NCjwvc3ZnPg0K);
 			}
@@ -152,15 +152,15 @@
 				padding: 8px 34px 8px 18px;
 				//background: @gray-lightest url('@{baseImagePath}img/enonic/gfx/icons/pil_til_topp.svg') 90% 14px no-repeat;
 				background-position: 85% 14px !important;
-				border: 1px solid @gray-lighter;
-				-webkit-box-shadow: 0 0 25px 0 @gray-lighter;
-				-moz-box-shadow: 0 0 25px 0 @gray-lighter;
-				box-shadow: 0 0 25px 0 @gray-lighter;
+				border: 1px solid @gray-icon;
+				-webkit-box-shadow: 0 0 25px 0 @gray-icon;
+				-moz-box-shadow: 0 0 25px 0 @gray-icon;
+				box-shadow: 0 0 25px 0 @gray-icon;
 			}
 		}
-		-webkit-box-shadow: 0 0 25px 0 @gray-lighter;
-		-moz-box-shadow: 0 0 25px 0 @gray-lighter;
-		box-shadow: 0 0 25px 0 @gray-lighter;
+		-webkit-box-shadow: 0 0 25px 0 @gray-icon;
+		-moz-box-shadow: 0 0 25px 0 @gray-icon;
+		box-shadow: 0 0 25px 0 @gray-icon;
 
 		@media (max-width: (@screen-small - 0.01)) {
 			background-color: transparent;

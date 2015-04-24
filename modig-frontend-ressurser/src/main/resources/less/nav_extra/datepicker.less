@@ -2,7 +2,7 @@
 	width: 14em;
 	padding: .2em .2em 0;
 	display: none;
-	background: @gray-dark;
+	background: @gray-inactive;
 	.ui-datepicker-header {
 		position: relative;
 		padding: .2em 0;
@@ -38,10 +38,10 @@
 				font-size: 0.9em;
 				width: 43%;
 				height: 1.5em;
-				border: 1px solid @gray-light;
-				background: @gray-dark;
+				border: 1px solid @gray-icon;
+				background: @gray-inactive;
 				padding: 0;
-				color: @gray-light;
+				color: @gray-icon;
 				margin: 0 2px;
 			}
 		}
@@ -57,7 +57,7 @@
 			text-align: center;
 			font-weight: 700;
 			border: 0;
-			color: @gray-light;
+			color: @gray-icon;
 		}
 		tbody {
 			border: 1px solid @black;
@@ -75,28 +75,28 @@
 						color: @black;
 					}
 					&.ui-state-hover {
-						background: @blue-light;
+						background: @blue-interaction;
 						color: @black;
 					}
 				}
 				&:last-child {
 					border-right: none;
 					span, a {
-						color: @pink-darker;
+						color: @orange-info;
                         &.ui-state-hover {
-                            background: @pink-darker;
+                            background: @orange-info;
                             color: @black;
                         }
 					}
 				}
 				&.ui-datepicker-unselectable {
-					color: @gray-light;
+					color: @gray-icon;
 					* {
-						color: @gray-light;
+						color: @gray-icon;
 					}
 					span:hover {
 						background: transparent;
-						color: @gray-light;
+						color: @gray-icon;
 					}
 				}
 				&.ui-datepicker-unselectable:last-child {
@@ -217,17 +217,17 @@
 		}
 	}
 	&.ui-widget-content {
-		border: 1px solid @gray-lighter;
+		border: 1px solid @gray-icon;
 		color: @white;
 		a {
 			color: @white;
 		}
 	}
 	.ui-widget-header {
-		color: @gray-light;
+		color: @gray-icon;
 		font-weight: bold;
 		a {
-			color: @gray-light;
+			color: @gray-icon;
 		}
 	}
 }
@@ -240,11 +240,11 @@ img.ui-datepicker-trigger {
 	width: 9em;
 	cursor: text;
 	padding: 7px;
-	color: @gray-light;
+	color: @gray-icon;
 }
 
 input:placeholder, textarea:placeholder {
-	color: @gray-light;
+	color: @gray-icon;
 }
 
 

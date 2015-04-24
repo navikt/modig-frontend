@@ -51,9 +51,8 @@
 
 			&.open {
 				color: @gray-text;
-				background-color: @gray-lighter;
+				background-color: @gray-icon;
 			}
-
 		}
 
 		&:first-child {
@@ -91,7 +90,7 @@
 .no-touch .letter > a:hover,
 .letter > a:focus,
 .letter > a:active {
-	background-color: @blue-light; // :hover for skjermer som støtter touch, står innenfor min-width mq pga iOS bug
+	background-color: @blue-interaction; // :hover for skjermer som støtter touch, står innenfor min-width mq pga iOS bug
 	color: @gray-text;
 }
 
@@ -106,7 +105,6 @@
 	width: 100%;
 
 	p {
-		font-family: Modus, Arial;
 		font-size: @rem-as-16px;
 		font-weight: 600;
 		color: #b7b1a9;
@@ -134,10 +132,10 @@
 				&:hover,
 				&:focus,
 				&:active {
-					color: @blue-light;
+					color: @blue-interaction;
 					text-decoration: none;
 					&:before {
-						.bullet-point(3px, @blue-light, -11px, 1.18em);
+						.bullet-point(3px, @blue-interaction, -11px, 1.18em);
 					}
 				}
 
@@ -205,11 +203,10 @@
 		.letter-scroll-right {
 			cursor: pointer;
 			display: block;
-			border: 0;
 			border: 1px solid rgba(0, 0, 0, 0);
 			outline: 0;
 			position: absolute;
-			background-color: @gray-darker;
+			background-color: @gray-inactive;
 			width: 2em;
 			height: 2em;
 		}
@@ -227,7 +224,7 @@
 		.letter-scroll-left {
 			left: 0;
 			&:after {
-				border-right: 14px solid #fff;
+				border-right: 14px solid @white;
 				left: 9px;
 				border-left: 0;
 			}
@@ -236,7 +233,7 @@
 		.letter-scroll-right {
 			right: 0;
 			&:after {
-				border-left: 14px solid #fff;
+				border-left: 14px solid @white;
 				right: 9px;
 			}
 		}
@@ -300,7 +297,7 @@
 	}
 
 	.letter > a:hover {
-		background-color: @blue-light;
+		background-color: @blue-interaction;
 		color: @gray-text;
 	}
 
@@ -333,5 +330,4 @@
 	.accessible-megafooter-panel {
 		padding: 20px 0 0 0;
 	}
-
 }

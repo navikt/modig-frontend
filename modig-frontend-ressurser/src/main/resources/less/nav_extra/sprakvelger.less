@@ -38,10 +38,10 @@
 
 	> span {
 		text-decoration: none;
-		color: @gray-dark;
+		color: @gray-inactive;
 		cursor: pointer;
 		&:after {
-			.down-arrow(4px, 4px, 4px, @gray-dark);
+			.down-arrow(4px, 4px, 4px, @gray-inactive);
 			margin-top: 6px;
 			margin-left: 4px;
 		}
@@ -54,8 +54,8 @@
 		left: 0;
 		position: absolute;
 		top: 23px;
-		background: @gray-dark;
-		border: 1px solid #333;
+		background: @gray-inactive;
+		border: 1px solid @gray-text;
 		border-top: none;
 		li {
 			display: block;
@@ -65,7 +65,7 @@
 			position: relative;
 			.active-lang {
 				&:after {
-					.bullet-point(2px, @blue-dark, 17px, 46%);
+					.bullet-point(2px, @blue-link, 17px, 46%);
 				}
 			}
 			&:first-child {
@@ -80,9 +80,9 @@
 			}
 			a {
 				padding: 4px 0 4px 27px;
-				color: #ffffff;
+				color: @white;
 				&:hover {
-					color: @blue-dark;
+					color: @blue-link;
 					text-decoration: none;
 				}
 			}
@@ -93,9 +93,9 @@
 		background-repeat: no-repeat;
 		background-position: 8% center;
 		span {
-			color: @blue-dark;
+			color: @blue-link;
 			&:after {
-				.down-arrow(4px, 4px, 4px, @blue-light);
+				.down-arrow(4px, 4px, 4px, @blue-interaction);
 			}
 		}
 	}

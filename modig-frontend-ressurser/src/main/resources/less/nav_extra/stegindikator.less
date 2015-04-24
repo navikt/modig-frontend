@@ -1,76 +1,76 @@
 .stegindikator {
-  display: table;
-  list-style: none;
-  margin: 10px auto;
-  padding: 0;
-  li {
-    display: block;
-    position: relative;
-    float: left;
-    margin-right: 10px;
+	display: table;
+	list-style: none;
+	margin: 10px auto;
+	padding: 0;
+	li {
+		display: block;
+		position: relative;
+		float: left;
+		margin-right: 10px;
 
-    //
-    //  TODO: Vurdere å sette padding på <a> i stedet for <li> for større klikkflate. Klassen .steg kan brukes (finnes på <a> eller <span>, som første barn inne i <li>)
-    //
+		//
+		//  TODO: Vurdere å sette padding på <a> i stedet for <li> for større klikkflate. Klassen .steg kan brukes (finnes på <a> eller <span>, som første barn inne i <li>)
+		//
 
-    padding: 8px 12px;
-    border: 1px solid @gray-lighter;
-    background: #f9f9f9;
-    color: @gray-dark;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 0.9rem;
-    &.aktiv {
-      background: @red;
-      color: @white;
+		padding: 8px 12px;
+		border: 1px solid @gray-icon;
+		background: #f9f9f9;
+		color: @gray-inactive;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 0.9rem;
+		&.aktiv {
+			background: @red-nav;
+			color: @white;
 
-      a {
-        color: @white;
-        font-size: 0.9rem;
-        text-decoration: none;
-      }
-    }
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      height: 1px;
-      right: -10px;
-      top: 21px;
-      width: 10px;
-      background-color: #ccc;
-    }
-    &:last-child {
-      margin-right: 0;
-      &:after {
-        display: inline;
-        position: static;
-        height: auto;
-        width: auto;
-        background-color: transparent;
-      }
-    }
-    a {
-      color: @gray-text;
-      font-size: 0.9rem;
-    }
-  }
+			a {
+				color: @white;
+				font-size: 0.9rem;
+				text-decoration: none;
+			}
+		}
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			height: 1px;
+			right: -10px;
+			top: 21px;
+			width: 10px;
+			background-color: #ccc;
+		}
+		&:last-child {
+			margin-right: 0;
+			&:after {
+				display: inline;
+				position: static;
+				height: auto;
+				width: auto;
+				background-color: transparent;
+			}
+		}
+		a {
+			color: @gray-text;
+			font-size: 0.9rem;
+		}
+	}
 }
 
 @media (min-width: 62em) {
-  // 992px
-  .stegindikator li {
-    padding: 10px 50px;
-    font-size: 1rem;
-    a {
-      font-size: 1rem;
-    }
-    &.aktiv {
-      padding: 10px 50px;
-      a {
-        font-size: 1rem;
-      }
-    }
-  }
+	// 992px
+	.stegindikator li {
+		padding: 10px 50px;
+		font-size: 1rem;
+		a {
+			font-size: 1rem;
+		}
+		&.aktiv {
+			padding: 10px 50px;
+			a {
+				font-size: 1rem;
+			}
+		}
+	}
 }
