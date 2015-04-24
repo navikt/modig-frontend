@@ -1,107 +1,57 @@
-
 // Global values
 // --------------------------------------------------
 
-.define-responsive-if-not-defined() {
-  @responsive: true; // tar med min-width mediaqueries
-}
-.define-responsive-if-not-defined(); // exposes a variable ("responsive) only if it's not already in this scope.
-
+@responsive: true;
 
 .define-basepath-if-not-defined() {
   @baseImagePath: '../';
 }
 .define-basepath-if-not-defined();
 
-// Grays
+
+// NAV colors
 // -------------------------
+
 @white:                 #fff;
 @black:                 #000;
 
-@gray-darkest:          #222;
-@gray-darker:           #333;       // bakgrunn footer og head (mørk)
-@gray-dark:             #3e3832;    // verifisert (tekstfarge)
-@gray:                  #555;
-@gray-light:            #b7b1a9;
-@gray-lighter:          #d1d1d1;    // linje rundt bokser etc
-@gray-lightest:         #f1f1f1;    // body background
+@gray-background:       #efefef;    // body background
+@gray-icon:             #b7b1a9;
+@gray-inactive:         #7f756c;    // linje rundt bokser etc
+@gray-text:             #3e3832;    // verifisert (tekstfarge)
 
+@blue-interaction:      #65caeb;
+@blue-link:             #0067c5;
 
-// Accent colors
-// -------------------------
-@blue-light:            #0ca9e1;
-@blue:                  #008fc4;
-@blue-dark:             #0067c5;
-@green:                 #46a546;
-@red:                   #c30000;
-@red-light:             #fee6e6;
-@yellow:                #ffc40d;
-@orange:                #f89406;
-@pink:                  #df4b78;
-@pink-darker:           #ec288d;
-@purple:                #7a43b6;
+@blue-active:           #005b82;
 
+@purple-visited:        #634689;
+@orange-info:           #ff9100;
+@green-accept:          #119b49;
 
-// Scaffolding
-// -------------------------
-@text-color:            @gray-dark;
-
-
-// Links
-// -------------------------
-@link-color:             #0067c5; // verifisert
-
-
-// Typography
-// -------------------------
+@red-nav:               #c30000;
+@red-warning:           #be5227;
 
 
 // family
 // -------------------------
-@font-family-sans-serif:        Arial, Helvetica, sans-serif;
-@font-family-serif:  	        Georgia, "Times New Roman", Times, serif;
-@font-family-monospace:         Monaco, Menlo, Consolas, "Courier New", monospace;
-@font-family-modus:     	    Modus,Arial,Helvetica,sans-serif; // custom webfont
-
-@headings-color:          		inherit;
+@font-family-sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-modus:     	    Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 //REM base fonts (1rem = 16px)
 // -------------------------
 @rem-as-38px:			2.375rem;
 @rem-as-30px:			1.875rem;
-@rem-as-24px:           1.5rem;
 @rem-as-20px:			1.25rem;
-@rem-as-18px:    		1.125rem;
 @rem-as-17px:           1.0675rem;
 @rem-as-16px:			1rem;
+@rem-as-15px:			0.9375rem;
 @rem-as-14px:			0.875rem;
-@rem-as-12px:			0.75rem;
-@rem-as-11px:    		0.7rem;
-@rem-as-10px:			0.625rem;
+@rem-as-13px:			0.8125rem;
 
-@line-height-base:        1.428571429; // 20/14
-@line-height-computed:    floor(@rem-as-14px * @line-height-base); // ~20px
-
-//@base-line-height:        @line-height-base; // i bruk??
-
-// Buttons
-// -------------------------
-@btn-background:                      #e3e3e3;
-@btn-primary-background:              #0067c5;
-@btn-primary-background-highlight:    spin(@btn-primary-background, 10%);
-@btn-inverse-background:              #444;
-@btn-danger-background:               #ee5f5b;
-@btn-danger-background-highlight:     #bd362f;
-
-
-// Forms
-// -------------------------
-@input-bg:                       @white;
-@input-bg-disabled:              @gray-lightest;
-@input-color:                    @gray;
-@input-border:                   #ccc;
-@input-height:                   @line-height-base + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+@line-height-base:      1.428571429; // 20/14
+@line-height-computed:  floor(@rem-as-14px * @line-height-base); // ~20px
 
 
 // Z-index master list
@@ -115,12 +65,6 @@
 @zindex-navbar-fixed:      1030;
 @zindex-modal-background:  1040;
 @zindex-modal:             1050;
-
-
-// Tooltips // TODO i bruk?
-// -------------------------
-@tooltip-arrow-width:         5px;
-@tooltip-arrow-color:         @black;
 
 
 // Media queries breakpoints

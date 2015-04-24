@@ -50,7 +50,7 @@
 			border-right: 1px solid #000;
 
 			&.open {
-				color: @text-color;
+				color: @gray-text;
 				background-color: @gray-lighter;
 			}
 
@@ -66,7 +66,7 @@
 	.panel-wrapper {
 		height: 0;
 		visibility: hidden;
-		.transition(height .5s);
+		transition: height .5s;
 
 	}
 
@@ -92,7 +92,7 @@
 .letter > a:focus,
 .letter > a:active {
 	background-color: @blue-light; // :hover for skjermer som støtter touch, står innenfor min-width mq pga iOS bug
-	color: @text-color;
+	color: @gray-text;
 }
 
 .accessible-megafooter-panel {
@@ -148,13 +148,13 @@
 	.footer-columns {
 		// klasse settes av js for nettlesere som støtter css columns
 
-		.content-columns(1);
+		column-count: 1;
 
 		@media (min-width: @screen-medium) {
-			.content-columns(3);
+			column-count: 3;
 		}
 		@media (min-width: @screen-large) {
-			.content-columns(4);
+			column-count: 4;
 		}
 		li {
 			display: inline-block;
@@ -301,7 +301,7 @@
 
 	.letter > a:hover {
 		background-color: @blue-light;
-		color: @text-color;
+		color: @gray-text;
 	}
 
 	.letter-scroll-left,
