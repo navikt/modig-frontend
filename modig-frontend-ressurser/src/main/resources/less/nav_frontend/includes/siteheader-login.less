@@ -26,6 +26,7 @@
   position: absolute;
   top: 0;
   right: 0.9375em;
+  height:100%;
 
   p span, p a {
     font-size: 1em;
@@ -63,9 +64,21 @@
 #auth-btns {
   width: 30%;
   float: left;
-  padding-top: 0.6em;
+  padding-top: 0.5rem;
   text-align: right;
 }
+
+.flexbox {
+  #auth-btns, #login-details {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-top:0;
+    padding-bottom:0;
+    height:100%;
+  }
+}
+
 
 #login-details.hidden + #auth-btns {
   // hvis innloggingsinfo er skjult, skal "logg inn" fortsatt stå til høyre
@@ -139,13 +152,14 @@
   .knapp {
     font-family: @font-family-modus;
     font-weight: bold;
-    padding: 4px 15px 4px 15px;
+    padding: 4px 15px;
     border: none;
     white-space: nowrap;
 
     &.btn-logout {
       color: @gray-darker;
       background-color: #0CA9E0;
+      border:none;
       &:hover, &:focus {
         color: @gray-darker;
         background-color: #d1d1d1;
@@ -154,6 +168,7 @@
     }
     &.btn-login {
       color: @gray-darker;
+      border:none;
       &:hover, &:focus {
         color: @gray-darker;
         background-color: #0CA9E0;

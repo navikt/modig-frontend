@@ -498,7 +498,16 @@
 				}
 			}
 		}
-	}
+      .flexbox {
+        .accessible-megamenu {
+          display: flex;
+          justify-content: center;
+        }
+
+      }
+	} // mq end
+
+
 
 }
 
@@ -530,6 +539,14 @@
 		}
 
 	}
+
+  .flexbox {
+    .accessible-megamenu {
+      display: flex;
+      justify-content: center;
+    }
+
+  }
 
 }
 
@@ -577,7 +594,7 @@
 	}
 
 	.accessible-megamenu {
-		display: inline-block;
+		display: inline-block; // fall back hvis ikke flexbox-støtte
 		.panel-wrapper {
 			height: 0;
 			.transition(height .5s);
@@ -602,6 +619,8 @@
 		}
 
 	}
+
+
 
 	.topnavitem {
 		line-height: 1.375em; // 22px
