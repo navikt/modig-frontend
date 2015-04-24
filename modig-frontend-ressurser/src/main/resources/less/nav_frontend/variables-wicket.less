@@ -1,110 +1,66 @@
-
-// Global values
+// GLOBAL VALUES
 // --------------------------------------------------
-.define-responsive-if-not-defined() {
-  @responsive: true; // tar med min-width mediaqueries
-}
-.define-responsive-if-not-defined(); // exposes a variable ("responsive) only if it's not already in this scope.
+
+@responsive: true; // tar med mediaqueries
 
 .define-basepath-if-not-defined() {
   @baseImagePath: '../';
 }
 .define-basepath-if-not-defined();
 
-// Grays
-// -------------------------
+
+// NAV COLORS
+// --------------------------------------------------
+
 @white:                 #fff;
 @black:                 #000;
 
-@gray-darkest:          #222;
-@gray-darker:           #333;       // bakgrunn footer og head (mørk)
-@gray-dark:             #3e3832;    // verifisert (tekstfarge)
-@gray:                  #555;
-@gray-light:            #b7b1a9;
-@gray-lighter:          #d1d1d1;    // linje rundt bokser etc
-@gray-lightest:         #f1f1f1;    // body background
+@gray-background:       #efefef;    // body background
+@gray-icon:             #b7b1a9;    // linje rundt bokser
+@gray-inactive:         #7f756c;
+@gray-text:             #3e3832;
+
+@blue-interaction:      #65caeb;
+@blue-link:             #0067c5;
+@blue-active:           #005b82;
+
+@purple-visited:        #634689;
+@orange-info:           #ff9100;
+@green-accept:          #119b49;
+
+@red-nav:               #c30000;
+@red-warning:           #ba3a26;
 
 
-// Accent colors
-// -------------------------
-@blue-light:            #0ca9e1;
-@blue:                  #008fc4;
-@blue-dark:             #0067c5;
-@green:                 #46a546;
-@red:                   #c30000;
-@yellow:                #ffc40d;
-@orange:                #f89406;
-@pink:                  #df4b78;
-@pink-darker:           #ec288d;
-@purple:                #7a43b6;
+// FONT-FAMILY
+// --------------------------------------------------
 
-
-// Scaffolding
-// -------------------------
-@gray-text:            @gray-dark;
-
-
-// Links
-// -------------------------
-@blue-link:             #0067c5; // verifisert
-
-
-// Typography
-// -------------------------
-
-
-// family
-// -------------------------
-@font-family-sans-serif:        Arial, Helvetica, sans-serif;
-@font-family-serif:  	        Georgia, "Times New Roman", Times, serif;
-@font-family-monospace:         Monaco, Menlo, Consolas, "Courier New", monospace;
-@font-family-modus:     	    Modus,Arial,Helvetica,sans-serif; // custom webfont
-
-@headings-color:          		inherit;
+@font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-modus:          Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 //REM base fonts (1rem = 16px)
-// -------------------------
-@rem-as-38px:			2.375rem;
-@rem-as-30px:			1.875rem;
-@rem-as-24px:           1.5rem;
-@rem-as-20px:			1.25rem;
-@rem-as-18px:    		1.125rem;
+// --------------------------------------------------
+
+@rem-as-38px:           2.375rem;
+@rem-as-30px:           1.875rem;
+@rem-as-20px:           1.25rem;
 @rem-as-17px:           1.0675rem;
-@rem-as-16px:			1rem;
-@rem-as-14px:			0.875rem;
+@rem-as-16px:           1rem;
+@rem-as-15px:           0.9375rem;
+@rem-as-14px:           0.875rem;
+@rem-as-13px:           0.8125rem;
 @rem-as-12px:			0.75rem;
-@rem-as-11px:    		0.7rem;
-@rem-as-10px:			0.625rem;
 
-@line-height-base:        1.428571429; // 20/14
-@line-height-computed:    floor(@rem-as-14px * @line-height-base); // ~20px
-
-@base-line-height:        @line-height-base;
-
-// Buttons
-// -------------------------
-@btn-background:                      #e3e3e3;
-@btn-primary-background:              #00a9e0;
-@btn-primary-background-highlight:    spin(@btn-primary-background, 10%);
-@btn-inverse-background:              #444;
-@btn-danger-background:               #ee5f5b;
-@btn-danger-background-highlight:     #bd362f;
+@line-height-base:      1.428571429; // 20/14
+@line-height-computed:  floor(@rem-as-14px * @line-height-base); // ~20px
 
 
-// Forms
-// -------------------------
-@input-bg:                       @white;
-@input-bg-disabled:              @gray-lightest;
-@input-color:                    @gray;
-@input-border:                   #ccc;
-@input-height:                   @line-height-base + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
-
-
-// Z-index master list
-// -------------------------
+// Z-INDEX MASTER LIST
+// --------------------------------------------------
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
+
 @zindex-navbar:            1000;
 @zindex-dropdown:          1000;
 @zindex-popover:           1010;
@@ -114,14 +70,9 @@
 @zindex-modal:             1050;
 
 
-// Tooltips // TODO i bruk?
-// -------------------------
-@tooltip-arrow-width:         5px;
-@tooltip-arrow-color:         @black;
-
-
-// Media queries breakpoints
+// MEDIA QUERIES BREAKPOINTS
 // --------------------------------------------------
+
 @screen-xxs:                 15em;      //240px;  Fra mobil
 @screen-xs:     	         30em;		//480px;  Mobil
 @screen-small:  			 38.75em;	//620px;  // Custom
@@ -130,15 +81,17 @@
 @screen-xl:					 75em;		//1200px; // ikke i bruk
 
 
-// Grid system
+// GRID SYSTEM
 // --------------------------------------------------
+
 @grid-columns:              12;
 @grid-gutter-width:         1.875em; //30px;
 @grid-float-breakpoint:     @screen-xs; // Point at which the navbar stops collapsing
 
 
-// Container sizes
+// CONTAINER SIZES
 // --------------------------------------------------
+
 @container-tablet:             ((720px + @grid-gutter-width));
 @container-sm:                 @container-tablet;
 

@@ -1,0 +1,46 @@
+a {
+	color: @blue-link;
+	border-bottom: 1px solid @gray-icon;
+	text-decoration: none;
+	&:hover {
+		border-bottom: 1px solid @blue-link;
+	}
+	&:active {
+		color: @purple-visited;
+		border-bottom: 1px solid @purple-visited;
+	}
+	&.alene {
+		border-bottom: none;
+		&:hover {
+			border-bottom: 1px solid @blue-link;
+		}
+	}
+	&.uthevet {
+		position: relative;
+		cursor: pointer;
+		display: inline-block;
+		text-transform: uppercase;
+		outline: none;
+		border-radius: 2px;
+		letter-spacing: 1px;
+		padding: 18px 40px 15px;
+		line-height: 1.2;
+		margin-top: 0;
+		background: transparent;
+		border: 2px solid @blue-link;
+		top: 1px;
+		&:hover {
+			text-decoration: underline;
+		}
+		&:active {
+			background: @blue-link;
+			color: @white;
+		}
+		&:disabled, &.inaktiv {
+			&:hover {
+				text-decoration: none;
+				cursor: default;
+			}
+		}
+	}
+}

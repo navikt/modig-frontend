@@ -1,16 +1,15 @@
 .form-linje {
 	padding: 5px 0.5rem;
 	&.feil {
+		background-color: #ffedd6;
 		input:not([type="submit"]), textarea {
-			border: 1px solid #fca292;
-			border-top: 1px solid @red;
+			border: 1px solid #ba3a26;
+			background: #fbf5f4;
 		}
-		input:not([type="submit"]) {
-			background-color: @red-light;
-		}
-		.melding {
-			color: @red;
-			text-transform: none;
+		span {
+			&.melding {
+				color: #ba3a26;
+			}
 		}
 	}
 }
@@ -21,17 +20,16 @@ form, [ng-form], [data-ng-form] {
 	&.horisontal {
 		label {
 			position: relative;
-			padding: 1rem 0 0.5rem;
 			input, select, textarea {
-				margin-left: 1rem;
+				margin-left: 0.5rem;
 			}
 			span {
 				display: inline-block;
-				font-size: 0.85rem;
-				text-transform: uppercase;
-				width: 11rem;
+				font-size: 0.875rem;
+				width: 5.5rem;
 				&.melding {
 					width: auto;
+					margin-left: 0.5rem;
 				}
 			}
 		}
@@ -41,138 +39,139 @@ form, [ng-form], [data-ng-form] {
 		label {
 			input, select, textarea {
 				display: block;
-				&[type="checkbox"], &[type="radio"] {
-					display: inline-block;
-				}
-			}
-		}
-	}
-
-	&.dobbeldato {
-		display: inline-block;
-		background: @gray-lightest;
-		padding: 10px 20px 20px;
-		border: 1px solid @gray-lighter;
-		label {
-			padding: 0;
-			width: 9rem;
-			input {
-				width: 100%;
 			}
 		}
 	}
 }
 
 label {
-	font-size: @rem-as-14px;
-	&:last-child {
-		margin-bottom: 0;
-	}
-	span {
-		font-size: 0.85rem;
+	display: inline-block;
+	padding: 0 2px 2px;
+	margin-left: -2px;
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	input.hasDatepicker {
+		padding: 7px;
+		margin-top: 4px;
+		margin-bottom: 4px;
+		line-height: 1.1;
+		border-radius: 1px;
+		border: 1px solid @gray-icon;
+		&:focus {
+			box-shadow: 0 0 0 3px #ffbd66;
+			outline: none;
+		}
+		&:hover {
+			border: 1px solid @blue-link;
+		}
 	}
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type=checkbox], input[type=radio] {
 	position: absolute;
-	opacity: 0;
-}
-
-input[type="radio"] + label {
-	background: url(../img/radio.svg) 0 0 no-repeat;
-}
-
-input[type="radio"]:checked + label {
-	background: url(../img/radio_valgt.svg) 0 0 no-repeat;
-}
-
-input[type="radio"]:disabled:checked + label {
-	background: url(../img/radio_inactive_valgt.svg) 0 0 no-repeat;
-}
-
-input[type="radio"]:disabled + label {
-	background: url(../img/radio_inactive.svg) 0 0 no-repeat;
-}
-
-input[type="checkbox"] + label {
-	background: url(../img/check.svg) 0 0 no-repeat;
-}
-
-input[type="checkbox"]:disabled + label {
-	background: url(../img/check_inactive.svg) 0 0 no-repeat;
-}
-
-input[type="checkbox"]:checked + label {
-	background: url(../img/check_valgt.svg) 0 0 no-repeat;
-}
-
-input[type="checkbox"]:disabled:checked + label {
-	background: url(../img/check_inactive_valgt.svg) 0 0 no-repeat;
-}
-
-input[type=checkbox].bryter {
 	height: 0;
 	width: 0;
+	opacity: 0;
 	& + label {
-		background: url(../img/bryter.svg) 0 0 no-repeat;
-		height: 32px;
-		color: #333;
-		margin: 0 0 0.75em;
-		padding: 7px 0 0 65px;
-		&:last-child {
-			margin-bottom: 0;
+		display: inline-block;
+		position: relative;
+		padding: 4px 4px 4px 34px;
+		margin: 2px 1rem 2px -2px;
+		color: @gray-text;
+		vertical-align: text-top;
+	}
+}
+
+input[type=checkbox] {
+	& + label {
+		padding: 0;
+		span {
+			display: inline-block;
+			&:last-child {
+				vertical-align: 7px;
+				margin-left: 6px;
+			}
+		}
+		.outline {
+			width: 26px;
+			height: 26px;
+			border-radius: 2px;
+			border: 1px solid #978e85;
+		}
+		&:hover {
+			cursor: pointer;
+			.outline {
+				border: 1px solid @blue-link;
+			}
+		}
+	}
+	&:focus + label {
+		.outline {
+			box-shadow: 0 0 0 3px #ffbd66;
 		}
 	}
 	&:checked + label {
-		background: url(../img/bryter_valgt.svg) 0 0 no-repeat;
+		.outline {
+			background-color: @blue-link;
+			background-image: url(../gfx/hake_hvit.svg);
+			background-size: 30px 30px;
+			background-position: center;
+		}
 	}
 }
 
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-	display: inline-block;
-	position: relative;
-	padding: 2px 0 0 32px;
-	min-height: 30px;
-	margin-right: 1rem;
-	font-family: @font-family-sans-serif;
-	font-size: 1rem;
-	text-transform: none;
+input[type=radio] {
+	& + label {
+		padding: 0;
+		span {
+			display: inline-block;
+			&:last-child {
+				vertical-align: 7px;
+				margin-left: 6px;
+			}
+		}
+		.outline {
+			width: 26px;
+			height: 26px;
+			border-radius: 13px;
+			border: 1px solid #978e85;
+		}
+		&:hover {
+			cursor: pointer;
+			.outline {
+				border: 1px solid @blue-link;
+			}
+		}
+	}
+	&:focus + label {
+		.outline {
+			box-shadow: 0 0 0 3px #ffbd66;
+		}
+	}
+	&:checked + label {
+		.outline {
+			border: 3px solid @blue-link;
+			background-color: @white;
+			background-image: url(../gfx/prikk_blaa.svg);
+			background-size: 30px 30px;
+			background-position: center;
+		}
+	}
 }
 
-input[type="radio"]:checked + label,
-input[type="checkbox"]:checked + label {
-	color: @black;
-}
-
-//
-// Forms
-// --------------------------------------------------
-
-// GENERAL STYLES
-// --------------
-
-// Set font for forms
-label,
-input,
-select,
-textarea {
-	font-size: @rem-as-14px;
-	font-weight: normal;
-	line-height: @line-height-base;
-}
-
-input,
-select,
-textarea {
-	font-family: @font-family-sans-serif; // And only set font-family here for those that need it (note the missing label element)
-}
-
-// Form controls
-// -------------------------
-
-// Shared size and type resets
 textarea,
 input[type="text"],
 input[type="password"],
@@ -189,105 +188,38 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 input.hasDatepicker {
-	padding: 7px;
+	padding: 6px;
 	line-height: 1.1;
 	border-radius: 1px;
 }
 
-select,
-input.hasDatepicker {
-	border: 1px solid @input-border;
-	border-top: 1px solid @gray-light;
-}
-
-select {
-	padding: 7px;
-	border-radius: 1px;
-}
-
-// Everything else
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"] {
-	background-color: @input-bg;
-	border: 1px solid @input-border;
-	border-top: 1px solid @gray-light;
-
-	// Focus state
-	&:focus {
-		border-color: rgba(82, 168, 236, .8);
-		outline: 0;
-		outline: thin dotted \9; /* IE6-9 */
-	}
-
-	// Position radios and checkboxes better
-	input[type="radio"],
-	input[type="checkbox"] {
-		margin: 4px 0 0;
-		margin-top: 1px \9; /* IE8-9 */
-		line-height: normal;
-	}
-
-	// Reset width of input images, buttons, radios, checkboxes
-	input[type="file"],
-	input[type="image"],
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	input[type="radio"],
-	input[type="checkbox"] {
-		width: auto; // Override of generic input selector
-	}
-
-	// Make select elements obey height by applying a border
+.selectwrap {
+	position: relative;
 	select {
-		padding: 0;
-		border: 1px solid @input-border;
-		background-color: @input-bg; // Chrome on Linux and Mobile Safari need background-color
-	}
-
-	// Focus for select, file, radio, and checkbox
-	select:focus,
-	input[type="file"]:focus,
-	input[type="radio"]:focus,
-	input[type="checkbox"]:focus {
-		.tab-focus();
-	}
-
-	// DISABLED STATE
-	// --------------
-
-	&:disabled {
-		background-color: @input-bg-disabled;
-	}
-
-	// Disabled and read-only inputs
-	input[disabled],
-	select[disabled],
-	textarea[disabled],
-	input[readonly],
-	select[readonly],
-	textarea[readonly] {
-		cursor: not-allowed;
-		background-color: @input-bg-disabled;
-	}
-	// Explicitly reset the colors here
-	input[type="radio"][disabled],
-	input[type="checkbox"][disabled],
-	input[type="radio"][readonly],
-	input[type="checkbox"][readonly] {
+		padding: 4px 25px 4px 8px;
+		border: 1px solid @gray-icon;
+		border-radius: 2px;
 		background-color: transparent;
+		-webkit-appearance: none;
+		&:focus {
+			box-shadow: 0 0 0 3px #ffbd66;
+			outline: none;
+		}
 	}
+	&:after {
+		content: " ";
+		border-top: 6px solid @gray-text;
+		border-right: 6px solid transparent;
+		border-left: 6px solid transparent;
+		position: absolute;
+		right: 7px;
+		top: 40%;
+	}
+}
+
+select:focus,
+input[type="file"]:focus,
+input[type=radio]:focus,
+input[type=checkbox]:focus {
+	.tab-focus();
 }

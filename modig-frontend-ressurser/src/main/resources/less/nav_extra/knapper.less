@@ -1,67 +1,96 @@
-a.knapp {
-  display:inline-block;
-  cursor: pointer;
-}
-
 .knapp {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: @rem-as-16px;
+	font-family: @font-family-modus;
 	font-weight: 600;
-	.buttonBackground(@gray-lighter, @gray-light, @gray-text);
-	padding: .5rem 1rem;
-	text-decoration: none;
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
 	text-transform: uppercase;
-	white-space: nowrap;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	color: @gray-text;
+	border-radius: 2px;
+	letter-spacing: 1px;
+	padding: 11px 40px 7px;
+	background: #e0ded8;
+	border-bottom: 2px solid #adacaa;
+	line-height: 1.2;
+	top: 0;
+	margin-top: 0;
+	&:hover {
+		border-bottom: 3px solid #adacaa;
+		margin-bottom: -1px;
+		top: -1px;
+	}
+	&:active {
+		background: #adacaa;
+		border-bottom: 0;
+		top: 3px;
+	}
+	&:disabled, &.inaktiv {
+		background: #b6b0a8;
+		&:hover {
+			border-bottom: 2px solid #adacaa;
+			top: 0;
+			cursor: default;
+		}
+	}
 	&.hoved {
-		.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
+		color: @white;
+		background: #0067c5;
+		border-bottom: 2px solid @gray-text;
+		&:hover {
+			border-bottom: 3px solid @gray-text;
+		}
+		&:active {
+			background: #005b82;
+			border-bottom: none;
+		}
+		&:disabled, &.inaktiv {
+			background: #005b82;
+			&:hover {
+				border-bottom-width: 2px;
+				top: 0;
+			}
+		}
 	}
 	&.fare {
-		.buttonBackground(@btn-danger-background, @btn-danger-background-highlight);
-	}
-	&.inaktiv, &[disabled=disabled] {
-		color: #a3a3a3;
-		background: @btn-background;
-		border: 1px solid #d9d9d9;
-		cursor: default;
-	}
-	&.lenke {
-		background: none;
-		color: @blue-dark;
-		border: none;
-		font-weight: bold;
-		text-transform: none;
-		padding: 0;
-		&:hover, &:focus {
-			border-color: transparent;
-			background: none;
-			text-decoration: underline;
-			color: @blue-dark;
+		color: @white;
+		background: #e30000;
+		border-bottom: 2px solid @gray-text;
+		&:hover {
+			border-bottom: 3px solid @gray-text;
+		}
+		&:active {
+			background: #860d0d;
+			border-bottom: none;
+		}
+		&:disabled, &.inaktiv {
+			background: #860d0d;
+			&:hover {
+				border-bottom: 2px solid @gray-text;
+				top: 0;
+			}
 		}
 	}
 	&.liten {
-		padding: 5px 20px;
 		font-size: @rem-as-14px;
-		line-height: 1.4rem;
+		padding: 9px 20px 6px;
 	}
-	&.mini {
-		padding: 3px 10px;
-		font-size: @rem-as-12px;
+	&.stor {
+		font-size: @rem-as-17px;
+		padding: 13px 50px 9px;
 	}
-	&.dropdown-toggle {
-		display: inline-block;
-		cursor: pointer;
-		padding-left: 10px;
-		text-transform: uppercase;
-		background: @white;
-		&:hover {
-			background: @white;
-		}
+	& + .knapp {
+		margin-left: 8px;
 	}
 }
 
-@media (min-width: @screen-small) {
-  .knapp {
-    padding: 8px 40px; // normal padding på større flater
-  }
+.knapp {
+	&.ikon {
+		background-image: url(../gfx/knappe-ikon.svg);
+		background-repeat: no-repeat;
+		background-position: 18px 15px;
+		padding-left: 55px;
+	}
 }
-

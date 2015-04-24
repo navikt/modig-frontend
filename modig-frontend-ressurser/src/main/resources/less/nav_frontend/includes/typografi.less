@@ -1,0 +1,73 @@
+* {
+	font-family: @font-family-sans-serif;
+	font-size: @rem-as-16px;
+	color: @gray-text;
+}
+
+.sidetittel, .innholdstittel, .undertittel, .etikett-stor {
+	font-family: @font-family-modus;
+}
+
+.sidetittel {
+	font-size: @rem-as-38px;
+	font-weight: 800;
+}
+
+.innholdstittel {
+	font-size: @rem-as-30px;
+	font-weight: 600;
+}
+
+.undertittel {
+	font-size: @rem-as-20px;
+	font-weight: 800;
+}
+
+.etikett-stor {
+	font-size: @rem-as-17px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.etikett-stor {
+	font-size: @rem-as-17px;
+}
+
+.ingress {
+	font-weight: 800;
+	font-size: @rem-as-17px;
+}
+
+.element {
+	font-weight: 600;
+	font-size: @rem-as-17px;
+}
+
+.avsnitt {
+	font-weight: 800;
+	font-size: @rem-as-15px;
+}
+
+.etikett-liten {
+	text-transform: uppercase;
+}
+
+.etikett-liten, .undertekst {
+	font-size: @rem-as-13px;
+}
+
+.normal {
+	font-size: @rem-as-15px;
+}
+
+@media (min-width: @screen-small) {
+	.ingress, .element, .avsnitt, .etikett-stor {
+		font-size: @rem-as-16px;
+	}
+	.etikett-liten, .undertekst {
+		font-size: @rem-as-12px;
+	}
+	.avsnitt, .normal {
+		font-size: @rem-as-14px;
+	}
+}

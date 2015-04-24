@@ -1,7 +1,7 @@
-// Global values
+// GLOBAL VALUES
 // --------------------------------------------------
 
-@responsive: true;
+@responsive: true; // tar med mediaqueries
 
 .define-basepath-if-not-defined() {
   @baseImagePath: '../';
@@ -9,20 +9,19 @@
 .define-basepath-if-not-defined();
 
 
-// NAV colors
-// -------------------------
+// NAV COLORS
+// --------------------------------------------------
 
 @white:                 #fff;
 @black:                 #000;
 
 @gray-background:       #efefef;    // body background
-@gray-icon:             #b7b1a9;
-@gray-inactive:         #7f756c;    // linje rundt bokser etc
-@gray-text:             #3e3832;    // verifisert (tekstfarge)
+@gray-icon:             #b7b1a9;    // linje rundt bokser
+@gray-inactive:         #7f756c;
+@gray-text:             #3e3832;
 
 @blue-interaction:      #65caeb;
 @blue-link:             #0067c5;
-
 @blue-active:           #005b82;
 
 @purple-visited:        #634689;
@@ -30,34 +29,38 @@
 @green-accept:          #119b49;
 
 @red-nav:               #c30000;
-@red-warning:           #be5227;
+@red-warning:           #ba3a26;
 
 
-// family
-// -------------------------
-@font-family-sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-modus:     	    Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
+// FONT-FAMILY
+// --------------------------------------------------
+
+@font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-modus:          Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 //REM base fonts (1rem = 16px)
-// -------------------------
-@rem-as-38px:			2.375rem;
-@rem-as-30px:			1.875rem;
-@rem-as-20px:			1.25rem;
+// --------------------------------------------------
+
+@rem-as-38px:           2.375rem;
+@rem-as-30px:           1.875rem;
+@rem-as-20px:           1.25rem;
 @rem-as-17px:           1.0675rem;
-@rem-as-16px:			1rem;
-@rem-as-15px:			0.9375rem;
-@rem-as-14px:			0.875rem;
-@rem-as-13px:			0.8125rem;
+@rem-as-16px:           1rem;
+@rem-as-15px:           0.9375rem;
+@rem-as-14px:           0.875rem;
+@rem-as-13px:           0.8125rem;
+@rem-as-12px:			0.75rem;
 
 @line-height-base:      1.428571429; // 20/14
 @line-height-computed:  floor(@rem-as-14px * @line-height-base); // ~20px
 
 
-// Z-index master list
-// -------------------------
+// Z-INDEX MASTER LIST
+// --------------------------------------------------
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
+
 @zindex-navbar:            1000;
 @zindex-dropdown:          1000;
 @zindex-popover:           1010;
@@ -67,8 +70,9 @@
 @zindex-modal:             1050;
 
 
-// Media queries breakpoints
+// MEDIA QUERIES BREAKPOINTS
 // --------------------------------------------------
+
 @screen-xxs:                 15em;      //240px;  Fra mobil
 @screen-xs:     	         30em;		//480px;  Mobil
 @screen-small:  			 38.75em;	//620px;  // Custom
@@ -77,15 +81,17 @@
 @screen-xl:					 75em;		//1200px; // ikke i bruk
 
 
-// Grid system
+// GRID SYSTEM
 // --------------------------------------------------
+
 @grid-columns:              12;
 @grid-gutter-width:         1.875em; //30px;
 @grid-float-breakpoint:     @screen-xs; // Point at which the navbar stops collapsing
 
 
-// Container sizes
+// CONTAINER SIZES
 // --------------------------------------------------
+
 @container-tablet:             ((720px + @grid-gutter-width));
 @container-sm:                 @container-tablet;
 
