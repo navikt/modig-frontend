@@ -166,6 +166,16 @@
 
     }
 
+    .accessible-megafooter .letter > a.open {
+      outline: 1px dotted @yellow;
+      outline-offset: -1px;
+      color: @yellow;
+      &:focus, &:hover, &:active {
+        outline-color:  @blue-light;
+        color: @blue-light;
+      }
+    }
+
     .sitesearch .btn-sitesearch {
       background-image: url('@{baseImagePath}img/navno/gfx/mainmenu/sok_liten_gul.png');
       @media (max-width: @screen-medium) {
