@@ -16,7 +16,31 @@
     }
     a, .link-btn, .fake-link {
       color: @yellow !important;
+      &:hover, &:active, &:focus {
+        color: @blue-light !important;
+      }
     }
+
+
+    a { // "hero links"
+      h1, h2, h3, p, span {
+        color: @yellow !important;
+      }
+
+      &:hover, &:active, &:focus {
+        h1, h2, h3, p {
+          color: @blue-light !important;
+        }
+      }
+    }
+
+    .hero-link:focus,
+    .hero-link:hover,
+    .hero-link:active {
+      border-color:transparent; // link som har focus har outline i stedet
+    }
+
+
     label,
     input,
     select,
@@ -24,7 +48,7 @@
       color: @white !important;
     }
 
-    .knapp, .knapp.hoved {
+    .knapp, .knapp.hoved, .knapp.btn-auth {
       border: 1px solid @white;
       color: @yellow !important; // overstyrer stil for input (når f.eks <input type=button) et par linjer over her
       background-image: none;
@@ -34,6 +58,8 @@
         text-decoration: underline;
       }
     }
+
+
 
     .tooltip {
       background: @white !important;
@@ -67,20 +93,11 @@
       background-color: #98B3B7 !important;
     }
 
+
     //
     //  opprinnelig laget for nav.no (beta):
     //
-    .link-btn {
-      h1, h2, h3, p, span {
-        color: @yellow !important;
-      }
-      &:hover, &:active, &:focus {
-        color: @blue-light !important;
-        h1, h2, h3, p {
-          color: @blue-light !important;
-        }
-      }
-    }
+
 
     ::-webkit-input-placeholder {
       color: white;
@@ -112,24 +129,31 @@
       }
     }
 
-    .topnavsection .topnav .accessible-megamenu {
+    .accessible-megamenu {
 
       .selected-topnavitem > a {
         color: @blue-light !important;
       }
+
       .topnavitem.selected-topnavitem > a[aria-expanded='false']:after {
         border-top: 6px solid @blue-light !important;
       }
+
       .topnavitem.has-children > a[aria-expanded='false']:after {
         border-top: 6px solid @yellow;
       }
+
       .topnavitem.has-children > a[aria-expanded='false']:after:hover {
         border-top: 6px solid @blue-light !important;
       }
-      .topnavitem.has-children > a[aria-expanded='false']:hover:after, .topnavsection .topnav .accessible-megamenu .topnavitem.has-children > a[aria-expanded='false']:focus:after {
+
+      .topnavitem.has-children > a[aria-expanded='false']:hover:after,
+      .topnavitem.has-children > a[aria-expanded='false']:focus:after {
         border-top: 6px solid @blue-light;
       }
-      .topnavitem.has-children > a.open:hover:after, .topnavsection .topnav .accessible-megamenu .topnavitem.has-children > a.open:focus:after {
+
+      .topnavitem.has-children > a.open:hover:after,
+      .topnavitem.has-children > a.open:focus:after {
         border-bottom: 6px solid @blue-light;
       }
 
