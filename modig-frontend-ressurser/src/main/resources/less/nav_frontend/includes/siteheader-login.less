@@ -70,9 +70,14 @@
 
 .flexbox {
   #auth-btns, #login-details {
+    display: -webkit-flex;
+    -webkit-flex-direction: row-reverse;
+    -webkit-align-items: center;
+
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+
     padding-top:0;
     padding-bottom:0;
     height:100%;
