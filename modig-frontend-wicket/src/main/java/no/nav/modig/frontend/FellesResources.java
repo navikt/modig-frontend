@@ -21,7 +21,7 @@ class FellesResources {
     static final JavaScriptResourceReference DROPDOWN_RESOURCE = new JQueryDependentResourceReference("modig/dropdown.js");
     static final JavaScriptResourceReference TOOLTIP_RESOURCE = new JQueryDependentResourceReference("modig/tooltip.js");
     static final JavaScriptResourceReference AJAX_LOADER = new JQueryDependentResourceReference("modig/AjaxLoader.js");
-    static final JavaScriptResourceReference JQUERY_UI = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.11.1.custom.js");
+    static final JavaScriptResourceReference JQUERY_UI = new JQueryDependentResourceReference("jquery/plugins/jquery-ui-1.11.4.custom.js");
     static final JavaScriptResourceReference JQUERY_VALIDATE = new JQueryDependentResourceReference("jquery/plugins/jquery.validate.js");
     static final JavaScriptResourceReference JQUERY_UI_COMBOBOX = new JQueryDependentResourceReference("jquery/plugins/jquery.combobox.js");
     static final JavaScriptResourceReference CONSOLE_POLYFILL_RESOURCE = jsReference("console.js");
