@@ -29,6 +29,7 @@
 	}
 	&:disabled, &.inaktiv {
 		background: #b6b0a8;
+		border-bottom-color: @gray-inactive;
 		&:hover {
 			border-bottom: 2px solid #adacaa;
 			top: 0;
@@ -80,6 +81,9 @@
 	&.stor {
 		font-size: @rem-as-17px;
 		padding: 13px 50px 9px;
+		&:active {
+			margin-bottom: 2px;
+		}
 	}
 	& + .knapp {
 		margin-left: 8px;
@@ -88,7 +92,7 @@
 
 .knapp {
 	&.ikon {
-		background-image: url(../gfx/knappe-ikon.svg);
+		background-image: url(../img/knappe-ikon.svg);
 		background-repeat: no-repeat;
 		background-position: 18px 15px;
 		padding-left: 55px;
