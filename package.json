@@ -1,6 +1,6 @@
 {
   "name": "modig-frontend",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "description": "Felles resursser for alle appene",
   "main": "index.js",
   "scripts": {
