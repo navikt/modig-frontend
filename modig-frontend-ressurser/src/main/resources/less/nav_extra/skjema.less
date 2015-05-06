@@ -232,49 +232,6 @@ input[type="color"] {
 		outline: thin dotted \9; /* IE6-9 */
 	}
 
-	// Position radios and checkboxes better
-	input[type="radio"],
-	input[type="checkbox"] {
-		margin: 4px 0 0;
-		margin-top: 1px \9; /* IE8-9 */
-		line-height: normal;
-	}
-
-	// Reset width of input images, buttons, radios, checkboxes
-	input[type="file"],
-	input[type="image"],
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	input[type="radio"],
-	input[type="checkbox"] {
-		width: auto; // Override of generic input selector
-	}
-
-	// Make select elements obey height by applying a border
-	select {
-		padding: 0;
-		border: 1px solid @input-border;
-		background-color: @input-bg; // Chrome on Linux and Mobile Safari need background-color
-	}
-
-	// Focus for select, file, radio, and checkbox
-	select:focus,
-	input[type="file"]:focus,
-	input[type="radio"]:focus,
-	input[type="checkbox"]:focus {
-		.tab-focus();
-	}
-
-	// Placeholder
-	// -------------------------
-
-	// Placeholder text gets special styles because when browsers invalidate entire lines if it doesn't understand a selector
-	input,
-	textarea {
-		.placeholder();
-	}
-
 	// DISABLED STATE
 	// --------------
 
@@ -282,21 +239,4 @@ input[type="color"] {
 		background-color: @input-bg-disabled;
 	}
 
-	// Disabled and read-only inputs
-	input[disabled],
-	select[disabled],
-	textarea[disabled],
-	input[readonly],
-	select[readonly],
-	textarea[readonly] {
-		cursor: not-allowed;
-		background-color: @input-bg-disabled;
-	}
-	// Explicitly reset the colors here
-	input[type="radio"][disabled],
-	input[type="checkbox"][disabled],
-	input[type="radio"][readonly],
-	input[type="checkbox"][readonly] {
-		background-color: transparent;
-	}
 }
