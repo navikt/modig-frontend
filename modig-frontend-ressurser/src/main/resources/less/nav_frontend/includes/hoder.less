@@ -1,0 +1,86 @@
+.hode {
+	position: relative;
+	padding-top: 16px;
+	text-align: center;
+	&:before {
+		content: "";
+		display: block;
+		background: url(../../gfx/ikoner_32.svg) no-repeat;
+		background-size: 700px;
+		margin: 0 auto 18px;
+		width: 32px;
+		height: 32px;
+	}
+	&:after {
+		border-top: 1px solid;
+		clear: both;
+		content: "";
+		display: block;
+		margin: 20px auto 0;
+		width: 32px;
+	}
+	&.info {
+		&:before {
+			background-position: -10px -501px;
+		}
+		&:after {
+			border-top-color: @gray-icon;
+		}
+	}
+	&.info-dokument {
+		&:before {
+			background-position: -10px -255px;
+		}
+		&:after {
+			border-top-color: @gray-icon;
+		}
+	}
+	&.info-soknad {
+		&:before {
+			background-position: -10px -378px;
+		}
+		&:after {
+			border-top-color: @gray-icon;
+		}
+	}
+	&.feil {
+		&:before {
+			background-position: -51px -173px;
+		}
+		&:after {
+			border-top-color: @red-error;
+		}
+	}
+	&.feil-kryss {
+		&:before {
+			background-position: -51px -91px;
+		}
+		&:after {
+			border-top-color: @red-error;
+		}
+	}
+	&.suksess {
+		&:before {
+			background-position: -133px -132px;
+		}
+		&:after {
+			border-top-color: @green-success;
+		}
+	}
+	&.advarsel {
+		&:before {
+			background-position: -174px -173px;
+		}
+		&:after {
+			border-top-color: @orange-warning;
+		}
+	}
+	&.advarsel-kryss {
+		&:before {
+			background-position: -174px -91px;
+		}
+		&:after {
+			border-top-color: @orange-warning;
+		}
+	}
+}
