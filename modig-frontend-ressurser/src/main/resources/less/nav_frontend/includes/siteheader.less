@@ -26,6 +26,7 @@
 //--------------------------------------------------------------------
 
 .siteheader {
+
 	.dropdown {
 		> a {
 			outline-offset: -1px;
@@ -40,6 +41,7 @@
 		.nav {
 			padding: 0;
 		}
+
 		.dropdown-menu {
 			> li {
 				display: block;
@@ -67,16 +69,21 @@
 	}
 
 	@media (min-width: (@screen-medium + 0.0625em)) {
+
 		.siteheader-toolbar-and-login-defaults();
+
 		.sitelogo-large {
 			display: block;
 		}
+
 		.sitelogo-small {
 			display: none;
 		}
+
 	}
 
 	@media (min-width: 60em) {
+
 		// 960px --> samme media query på sentrering av hovedmenylinje
 		.site-coltrols-toolbar {
 			text-align: center;
@@ -92,29 +99,36 @@
 				right: 48%;
 			}
 		}
+
 	}
 	// media 60em end
+
 }
 
 // mixin responsive true end
 
 .global-siteheader-toolbar() when (@responsive = false) {
 	// FOR IE8 og dekoratør!
+
 	.siteheader-toolbar-and-login-defaults();
+
 	.sitelogo-small {
 		display: none;
 	}
+
 	.site-coltrols-toolbar {
 		text-align: center;
 	}
 	#text-size-accessibility {
 		display: inline-block;
 	}
+
 }
 
 // mixin responsive false
 
 .siteheader-toolbar-and-login-defaults() {
+
   .settings a,
   .settings .link-btn {
       font-size: @rem-as-12px;
@@ -126,11 +140,13 @@
 	.site-coltrols-toolbar {
 		display: block;
 		background: @gray-inactive;
-		min-height: 42px;
+	
 		.settings {
 			display: inline-block;
 			width: 50%;
 		}
+
+
 	}
 
 	.text-size-tooltip, .login-tooltip, .logout-tooltip {
@@ -141,7 +157,7 @@
 		z-index: 9;
 		text-align: left;
 		span.arrow {
-			//.up-arrow(9px, 6px, 6px, @black); // mixin
+			.up-arrow(9px, 6px, 6px, #000000); // mixin
 			position: absolute;
 			top: -8px;
 		}
@@ -160,9 +176,13 @@
 			margin: 0;
 		}
 	}
+
 	#text-size-accessibility {
 		position: relative;
 	}
+
+
+
 }
 
 // mixin siteheader-toolbar-and-login-defaults end

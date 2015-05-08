@@ -53,6 +53,7 @@
 				color: @gray-text;
 				background-color: @gray-icon;
 			}
+
 		}
 
 		&:first-child {
@@ -65,7 +66,7 @@
 	.panel-wrapper {
 		height: 0;
 		visibility: hidden;
-		transition: height .5s;
+		.transition(height .5s);
 
 	}
 
@@ -91,7 +92,8 @@
 .letter > a:focus,
 .letter > a:active {
 	background-color: @blue-interaction; // :hover for skjermer som støtter touch, står innenfor min-width mq pga iOS bug
-	color: @gray-text;
+	color: @text-color;
+    outline-offset: -1px;
 }
 
 .accessible-megafooter-panel {
@@ -330,4 +332,5 @@
 	.accessible-megafooter-panel {
 		padding: 20px 0 0 0;
 	}
+
 }

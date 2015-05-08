@@ -87,7 +87,12 @@
 	display: none;
 }
 
-.placeholder {
+div.placeholder {
+
+// TODO!!
+// .placeholder her fører til konflikt med .placeholder()-mixin i bootstrap! Genererer MYE unødvendig CSS.
+// Hver gang mixinen kalles på en input, spyttes alt innafor .placeholder her ut. Derfor div.placeholder som selector (ikke direkte konflikt med mixin).
+
 	margin-bottom: 60px;
 	margin-top: -23px;
 
