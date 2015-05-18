@@ -44,8 +44,7 @@
 	],
 
 	"runLess": [
-		{ "fromDir": "/generated-resources/less/nav_frontend/", "mainFile": "/generated-resources/less/nav_frontend/responsive.less",
-			"builtFile": "/generated-resources/css/nav_frontend/nav_frontend.css" }
+
 
 	]
 }
