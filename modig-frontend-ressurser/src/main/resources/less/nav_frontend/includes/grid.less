@@ -61,12 +61,12 @@
 	}
 	.inner-row {
 		margin-bottom: 60px;
-        &.tight {
-          margin-bottom: 30px;
-        }
-      &.tighter {
-        margin-bottom: 15px;
-      }
+		&.tight {
+			margin-bottom: 30px;
+		}
+		&.tighter {
+			margin-bottom: 15px;
+		}
 	}
 }
 
@@ -88,7 +88,7 @@
 			padding-right: (@grid-gutter-width / 2);
 		}
 
-        .center-standalone-cols();
+		.center-standalone-cols();
 
 		.row {
 			margin-left: -(@grid-gutter-width / 2);
@@ -131,40 +131,40 @@
 		padding-right: (@grid-gutter-width / 2);
 	}
 
-  .center-standalone-cols();
+	.center-standalone-cols();
 
 	.row {
 		margin-left: -(@grid-gutter-width / 2);
 		margin-right: -(@grid-gutter-width / 2);
 	}
 
-  .inner-row {
-    margin-bottom: 60px;
-    &.tight {
-      margin-bottom: 30px;
-    }
-    &.tighter {
-      margin-bottom: 15px;
-    }
-  }
+	.inner-row {
+		margin-bottom: 60px;
+		&.tight {
+			margin-bottom: 30px;
+		}
+		&.tighter {
+			margin-bottom: 15px;
+		}
+	}
 }
-
 
 .center-standalone-cols() {
 
-  .col-standalone { // sentrering av kolonne, f.eks col-md-8, som står alene. Skriv til oss + velg skjema (skjemaveileder)
-    &[class^='col-md-'] {
-      .center-block();
-      float:none;
-    }
-    &.col-md-4 {
-      width: 18.75em; // tilsvarende 33.3% og ca 300px på desktop. Brukt i skjemaveileder.
-      box-sizing:content-box; // default padding legger seg ellers til som en del av de 18.75 em-ene, slik at boksen ser smalere ut (hvis bakgrunnsfarge).
-    }
-    &.col-md-8 {
-      width:auto;
-      max-width: 41.25em; // tilsvarende 66.6% og ca 660px på desktop
-    }
-  }
+	.col-standalone {
+		// sentrering av kolonne, f.eks col-md-8, som står alene. Skriv til oss + velg skjema (skjemaveileder)
+		&[class^='col-md-'] {
+			.center-block();
+			float: none;
+		}
+		&.col-md-4 {
+			width: 18.75em; // tilsvarende 33.3% og ca 300px på desktop. Brukt i skjemaveileder.
+			box-sizing: content-box; // default padding legger seg ellers til som en del av de 18.75 em-ene, slik at boksen ser smalere ut (hvis bakgrunnsfarge).
+		}
+		&.col-md-8 {
+			width: auto;
+			max-width: 41.25em; // tilsvarende 66.6% og ca 660px på desktop
+		}
+	}
 
 }

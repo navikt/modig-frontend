@@ -1,0 +1,44 @@
+.lenkeliste {
+	list-style: none;
+	padding: 0;
+	display: block;
+	li {
+		position: relative;
+		font-size: @rem-as-12px;
+		border-bottom: 1px solid @gray-icon;
+		a {
+			color: @gray-text;
+			display: block;
+			padding: 10px 10px 10px 12px;
+			text-align: left;
+			text-decoration: none;
+			border-bottom: none;
+			margin-left: -12px;
+			&:hover {
+				border-bottom-color: @gray-icon;
+				color: @blue-link;
+				&:before {
+					border: 3px solid @blue-link;
+					border-radius: 50% 50% 50% 50%;
+					content: " ";
+					left: -10px;
+					top: 16px;
+					float: left;
+					position: absolute;
+					text-align: left;
+				}
+			}
+			&:focus {
+				box-shadow: 0 0 0 3px @orange-focus;
+				outline: none;
+				background: transparent;
+			}
+		}
+	}
+}
+
+.panel, .rammepanel {
+	& .lenkeliste {
+		padding-left: 8px;
+	}
+}

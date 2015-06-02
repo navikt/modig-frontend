@@ -26,7 +26,7 @@ form, [ng-form], [data-ng-form] {
 			span {
 				display: inline-block;
 				font-size: 0.875rem;
-				width: 5.5rem;
+				width: 10.5rem;
 				&.melding {
 					width: auto;
 					margin-left: 0.5rem;
@@ -115,6 +115,7 @@ input[type=checkbox] {
 			height: 26px;
 			border-radius: 2px;
 			border: 1px solid #978e85;
+			background: @white;
 		}
 		&:hover {
 			cursor: pointer;
@@ -153,6 +154,7 @@ input[type=radio] {
 			height: 26px;
 			border-radius: 13px;
 			border: 1px solid #978e85;
+			background: @white;
 		}
 		&:hover {
 			cursor: pointer;
@@ -227,4 +229,8 @@ input[type="file"]:focus,
 input[type=radio]:focus,
 input[type=checkbox]:focus {
 	.tab-focus();
+}
+
+input[placeholder], textarea[placeholder] {
+	color: @gray-icon;
 }
