@@ -1,0 +1,56 @@
+.panel {
+	background: #fff;
+	padding: 16px;
+	margin: 16px 0;
+}
+
+.rammepanel {
+	background: #fff;
+	padding: 16px;
+	border: 1px solid @gray-icon;
+	margin: 16px 0;
+}
+
+.skjemapanel {
+	position: relative;
+	padding: 16px;
+	border: 1px solid @gray-icon;
+	margin-top: 32px;
+	&:before {
+		top: -16px;
+		left: 21px;
+		border-bottom-color: @gray-icon !important;
+		border-width: 16px;
+	}
+	&:after, &:before {
+		content: "";
+		position: absolute;
+		border-style: solid;
+		border-color: transparent;
+		border-top: 0;
+	}
+	&:after {
+		top: -15px;
+		left: 22px;
+		border-bottom-color: @gray-background;
+		border-width: 15px;
+	}
+}
+
+.lenkepanel {
+	display: block;
+	background: @white;
+	padding: 16px;
+	margin: 16px 0;
+	border-bottom: none;
+	color: @gray-text;
+	&:hover {
+		border: 1px solid @blue-link;
+		padding: 15px;
+	}
+	&:focus {
+		box-shadow: 0 0 0 3px @orange-focus;
+		outline: none;
+		background: @white;
+	}
+}
