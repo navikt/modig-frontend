@@ -33,6 +33,32 @@
 				outline: none;
 				background: transparent;
 			}
+			&.selected {
+				// Hvit pil mot venstre for aktivt menypunkt
+				position: relative;
+				&:before, &:after {
+					content: " ";
+					display: inline-block;
+					border: solid rgba(209, 209, 209, 0); // ikke transparent pga ekstra "strek" på diagonal boarders. Fikses med rgba.
+					@media (max-width: (@screen-medium - 0.01)) {
+						border: 0;
+					}
+					transform: scale(.9999); // Hack for å rendre border (pil) riktig i firefox.
+					outline: none;
+					position: absolute;
+					right: 100%;
+				}
+				&:before {
+					border-width: 12px;
+					border-right-color: @gray-icon;
+					top: 8px;
+				}
+				&:after {
+					border-width: 10px;
+					border-right-color: #fff;
+					top: 10px;
+				}
+			}
 		}
 	}
 }
@@ -42,3 +68,7 @@
 		padding-left: 8px;
 	}
 }
+
+
+// HENTET FRA HØYREMENY
+

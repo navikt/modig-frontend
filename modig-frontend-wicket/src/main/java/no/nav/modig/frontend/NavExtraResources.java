@@ -16,14 +16,14 @@ public class NavExtraResources {
 
    	static final PackageResourceReference EKSTERNFLATE_LESS_RESOURCE = lessReference("nav_extra/eksternflate.less");
    	static final PackageResourceReference STEGINDIKATOR_LESS_RESOURCE = lessReference("nav_extra/stegindikator.less");
-   	static final PackageResourceReference DATEPICKER_LESS_RESOURCE = lessReference("nav_extra/datepicker.less");
-    static final PackageResourceReference DROPDOWN_LESS_RESOURCE = lessReference("nav_extra/dropdown.less");
+   	static final PackageResourceReference DATEPICKER_LESS_RESOURCE = lessReference("nav_extra/jquery-ui-datepicker.less");
+    static final PackageResourceReference DROPDOWN_LESS_RESOURCE = lessReference("nav_extra/bootstrap-dropdown.less");
     static final PackageResourceReference KNAPPER_LESS_RESOURCE = lessReference("nav_extra/knapper.less");
-   	static final PackageResourceReference WICKET_MODAL_WINDOW_RESOURCE = lessReference("nav_extra/wicket-modal.less");
+   	static final PackageResourceReference WICKET_MODAL_WINDOW_RESOURCE = lessReference("nav_extra/wicket-wicket-modal.less");
     static final PackageResourceReference MODIG_GRID_LESS_RESOURCE = lessReference("nav_extra/modig-grid.less");
    	static final PackageResourceReference SKJEMA_LESS_RESOURCE = lessReference("nav_extra/skjema.less");
-    static final PackageResourceReference TOOLTIP_LESS_RESOURCE = lessReference("nav_extra/tooltip.less");
-    static final PackageResourceReference TABLES_LESS_RESOURCE = lessReference("nav_extra/tables.less");
+    static final PackageResourceReference TOOLTIP_LESS_RESOURCE = lessReference("nav_extra/bootstrap-tooltip.less");
+    static final PackageResourceReference TABLES_LESS_RESOURCE = lessReference("nav_extra/bootstrap-tables.less");
     static final PackageResourceReference SPRAKVELGER_LESS_RESOURCE = lessReference("nav_extra/sprakvelger.less");
     static final PackageResourceReference HOYREMENY_LESS_RESOURCE = lessReference("nav_extra/hoyremeny.less");
     static final PackageResourceReference INNHOLD_LESS_RESOURCE = lessReference("nav_extra/innholdsfortegnelse.less");
