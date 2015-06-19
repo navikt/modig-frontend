@@ -1,0 +1,27 @@
+.mixin-knappevariant(@bakgrunnsfarge, @tekstfarge, @skyggefarge, @bakgrunnsfarge-inaktiv, @bakgrunnsfarge-aktiv) {
+	color: @tekstfarge;
+	background: @bakgrunnsfarge;
+	border-bottom-color: @skyggefarge;
+
+	&:focus {
+		background-color: @bakgrunnsfarge;
+	}	
+
+	&:hover {
+		color: @tekstfarge;
+		border-bottom-color: @skyggefarge;
+	}
+
+	&:active {
+		color: @tekstfarge;
+		background: @bakgrunnsfarge-aktiv;
+	}	
+
+	&:disabled, &.er-inaktiv {
+		background: @bakgrunnsfarge-inaktiv;
+		border-bottom-color: @bakgrunnsfarge-inaktiv;
+		&:hover, &:active {
+			border-bottom-color: @bakgrunnsfarge-inaktiv;
+		}
+	}	
+}

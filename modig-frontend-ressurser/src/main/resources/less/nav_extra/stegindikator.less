@@ -1,75 +1,121 @@
+// EKSEMPEL PÅ BRUK
+// 
+// <ul class="stegindikator">
+//     <li>
+//         <a href="#" class="stegindikator-steg">
+//             <span class="stegindikator-navn">Veiledning</span>
+//             <span class="stegindikator-indeks">1</span>
+//         </a>
+//     </li>
+//     <li class="er-aktiv">
+//         <a href="#" class="stegindikator-steg">
+//             <span class="stegindikator-navn">Skjema</span>
+//             <span class="stegindikator-indeks">2</span>
+//         </a>
+//     </li>
+//     <li>    
+//         <span class="stegindikator-steg stegindikator-navn">Vedlegg</span>
+//         <span class="stegindikator-steg stegindikator-indeks">3</span>
+//     </li>
+//     <li>    
+//         <span class="stegindikator-steg stegindikator-navn">Send inn</span>
+//         <span class="stegindikator-steg stegindikator-indeks">4</span>
+//     </li>                        
+// </ul>
+
+
 .stegindikator {
-	display: table;
-	list-style: none;
-	margin: 10px auto;
-	padding: 0;
-	li {
-		display: block;
-		position: relative;
-		float: left;
+  display: table;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto; 
+  padding: 0;
+ 
+  .mixin-typo-etikett-stor(); 
+
+  a {
+  	background-color: @white; 
+    color: @color-text;
+    text-decoration: none; 
+    border: 0; 
+  }  
+
+  a:hover {
+  	border: 0; 
+    text-decoration: underline; 
+  }
+
+}
+
+.stegindikator li {
+	display: block;
+	float: left;
+	position: relative;
+	border: 1px solid @color-border;
+	background: #f9f9f9; /* TODO */
+	color: @color-text;
+	text-decoration: none;
+
+	&.er-aktiv, &.er-aktiv a {
+	    background: @red-nav;
+	    color: @white;
+	}
+
+	&:not(:last-child) {
+
 		margin-right: 10px;
 
-		//
-		//  TODO: Vurdere å sette padding på <a> i stedet for <li> for større klikkflate. Klassen .steg kan brukes (finnes på <a> eller <span>, som første barn inne i <li>)
-		//
-
-		padding: 8px 12px;
-		border: 1px solid @gray-icon;
-		background: #f9f9f9;
-		color: @gray-inactive;
-		text-decoration: none;
-		text-transform: uppercase;
-		font-family: Modus, "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 0.9rem;
-		&.aktiv {
-			background: @red-nav;
-			color: @white;
-			a {
-				color: @white;
-				font-size: 0.9rem;
-				text-decoration: none;
-			}
-		}
 		&:after {
 			content: "";
 			display: block;
 			position: absolute;
 			height: 1px;
-			right: -10px;
-			top: 21px;
-			width: 10px;
-			background-color: #ccc;
-		}
-		&:last-child {
-			margin-right: 0;
-			&:after {
-				display: inline;
-				position: static;
-				height: auto;
-				width: auto;
-				background-color: transparent;
-			}
-		}
-		a {
-			color: @gray-text;
-			font-size: 0.9rem;
-		}
+			left: 100%;
+			top: 50%;
+			width: 11px;
+			background-color: @color-border;
+		}		
+
 	}
+
 }
 
-@media (min-width: 62em) {
-	// 992px
-	.stegindikator li {
-		padding: 10px 50px;
-		font-size: 1rem;
-		a {
-			font-size: 1rem;
-		}
-		&.aktiv {
-			padding: 10px 50px;
-			a {
-				font-size: 1rem;
-			}
-		}
+.stegindikator-steg {
+    padding: .5rem .75rem;
+    display: block;
+}
+
+.stegindikator-navn {
+	display: none; 
+}
+
+.er-aktiv {
+    .stegindikator-indeks {
+    	display: none; 
+    }
+
+    .stegindikator-navn {
+    	display: block; 
+    }		
+}
+
+
+@media only screen and (min-width: 40em) {
+  
+  	.stegindikator-indeks {
+		display: none;
+	}  
+
+	.stegindikator-navn {
+		display: block; 
 	}
+
+}
+
+@media only screen and (min-width: 60em) { 
+
+	.stegindikator-steg {	
+		padding: .75rem 3rem; 
+  	}
+
 }

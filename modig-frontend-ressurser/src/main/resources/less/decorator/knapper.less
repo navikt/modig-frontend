@@ -1,5 +1,24 @@
+@btn-background-color: #e0ded8;
+@btn-text-color: @gray-text; 
+@btn-shadow-color: #adacaa;
+@btn-disabled-background-color: #b6b0a8;
+
+@btn-primary-background-color: #0067c5;
+@btn-primary-active-color: #005B82;
+@btn-primary-text-color: #fff; 
+@btn-primary-shadow-color: @gray-text;
+@btn-primary-disabled-background-color: #b6b0a8;
+
+@btn-danger-background-color: #BA3A26;
+@btn-danger-background-color-active: #BA3A26;
+@btn-danger-text-color: @white; 
+@btn-danger-shadow-color: @gray-text;
+@btn-danger-disabled-background-color: #860d0d;
+
+@btn-row-border-color: @gray-icon;
+
 .knapp {
-	font-family: @font-family-modus;
+	font-family: @font-family-profile;
 	font-weight: 600;
 	position: relative;
 	cursor: pointer;
@@ -11,89 +30,68 @@
 	color: @gray-text;
 	border-radius: 2px;
 	letter-spacing: 1px;
-	padding: 11px 40px 7px;
-	background: #e0ded8;
-	border-bottom: 2px solid #adacaa;
-	line-height: 1.2;
+	padding: 10px 40px;
+	background: @btn-background-color;
+	border-bottom: 2px solid @btn-shadow-color;
 	top: 0;
 	margin-top: 0;
+	font-size: @rem-as-16px; 
+
 	&:hover {
-		border-bottom: 3px solid #adacaa;
+		border-bottom: 3px solid @btn-shadow-color;
 		margin-bottom: -1px;
-		top: -1px;
+		.mixin-transform(translateY(-1px));
 	}
+
+	&:focus {
+		background-color: @btn-background-color;
+	}	
+
 	&:active {
-		background: #adacaa;
+		color: @btn-text-color;
+		background: @btn-shadow-color;
 		border-bottom: none;
-		top: 3px;
+		margin-bottom: 2px; 
+		.mixin-transform(translateY(3px));
 	}
-	&:disabled, &.inaktiv {
-		background: #b6b0a8;
-		&:hover {
-			border-bottom: 2px solid #adacaa;
-			top: 0;
+
+	&:disabled, &.er-inaktiv {
+		background: @btn-disabled-background-color;
+		margin-top: 0; 
+		margin-bottom: 0; 
+		transform: none; 
+
+		&:hover, &:active {
+			transform: none;
+			border-bottom: 2px solid @btn-shadow-color;
+			margin-top: 0; 
+			margin-bottom: 0; 
 			cursor: default;
 		}
 	}
-	&.hoved {
-		color: @white;
-		background: @blue-link;
-		border-bottom: 2px solid @gray-text;
-		&:hover {
-			border-bottom: 3px solid @gray-text;
-		}
-		&:active {
-			background: #005b82;
-			border-bottom: none;
-		}
-		&:disabled, &.inaktiv {
-			background: #005b82;
-			&:hover {
-				border-bottom-width: 2px;
-				top: 0;
-			}
-		}
-	}
-	&.fare {
-		color: @white;
-		background: #e30000;
-		border-bottom: 2px solid @gray-text;
-		&:hover {
-			border-bottom: 3px solid @gray-text;
-		}
-		&:active {
-			background: #860d0d;
-			border-bottom: none;
-		}
-		&:disabled, &.inaktiv {
-			background: #860d0d;
-			&:hover {
-				border-bottom: 2px solid @gray-text;
-				top: 0;
-			}
-		}
-	}
-	&.liten {
-		font-size: @rem-as-14px;
-		padding: 9px 20px 6px;
-	}
-	&.stor {
-		font-size: @rem-as-17px;
-		padding: 13px 50px 9px;
-		&:active {
-			margin-bottom: 2px;
-		}
-	}
-	& + .knapp {
+
+	+ .knapp, + .lenke-alene {
 		margin-left: 8px;
 	}
 }
 
-.knapp {
-	&.ikon {
-		background-image: url(../img/knappe-ikon.svg);
-		background-repeat: no-repeat;
-		background-position: 15px 9px;
-		padding-left: 55px;
+.knapp-liten {
+	font-size: @rem-as-14px;
+	padding: 9px 20px 7px;
+}
+
+.knapp-stor {
+	font-size: @rem-as-17px;
+	padding: 12px 50px 10px;
+	&:active {
+		margin-bottom: 2px;
 	}
+}
+
+.knapp-fare {
+	.mixin-knappevariant(@btn-danger-background-color, @btn-danger-text-color, @btn-danger-shadow-color, @btn-danger-disabled-background-color, @btn-danger-background-color-active);
+}
+
+.knapp-hoved {
+	.mixin-knappevariant(@btn-primary-background-color, @btn-primary-text-color, @btn-primary-shadow-color, @btn-primary-disabled-background-color, @btn-primary-active-color);
 }

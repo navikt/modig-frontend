@@ -1,87 +1,67 @@
-.hode {
+.tittel-dekorert, .hode-dekorert {
+
+	padding-bottom: 2rem; 
 	position: relative;
-	padding-top: 16px;
-	text-align: center;
+	text-align: center; 	
+
+	&:after {
+		content: "";
+		width: 2.5rem; 
+		height: 1px; 
+		left: 50%; 
+		bottom: 0; 
+		position: absolute;
+		background-color: @color-text; 
+		.mixin-transform(translateX(-50%));
+	}	
+
+}
+
+.hode { 
+	margin-top: 0; 
+	position: relative; 
+	padding-top: 4rem;
+
 	&:before {
 		content: "";
-		display: block;
-		background-image: url(../img/ikoner_32.svg);
+		width: 2.5rem;
+		height: 2.5rem; 
+		display: block; 
+		background-position: center center;
 		background-repeat: no-repeat;
-		background-size: 697px 863px;
-		margin: 0 auto 18px;
-		width: 32px;
-		height: 32px;
+		left: 50%;
+		position: absolute; 
+		top: 0; 
+		background-color: @color-text;
+		border-radius: 50%;
+		.mixin-transform(translateX(-50%));
 	}
-	&:after {
-		border-top: 1px solid;
-		clear: both;
-		content: "";
-		display: block;
-		margin: 20px auto 0;
-		width: 32px;
+}
+
+.hode-feil {
+	&:before, &:after {
+		background-color: @color-error; 
 	}
-	&.info {
-		&:before {
-			background-position: -10px -501px;
-		}
-		&:after {
-			border-top-color: @gray-icon;
-		}
+
+	&:before {
+		&:extend(.ikon-utropstegn); 
 	}
-	&.info-dokument {
-		&:before {
-			background-position: -10px -255px;
-		}
-		&:after {
-			border-top-color: @gray-icon;
-		}
+}
+
+.hode-advarsel {
+	&:before, &:after {
+		background-color: @color-warning; 
 	}
-	&.info-soknad {
-		&:before {
-			background-position: -10px -378px;
-		}
-		&:after {
-			border-top-color: @gray-icon;
-		}
+
+	&:before:extend(.ikon-utropstegn) {};
+}
+
+.hode-suksess {
+	&:before, &:after {
+		background-color: @color-success; 
 	}
-	&.feil {
-		&:before {
-			background-position: -51px -173px;
-		}
-		&:after {
-			border-top-color: @red-error;
-		}
-	}
-	&.feil-kryss {
-		&:before {
-			background-position: -51px -91px;
-		}
-		&:after {
-			border-top-color: @red-error;
-		}
-	}
-	&.suksess {
-		&:before {
-			background-position: -133px -132px;
-		}
-		&:after {
-			border-top-color: @green-success;
-		}
-	}
-	&.advarsel {
-		&:before {
-			background-position: -174px -173px;
-		}
-		&:after {
-			border-top-color: @orange-warning;
-		}
-	}
-	&.advarsel-kryss {
-		&:before {
-			background-position: -174px -91px;
-		}
-		&:after {
-			border-top-color: @orange-warning;
-		}
+
+	&:before {
+		&:extend(.ikon-suksess); 
 	}
 }

@@ -1,50 +1,58 @@
 a {
-	color: @blue-link;
-	border-bottom: 1px solid @gray-icon;
+	color: @color-link;
+	border-bottom: 1px solid @color-link-underline;
 	text-decoration: none;
+
 	&:hover {
-		border-bottom: 1px solid @blue-link;
+		border-bottom: 1px solid @color-link;
 	}
+
 	&:active {
-		color: @purple-visited;
-		border-bottom: 1px solid @purple-visited;
+		color: @color-link-visited;
+		border-bottom: 1px solid @color-link-visited;
 	}
-	&.alene {
-		border-bottom: none;
-		&:hover {
-			border-bottom: 1px solid @blue-link;
-		}
+}
+
+.lenke-alene {
+	border-bottom: none;
+	&:hover {
+		border-bottom: 1px solid @color-link;
 	}
-	&.uthevet {
-		position: relative;
-		cursor: pointer;
-		display: inline-block;
-		text-transform: uppercase;
-		outline: none;
-		border-radius: 2px;
-		letter-spacing: 1px;
-		padding: 18px 40px 15px;
-		line-height: 1.2;
-		margin-top: 0;
-		background: transparent;
-		border: 2px solid @blue-link;
-		top: 1px;
+}
+
+.lenke-uthevet {
+	cursor: pointer;
+	display: inline-block;
+	text-transform: uppercase;
+	outline: none;
+	border-radius: 2px;
+	letter-spacing: 1px;
+	padding: 18px 40px;
+	line-height: 1.2;
+	margin-top: 0;
+	background: transparent;
+	border: 2px solid @color-link;
+	top: 1px;
+
+	&:hover, &:visited {
+		text-decoration: underline;
+		border: 2px solid @color-link;
+	}
+
+	&:active {
+		background: @color-link;
+		color: @white; 
+		border: 2px solid @color-link;
+	}
+
+	&:disabled, &.er-inaktiv {
 		&:hover {
-			text-decoration: underline;
+			text-decoration: none;
+			cursor: default;
 		}
 		&:active {
-			background: @blue-link;
-			color: @white;
-		}
-		&:disabled, &.inaktiv {
-			&:hover {
-				text-decoration: none;
-				cursor: default;
-			}
-			&:active {
-				background: transparent;
-				color: @blue-link;
-			}
+			background: transparent;
+			color: @color-link;
 		}
 	}
 }

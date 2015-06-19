@@ -1,74 +1,55 @@
-* {
+body {
 	font-family: @font-family-sans-serif;
-	font-size: @rem-as-16px;
-	color: @gray-text;
-	font-weight: normal;
+	color: @color-text;
+	line-height: 1.25;
+	.mixin-typo-body(); 
 }
 
-.sidetittel, .innholdstittel, .undertittel, .etikett-stor, .ingress, .element, .avsnitt, .etikett-liten, .undertekst, .normalfont {
-	margin: 0 0 0.5rem;
+p {
+	margin-bottom: 1rem; 
+	margin-top: 0; 
 }
 
-.sidetittel, .innholdstittel, .undertittel, .etikett-stor {
-	font-family: @font-family-modus;
+.typo-sidetittel {
+	.mixin-typo-sidetittel(); 
 }
 
-.sidetittel {
-	font-size: @rem-as-38px;
-	font-weight: 800;
+.typo-innholdstittel {
+	.mixin-typo-innholdstittel(); 
 }
 
-.innholdstittel {
-	font-size: @rem-as-30px;
-	font-weight: 600;
+.typo-undertittel {
+	.mixin-typo-undertittel(); 
 }
 
-.undertittel {
-	font-size: @rem-as-20px;
-	font-weight: 800;
+.typo-etikett-stor {
+	.mixin-typo-etikett-stor(); 
 }
 
-.etikett-stor {
-	font-size: @rem-as-17px;
-	font-weight: 600;
-	text-transform: uppercase;
+.typo-element {
+	.mixin-typo-element(); 
 }
 
-.ingress {
-	font-weight: 800;
-	font-size: @rem-as-17px;
+.typo-etikett-liten {
+	.mixin-typo-etikett-liten(); 
 }
 
-.element {
-	font-weight: 600;
-	font-size: @rem-as-17px;
+.typo-undertekst {
+	.mixin-typo-undertekst(); 
 }
 
-.avsnitt {
-	font-weight: 800;
-	font-size: @rem-as-15px;
+.typo-ingress {
+	.mixin-typo-ingress(); 
 }
 
-.etikett-liten {
-	text-transform: uppercase;
+.typo-infotekst {
+	.mixin-typo-infotekst(); 
 }
 
-.etikett-liten, .undertekst {
-	font-size: @rem-as-13px;
+.typo-avsnitt {
+	.mixin-typo-avsnitt(); 
 }
 
-.normalfont {
-	font-size: @rem-as-15px;
-}
-
-@media (min-width: @screen-small) {
-	.ingress, .element, .avsnitt, .etikett-stor {
-		font-size: @rem-as-16px;
-	}
-	.etikett-liten, .undertekst {
-		font-size: @rem-as-12px;
-	}
-	.avsnitt, .normalfont {
-		font-size: @rem-as-14px;
-	}
+.typo-normal {
+	.mixin-typo-normal(); 
 }

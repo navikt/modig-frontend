@@ -1,0 +1,32 @@
+.ustilet {
+	margin: 0; 
+	padding: 0; 
+	list-style-type: none; 
+}
+
+.liste-vannrett {
+	.ustilet; 
+
+	li {
+		display: inline-block; 		
+	}
+
+	li:not(:last-child) {
+		padding-right: 1rem;
+		margin-right: 1rem;
+		position: relative;
+
+		&:after {
+			right: 0; 
+			content: "\2022";
+			position: absolute;
+			.mixin-transform(translateX(50%))
+		}
+	}
+}
+
+.liste-sentrert {
+	text-align: center; 
+}
+
+// TODO: Fyll på med standard-stiler for ul, ol og dl

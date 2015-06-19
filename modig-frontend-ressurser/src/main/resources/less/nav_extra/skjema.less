@@ -1,183 +1,124 @@
-.form-linje {
-	padding: 5px 0.5rem;
-	&.feil {
-		background-color: #ffedd6;
-		input:not([type="submit"]), textarea {
-			border: 1px solid #ba3a26;
-			background: #fbf5f4;
-		}
-		span {
-			&.melding {
-				color: #ba3a26;
-			}
-		}
+@nav-checkbox-hover-color: @blue-link;
+@nav-checkbox-checked-color: @blue-link;
+@nav-checkbox-outline-color: #978e85;
+@nav-input-disabled-color: @gray-icon;
+
+.nav-input {
+	position: relative; 
+	margin-bottom: .75rem;
+
+	&.har-hjelpetekst {
+		padding-right: 3rem; 
 	}
 }
 
-form, [ng-form], [data-ng-form] {
-	margin: 0;
-	text-align: left;
-	&.horisontal {
-		label {
-			position: relative;
-			input, select, textarea {
-				margin-left: 0.5rem;
-			}
-			span {
-				display: inline-block;
-				font-size: 0.875rem;
-				width: 10.5rem;
-				&.melding {
-					width: auto;
-					margin-left: 0.5rem;
-				}
-			}
+// -----------------------------------------
+// SKJEMA-LAYOUT 
+// -----------------------------------------
+
+.skjema-fieldset {
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+
+	legend {
+		.mixin-typo-undertittel(); 
+		margin-bottom: .35rem; 
+	}
+}
+
+.skjema-sporsmal {
+	.mixin-typo-ingress(); 
+	margin-bottom: .5rem; 
+	margin-top: 0;  
+}
+
+.skjema-infotekst {
+	.mixin-typo-infotekst(); 
+}
+
+.skjema-feilmelding {
+	display: none; 
+	color: @color-error;
+	margin-bottom: 0;
+	margin-top: .5rem;
+	font-style: italic; 
+}
+
+.hjelpetekst-container {
+	position: absolute;
+	top: 0;
+	right: 0; 
+}
+
+.ikon-hjelpetekst {
+	width: 1.5rem; 
+	height: 1.5rem; 
+	border: 1px solid @color-link;
+	color: @color-link; 
+	line-height: 1.5rem; 
+	background-color: transparent;
+	text-align: center; 
+	font-size: @rem-as-14px;
+	border-radius: 50%; 
+	padding: 0; 
+	font-weight: bold; 
+
+	&:hover, &:active, &:focus {
+		outline: 0; 
+	}
+
+	&:hover {
+		color: @white; 
+		background-color: @color-link; 
+	}
+
+	&:focus {
+		.mixin-focus-outline(3px); 
+	}
+}
+
+.skjema-fragment {
+	padding: .5rem;
+	margin-top: -.5rem;
+	margin-left: -.5rem;
+	margin-right: -.5rem;
+	margin-bottom: 1rem;
+	background: transparent;
+	.mixin-nav-transition(200ms);
+
+	&.er-feil {
+		background-color: #ffedd6;
+
+		input:not([type="submit"]), textarea {
+			border: 1px solid @color-error;
+			background: #fbf5f4;
+		}
+		
+		.skjema-feilmelding {
+			display: block;
+		}
+
+		+ .er-feil {
+			margin-top: 0;
 		}
 	}
 
-	&.vertikal {
-		label {
-			input, select, textarea {
-				display: block;
-			}
-		}
+	&.er-sist {
+		margin-bottom: 0; 
 	}
 }
 
 label {
-	display: inline-block;
-	padding: 0 2px 2px;
-	margin-left: -2px;
-	textarea,
-	input[type="text"],
-	input[type="password"],
-	input[type="datetime"],
-	input[type="datetime-local"],
-	input[type="date"],
-	input[type="month"],
-	input[type="time"],
-	input[type="week"],
-	input[type="number"],
-	input[type="email"],
-	input[type="url"],
-	input[type="search"],
-	input[type="tel"],
-	input[type="color"],
-	input.hasDatepicker {
-		padding: 7px;
-		margin-top: 4px;
-		margin-bottom: 4px;
-		line-height: 1.1;
-		border-radius: 1px;
-		border: 1px solid @gray-icon;
-		&:focus {
-			box-shadow: 0 0 0 3px #ffbd66;
-			outline: none;
-		}
-		&:hover {
-			border: 1px solid @blue-link;
-		}
-		&:disabled, .inaktiv {
-			&:hover {
-				border: 1px solid @gray-icon;
-			}
-		}
-	}
+	display: block;
+	margin-bottom: .25rem;
+	line-height: 1.4;
 }
 
-input[type=checkbox], input[type=radio] {
-	position: absolute;
-	height: 0;
-	width: 0;
-	opacity: 0;
-	& + label {
-		display: inline-block;
-		position: relative;
-		padding: 4px 4px 4px 34px;
-		margin: 2px 1rem 2px -2px;
-		color: @gray-text;
-		vertical-align: text-top;
-	}
-}
 
-input[type=checkbox] {
-	& + label {
-		padding: 0;
-		span {
-			display: inline-block;
-			&:last-child {
-				vertical-align: 7px;
-				margin-left: 6px;
-			}
-		}
-		.outline {
-			width: 26px;
-			height: 26px;
-			border-radius: 2px;
-			border: 1px solid #978e85;
-			background: @white;
-		}
-		&:hover {
-			cursor: pointer;
-			.outline {
-				border: 1px solid @blue-link;
-			}
-		}
-	}
-	&:focus + label {
-		.outline {
-			box-shadow: 0 0 0 3px #ffbd66;
-		}
-	}
-	&:checked + label {
-		.outline {
-			background-color: @blue-link;
-			background-image: url(../img/hake_hvit.svg);
-			background-size: 30px 30px;
-			background-position: center;
-		}
-	}
-}
-
-input[type=radio] {
-	& + label {
-		padding: 0;
-		span {
-			display: inline-block;
-			&:last-child {
-				vertical-align: 7px;
-				margin-left: 6px;
-			}
-		}
-		.outline {
-			width: 26px;
-			height: 26px;
-			border-radius: 13px;
-			border: 1px solid #978e85;
-			background: @white;
-		}
-		&:hover {
-			cursor: pointer;
-			.outline {
-				border: 1px solid @blue-link;
-			}
-		}
-	}
-	&:focus + label {
-		.outline {
-			box-shadow: 0 0 0 3px #ffbd66;
-		}
-	}
-	&:checked + label {
-		.outline {
-			border: 3px solid @blue-link;
-			background-color: @white;
-			background-image: url(../img/prikk_blaa.svg);
-			background-size: 30px 30px;
-			background-position: center;
-		}
-	}
-}
+// -----------------------------------------
+// INPUT-FELTER
+// -----------------------------------------
 
 textarea,
 input[type="text"],
@@ -193,44 +134,209 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"],
-input[type="color"],
-input.hasDatepicker {
-	padding: 6px;
-	line-height: 1.1;
+input[type="color"], 
+select {
+	padding: .45rem;
+	line-height: 1.2;
 	border-radius: 1px;
-}
+	border: 1px solid @gray-icon;
+	max-width: 100%;
+	font-size: 1.2rem;
+	box-sizing: border-box;
 
-.selectwrap {
-	position: relative;
-	select {
-		padding: 4px 25px 4px 8px;
-		border: 1px solid @gray-icon;
-		border-radius: 2px;
-		background-color: transparent;
-		-webkit-appearance: none;
-		&:focus {
-			box-shadow: 0 0 0 3px #ffbd66;
-			outline: none;
+	&:focus {
+		outline: 3px solid @color-focus; 
+	}
+
+	&:hover {
+		border:
+		 1px solid @blue-link;
+		.mixin-nav-transition(100ms);
+	}
+
+	&:disabled, &.er-inaktiv {
+		&:hover {
+			border: 1px solid @gray-icon;
 		}
 	}
+}
+
+textarea, select {
+	line-height: 1.2;
+}
+
+.select-container {
+	position: relative;
+	display: inline-block;
+
+	select {
+		padding-right: 1.5rem;
+		border: 1px solid @gray-icon;
+		background-color: transparent;
+		-webkit-appearance: none;
+	}
+
 	&:after {
-		content: " ";
+		content: "";
 		border-top: 6px solid @gray-text;
 		border-right: 6px solid transparent;
 		border-left: 6px solid transparent;
 		position: absolute;
-		right: 7px;
-		top: 40%;
+		right: .5rem;
+		top: 45%;
 	}
 }
 
-select:focus,
-input[type="file"]:focus,
-input[type=radio]:focus,
-input[type=checkbox]:focus {
-	.tab-focus();
+
+// -----------------------------------------
+// INPUT-STØRRELSER
+// -----------------------------------------
+
+.input-xxs {
+	width: 20px;
 }
 
-input[placeholder], textarea[placeholder] {
-	color: @gray-icon;
+.input-xs {
+	width: 40px;
+}
+
+.input-s {
+	width: 80px;
+}
+
+.input-m {
+	width: 160px;
+}
+
+.input-l {
+	width: 250px;
+}
+
+.input-xl {
+	width: 400px;
+}
+
+.input-fullbredde {
+	width: 100%; 
+}
+
+// -----------------------------------------
+// RADIOKNAPP & CHECKBOX
+// -----------------------------------------
+
+// EKSEMPEL PÅ BRUK
+
+// 	<div>
+// 		<input class="nav-checkbox" type="checkbox" name="check" id="check1" />
+// 		<label for="check1">
+// 			Valg 1
+// 		</label>
+// 	</div>
+
+// 	<div>
+// 		<input class="nav-radioknapp" type="radio" name="check" id="check1" />
+// 		<label for="check1">
+// 			Valg 1
+// 		</label>
+// 	</div>
+
+.nav-checkbox, .nav-radioknapp {
+	position: absolute;
+	height: 0;
+	width: 0;
+	opacity: 0;	
+
+	&:hover + label:before {
+		border-color: @nav-checkbox-hover-color; 
+	}
+
+	&:focus + label:before {
+		.mixin-focus-outline(3px);
+	}
+
+	&:disabled + label:before {
+		background-color: @nav-input-disabled-color;
+	}
+
+	+ label {
+		padding-left: 2rem; 
+		position: relative; 
+		padding-top: 2px; 
+		display: block;
+		min-height: 22px;	
+		cursor: pointer; 
+	}
+
+	+ label:before {
+		content: "";
+		width: 22px;
+		height: 22px;
+		line-height: 22px;
+		border: 1px solid @nav-checkbox-outline-color;
+		left: 0; 
+		top: 0; 
+		position: absolute; 
+		display: block; 
+		text-align: center; 
+		background-position: center center;
+		background-repeat: no-repeat; 
+		background-size: 0 0; 
+		.mixin-nav-transition(150ms, background-size);
+	}
+
+	&:checked + label:before {
+		border-color: @nav-checkbox-checked-color; 
+		width: 20px;
+		height: 20px;
+		border-width: 2px; 	
+		background-size: 24px 24px; 	
+	}	
+}
+
+.nav-radioknapp + label:before {
+	border-radius: 50%; 
+}
+
+.nav-checkbox + label:before {
+	border-radius: 2px; 
+}
+
+.nav-radioknapp:checked + label:before:extend(.ikon-radioknapp) {
+	
+}
+
+.nav-checkbox:checked + label:before:extend(.ikon-checkbox) {
+	background-color: @nav-checkbox-checked-color;
+}
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder { /* WebKit browsers */
+    line-height: 1.3;
+    color: @color-placeholder; 
+}
+
+@media(min-width: 30em) {
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"], 
+	select {
+		font-size: 1rem; 
+	}
+
+	.nav-checkbox, .nav-radioknapp {
+		+ label {
+			padding-top: 3px; 
+		}
+	}	
 }
