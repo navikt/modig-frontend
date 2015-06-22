@@ -11,6 +11,11 @@ a {
 		color: @color-link-visited;
 		border-bottom: 1px solid @color-link-visited;
 	}
+
+	&:focus {
+		background-color: @color-focus; 
+		outline: none; 
+	}
 }
 
 .lenke-alene {
@@ -21,38 +26,14 @@ a {
 }
 
 .lenke-uthevet {
-	cursor: pointer;
-	display: inline-block;
-	text-transform: uppercase;
-	outline: none;
-	border-radius: 2px;
-	letter-spacing: 1px;
-	padding: 18px 40px;
-	line-height: 1.2;
-	margin-top: 0;
-	background: transparent;
-	border: 2px solid @color-link;
-	top: 1px;
+	.mixin-knapp(); 
+	background-color: transparent; 
+	border: 2px solid @blue-link;
+	padding: 8px 38px 10px 38px;
+	color: @blue-link; 
 
-	&:hover, &:visited {
-		text-decoration: underline;
-		border: 2px solid @color-link;
-	}
-
-	&:active {
-		background: @color-link;
-		color: @white; 
-		border: 2px solid @color-link;
-	}
-
-	&:disabled, &.er-inaktiv {
-		&:hover {
-			text-decoration: none;
-			cursor: default;
-		}
-		&:active {
-			background: transparent;
-			color: @color-link;
-		}
+	&:hover {
+		text-decoration: underline; 
+		border: 2px solid @blue-link;
 	}
 }

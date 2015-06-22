@@ -10,12 +10,22 @@
 	// Populært kalt "skjemapanel"
 	position: relative;
 	border: 1px solid @color-border;
-	margin-top: 2rem;
+	margin-top: 1rem;
 	background-color: @color-background;
 	margin-left: -1rem;
 	margin-right: -1rem;
 	border-left-width: 0; 
 	border-right-width: 0; 	
+	@arrow-size: .75rem;
+
+	.panel-ekstra {
+		margin-left: .5rem; 
+		padding-left: .5rem; 
+		margin-right: 0;
+		margin-left: 0;  
+		border-left: 1px solid @color-border!important; 
+		border-right: 1px solid @color-border!important; 
+	}
 
 	&:after, &:before {
 		content: "";
@@ -23,9 +33,9 @@
 		border-style: solid;
 		border-color: transparent;
 		border-top: 0;
-		top: -1rem;
+		top: -@arrow-size;
 		left: 50%;
-		border-width: 1rem;		
+		border-width: @arrow-size;		
 	}
 
 	&:after {
@@ -76,18 +86,22 @@ a.panel-ramme:hover {
 }
 
 @media(min-width: 30rem) {
+	
+	.panel {
+		padding: 2rem 2rem 2.25rem 2rem; 
+	}
+
 	.panel-ekstra {
 		border-left-width: 1px; 
 		border-right-width: 1px; 	
 		margin-left: 0;
-		margin-right: 0;		
+		margin-right: 0;	
+		padding-top: 20px; 	
 
 		&:before, &:after {
 			left: 3rem; 
 		}
 	}
 
-	.panel {
-		padding: 2rem 2rem 2.25rem 2rem; 
-	}
+	
 }

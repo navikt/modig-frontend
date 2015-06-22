@@ -1,3 +1,28 @@
+/*
+
+Dersom du ønsker å bruke typografi fra NAVs typografiske hierarki men 
+ikke ønsker å bruke klassene for dem i HTML-en din, kan du bruke følgende mixins.
+
+De er også responsive slik at: 
+
+	.min-tittel {
+		.mixin-typo-sidetittel(); 
+	}
+
+...vil gi følgende output i CSS: 
+
+	.min-tittel {
+		// Regler
+	}
+
+	@media(min-width: 30em) {
+		.min-tittel {
+			// Regler
+		}
+	}
+
+*/
+
 .mixin-typo-sidetittel() {
 	font-family: @font-family-profile;
 	font-size: @rem-as-38px;

@@ -1,3 +1,18 @@
+.mixin-knapp() {
+	font-family: @font-family-profile;
+	font-weight: 600;
+	cursor: pointer;
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration: none;
+	outline: none;
+	letter-spacing: 1px;
+	border-radius: 2px;
+	font-size: @rem-as-16px; 
+	line-height: 1; 
+	padding: 10px 40px;
+}
+
 .mixin-knappevariant(@bakgrunnsfarge, @tekstfarge, @skyggefarge, @bakgrunnsfarge-inaktiv, @bakgrunnsfarge-aktiv) {
 	color: @tekstfarge;
 	background: @bakgrunnsfarge;
@@ -23,5 +38,5 @@
 		&:hover, &:active {
 			border-bottom-color: @bakgrunnsfarge-inaktiv;
 		}
-	}	
+	}
 }

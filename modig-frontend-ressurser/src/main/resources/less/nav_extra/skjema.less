@@ -5,7 +5,7 @@
 
 .nav-input {
 	position: relative; 
-	margin-bottom: .75rem;
+	margin-bottom: .5rem;
 
 	&.har-hjelpetekst {
 		padding-right: 3rem; 
@@ -23,18 +23,19 @@
 
 	legend {
 		.mixin-typo-undertittel(); 
-		margin-bottom: .35rem; 
+		margin-bottom: 1rem; 
 	}
 }
 
 .skjema-sporsmal {
-	.mixin-typo-ingress(); 
+	.mixin-typo-avsnitt(); 
 	margin-bottom: .5rem; 
 	margin-top: 0;  
 }
 
 .skjema-infotekst {
 	.mixin-typo-infotekst(); 
+	margin-bottom: 20px; 
 }
 
 .skjema-feilmelding {
@@ -261,7 +262,7 @@ textarea, select {
 	+ label {
 		padding-left: 2rem; 
 		position: relative; 
-		padding-top: 2px; 
+		padding-top: 1px; 
 		display: block;
 		min-height: 22px;	
 		cursor: pointer; 
@@ -269,9 +270,9 @@ textarea, select {
 
 	+ label:before {
 		content: "";
-		width: 22px;
-		height: 22px;
-		line-height: 22px;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
 		border: 1px solid @nav-checkbox-outline-color;
 		left: 0; 
 		top: 0; 
@@ -286,8 +287,8 @@ textarea, select {
 
 	&:checked + label:before {
 		border-color: @nav-checkbox-checked-color; 
-		width: 20px;
-		height: 20px;
+		width: 18px;
+		height: 18px;
 		border-width: 2px; 	
 		background-size: 24px 24px; 	
 	}	
@@ -301,9 +302,7 @@ textarea, select {
 	border-radius: 2px; 
 }
 
-.nav-radioknapp:checked + label:before:extend(.ikon-radioknapp) {
-	
-}
+.nav-radioknapp:checked + label:before:extend(.ikon-radioknapp) { }
 
 .nav-checkbox:checked + label:before:extend(.ikon-checkbox) {
 	background-color: @nav-checkbox-checked-color;
@@ -334,9 +333,7 @@ textarea, select {
 		font-size: 1rem; 
 	}
 
-	.nav-checkbox, .nav-radioknapp {
-		+ label {
-			padding-top: 3px; 
-		}
-	}	
+	.nav-checkbox + label, .nav-radioknapp + label {
+		padding-top: 1px;
+	}
 }
