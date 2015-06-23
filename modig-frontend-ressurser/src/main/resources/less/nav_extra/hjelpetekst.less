@@ -1,0 +1,224 @@
+@hjelpetekst-bakgrunnsfarge: @gray-text;
+@hjelpetekst-tekstfarge: @white; 
+
+.hjelpetekst-parent {
+  position: relative; 
+
+  &.hjelpetekst-parent-block {
+    display: inline-block;  
+    padding-right: 40px;
+  }
+}
+
+.hjelpetekst {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: 21px; 
+
+  &.hjelpetekst-inline {
+    position: relative; 
+  }  
+}
+
+.hjelpetekst-parent-inline {    
+    input[type="radio"] + label, input[type="checkbox"] + label {
+      padding-right: 20px; // For å hindre at label legger seg oppå ?-ikonet
+    }  
+}
+
+.hjelpetekst-ikon {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  text-align: center; 
+  font-size: 13px; 
+  width: 20px;
+  height: 20px; 
+  line-height: 20px;   
+  text-decoration: none;
+  border-radius: 50%; 
+  font-weight: bold; 
+  border: 1px solid @color-link;
+  color: @color-link;
+  background: transparent; 
+  padding: 0; 
+
+  &:focus, &:hover, &:active {
+    text-decoration: none;
+    color: @white;
+    background-color: @color-link;
+  }
+
+  &:focus {
+  	outline: none; 
+  	.mixin-focus-outline(3px); 
+  }
+
+}
+
+.hjelpetekst-tooltip {
+  background-color: @hjelpetekst-bakgrunnsfarge;
+  padding: 28px 20px 20px 20px; 
+  position: fixed;  
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1040;
+  text-align: center; 
+  opacity: 0; 
+
+  &.er-synlig {
+    opacity: 1;
+  }  
+}
+
+.hjelpetekst-tittel {
+  color: #ccc;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0;
+  font-family: @font-family-regular;
+}
+
+.hjelpetekst-tekst {
+  max-height: 180px;
+  overflow-y: auto; 
+  color: @white; 
+  text-align: left; 
+  margin-bottom: 16px; 
+
+  p {
+    font-weight: normal; 
+    margin-bottom: 0; 
+  }
+
+}
+
+.hjelpetekst-lukk {
+  text-transform: uppercase;
+  color: #00a9e0;
+  font-weight: 600;
+  padding: 8px;
+  font-size: 0.65625rem;
+  position: absolute;
+  top: 0;
+  right: 0;   
+  background: transparent;
+  border: 0; 
+
+  &:hover {
+    text-decoration: underline; 
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .hjelpetekst-tooltip {
+
+    position: absolute;
+    width: 350px;
+    left: 0;
+    bottom: 40px; 
+    top: auto;
+    opacity: 0;
+    text-align: center;
+
+    &:before {
+      content: "";
+      border: solid transparent;
+      border-width: 10px;
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: 20px;
+      border-top-color: @hjelpetekst-bakgrunnsfarge;
+      top: 100%;
+    }    
+
+  }
+
+  .hjelpetekst-tekst {
+    margin-bottom: 0; 
+  }
+
+}
+
+.hjelpetekst-tooltip {
+
+  .ps-container {
+    &:hover {
+      [class*="ps-scrollbar"] {
+        opacity: 1;
+      }
+    }
+
+    [class*="ps-scrollbar"] {
+      background-color: #00a9e0;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.in-scrolling {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.under {
+    &:before {
+      border-top-color: transparent;
+      border-bottom-color: @hjelpetekst-bakgrunnsfarge;
+      top: -20px;
+    }
+  }
+} 
+
+@media only screen and (max-width: 450px) {
+  .hjelpetekst-parent {
+    display: block;
+
+    .hjelpetekst-inline {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+
+// Høykontrast
+body.contrast .hjelpetekst {
+
+  a.infoikon span {
+    border-color: #ffc40d;
+    color: #ffc40d;
+
+    &:hover, &:focus {
+      border-color: #0ca9e1;
+      background-color: #0ca9e1;
+      color: #000;
+    }
+  }
+
+  .hjelpetekst-tooltip {
+    background-color: #fff;
+
+    div, h3, p, a {
+      background-color: #fff;
+      color: #000;
+    }
+
+    &:before {
+      border-top-color: #fff;
+    }
+  }
+
+  .hjelpetekst-lukk {
+    background-color: #fff;
+    color: #0053A1;
+  }  
+}
