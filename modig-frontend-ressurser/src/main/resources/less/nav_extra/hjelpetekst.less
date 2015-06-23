@@ -69,6 +69,7 @@
   z-index: 1040;
   text-align: center; 
   opacity: 0; 
+  color: @color-gray-light-additional;
 
   &.er-synlig {
     opacity: 1;
@@ -76,17 +77,18 @@
 }
 
 .hjelpetekst-tittel {
-  color: #ccc;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 0;
-  font-family: @font-family-regular;
+	.tittel-dekorert; 
+	.mixin-typo-element()
+	margin-top: 0;	
+
+	&:after {
+		background-color: @color-gray-light-additional;
+	}
 }
 
 .hjelpetekst-tekst {
   max-height: 180px;
   overflow-y: auto; 
-  color: @white; 
   text-align: left; 
   margin-bottom: 16px; 
 
@@ -99,7 +101,7 @@
 
 .hjelpetekst-lukk {
   text-transform: uppercase;
-  color: #00a9e0;
+  color: @color-blue-additional;
   font-weight: 600;
   padding: 8px;
   font-size: 0.65625rem;
