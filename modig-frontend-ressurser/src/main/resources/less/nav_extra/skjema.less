@@ -36,6 +36,12 @@
 .skjema-infotekst {
 	.mixin-typo-infotekst(); 
 	margin-bottom: 20px; 
+
+	h2, h3 {
+		margin-top: 2rem; 
+		margin-bottom: .5rem; 
+		.mixin-typo-avsnitt(); 
+	}
 }
 
 .skjema-feilmelding {
@@ -48,7 +54,7 @@
 
 .skjema-fragment {
 	padding: .5rem;
-	margin: -.5rem -.5rem 1rem -.5rem;
+	margin: -.5rem;
 	background: transparent;
 	.mixin-nav-transition(200ms);
 
@@ -67,10 +73,6 @@
 		+ .er-feil {
 			margin-top: 0;
 		}
-	}
-
-	&.er-sist {
-		margin-bottom: 0; 
 	}
 }
 
