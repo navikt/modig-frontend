@@ -1,0 +1,10 @@
+{
+  "name": "nav-design",
+  "version": "1.0.0",
+  "description": "Designelementer på Nav.no",
+  "author": "Helge Fredheim",
+  "license": "ISC",
+  "dependencies": {
+    "pacbot": "^0.21.0"
+  }
+}

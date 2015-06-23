@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <title>NAV Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <meta charset="utf-8">
+    <%= assets("less", "app-less") %>
+    <%= assets("less", "nav-decorator") %>
+    <%= assets("less", "nav-extra") %>
+</head>
+
+<body ng-app="NavDesignApp">
+    <div ng-view></div> 
+
+    <%= assets("js", "vendor") %> 
+    <script>
+        <%= partial('assets/js/snippets.js') %>
+        <%= partial('assets/js/nav-design.js') %>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<div class="demo-header panel" ng-controller="HeaderController as HeaderCtrl">
+	<div class="select-container">
+		<select class="input-select input--l" ng-model="currentPage" ng-change="displaySnippet(currentPage)">
+			<option ng-repeat="snippet in snippets">{{snippet}}</option>
+		</select>
+	</div>
+
+	<button class="btn btn-small" data-ng-click="toggleTextarea()">{{buttonText}}</button>
+
+</div>
+
+

@@ -1,0 +1,8 @@
+<demo-header></demo-header>
+
+<div class="demo-content">
+	<div id="preview-pane" class="preview-pane" data-ng-bind-html="html | unsafe"></div>
+	<div ng-if="displayTextarea">
+		<textarea class="code-textarea" ng-model="html"></textarea>
+	</div>
+</div>
