@@ -2,73 +2,72 @@
 	list-style: none;
 	padding: 0;
 	display: block;
-	li {
-		position: relative;
-		font-size: @rem-as-12px;
-		border-bottom: 1px solid @gray-icon;
-		a {
-			color: @gray-text;
-			display: block;
-			padding: 10px 10px 10px 12px;
+}
+
+.lenkeliste	li {
+	position: relative;
+	font-size: @rem-as-12px;
+	border-bottom: 1px solid @gray-icon;
+}
+
+.lenkeliste a {
+	color: @gray-text;
+	display: block;
+	padding: 10px 10px 10px 12px;
+	text-align: left;
+	text-decoration: none;
+	border-bottom: none;
+	margin-left: -12px;
+
+	&:hover {
+		border-bottom-color: @gray-icon;
+		color: @blue-link;
+		&:before {
+			border: 3px solid @blue-link;
+			border-radius: 50% 50% 50% 50%;
+			content: " ";
+			left: -10px;
+			top: 16px;
+			float: left;
+			position: absolute;
 			text-align: left;
-			text-decoration: none;
-			border-bottom: none;
-			margin-left: -12px;
-			&:hover {
-				border-bottom-color: @gray-icon;
-				color: @blue-link;
-				&:before {
-					border: 3px solid @blue-link;
-					border-radius: 50% 50% 50% 50%;
-					content: " ";
-					left: -10px;
-					top: 16px;
-					float: left;
-					position: absolute;
-					text-align: left;
-				}
-			}
-			&:focus {
-				box-shadow: 0 0 0 3px @orange-focus;
-				outline: none;
-				background: transparent;
-			}
-			&.selected {
-				// Hvit pil mot venstre for aktivt menypunkt
-				position: relative;
-				&:before, &:after {
-					content: " ";
-					display: inline-block;
-					border: solid rgba(209, 209, 209, 0); // ikke transparent pga ekstra "strek" på diagonal boarders. Fikses med rgba.
-					@media (max-width: (@screen-medium - 0.01)) {
-						border: 0;
-					}
-					transform: scale(.9999); // Hack for å rendre border (pil) riktig i firefox.
-					outline: none;
-					position: absolute;
-					right: 100%;
-				}
-				&:before {
-					border-width: 12px;
-					border-right-color: @gray-icon;
-					top: 8px;
-				}
-				&:after {
-					border-width: 10px;
-					border-right-color: #fff;
-					top: 10px;
-				}
-			}
 		}
 	}
-}
 
-.panel, .rammepanel {
-	& .lenkeliste {
-		padding-left: 8px;
+	&:focus {
+		box-shadow: 0 0 0 3px @orange-focus;
+		outline: 0;
+		background: transparent;
 	}
+
+	&.er-valgt {
+		// Hvit pil mot venstre for aktivt menypunkt
+		position: relative;
+		&:before, &:after {
+			content: " ";
+			display: inline-block;
+			border: @gray-background; 
+			border: solid rgba(209, 209, 209, 0); // ikke transparent pga ekstra "strek" på diagonal boarders. Fikses med rgba.
+			@media (max-width: (@screen-medium - 0.01)) {
+				border: 0;
+			}
+			transform: scale(.9999); // Hack for å rendre border (pil) riktig i firefox.
+			position: absolute;
+			right: 100%;
+		}
+		&:before {
+			border-width: 12px;
+			border-right-color: @gray-icon;
+			top: 8px;
+		}
+		&:after {
+			border-width: 10px;
+			border-right-color: #fff;
+			top: 10px;
+		}
+	}	
 }
 
-
-// HENTET FRA HØYREMENY
-
+.panel .lenkeliste {
+	padding-left: 8px;
+}

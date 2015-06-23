@@ -11,8 +11,11 @@
 	cursor: pointer;
 	z-index: 1;
 
-	&.selected {
+	&.selected, &.selected:hover, &.selected:focus, &.selected:active {
 		background: @black url('@{baseImagePath}img/enonic/gfx/tts/language_selected.png') no-repeat 8% center;
+	}
+
+	&.selected {
 		> span {
 			color: @white;
 			&:after {
@@ -21,8 +24,8 @@
 				margin-left: 4px;
 			}
 		}
+
 		&:hover, &:focus, &:active {
-			background: @black url('@{baseImagePath}img/enonic/gfx/tts/language_selected.png') no-repeat 8% center;
 			span {
 				color: @white;
 				&:after {
@@ -88,6 +91,7 @@
 			}
 		}
 	}
+	
 	&:hover, &:focus, &:active {
 		background-image: url('@{baseImagePath}img/enonic/gfx/tts/language_hover.png');
 		background-repeat: no-repeat;

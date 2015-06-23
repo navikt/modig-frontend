@@ -10,32 +10,32 @@
 		li {
 			font-size:@rem-as-14px * 1.22;
 			border-bottom: 1px solid @gray-icon;
-	}
-	
-	a {
-		color:@gray-text;
-		font-weight: 600;
-		display:block;
-		padding: 6px 0;
-		position: relative;
-			&:hover,
-			&:focus, 
-			&:active {
-				text-decoration:none;
-				color:@blue-link;
-				&:before { 							// 100% lik den i link-list (hovedmeny)
-					  border: 3px solid @blue-link;
-				      border-radius:50%;
-				      display:inline-block;
-				      content: " ";
-				      position: absolute;
-				      left:-11px;
-				      top: 14px;		     
+		}
+		
+		a {
+			color:@gray-text;
+			font-weight: 600;
+			display:block;
+			padding: 6px 0;
+			position: relative;
+				&:hover,
+				&:focus, 
+				&:active {
+					text-decoration:none;
+					color:@blue-link;
+					&:before { 							// 100% lik den i link-list (hovedmeny)
+						  border: 3px solid @blue-link;
+					      border-radius:50%;
+					      display:inline-block;
+					      content: " ";
+					      position: absolute;
+					      left:-11px;
+					      top: 14px;		     
+					}
 				}
-			}
-		// hover, active, focus?
+			// hover, active, focus?
+		}
 	}
-}
 }
 
 // header i Factsheet har ikke klasse .article-head -
