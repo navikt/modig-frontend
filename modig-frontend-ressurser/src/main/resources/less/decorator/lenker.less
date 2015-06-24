@@ -1,15 +1,9 @@
 a {
 	color: @color-link;
-	border-bottom: 1px solid @color-link-underline;
 	text-decoration: none;
-
-	&:hover {
-		border-bottom: 1px solid @color-link;
-	}
 
 	&:active {
 		color: @color-link-visited;
-		border-bottom: 1px solid @color-link-visited;
 	}
 
 	&:focus {
@@ -18,10 +12,18 @@ a {
 	}
 }
 
-.lenke-alene {
-	border-bottom: none;
+.lenke-fremhevet, .redaksjonelt-innhold a {
+	border-bottom: 1px solid @color-link-underline;	
+}
+
+.lenke-alene, .redaksjonelt-innhold a, .lenke-fremhevet {
+
 	&:hover {
 		border-bottom: 1px solid @color-link;
+	}
+
+	&:active {
+		border-bottom: 1px solid @color-link-visited;
 	}
 }
 

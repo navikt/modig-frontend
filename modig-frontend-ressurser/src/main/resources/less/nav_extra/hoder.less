@@ -38,6 +38,17 @@
 	}
 }
 
+.hode-undertittel {
+	.mixin-typo-undertittel(); 
+	margin-bottom: 3rem; 
+}
+
+.hode-innholdstittel {
+	.mixin-typo-innholdstittel(); 
+	margin-bottom: 3rem; 
+}
+
+
 .hode-feil {
 	&:before, &:after {
 		background-color: @color-error; 
@@ -64,9 +75,4 @@
 	&:before {
 		&:extend(.ikon-suksess); 
 	}
-}
-
-.hode-undertittel {
-	.mixin-typo-undertittel(); 
-	margin-bottom: 3rem; 
 }
