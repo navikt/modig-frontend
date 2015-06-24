@@ -129,6 +129,22 @@
 
 .siteheader-toolbar-and-login-defaults() {
 
+  // spesialknapp for høykontrast, språk, toggling av mobilmeny o.l (flat knapp, minner om en lenke)
+  .link-btn {
+    border: none;
+    text-decoration: none;
+    background: none;
+    color: @blue-interaction;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.0); // transparent border
+    &:focus {
+      border: thin dotted;
+      outline: none;
+    }
+  }
+
+
   .settings a,
   .settings .link-btn {
       font-size: @rem-as-12px;
