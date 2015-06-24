@@ -7,17 +7,29 @@
  */
 
 html {
+    font-size: 100%;
 	-ms-text-size-adjust: 100%; /* 2 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /**
- * Remove default margin.
+ * Custom html + body setup (NAV)
  */
 
-body {
-	margin: 0;
+html, body {
+  height: 100%;
 }
+
+
+body {
+  margin: 0;
+  font-family: @font-family-sans-serif;
+  line-height: @line-height-base;
+  color: @gray-text;
+  background-color: @gray-background;
+}
+
+
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -399,3 +411,4 @@ td,
 th {
 	padding: 0;
 }
+
