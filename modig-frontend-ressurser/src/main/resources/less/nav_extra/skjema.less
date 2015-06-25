@@ -57,23 +57,20 @@
 	margin: -.5rem;
 	background: transparent;
 	.mixin-nav-transition(200ms);
+}
 
-	&.er-feil {
-		background-color: #ffedd6;
+.er-feil {
+	background-color: #ffedd6;
 
-		input:not([type="submit"]), textarea {
-			border: 1px solid @color-error;
-			background: #fbf5f4;
-		}
-		
-		.skjema-feilmelding {
-			display: block;
-		}
-
-		+ .er-feil {
-			margin-top: 0;
-		}
+	input:not([type="submit"]), textarea {
+		border: 1px solid @color-error;
+		background: #fbf5f4;
 	}
+	
+	.skjema-feilmelding {
+		display: block;
+	}
+
 }
 
 label {
