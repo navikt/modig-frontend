@@ -30,8 +30,7 @@
   margin-left: auto;
   margin-right: auto; 
   padding: 0;
- 
-  .mixin-typo-etikett-stor(); 
+  text-transform: uppercase; 
 
   a {
   	background-color: @white; 
@@ -52,7 +51,7 @@
 	float: left;
 	position: relative;
 	border: 1px solid @color-border;
-	background: #f9f9f9; /* TODO */
+	background: @gray-background; 
 	color: @color-text;
 	text-decoration: none;
 
@@ -100,7 +99,7 @@
 }
 
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: @screen-small) {
   
   	.stegindikator-indeks {
 		display: none;
@@ -112,7 +111,7 @@
 
 }
 
-@media only screen and (min-width: 60em) { 
+@media only screen and (min-width: @screen-large) { 
 
 	.stegindikator-steg {	
 		padding: .75rem 3rem; 
