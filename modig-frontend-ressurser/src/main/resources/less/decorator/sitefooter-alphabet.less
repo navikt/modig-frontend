@@ -91,7 +91,6 @@
 .no-touch .letter > a:hover,
 .letter > a:focus,
 .letter > a:active {
-	background-color: @blue-interaction; // :hover for skjermer som støtter touch, står innenfor min-width mq pga iOS bug
 	color: @gray-text;
 }
 
@@ -133,7 +132,6 @@
 				&:hover,
 				&:focus,
 				&:active {
-					color: @blue-interaction;
 					text-decoration: none;
 					&:before {
 						.bullet-point(3px, @blue-interaction, -11px, 1.18em);
@@ -295,11 +293,6 @@
 .footer-letters-small-desktop() {
 	.container.letters-container {
 		margin: 0 auto;
-	}
-
-	.letter > a:hover {
-		background-color: @blue-interaction;
-		color: @gray-text;
 	}
 
 	.letter-scroll-left,
