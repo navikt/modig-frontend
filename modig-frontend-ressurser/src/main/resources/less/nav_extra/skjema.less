@@ -52,23 +52,26 @@
 	font-style: italic; 
 }
 
-.skjema-fragment {
+.skjema-feilomrade {
 	padding: .5rem;
 	margin: -.5rem;
 	background: transparent;
 	.mixin-nav-transition(200ms);
+
+	&.har-valideringsfeil {
+		background-color: @pink-error-bg;
+	}
 }
 
-.er-feil {
-	background-color: #ffedd6;
+.har-valideringsfeil {
 
-	input:not([type="submit"]), textarea {
-		border: 1px solid @color-error;
-		background: #fbf5f4;
+	.skjema-feilmelding {
+		display: block; 	
 	}
 	
-	.skjema-feilmelding {
-		display: block;
+	input:not([type="submit"]), textarea {
+		border: 1px solid @color-error;
+		background: @pink-error-bg;
 	}
 
 }
@@ -149,6 +152,43 @@ textarea, select {
 		position: absolute;
 		right: .5rem;
 		top: 45%;
+	}
+}
+
+
+// -----------------------------------------
+// TEXTAREA MED META-INFO, F.EKS. ANTALL TEGN
+// -----------------------------------------
+
+.textarea-meta-container {
+	position: relative;
+
+	textarea {
+		.mixin-nav-transition(); 
+	}
+
+	&.vis-meta {
+		textarea {
+			padding-bottom: 2.5rem; 
+		}
+	}
+}
+
+.textarea-metatekst {
+	.mixin-typo-etikett-liten(); 
+	position: absolute; 
+	bottom: 0; 
+	padding: 0 .45rem .6rem .45rem; 
+	width: 100%; 
+	text-align: right; 
+	margin: 0; 
+}
+
+.textarea-antall-tegn {
+	font-weight: 600; 
+
+	&.er-negativ {
+		color: @color-error;
 	}
 }
 
