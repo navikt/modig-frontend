@@ -10,7 +10,11 @@
 }
 
 .panel-ekstra  {
+	
+	// Grå boks med pil opp, tidligere kjent som .ekstra-spm-boks; 
 	// Populært kalt "skjemapanel"
+	// Må kombineres med .panel slik: <div class="panel panel-ekstra"></div>
+
 	position: relative;
 	border: 1px solid @color-border;
 	margin-top: 1rem;
@@ -30,7 +34,7 @@
 		top: -@arrow-size;
 		left: 50%;
 		border-width: @arrow-size;		
-	}
+	} 
 
 	&:after {
 		border-bottom-color: @color-background;
@@ -41,9 +45,13 @@
 		border-bottom-color: @color-border;
 		transform: translateX(-50%);
 	}	
+
 }
 
 a.panel {
+
+	// Lenkepanel
+
 	display: block;
 	color: @gray-text;
 	border: 0; 
@@ -59,6 +67,9 @@ a.panel {
 }
 
 .panel-ramme, a.panel-ramme {
+
+	// Rammepanel
+
 	border: 1px solid @color-border;
 }
 
