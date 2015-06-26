@@ -88,10 +88,11 @@
 	}
 }
 
-.no-touch .letter > a:hover,
-.letter > a:focus,
-.letter > a:active {
+.letter > a:hover,
+.letter > a:active,
+.letter > a:focus  {
 	color: @gray-text;
+    background-color: @color-link-lighter;
 }
 
 .accessible-megafooter-panel {
@@ -107,7 +108,7 @@
 	p {
 		font-size: @rem-as-16px;
 		font-weight: 600;
-		color: #b7b1a9;
+		color: #b7b1a9; // TODO
 		text-transform: uppercase;
 		margin-top: 20px;
 		height: 80px;
@@ -134,7 +135,7 @@
 				&:active {
 					text-decoration: none;
 					&:before {
-						.bullet-point(3px, @blue-interaction, -11px, 1.18em);
+						.bullet-point(3px, @color-link-lighter, -11px, 1.18em);
 					}
 				}
 

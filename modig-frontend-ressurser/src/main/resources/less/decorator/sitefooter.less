@@ -47,10 +47,14 @@
 				}
 			}
 		}
-		a:hover, a:focus {
-			color: @blue-interaction;
-			text-decoration: none;
+		a:hover {
+			color: @color-link-lighter;
 		}
+
+      a:focus {
+        color: @color-link-active;
+        background-color: @color-focus;
+      }
 
 		.copyright {
 			font-size: 0.7em;
@@ -62,10 +66,10 @@
 		.decorated {
 			margin-bottom: 16px; // som MOD
 			font-size: 1em;
-			Font-family: @font-family-modus;
+			Font-family: @font-family-profile;
 
 			&:after {
-				border-color: #857B71; // OK!
+				border-color: #857B71; // TODO variabel?
 				margin-top: 15px;
 			}
 		}
