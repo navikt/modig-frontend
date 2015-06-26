@@ -21,7 +21,7 @@
     text-decoration: none;
 
 	@media (min-width: @screen-medium) {
-		line-height: 1.5em;
+		line-height: 1.5;
 	}
 }
 
@@ -33,11 +33,11 @@
 
 
 .input-sitesearch:focus { // må sette fokusstiler pga bakgrunnsbilde/farge og null border på inputs for søk
-    .tab-focus();
+  .mixin-focus-outline();
 }
 
 .btn-sitesearch:focus{
-  .tab-focus();
+  .mixin-focus-outline();
   overflow: hidden;
 }
 
@@ -66,7 +66,6 @@
 	// gjelder både mobil og desktop
 	.input-sitesearch {
 		border: none;
-		box-shadow: none;
 		margin: 0;
 		border-radius: 0;
 		&:-moz-placeholder,
@@ -135,10 +134,10 @@
 		display: inline-block;
 		width: 49%;
 		padding: 14px 0 14px 0;
-		font-size: 1em;
+		font-size: 1rem;
 		font-weight: 600;
 		color: #fff;
-		font-family: @font-family-modus;
+		font-family:@font-family-profile;
 		text-transform: uppercase;
 		cursor: pointer;
 		&.toggle-mainmenu {
@@ -238,7 +237,7 @@
 			padding-left: 40px;
 			padding-right: 35px;
 			li {
-				font-size: 1em;
+				font-size: 1rem;
 				border-bottom: none;
 
 				a {
@@ -323,10 +322,10 @@
 				display: block;
 				padding: 15px 35px 15px 25px; //@grid-gutter-width / 2;
 				border-bottom: 1px solid @gray-icon;
-				font-size: 1.0652em; // skal være 17px
+				font-size: @rem-as-17px;
 				text-transform: uppercase;
 				text-decoration: none;
-				font-family: @font-family-modus;
+				font-family: @font-family-profile;
 				font-weight: 600;
 				&.open {
 					color: @blue-interaction;
@@ -623,25 +622,23 @@
 
 
 	.topnavitem {
-		line-height: 1.375em; // 22px
+		line-height: 1.294; // 22px (hvis font-size er tilsvarende 17px)
 		display: inline-block;
 		> a {
 			display: block;
 			padding: 10px 20px 10px 0px; // 10px 40px 10px 10px;
             padding-top:0.625rem;
             padding-bottom:0.625rem;
-			font-size: 1.0652em; // skal være 17px
+			font-size: @rem-as-17px;
 			text-transform: uppercase;
 			text-decoration: none;
-			font-family: @font-family-modus;
+			font-family: @font-family-profile;
 			font-weight: 600;
 			color: #000;
 			&:hover, &:focus, &:active {
 				color: @blue-link;
 			}
-			&:focus {
-				outline-offset: -1px;
-			}
+
 		}
 	}
 
