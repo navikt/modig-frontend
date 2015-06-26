@@ -28,7 +28,7 @@
 }
 
 // -----------------------------------------
-// SKJEMA-LAYOUT 
+// SKJEMA-TYPOGRAFI 
 // -----------------------------------------
 
 .skjema-sporsmal {
@@ -43,12 +43,6 @@
 	margin-bottom: 20px; 
 }
 
-.skjema-infotekst h2, .skjema-infotekst h3 {
-	margin-top: 20px; 
-	margin-bottom: 0; 
-	.mixin-typo-element(); 
-}
-
 .skjema-feilmelding {
 	display: none; 
 	color: @color-error;
@@ -56,6 +50,17 @@
 	margin-top: .5rem;
 	font-style: italic; 
 }
+
+
+label {
+	display: block;
+	margin-bottom: .25rem;
+	line-height: 1.4;
+}
+
+// -----------------------------------------
+// SKJEMA-LAYOUT 
+// -----------------------------------------
 
 .skjema-feilomrade {
 	padding: .5rem;
@@ -79,12 +84,6 @@
 		background: @pink-error-bg;
 	}
 
-}
-
-label {
-	display: block;
-	margin-bottom: .25rem;
-	line-height: 1.4;
 }
 
 // -----------------------------------------
