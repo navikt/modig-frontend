@@ -3,15 +3,6 @@
 @nav-checkbox-outline-color: #978e85;
 @nav-input-disabled-color: @gray-icon;
 
-.nav-input {
-	position: relative; 
-	margin-bottom: .5rem;
-
-	&.har-hjelpetekst {
-		padding-right: 3rem; 
-	}
-}
-
 // -----------------------------------------
 // SKJEMA-LAYOUT 
 // -----------------------------------------
@@ -27,14 +18,28 @@
 	}
 }
 
+.nav-input {
+	position: relative; 
+	margin-bottom: .5rem;
+
+	&.har-hjelpetekst {
+		padding-right: 3rem; 
+	}
+}
+
+// -----------------------------------------
+// SKJEMA-LAYOUT 
+// -----------------------------------------
+
 .skjema-sporsmal {
 	.mixin-typo-avsnitt(); 
-	margin-bottom: .5rem; 
+	margin-bottom: .5rem;  
 	margin-top: 0;  
 }
 
 .skjema-infotekst {
 	.mixin-typo-infotekst(); 
+	.redaksjonelt-innhold(); 
 	margin-bottom: 20px; 
 }
 
@@ -81,7 +86,6 @@ label {
 	margin-bottom: .25rem;
 	line-height: 1.4;
 }
-
 
 // -----------------------------------------
 // INPUT-FELTER
@@ -231,14 +235,14 @@ textarea, select {
 
 // EKSEMPEL PÅ BRUK
 
-// 	<div>
+// 	<div [class="nav-input"]>
 // 		<input class="nav-checkbox" type="checkbox" name="check" id="check1" />
 // 		<label for="check1">
 // 			Valg 1
 // 		</label>
 // 	</div>
 
-// 	<div>
+// 	<div [class="nav-input"]>
 // 		<input class="nav-radioknapp" type="radio" name="check" id="check1" />
 // 		<label for="check1">
 // 			Valg 1
@@ -311,6 +315,11 @@ textarea, select {
 .nav-checkbox:checked + label:before:extend(.ikon-checkbox) {
 	background-color: @nav-checkbox-checked-color;
 }
+
+
+// -----------------------------------------
+// 	BROWSER-SPESIFIKK STYLING
+// -----------------------------------------
 
 ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder { /* WebKit browsers */
     line-height: 1.3;
