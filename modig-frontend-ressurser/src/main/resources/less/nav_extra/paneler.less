@@ -20,7 +20,7 @@
 	background-color: @color-background;
 }
 
-.panel-ekstra  {
+.panel-ekstra, .panel-relatert  {
 	
 	// Grå boks med pil opp, tidligere kjent som .ekstra-spm-boks; 
 	// Populært kalt "skjemapanel"
@@ -29,7 +29,6 @@
 	position: relative;
 	border: 1px solid @color-border;
 	margin-top: 1rem;
-	background-color: @color-background;
 	margin-left: -1rem;
 	margin-right: -1rem;
 	border-left-width: 0; 
@@ -48,15 +47,31 @@
 	} 
 
 	&:after {
-		border-bottom-color: @color-background;
 		transform: translate(-50%, 1px);
 	}
 
 	&:before {
-		border-bottom-color: @color-border;
 		transform: translateX(-50%);
+		border-bottom-color: @color-border;
 	}	
 
+}
+
+.panel-relatert {
+	background-color: @white; 
+
+	&:after {
+		border-bottom-color: @white;
+	}
+
+}
+
+.panel-ekstra {
+	background-color: @color-background;
+
+	&:after {
+		border-bottom-color: @color-background;
+	}
 }
 
 a.panel {
@@ -121,7 +136,7 @@ a.panel-ramme:hover {
 		padding: 2rem 2rem 2.25rem 2rem; 
 	}
 
-	.panel-ekstra {
+	.panel-ekstra, .panel-relatert {
 		border-left-width: 1px; 
 		border-right-width: 1px; 	
 		margin-left: 0;
