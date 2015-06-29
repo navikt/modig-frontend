@@ -4,77 +4,86 @@
 //
 //--------------------------------------------------------------------
 
+
+.sitefooter {
+  background: @gray-text;
+  position: relative;
+  color: #fff;
+  padding: 0 0 20px 0;
+  &.no-menu {
+    padding-bottom: 54px; // footer er like høy, selv om A-Å ikke vises. Unngår lys glippe (body background) under footer, om den blir for lav.
+  }
+}
+
 .sitefooter a {
 	color: #fff;
 	font-size: @rem-as-14px;
     text-decoration: none;
 }
 
-.sitefooter {
-	background: @gray-text;
-	position: relative;
-	color: #fff;
-	padding: 0 0 20px 0;
-  &.no-menu {
-    padding-bottom: 54px; // footer er like høy, selv om A-Å ikke vises. Unngår lys glippe (body background) under footer, om den blir for lav.
+.about-site {
+  a:hover {
+    color: @color-link-lighter;
   }
-	.about-site {
-		padding-top: 30px;
-		color: @gray-icon; //#988F86;
-		text-align: center;
-		ul {
-			padding: 0;
-			li {
-				display: inline-block;
-				position: relative;
-				padding-left: 30px;
-				&:before {
-					position: absolute;
-					left: 13px;
-					top: 47%;
-					border: 2px solid #857B71;
-					border-radius: 2px;
-					content: " ";
-					display: inline-block;
 
-				}
-				&:first-child {
-					padding-left: 0;
-					&:before {
-						display: none;
-					}
+  a:focus {
+    color: @color-link-active;
+    background-color: @color-focus;
+  }
 
-				}
-			}
-		}
-		a:hover {
-			color: @color-link-lighter;
-		}
+  .copyright {
+    font-size: 0.7em;
+    margin-top: 0.7em;
+    p {
+      font-size: 1em;
+    }
+  }
 
-      a:focus {
-        color: @color-link-active;
-        background-color: @color-focus;
-      }
+  .decorated {
+    display:inline-block;
+    margin-bottom: 16px; // som MOD
+    font-size: 1em;
+    Font-family: @font-family-profile;
 
-		.copyright {
-			font-size: 0.7em;
-			margin-top: 0.7em;
-			p {
-				font-size: 1em;
-			}
-		}
-		.decorated {
-			margin-bottom: 16px; // som MOD
-			font-size: 1em;
-			Font-family: @font-family-profile;
-
-			&:after {
-				border-color: #857B71; // TODO variabel?
-				margin-top: 15px;
-			}
-		}
-	}
+    &:after {
+      border-color: #857B71; // TODO variabel?
+      margin-top: 15px;
+    }
+  }
 }
+
+.about-site {
+  padding-top: 30px;
+  color: @gray-icon; //#988F86;
+  text-align: center;
+  ul {
+    padding: 0;
+    li {
+      display: inline-block;
+      position: relative;
+      padding-left: 30px;
+      &:before {
+        position: absolute;
+        left: 13px;
+        top: 47%;
+        border: 2px solid #857B71;
+        border-radius: 2px;
+        content: " ";
+        display: inline-block;
+
+      }
+      &:first-child {
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+
+      }
+    }
+  }
+
+}
+
 
 .footer-about-mq();
 
@@ -84,7 +93,7 @@
 	@media (max-width: (@screen-medium - 0.01)) {
 
 		//Skal trigges når lenkeliste knekkes over to linjer
-		.sitefooter .about-site ul li {
+		.about-site ul li {
 			display: block;
 			padding: 0;
 			margin-bottom: 10px;
