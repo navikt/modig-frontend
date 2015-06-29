@@ -43,47 +43,10 @@
 	margin-bottom: 20px; 
 }
 
-.skjema-feilmelding {
-	display: none; 
-	color: @color-error;
-	margin-bottom: 0;
-	margin-top: .5rem;
-	font-style: italic; 
-}
-
-
 label {
 	display: block;
 	margin-bottom: .25rem;
 	line-height: 1.4;
-}
-
-// -----------------------------------------
-// SKJEMA-LAYOUT 
-// -----------------------------------------
-
-.skjema-feilomrade {
-	padding: .5rem;
-	margin: -.5rem;
-	background: transparent;
-	.mixin-nav-transition(200ms);
-
-	&.har-valideringsfeil,  &.feil {
-		background-color: @pink-error-bg;
-	}
-}
-
-.har-valideringsfeil, .feil {
-
-	.skjema-feilmelding {
-		display: block; 	
-	}
-	
-	input:not([type="submit"]), textarea {
-		border: 1px solid @color-error;
-		background: @pink-error-bg;
-	}
-
 }
 
 // -----------------------------------------
