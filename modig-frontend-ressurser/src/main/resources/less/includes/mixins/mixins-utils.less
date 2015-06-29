@@ -105,3 +105,39 @@
 .mixin-focus-outline(@width: 2px) {
 	box-shadow: 0 0 0 @width @color-focus;
 }
+
+.mixin-nav-spinner(@storrelse: 1rem, @rammebredde: 2px) {
+	width: @storrelse; 
+	height: @storrelse; 
+	border-top: @rammebredde solid @white; 
+	border-left: @rammebredde solid @white; 
+	border-bottom: @rammebredde solid rgba(255, 255, 255, .25); 
+	border-right: @rammebredde solid rgba(255, 255, 255, .25);   
+	border-radius: 50%;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation: rotering 800ms infinite linear;
+	animation: rotering 800ms infinite linear; 
+}
+
+@-webkit-keyframes rotering {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotering {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

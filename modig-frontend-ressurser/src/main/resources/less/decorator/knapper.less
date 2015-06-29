@@ -35,7 +35,7 @@
 		background-color: @btn-background-color;
 	}	
 
-	&:active {
+	&:active, &.er-aktiv {
 		color: @white;
 		background: @btn-shadow-color;
 		border-bottom: none;
@@ -43,7 +43,7 @@
 		.mixin-transform(translateY(3px));
 	}
 
-	&:disabled, &.er-inaktiv {
+	&.er-inaktiv {
 		background: @btn-disabled-background-color;
 		border-bottom-color: @btn-disabled-background-color;
 		color: @gray-inactive; 
@@ -78,6 +78,60 @@
 		margin-bottom: 2px;
 	}
 }
+
+// *****************************
+// KNAPP MED SPINNER
+// *****************************
+
+/*
+
+Brukes slik:
+
+	<button class="knapp">
+		Lagre
+		<span class="spinner-knapp"></span>
+	</button>
+
+For å vise spinneren, legg på klassen knapp-spinner på knappen:
+
+	<button class="knapp knapp-spinner">
+		Lagre
+		<span class="spinner-knapp"></span>
+	</button>
+
+Merk at spinneren ikke vil fungere på input-felter (f.eks. 
+<input type="submit" />), da disse ikke kan inneholde andre elementer. 
+
+*/
+
+
+.knapp-spinner {
+	padding-right: 4rem;
+	position: relative;
+	.mixin-nav-transition(300ms, padding-right); 
+
+	.spinner-knapp:after {
+		.mixin-nav-transition(300ms);
+		position: absolute;
+		top: .5rem; 
+		right: 2rem; 
+		opacity: 1; 
+		.mixin-nav-spinner(); 		
+	} 
+
+}
+
+.spinner-knapp:after {
+	right: .5rem; 
+	content: "";
+	position: absolute;
+	border-radius: 50%; 
+	opacity: 0; 
+}
+
+// *****************************
+// KNAPPEVARIANTER
+// *****************************
 
 .knapp-fare {
 	.mixin-knappevariant(@btn-danger-background-color, @btn-danger-text-color, @btn-danger-shadow-color, @btn-danger-disabled-background-color, @btn-danger-background-color-active);
