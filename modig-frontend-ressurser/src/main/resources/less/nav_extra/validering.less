@@ -60,3 +60,36 @@
 
 }
 
+// ------------------------
+// Sticky feilmelding 
+// ------------------------
+
+.feilmeldingsoversikt {
+	background-color: @color-text;
+	position: fixed;
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	color: @yellow; 
+	z-index: @zindex-navbar-fixed;			
+}
+
+.feilmeldingsoversikt-inner {
+	padding: 1rem; 
+}
+
+.feilmeldingsoversikt-naviger {
+	display: inline-block;
+}
+
+.feilmeldingsoversikt .knapp-lukk {
+	float: right; 
+}
+
+@media(min-width: @screen-small) {
+
+	.feilmeldingsoversikt-antall {
+		display: inline-block;
+		margin: 0 2rem 0 0;
+	}
+}
