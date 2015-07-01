@@ -86,6 +86,34 @@
 	float: right; 
 }
 
+// -----------------------------------------
+// HØYKONSTRAST
+// -----------------------------------------
+
+.contrast {
+
+  .panel-feilsammendrag {
+
+    border: 1px solid @white; 
+
+    a, .klikkbar {
+      color: #ffc40d !important;
+    }
+
+    a:hover, a:focus .er-klikkbar:hover, .er-klikkbar:focus {
+      color: #0ca9e1 !important;
+      outline: 0; 
+    }
+
+  }
+
+}
+
+
+// -----------------------------------------
+// MEDIA QUERIES
+// -----------------------------------------
+
 @media(min-width: @screen-small) {
 
 	.feilmeldingsoversikt-antall {

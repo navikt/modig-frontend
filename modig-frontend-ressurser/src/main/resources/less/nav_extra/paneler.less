@@ -1,10 +1,7 @@
-// -----------------------------------------
-// PANELER
-// -----------------------------------------
-
 .panel {
 
 	// Standard-panel
+	// <div class="panel"></div>
 
 	background: @white;
 	padding: 1rem 1rem 1.25rem 1rem;
@@ -23,9 +20,14 @@
 
 .panel-ekstra, .panel-relatert  {
 	
-	// Grå boks med pil opp, tidligere kjent som .ekstra-spm-boks; 
-	// Populært kalt "skjemapanel"
-	// Må kombineres med .panel slik: <div class="panel panel-ekstra"></div>
+	// Boks med pil opp, tidligere kjent som .ekstra-spm-boks, omtales tidvis som "skjemapanel". 
+
+	// * .panel-ekstra gir en grå boks, og brukes dersom boksen inneholder en dialog/noe som brukeren må fylle ut. 
+	// * .panel-relatert gir en hvit boks, og brukes dersom boksen inneholder informasjon relatert til et valg
+	
+	// Begge klassene må kombineres med .panel slik: 
+	// <div class="panel panel-ekstra"></div>
+	// <div class="panel panel-relatert"></div>
 
 	position: relative;
 	border: 1px solid @color-border;
@@ -59,6 +61,9 @@
 }
 
 .panel-relatert {
+
+	// Hvit boks med pil over
+
 	background-color: @white; 
 
 	&:after {
@@ -68,6 +73,9 @@
 }
 
 .panel-ekstra {
+
+	// Grå boks med pil over
+
 	background-color: @color-background;
 
 	&:after {
@@ -78,6 +86,7 @@
 a.panel {
 
 	// Lenkepanel
+	// <a href="http://www.nav.no" class="panel">Gå til Nav.no</a>
 
 	display: block;
 	color: @gray-text;
@@ -95,36 +104,14 @@ a.panel {
 
 .panel-ramme, a.panel-ramme {
 
-	// Rammepanel
+	// Rammepanel; panel med kantlinje rundt
+	// <div class="panel panel-ramme"></div>
 
 	border: 1px solid @color-border;
 }
 
 a.panel-ramme:hover {
 	border: 1px solid @color-link;
-}
-
-// -----------------------------------------
-// HØYKONSTRAST
-// -----------------------------------------
-
-.contrast {
-
-  .panel-feilsammendrag {
-
-    border: 1px solid @white; 
-
-    a, .klikkbar {
-      color: #ffc40d !important;
-    }
-
-    a:hover, a:focus .er-klikkbar:hover, .er-klikkbar:focus {
-      color: #0ca9e1 !important;
-      outline: 0; 
-    }
-
-  }
-
 }
 
 // -----------------------------------------
