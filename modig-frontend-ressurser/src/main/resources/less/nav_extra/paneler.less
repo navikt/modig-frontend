@@ -22,12 +22,14 @@
 	
 	// Boks med pil opp, tidligere kjent som .ekstra-spm-boks, omtales tidvis som "skjemapanel". 
 
-	// * .panel-ekstra gir en grå boks, og brukes dersom boksen inneholder en dialog/noe som brukeren må fylle ut. 
+	// * .panel-ekstra gir en grå boks, og brukes dersom boksen inneholder en dialog/noe som brukeren må fylle ut som følge av at et annet alternativ er valgt. 
 	// * .panel-relatert gir en hvit boks, og brukes dersom boksen inneholder informasjon relatert til et valg
 	
 	// Begge klassene må kombineres med .panel slik: 
 	// <div class="panel panel-ekstra"></div>
 	// <div class="panel panel-relatert"></div>
+
+	@arrow-size: .75rem;
 
 	position: relative;
 	border: 1px solid @color-border;
@@ -36,8 +38,7 @@
 	margin-right: -1rem;
 	border-left-width: 0; 
 	border-right-width: 0; 	
-	@arrow-size: .75rem;
-
+	
 	&:after, &:before {
 		content: "";
 		position: absolute;
