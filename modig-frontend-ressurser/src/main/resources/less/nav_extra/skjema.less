@@ -235,8 +235,8 @@ textarea, select {
 
 	+ label {
 		padding-left: 2rem; 
-		position: relative; 
 		padding-top: 1px; 
+		position: relative; 
 		display: block;
 		min-height: 22px;	
 		cursor: pointer; 
@@ -292,6 +292,10 @@ textarea, select {
     color: @color-placeholder; 
 }
 
+:invalid, :-moz-submit-invalid, :-moz-ui-invalid  {
+	box-shadow: none; 
+}
+
 
 // -----------------------------------------
 // MEDIA QUERIES
@@ -318,6 +322,6 @@ textarea, select {
 	}
 
 	.nav-checkbox + label, .nav-radioknapp + label {
-		padding-top: 1px;
+		padding-top: 2px;
 	}
 }
