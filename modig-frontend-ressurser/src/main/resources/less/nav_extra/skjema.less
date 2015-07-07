@@ -114,6 +114,7 @@ textarea, select {
 	}
 
 	&:after {
+        pointer-events: none; // gjør at en kan klikke igjennom denne (pilen), slik at select åpner seg
 		content: "";
 		border-top: 6px solid @gray-text;
 		border-right: 6px solid transparent;
