@@ -1,56 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>modig-frontend</artifactId>
-	<groupId>no.nav.modig</groupId>
-	<packaging>pom</packaging>
-	<version>1.1.115-SNAPSHOT</version>
+    <parent>
+        <groupId>no.nav.sbl</groupId>
+        <artifactId>mor-pom</artifactId>
+        <version>2</version>
+    </parent>
 
-	<parent>
-		<groupId>no.nav.sbl</groupId>
-		<artifactId>nav-sbl-main</artifactId>
-		<version>3.7</version>
-	</parent>
+    <groupId>no.nav.modig</groupId>
+    <artifactId>modig-frontend</artifactId>
+    <version>1.1.115-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<name>${project.artifactId}</name>
-	<description>
-		Dette biblioteket inneholder statiske ressurser for felles utseende og oppførsel i moderniserte applikasjoner i Nav.
-	</description>
 
-	<properties>
-		<java.jdk.version>1.7</java.jdk.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<jira-component>modig-frontend</jira-component>
-		<wicket.version>6.17.0</wicket.version>
-		<slf4j.version>1.7.5</slf4j.version>
-	</properties>
+    <name>${project.artifactId}</name>
+    <description>
+        Dette biblioteket inneholder statiske ressurser for felles utseende og oppførsel i moderniserte applikasjoner i
+        Nav.
+    </description>
 
-	<modules>
-		<module>modig-frontend-ressurser</module>
-		<module>modig-frontend-wicket</module>
-	</modules>
+    <properties>
+        <java.jdk.version>1.7</java.jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <jira-component>modig-frontend</jira-component>
+        <wicket.version>6.17.0</wicket.version>
+        <slf4j.version>1.7.5</slf4j.version>
+    </properties>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.4.1</version>
-					<configuration>
-						<goals>deploy</goals>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+    <modules>
+        <module>modig-frontend-ressurser</module>
+        <module>modig-frontend-wicket</module>
+    </modules>
 
-	</build>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.4.1</version>
+                    <configuration>
+                        <goals>deploy</goals>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
 
-	<scm>
-		<developerConnection>scm:git:http://stash.devillo.no/scm/felles/modig-frontend.git</developerConnection>
-		<url>http://stash.devillo.no/projects/FELLES/repos/modig-frontend/</url>
-		<tag>HEAD</tag>
-	</scm>
+    </build>
+
+    <scm>
+        <developerConnection>scm:git:http://stash.devillo.no/scm/felles/modig-frontend.git</developerConnection>
+        <url>http://stash.devillo.no/projects/FELLES/repos/modig-frontend/</url>
+        <tag>HEAD</tag>
+    </scm>
 
 </project>
