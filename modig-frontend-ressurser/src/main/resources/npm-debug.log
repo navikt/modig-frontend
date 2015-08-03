@@ -7,7 +7,7 @@
 3 info using node@v0.12.2
 4 info git [ 'status', '--porcelain' ]
 5 verbose version.write data { name: 'modig-frontend',
-5 verbose version.write   version: '3.0.26',
+5 verbose version.write   version: '3.0.32',
 5 verbose version.write   description: 'Felles resursser for alle appene',
 5 verbose version.write   main: 'index.js',
 5 verbose version.write   scripts: { test: 'run test' },
