@@ -89,6 +89,10 @@ select {
 		.mixin-nav-transition(100ms);
 	}
 
+	&:disabled {
+		background-color: @gray-background;
+	}
+
 	&:disabled, &.er-inaktiv {
 		&:hover {
 			border: 1px solid @gray-icon;
@@ -283,6 +287,33 @@ textarea, select {
 
 .nav-checkbox:checked + label:before:extend(.ikon-checkbox) {
 	background-color: @nav-checkbox-checked-color;
+}
+
+// -----------------------------------------
+// HØYKONTRAST
+// -----------------------------------------
+
+.contrast {
+
+	.nav-checkbox, .nav-radioknapp {
+
+		+ label:before {
+			background-color: @color-background-highcontrast;
+			border-color: @white; 
+		}
+
+		&:checked + label:before {
+			border-color: @white;
+		}
+
+	}
+
+	.nav-radioknapp:checked + label:before:extend(.ikon-radioknapp-hoykontrast) { }
+
+	.nav-checkbox:checked + label:before:extend(.ikon-checkbox-hoykontrast) {
+		background-color: @white;
+	}
+
 }
 
 
