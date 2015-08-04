@@ -161,23 +161,35 @@
     border: none;
     white-space: nowrap;
 
+    /*bugfix ref "loginknapp ser rar ut, overstyring av nye knappestiler for å få logg inn / ut til å se ut som før */
+    font-size: .75rem;
+    color: #333;
+    letter-spacing: normal;
+    background-color: #d1d1d1;
+    border: none;
+    border-radius: 0;
+    &:hover, &:active {
+      border:none;
+      margin-bottom:0;
+      .mixin-transform(none);
+    }
+    /* // bugfix end */
+
+
     &.btn-logout {
-      color: @gray-inactive;
+      //color: @gray-inactive;
       background-color: #0CA9E0;
       border:none;
       &:hover, &:focus {
-        color: @gray-inactive;
         background-color: #d1d1d1;
-       // text-decoration: none;
       }
     }
     &.btn-login {
-      color: @gray-inactive;
+      //color: @gray-inactive;
       border:none;
       &:hover, &:focus {
-        color: @gray-inactive;
         background-color: @blue-interaction;
-       // text-decoration: none;
+
       }
     }
   }
