@@ -48,10 +48,10 @@
   span {
    // vertikal + horisontal sentrering av "?"
    position: absolute;
-   top:50%;
+   top: 50%;
    margin-top: -50%;
    display: block;
-   width:100%;
+   width: 100%;
    text-align: center;
   }
 
@@ -126,37 +126,6 @@
   }
 }
 
-@media (min-width: @screen-large) {
-
-  .hjelpetekst-tooltip {
-
-    position: absolute;
-    width: 350px;
-    left: 0;
-    bottom: 40px; 
-    top: auto;
-    opacity: 0;
-    text-align: center;
-
-    &:before {
-      content: "";
-      border: solid transparent;
-      border-width: 10px;
-      position: absolute;
-      height: 0;
-      width: 0;
-      left: 20px;
-      border-top-color: @hjelpetekst-bakgrunnsfarge;
-      top: 100%;
-    }    
-
-  }
-
-  .hjelpetekst-tekst {
-    margin-bottom: 0; 
-  }
-
-}
 
 .hjelpetekst-tooltip {
 
@@ -188,7 +157,44 @@
       top: -20px;
     }
   }
-} 
+}
+
+// -----------------------------------------
+// MEDIA QUERIES
+// -----------------------------------------
+
+@media (min-width: @screen-large) {
+
+  .hjelpetekst-tooltip {
+
+    position: absolute;
+    width: 350px;
+    left: 0;
+    bottom: 40px; 
+    top: auto;
+    opacity: 0;
+    text-align: center;
+
+    &:before {
+      content: "";
+      border: solid transparent;
+      border-width: 10px;
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: 20px;
+      border-top-color: @hjelpetekst-bakgrunnsfarge;
+      top: 100%;
+    }    
+
+  }
+
+  .hjelpetekst-tekst {
+    margin-bottom: 0; 
+  }
+
+}
+ 
 
 @media only screen and (max-width: @screen-xs) {
   .hjelpetekst-parent {
@@ -201,36 +207,33 @@
   }
 }
 
+// -----------------------------------------
+// HØYKONTRAST
+// -----------------------------------------
 
-// Høykontrast
-body.contrast .hjelpetekst {
+.contrast {
 
-  a.infoikon span {
-    border-color: #ffc40d;
-    color: #ffc40d;
+  .hjelpetekst-ikon {
+    color: @yellow; 
+    border-color: @yellow; 
+  }
 
-    &:hover, &:focus {
-      border-color: #0ca9e1;
-      background-color: #0ca9e1;
-      color: #000;
-    }
+  .hjelpetekst-ikon span {
+    background-color: transparent!important; // Important for å overskrive .contrast * {}-selektor fra dekoratør
+    color: @yellow; 
   }
 
   .hjelpetekst-tooltip {
-    background-color: #fff;
+    border: 1px solid @white;     
+  }
 
-    div, h3, p, a {
-      background-color: #fff;
-      color: #000;
-    }
-
-    &:before {
-      border-top-color: #fff;
-    }
+  .hjelpetekst-tooltip:before {
+    border-top-color: @white; 
   }
 
   .hjelpetekst-lukk {
-    background-color: #fff;
-    color: #0053A1;
-  }  
+    color: @yellow; 
+  }
+
 }
+
