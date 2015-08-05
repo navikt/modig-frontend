@@ -178,29 +178,32 @@
 // HØYKONTRAST
 // -----------------------------------------
 
-.contrast {
+@media only screen {
 
-  .hjelpetekst-ikon {
-    color: @yellow; 
-    border-color: @yellow; 
-  }
+  .contrast {
 
-  .hjelpetekst-ikon span {
-    background-color: transparent!important; // Important for å overskrive .contrast * {}-selektor fra dekoratør
-    color: @yellow; 
-  }
+    .hjelpetekst-ikon {
+      color: @yellow; 
+      border-color: @yellow; 
+    }
 
-  .hjelpetekst-tooltip {
-    border: 1px solid @white;     
-  }
+    .hjelpetekst-ikon span {
+      background-color: transparent!important; // Important for å overskrive .contrast * {}-selektor fra dekoratør
+      color: @yellow; 
+    }
 
-  .hjelpetekst-tooltip:before {
-    border-top-color: @white; 
-  }
+    .hjelpetekst-tooltip {
+      border: 1px solid @white;     
+    }
 
-  .hjelpetekst-lukk {
-    color: @yellow; 
+    .hjelpetekst-tooltip:before {
+      border-top-color: @white; 
+    }
+
+    .hjelpetekst-lukk {
+      color: @yellow; 
+    }
+
   }
 
 }
-
