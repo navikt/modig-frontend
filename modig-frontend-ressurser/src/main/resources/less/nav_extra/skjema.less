@@ -119,6 +119,8 @@ textarea, select {
 		background-color: transparent;
 		-webkit-appearance: none;
 		-moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
 	}
 
 	select::-ms-expand {
@@ -136,6 +138,19 @@ textarea, select {
 		top: 45%;
 		z-index: 4; 
 	}
+}
+
+.old-browser .select-container {
+  // fiks for Ie9
+
+  &:after {
+    display: none;
+  }
+
+  select {
+    padding-right: 0;
+  }
+
 }
 
 
