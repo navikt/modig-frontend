@@ -117,7 +117,7 @@ Merk at spinneren ikke vil fungere på input-felter (f.eks.
 		right: 2rem; 
 		opacity: 1; 
 		.mixin-nav-spinner(); 		
-	} 
+	}
 
 }
 
@@ -127,6 +127,24 @@ Merk at spinneren ikke vil fungere på input-felter (f.eks.
 	position: absolute;
 	border-radius: 50%; 
 	opacity: 0; 
+}
+
+.knapp-stor {
+	.spinner-knapp:after {
+		top: .65rem; 	
+	}
+}
+
+.knapp-liten {
+
+	.spinner-knapp {
+		right: 1rem; 
+	}
+
+	.spinner-knapp:after {
+		top: .35rem; 
+	}
+
 }
 
 // *****************************
