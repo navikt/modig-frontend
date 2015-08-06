@@ -262,8 +262,6 @@ textarea, select {
         background-color: @white;
 		background-position: center center;
 		background-repeat: no-repeat; 
-		background-size: 0 0; 
-		.mixin-nav-transition(150ms, background-size);
 	}
 
 	&:checked + label:before {
@@ -281,6 +279,7 @@ textarea, select {
 
 .nav-checkbox + label:before {
 	border-radius: 2px; 
+	.mixin-nav-transition(150ms, background-size);
 }
 
 .nav-radioknapp:checked + label:before:extend(.ikon-radioknapp) { }
