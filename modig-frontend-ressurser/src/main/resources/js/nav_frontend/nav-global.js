@@ -954,8 +954,8 @@ $(function () {
 //////////////////////// END ////////////////////////
 
 //Set styling based on securityLevel of user
-$(function() {
-	if (navno.securityLevel === 'undefined') {
+$(function () {
+	if (typeof navno.securityLevel === 'undefined') {
 		hideDittNavMenuSetLogin();
 	} else {
 		setLockedClassOnInaccessibleMenuElements();
