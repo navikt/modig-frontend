@@ -917,3 +917,29 @@ $(function() {
 
 //////////////////////// END ////////////////////////
 
+//Set styling based on securityLevel of user
+$(function() {
+	if (navno.securityLevel === 'undefined') {
+		hideDittNavMenuSetLogin();
+	} else {
+		setLockedClassOnInaccessibleMenuElements();
+	}
+});
+
+function setLockedClassOnInaccessibleMenuElements() {
+	$('a[data-sec-level]').each(function() {
+		//If secLevel of the menu is larger than users secLevel set locked class for styling
+		if (this.getAttribute("data-sec-level") > navno.securityLevel) {
+			$(this).addClass("locked leading-icon icon-login")
+		};
+	});
+}
+
+function hideDittNavMenuSetLogin() {
+	$('a[data-sec-level]').first().closest("ul.subnavitems").addClass("hidden");
+	$('a[data-sec-level]').first().closest("div").find('a.home-link').addClass("hidden");
+	$('a[data-sec-level]').first().closest("div").children("div.submenu-logg-inn").removeClass("hidden");
+}
+
+//////////////////////// END ////////////////////////
+
