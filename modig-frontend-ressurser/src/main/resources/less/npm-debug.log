@@ -7,7 +7,7 @@
 3 info using node@v0.12.2
 4 info git [ 'status', '--porcelain' ]
 5 verbose version.write data { name: 'modig-frontend',
-5 verbose version.write   version: '3.0.12',
+5 verbose version.write   version: '3.0.39',
 5 verbose version.write   description: 'Felles resursser for alle appene',
 5 verbose version.write   main: 'index.js',
 5 verbose version.write   scripts: { test: 'run test' },
@@ -25,9 +25,7 @@
 8 verbose stack     at ChildProcess.exithandler (child_process.js:751:12)
 8 verbose stack     at ChildProcess.emit (events.js:110:17)
 8 verbose stack     at maybeClose (child_process.js:1015:16)
-8 verbose stack     at Socket.<anonymous> (child_process.js:1183:11)
-8 verbose stack     at Socket.emit (events.js:107:17)
-8 verbose stack     at Pipe.close (net.js:485:12)
+8 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
 9 verbose cwd c:\git\modig-frontend\modig-frontend-ressurser\src\main\resources\less
 10 error Windows_NT 6.1.7601
 11 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "version" "patch"
