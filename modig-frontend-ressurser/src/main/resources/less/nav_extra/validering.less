@@ -36,7 +36,12 @@
 
 	&.har-valideringsfeil,  &.feil {
 		background-color: @pink-error-bg;
+
+		&.aktiv-feilmelding {
+			outline: 1px solid @red-error; 
+		}
 	}
+
 }
 
 .skjema-feilmelding {
