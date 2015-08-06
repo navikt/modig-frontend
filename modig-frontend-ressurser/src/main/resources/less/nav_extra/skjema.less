@@ -109,12 +109,20 @@ textarea, select {
 	display: inline-block;
 	background-color: @white; 
 
+	option {
+		font-size: 1.2rem; 
+	}
+
 	select {
 		padding-right: 1.5rem;
 		border: 1px solid @gray-icon;
 		background-color: transparent;
 		-webkit-appearance: none;
 		-moz-appearance: none;
+	}
+
+	select::-ms-expand {
+		display: none; // Skjuler pil i IE10
 	}
 
 	&:after {
@@ -126,6 +134,7 @@ textarea, select {
 		position: absolute;
 		right: .5rem;
 		top: 45%;
+		z-index: 4; 
 	}
 }
 
@@ -184,19 +193,23 @@ textarea, select {
 }
 
 .input-m {
-	width: 210px;
+	width: 100%; 
+	max-width: 210px;
 }
 
 .input-l {
-	width: 280px;
+	width: 100%; 
+	max-width: 280px;
 }
 
 .input-xl {
-	width: 350px;
+	width: 100%; 
+	max-width: 350px;
 }
 
 .input-xxl {
-	width: 420px;
+	width: 100%; 
+	max-width: 420px;
 }
 
 .input-fullbredde {
@@ -353,7 +366,8 @@ textarea {
 	input[type="url"],
 	input[type="search"],
 	input[type="tel"],
-	input[type="color"], 
+	input[type="color"],
+	option,
 	select {
 		font-size: 1rem; 
 	}
