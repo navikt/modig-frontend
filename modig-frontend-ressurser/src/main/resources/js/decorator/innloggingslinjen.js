@@ -34,24 +34,33 @@ var Innloggingslinje = (function () {
 
     function onNotAuthenticated() {
         removeClassJS("login", "hidden");
+        document.getElementById("logout").setAttribute('aria-hidden', 'true');
+
         if (document.getElementById("mainmenu")) {
             removeClassJS("login-mobil", "hidden");
+            document.getElementById("logout-mobil").setAttribute('aria-hidden', 'true');
         }
     }
 
     function onAuthenticatedWithSecLevelTwo() {
         document.getElementById("auth-btns").style.display = 'none';
+        document.getElementById("auth-btns").setAttribute('aria-hidden', 'true');
         if (document.getElementById("mainmenu")) {
             document.getElementById("auth-btns-mobil").style.display = 'none';
+            document.getElementById("auth-btns-mobil").setAttribute('aria-hidden', 'true');
         }
     }
 
     function onAuthenticatedWithSecLevelThreeOrHigher(urlEncodedName) {
         addClassJS("auth-btns", "idporten");
         removeClassJS("logout", "hidden");
+        document.getElementById("logout").setAttribute('aria-hidden', 'false');
+        document.getElementById("login").setAttribute('aria-hidden', 'true');
 
         if (document.getElementById("mainmenu")) {
             removeClassJS("logout-mobil", "hidden");
+            document.getElementById("logout-mobil").setAttribute('aria-hidden', 'false');
+            document.getElementById("login-mobil").setAttribute('aria-hidden', 'true');
         }
 
         var name = decodeURI(urlEncodedName);
