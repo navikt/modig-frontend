@@ -62,12 +62,24 @@
 	.skjema-feilmelding {
 		display: block; 	
 	}
-	
 	input:not([type="submit"]), textarea, select {
 		border: 1px solid @color-error;
 		background: @pink-input-error-bg;
 	}
 
+	// Om man har feilområde inne i et annet feilområde
+	// og kun har feil på det ytterste, må man sette det innerste
+	// tilbake til standard utseende.
+	.skjema-feilomrade:not(.har-valideringsfeil) {
+		.skjema-feilmelding {
+			display: none;
+		}
+
+		input:not([type="submit"]), textarea {
+			border: 1px solid @gray-icon;
+			background: none;
+		}
+	}
 }
 
 // ------------------------
