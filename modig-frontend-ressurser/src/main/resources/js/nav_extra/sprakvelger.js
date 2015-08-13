@@ -1,3 +1,5 @@
+var navno = navno || {};
+
 navno.onClickEnterContentLanguage = function (langList) {
 
     var langClick = function (event) {
