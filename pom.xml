@@ -10,7 +10,7 @@
 
     <groupId>no.nav.modig</groupId>
     <artifactId>modig-frontend</artifactId>
-    <version>1.1.117-SNAPSHOT</version>
+    <version>1.1.117</version>
     <packaging>pom</packaging>
 
 
@@ -37,7 +37,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/modig-frontend.git</developerConnection>
         <url>http://stash.devillo.no/projects/FELLES/repos/modig-frontend/</url>
-        <tag>HEAD</tag>
+        <tag>modig-frontend-1.1.117</tag>
     </scm>
 
 </project>
