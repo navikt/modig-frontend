@@ -315,28 +315,32 @@ textarea, select {
 .nav-radioknapp {
 
 	+ label:before {
-		box-shadow: 0 0 0 1px @nav-checkbox-outline-color inset, 0 0 0 12px @white inset;
-		width: 22px; 
-		height: 22px; 
+		border: 1px solid @nav-checkbox-outline-color; 
+		box-shadow: 0 0 0 14px @white inset;
+		width: 20px; 
+		height: 20px; 
 		border-radius: 50%; 
 		left: 0; 
-		top: 0; 		
-		.mixin-nav-transition(); 
+		top: 0;
+		.mixin-nav-transition(300ms, box-shadow); 
 	}
 
 	&:checked + label:before {
-		box-shadow: 0 0 0 2px @nav-checkbox-checked-color inset, 0 0 0 5px @white inset, 0 0 0 12px @nav-checkbox-checked-color inset;
-		.mixin-nav-transition(); 
+		border: 2px solid @nav-checkbox-checked-color; 
+		width: 18px;
+		height: 18px; 
+		box-shadow: 0 0 0 3px @white inset, 0 0 0 12px @nav-checkbox-checked-color inset;
+		.mixin-nav-transition(300ms, box-shadow); 
 	}	
 
 	&:focus + label:before {
-		box-shadow: 0 0 0 1px @nav-checkbox-outline-color inset, 0 0 0 3px @color-focus, 0 0 0 12px @white inset;
-		.mixin-nav-transition(); 
+		box-shadow: 0 0 0 3px @color-focus, 0 0 0 12px @white inset;
+		.mixin-nav-transition(300ms, box-shadow); 
 	}
 
 	&:checked:focus + label:before {
-		box-shadow: 0 0 0 2px @nav-checkbox-checked-color inset, 0 0 0 3px @color-focus, 0 0 0 5px @white inset, 0 0 0 12px @nav-checkbox-checked-color inset;
-		.mixin-nav-transition(); 
+		box-shadow: 0 0 0 3px @color-focus, 0 0 0 3px @white inset, 0 0 0 12px @nav-checkbox-checked-color inset;
+		.mixin-nav-transition(300ms, box-shadow); 
 	}
 
 }
