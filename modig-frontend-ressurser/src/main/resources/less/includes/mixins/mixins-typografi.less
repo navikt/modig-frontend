@@ -72,7 +72,9 @@ De er også responsive slik at:
 	font-family: @font-family-regular;
 
 	@media(min-width: 30em) {
-		font-size: @rem-as-12px; 	
+		font-size: @rem-as-12px;
+        // Important i dette tilfellet fordi det fikser en feil med høykontrast, som bruker sterke selectorer
+        background-color: transparent !important;
 	}	
 }
 
