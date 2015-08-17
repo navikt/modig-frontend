@@ -254,6 +254,33 @@ textarea, select {
 	position: absolute;
 	opacity: 0;	
 
+	+ label {
+		padding-left: 2rem; 
+		padding-top: 1px; 
+		position: relative; 
+		display: block;
+		min-height: 22px;	
+		cursor: pointer; 
+		margin-bottom: 0; 
+	}	
+
+	+ label:before {
+		content: "";
+		left: 0; 
+		top: 0; 
+		position: absolute; 
+		display: block; 
+		text-align: center;
+        background-color: @white;
+		background-position: center center;
+		background-repeat: no-repeat; 		
+	}
+}
+
+.nav-checkbox {
+	position: absolute;
+	opacity: 0;	
+
 	&:hover + label:before {
 		border-color: @nav-checkbox-hover-color; 
 	}
@@ -266,53 +293,50 @@ textarea, select {
 		background-color: @nav-input-disabled-color;
 	}
 
-	+ label {
-		padding-left: 2rem; 
-		padding-top: 1px; 
-		position: relative; 
-		display: block;
-		min-height: 22px;	
-		cursor: pointer; 
-		margin-bottom: 0; 
-	}
-
 	+ label:before {
 		content: "";
 		width: 20px;
 		height: 20px;
 		line-height: 20px;
 		border: 1px solid @nav-checkbox-outline-color;
-		left: 0; 
-		top: 0; 
-		position: absolute; 
-		display: block; 
-		text-align: center;
-        background-color: @white;
-		background-position: center center;
-		background-repeat: no-repeat; 
+		border-radius: 2px; 
 	}
 
-	&:checked + label:before {
+	&:checked + label:before:extend(.ikon-checkbox) {
 		border-color: @nav-checkbox-checked-color; 
 		width: 18px;
 		height: 18px;
 		border-width: 2px; 	
 		background-size: 24px 24px; 	
+		background-color: @nav-checkbox-checked-color;
 	}	
 }
 
-.nav-radioknapp + label:before {
-	border-radius: 50%; 
-}
+.nav-radioknapp {
 
-.nav-checkbox + label:before {
-	border-radius: 2px; 
-}
+	+ label:before {
+		box-shadow: 0 0 0 1px @nav-checkbox-outline-color, 0 0 0 12px @white inset;
+		width: 22px; 
+		height: 22px; 
+		border-radius: 50%; 
+		.mixin-nav-transition(); 
+	}
 
-.nav-radioknapp:checked + label:before:extend(.ikon-radioknapp) { }
+	&:checked + label:before {
+		box-shadow: 0 0 0 2px @nav-checkbox-outline-color, 0 0 0 5px @white inset, 0 0 0 12px @nav-checkbox-checked-color inset;
+		.mixin-nav-transition(); 
+	}	
 
-.nav-checkbox:checked + label:before:extend(.ikon-checkbox) {
-	background-color: @nav-checkbox-checked-color;
+	&:focus + label:before {
+		box-shadow: 0 0 0 2px @nav-checkbox-outline-color, 0 0 0 5px @color-focus, 0 0 0 12px @white inset;
+		.mixin-nav-transition(); 
+	}
+
+	&:checked:focus + label:before {
+		box-shadow: 0 0 0 2px @nav-checkbox-outline-color, 0 0 0 5px @color-focus, 0 0 0 5px @white inset, 0 0 0 12px @nav-checkbox-checked-color inset;
+		.mixin-nav-transition(); 
+	}
+
 }
 
 // -----------------------------------------
@@ -321,7 +345,7 @@ textarea, select {
 
 .contrast {
 
-	.nav-checkbox, .nav-radioknapp {
+	.nav-checkbox {
 
 		+ label:before {
 			background-color: @color-background-highcontrast;
@@ -334,10 +358,29 @@ textarea, select {
 
 	}
 
-	.nav-radioknapp:checked + label:before:extend(.ikon-radioknapp-hoykontrast) { }
-
 	.nav-checkbox:checked + label:before:extend(.ikon-checkbox-hoykontrast) {
 		background-color: @white;
+	}
+
+	.nav-radioknapp {
+
+		+ label:before {
+			box-shadow: 0 0 0 1px @white, 0 0 0 12px @black inset;
+		}
+
+		&:checked + label:before {
+			box-shadow: 0 0 0 2px @white, 0 0 0 5px @black inset, 0 0 0 12px @white inset;
+		}
+
+		&:focus + label:before {
+			box-shadow: 0 0 0 1px @white, 0 0 0 5px @yellow, 0 0 0 12px @black inset;
+		} 
+
+		&:checked:focus + label:before {
+			box-shadow: 0 0 0 3px @white, 0 0 0 5px @yellow, 0 0 0 5px @black inset, 0 0 0 12px @white inset;
+		}
+
+
 	}
 
 }
