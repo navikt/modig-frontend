@@ -67,7 +67,7 @@
 
 .hjelpetekst-tooltip {
   background-color: @tooltip-background-color;
-  padding: 28px 20px 20px 20px; 
+  padding: 58px 20px 20px 20px;
   position: fixed;  
   top: 10px;
   left: 10px;
@@ -107,20 +107,7 @@
 }
 
 .hjelpetekst-lukk {
-  text-transform: uppercase;
-  color: @color-blue-additional;
-  font-weight: 600;
-  padding: 8px;
-  font-size: 0.65625rem;
-  position: absolute;
-  top: 0;
-  right: 0;   
-  background: transparent;
-  border: 0; 
-
-  &:hover {
-    text-decoration: underline; 
-  }
+  .mixin-lukk-knapp-mork();
 }
 
 // -----------------------------------------

@@ -40,3 +40,32 @@
 		}
 	}
 }
+
+.mixin-lukk-knapp-mork() {
+  .mixin-lukk-knapp();
+  background: transparent url("/@{appPrefixUrl}/img/kryss_blaa.svg") no-repeat;
+  &:hover, &:focus, &:active {
+    background: url("/@{appPrefixUrl}/img/kryss_blaa_hover.svg");
+  }
+}
+
+.mixin-lukk-knapp-lys() {
+  .mixin-lukk-knapp();
+  background: transparent url("/@{appPrefixUrl}/img/kryss.svg") no-repeat;
+  &:hover, &:focus, &:active {
+    background: url("/@{appPrefixUrl}/img/kryss_hover.svg");
+  }
+}
+
+.mixin-lukk-knapp() {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  &:focus {
+    outline: none;
+    .mixin-focus-outline(3px);
+  }
+}
