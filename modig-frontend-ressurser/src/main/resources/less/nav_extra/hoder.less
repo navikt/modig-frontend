@@ -97,23 +97,33 @@
 	}
 }
 
+
 .hode-vedlegg {
+  &:after {
+    background-color: @color-gray-lighter-additional;
+  }
   &:before {
-    background-color: transparent;
+    background-color: @white;
     &:extend(.ikon-vedlegg);
   }
 }
 
 .hode-soknad {
+  &:after {
+    background-color: @color-gray-lighter-additional;
+  }
   &:before {
-    background-color: transparent;
+    background-color: @white;
     &:extend(.ikon-soknad);
   }
 }
 
 .hode-epost {
+  &:after {
+    background-color: @color-gray-lighter-additional;
+  }
   &:before {
-    background-color: transparent;
+    background-color: @white;
     &:extend(.ikon-epost);
   }
 }
