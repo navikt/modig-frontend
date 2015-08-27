@@ -390,6 +390,107 @@ textarea, select {
 
 }
 
+// -----------------------------------------
+// 	HORISONTAL VISNING AV SKJEMAELEMENTER
+// -----------------------------------------
+
+@media(min-width: @screen-small) {
+
+	/* 
+
+	INPUT TYPE="TEXT":
+
+	Eksempel på bruk: 
+
+	<form>
+
+		<div class="skjema-horisontal">
+            <div class="nav-input">
+                <label for="navn">Navn</label>
+                <div class="input-container">
+                    <input type="text" name="navn" id="navn" class="input-xl" />
+                    <p class="skjema-feilmelding js-feilmelding">Du må svare på om du er avhengig av hjelpemidler for å forflytte deg</p>
+                </div>
+            </div>
+		</div>
+
+	</form>
+
+	*/
+
+
+	.skjema-horisontal {
+
+		.nav-input {
+			display: table; 
+			margin-bottom: 1rem; 
+			width: 100%; 
+		}
+
+		label, .input-container {
+			display: table-cell; 	 
+		}
+
+		label {
+			width: 200px;
+			text-align: right; 
+			vertical-align: top;
+			padding: .5rem 1rem 0 0; 
+		}
+
+	}
+
+	/* 
+
+	INPUT TYPE="RADIO", INPUT TYPE="CHECKBOX":
+
+	Eksempel på bruk: 
+
+	<form>
+
+		<!-- Radioknapper -->
+
+        <div class="skjemagruppe-horisontal">
+            <div class="nav-input">    
+                <input type="radio" name="frukt" id="eple" value="eple" class="nav-radioknapp" />
+                <label for="eple">Eple</label>
+            </div>
+            <div class="nav-input">    
+                <input type="radio" name="frukt" id="banan" value="banan" class="nav-radioknapp" />
+                <label for="banan">Banan</label>
+            </div>
+        </div>
+
+        <!-- Checkboxer -->
+
+        <div class="skjemagruppe-horisontal">
+            <div class="nav-input">    
+                <input type="checkbox" name="frokost" id="frokost" value="frokost" class="nav-checkbox" />
+                <label for="frokost">Frokost</label>
+            </div>
+            <div class="nav-input">    
+                <input type="checkbox" name="middag" id="middag" value="middag" class="nav-checkbox" />
+                <label for="middag">Middag</label>
+            </div>
+        </div>        
+
+	</form>
+
+	*/	
+
+	.skjemagruppe-horisontal {
+
+		display: table;
+
+		.nav-input {
+			display: table-cell; 
+			padding-right: 2rem; 
+		}
+
+	}
+
+}
+
 
 // -----------------------------------------
 // 	BROWSER-SPESIFIKK STYLING
