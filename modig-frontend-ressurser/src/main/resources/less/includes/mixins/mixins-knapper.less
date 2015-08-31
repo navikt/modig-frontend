@@ -13,7 +13,7 @@
 	padding: 10px 40px;
 }
 
-.mixin-knappevariant(@bakgrunnsfarge, @tekstfarge, @skyggefarge, @bakgrunnsfarge-inaktiv, @bakgrunnsfarge-aktiv) {
+.mixin-knappevariant(@bakgrunnsfarge, @tekstfarge, @skyggefarge, @bakgrunnsfarge-inaktiv, @bakgrunnsfarge-aktiv, @bakgrunnsfarge-hover) {
 	color: @tekstfarge;
 	background: @bakgrunnsfarge;
 	border-bottom-color: @skyggefarge;
@@ -25,6 +25,7 @@
 	&:hover {
 		color: @tekstfarge;
 		border-bottom-color: @skyggefarge;
+        background-color: @bakgrunnsfarge-hover;
 	}
 
 	&:active, &.er-aktiv {

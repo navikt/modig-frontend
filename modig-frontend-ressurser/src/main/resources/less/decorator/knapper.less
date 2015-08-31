@@ -1,15 +1,18 @@
 @btn-background-color: @gray-icon;
+@btn-background-hover-color: #BEB9B1;
 @btn-text-color: @gray-text; 
 @btn-shadow-color: @gray-inactive;
 @btn-disabled-background-color: #ccc;
 
 @btn-primary-background-color: @blue-link;
+@btn-primary-background-hover-color: #1976CB;
 @btn-primary-active-color: @blue-active;
 @btn-primary-text-color: @white; 
 @btn-primary-shadow-color: @gray-text;
 @btn-primary-disabled-background-color: @btn-disabled-background-color;
 
 @btn-danger-background-color: @red-error;
+@btn-danger-background-hover-color: #C91919;
 @btn-danger-background-color-active: @red-error-active;
 @btn-danger-text-color: @white; 
 @btn-danger-shadow-color: @red-error-active;
@@ -28,6 +31,7 @@
 		border-bottom: 3px solid @btn-shadow-color;
 		margin-bottom: -1px;
 		.mixin-transform(translateY(-1px));
+        background-color: @btn-background-hover-color;
 	}
 
 	&:focus {
@@ -152,9 +156,9 @@ Merk at spinneren ikke vil fungere på input-felter (f.eks.
 // *****************************
 
 .knapp-fare {
-	.mixin-knappevariant(@btn-danger-background-color, @btn-danger-text-color, @btn-danger-shadow-color, @btn-danger-disabled-background-color, @btn-danger-background-color-active);
+	.mixin-knappevariant(@btn-danger-background-color, @btn-danger-text-color, @btn-danger-shadow-color, @btn-danger-disabled-background-color, @btn-danger-background-color-active, @btn-danger-background-hover-color);
 }
 
 .knapp-hoved {
-	.mixin-knappevariant(@btn-primary-background-color, @btn-primary-text-color, @btn-primary-shadow-color, @btn-primary-disabled-background-color, @btn-primary-active-color);
+	.mixin-knappevariant(@btn-primary-background-color, @btn-primary-text-color, @btn-primary-shadow-color, @btn-primary-disabled-background-color, @btn-primary-active-color, @btn-primary-background-hover-color);
 }
