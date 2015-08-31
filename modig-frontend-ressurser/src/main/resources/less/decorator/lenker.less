@@ -16,14 +16,14 @@ a {
 	border-bottom: 1px solid @color-link-underline;	
 }
 
-.lenke-alene, .side-innhold a:not(.knapp), .lenke-fremhevet {
+.lenke-alene, .side-innhold a:not(.knapp):not(.lenke-uthevet), .lenke-fremhevet {
 
 	&:hover {
-		border-bottom: 1px solid @color-link;
+		border-bottom-color: @color-link;
 	}
 
 	&:active {
-		border-bottom: 1px solid @color-link-visited;
+		border-bottom-color: @color-link-visited;
 	}
 }
 
