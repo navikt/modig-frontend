@@ -65,9 +65,14 @@
 
 }
 
+.hjelpetekst-tooltip a, .side-innhold .hjelpetekst-tooltip a {
+  // Dette gjøres slik for å overskrive mer spesifikk selektor for lenker.
+  .mixin-lenke-negativ(); 
+}
+
 .hjelpetekst-tooltip {
   background-color: @tooltip-background-color;
-  padding: 58px 20px 20px 20px;
+  padding: 58px 20px 2rem 20px;
   position: fixed;  
   top: 10px;
   left: 10px;
@@ -76,15 +81,7 @@
   z-index: 1040;
   text-align: center; 
   opacity: 0; 
-  color: @color-gray-light-additional;
-
-  a {
-    color: @color-blue-additional;
-  }
-
-  a:hover {
-    border-bottom-color: @color-blue-additional;
-  }
+  color: @white;
 
   &.er-synlig {
     opacity: 1;
@@ -95,9 +92,10 @@
 	.tittel-dekorert; 
 	.mixin-typo-element();
 	margin-top: 0;	
+  padding-bottom: 1rem; 
 
 	&:after {
-		background-color: @color-gray-light-additional;
+		background-color: @white;
 	}
 }
 

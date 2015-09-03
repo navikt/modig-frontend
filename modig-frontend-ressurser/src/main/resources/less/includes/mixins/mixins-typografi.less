@@ -122,3 +122,30 @@ De er også responsive slik at:
 		font-size: @rem-as-14px; 	
 	}	
 }
+
+.mixin-lenke-negativ() {
+    color: @color-blue-additional;
+    border-bottom-color: @gray-icon;
+
+	&:visited {
+		color: @orange-info;
+	}
+
+	&:visited:hover {
+		border-bottom-color: @orange-info; 
+	}
+
+	&:hover {
+		border-bottom-color: @color-blue-additional;
+	}
+
+	&:focus, &:active:focus {
+		color: @color-text;  
+		border-bottom: 0; 
+	}
+
+	&:active {
+		color: @orange-focus;
+		border-bottom-color: @orange-focus;
+	}   	
+}

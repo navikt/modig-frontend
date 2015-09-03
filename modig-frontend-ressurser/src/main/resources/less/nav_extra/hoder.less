@@ -65,14 +65,13 @@
 	padding-bottom: 20px; 
 }
 
-.hode-feil {
+.mixin-hode(@farge) {
+
 	&:before, &:after {
-		background-color: @color-error; 
+		background-color: @farge; 
 	}
 
-	&:before {
-		&:extend(.ikon-utropstegn); 
-	}
+	
 }
 
 // -----------------------------------------
@@ -80,42 +79,33 @@
 // -----------------------------------------
 
 .hode-advarsel {
-	&:before, &:after {
-		background-color: @color-warning; 
-	}
-
+	.mixin-hode(@color-warning);
 	&:before:extend(.ikon-utropstegn) {};
 }
 
 .hode-suksess {
-	&:before, &:after {
-		background-color: @color-success; 
-	}
+	.mixin-hode(@color-success);
+	&:before:extend(.ikon-suksess) {};
+}
 
-	&:before {
-		&:extend(.ikon-suksess); 
-	}
+.hode-informasjon {
+	.mixin-hode(@color-border);
+	&:before:extend(.ikon-informasjon) {};
+}
+
+.hode-feil {
+	.mixin-hode(@color-error);
+	&:before:extend(.ikon-utropstegn) {};
 }
 
 /*hode-vedlegg og hode-soknad brukes kun i søknadinnsending (temporær videreføring av gamle ikoner)*/
+
 .hode-vedlegg {
-  &:after {
-    background-color: @color-gray-lighter-additional;
-  }
-  &:before {
-    background-color: @white;
-    &:extend(.ikon-vedlegg);
-  }
+	.mixin-hode(@color-gray-lighter-additional);
+	&:before:extend(.ikon-vedlegg) {};
 }
 
 .hode-soknad {
-  &:after {
-    background-color: @color-gray-lighter-additional;
-  }
-  &:before {
-    background-color: @white;
-    &:extend(.ikon-soknad);
-  }
+	.mixin-hode(@color-gray-lighter-additional);
+	&:before:extend(.ikon-soknad) {};
 }
-
-
