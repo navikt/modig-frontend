@@ -12,11 +12,11 @@ a {
 	}
 }
 
-.lenke-fremhevet, .side-innhold a:not(.knapp):not(.lenke-uthevet):not(.lenke-ustilet) {
+.lenke-fremhevet, .side-innhold a {
 	border-bottom: 1px solid @color-link-underline;	
 }
 
-.lenke-alene, .side-innhold a:not(.knapp):not(.lenke-uthevet):not(.lenke-ustilet), .lenke-fremhevet {
+.lenke-alene, .side-innhold a, .lenke-fremhevet {
 
 	&:hover {
 		border-bottom-color: @color-link;
@@ -41,5 +41,9 @@ a {
 	&:hover {
 		text-decoration: underline; 
 		border: 2px solid @blue-link;
+	}
+
+	&:focus {
+		.mixin-focus-outline(3px);
 	}
 }
