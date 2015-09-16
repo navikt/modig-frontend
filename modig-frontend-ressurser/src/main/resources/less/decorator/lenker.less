@@ -31,7 +31,7 @@ a {
 	margin-left: 2rem; 
 }
 
-.lenke-uthevet {
+.lenke-uthevet, a.lenke-uthevet {
 	.mixin-knapp(); 
 	background-color: transparent; 
 	border: 2px solid @blue-link;
@@ -45,5 +45,10 @@ a {
 
 	&:focus {
 		.mixin-focus-outline(3px);
+	}
+
+	&:active {
+		border-color: @color-link-active;
+		color: @color-link-active; 
 	}
 }
