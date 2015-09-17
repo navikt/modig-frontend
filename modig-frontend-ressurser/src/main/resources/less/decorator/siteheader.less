@@ -317,3 +317,96 @@
 .dropdown-submenu {
 	position: relative;
 }
+
+.submenu-logg-inn {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: .875rem;
+}
+
+a.locked {
+  background: url('@{baseImagePath}img/navno/gfx/icons/ikon_las.png') no-repeat;
+  background-position-y: 50%;
+  background-position-x: 0%;
+  margin-left: -1.3rem;
+  padding-left: 1.3rem;
+  background-size: 1.0rem;
+  &:hover {
+	&:before {
+	  border: none;
+	}
+  }
+  &:focus {
+	&:before {
+	  border: none;
+	}
+  }
+}
+
+.secLevelUpgradeInfo {
+  margin-top: 2rem;
+  text-align: center;
+  span {
+	background: transparent url('@{baseImagePath}img/navno/gfx/icons/ikon_las.png') no-repeat;
+	padding-left: 1.5rem;
+	background-size: 1.3rem;
+	background-position-y: 50%;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+  }
+
+  .logginninfo {
+	display: inline-block;
+	background: transparent url('@{baseImagePath}img/navno/gfx/icons/sporsmaalstegn.png') no-repeat;
+	width: 24px;
+	height: 24px;
+	background-size: 1.3rem;
+	vertical-align: middle;
+	&:hover {
+	  background: transparent url('@{baseImagePath}img/navno/gfx/icons/sporsmaalstegn_hover.png') no-repeat;
+	  background-size: 1.3rem;
+	}
+  }
+
+  .logginninfo-tooltop {
+	padding: 16px 24px;
+	position: absolute;
+	background-color: #000000;
+	color: #ffffff;
+	z-index: 9;
+	text-align: left;
+	left: 55%;
+	top: 45%;
+	right: 5%;
+	.lukk {
+	  margin-bottom: 2rem;
+	  a {
+		float: right;
+		text-decoration: none;
+		span {
+		  background: none;
+		}
+		&:hover {
+		  text-decoration: underline;
+		}
+	  }
+	}
+	.arrow {
+	  position: absolute;
+	  bottom: -8px;
+	  right: 50%;
+	  border-top: 9px solid #000;
+	  border-left: 6px solid transparent;
+	  border-right: 6px solid transparent;
+	  background: none;
+	  padding: 0;
+	}
+  }
+}
+
+.tilbaketildittnavgruppe {
+  padding: 2px 0 2px 40px;
+  background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat left;
+  background-size: 30px;
+  background-position-y: 50%;
+}
