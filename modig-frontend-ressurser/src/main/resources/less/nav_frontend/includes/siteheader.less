@@ -305,20 +305,18 @@
 }
 
 a.locked {
-  background: url('@{baseImagePath}img/navno/gfx/icons/logg_inn_rod.png') no-repeat;
+  background: url('@{baseImagePath}img/navno/gfx/icons/ikon_las.png') no-repeat;
   background-position-y: 50%;
   background-position-x: 0%;
   margin-left: -1.3rem;
   padding-left: 1.3rem;
   background-size: 1.0rem;
   &:hover {
-    background-image: url('@{baseImagePath}img/navno/gfx/icons/logg_inn_hover.png');
     &:before {
       border: none;
     }
   }
   &:focus {
-    background-image: url('@{baseImagePath}img/navno/gfx/icons/logg_inn_hover.png');
     &:before {
       border: none;
     }
@@ -329,7 +327,7 @@ a.locked {
   margin-top: 2rem;
   text-align: center;
   span {
-    background: url('@{baseImagePath}img/navno/gfx/icons/logg_inn_rod.png') no-repeat;
+    background: transparent url('@{baseImagePath}img/navno/gfx/icons/ikon_las.png') no-repeat;
     padding-left: 1.5rem;
     background-size: 1.3rem;
     background-position-y: 50%;
@@ -339,13 +337,13 @@ a.locked {
 
   .logginninfo {
     display: inline-block;
-    background: url('@{baseImagePath}img/navno/gfx/icons/soknad_rod.png') no-repeat;
+    background: transparent url('@{baseImagePath}img/navno/gfx/icons/sporsmaalstegn.png') no-repeat;
     width: 24px;
     height: 24px;
     background-size: 1.3rem;
     vertical-align: middle;
     &:hover {
-      background: url('@{baseImagePath}img/navno/gfx/icons/soknad_hover.png') no-repeat;
+      background: transparent url('@{baseImagePath}img/navno/gfx/icons/sporsmaalstegn_hover.png') no-repeat;
       background-size: 1.3rem;
     }
   }
@@ -386,3 +384,9 @@ a.locked {
   }
 }
 
+.tilbaketildittnavgruppe {
+  padding: 2px 0 2px 40px;
+  background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat left;
+  background-size: 30px;
+  background-position-y: 50%;
+}
