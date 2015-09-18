@@ -161,14 +161,23 @@ textarea, select {
 	position: relative;
 
 	textarea {
+		resize: none; 
+		overflow-y: hidden; 
 		.mixin-nav-transition(); 
 		overflow-y: hidden;
 		resize: none; 
 	}
 
-	&.vis-meta textarea, textarea:focus {
-		padding-bottom: 1.25rem; 
-	}
+}
+
+textarea:focus + .textarea-metatekst, 
+textarea.vis-meta + .textarea-metatekst {
+	opacity: 1; 
+}
+
+.textarea-meta-container textarea:focus, 
+textarea.vis-meta {
+	padding-bottom: 1.25rem; 
 }
 
 .textarea-metatekst {
@@ -180,6 +189,7 @@ textarea, select {
 	width: 100%; 
 	text-align: right; 
 	margin: 0; 
+	opacity: 0; 
 }
 
 .textarea-antall-tegn {
@@ -189,7 +199,6 @@ textarea, select {
 		color: @color-error;
 	}
 }
-
 
 // -----------------------------------------
 // INPUT-STØRRELSER
@@ -387,8 +396,11 @@ textarea, select {
 			box-shadow: 0 0 0 3px @white, 0 0 0 5px @yellow, 0 0 0 5px @black inset, 0 0 0 12px @white inset;
 		}
 
-
 	}
+
+	.textarea-antall-tegn.er-negativ {
+		color: @red-error!important; // Important for å overskrive sterk selector i dekoratør
+	}	
 
 }
 
