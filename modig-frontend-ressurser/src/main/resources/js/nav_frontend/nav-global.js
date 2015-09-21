@@ -984,8 +984,10 @@ function setCorrectSecLevelUpgradeInfoText(securityLevel) {
 		$('.secLevelUpgradeInfo').removeClass("hidden");
 		if (securityLevel === 3) {
 			$('.secLevel3Info').removeClass("hidden");
+			$('.secLevel3Info').removeAttribute("aria-hidden");
 		} else {
 			$('.secLevel2Info').removeClass("hidden");
+			$('.secLevel2Info').removeAttribute("aria-hidden");
 		}
 	}
 }
