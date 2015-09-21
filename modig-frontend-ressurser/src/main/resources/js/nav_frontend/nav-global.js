@@ -974,7 +974,7 @@ function setLockedClassOnInaccessibleMenuElements() {
 
 function hideDittNavMenuSetLogin() {
 	$('a[data-sec-level]').first().closest("ul.subnavitems").addClass("hidden");
-	$('a[data-sec-level]').first().closest("div").find('div.tilbaketildittnavgruppe').addClass("hidden");
+	$('a[data-sec-level]').first().closest("div").find('div.tilbaketilgruppe').addClass("hidden");
 	$('a[data-sec-level]').first().closest("div").children("div.submenu-logg-inn").removeClass("hidden");
 }
 
