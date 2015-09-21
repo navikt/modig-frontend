@@ -56,3 +56,20 @@ a {
 		color: @color-link-active; 
 	}
 }
+
+.lenke-legg-til:before {
+	content: "+";
+	display: inline-block;
+	padding-right: .25rem;
+	.mixin-transform(scale(1.2, 1.2));
+}
+
+.contrast .lenke-uthevet, .contrast a.lenke-uthevet {
+	color: @yellow; 
+	border-color: @yellow; 
+
+	&:active {
+		color: @color-focus;
+		border-color: @color-focus; 
+	}
+}
