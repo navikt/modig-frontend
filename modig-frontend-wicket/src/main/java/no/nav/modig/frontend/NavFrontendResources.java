@@ -12,7 +12,10 @@ public class NavFrontendResources {
     static final JavaScriptResourceReference JQUERY_VALIDATE_RESOURCE = new JQueryDependentResourceReference("jquery/plugins/jquery.validate.js");
 
     static final PackageResourceReference VARIABLES_LESS_RESOURCE = lessReference("includes/variables.less");
-	static final PackageResourceReference MIXINS_LESS_RESOURCE = lessReference("includes/mixins.less");
+	static final PackageResourceReference MIXINS_GRID_LESS_RESOURCE = lessReference("includes/mixins/mixins-grid.less");
+	static final PackageResourceReference MIXINS_KNAPPER_LESS_RESOURCE = lessReference("includes/mixins/mixins-knapper.less");
+	static final PackageResourceReference MIXINS_TYPOGRAFI_LESS_RESOURCE = lessReference("includes/mixins/mixins-typografi.less");
+	static final PackageResourceReference MIXINS_UTILS_LESS_RESOURCE = lessReference("includes/mixins/mixins-utils.less");
 
 
     private static JavaScriptResourceReference jsReference(String path) {

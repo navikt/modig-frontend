@@ -72,14 +72,14 @@
 // -------------------------
 .up-arrow(@border-bottom, @border-left, @border-right, @color) {
 
-  border-bottom: @border-bottom solid @color;
-  border-left: @border-left solid transparent;
-  border-right: @border-right solid transparent;
-  content: "";
-  display: inline-block;
-  height: 0;
-  width: 0;
-  vertical-align: top;
+	border-bottom: @border-bottom solid @color;
+	border-left: @border-left solid transparent;
+	border-right: @border-right solid transparent;
+	content: "";
+	display: inline-block;
+	height: 0;
+	width: 0;
+	vertical-align: top;
 }
 
 .mixin-transition(@transition) {
@@ -95,7 +95,7 @@
 	-moz-transform: @string;
 	-ms-transform: @string;
 	-o-transform: @string;
-	transform: @string; 
+	transform: @string;
 }
 
 .mixin-nav-transition(@duration: 150ms, @type: all) {
@@ -107,37 +107,38 @@
 }
 
 .mixin-nav-spinner(@storrelse: 1rem, @rammebredde: 2px) {
-	width: @storrelse; 
-	height: @storrelse; 
-	border-top: @rammebredde solid @white; 
-	border-left: @rammebredde solid @white; 
-	border-bottom: @rammebredde solid rgba(255, 255, 255, .25); 
-	border-right: @rammebredde solid rgba(255, 255, 255, .25);   
+	width: @storrelse;
+	height: @storrelse;
+	border-top: @rammebredde solid @white;
+	border-left: @rammebredde solid @white;
+	border-bottom: @rammebredde solid rgba(255, 255, 255, .25);
+	border-right: @rammebredde solid rgba(255, 255, 255, .25);
 	border-radius: 50%;
 	-webkit-transform: translateZ(0);
 	-ms-transform: translateZ(0);
 	transform: translateZ(0);
 	-webkit-animation: rotering 800ms infinite linear;
-	animation: rotering 800ms infinite linear; 
+	animation: rotering 800ms infinite linear;
 }
 
 @-webkit-keyframes rotering {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	from {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
+
 @keyframes rotering {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	from {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
