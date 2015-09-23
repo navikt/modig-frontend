@@ -404,15 +404,10 @@
 				margin: 0; // home-link wrapper
 			}
 
-			.home-link, .mobile-submenu-expander {
+			.mobile-submenu-expander {
 				display: block;
 				padding: 15px 35px 15px 40px; // dobbelt så mye padding left som nivået over (topnavitem)
 				margin: 0;
-			}
-			.home-link {
-				background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_hvit.png') no-repeat (@grid-gutter-width / 2) center;
-				//background: transparent url('../../../img/navno/gfx/mainmenu/hjem_hvit.svg') no-repeat (@grid-gutter-width / 2) center;
-
 			}
 		}
 
@@ -733,17 +728,11 @@
 		.home-link {
 			display: inline-block;
 			color: @gray-text;
-			padding: 2px 0 2px 23px;
-			background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat left 3px;
-			// background: transparent url('../../../img/navno/gfx/mainmenu/hjem_sort.svg') no-repeat left 3px;
-
 			&:hover,
 			&:active,
 			&:focus {
 				text-decoration: underline;
 				color: @blue-link;
-				background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat left 3px;
-				//  background: transparent url('../../../img/navno/gfx/mainmenu/hjem_blaa.svg') no-repeat left 3px;
 			}
 		}
 	}
