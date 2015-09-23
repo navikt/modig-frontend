@@ -16,7 +16,8 @@
 .menu-link-list a {
   color: @gray-text;
   display: block;
-  padding: 10px 10px 10px 12px;
+  margin-left: -1.3rem;
+  padding: 10px 10px 10px 1.3rem;
   text-align: left;
   text-decoration: none;
   border-bottom: none;
@@ -37,7 +38,7 @@
   &:focus {
 	box-shadow: 0 0 0 3px @orange-focus;
 	outline: none;
-	background: @orange-focus;
+	background-color: @orange-focus;
   }
 
 	@media (min-width: @screen-medium) {
@@ -630,6 +631,17 @@
 		.accessible-megamenu-panel-group:last-child {
 			padding: 0 0 0 1em;
 		}
+
+	  .accessible-megamenu-panel-group:first-child:nth-last-child(3),
+	  .accessible-megamenu-panel-group:first-child:nth-last-child(3) ~ li
+	  {
+		width: 33.3%; // 3 kolonner
+	  }
+	  .accessible-megamenu-panel-group:first-child:nth-last-child(4),
+	  .accessible-megamenu-panel-group:first-child:nth-last-child(4) ~ li
+	  {
+		width: 25%; // 4 kolonner
+	  }
 
 	}
 
