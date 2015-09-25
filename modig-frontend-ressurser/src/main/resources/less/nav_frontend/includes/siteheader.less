@@ -382,8 +382,51 @@ a.locked {
 }
 
 .tilbaketilgruppe {
-  padding: 2px 0 2px 40px;
-  background-size: 30px;
-  background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat;
-  background-position: 0% 50%;
+  padding: 2px 0 2px 0px;
+  font-size: 14px;
+  span {
+    margin-left: 40px;
+  }
+  .home-link {
+    display: inline-block;
+    color: #0067c5;
+    background-size: 30px;
+    background-color: #fff;
+    background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat;
+    background-position: 0% 0%;
+    text-decoration: none;
+
+    &.dittnav {
+      background: transparent url('@{baseImagePath}img/navno/gfx/icons/ikon_las.png') no-repeat;
+      background-position: 0% 0%;
+    }
+
+    .forsidelinktekst {
+      border-bottom: 1px solid #7F756C;
+    }
+
+    &:focus {
+      outline: none;
+
+      .forsidelinktekst {
+        border-bottom: 1px solid #0067c5;
+        background-color: #ffbd66;
+        box-shadow: 0 0 0 3px #ffbd66;
+      }
+    }
+    &:hover {
+      .forsidelinktekst {
+        border-bottom: 1px solid #0067c5;
+      }
+    }
+    &:active {
+      outline: none;
+
+      .forsidelinktekst {
+        border-bottom: 1px solid #0067c5;
+        background-color: #ffbd66;
+        box-shadow: 0 0 0 3px #ffbd66;
+      }
+    }
+  }
 }

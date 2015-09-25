@@ -731,6 +731,10 @@ $(function () {
 			var pageTitle = $('#pagecontent').find('h1').eq(0).text() || document.title;
 			ga('send', 'event', 'Talesyntese', 'Play', pageTitle);
 		});
+
+		$('#text-size-accessibility').on('click.google-analytics', function() {
+			ga('send', 'event', 'Header', 'klikk', 'Skriftstorrelse');
+		});
 	}
 });
 
@@ -755,8 +759,15 @@ $(function() {
 		var fgKode = navno.fgkode;
 		var ytelse = navno.ytelse;
 		var eventAction = "klikk";
-		var eventLabel = $(this).text();
-		var eventCategory = $(this).attr('data-ga') + ": " + eventLabel;
+
+		var explainingLabel = $(this).attr('class');
+
+		if (explainingLabel === undefined || explainingLabel === "") {
+			explainingLabel = $(this).text();
+		}
+
+		var eventCategory = $(this).attr('data-ga');
+		var eventLabel = eventCategory + "/" + explainingLabel;
 
 		var eventObj = {
 			'event': 'GAEvent',
