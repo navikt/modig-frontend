@@ -329,13 +329,14 @@ a.locked {
   background-repeat: no-repeat;
   background-position: 0% 50%;
   background-image: url('@{baseImagePath}img/navno/gfx/icons/ikon_las.png');
-  background-size: 1.0rem;
+  background-size: 0.9rem;
   &:hover {
 	&:before {
 	  border: none;
 	}
   }
   &:focus {
+    background-color: transparent;
 	&:before {
 	  border: none;
 	}
@@ -369,38 +370,27 @@ a.locked {
 	}
   }
 
-  .logginninfo-tooltop {
-	padding: 16px 24px;
+  .panel-negativ {
 	position: absolute;
-	background-color: #000000;
-	color: #ffffff;
 	z-index: 9;
-	text-align: left;
-	left: 55%;
-	top: 45%;
-	right: 5%;
+	left: 59%;
+	top: 48%;
+	right: 6%;
+	padding: 10px;
 	.lukk {
 	  margin-bottom: 2rem;
-	  a {
-		float: right;
-		text-decoration: none;
-		span {
-		  background: none;
-		}
+	  button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        border: 0;
+		background:transparent url('@{baseImagePath}img/navno/gfx/icons/kryss_blaa.png') no-repeat;
 		&:hover {
-		  text-decoration: underline;
+		  background:transparent url('@{baseImagePath}img/navno/gfx/icons/kryss_blaa_hover.png') no-repeat;
 		}
 	  }
-	}
-	.arrow {
-	  position: absolute;
-	  bottom: -8px;
-	  right: 47%;
-	  border-top: 9px solid #000;
-	  border-left: 6px solid transparent;
-	  border-right: 6px solid transparent;
-	  background: none;
-	  padding: 0;
 	}
   }
 }
