@@ -386,13 +386,11 @@ a.locked {
     span {
       margin-left: 8px;
     }
-
     .tilbaketittel {
       color: black;
       position: absolute;
       top: 4px;
     }
-
     .tilbakelink {
       border-bottom: 1px solid #7F756C;
       position: absolute;
@@ -407,7 +405,6 @@ a.locked {
       background-position: 66% 20%;
       background-size: 55%;
     }
-
     &.dittnav {
       &:before {
         display: inline-block;
@@ -419,7 +416,6 @@ a.locked {
         background-size: 90%;
       }
       &:hover {
-        outline: none;
         &:before {
           background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_blaa.png') no-repeat;
         }
@@ -428,7 +424,7 @@ a.locked {
         }
       }
       &:active {
-        outline : none;
+        outline: none;
         &:before {
           background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_svart.png') no-repeat;
         }
@@ -440,7 +436,7 @@ a.locked {
         border-bottom: 1px solid #0067c5;
       }
     }
-    &:active {
+    &:active, &:focus {
       outline: none;
       .tilbakelink{
         border-bottom: 1px solid #0067c5;
@@ -448,14 +444,5 @@ a.locked {
         box-shadow: 0 0 0 3px #ffbd66;
       }
     }
-    &:focus {
-      outline: none;
-      .tilbakelink{
-        border-bottom: 1px solid #0067c5;
-        background-color: #ffbd66;
-        box-shadow: 0 0 0 3px #ffbd66;
-      }
-    }
-
   }
 }
