@@ -432,6 +432,15 @@ a.locked {
     }
 
     &:hover {
+      &:before {
+        display: inline-block;
+        content: "";
+        width: 46px;
+        height: 60px;
+        background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
+        background-position: 66% 20%;
+        background-size: 55%;
+      }
       .tilbakelink {
         border-bottom: 1px solid #0067c5;
       }
