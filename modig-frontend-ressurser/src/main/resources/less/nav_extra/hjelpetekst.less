@@ -8,9 +8,18 @@
 }
 
 .hjelpetekst-parent-inline {    
-    input[type="radio"] + label, input[type="checkbox"] + label {
-      padding-right: 20px; // For å hindre at label legger seg oppå ?-ikonet
-    }  
+
+  display: table;
+
+  > * {
+    display: table-cell;
+    vertical-align: top; 
+  }
+
+  input[type="radio"] + label, input[type="checkbox"] + label {
+    padding-right: 20px; // For å hindre at label legger seg oppå ?-ikonet
+  } 
+
 }
 
 .hjelpetekst {
