@@ -369,58 +369,93 @@ a.locked {
   }
 }
 
-.tilbaketilgruppe {
-  padding: 2px 0 2px 0px;
-  font-size: 14px;
-  span {
-    margin-left: 40px;
-  }
-}
-
 .panel-negativ {
   background-color: @gray-dark;
   color: @white;
 }
+.tilbaketilgruppe {
+  padding: 2px 0 2px 0px;
+  position: relative;
+  font-size: 14px;
+
   .home-link {
+    text-decoration: none;
     display: inline-block;
     color: #0067c5;
-    background-size: 30px;
-    background-color: #fff;
-    background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat;
-    background-position: 0% 0%;
-    text-decoration: none;
+
+    span {
+      margin-left: 8px;
+    }
+
+    .tilbaketittel {
+      color: black;
+      position: absolute;
+      top: 4px;
+    }
+
+    .tilbakelink {
+      border-bottom: 1px solid #7F756C;
+      position: absolute;
+      bottom: 21px;
+    }
+    &:before {
+      display: inline-block;
+      content: "";
+      width: 46px;
+      height: 60px;
+      background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat;
+      background-position: 66% 20%;
+      background-size: 55%;
+    }
 
     &.dittnav {
-      background: transparent url('@{baseImagePath}img/navno/gfx/icons/ikon_las.png') no-repeat;
-      background-position: 0% 0%;
-    }
-
-    .forsidelinktekst {
-      border-bottom: 1px solid #7F756C;
-    }
-
-    &:focus {
-      outline: none;
-
-      .forsidelinktekst {
-        border-bottom: 1px solid #0067c5;
-        background-color: #ffbd66;
-        box-shadow: 0 0 0 3px #ffbd66;
+      &:before {
+        display: inline-block;
+        content: "";
+        width: 46px;
+        height: 60px;
+        background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_graa.png') no-repeat;
+        background-position: 0% 0%;
+        background-size: 90%;
+      }
+      &:hover {
+        outline: none;
+        &:before {
+          background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_blaa.png') no-repeat;
+        }
+        .tilbakelink {
+          border-bottom: 1px solid #0067c5;
+        }
+      }
+      &:active {
+        outline : none;
+        &:before {
+          background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_svart.png') no-repeat;
+        }
       }
     }
+
     &:hover {
-      .forsidelinktekst {
+      .tilbakelink {
         border-bottom: 1px solid #0067c5;
       }
     }
     &:active {
       outline: none;
-
-      .forsidelinktekst {
+      .tilbakelink{
         border-bottom: 1px solid #0067c5;
         background-color: #ffbd66;
         box-shadow: 0 0 0 3px #ffbd66;
       }
     }
+    &:focus {
+      outline: none;
+      .tilbakelink{
+        border-bottom: 1px solid #0067c5;
+        background-color: #ffbd66;
+        box-shadow: 0 0 0 3px #ffbd66;
+      }
+    }
+
   }
 }
