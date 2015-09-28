@@ -394,11 +394,84 @@ a.locked {
 }
 
 .tilbaketilgruppe {
-  padding: 2px 0 2px 40px;
-  background-size: 32px;
-  background: transparent url('@{baseImagePath}img/navno/gfx/icons/brukerprofil.png') no-repeat;
-  background-position: 0% 50%;
-  &:hover {
-	background-image: url('@{baseImagePath}img/navno/gfx/icons/brukerprofil_hover.png');
+  padding: 2px 0 2px 0px;
+  position: relative;
+  font-size: 14px;
+
+  .home-link {
+	text-decoration: none;
+	display: inline-block;
+	color: #0067c5;
+
+	span {
+	  margin-left: 8px;
+	}
+	.tilbaketittel {
+	  color: black;
+	  position: absolute;
+	  top: 4px;
+	}
+	.tilbaketilforsidelink {
+	  border-bottom: 1px solid #7F756C;
+	  position: absolute;
+	  bottom: 21px;
+	}
+	&:before {
+	  display: inline-block;
+	  content: "";
+	  width: 46px;
+	  height: 60px;
+	  background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat;
+	  background-position: 66% 20%;
+	  background-size: 55%;
+	}
+	&.dittnav {
+	  &:before {
+		display: inline-block;
+		content: "";
+		width: 46px;
+		height: 60px;
+		background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_graa.png') no-repeat;
+		background-position: 0% 0%;
+		background-size: 90%;
+	  }
+	  &:hover {
+		&:before {
+		  background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_blaa.png') no-repeat;
+		}
+		.tilbaketilforsidelink {
+		  border-bottom: 1px solid #0067c5;
+		}
+	  }
+	  &:active {
+		outline: none;
+		&:before {
+		  background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_svart.png') no-repeat;
+		}
+	  }
+	}
+
+	&:hover {
+	  &:before {
+		display: inline-block;
+		content: "";
+		width: 46px;
+		height: 60px;
+		background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
+		background-position: 66% 20%;
+		background-size: 55%;
+	  }
+	  .tilbaketilforsidelink {
+		border-bottom: 1px solid #0067c5;
+	  }
+	}
+	&:active, &:focus {
+	  outline: none;
+	  .tilbaketilforsidelink{
+		border-bottom: 1px solid #0067c5;
+		background-color: #ffbd66;
+		box-shadow: 0 0 0 3px #ffbd66;
+	  }
+	}
   }
 }
