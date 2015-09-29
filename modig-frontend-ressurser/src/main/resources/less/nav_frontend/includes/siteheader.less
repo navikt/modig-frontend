@@ -373,6 +373,7 @@ a.locked {
   background-color: @gray-dark;
   color: @white;
 }
+
 .tilbaketilgruppe {
   padding: 2px 0 2px 0px;
   position: relative;
@@ -381,7 +382,7 @@ a.locked {
   .home-link {
     text-decoration: none;
     display: inline-block;
-    color: #0067c5;
+    color: @link-color;
 
     span {
       margin-left: 8px;
@@ -420,7 +421,7 @@ a.locked {
           background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_blaa.png') no-repeat;
         }
         .tilbaketilforsidelink {
-          border-bottom: 1px solid #0067c5;
+          border-bottom: 1px solid @link-color;
         }
       }
       &:active {
@@ -442,15 +443,15 @@ a.locked {
         background-size: 55%;
       }
       .tilbaketilforsidelink {
-        border-bottom: 1px solid #0067c5;
+        border-bottom: 1px solid @link-color;
       }
     }
     &:active, &:focus {
       outline: none;
       .tilbaketilforsidelink{
-        border-bottom: 1px solid #0067c5;
-        background-color: #ffbd66;
-        box-shadow: 0 0 0 3px #ffbd66;
+        border-bottom: 1px solid @link-color;
+        background-color: @orange-focus;
+        box-shadow: 0 0 0 3px @orange-focus;
       }
     }
   }
