@@ -199,7 +199,9 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
           menu = this.menu,
           menutoggler = nav.find('#toggle-mobile-mainmenu'),
           searchform = nav.find('#sitesearch'),
-          searchtoggler = nav.find('#toggle-mobile-search');
+          searchtoggler = nav.find('#toggle-mobile-search'),
+          varseltoggler = nav.find('#toggle-varsler-mobile'),
+          varselmeny = nav.find('#varsler-display');
 
              mobileMenuMq.addListener(function() {
 
@@ -211,6 +213,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                 _mobileMenuEnable.call(this,menu,menutoggler);
                 _mobileMenuEnable.call(this,searchform,searchtoggler);
+                _mobileMenuEnable.call(this,varselmeny, varseltoggler);
 
                   mobilesubmenus.each(function (i, submenu) {   
                   /*Make headings clickable */            
@@ -900,7 +903,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                     nav = this.nav = $(this.element),
                     menu = this.menu = nav.find('ul').first(),
                     mobileMenuTogglers = this.mobileMenuTogglers = nav.find('button.mobile-toggler'),
-                    interactiveArea = this.interactiveArea = settings.enableMobileMenu ? menu.add(mobileMenuTogglers).add($('#sitesearch')) : menu,
+                    interactiveArea = this.interactiveArea = settings.enableMobileMenu ? menu.add(mobileMenuTogglers).add($('#sitesearch')).add($('#varsler-display')) : menu,
                     topnavitems = this.topnavitems = menu.children(); // <li>
 
                 var touchMoved = false,
@@ -952,6 +955,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                     _mobileMenuEnable.call(that,menu,$('#toggle-mobile-mainmenu'));
                     _mobileMenuEnable.call(that,$('#sitesearch'),$('#toggle-mobile-search'));
+                    _mobileMenuEnable.call(that,$('#varsler-display'),$('#toggle-varsler-mobile'));
                     }
 
                     else {
