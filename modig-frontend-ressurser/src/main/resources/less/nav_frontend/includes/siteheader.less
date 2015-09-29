@@ -388,7 +388,7 @@ a.locked {
       margin-left: 8px;
     }
     .tilbaketittel {
-      color: black;
+      color: @black;
       position: absolute;
       top: 4px;
     }
@@ -448,6 +448,7 @@ a.locked {
     }
     &:active, &:focus {
       outline: none;
+      background-color: @white;
       .tilbaketilforsidelink{
         border-bottom: 1px solid @link-color;
         background-color: @orange-focus;

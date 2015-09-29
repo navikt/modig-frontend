@@ -158,9 +158,8 @@
       }
 
       .home-link {
-
         .tilbaketilforsidelink {
-          color: #0067c5;
+          color: @link-color;
         }
         &:before {
           display: inline-block;
@@ -183,7 +182,10 @@
             background-size: 55%;
           }
         }
-
+        &:active, &:focus {
+          outline: none;
+          background-color: @black;
+        }
         &.dittnav {
           &:before {
             background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/person_gul.png') no-repeat;
@@ -197,7 +199,6 @@
           }
         }
       }
-
     }
 
     .accessible-megafooter .letter > a.open {
