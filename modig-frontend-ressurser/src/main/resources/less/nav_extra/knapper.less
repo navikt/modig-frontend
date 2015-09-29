@@ -12,6 +12,9 @@ a.knapp {
 	text-decoration: none;
 	text-transform: uppercase;
 	white-space: nowrap;
+  	&:focus {
+	  box-shadow: 0 0 0 2px @orange-focus;
+	}
 	&.hoved {
 		.buttonBackground(@btn-primary-background, @btn-primary-background-highlight);
 	}
