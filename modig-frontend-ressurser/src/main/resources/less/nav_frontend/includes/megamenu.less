@@ -10,14 +10,14 @@
 .menu-link-list li {
 	border-bottom: 1px solid @gray-lighter;
 	position: relative;
-	font-size: @rem-as-12px;
+	font-size: @rem-as-14px;
 }
 
 .menu-link-list a {
 	color: @gray-dark;
 	display: block;
-	margin-left: -1.3rem;
-	padding: 10px 10px 10px 1.3rem;
+	margin-left: -1.5rem;
+	padding: 10px 10px 10px 1.5rem;
 	text-align: left;
 	text-decoration: none;
 	border-bottom: none;
@@ -38,6 +38,7 @@
 	&:focus {
 	  box-shadow: 0 0 0 3px @orange-focus;
 	  outline: none;
+      background: transparent;
 	}
 
 	@media (min-width: @screen-medium) {
@@ -568,12 +569,11 @@
 		.menu-link-list {
 			// fra .decorated
 			&:before {
-				border-bottom: 1px solid #808080;
+				border-bottom: 2px solid #808080;
 				clear: both;
 				content: " ";
 				display: block;
-				margin: 0 auto 20px;
-				width: 30px;
+                margin: 0 auto;
 			}
 		}
 	}
@@ -603,6 +603,14 @@
 			width: 20%; // 5 kolonner
 			padding: 0 1em;
 			float: left;
+          .typo-etikett-stor {
+            margin-bottom: 8px;
+            margin-top: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: "Modus","Helvetica Neue","Helvetica","Arial","sans-serif";
+            text-transform: uppercase;
+          }
 		}
 		.accessible-megamenu-panel-group:first-child {
 			padding: 0 1em 0 0;

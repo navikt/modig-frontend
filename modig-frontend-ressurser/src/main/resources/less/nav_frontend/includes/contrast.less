@@ -158,9 +158,43 @@
       }
 
       .home-link {
-        background-image: url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_gul.png');
+
+        .tilbaketilforsidelink {
+          color: #0067c5;
+        }
+        &:before {
+          display: inline-block;
+          content: "";
+          width: 46px;
+          height: 60px;
+          background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_gul.png') no-repeat;
+          background-position: 66% 20%;
+          background-size: 55%;
+        }
+
         &:hover {
-          background-image: url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png');
+          &:before{
+            display: inline-block;
+            content: "";
+            width: 46px;
+            height: 60px;
+            background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
+            background-position: 66% 20%;
+            background-size: 55%;
+          }
+        }
+
+        &.dittnav {
+          &:before {
+            background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/person_gul.png') no-repeat;
+            background-position: 0% 0%;
+            background-size: 90%;
+          }
+          &:hover {
+            &:before {
+              background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_blaa.png') no-repeat;
+            }
+          }
         }
       }
 
