@@ -201,7 +201,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
           searchform = nav.find('#sitesearch'),
           searchtoggler = nav.find('#toggle-mobile-search'),
           varseltoggler = nav.find('#toggle-varsler-mobile'),
-          varselmeny = nav.find('#varsler-display');
+          varselmeny = $('#varsler-display');
 
              mobileMenuMq.addListener(function() {
 
@@ -236,6 +236,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                _mobileMenuDisable.call(this,menu,menutoggler);
                _mobileMenuDisable.call(this,searchform,searchtoggler);
+               _mobileMenuDisable.call(this,varselmeny, varseltoggler);
 
                  mobilesubmenus.each(function (i, submenu) {   // todo: nødvendig med each her?
                   /*Make headings clickable */            
@@ -517,6 +518,12 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                   "aria-expanded": false,
                   "aria-hidden": true
                 });
+
+              menu.add('#varsler-display').removeClass('m-open')
+                  .attr({
+                      "aria-expanded": false,
+                      "aria-hidden": true
+                  });
           }
 
 
@@ -533,11 +540,13 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                       'aria-hidden': false
                     });
 
-            $('#' +target.siblings('button.mobile-toggler').attr('aria-controls')).removeClass('m-open')
-                    .attr({
-                      'aria-expanded': false,
-                      'aria-hidden': true
-                    });
+              target.siblings('button.mobile-toggler').each(function () {
+                  $('#' + $(this).attr('aria-controls')).removeClass('m-open')
+                      .attr({
+                          'aria-expanded': false,
+                          'aria-hidden': true
+                      });
+              });
 
             _toggleExpandedEventHandlers.call(that);
 

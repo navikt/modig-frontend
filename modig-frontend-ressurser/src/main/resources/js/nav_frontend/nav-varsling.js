@@ -70,11 +70,14 @@ $(function () {
             //    id: 123,
             //    datoLest: null
             //}];
-
-            fyllMenyMedHtml($('#varsler-display'), data.antallUleste);
         })
         .fail(function () {
             feilUnderHentingAvVarsler = true;
+        })
+        .complete(function () {
+            var varslerDisplay = $('#varsler-display');
+            posisjonerMenyIForholdTilToppmeny(varslerDisplay);
+            fyllMenyMedHtml(varslerDisplay, data.antallUleste);
         });
 
     $('#mainmenu').on('click', '#toggle-varsler', function () {
@@ -86,20 +89,16 @@ $(function () {
         settVarslerLest();
     });
 
-    $('#mainmenu').on('click', '#toggle-varsler-mobile', function (event) {
-        console.log('mobilklikk', event);
-        var varslerDisplay = hentOgToggleVarslerDisplay();
-        posisjonerMenyIForholdTilToppmeny(varslerDisplay);
-        fyllMenyMedHtml(varslerDisplay, data.antallUleste);
-    });
-
     function posisjonerMenyIForholdTilToppmeny(varslerDisplay) {
-        varslerDisplay.offset({left: 0, top: $('#mainmenu').height()})
+        varslerDisplay.offset({
+            left: 0,
+            top: $('#mainmenu').height()
+        });
     }
 
     function hentOgToggleVarslerDisplay() {
         var varslerDisplay = $('#varsler-display');
-        varslerDisplay.toggle();
+        varslerDisplay.toggleClass('open');
         return varslerDisplay;
     }
 
@@ -217,20 +216,17 @@ $(function () {
         var varslerDisplay = $('#varsler-display');
 
         if (previousWidth && previousWidth >= 768 && width < 768) {
-            varslerDisplay.hide();
+            varslerDisplay.removeClass('open');
+            posisjonerMenyIForholdTilToppmeny(varslerDisplay);
         } else if (previousWidth && previousWidth <= 768 && width > 768) {
-            varslerDisplay.hide();
+            varslerDisplay.removeClass('m-open');
         }
 
         if (width > 768) {
-            posisjonerMenyIForholdTilIkon(varslerDisplay, $('#toggle-varsler'))
+            posisjonerMenyIForholdTilIkon(varslerDisplay, $('#toggle-varsler'));
         }
 
         previousWidth = width;
-    });
-
-    $('#toggle-mobile-search, #toggle-mobile-mainmenu').on('click', function () {
-        $('#varsler-display').hide();
     });
 
     function wrapISpan(tekst) {
