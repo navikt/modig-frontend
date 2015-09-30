@@ -28,8 +28,8 @@ public class FrontendModules {
 
     public static final FrontendModule NAV_FRONTEND = new FrontendModule.With()
             .less(
-                    VARIABLES_LESS_RESOURCE,
-					MIXINS_GRID_LESS_RESOURCE, MIXINS_KNAPPER_LESS_RESOURCE, MIXINS_TYPOGRAFI_LESS_RESOURCE, MIXINS_UTILS_LESS_RESOURCE
+                    VARIABLES_LESS_RESOURCE, MIXINS_GRID_LESS_RESOURCE, MIXINS_KNAPPER_LESS_RESOURCE, MIXINS_TYPOGRAFI_LESS_RESOURCE,
+					MIXINS_UTILS_LESS_RESOURCE
             )
             .done();
 

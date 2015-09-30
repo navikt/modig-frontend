@@ -65,13 +65,17 @@
 	padding-bottom: 20px; 
 }
 
-.mixin-hode(@farge) {
+.hode-etikett-liten {
+	.mixin-typo-etikett-liten();
+	margin-bottom: 20px;
+	padding-top: 60px;
+	padding-bottom: 20px;
+}
 
+.mixin-hode(@farge) {
 	&:before, &:after {
 		background-color: @farge; 
 	}
-
-	
 }
 
 // -----------------------------------------
