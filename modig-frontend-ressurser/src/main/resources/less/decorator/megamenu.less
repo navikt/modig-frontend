@@ -495,30 +495,14 @@
 
 	@media (min-width: 60em) {
 		.topnavsection {
-			// menylinje sentreres først ved 960px pga plassmangel
-			.topnav {
-				text-align: center;
-			}
 
 			.topnavitem {
 				> a {
 					display: block;
-					padding: 10px 40px 10px 10px;
-				}
-				&.has-children {
-					> a:after {
-						right: 23px;
-					}
+					padding: 10px 20px 10px 10px;
 				}
 			}
 		}
-      .flexbox {
-        .accessible-megamenu {
-          display: flex;
-          justify-content: center;
-        }
-
-      }
 	} // mq end
 
 
@@ -553,15 +537,6 @@
 		}
 
 	}
-
-  .flexbox {
-    .accessible-megamenu {
-      display: flex;
-      justify-content: center;
-    }
-
-  }
-
 }
 
 //--------------------------------------------------------------------
@@ -577,7 +552,7 @@
 	.topnavsection {
 		overflow: hidden; // nødvendig pga animasjon i hovedmeny
 		.topnav {
-			//text-align: center;
+			text-align: center;
 			position: relative;
 		}
 		.h4 {
