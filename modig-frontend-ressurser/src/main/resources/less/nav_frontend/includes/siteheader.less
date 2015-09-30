@@ -341,14 +341,30 @@ a.locked {
       background: transparent url('@{baseImagePath}img/navno/gfx/icons/sporsmaalstegn_hover.png') no-repeat;
       background-size: 1.3rem;
     }
+
   }
 
   .panel-negativ {
+    .decorated {
+      font-size: 1rem;
+      margin-bottom: 0px;
+    }
+    &:before {
+      content: "";
+      border: solid transparent;
+      border-width: 10px;
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: 20px;
+      border-top-color: #3e3832;
+      top: 100%
+    }
     position: absolute;
     z-index: 9;
-    left: 59%;
-    top: 59%;
-    right: 6%;
+    left: 71.5%;
+    width: 350px;
+    top: 45%;
     padding: 10px;
     .lukk {
       margin-bottom: 2rem;
@@ -364,6 +380,20 @@ a.locked {
           background:transparent url('@{baseImagePath}img/navno/gfx/icons/kryss_blaa_hover.png') no-repeat;
         }
       }
+    }
+    .hjelpetekst-tittel {
+      padding-bottom: 2rem;
+      position: relative;
+      text-align: center;
+      font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 0;
+      color: #cccccc;
+    }
+    .hjelpetekst-tekst {
+      color: #cccccc;
+      font-size: 0.875rem;
     }
   }
 }
