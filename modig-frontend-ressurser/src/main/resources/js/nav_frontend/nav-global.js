@@ -1015,7 +1015,8 @@ function setLockedClassOnInaccessibleMenuElements() {
 	$('a[data-sec-level]').each(function() {
 		//If secLevel of the menu is larger than users secLevel set locked class for styling
 		if (this.getAttribute("data-sec-level") > navno.securityLevel) {
-			$(this).addClass("locked")
+			$(this).addClass("locked");
+            $(this).attr("aria-label", "Låst tjeneste: ");
 		};
 	});
 }
