@@ -370,12 +370,24 @@ a.locked {
 
 
   .panel-negativ {
-	position: absolute;
-	z-index: 9;
-	left: 59%;
-	top: 59%;
-	right: 6%;
-	padding: 10px;
+    &:before {
+      content: "";
+      border: solid transparent;
+      border-width: 10px;
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: 20px;
+      border-top-color: @gray-text;
+      top: 100%
+    }
+    position: absolute;
+    z-index: 9;
+    left: 74.5%;
+    width: 350px;
+    top: 55%;
+    padding: 10px;
+    color: @color-gray-light-additional;
 	.lukk {
 	  margin-bottom: 2rem;
 	  button {
