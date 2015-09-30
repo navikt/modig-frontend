@@ -199,7 +199,9 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
           menu = this.menu,
           menutoggler = nav.find('#toggle-mobile-mainmenu'),
           searchform = nav.find('#sitesearch'),
-          searchtoggler = nav.find('#toggle-mobile-search');
+          searchtoggler = nav.find('#toggle-mobile-search'),
+          varseltoggler = nav.find('#toggle-varsler-mobile'),
+          varselmeny = $('#varsler-display');
 
              mobileMenuMq.addListener(function() {
 
@@ -211,6 +213,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                 _mobileMenuEnable.call(this,menu,menutoggler);
                 _mobileMenuEnable.call(this,searchform,searchtoggler);
+                _mobileMenuEnable.call(this,varselmeny, varseltoggler);
 
                   mobilesubmenus.each(function (i, submenu) {   
                   /*Make headings clickable */            
@@ -233,6 +236,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                _mobileMenuDisable.call(this,menu,menutoggler);
                _mobileMenuDisable.call(this,searchform,searchtoggler);
+               _mobileMenuDisable.call(this, varselmeny, varseltoggler);
 
                  mobilesubmenus.each(function (i, submenu) {   // todo: nødvendig med each her?
                   /*Make headings clickable */            
@@ -514,6 +518,12 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                   "aria-expanded": false,
                   "aria-hidden": true
                 });
+
+              menu.add('#varsler-display').removeClass('m-open')
+                  .attr({
+                      "aria-expanded": false,
+                      "aria-hidden": true
+                  });
           }
 
 
@@ -530,11 +540,14 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                       'aria-hidden': false
                     });
 
-            $('#' +target.siblings('button.mobile-toggler').attr('aria-controls')).removeClass('m-open')
-                    .attr({
-                      'aria-expanded': false,
-                      'aria-hidden': true
-                    });
+              target.siblings('button.mobile-toggler').each(function () {
+                  $('#' + $(this).attr('aria-controls')).removeClass('m-open')
+                      .attr({
+                          'aria-expanded': false,
+                          'aria-hidden': true
+                      });
+              });
+
 
             _toggleExpandedEventHandlers.call(that);
 
@@ -900,7 +913,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                     nav = this.nav = $(this.element),
                     menu = this.menu = nav.find('ul').first(),
                     mobileMenuTogglers = this.mobileMenuTogglers = nav.find('button.mobile-toggler'),
-                    interactiveArea = this.interactiveArea = settings.enableMobileMenu ? menu.add(mobileMenuTogglers).add($('#sitesearch')) : menu,
+                    interactiveArea = this.interactiveArea = settings.enableMobileMenu ? menu.add(mobileMenuTogglers).add($('#sitesearch')).add($('#varsler-display')) : menu,
                     topnavitems = this.topnavitems = menu.children(); // <li>
 
                 var touchMoved = false,
@@ -952,6 +965,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                     _mobileMenuEnable.call(that,menu,$('#toggle-mobile-mainmenu'));
                     _mobileMenuEnable.call(that,$('#sitesearch'),$('#toggle-mobile-search'));
+                    _mobileMenuEnable.call(that,$('#varsler-display'),$('#toggle-varsler-mobile'));
                     }
 
                     else {

@@ -1,0 +1,266 @@
+@baseImagePath: '../../';
+@screen-medium: 768px;
+@gray-icon: #b7b1a9;
+@gray-inactive: #7F756C;
+@lightgray: #efefef;
+
+@media (max-width: @screen-medium) {
+    header {
+        #mainmenu {
+            button.mobile-toggler {
+                width: 32%;
+            }
+        }
+
+        .toggle-varsler {
+            display: none;
+        }
+
+        .varsler-display {
+            width: 90%;
+            background-color: #333;
+            color: @gray-icon;
+            border: 0;
+            border-top: 1px solid @gray-icon;
+            position: absolute;
+            top: auto;
+            left: 0;
+            right: auto;
+            padding: 15px;
+            display: none;
+
+            &:before, &:after {
+                border-bottom-color: transparent;
+            }
+
+            &.m-open {
+                display: block;
+            }
+
+            .varsel-kort-dato {
+                display: none;
+            }
+
+            a {
+                color: #33b1dd;
+
+                &:hover {
+                    text-decoration: none;
+                    span {
+                        border-bottom-color: #33b1dd;
+                    }
+                }
+            }
+        }
+
+        .varsel-innhold-container {
+            width: 100%;
+            border-bottom: 1px solid @gray-icon;
+            color: @gray-icon;
+        }
+
+        .varsel-melding {
+            color: #fff;
+        }
+
+        .sett {
+            .varsel-melding {
+                color: @gray-icon;
+            }
+        }
+
+        .varsel-dato {
+            margin-bottom: 2px;
+            color: @gray-icon;
+        }
+
+        .varsel-container {
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        #toggle-varsler-mobile {
+            background: url('@{baseImagePath}img/varsel/varsel_mobil_graa.png') no-repeat center;
+            vertical-align: middle;
+
+            &.m-open {
+                background: url('@{baseImagePath}img/varsel/varsel_mobil_blaa.png') no-repeat center;
+            }
+
+            &.har-nye-varsler {
+                background: url('@{baseImagePath}img/varsel/varsel_mobil_oransje.png') no-repeat center;
+            }
+
+            &.skjul {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+.toggle-varsler {
+    background: url('@{baseImagePath}img/varsel/varsel_graa.png') no-repeat;
+    border: 0;
+    height: 31px;
+    width: 31px;
+
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+
+    &.har-nye-varsler {
+        background: url('@{baseImagePath}img/varsel/varsel_oransje.png') no-repeat center;
+    }
+    &:hover {
+        background: url('@{baseImagePath}img/varsel/varsel_blaa.png') no-repeat center;
+    }
+
+    &.skjul {
+        display: none;
+    }
+}
+
+.clearfix {
+    &:before,
+    &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.varsel-container {
+    margin-bottom: 14px;
+
+    &:last-child {
+        margin-bottom: 0;
+
+        .varsel-innhold-container {
+            border-bottom: none;
+        }
+    }
+}
+
+.varsel-innhold-container {
+    text-align: left;
+    float: left;
+    width: 205px;
+    border-bottom: 1px solid @lightgray;
+    padding-bottom: 14px;
+}
+
+.varsler-display {
+    position: absolute;
+    left: auto;
+    width: 280px;
+    padding: 12px 0 10px 12px;
+    z-index: 1;
+    background-color: #ffffff;
+    box-shadow: 0 1px 5px 1px #ccc;
+    font-size: 14px;
+    display: none;
+
+    &.open {
+        display: block;
+    }
+
+    &:before {
+        content: "";
+        border: 9px solid transparent;
+        border-bottom-color: #ccc;
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: -17px;
+        right: 44px;
+        z-index: 1000;
+    }
+
+    &:after {
+        content: "";
+        border: 9px solid transparent;
+        border-bottom-color: #ffffff;
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: -16px;
+        right: 44px;
+        z-index: 1001;
+    }
+
+    a {
+        margin-top: 4px;
+        display: block;
+        text-decoration: none;
+
+        span {
+            border-bottom: 1px solid @gray-icon;
+        }
+
+        &:hover {
+            text-decoration: none;
+            span {
+                border-bottom-color: #0067c5;
+            }
+        }
+
+        &.skillelinje-topp {
+            border-top: 1px solid @gray-icon;
+        }
+
+        &.vis-alle-lenke {
+            text-align: center;
+            display: block;
+            padding-top: 10px;
+            margin-right: 12px;
+            margin-bottom: 4px;
+        }
+    }
+
+
+    .ingen-varsler-container {
+        margin: 50px auto;
+        width: 64px;
+        height: 64px;
+        background: url('@{baseImagePath}img/navno/gfx/ajaxloader/hvit/loader_hvit_64.gif') no-repeat center;
+    }
+
+
+    .tekstblokk {
+        margin-right: 12px;
+        margin-bottom: 0;
+    }
+}
+
+.varsel-dato {
+    color: @gray-inactive;
+    font-size: 12px;
+    
+    margin-bottom: 2px;
+}
+
+.varsel-kort-dato {
+    width: 37px;
+    height: 39px;
+    float: left;
+    font-size: 12px;
+    background-color: #FF9100;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: uppercase;
+    padding: 5px 3px 3px 3px;
+}
+
+.sett {
+    color: @gray-inactive;
+
+    .varsel-kort-dato {
+        background-color: transparent;
+    }
+}
