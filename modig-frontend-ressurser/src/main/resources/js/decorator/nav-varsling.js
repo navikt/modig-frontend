@@ -67,9 +67,12 @@ $(function () {
         });
 
     mainmenu.on('click', '#toggle-varsler', function () {
-        var varslerDisplay = hentOgToggleVarslerDisplay();
         var varselikon = $(this);
         varselikon.removeClass('har-nye-varsler');
+
+        var varslerDisplay = $('#varsler-display');
+        varslerDisplay.toggleClass('open');
+
         posisjonerMenyIForholdTilIkon(varslerDisplay, varselikon);
         fyllMenyMedHtml(varslerDisplay, data.antallUleste);
         settVarslerLest();
@@ -80,12 +83,6 @@ $(function () {
             left: 0,
             top: mainmenu.height()
         });
-    }
-
-    function hentOgToggleVarslerDisplay() {
-        var varslerDisplay = $('#varsler-display');
-        varslerDisplay.toggleClass('open');
-        return varslerDisplay;
     }
 
     function posisjonerMenyIForholdTilIkon(meny, ikon) {
