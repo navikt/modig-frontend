@@ -17,7 +17,7 @@ $(function () {
             hentSisteVarslerUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/hentsiste',
             mineVarslerRelativUrl: varselinnboksUrl + '/oversikt',
             oppdatertLestStatusUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/erlest',
-            collapseIndex: 50
+            antallVarslerSomSkalVises: 5
         },
         tekster = {
             visalle: varslerKnapp.attr('data-tekst-visalle'),
@@ -104,8 +104,6 @@ $(function () {
     }
 
     function fyllMenyMedHtml(varselmeny, antallNye) {
-        var antallVarslerSomSkalVises = 5;
-
         if (feilUnderHentingAvVarsler){
             varselmeny.html('<p class="tekstblokk">' + tekster.error + '</p>');
         } else if (!varsler) {
@@ -113,11 +111,11 @@ $(function () {
         } else if (varsler.length == 0) {
             varselmeny.html('<p class="tekstblokk">' + tekster.ingenvarsler + '</p>');
         } else {
-            var maksFemVarsler = varsler.length > antallVarslerSomSkalVises ? varsler.slice(0, antallVarslerSomSkalVises) : varsler;
+            var maksFemVarsler = varsler.length > config.antallVarslerSomSkalVises ? varsler.slice(0, config.antallVarslerSomSkalVises) : varsler;
             varselmeny.html('<div>' + maksFemVarsler.map(varselTilHtml).join('') + '</div>');
         }
 
-        if (varsler && varsler.length > antallVarslerSomSkalVises) {
+        if (varsler && varsler.length > config.antallVarslerSomSkalVises) {
             varselmeny.append('<div><a class="vis-alle-lenke skillelinje-topp"  href="' + config.mineVarslerRelativUrl + '">' + wrapISpan(tekster.visalle + ' ' + nyeVarslerVisning(antallNye))  + '</a></div>');
         }
     }
