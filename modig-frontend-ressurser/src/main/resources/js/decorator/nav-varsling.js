@@ -1,40 +1,34 @@
-
 $(function () {
-    console.log("nav-varsling", navno);
-    console.log(navno.securityLevel);
     if (!navno.securityLevel || navno.securityLevel < 3) {
         //Bruker ikke logget inn, eller logget inn på for lavt sikkerhetsnivå
         return;
     }
-    visVarselIkoner();
+    visVarselikoner();
 
-    var data = {};
-    var maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'];
-    var varsler;
-    var feilUnderHentingAvVarsler = false;
-    var varslerKnapp = $('#toggle-varsler');
-    var tjenesteBaseUrl = varslerKnapp.attr('data-base-url');
-    var varselinnboksUrl = '/varselinnboks';
-    var config = {
-        hentSisteVarslerUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/hentsiste',
-        mineVarslerRelativUrl: varselinnboksUrl + '/oversikt',
-        oppdatertLestStatusUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/erlest',
-        collapseIndex: 50
-    };
-
-    var tekster = {
-        visalle: varslerKnapp.attr('data-tekst-visalle'),
-        nyeFlertall: varslerKnapp.attr('data-tekst-visalle-nye-flertall'),
-        nyeEntall: varslerKnapp.attr('data-tekst-visalle-nye-entall'),
-        ingenvarsler: varslerKnapp.attr('data-tekst-ingenvarsler'),
-        error: varslerKnapp.attr('data-tekst-error'),
-        lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
-    };
-    console.log(tekster);
+    var varsler,
+        data = {},
+        maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
+        feilUnderHentingAvVarsler = false,
+        varslerKnapp = $('#toggle-varsler'),
+        tjenesteBaseUrl = varslerKnapp.attr('data-base-url'),
+        varselinnboksUrl = '/varselinnboks',
+        config = {
+            hentSisteVarslerUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/hentsiste',
+            mineVarslerRelativUrl: varselinnboksUrl + '/oversikt',
+            oppdatertLestStatusUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/erlest',
+            collapseIndex: 50
+        },
+        tekster = {
+            visalle: varslerKnapp.attr('data-tekst-visalle'),
+            nyeFlertall: varslerKnapp.attr('data-tekst-visalle-nye-flertall'),
+            nyeEntall: varslerKnapp.attr('data-tekst-visalle-nye-entall'),
+            ingenvarsler: varslerKnapp.attr('data-tekst-ingenvarsler'),
+            error: varslerKnapp.attr('data-tekst-error'),
+            lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
+        };
 
     $.ajax({url: config.hentSisteVarslerUrl})
         .done(function (nyeData) {
-            console.log(nyeData);
             data.nyesteVarsler = nyeData.nyesteVarsler;
             data.antallUleste = nyeData.totaltAntallUleste;
 
@@ -61,15 +55,6 @@ $(function () {
                     url: varsel.url
                 };
             }).sort(nyesteForst);
-
-            //varsler = [{
-            //    varseltekst: 'Dette er innholdet i meldingen sadjkfløasjfkl jdkslaføj jfdkasløjfd jdskaløfjs',
-            //    maaned: maanedKort(10),
-            //    dag: 20,
-            //    formattertDato: norskDato(new Date()),
-            //    id: 123,
-            //    datoLest: null
-            //}];
         })
         .fail(function () {
             feilUnderHentingAvVarsler = true;
@@ -233,7 +218,7 @@ $(function () {
         return '<span>' + tekst + '</span>';
     }
 
-    function visVarselIkoner() {
+    function visVarselikoner() {
         $('#toggle-varsler').removeClass('skjul');
         $('#toggle-varsler-mobile').removeClass('skjul');
     }
