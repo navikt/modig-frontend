@@ -1008,3 +1008,22 @@ function setCorrectSecLevelUpgradeInfoText(securityLevel) {
 }
 
 //////////////////////// END ////////////////////////
+
+/* Set same height for titles in the global menu */
+
+$(function () {
+
+	$("li.topnavitem").each(function() {
+		var maxUndertittelhoyde = 0 ;
+		var undertitler = $(this).find("h2.globalmenu-tittel");
+		undertitler.each(function() {
+			maxUndertittelhoyde = Math.max($(this).height(), maxUndertittelhoyde);
+		});
+		undertitler.each(function() {
+			$(this).height(maxUndertittelhoyde);
+		})
+	});
+
+});
+
+//////////////////////// END ////////////////////////
