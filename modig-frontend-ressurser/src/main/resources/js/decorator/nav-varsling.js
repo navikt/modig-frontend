@@ -133,8 +133,7 @@ $(function () {
     function varselTilHtml(varsel) {
         return '<div class="clearfix varsel-container '+ meldingSettEllerIkke(varsel) + '">' +
             kortDatoTilHtml(varsel.maaned, varsel.dag) + '<div class="varsel-innhold-container">' +
-            '<div class="varsel-dato">' + varsel.formattertDato + '</div>' +
-            '<div class="js-varsel-vis-mer-mindre-container">' +
+            '<div class="varsel-dato">' + varsel.formattertDato + '</div><div>' +
             '<span class="varsel-melding">' + varsel.varseltekst + '</span>' + leggPaaLenkeHvisUrlFinnes(varsel) + '</div></div></div>';
     }
 
