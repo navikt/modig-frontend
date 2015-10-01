@@ -10,6 +10,7 @@ $(function () {
         maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
         feilUnderHentingAvVarsler = false,
         varslerKnapp = $('#toggle-varsler'),
+        mainmenu = $('#mainmenu'),
         tjenesteBaseUrl = varslerKnapp.attr('data-base-url'),
         varselinnboksUrl = '/varselinnboks',
         config = {
@@ -65,7 +66,7 @@ $(function () {
             fyllMenyMedHtml(varslerDisplay, data.antallUleste);
         });
 
-    $('#mainmenu').on('click', '#toggle-varsler', function () {
+    mainmenu.on('click', '#toggle-varsler', function () {
         var varslerDisplay = hentOgToggleVarslerDisplay();
         var varselikon = $(this);
         varselikon.removeClass('har-nye-varsler');
@@ -77,7 +78,7 @@ $(function () {
     function posisjonerMenyIForholdTilToppmeny(varslerDisplay) {
         varslerDisplay.offset({
             left: 0,
-            top: $('#mainmenu').height()
+            top: mainmenu.height()
         });
     }
 
