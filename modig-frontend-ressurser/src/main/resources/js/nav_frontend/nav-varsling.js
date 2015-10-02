@@ -28,6 +28,8 @@ $(function () {
             lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
         };
 
+    posisjonerMeny($('#varsler-display'));
+
     $.ajax({url: config.hentSisteVarslerUrl})
         .done(function (nyeData) {
             data.nyesteVarsler = nyeData.nyesteVarsler;
@@ -62,7 +64,6 @@ $(function () {
         })
         .complete(function () {
             var varslerDisplay = $('#varsler-display');
-            posisjonerMenyIForholdTilToppmeny(varslerDisplay);
             fyllMenyMedHtml(varslerDisplay, data.antallUleste);
         });
 
@@ -77,6 +78,14 @@ $(function () {
         fyllMenyMedHtml(varslerDisplay, data.antallUleste);
         settVarslerLest();
     });
+
+    function posisjonerMeny(varslerDisplay) {
+        if ($(window).width() > 768) {
+            posisjonerMenyIForholdTilIkon(varslerDisplay, $('#toggle-varsler'));
+        } else {
+            posisjonerMenyIForholdTilToppmeny(varslerDisplay);
+        }
+    }
 
     function posisjonerMenyIForholdTilToppmeny(varslerDisplay) {
         varslerDisplay.offset({
