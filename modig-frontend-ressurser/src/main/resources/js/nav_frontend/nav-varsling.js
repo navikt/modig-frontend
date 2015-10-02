@@ -10,7 +10,7 @@ $(function () {
         maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
         feilUnderHentingAvVarsler = false,
         varslerKnapp = $('#toggle-varsler'),
-        varslerDisplay = $('#varsler-display'),
+        varselmeny = $('#varsler-display'),
         mainmenu = $('#mainmenu'),
         tjenesteBaseUrl = varslerKnapp.attr('data-base-url'),
         varselinnboksUrl = '/varselinnboks',
@@ -29,8 +29,8 @@ $(function () {
             lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
         };
 
-    posisjonerMeny(varslerDisplay);
-    fyllMenyMedHtml(varslerDisplay);
+    posisjonerMeny();
+    fyllMenyMedHtml();
 
     $.ajax({url: config.hentSisteVarslerUrl})
         .done(function (nyeData) {
@@ -65,54 +65,54 @@ $(function () {
             feilUnderHentingAvVarsler = true;
         })
         .complete(function () {
-            fyllMenyMedHtml(varslerDisplay, data.antallUleste);
+            fyllMenyMedHtml(data.antallUleste);
         });
 
     mainmenu.on('click', '#toggle-varsler', function () {
         var varselikon = $(this);
         varselikon.removeClass('har-nye-varsler');
 
-        varslerDisplay.toggleClass('open');
+        varselmeny.toggleClass('open');
 
-        posisjonerMenyIForholdTilIkon(varslerDisplay, varselikon);
-        fyllMenyMedHtml(varslerDisplay, data.antallUleste);
+        posisjonerMenyIForholdTilIkon(varselikon);
+        fyllMenyMedHtml(data.antallUleste);
         settVarslerLest();
     });
 
-    function posisjonerMeny(varslerDisplay) {
+    function posisjonerMeny() {
         if ($(window).width() > 768) {
-            posisjonerMenyIForholdTilIkon(varslerDisplay, $('#toggle-varsler'));
+            posisjonerMenyIForholdTilIkon($('#toggle-varsler'));
         } else {
-            posisjonerMenyIForholdTilToppmeny(varslerDisplay);
+            posisjonerMenyIForholdTilToppmeny();
         }
     }
 
-    function posisjonerMenyIForholdTilToppmeny(varslerDisplay) {
-        varslerDisplay.offset({
+    function posisjonerMenyIForholdTilToppmeny() {
+        varselmeny.offset({
             left: 0,
             top: mainmenu.height()
         });
     }
 
-    function posisjonerMenyIForholdTilIkon(meny, ikon) {
+    function posisjonerMenyIForholdTilIkon(ikon) {
         var offset = ikon.offset();
         var triangelDistanseFraHoyre = 41;
         var triangelHoyde = 11;
         var marginMellomIkonOgTriangel = 10;
-        var left = offset.left - meny.outerWidth() + triangelDistanseFraHoyre + (triangelHoyde * 2) + ikon.width() / 2;
+        var left = offset.left - varselmeny.outerWidth() + triangelDistanseFraHoyre + (triangelHoyde * 2) + ikon.width() / 2;
 
         var justering = 4;
-        var right = $(window).width() - (left + meny.outerWidth()) + justering;
+        var right = $(window).width() - (left + varselmeny.outerWidth()) + justering;
         right = right < 0 ? 0 : right;
 
-        meny.offset({
+        varselmeny.offset({
             top: offset.top + ikon.height() + triangelHoyde + marginMellomIkonOgTriangel
         });
-        meny.css('right', right);
-        meny.css('left', 'auto');
+        varselmeny.css('right', right);
+        varselmeny.css('left', 'auto');
     }
 
-    function fyllMenyMedHtml(varselmeny, antallNye) {
+    function fyllMenyMedHtml(antallNye) {
         if (feilUnderHentingAvVarsler){
             varselmeny.html('<p class="tekstblokk">' + tekster.error + '</p>');
         } else if (!varsler) {
@@ -204,14 +204,14 @@ $(function () {
         var width = $(this).width();
 
         if (previousWidth && previousWidth >= 768 && width < 768) {
-            varslerDisplay.removeClass('open');
-            posisjonerMenyIForholdTilToppmeny(varslerDisplay);
+            varselmeny.removeClass('open');
+            posisjonerMenyIForholdTilToppmeny();
         } else if (previousWidth && previousWidth <= 768 && width > 768) {
-            varslerDisplay.removeClass('m-open');
+            varselmeny.removeClass('m-open');
         }
 
         if (width > 768) {
-            posisjonerMenyIForholdTilIkon(varslerDisplay, $('#toggle-varsler'));
+            posisjonerMenyIForholdTilIkon($('#toggle-varsler'));
         }
 
         previousWidth = width;
