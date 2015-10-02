@@ -10,6 +10,7 @@ $(function () {
         maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
         feilUnderHentingAvVarsler = false,
         varslerKnapp = $('#toggle-varsler'),
+        varslerDisplay = $('#varsler-display'),
         mainmenu = $('#mainmenu'),
         tjenesteBaseUrl = varslerKnapp.attr('data-base-url'),
         varselinnboksUrl = '/varselinnboks',
@@ -28,7 +29,8 @@ $(function () {
             lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
         };
 
-    posisjonerMeny($('#varsler-display'));
+    posisjonerMeny(varslerDisplay);
+    fyllMenyMedHtml(varslerDisplay);
 
     $.ajax({url: config.hentSisteVarslerUrl})
         .done(function (nyeData) {
@@ -63,7 +65,6 @@ $(function () {
             feilUnderHentingAvVarsler = true;
         })
         .complete(function () {
-            var varslerDisplay = $('#varsler-display');
             fyllMenyMedHtml(varslerDisplay, data.antallUleste);
         });
 
@@ -71,7 +72,6 @@ $(function () {
         var varselikon = $(this);
         varselikon.removeClass('har-nye-varsler');
 
-        var varslerDisplay = $('#varsler-display');
         varslerDisplay.toggleClass('open');
 
         posisjonerMenyIForholdTilIkon(varslerDisplay, varselikon);
@@ -202,7 +202,6 @@ $(function () {
     var previousWidth;
     $(window).resize(function () {
         var width = $(this).width();
-        var varslerDisplay = $('#varsler-display');
 
         if (previousWidth && previousWidth >= 768 && width < 768) {
             varslerDisplay.removeClass('open');
