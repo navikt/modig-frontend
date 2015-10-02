@@ -3,13 +3,13 @@ $(function () {
         //Bruker ikke logget inn, eller logget inn på for lavt sikkerhetsnivå
         return;
     }
-    visVarselikoner();
 
     var varsler,
         data = {},
         maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
         feilUnderHentingAvVarsler = false,
         varslerKnapp = $('#toggle-varsler'),
+        varslerKnappMobil = $('#toggle-varsler-mobile'),
         varselmeny = $('#varsler-display'),
         mainmenu = $('#mainmenu'),
         tjenesteBaseUrl = varslerKnapp.attr('data-base-url'),
@@ -29,6 +29,7 @@ $(function () {
             lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
         };
 
+    visVarselikoner();
     posisjonerMeny();
     fyllMenyMedHtml();
 
@@ -43,8 +44,8 @@ $(function () {
             }
 
             if (data.antallUleste > 0) {
-                $('#toggle-varsler').addClass('har-nye-varsler');
-                $('#toggle-varsler-mobile').addClass('har-nye-varsler');
+                varslerKnapp.addClass('har-nye-varsler');
+                varslerKnappMobil.addClass('har-nye-varsler');
             }
 
             varsler = data.nyesteVarsler.map(function (varsel) {
@@ -81,7 +82,7 @@ $(function () {
 
     function posisjonerMeny() {
         if ($(window).width() > 768) {
-            posisjonerMenyIForholdTilIkon($('#toggle-varsler'));
+            posisjonerMenyIForholdTilIkon();
         } else {
             posisjonerMenyIForholdTilToppmeny();
         }
@@ -94,19 +95,19 @@ $(function () {
         });
     }
 
-    function posisjonerMenyIForholdTilIkon(ikon) {
-        var offset = ikon.offset();
+    function posisjonerMenyIForholdTilIkon() {
+        var offset = varslerKnapp.offset();
         var triangelDistanseFraHoyre = 41;
         var triangelHoyde = 11;
         var marginMellomIkonOgTriangel = 10;
-        var left = offset.left - varselmeny.outerWidth() + triangelDistanseFraHoyre + (triangelHoyde * 2) + ikon.width() / 2;
+        var left = offset.left - varselmeny.outerWidth() + triangelDistanseFraHoyre + (triangelHoyde * 2) + varslerKnapp.width() / 2;
 
         var justering = 4;
         var right = $(window).width() - (left + varselmeny.outerWidth()) + justering;
         right = right < 0 ? 0 : right;
 
         varselmeny.offset({
-            top: offset.top + ikon.height() + triangelHoyde + marginMellomIkonOgTriangel
+            top: offset.top + varslerKnapp.height() + triangelHoyde + marginMellomIkonOgTriangel
         });
         varselmeny.css('right', right);
         varselmeny.css('left', 'auto');
@@ -211,7 +212,7 @@ $(function () {
         }
 
         if (width > 768) {
-            posisjonerMenyIForholdTilIkon($('#toggle-varsler'));
+            posisjonerMenyIForholdTilIkon();
         }
 
         previousWidth = width;
@@ -222,7 +223,7 @@ $(function () {
     }
 
     function visVarselikoner() {
-        $('#toggle-varsler').removeClass('skjul');
-        $('#toggle-varsler-mobile').removeClass('skjul');
+        varslerKnapp.removeClass('skjul');
+        varslerKnappMobil.removeClass('skjul');
     }
 });
