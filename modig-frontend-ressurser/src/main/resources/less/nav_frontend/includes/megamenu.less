@@ -77,7 +77,7 @@
 .accessible-megamenu,
 .subnavitems {
 	// UL
-	padding: 0;
+	padding: 0px 0px 12px 0px;
 	margin: 0;
 	list-style: none;
 }
@@ -406,16 +406,98 @@
 				margin: 0; // home-link wrapper
 			}
 
-			.home-link, .mobile-submenu-expander {
+			.mobile-submenu-expander {
 				display: block;
-				padding: 15px 35px 15px 40px; // dobbelt så mye padding left som nivået over (topnavitem)
-				margin: 0;
+				padding: 24px 35px 25px 40px; // dobbelt så mye padding left som nivået over (topnavitem)
+				margin: 0px;
 			}
-			.home-link {
-				background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_hvit.png') no-repeat (@grid-gutter-width / 2) center;
-				//background: transparent url('../../../img/navno/gfx/mainmenu/hjem_hvit.svg') no-repeat (@grid-gutter-width / 2) center;
 
+		  .tilbaketilgruppe {
+			padding: 2px 0 2px 0px;
+			position: relative;
+			font-size: 1.5rem;
+			color: @white;
+
+			span {
+			  margin-left: 0px;
 			}
+
+			.home-link {
+			  text-decoration: none;
+			  display: inline-block;
+			  padding: 0px 0px;
+
+			  .tilbaketittel {
+				visibility: hidden;
+			  }
+			  .tilbaketilforsidelink {
+				position: absolute;
+				bottom: 5px;
+				color: @white;
+				font-size: 1rem;
+				border: none;
+			  }
+			  &:before {
+				display: inline-block;
+				content: "";
+				width: 46px;
+				height: 30px;
+				background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_hvit.png') no-repeat;
+				background-position: 66% 100%;
+				background-size: 43%;
+			  }
+
+			  &:hover, &:active{
+				&:before {
+				  display: inline-block;
+				  content: "";
+				  width: 46px;
+				  height: 30px;
+				  background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_hvit.png') no-repeat;
+				  background-position: 66% 100%;
+				  background-size: 43%;
+				}
+				.tilbaketilforsidelink {
+				  border:none;
+				}
+			  }
+
+			  &.dittnav {
+				.tilbaketilforsidelink {
+				  border: none;
+				  bottom: 10px;
+				}
+				&:before {
+				  display: inline-block;
+				  content: "";
+				  width: 46px;
+				  height: 30px;
+				  background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_graa.png') no-repeat;
+				  background-position: 42% 30%;
+				  background-size: 62%;
+				}
+				&:hover, &:active, &:focus {
+				  &:before {
+					display: inline-block;
+					content: "";
+					width: 46px;
+					height: 30px;
+					background: transparent url('@{baseImagePath}img/navno/gfx/icons/person_graa.png') no-repeat;
+					background-position: 42% 30%;
+					background-size: 62%;
+				  }
+				  .tilbaketilforsidelink {
+					border:none;
+					bottom: 10px;
+				  }
+				}
+			  }
+			}
+		  }
+
+		  .submenu-logg-inn {
+			margin: 1rem;
+		  }
 		}
 
 		.accessible-megamenu-panel,
