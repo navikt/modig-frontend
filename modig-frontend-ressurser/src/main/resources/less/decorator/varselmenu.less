@@ -21,7 +21,7 @@
             background-color: #333;
             color: @gray-icon;
             border: 0;
-            border-top: 1px solid @gray-icon;
+            border-top: 1px solid @color-border;
             position: absolute;
             top: auto;
             left: 0;
@@ -203,18 +203,18 @@
         text-decoration: none;
 
         span {
-            border-bottom: 1px solid @gray-icon;
+            border-bottom: 1px solid @color-link-underline;
         }
 
         &:hover {
             text-decoration: none;
             span {
-                border-bottom-color: #0067c5;
+                border-bottom-color: @color-link;
             }
         }
 
         &.skillelinje-topp {
-            border-top: 1px solid @gray-icon;
+            border-top: 1px solid @color-border;
         }
 
         &.vis-alle-lenke {
