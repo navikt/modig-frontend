@@ -16,7 +16,7 @@ $(function () {
         varselinnboksUrl = '/varselinnboks',
         config = {
             hentSisteVarslerUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/hentsiste',
-            mineVarslerRelativUrl: varselinnboksUrl + '/oversikt',
+            mineVarslerRelativUrl: varselinnboksUrl,
             oppdatertLestStatusUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/erlest',
             maksAntallVarslerSomSkalVises: 5
         },
