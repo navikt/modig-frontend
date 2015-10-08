@@ -33,7 +33,7 @@ $(function () {
     posisjonerMeny();
     fyllMenyMedHtml();
 
-    $.ajax({url: config.hentSisteVarslerUrl})
+    $.ajax({url: config.hentSisteVarslerUrl, xhrFields: {withCredentials: true}})
         .done(function (nyeData) {
             data.nyesteVarsler = nyeData.nyesteVarsler;
             data.antallUleste = nyeData.totaltAntallUleste;
