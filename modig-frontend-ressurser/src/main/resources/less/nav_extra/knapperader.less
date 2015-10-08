@@ -12,6 +12,23 @@
 	border-top: 1px solid @color-border;
 }
 
+.knapperad-dekorert {
+	position: relative;
+	margin-top: 2rem; 
+
+	&:before {
+		content: "";
+		display: block; 
+		width: 2rem;
+		height: 1px; 
+		left: 50%; 
+		top: 0; 
+		position: absolute;
+		background-color: @color-border; 
+		.mixin-transform(translateX(-50%));
+	}
+}
+
 @media (min-width: @screen-xs) {
 	.knapperad {
 		padding-top: 2rem; 
