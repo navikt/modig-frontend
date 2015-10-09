@@ -36,7 +36,7 @@ $(function () {
     $.ajax({
         url: config.hentSisteVarslerUrl,
         xhrFields: { withCredentials: true },
-        crossDomain: true
+        cache: false
     })
         .done(function (nyeData) {
             data.nyesteVarsler = nyeData.nyesteVarsler;
@@ -199,8 +199,7 @@ $(function () {
             $.ajax({
                 url: config.oppdatertLestStatusUrl + '/' + varsler[0].id,
                 method: 'POST',
-                xhrFields: { withCredentials: true },
-                crossDomain: true
+                xhrFields: { withCredentials: true }
             }).done(function () {
                 varsler.forEach(function (varsel) {
                     varsel.erSett = true;
