@@ -566,7 +566,6 @@
 //--------------------------------------------------------------------
 
 .accessible-megamenu-desktop-mq() when (@responsive = true) {
-
 	@media (min-width: (@screen-medium-plus-rem-as-one-px)) {
 		// fra 769px og opp
 		.mobile-toggler,
@@ -576,6 +575,16 @@
 		}
 
 		.accessible-megamenu-desktop();
+
+		.sitesearch {
+		    margin-left: 0px;
+		}
+	}
+
+    @media (min-width: 789px) {
+	    .sitesearch {
+  		    margin-left: 20px;
+		}
 	}
 
 	@media (min-width: 60em) {
@@ -837,6 +846,7 @@
 		margin-left: 20px;
 		padding: 9px 0 0 0;
 		border-bottom: 1px solid @gray-text;
+		float: none;
 
 		.input-sitesearch {
 			margin: 0 .1em 0 0;
