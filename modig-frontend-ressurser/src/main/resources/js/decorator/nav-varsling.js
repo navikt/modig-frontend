@@ -33,7 +33,11 @@ $(function () {
     posisjonerMeny();
     fyllMenyMedHtml();
 
-    $.ajax({url: config.hentSisteVarslerUrl, xhrFields: {withCredentials: true}})
+    $.ajax({
+        url: config.hentSisteVarslerUrl,
+        xhrFields: { withCredentials: true },
+        crossDomain: true
+    })
         .done(function (nyeData) {
             data.nyesteVarsler = nyeData.nyesteVarsler;
             data.antallUleste = nyeData.totaltAntallUleste;
@@ -192,7 +196,12 @@ $(function () {
 
     function settVarslerLest() {
         if (varsler && varsler.length > 0 && !varsler[0].erSett) {
-            $.ajax({url: config.oppdatertLestStatusUrl + '/' + varsler[0].id, method: 'POST'}).done(function () {
+            $.ajax({
+                url: config.oppdatertLestStatusUrl + '/' + varsler[0].id,
+                method: 'POST',
+                xhrFields: { withCredentials: true },
+                crossDomain: true
+            }).done(function () {
                 varsler.forEach(function (varsel) {
                     varsel.erSett = true;
                 });
