@@ -36,6 +36,7 @@ $(function () {
     $.ajax({
         url: config.hentSisteVarslerUrl,
         xhrFields: { withCredentials: true },
+        cache: false
     })
         .done(function (nyeData) {
             data.nyesteVarsler = nyeData.nyesteVarsler;
