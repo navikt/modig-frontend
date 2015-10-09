@@ -1,0 +1,12 @@
+.lenkeliste {
+	float: left;
+}
+
+.lenkeliste a {
+    min-height: 30px;
+}
+
+li.lenkeliste a:hover:before {
+    left: 2px;
+}
+

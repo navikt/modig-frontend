@@ -1,0 +1,81 @@
+.lenkebokser {
+	// IE10
+	display: -ms-flexbox;
+	-ms-flex-direction: row;
+	-ms-flex-wrap: wrap;
+	-ms-flex-pack: start;
+
+	// Safari / iOS
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-webkit-justify-content: flex-start;
+
+	// Chrome, IE11, Firefox, Opera
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	padding: 0;
+}
+
+.lenkeboks {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	list-style: none;
+	width: 100%;
+	margin-bottom: 10px;
+	background-color: #fff;
+	min-height: 300px; /* KUN FOR VISNING - MÅ FJERNES */
+	a {
+		display: block;
+		width: 100%;
+		color: #3e3832;
+		border-radius: 1px;
+		padding: 100px 30px 30px;
+		text-align: center;
+		border-bottom: none;
+		&:focus {
+			box-shadow: 0 0 0 2px #ffbd66;
+			outline: none;
+		}
+	}
+}
+
+@media (min-width: 38.75rem) {
+	// 620px
+	.lenkeboks {
+		width: 48%;
+		margin: 10px 1%;
+		&:hover {
+			box-shadow: #b7b1a9 0 2px 1px 0;
+		}
+		&:nth-of-type(2n) {
+			margin-right: 0;
+		}
+		&:nth-of-type(2n+1) {
+			margin-left: 0;
+		}
+	}
+}
+
+@media (min-width: 48rem) {
+	// 768px
+	.lenkeboks {
+		width: 32%;
+		&:nth-of-type(2n) {
+			margin-right: 1%;
+		}
+		&:nth-of-type(2n+1) {
+			margin-left: 1%;
+		}
+		&:nth-of-type(3n) {
+			margin-right: 0;
+		}
+		&:nth-of-type(3n+1) {
+			margin-left: 0;
+		}
+	}
+}
