@@ -12,12 +12,12 @@ $(function () {
         varslerKnappMobil = $('#toggle-varsler-mobile'),
         varselmeny = $('#varsler-display'),
         mainmenu = $('#mainmenu'),
-        tjenesteBaseUrl = varslerKnapp.attr('data-base-url'),
+        tjenesterBaseUrl = varslerKnapp.attr('data-base-url'),
         varselinnboksUrl = '/varselinnboks',
         config = {
-            hentSisteVarslerUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/hentsiste',
-            mineVarslerRelativUrl: varselinnboksUrl,
-            oppdatertLestStatusUrl: tjenesteBaseUrl + varselinnboksUrl + '/rest/varsel/erlest',
+            hentSisteVarslerUrl: tjenesterBaseUrl + varselinnboksUrl + '/rest/varsel/hentsiste',
+            mineVarslerUrl: tjenesterBaseUrl + varselinnboksUrl,
+            oppdatertLestStatusUrl: tjenesterBaseUrl + varselinnboksUrl + '/rest/varsel/erlest',
             maksAntallVarslerSomSkalVises: 5
         },
         tekster = {
@@ -126,7 +126,7 @@ $(function () {
         }
 
         if (varsler && varsler.length > config.maksAntallVarslerSomSkalVises) {
-            varselmeny.append('<div><a class="vis-alle-lenke skillelinje-topp"  href="' + config.mineVarslerRelativUrl + '">' + wrapISpan(tekster.visalle + ' ' + nyeVarslerVisning(antallNye))  + '</a></div>');
+            varselmeny.append('<div><a class="vis-alle-lenke skillelinje-topp"  href="' + config.mineVarslerUrl + '">' + wrapISpan(tekster.visalle + ' ' + nyeVarslerVisning(antallNye))  + '</a></div>');
         }
     }
 
