@@ -1,14 +1,14 @@
 /*
-Copyright © 2013 Adobe Systems Incorporated.
+Copyright ï¿½ 2013 Adobe Systems Incorporated.
 
-Licensed under the Apache License, Version 2.0 (the “License”);
+Licensed under the Apache License, Version 2.0 (the ï¿½Licenseï¿½);
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an “AS IS” BASIS,
+distributed under the License is distributed on an ï¿½AS ISï¿½ BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
@@ -238,7 +238,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                _mobileMenuDisable.call(this,searchform,searchtoggler);
                _mobileMenuDisable.call(this,varselmeny, varseltoggler);
 
-                 mobilesubmenus.each(function (i, submenu) {   // todo: nødvendig med each her?
+                 mobilesubmenus.each(function (i, submenu) {   // todo: nï¿½dvendig med each her?
                   /*Make headings clickable */            
                         submenu = $(submenu);
                         var expander = submenu.prevAll('.mobile-submenu-expander').eq(0); // todo defaults                         
@@ -400,6 +400,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
          * @private
          */
          _getPlugin = function (element) {
+             console.log("Function _getPlugin");
             return $(element).closest(':data(plugin_' + pluginName + ')').data("plugin_" + pluginName);
         };
         
@@ -414,6 +415,8 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
          * @private
          */
          _addUniqueId = function (element) {
+             console.log("Function _addUniqueId");
+             console.log(JSON.stringify(element));
             element = $(element);
             var settings = this.settings;
             if (!element.attr("id")) {
@@ -433,6 +436,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
          */
 
         _togglePanel = function (event, hide) {
+            console.log("function: _togglePanel");
             var target = $(event.target),
                 that = this,
                 settings = this.settings,
@@ -440,13 +444,17 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                 topli = target.closest('.' + settings.topNavItemClass),
                 panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass);
 
+            console.log("Target", JSON.stringify(target));
+            console.log("Settings", JSON.stringify(settings));
+            console.log("menu", JSON.stringify(menu));
             _toggleExpandedEventHandlers.call(this, hide);
 
-            if (!menu.hasClass('m-open')) { // listener kjører til mobilmeny er lukka
+            if (!menu.hasClass('m-open')) { // listener kjï¿½rer til mobilmeny er lukka
             $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu, pointerup.outside-accessible-megamenu', _clickOutsideHandler);
             }
 
             if (hide) {
+                console.log("_togglePanel, hide");
                 topli = menu.find('.' + settings.topNavItemClass + ' .' + settings.openClass + ':first').closest('.' + settings.topNavItemClass);
 
                     topli.find('[aria-expanded]')
@@ -464,13 +472,16 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
              
             } 
             else { // show
+                console.log("_togglePanel, show");
                 clearTimeout(that.focusTimeoutID);
                 clearTimeout(that.animTimeoutID);
 
                var footerLinksContainer = topli.find('.accessible-megafooter-panel');
 
                 if (footerLinksContainer.length > 0) {
+                    console.log("footerLinksContainer.length > 0");
                      if (!footerLinksContainer.hasClass('content-loaded')) {
+                         console.log("!footerLinksContainer.hasClass(content-loaded)");
                           _getFooterLinks (topli); 
                        }
             
@@ -510,7 +521,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
            
           $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu, pointerup.outside-accessible-megamenu', _clickOutsideHandler);
 
-          if (hide) { // True ved klikk på knapp som er .m-open, eller ved kjøring av clickOutsideHandler
+          if (hide) { // True ved klikk pï¿½ knapp som er .m-open, eller ved kjï¿½ring av clickOutsideHandler
 
               togglers.removeClass('m-open').attr('aria-expanded', false);           
               menu.add('#sitesearch').removeClass('m-open')
@@ -563,6 +574,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
          * @private
          */
          _clickHandler = function (event) {
+             console.log("Function: _clickHandler");
             var target = $(event.target),                        
                 topli = target.closest('.' + this.settings.topNavItemClass),
                 toplink = topli.find('a:first'), // top nav item link
@@ -570,7 +582,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
     
 
-                if (target.is('a > span')) { // Språkvalg i mobilmeny
+                if (target.is('a > span')) { // Sprï¿½kvalg i mobilmeny
                   target = target.parent('a');
                 }
 
@@ -579,6 +591,8 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                     && panel.length === 0
                     && topli.find('.' + this.settings.panelClass).length === 1
                     && target[0] === toplink[0]) {
+
+                    console.log("topli.lenght === 1")
 
                       event.preventDefault(); // main menu item
                       event.stopPropagation();
@@ -594,13 +608,16 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
             else if (target.is('[tabindex].mobile-submenu-expander')) { // tabindex kun hvis mobil layout
 
+                console.log("[tabindex].mobile-submenu-expander");
               event.preventDefault();
               event.stopPropagation();            
               
                if (!target.hasClass(this.settings.openClass)) {
+                   console.log("!target.hasClass(this.settings.openClass)");
                     _toggleMobilePanel.call(this, event);
 
                 } else {
+                   console.log("!target.hasClass(this.settings.openClass) - else");
                    _toggleMobilePanel.call(this, event, true);
                    
                 }
@@ -608,7 +625,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
             }
 
            else if (target.is('button.mobile-toggler')) {
-
+                console.log("target.is('button.mobile-toggler')");
               if (!target.is('.m-open')) {
                     _toggleMobileMenuAndSearch.call(this, event);
 
@@ -629,11 +646,11 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
          * @private
          */
          _clickOutsideHandler = function (event) {  
-
+            console.log("function: _clickOutsideHandler");
           var target = $(event.target);
 
           if ((window.navigator.msPointerEnabled || window.navigator.pointerEnabled) && target.context.localName === 'html') {
-            // hindre windows phone i å lukke mobilmeny på scroll / touchmove / mspointermove
+            // hindre windows phone i ï¿½ lukke mobilmeny pï¿½ scroll / touchmove / mspointermove
             // IE10 bruker msPointerEnabled. IE11 bruker pointerEnabled
 
             return false; 
@@ -884,6 +901,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
         };
 
          _toggleExpandedEventHandlers = function (hide) {
+             console.log("Function _toggleExpandedEventHandlers");
             var menu = this.menu;
 
             if (hide && !menu.hasClass('m-open')) {
@@ -921,6 +939,9 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
                     touchStartY = 0;
 
                 topnavitems.each(function (i, topnavitem) {
+
+                    console.log("init: topnavitems.each: " + i + ", " + $(this).find('a')[0].text);
+
                     var topnavitemlink, topnavitempanel;
                     topnavitem = $(topnavitem);
                     topnavitem.addClass(settings.topNavItemClass);
@@ -929,6 +950,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 
                     _addUniqueId.call(that, topnavitemlink);
                     if (topnavitempanel.length) {
+                        console.log("topnavitempanel.length");
                         _addUniqueId.call(that, topnavitempanel);
                         topnavitemlink.attr({
                             "aria-haspopup": true,
