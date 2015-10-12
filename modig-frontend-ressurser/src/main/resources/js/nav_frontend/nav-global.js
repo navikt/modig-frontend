@@ -750,36 +750,18 @@ $(function() {
 		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-PM9RP3');
 
-	$('a[data-ga]').on('click.google-analytics', function() {
-		var securityLevel = navno.securityLevel;
-		if (securityLevel === undefined) {
-			securityLevel = 0;
-		}
+	var securityLevel = navno.securityLevel || 0;
+	var fgKode = navno.fgkode;
+	var ytelse = navno.ytelse;
 
-		var fgKode = navno.fgkode;
-		var ytelse = navno.ytelse;
-		var eventAction = "klikk";
+	var innloggetInformasjon = {
+		'securityLevel' : securityLevel,
+		'fgKode' : fgKode,
+		'ytelse' : ytelse
+	};
 
-		var explainingLabel = $(this).attr('class');
+	dataLayer.push(innloggetInformasjon);
 
-		if (explainingLabel === undefined || explainingLabel === "") {
-			explainingLabel = $(this).text();
-		}
-
-		var eventCategory = $(this).attr('data-ga');
-		var eventLabel = eventCategory + "/" + explainingLabel;
-
-		var eventObj = {
-			'event': 'GAEvent',
-			'eventCategory': eventCategory,
-			'eventAction' : eventAction,
-			'eventLabel' : eventLabel,
-			'securityLevel' : securityLevel,
-			'fgKode' : fgKode,
-			'ytelse' : ytelse
-		};
-		dataLayer.push(eventObj);
-	});
 });
 //////////////////////// END ////////////////////////
 
