@@ -27,30 +27,29 @@
 	list-style: none;
 	width: 100%;
 	margin-bottom: 10px;
-	background-color: #fff;
-	min-height: 300px; /* KUN FOR VISNING - MÅ FJERNES */
+	background-color: @white;
 	a {
 		display: block;
 		width: 100%;
-		color: #3e3832;
+		color: @gray-text;
 		border-radius: 1px;
 		padding: 100px 30px 30px;
 		text-align: center;
 		border-bottom: none;
 		&:focus {
-			box-shadow: 0 0 0 2px #ffbd66;
+			box-shadow: 0 0 0 2px @orange-focus;
 			outline: none;
 		}
 	}
 }
 
-@media (min-width: 38.75rem) {
+@media (min-width: @screen-small) {
 	// 620px
 	.lenkeboks {
 		width: 48%;
 		margin: 10px 1%;
 		&:hover {
-			box-shadow: #b7b1a9 0 2px 1px 0;
+			box-shadow: @gray-icon 0 2px 1px 0;
 		}
 		&:nth-of-type(2n) {
 			margin-right: 0;
@@ -61,7 +60,7 @@
 	}
 }
 
-@media (min-width: 48rem) {
+@media (min-width: @screen-medium) {
 	// 768px
 	.lenkeboks {
 		width: 32%;

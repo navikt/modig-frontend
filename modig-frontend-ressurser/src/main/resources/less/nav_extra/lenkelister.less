@@ -25,7 +25,7 @@
 	display: flex;
 	position: relative;
 	list-style: none;
-	border-bottom: 1px solid #b7b1a9;
+	border-bottom: 1px solid @gray-icon;
 	margin-right: 2%;
 	min-height: 30px; /* KUN FOR VISNING - MÅ FJERNES */
 	&:last-child {
@@ -39,10 +39,10 @@
 		margin-left: -13px;
 		border-bottom: none;
 		&:hover {
-			color: #0067c5;
+			color: @blue-link;
 			&:before {
 				content: " ";
-				border: 3px solid #0067c5;
+				border: 3px solid @blue-link;
 				border-radius: 50%;
 				left: -10px;
 				top: 16px;
@@ -50,7 +50,7 @@
 			}
 		}
 		&:focus {
-			box-shadow: 0 0 0 2px #ffbd66;
+			box-shadow: 0 0 0 2px @orange-focus;
 			outline: none;
 			background-color: transparent;
 		}
@@ -59,12 +59,12 @@
 
 
 
-@media (min-width: 38.75rem) {
+@media (min-width: @screen-small) {
 	// 620px
 	.lenkeliste {
 		width: 48%;
 		&:nth-child(-n+2) {
-			border-top: 1px solid #c0c0c0;
+			border-top: 1px solid @gray-icon;
 		}
 		&:nth-of-type(2n) {
 			margin-right: 0;
@@ -75,12 +75,12 @@
 	}
 }
 
-@media (min-width: 48rem) {
+@media (min-width: @screen-medium) {
 	// 768px
 	.lenkeliste {
 		width: 32%;
 		&:nth-child(-n+3) {
-			border-top: 1px solid #c0c0c0;
+			border-top: 1px solid @gray-icon;
 		}
 		&:nth-of-type(2n) {
 			margin-right: 1%;
