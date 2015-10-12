@@ -21,8 +21,7 @@ Some functions removed, some modified, others added.
 Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 */
 
-
-
+$(document).ready(function () {
 (function ($, window, document) {
 
     "use strict";
@@ -1190,7 +1189,7 @@ Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
         }
     });
 }(jQuery, window, document));
-
+});
 
 
 
