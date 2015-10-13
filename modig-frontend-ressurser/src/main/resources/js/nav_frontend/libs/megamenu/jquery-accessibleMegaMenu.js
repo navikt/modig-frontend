@@ -399,7 +399,6 @@ $(document).ready(function () {
          * @private
          */
          _getPlugin = function (element) {
-             console.log("Function _getPlugin");
             return $(element).closest(':data(plugin_' + pluginName + ')').data("plugin_" + pluginName);
         };
         
@@ -414,8 +413,6 @@ $(document).ready(function () {
          * @private
          */
          _addUniqueId = function (element) {
-             console.log("Function _addUniqueId");
-             console.log(JSON.stringify(element));
             element = $(element);
             var settings = this.settings;
             if (!element.attr("id")) {
@@ -435,7 +432,6 @@ $(document).ready(function () {
          */
 
         _togglePanel = function (event, hide) {
-            console.log("function: _togglePanel");
             var target = $(event.target),
                 that = this,
                 settings = this.settings,
@@ -443,9 +439,6 @@ $(document).ready(function () {
                 topli = target.closest('.' + settings.topNavItemClass),
                 panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass);
 
-            console.log("Target", JSON.stringify(target));
-            console.log("Settings", JSON.stringify(settings));
-            console.log("menu", JSON.stringify(menu));
             _toggleExpandedEventHandlers.call(this, hide);
 
             if (!menu.hasClass('m-open')) { // listener kj�rer til mobilmeny er lukka
@@ -453,7 +446,6 @@ $(document).ready(function () {
             }
 
             if (hide) {
-                console.log("_togglePanel, hide");
                 topli = menu.find('.' + settings.topNavItemClass + ' .' + settings.openClass + ':first').closest('.' + settings.topNavItemClass);
 
                     topli.find('[aria-expanded]')
@@ -471,17 +463,14 @@ $(document).ready(function () {
              
             } 
             else { // show
-                console.log("_togglePanel, show");
                 clearTimeout(that.focusTimeoutID);
                 clearTimeout(that.animTimeoutID);
 
                var footerLinksContainer = topli.find('.accessible-megafooter-panel');
 
                 if (footerLinksContainer.length > 0) {
-                    console.log("footerLinksContainer.length > 0");
                      if (!footerLinksContainer.hasClass('content-loaded')) {
-                         console.log("!footerLinksContainer.hasClass(content-loaded)");
-                          _getFooterLinks (topli); 
+                          _getFooterLinks (topli);
                        }
             
                 }
@@ -573,8 +562,7 @@ $(document).ready(function () {
          * @private
          */
          _clickHandler = function (event) {
-             console.log("Function: _clickHandler");
-            var target = $(event.target),                        
+            var target = $(event.target),
                 topli = target.closest('.' + this.settings.topNavItemClass),
                 toplink = topli.find('a:first'), // top nav item link
                 panel = target.closest('.' + this.settings.panelClass);    
@@ -591,7 +579,6 @@ $(document).ready(function () {
                     && topli.find('.' + this.settings.panelClass).length === 1
                     && target[0] === toplink[0]) {
 
-                    console.log("topli.lenght === 1")
 
                       event.preventDefault(); // main menu item
                       event.stopPropagation();
@@ -607,16 +594,13 @@ $(document).ready(function () {
 
             else if (target.is('[tabindex].mobile-submenu-expander')) { // tabindex kun hvis mobil layout
 
-                console.log("[tabindex].mobile-submenu-expander");
               event.preventDefault();
               event.stopPropagation();            
               
                if (!target.hasClass(this.settings.openClass)) {
-                   console.log("!target.hasClass(this.settings.openClass)");
                     _toggleMobilePanel.call(this, event);
 
                 } else {
-                   console.log("!target.hasClass(this.settings.openClass) - else");
                    _toggleMobilePanel.call(this, event, true);
                    
                 }
@@ -624,7 +608,6 @@ $(document).ready(function () {
             }
 
            else if (target.is('button.mobile-toggler')) {
-                console.log("target.is('button.mobile-toggler')");
               if (!target.is('.m-open')) {
                     _toggleMobileMenuAndSearch.call(this, event);
 
@@ -645,7 +628,6 @@ $(document).ready(function () {
          * @private
          */
          _clickOutsideHandler = function (event) {  
-            console.log("function: _clickOutsideHandler");
           var target = $(event.target);
 
           if ((window.navigator.msPointerEnabled || window.navigator.pointerEnabled) && target.context.localName === 'html') {
@@ -900,7 +882,6 @@ $(document).ready(function () {
         };
 
          _toggleExpandedEventHandlers = function (hide) {
-             console.log("Function _toggleExpandedEventHandlers");
             var menu = this.menu;
 
             if (hide && !menu.hasClass('m-open')) {
@@ -939,8 +920,6 @@ $(document).ready(function () {
 
                 topnavitems.each(function (i, topnavitem) {
 
-                    console.log("init: topnavitems.each: " + i + ", " + $(this).find('a')[0].text);
-
                     var topnavitemlink, topnavitempanel;
                     topnavitem = $(topnavitem);
                     topnavitem.addClass(settings.topNavItemClass);
@@ -949,7 +928,6 @@ $(document).ready(function () {
 
                     _addUniqueId.call(that, topnavitemlink);
                     if (topnavitempanel.length) {
-                        console.log("topnavitempanel.length");
                         _addUniqueId.call(that, topnavitempanel);
                         topnavitemlink.attr({
                             "aria-haspopup": true,
