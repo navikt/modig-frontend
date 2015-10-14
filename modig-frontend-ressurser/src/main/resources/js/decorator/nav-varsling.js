@@ -4,6 +4,11 @@ $(function () {
         return;
     }
 
+    if ( !('withCredentials' in new XMLHttpRequest()) ) {
+        // Browseren støtter ikke Cross Origin Resource Sharing (CORS) via XMLHttpRequest
+        return;
+    }
+
     var varsler,
         data = {},
         maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
