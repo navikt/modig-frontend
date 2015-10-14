@@ -152,7 +152,7 @@
         white-space: nowrap;
 		position: relative;
 		display: inline-block;
-		width: 32%;
+		width: 30%;
 		padding: 14px 0 14px 0;
 		font-size: 1rem;
 		font-weight: 600;
@@ -417,22 +417,20 @@
 		  }
 
 		  .tilbaketilgruppe {
-			font-size: 1.5rem;
+			font-size: @rem-as-16px;
 
-			span {
-			  margin-left: 0px;
+			.tilbaketittel {
+			  visibility: hidden;
 			}
 
 			.home-link {
 
-			  .tilbaketittel {
-				visibility: hidden;
-			  }
 			  .tilbaketilforsidelink {
 				bottom: 5px;
 				color: @white;
 				font-size: 1rem;
 				border: none;
+				margin-left: 0px;
 			  }
 			  &:before {
 				height: 30px;
@@ -568,7 +566,6 @@
 //--------------------------------------------------------------------
 
 .accessible-megamenu-desktop-mq() when (@responsive = true) {
-
 	@media (min-width: (@screen-medium-plus-rem-as-one-px)) {
 		// fra 769px og opp
 		.mobile-toggler,
@@ -578,9 +575,14 @@
 		}
 
 		.accessible-megamenu-desktop();
+
 	}
 
 	@media (min-width: 60em) {
+		.sitesearch {
+			margin-left: 20px;
+		}
+
 		.topnavsection {
 
 			.topnavitem {
@@ -641,9 +643,10 @@
 		.topnav {
 			text-align: center;
 			position: relative;
+            outline: none;
 		}
 		.h4 {
-			text-align: center; // fra .decorated
+			text-align: left;
 			margin-bottom: 0;
 		}
 
@@ -734,7 +737,7 @@
 
 	.topnavitem.has-children {
 		// desktop
-		margin-right: 20px;
+		margin-right: 10px;
 		> a {
 			position: relative;
 		}
@@ -836,9 +839,10 @@
 	.sitesearch {
 		vertical-align: top;
 		display: inline-block;
-		margin-left: 20px;
+		margin-left: 0;
 		padding: 9px 0 0 0;
 		border-bottom: 1px solid @gray-text;
+		float: none;
 
 		.input-sitesearch {
 			margin: 0 .1em 0 0;

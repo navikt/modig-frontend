@@ -59,7 +59,7 @@ $(function () {
                     maaned: maanedKort(datoOpprettet.getMonth()),
                     dag: addLeadingZeroIfNeeded(datoOpprettet.getDate().toString()),
                     formattertDato: norskDato(datoOpprettet),
-                    id: varsel.varselId,
+                    id: varsel.id,
                     datoOpprettet: datoOpprettet,
                     erSett: !!varsel.datoLest,
                     url: varsel.url
@@ -197,7 +197,7 @@ $(function () {
     function settVarslerLest() {
         if (varsler && varsler.length > 0 && !varsler[0].erSett) {
             $.ajax({
-                url: config.oppdatertLestStatusUrl + '/' + varsler[0].id,
+                url: config.oppdatertLestStatusUrl + '/' + finnStorsteId(varsler),
                 method: 'POST',
                 xhrFields: { withCredentials: true }
             }).done(function () {
@@ -206,6 +206,16 @@ $(function () {
                 });
             });
         }
+    }
+
+    function finnStorsteId(varsler) {
+        var hoyesteId = 0;
+
+        varsler.forEach(function (varsel) {
+            hoyesteId = Math.max(hoyesteId, varsel.id);
+        });
+
+        return hoyesteId;
     }
 
     var previousWidth;

@@ -1,0 +1,174 @@
+//Styling av DITT NAV Globalmenyen
+
+.submenu-logg-inn {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: .875rem;
+  .decorated {
+    margin-bottom: 1rem;
+  }
+}
+
+a.locked {
+  background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat 1% 50%;
+  background-size: 0.9rem;
+  &:hover {
+    &:before {
+      border: none;
+    }
+  }
+  &:focus {
+    background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat 1% 50%;
+    &:before {
+      border: none;
+    }
+  }
+}
+
+.secLevelUpgradeInfo {
+  margin-top: 2rem;
+  text-align: center;
+  span {
+    background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat;
+    padding-left: 1.7rem;
+    background-size: 1.1rem;
+    background-position: 0% 48%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin-right: 0.5rem
+  }
+
+  .logginninfo {
+    display: inline-block;
+    background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/sporsmaalstegn.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    background-size: 1.3rem;
+    vertical-align: middle;
+    &:hover {
+      background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/sporsmaalstegn_hover.png') no-repeat;
+      background-size: 1.3rem;
+    }
+  }
+
+
+
+  .panel-negativ {
+    &:before {
+      content: "";
+      border: solid transparent;
+      border-width: 10px;
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: 20px;
+      border-top-color: @gray-text;
+      top: 100%
+    }
+    position: absolute;
+    z-index: 9;
+    left: 74.5%;
+    width: 350px;
+    top: 55%;
+    padding: 10px;
+    color: @color-gray-light-additional;
+    .lukk {
+      margin-bottom: 2rem;
+      button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        border: 0;
+        background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa.png') no-repeat;
+        &:hover {
+          background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa_hover.png') no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.tilbaketilgruppe {
+  padding: 2px 0 2px 0px;
+  position: relative;
+  font-size: @rem-as-14px;
+
+  .tilbaketittel {
+    color: black;
+    position: absolute;
+    bottom: 21px;
+    margin-left: 8px;
+  }
+
+  .home-link {
+    text-decoration: none;
+    display: inline-block;
+    color: @blue-link;
+
+    .tilbaketilforsidelink {
+      border-bottom: 1px solid @gray-inactive;
+      position: absolute;
+      margin-left: 8px;
+    }
+    &:before {
+      display: inline-block;
+      content: "";
+      width: 46px;
+      height: 60px;
+      background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat;
+      background-position: 66% 20%;
+      background-size: 55%;
+    }
+    &.dittnav {
+      &:before {
+        display: inline-block;
+        content: "";
+        width: 46px;
+        height: 60px;
+        background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_graa.png') no-repeat;
+        background-position: 0% 0%;
+        background-size: 90%;
+      }
+      &:hover {
+        &:before {
+          background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png') no-repeat;
+        }
+        .tilbaketilforsidelink {
+          border-bottom: 1px solid @blue-link;
+        }
+      }
+      &:active {
+        outline: none;
+        &:before {
+          background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_svart.png') no-repeat;
+        }
+      }
+    }
+
+    &:hover {
+      &:before {
+        display: inline-block;
+        content: "";
+        width: 46px;
+        height: 60px;
+        background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
+        background-position: 66% 20%;
+        background-size: 55%;
+      }
+      .tilbaketilforsidelink {
+        border-bottom: 1px solid @blue-link;
+      }
+    }
+    &:active, &:focus {
+      outline: none;
+      background-color: transparent;
+      .tilbaketilforsidelink{
+        border-bottom: 1px solid @blue-link;
+        background-color: @orange-focus;
+        box-shadow: 0 0 0 3px @orange-focus;
+      }
+    }
+  }
+}
