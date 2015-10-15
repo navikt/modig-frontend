@@ -79,12 +79,12 @@ $(function () {
         });
 
     mainmenu.on('click', '#toggle-varsler', function () {
-        var varselikon = $(this);
-        varselikon.removeClass('har-nye-varsler');
+        var varselikonContainer = $('#toggle-varsler-container');
+        varselikonContainer.removeClass('har-nye-varsler');
 
         varselmeny.toggleClass('open');
 
-        posisjonerMenyIForholdTilIkon(varselikon);
+        posisjonerMenyIForholdTilIkon($(this));
         fyllMenyMedHtml(data.antallUleste);
         settVarslerLest();
     });
