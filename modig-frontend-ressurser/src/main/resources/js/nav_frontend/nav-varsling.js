@@ -14,6 +14,7 @@ $(function () {
         maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
         feilUnderHentingAvVarsler = false,
         varslerKnapp = $('#toggle-varsler'),
+        varselikonContainer = $('#toggle-varsler-container'),
         varslerKnappMobil = $('#toggle-varsler-mobile'),
         varselmeny = $('#varsler-display'),
         mainmenu = $('#mainmenu'),
@@ -53,7 +54,7 @@ $(function () {
             }
 
             if (data.antallUleste > 0) {
-                varslerKnapp.addClass('har-nye-varsler');
+                varselikonContainer.addClass('har-nye-varsler');
                 varslerKnappMobil.addClass('har-nye-varsler');
             }
 
@@ -79,13 +80,16 @@ $(function () {
         });
 
     mainmenu.on('click', '#toggle-varsler', function () {
-        var varselikonContainer = $('#toggle-varsler-container');
-        varselikonContainer.removeClass('har-nye-varsler');
-
+        fjernUsettStatusPaaIkoner();
         varselmeny.toggleClass('open');
 
         posisjonerMenyIForholdTilIkon($(this));
         fyllMenyMedHtml(data.antallUleste);
+        settVarslerLest();
+    });
+
+    mainmenu.on('touchend', '#toggle-varsler-mobile', function () {
+        fjernUsettStatusPaaIkoner();
         settVarslerLest();
     });
 
@@ -248,5 +252,11 @@ $(function () {
     function visVarselikoner() {
         varslerKnapp.removeClass('skjul');
         varslerKnappMobil.removeClass('skjul');
+    }
+
+    function fjernUsettStatusPaaIkoner() {
+        var harNyeVarsler = 'har-nye-varsler';
+        varselikonContainer.removeClass(harNyeVarsler);
+        varslerKnappMobil.removeClass(harNyeVarsler);
     }
 });
