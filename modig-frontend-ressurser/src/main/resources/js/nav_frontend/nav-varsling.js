@@ -90,6 +90,7 @@ $(function () {
 
     mainmenu.on('touchend', '#toggle-varsler-mobile', function () {
         fjernUsettStatusPaaIkoner();
+        fyllMenyMedHtml(data.antallUleste);
         settVarslerLest();
     });
 
