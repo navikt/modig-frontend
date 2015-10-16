@@ -4,11 +4,13 @@ $(function () {
         return;
     }
 
+
     var varsler,
         data = {},
         maaned = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
         feilUnderHentingAvVarsler = false,
         varslerKnapp = $('#toggle-varsler'),
+        varselikonContainer = $('#toggle-varsler-container'),
         varslerKnappMobil = $('#toggle-varsler-mobile'),
         varselmeny = $('#varsler-display'),
         mainmenu = $('#mainmenu'),
@@ -29,6 +31,11 @@ $(function () {
             lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
         };
 
+    if ( !('withCredentials' in new XMLHttpRequest()) && window.location.href.indexOf(tjenesterBaseUrl) < 0 ) {
+        // Browseren støtter ikke Cross Origin Resource Sharing (CORS) via XMLHttpRequest
+        return;
+    }
+
     visVarselikoner();
     posisjonerMeny();
     fyllMenyMedHtml();
@@ -48,7 +55,7 @@ $(function () {
             }
 
             if (data.antallUleste > 0) {
-                varslerKnapp.addClass('har-nye-varsler');
+                varselikonContainer.addClass('har-nye-varsler');
                 varslerKnappMobil.addClass('har-nye-varsler');
             }
 
@@ -74,12 +81,16 @@ $(function () {
         });
 
     mainmenu.on('click', '#toggle-varsler', function () {
-        var varselikon = $(this);
-        varselikon.removeClass('har-nye-varsler');
-
+        fjernUsettStatusPaaIkoner();
         varselmeny.toggleClass('open');
 
-        posisjonerMenyIForholdTilIkon(varselikon);
+        posisjonerMenyIForholdTilIkon($(this));
+        fyllMenyMedHtml(data.antallUleste);
+        settVarslerLest();
+    });
+
+    mainmenu.on('touchend', '#toggle-varsler-mobile', function () {
+        fjernUsettStatusPaaIkoner();
         fyllMenyMedHtml(data.antallUleste);
         settVarslerLest();
     });
@@ -147,13 +158,13 @@ $(function () {
     function varselTilHtml(varsel) {
         return '<div class="clearfix varsel-container '+ meldingSettEllerIkke(varsel) + '">' +
             kortDatoTilHtml(varsel.maaned, varsel.dag) + '<div class="varsel-innhold-container">' +
-            '<div class="varsel-dato">' + varsel.formattertDato + '</div><div>' +
+            '<div class="varsel-dato" id="' + varsel.id + 'dato">' + varsel.formattertDato + '</div><div>' +
             '<span class="varsel-melding">' + varsel.varseltekst + '</span>' + leggPaaLenkeHvisUrlFinnes(varsel) + '</div></div></div>';
     }
 
     function leggPaaLenkeHvisUrlFinnes(varsel) {
         if (varsel.url) {
-            return '<a href="' + varsel.url + '">' + wrapISpan(tekster.lenketekst) + '</a>';
+            return '<a href="' + varsel.url + '" aria-labelledby="' + varsel.id + 'dato">' + wrapISpan(tekster.lenketekst) + '</a>';
         }
 
         return '';
@@ -164,7 +175,7 @@ $(function () {
     }
 
     function kortDatoTilHtml(maaned, dag) {
-        return '<div class="varsel-kort-dato"><span>' + maaned + '</span></br><span>' + dag + '</span></div>';
+        return '<div aria-hidden="true" class="varsel-kort-dato"><span>' + maaned + '</span></br><span>' + dag + '</span></div>';
     }
 
     function norskDato(jsDate) {
@@ -243,5 +254,11 @@ $(function () {
     function visVarselikoner() {
         varslerKnapp.removeClass('skjul');
         varslerKnappMobil.removeClass('skjul');
+    }
+
+    function fjernUsettStatusPaaIkoner() {
+        var harNyeVarsler = 'har-nye-varsler';
+        varselikonContainer.removeClass(harNyeVarsler);
+        varslerKnappMobil.removeClass(harNyeVarsler);
     }
 });

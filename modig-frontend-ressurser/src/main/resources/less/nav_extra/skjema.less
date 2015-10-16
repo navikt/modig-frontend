@@ -317,7 +317,8 @@ textarea.vis-meta {
 		top: 0; 		
 	}
 
-	&:checked + label:before:extend(.ikon-checkbox) {
+	&:checked + label:before {
+		background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-checkbox.svg');
 		border-color: @nav-checkbox-checked-color; 
 		width: 18px;
 		height: 18px;
@@ -379,7 +380,8 @@ textarea.vis-meta {
 
 	}
 
-	.nav-checkbox:checked + label:before:extend(.ikon-checkbox-hoykontrast) {
+	.nav-checkbox:checked + label:before {
+		background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-checkbox-hoykontrast.svg');
 		background-color: @white;
 	}
 
