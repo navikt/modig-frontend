@@ -98,6 +98,14 @@
 	transform: @string;
 }
 
+.mixin-transform-origin (@x:center, @y:center) {
+	-webkit-transform-origin: @x @y;
+	-moz-transform-origin: @x @y;
+	-ms-transform-origin: @x @y;
+	-o-transform-origin: @x @y;
+	transform-origin: @x @y;
+}
+
 .mixin-nav-transition(@duration: 150ms, @type: all) {
 	.mixin-transition(@type @duration cubic-bezier(0.465, 0.183, 0.153, 0.946))
 }
