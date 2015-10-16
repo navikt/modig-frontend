@@ -4,10 +4,6 @@ $(function () {
         return;
     }
 
-    if ( !('withCredentials' in new XMLHttpRequest()) ) {
-        // Browseren støtter ikke Cross Origin Resource Sharing (CORS) via XMLHttpRequest
-        return;
-    }
 
     var varsler,
         data = {},
@@ -34,6 +30,11 @@ $(function () {
             error: varslerKnapp.attr('data-tekst-error'),
             lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
         };
+
+    if ( !('withCredentials' in new XMLHttpRequest()) && window.location.href.indexOf(tjenesterBaseUrl) < 0 ) {
+        // Browseren støtter ikke Cross Origin Resource Sharing (CORS) via XMLHttpRequest
+        return;
+    }
 
     visVarselikoner();
     posisjonerMeny();
