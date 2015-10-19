@@ -1,9 +1,6 @@
-@baseImagePath: '../../';
-@screen-medium: 768px;
-@gray-icon: #b7b1a9;
-@gray-inactive: #7F756C;
-@lightgray: #efefef;
-@bell-color: #fcc05c;
+@mobile-link-blue:          #33b1dd;
+@varselmeny-shadow-gray:    #ccc;
+@bell-color:                #fcc05c;
 
 @media (max-width: @screen-medium) {
     header {
@@ -23,10 +20,10 @@
 
         .varsler-display {
             width: 90%;
-            background-color: #333;
-            color: @gray-icon;
+            background-color: @gray-darker;
+            color: @gray-light;
             border: 0;
-            border-top: 1px solid @gray-icon;
+            border-top: 1px solid @gray-light;
             position: absolute;
             top: auto;
             left: 0;
@@ -51,12 +48,12 @@
             }
 
             a {
-                color: #33b1dd;
+                color: @mobile-link-blue;
 
                 &:hover {
                     text-decoration: none;
                     span {
-                        border-bottom-color: #33b1dd;
+                        border-bottom-color: @mobile-link-blue;
                     }
                 }
             }
@@ -64,23 +61,23 @@
 
         .varsel-innhold-container {
             width: 100%;
-            border-bottom: 1px solid @gray-icon;
-            color: @gray-icon;
+            border-bottom: 1px solid @gray-light;
+            color: @gray-light;
         }
 
         .varsel-melding {
-            color: #fff;
+            color: @white;
         }
 
         .sett {
             .varsel-melding {
-                color: @gray-icon;
+                color: @gray-light;
             }
         }
 
         .varsel-dato {
             margin-bottom: 2px;
-            color: @gray-icon;
+            color: @gray-light;
         }
 
         .varsel-container {
@@ -123,7 +120,7 @@
         border-radius: 50%;
 
         &:hover {
-            border: 1px solid #0067C5;
+            border: 1px solid @blue-dark;
             border-radius: 50%;
         }
 
@@ -218,7 +215,7 @@
     text-align: left;
     float: left;
     width: 205px;
-    border-bottom: 1px solid @lightgray;
+    border-bottom: 1px solid @gray-background;
     padding-bottom: 14px;
 }
 
@@ -228,8 +225,8 @@
     width: 280px;
     padding: 12px 0 10px 12px;
     z-index: 1;
-    background-color: #ffffff;
-    box-shadow: 0 1px 5px 1px #ccc;
+    background-color: @white;
+    box-shadow: 0 1px 5px 1px @varselmeny-shadow-gray;
     font-size: @rem-as-14px;
     display: none;
 
@@ -240,7 +237,7 @@
     &:before {
         content: "";
         border: 9px solid transparent;
-        border-bottom-color: #ccc;
+        border-bottom-color: @varselmeny-shadow-gray;
         position: absolute;
         width: 0;
         height: 0;
@@ -252,7 +249,7 @@
     &:after {
         content: "";
         border: 9px solid transparent;
-        border-bottom-color: #ffffff;
+        border-bottom-color: @white;
         position: absolute;
         width: 0;
         height: 0;
@@ -267,18 +264,18 @@
         text-decoration: none;
 
         span {
-            border-bottom: 1px solid @gray-icon;
+            border-bottom: 1px solid @gray-light;
         }
 
         &:hover {
             text-decoration: none;
             span {
-                border-bottom-color: #0067c5;
+                border-bottom-color: @blue-dark;
             }
         }
 
         &.skillelinje-topp {
-            border-top: 1px solid @gray-icon;
+            border-top: 1px solid @gray-light;
         }
 
         &.vis-alle-lenke {
@@ -317,7 +314,7 @@
     height: 40px;
     float: left;
     font-size: @rem-as-12px;
-    background-color: #FF9100;
+    background-color: @orange-warning;
     text-align: center;
     font-weight: bold;
     margin-right: 10px;
