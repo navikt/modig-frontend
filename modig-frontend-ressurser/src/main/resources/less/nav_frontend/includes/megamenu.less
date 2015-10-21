@@ -54,11 +54,15 @@
 
 .input-sitesearch:focus { // må sette fokusstiler pga bakgrunnsbilde/farge og null border på inputs for søk
     .tab-focus();
+    box-shadow: 0 0 0 2px #ffbd66;
+    outline: none;
 }
 
 .btn-sitesearch:focus{
   .tab-focus();
   overflow: hidden;
+  box-shadow: 0 0 0 2px #ffbd66;
+  outline: none !important;
 }
 
 .menu-link-list .active a,
@@ -86,7 +90,6 @@
 	// gjelder både mobil og desktop
 	.input-sitesearch {
 		border: none;
-		box-shadow: none;
 		margin: 0;
 		border-radius: 0;
 		&:-moz-placeholder,

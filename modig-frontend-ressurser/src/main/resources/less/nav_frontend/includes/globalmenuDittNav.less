@@ -2,9 +2,42 @@
 .siteheader {
 
 .submenu-logg-inn {
+  .knapp {
+    color: #fff;
+    background: #0067c5;
+    border-bottom-color: #3e3832;
+
+    font-family: "Modus","Helvetica Neue","Helvetica","Arial","sans-serif";
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 10px 40px;
+    border: none;
+    border-bottom: 2px solid #3e3832;
+    &:focus {
+      box-shadow: 0 0 0 2px #ffbd66;
+    }
+    &:hover {
+      border-bottom: 3px solid #7f756c;
+      margin-bottom: -1px;
+      -webkit-transform: translateY(-1px);
+      -moz-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+      -o-transform: translateY(-1px);
+      transform: translateY(-1px);
+    }
+  }
+
+
   text-align: center;
   margin-top: 10rem;
-  font-size: .875rem;
   .decorated {
     margin-bottom: 1rem;
   }
@@ -203,6 +236,7 @@ a.locked {
     font-size: 0.9375rem;
     font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
   }
+
 
 }
 
