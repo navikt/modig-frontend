@@ -84,6 +84,7 @@ $(function () {
     mainmenu.on('click', '#toggle-varsler', function () {
         fjernUsettStatusPaaIkoner();
         varselmeny.toggleClass('open');
+        varselmeny.attr('aria-expanded', varselmeny.attr('aria-expanded') === 'true' ? 'false' : 'true');
 
         posisjonerMenyIForholdTilIkon($(this));
         fyllMenyMedHtml(data.antallUleste);
@@ -91,6 +92,7 @@ $(function () {
     });
 
     mainmenu.on('touchend', '#toggle-varsler-mobile', function () {
+        varselmeny.attr('aria-expanded', varselmeny.attr('aria-expanded') === 'true' ? 'false' : 'true');
         fjernUsettStatusPaaIkoner();
         fyllMenyMedHtml(data.antallUleste);
         settVarslerLest();
@@ -236,9 +238,11 @@ $(function () {
 
         if (previousWidth && previousWidth >= 768 && width < 768) {
             varselmeny.removeClass('open');
+            varselmeny.attr('aria-expanded', 'false');
             posisjonerMenyIForholdTilToppmeny();
         } else if (previousWidth && previousWidth <= 768 && width > 768) {
             varselmeny.removeClass('m-open');
+            varselmeny.attr('aria-expanded', 'false');
         }
 
         if (width > 768) {
