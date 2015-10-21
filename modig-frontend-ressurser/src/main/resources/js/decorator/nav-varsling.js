@@ -55,8 +55,9 @@ $(function () {
             }
 
             if (data.antallUleste > 0) {
-                varselikonContainer.addClass('har-nye-varsler');
-                varslerKnappMobil.addClass('har-nye-varsler');
+                harNyeVarsler();
+            } else if (data.nyesteVarsler.length === 0) {
+                varslerKnapp.attr('aria-label', 'Ingen varsler');
             }
 
             varsler = data.nyesteVarsler.map(function (varsel) {
@@ -252,13 +253,21 @@ $(function () {
     }
 
     function visVarselikoner() {
-        varslerKnapp.removeClass('skjul');
-        varslerKnappMobil.removeClass('skjul');
+        var skjul = 'skjul';
+        varslerKnapp.removeClass(skjul);
+        varslerKnappMobil.removeClass(skjul);
     }
 
     function fjernUsettStatusPaaIkoner() {
+        varslerKnapp.attr('aria-label', 'Varsler');
         var harNyeVarsler = 'har-nye-varsler';
         varselikonContainer.removeClass(harNyeVarsler);
         varslerKnappMobil.removeClass(harNyeVarsler);
+    }
+
+    function harNyeVarsler() {
+        varslerKnapp.attr('aria-label', 'Uleste varsler');
+        varselikonContainer.addClass('har-nye-varsler');
+        varslerKnappMobil.addClass('har-nye-varsler');
     }
 });
