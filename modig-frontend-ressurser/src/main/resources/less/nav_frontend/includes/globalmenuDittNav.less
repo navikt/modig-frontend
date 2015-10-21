@@ -1,5 +1,5 @@
 //Styling av DITT NAV Globalmenyen
-.siteheader {
+
 
 .submenu-logg-inn {
   .knapp {
@@ -42,6 +42,9 @@
     margin-bottom: 1rem;
   }
 }
+
+.siteheader {
+
 
 a.locked {
   background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat 1% 50%;
@@ -145,6 +148,27 @@ a.locked {
   color: @white;
 }
 
+  a:focus {
+    outline: none;
+    background-color: @orange-focus;
+  }
+
+  .typo-normal {
+    font-size: 0.9375rem;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  }
+
+
+}
+
+//Teit hack pga denne fokusmarkeringen skal kunne gjelde pa header og footer i enkelte apper
+.sitefooter {
+  a:focus {
+    outline: none;
+    background-color: @orange-focus;
+  }
+}
+
 .tilbaketilgruppe {
   padding: 2px 0 2px 0px;
   position: relative;
@@ -227,23 +251,32 @@ a.locked {
     }
   }
 }
-  a:focus {
-    outline: none;
-    background-color: @orange-focus;
+
+@media (max-width: 768px) {
+  a.lenke-fremhevet {
+    color: #0ca9e1;
+  }
+  a.locked {
+    background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_gra.png') no-repeat 1% 50%;
+  }
+  .secLevel2Info {
+    display: none;
+  }
+  .secLevel3Info {
+    display: none;
   }
 
-  .typo-normal {
-    font-size: 0.9375rem;
-    font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  .submenu-logg-inn {
+    margin-top: 1rem;
   }
 
-
-}
-
-//Teit hack pga denne fokusmarkeringen skal kunne gjelde pa header og footer i enkelte apper
-.sitefooter {
-  a:focus {
-    outline: none;
-    background-color: @orange-focus;
+  .tilbaketilgruppe {
+    .home-link {
+      &.dittnav {
+        &:before {
+          background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_hvit.png') no-repeat;
+        }
+      }
+    }
   }
 }
