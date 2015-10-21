@@ -161,13 +161,14 @@ $(function () {
     function varselTilHtml(varsel) {
         return '<div class="varsel-container '+ meldingSettEllerIkke(varsel) + '">' +
             kortDatoTilHtml(varsel.maaned, varsel.dag) + '<div class="varsel-innhold-container">' +
-            '<div class="varsel-dato" id="' + varsel.id + 'dato">' + varsel.formattertDato + '</div><div>' +
+            '<div class="varsel-dato">' + varsel.formattertDato + '</div><div>' +
             '<span class="varsel-melding">' + varsel.varseltekst + '</span>' + leggPaaLenkeHvisUrlFinnes(varsel) + '</div></div></div>';
     }
 
     function leggPaaLenkeHvisUrlFinnes(varsel) {
         if (varsel.url) {
-            return '<a href="' + varsel.url + '" aria-labelledby="' + varsel.id + 'dato">' + wrapISpan(tekster.lenketekst) + '</a>';
+            return '<a href="' + varsel.url + '">'
+                + wrapISpan(tekster.lenketekst) + wrapISpan('&nbsp;- ' + varsel.formattertDato, 'visuallyhidden') + '</a>';
         }
 
         return '';
@@ -252,8 +253,9 @@ $(function () {
         previousWidth = width;
     });
 
-    function wrapISpan(tekst) {
-        return '<span>' + tekst + '</span>';
+    function wrapISpan(tekst, classesString) {
+        var classes = classesString ? classesString : '';
+        return '<span class="' + classes + '">' + tekst + '</span>';
     }
 
     function visVarselikoner() {
