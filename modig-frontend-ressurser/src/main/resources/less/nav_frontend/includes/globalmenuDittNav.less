@@ -1,12 +1,22 @@
 //Styling av DITT NAV Globalmenyen
-
+//#toggle-varsler-mobile {
+//  visibility: hidden !important;
+//}
+//
+//.toggle-varsler {
+//  visibility: hidden !important;
+//  background: none !important;
+//}
+//
+//.toggle-varsler-container {
+//  visibility: hidden !important;
+//}
 
 .submenu-logg-inn {
   .knapp {
     color: #fff;
     background: #0067c5;
     border-bottom-color: #3e3832;
-
     font-family: "Modus","Helvetica Neue","Helvetica","Arial","sans-serif";
     font-weight: 600;
     cursor: pointer;
@@ -177,7 +187,7 @@ a.locked {
   .tilbaketittel {
     color: @black;
     position: absolute;
-    bottom: 28px;
+    bottom: 24px;
     margin-left: 8px;
   }
 
@@ -256,25 +266,36 @@ a.locked {
   a.lenke-fremhevet {
     color: #0ca9e1;
   }
-  a.locked {
-    background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_gra.png') no-repeat 1% 50%;
+  .siteheader {
+    a.locked {
+      background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_hvit.png') no-repeat 1% 50%;
+      &:hover, &:active, &:focus {
+        background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_hvit.png') no-repeat 1% 50%;
+      }
+    }
   }
-  .secLevel2Info {
-    display: none;
-  }
-  .secLevel3Info {
+  .secLevelUpgradeInfo {
     display: none;
   }
 
   .submenu-logg-inn {
     margin-top: 1rem;
   }
+  .accessible-megamenu-panel {
+    .tilbaketilgruppe {
+      .home-link {
+        &.dittnav {
+          &:before {
+            background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_hvit.png') no-repeat 42% 30%;
+            background-size: 62%;
+          }
 
-  .tilbaketilgruppe {
-    .home-link {
-      &.dittnav {
-        &:before {
-          background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_hvit.png') no-repeat;
+          &:hover, &:active, &:focus {
+            &:before {
+              background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png') no-repeat 42% 30%;
+              background-size: 62%;
+            }
+          }
         }
       }
     }
