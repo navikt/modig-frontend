@@ -1,9 +1,5 @@
-@baseImagePath: '../../';
-@screen-medium: 768px;
-@gray-icon: #b7b1a9;
-@gray-inactive: #7F756C;
-@lightgray: #efefef;
-@bell-color: #fcc05c;
+@mobile-link-blue:          #33b1dd;
+@bell-color:                #fcc05c;
 
 @media (min-width: @screen-medium-plus-rem-as-one-px) and (max-width: @screen-large) {
     header .toggle-varsler-container {
@@ -29,7 +25,7 @@
 
         .varsler-display {
             width: 90%;
-            background-color: #333;
+            background-color: @gray-darker;
             color: @gray-icon;
             border: 0;
             border-top: 1px solid @color-border;
@@ -57,12 +53,12 @@
             }
 
             a {
-                color: #33b1dd;
+                color: @mobile-link-blue;
 
                 &:hover {
                     text-decoration: none;
                     span {
-                        border-bottom-color: #33b1dd;
+                        border-bottom-color: @mobile-link-blue;
                     }
                 }
             }
@@ -75,7 +71,7 @@
         }
 
         .varsel-melding {
-            color: #fff;
+            color: @white;
         }
 
         .sett {
@@ -129,7 +125,7 @@
         border-radius: 50%;
 
         &:hover {
-            border: 1px solid #0067C5;
+            border: 1px solid @blue-link;
             border-radius: 50%;
         }
 
@@ -221,7 +217,7 @@
     text-align: left;
     float: left;
     width: 205px;
-    border-bottom: 1px solid @lightgray;
+    border-bottom: 1px solid @gray-background;
     padding-bottom: 14px;
 }
 
@@ -231,8 +227,8 @@
     width: 280px;
     padding: 12px 0 10px 12px;
     z-index: 1;
-    background-color: #ffffff;
-    box-shadow: 0 1px 5px 1px #ccc;
+    background-color: @white;
+    box-shadow: 0 1px 5px 1px @color-gray-light-additional;
     font-size: @rem-as-14px;
     display: none;
 
@@ -243,7 +239,7 @@
     &:before {
         content: "";
         border: 9px solid transparent;
-        border-bottom-color: #ccc;
+        border-bottom-color: @color-gray-light-additional;
         position: absolute;
         width: 0;
         height: 0;
@@ -255,7 +251,7 @@
     &:after {
         content: "";
         border: 9px solid transparent;
-        border-bottom-color: #ffffff;
+        border-bottom-color: @white;
         position: absolute;
         width: 0;
         height: 0;
@@ -320,7 +316,7 @@
     height: 40px;
     float: left;
     font-size: @rem-as-12px;
-    background-color: #FF9100;
+    background-color: @orange-warning;
     text-align: center;
     font-weight: bold;
     margin-right: 10px;
