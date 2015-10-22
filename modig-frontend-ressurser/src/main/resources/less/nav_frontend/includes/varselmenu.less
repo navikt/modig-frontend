@@ -2,110 +2,6 @@
 @varselmeny-shadow-gray:    #ccc;
 @bell-color:                #fcc05c;
 
-@media (max-width: @screen-medium) {
-    header {
-        #mainmenu {
-            button.mobile-toggler {
-                width: 31%;
-            }
-            #toggle-varsler-mobile {
-                width: 34%;
-            }
-        }
-
-        .toggle-varsler-container {
-            display: none;
-        }
-
-        .varsler-display {
-            width: 90%;
-            background-color: @gray-darker;
-            color: @gray-light;
-            border: 0;
-            border-top: 1px solid @gray-light;
-            position: absolute;
-            top: auto;
-            left: 0;
-            right: auto;
-            padding: 15px;
-            display: none;
-
-            &:before, &:after {
-                border-bottom-color: transparent;
-            }
-
-            &.m-open {
-                display: block;
-            }
-
-            .varsel-kort-dato {
-                display: none;
-            }
-
-            .ingen-varsler-container {
-                background: url('@{baseImagePath}img/navno/gfx/ajaxloader/svart/loader_svart_64.gif') no-repeat center;
-            }
-
-            a {
-                color: @mobile-link-blue;
-
-                &:hover {
-                    text-decoration: none;
-                    span {
-                        border-bottom-color: @mobile-link-blue;
-                    }
-                }
-            }
-        }
-
-        .varsel-innhold-container {
-            width: 100%;
-            border-bottom: 1px solid @gray-light;
-            color: @gray-light;
-        }
-
-        .varsel-melding {
-            color: @white;
-        }
-
-        .sett {
-            .varsel-melding {
-                color: @gray-light;
-            }
-        }
-
-        .varsel-dato {
-            margin-bottom: 2px;
-            color: @gray-light;
-        }
-
-        .varsel-container {
-            &:last-child {
-                border-bottom: none;
-                padding-bottom: 0;
-                margin-bottom: 0;
-            }
-        }
-
-        #toggle-varsler-mobile {
-            background: url('@{baseImagePath}img/varsel/varsel_mobil_graa.png') no-repeat center;
-            vertical-align: middle;
-
-            &.m-open {
-                background: url('@{baseImagePath}img/varsel/varsel_mobil_blaa.png') no-repeat center;
-            }
-
-            &.har-nye-varsler {
-                background: url('@{baseImagePath}img/varsel/varsel_mobil_oransje.png') no-repeat center;
-            }
-
-            &.skjul {
-                visibility: hidden;
-            }
-        }
-    }
-}
-
 .toggle-varsler-container {
     display: inline-block;
     height: 31px;
@@ -269,33 +165,31 @@
                 border-bottom-color: @blue-dark;
             }
         }
-
-        &.skillelinje-topp {
-            border-top: 1px solid @gray-light;
-        }
-
-        &.vis-alle-lenke {
-            text-align: center;
-            display: block;
-            padding-top: 10px;
-            margin-right: 12px;
-            margin-bottom: 4px;
-        }
     }
-
-
-    .ingen-varsler-container {
-        margin: 50px auto;
-        width: 64px;
-        height: 64px;
-        background: url('@{baseImagePath}img/navno/gfx/ajaxloader/hvit/loader_hvit_64.gif') no-repeat center;
-    }
-
 
     .tekstblokk {
         margin-right: 12px;
         margin-bottom: 0;
     }
+}
+
+.ingen-varsler-container {
+    margin: 50px auto;
+    width: 64px;
+    height: 64px;
+    background: url('@{baseImagePath}img/navno/gfx/ajaxloader/hvit/loader_hvit_64.gif') no-repeat center;
+}
+
+.skillelinje-topp {
+    border-top: 1px solid @gray-light;
+}
+
+.vis-alle-lenke {
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    margin-right: 12px;
+    margin-bottom: 4px;
 }
 
 .varsel-dato {
@@ -381,4 +275,108 @@
 13%, 43% { .mixin-roter(-5deg); }
 14%, 44% { .mixin-roter(2deg); }
 14.5%, 44.5% { .mixin-roter(-1deg); }
+}
+
+
+@media (max-width: @screen-medium) {
+    header {
+        #mainmenu {
+            button.mobile-toggler {
+                width: 31%;
+            }
+            #toggle-varsler-mobile {
+                width: 34%;
+            }
+        }
+    }
+    .toggle-varsler-container {
+        display: none;
+    }
+
+    .varsler-display {
+        width: 90%;
+        background-color: @gray-darker;
+        color: @gray-light;
+        border: 0;
+        border-top: 1px solid @gray-light;
+        position: absolute;
+        top: auto;
+        left: 0;
+        right: auto;
+        padding: 15px;
+        display: none;
+
+        &:before, &:after {
+            border-bottom-color: transparent;
+        }
+
+        &.m-open {
+            display: block;
+        }
+
+        a {
+            color: @mobile-link-blue;
+
+            &:hover {
+                text-decoration: none;
+                span {
+                    border-bottom-color: @mobile-link-blue;
+                }
+            }
+        }
+    }
+
+    .varsel-kort-dato {
+        display: none;
+    }
+
+    .ingen-varsler-container {
+        background: url('@{baseImagePath}img/navno/gfx/ajaxloader/svart/loader_svart_64.gif') no-repeat center;
+    }
+
+    .varsel-innhold-container {
+        width: 100%;
+        border-bottom: 1px solid @gray-light;
+        color: @gray-light;
+    }
+
+    .varsel-melding {
+        color: @white;
+    }
+
+    .sett {
+        .varsel-melding {
+            color: @gray-light;
+        }
+    }
+
+    .varsel-dato {
+        margin-bottom: 2px;
+        color: @gray-light;
+    }
+
+    .varsel-container {
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .toggle-varsler-mobile {
+        background: url('@{baseImagePath}img/varsel/varsel_mobil_graa.png') no-repeat center;
+        vertical-align: middle;
+
+        &.m-open {
+            background: url('@{baseImagePath}img/varsel/varsel_mobil_blaa.png') no-repeat center;
+        }
+
+        &.har-nye-varsler {
+            background: url('@{baseImagePath}img/varsel/varsel_mobil_oransje.png') no-repeat center;
+        }
+
+        &.skjul {
+            visibility: hidden;
+        }
+    }
 }
