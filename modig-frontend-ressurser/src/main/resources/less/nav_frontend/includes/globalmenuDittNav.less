@@ -263,6 +263,11 @@ a.locked {
 }
 
 @media (max-width: 768px) {
+  .siteheader a:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+    background: transparent;
+  }
+
   a.lenke-fremhevet {
     color: #0ca9e1;
   }
@@ -271,6 +276,7 @@ a.locked {
       background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_hvit.png') no-repeat 1% 50%;
       &:hover, &:active, &:focus {
         background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_hvit.png') no-repeat 1% 50%;
+        color: #0ca9e1;
       }
     }
   }
@@ -298,6 +304,11 @@ a.locked {
           }
         }
       }
+    }
+  }
+  .menu-link-list a {
+    &:focus {
+      box-shadow: none;
     }
   }
 }
