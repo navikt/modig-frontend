@@ -55,6 +55,19 @@
 
 .siteheader {
 
+  .menu-link-list a {
+    &:focus {
+      box-shadow: 0 0 0 3px @orange-focus;
+      outline: none;
+      background: transparent;
+    }
+  }
+
+.link-btn {
+  &:focus {
+    box-shadow: 0 0 0 2px @orange-focus;
+  }
+}
 
 a.locked {
   background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat 1% 50%;
