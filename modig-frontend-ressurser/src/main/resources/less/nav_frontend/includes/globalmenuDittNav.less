@@ -177,7 +177,7 @@ a.locked {
   }
 
   .typo-normal {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
   }
 
@@ -200,7 +200,7 @@ a.locked {
   .tilbaketittel {
     color: @black;
     position: absolute;
-    bottom: 24px;
+    bottom: 23px;
     margin-left: 8px;
   }
 
@@ -210,7 +210,6 @@ a.locked {
     color: @link-color;
 
     .tilbaketilforsidelink {
-      border-bottom: 1px solid #7F756C;
       position: absolute;
       margin-left: 8px;
     }
@@ -237,9 +236,6 @@ a.locked {
         &:before {
           background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png') no-repeat;
         }
-        .tilbaketilforsidelink {
-          border-bottom: 1px solid @link-color;
-        }
       }
       &:active {
         outline: none;
@@ -259,15 +255,11 @@ a.locked {
         background-position: 66% 20%;
         background-size: 55%;
       }
-      .tilbaketilforsidelink {
-        border-bottom: 1px solid @link-color;
-      }
     }
     &:active, &:focus {
       outline: none;
       background-color: transparent;
       .tilbaketilforsidelink{
-        border-bottom: 1px solid @link-color;
         background-color: @orange-focus;
         box-shadow: 0 0 0 3px @orange-focus;
       }
