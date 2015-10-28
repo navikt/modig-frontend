@@ -261,9 +261,9 @@ $(function () {
     }
 
     function visVarselikoner() {
-        var hide = 'hide';
-        varslerKnapp.removeClass(hide);
-        varslerKnappMobil.removeClass(hide);
+        var invisible = 'invisible';
+        varslerKnapp.removeClass(invisible);
+        varslerKnappMobil.removeClass(invisible);
     }
 
     function fjernUsettStatusPaaIkoner() {
