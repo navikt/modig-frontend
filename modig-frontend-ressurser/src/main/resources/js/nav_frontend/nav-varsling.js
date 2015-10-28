@@ -144,7 +144,7 @@ $(function () {
         }
 
         if (varsler && varsler.length > config.maksAntallVarslerSomSkalVises) {
-            varselmeny.append('<div><a class="vis-alle-lenke skillelinje-topp"  href="' + config.mineVarslerUrl + '">' + wrapISpan(tekster.visalle + ' ' + nyeVarslerVisning(antallNye))  + '</a></div>');
+            varselmeny.append('<div class="vis-alle-lenke skillelinje-topp"><a  href="' + config.mineVarslerUrl + '">' + wrapISpan(tekster.visalle + ' ' + nyeVarslerVisning(antallNye))  + '</a></div>');
         }
     }
 
@@ -167,8 +167,8 @@ $(function () {
 
     function leggPaaLenkeHvisUrlFinnes(varsel) {
         if (varsel.url) {
-            return '<a href="' + varsel.url + '">'
-                + wrapISpan(tekster.lenketekst) + wrapISpan('&nbsp;- ' + varsel.formattertDato, 'visuallyhidden') + '</a>';
+            return '</br><a href="' + varsel.url + '">'
+                + wrapISpan(tekster.lenketekst) + wrapISpan('&nbsp;- ' + varsel.formattertDato, 'visuallyhidden') + '</a></br>';
         }
 
         return '';
