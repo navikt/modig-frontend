@@ -583,6 +583,13 @@ $(document).ready(function () {
                       event.preventDefault(); // main menu item
                       event.stopPropagation();
 
+                // Varselmenyen sin handler for klikk utenfor blir ikke kalt pga at eventet stoppes her
+                // Må derfor skjule menyen hvis den er åpen
+                var varselmeny = $('#varsler-display');
+                if (varselmeny.hasClass('open')) {
+                    varselmeny.removeClass('open');
+                }
+
                  if (!target.hasClass(this.settings.openClass)) {
                     _togglePanel.call(this, event);
 

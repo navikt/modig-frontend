@@ -278,4 +278,11 @@ $(function () {
         varselikonContainer.addClass('har-nye-varsler');
         varslerKnappMobil.addClass('har-nye-varsler');
     }
+
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+        if (!target.is('#toggle-varsler') && !target.closest('#varsler-display').length && varselmeny.hasClass('open')) {
+            varselmeny.removeClass('open');
+        }
+    });
 });
