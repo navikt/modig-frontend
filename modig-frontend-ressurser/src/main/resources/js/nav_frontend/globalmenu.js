@@ -53,26 +53,7 @@ function setCorrectSecLevelUpgradeInfoText(securityLevel) {
     }
 }
 
-$(function () {
-    var tooltip = $(".panel-negativ");
-    var knapp = $(".logginninfo");
-    var offset = knapp.offset();
 
-    var triangelDistanseFraHoyre = 41;
-    var triangelHoyde = 11;
-    var marginMellomIkonOgTriangel = 10;
-    var left = offset.left - tooltip.outerWidth() + triangelDistanseFraHoyre + (triangelHoyde * 2) + tooltip.width() / 2;
-
-    var justering = 4;
-    var right = $(window).width() - (left + tooltip.outerWidth()) + justering;
-    right = right < 0 ? 0 : right;
-
-    tooltip.offset({
-            top: offset.top + knapp.height() + triangelHoyde + marginMellomIkonOgTriangel
-        });
-    tooltip.css('right', right);
-    tooltip.css('left', 'auto');
-});
 
 ///////////////////////////
 

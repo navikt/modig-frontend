@@ -3,7 +3,7 @@
     color: #fff;
     background: #0067c5;
     border-bottom-color: #3e3832;
-    font-family: "Modus","Helvetica Neue","Helvetica","Arial","sans-serif";
+    font-family: "Modus", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
     font-weight: 600;
     cursor: pointer;
     display: inline-block;
@@ -17,6 +17,7 @@
     padding: 10px 40px;
     border: none;
     border-bottom: 2px solid #3e3832;
+}
 .submenu-logg-inn .knapp:focus {
      box-shadow: 0 0 0 2px #ffbd66;
  }
@@ -37,6 +38,9 @@
     margin-bottom: 1rem;
 }
 
+.siteheader .submenu-logg-inn .typo-normal {
+    margin: 0 0 14px;
+}
 
 .siteheader.menu-link-list a:focus {
      box-shadow: 0 0 0 3px #ffbd66;
@@ -92,8 +96,8 @@
      background-size: 1.3rem;
 }
 .siteheader .secLevelUpgradeInfo .panel-negativ {
-    background-color: @gray-dark;
-    color: @white;
+    background-color: #3e3832;
+    color: #fff;
     position: absolute;
     z-index: 9;
     left: 71.5%;
@@ -151,7 +155,7 @@
 
 .sitefooter a:focus {
     outline: none;
-    background-color: @orange-focus;
+    background-color: #ffbd66;
 }
 
 .siteheader a:focus {
@@ -165,7 +169,7 @@
 }
 
 .tilbaketilgruppe {
-    padding: 2px 0 2px 0px;
+    padding: 0px;
     position: relative;
     font-size: 14px;
 }
@@ -180,6 +184,7 @@
     text-decoration: none;
     display: inline-block;
     color: #0067c5;
+    padding: 0px;
 }
 .tilbaketilgruppe .tilbaketilforsidelink {
     position: absolute;
@@ -189,24 +194,6 @@
 .tilbaketilgruppe .tilbaketilforsidelink {
     position: absolute;
     margin-left: 8px;
-}
-.tilbaketilgruppe .tilbaketilforsidelink:before {
-     display: inline-block;
-     content: "";
-     width: 46px;
-     height: 60px;
-     background: transparent url('../../../img/navno/gfx/mainmenu/hjem_sort.png') no-repeat;
-     background-position: 66% 20%;
-     background-size: 55%;
-}
-.tilbaketilgruppe .tilbaketilforsidelink.dittnav:before {
-     display: inline-block;
-     content: "";
-     width: 46px;
-     height: 60px;
-     background: transparent url('../../../img/navno/globalmenuDittNav/person_graa.png') no-repeat;
-     background-position: 0% 0%;
-     background-size: 90%;
 }
 
 .tilbaketilgruppe .tilbaketilforsidelink.dittnav:hover::before {
@@ -217,16 +204,6 @@
 }
 .tilbaketilgruppe .tilbaketilforsidelink.dittnav:active {
     outline: none;
-}
-
-.tilbaketilgruppe .tilbaketilforsidelink.dittnav:hover::before {
-     display: inline-block;
-     content: "";
-     width: 46px;
-     height: 60px;
-     background: transparent url('../../../img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
-     background-position: 66% 20%;
-     background-size: 55%;
 }
 
 .tilbaketilgruppe .tilbaketilforsidelink.dittnav:active:focus {
@@ -277,41 +254,196 @@
         margin-top: 1rem;
     }
 
-    .accessible-megamenu-panel .tilbaketilgruppe .home-link .dittnav:before {
-        background: transparent url('../../../img/navno/globalmenuDittNav/person_hvit.png') no-repeat 42% 30%;
+    .siteheader .accessible-megamenu-panel .home-link {
+        padding: 0;
+    }
+    .siteheader .accessible-megamenu-panel .home-link:before {
+        background: transparent url('../../../img/navno/globalmenuDittNav/hjem_hvit.png') no-repeat 42% 30% !important;
+        background-size: 62% !important;
+    }
+    .siteheader .accessible-megamenu-panel .home-link:hover::before {
+        background: transparent url('../../../img/navno/globalmenuDittNav/hjem_blaa.png') no-repeat 42% 30% !important;
+        background-size: 62% !important;
+    }
+
+    .siteheader .accessible-megamenu-panel .home-link:active::before {
+        background: transparent url('../../../img/navno/globalmenuDittNav/hjem_blaa.png') no-repeat 42% 30% !important;
+        background-size: 62% !important;
+    }
+
+    .siteheader .accessible-megamenu-panel .home-link:focus::before {
+        background: transparent url('../../../img/navno/globalmenuDittNav/hjem_blaa.png') no-repeat 42% 30% !important;
+        background-size: 62% !important;
+    }
+
+
+    .siteheader .accessible-megamenu-panel .home-link .dittnav:before {
+        background: transparent url('../../../img/navno/globalmenuDittNav/person_hvit.png') no-repeat 42% 30% !important;
+        background-size: 62% !important;
+    }
+
+    .siteheader .accessible-megamenu-panel .home-link .dittnav:hover::before {
+        background: transparent url('../../../img/navno/globalmenuDittNav/person_blaa.png') no-repeat 42% 30% !important;
+        background-size: 62% !important;
+    }
+
+    .siteheader .accessible-megamenu-panel .home-link .dittnav:active::before {
+        background: transparent url('../../../img/navno/globalmenuDittNav/person_blaa.png') no-repeat 42% 30% !important;
         background-size: 62%;
     }
 
-    .accessible-megamenu-panel .tilbaketilgruppe .home-link .dittnav:hover::before {
+    .siteheader .accessible-megamenu-panel .home-link .dittnav:focus::before {
         background: transparent url('../../../img/navno/globalmenuDittNav/person_blaa.png') no-repeat 42% 30%;
-        background-size: 62%;
-    }
-
-    .accessible-megamenu-panel .tilbaketilgruppe .home-link .dittnav:active::before {
-        background: transparent url('../../../img/navno/globalmenuDittNav/person_blaa.png') no-repeat 42% 30%;
-        background-size: 62%;
-    }
-
-    .accessible-megamenu-panel .tilbaketilgruppe .home-link .dittnav:focus::before {
-        background: transparent url('../../../img/navno/globalmenuDittNav/person_blaa.png') no-repeat 42% 30%;
-        background-size: 62%;
+        background-size: 62% !important;
     }
 
     .menu-link-list a:focus {
         box-shadow: none;
     }
+    .subnavitems .accessible-megamenu-panel-group .globalmenu-tittel {
+        min-height: 37px !important;
+    }
+    .tilbaketilgruppe .tilbaketittel {
+        color: #ffffff !important;
+    }
 }
 
-.accessible-megamenu .accessible-megamenu-panel-group :first-child:nth-last-child(3) {
-    width: 33.3%;
+
+.siteheader a.lenke-fremhevet {
+    border-bottom: 1px solid #b7b1a9;
+    text-decoration: none;
 }
-.accessible-megamenu .accessible-megamenu-panel-group :first-child:nth-last-child(3) li {
-    width: 33.3%;
+.siteheader a.lenke-fremhevet:hover {
+     border-bottom-color: #0067c5;
+     text-decoration: none;
+}
+.siteheader a.lenke-fremhevet:active {
+     border-bottom-color: #634689;
+     text-decoration: none;
+}
+.siteheader a.lenke-fremhevet:focus {
+     text-decoration: none;
 }
 
-.accessible-megamenu .accessible-megamenu-panel-group :first-child:nth-last-child(4) {
-    width: 25%;
+.siteheader.typo-etikett-stor {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Modus","Helvetica Neue","Helvetica","Arial","sans-serif";
+    text-transform: uppercase;
 }
-.accessible-megamenu .accessible-megamenu-panel-group :first-child:nth-last-child(4) li {
-    width: 25%;
+
+button.mobile-toggler {
+    width: 32% !important;
+}
+
+.accessible-megamenu .accessible-megamenu-panel-group:first-child:nth-last-child(3),.accessible-megamenu .accessible-megamenu-panel-group:first-child:nth-last-child(3)~li{width:33.3%}
+.accessible-megamenu .accessible-megamenu-panel-group:first-child:nth-last-child(4),.accessible-megamenu .accessible-megamenu-panel-group:first-child:nth-last-child(4)~li{width:25%}
+
+.topnavsection .menu-link-list:before {
+     border-bottom: 2px solid #808080;
+     clear: both;
+     content: " ";
+     display: block;
+     margin: 0 auto;
+     width: 100%;
+}
+
+.subnavitems .accessible-megamenu-panel-group .globalmenu-tittel {
+    min-height: 0px;
+    text-align: left;
+}
+
+
+.siteheader .accessible-megamenu-panel .home-link {
+    background: transparent !important;
+}
+
+.siteheader .accessible-megamenu-panel .home-link:before {
+    display: inline-block;
+    content: "";
+    width: 46px;
+    height: 60px;
+    background: transparent url('../../../img/navno/globalmenuDittNav/hjem_sort.png') no-repeat;
+    background-position: 66% 20%;
+    background-size: 55%;
+}
+
+.siteheader .accessible-megamenu-panel .home-link.dittnav:before {
+    display: inline-block;
+    content: "";
+    width: 46px;
+    height: 60px;
+    background: transparent url('../../../img/navno/globalmenuDittNav/person_graa.png') no-repeat;
+    background-position: 0% 0%;
+    background-size: 90%
+}
+
+.siteheader .menu-link-list a {
+    margin-left: -1.5rem;
+    padding: 10px 10px 10px 1.5rem;
+}
+.siteheader .menu-link-list a:focus {
+    box-shadow: 0 0 0 3px #ffbd66;
+    outline: none;
+    background-color: transparent;
+}
+
+
+.contrast a.locked {
+    background: transparent url('../../../img/navno/globalmenuDittNav/ikon_las_gra.png') no-repeat 1% 50% !important;
+}
+.contrast .secLevelUpgradeInfo span {
+    background: transparent url('../../../img/navno/globalmenuDittNav/ikon_las_gra.png') no-repeat 1% 50% !important;
+}
+
+.contrast .home-link:before {
+     display: inline-block;
+     content: "";
+     width: 46px;
+     height: 60px;
+     background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_gul.png') no-repeat;
+     background-position: 66% 20%;
+     background-size: 55%;
+}
+
+.contrast .home-link:hover:before {
+     display: inline-block;
+     content: "";
+     width: 46px;
+     height: 60px;
+     background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
+     background-position: 66% 20%;
+     background-size: 55%;
+}
+.contrast .home-link:active {
+    outline: none;
+    background-color: transparent;
+}
+
+.contrast .home-link:active{
+   outline: none;
+   background-color: transparent;
+}
+.contrast .siteheader .accessible-megamenu-panel .home-link.dittnav:before{
+    background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_gul.png') no-repeat;
+    background-position: 0% 0%;
+    background-size: 90%;
+}
+
+.contrast .siteheader .accessible-megamenu-panel .home-link:hover:before {
+    background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png') no-repeat;
+    background-position: 0% 0%;
+    background-size: 90%;
+}
+
+.contrast .knapp-hoved {
+    border: 1px solid #fff;
+    color: #ffc40d !important;
+    background-image: none;
+}
+
+.toggle-varsler-container {
+    display: none;
 }
