@@ -482,7 +482,7 @@ $(document).ready(function () {
                     .removeClass(settings.jsAnimatedClass) // custom
                     .filter('.mobile-submenu, .' + settings.panelClass)
                     .attr('aria-hidden', 'true');
-                topli.addClass(settings.selectedTopNavItem).find('[aria-expanded]').not('.mobile-submenu-expander, .mobile-submenu')
+                topli.addClass(settings.selectedTopNavItem).find('[aria-expanded]').not('.mobile-submenu-expander, .mobile-submenu, .logginninfo')
                     .attr('aria-expanded', 'true')
                     .addClass(settings.openClass)
                     .addClass(settings.jsAnimatedClass) // custom
