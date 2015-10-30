@@ -964,7 +964,7 @@ function setLockedClassOnInaccessibleMenuElements() {
 		//If secLevel of the menu is larger than users secLevel set locked class for styling
 		if (this.getAttribute("data-sec-level") > navno.securityLevel) {
 			$(this).addClass("locked");
-            $(this).attr("aria-label", "Låst tjeneste: ");
+            $(this).attr("aria-label", "Låst: ");
 		};
 	});
 }
@@ -977,19 +977,12 @@ function hideDittNavMenuSetLogin() {
 
 
 function setCorrectSecLevelUpgradeInfoText(securityLevel) {
-	if (securityLevel < 4) {
-		$('.secLevelUpgradeInfo').removeClass("hidden");
-		if (securityLevel === 3) {
-			$('.secLevel3Info').removeClass("hidden");
-			$('.secLevel3Info').removeAttr("aria-hidden");
-		} else {
-			$('.secLevel2Info').removeClass("hidden");
-			$('.secLevel2Info').removeAttr("aria-hidden");
-		}
-	}
+    if (securityLevel < 4) {
+        $('.secLevelUpgradeInfo').removeClass("hidden");
+    }
 }
 
-//////////////////////// END ////////////////////////
+
 
 /* Set same height for titles in the global menu */
 
@@ -1007,4 +1000,12 @@ $(function () {
 	});
 
 });
+//Kalles fra HTML.
+function visGlobalmenyTooltip() {
+    $('#globalmenu-upgrade-info-tooltip').removeClass('hidden');
+    $('#globalmenu-upgrade-info-tooltip').attr('aria-expanded', 'true');
+    $('#globalmenu-upgrade-info-button').attr('aria-expanded', 'true');
+}
 
+
+//////////////////////// END ////////////////////////
