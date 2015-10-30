@@ -110,66 +110,60 @@ a.locked {
       background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/sporsmaalstegn_hover.png') no-repeat;
       background-size: 1.3rem;
     }
-
-  }
-
-  .panel-negativ {
-    .decorated {
-      font-size: 1rem;
-      margin-bottom: 0px;
-    }
-    &:before {
-      content: "";
-      border: solid transparent;
-      border-width: 10px;
-      position: absolute;
-      height: 0;
-      width: 0;
-      left: 20px;
-      border-top-color: #3e3832;
-      top: 100%
-    }
-    position: absolute;
-    z-index: 9;
-    left: 71.5%;
-    width: 350px;
-    top: 45%;
-    padding: 10px;
-    .lukk {
-      margin-bottom: 2rem;
-      button {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        width: 32px;
-        height: 32px;
-        border: 0;
-        background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa.png') no-repeat;
-        &:hover {
-          background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa_hover.png') no-repeat;
-        }
-      }
-    }
-    .hjelpetekst-tittel {
-      padding-bottom: 2rem;
-      position: relative;
-      text-align: center;
-      font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
-      font-weight: 600;
-      font-size: 1rem;
-      margin-top: 0;
-      color: #cccccc;
-    }
-    .hjelpetekst-tekst {
-      color: #cccccc;
-      font-size: 0.875rem;
-    }
   }
 }
 
 .panel-negativ {
   background-color: @gray-dark;
   color: @white;
+  .decorated {
+    font-size: 1rem;
+    margin-bottom: 0px;
+  }
+  &:before {
+    content: "";
+    border: solid transparent;
+    border-width: 10px;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: 20px;
+    border-top-color: #3e3832;
+    top: 100%
+  }
+  position: absolute;
+  z-index: 9;
+  width: 350px;
+  padding: 10px;
+  .lukk {
+    margin-bottom: 2rem;
+    button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      border: 0;
+      background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa.png') no-repeat;
+      &:hover {
+        background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa_hover.png') no-repeat;
+      }
+    }
+  }
+  .hjelpetekst-tittel {
+    padding-bottom: 2rem;
+    position: relative;
+    text-align: center;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0;
+    color: #cccccc;
+  }
+  .hjelpetekst-tekst {
+    color: #cccccc;
+    font-size: 0.875rem;
+  }
 }
 
   a:focus {
