@@ -124,6 +124,10 @@
 
 .siteheader .secLevelUpgradeInfo .panel-negativ .lukk {
     margin-bottom: 2rem;
+    background: none;
+    height: 0px;
+    width: 0px;
+    position: initial;
 }
 .siteheader .secLevelUpgradeInfo .panel-negativ .lukk  button {
     position: absolute;
@@ -309,19 +313,19 @@
 }
 
 
-.siteheader a.lenke-fremhevet {
+.siteheader .lenke-fremhevet {
     border-bottom: 1px solid #b7b1a9;
     text-decoration: none;
 }
-.siteheader a.lenke-fremhevet:hover {
+.siteheader .lenke-fremhevet:hover {
      border-bottom-color: #0067c5;
      text-decoration: none;
 }
-.siteheader a.lenke-fremhevet:active {
+.siteheader .lenke-fremhevet:active {
      border-bottom-color: #634689;
      text-decoration: none;
 }
-.siteheader a.lenke-fremhevet:focus {
+.siteheader .lenke-fremhevet:focus {
      text-decoration: none;
 }
 
