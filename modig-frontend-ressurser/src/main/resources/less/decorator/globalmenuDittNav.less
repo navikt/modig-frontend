@@ -59,35 +59,37 @@ a.locked {
   }
 }
 
-.panel-negativ {
-  &:before {
-    content: "";
-    border: solid transparent;
-    border-width: 10px;
-    position: absolute;
-    height: 0;
-    width: 0;
-    left: 20px;
-    border-top-color: @gray-text;
-    top: 100%
-  }
-  position: absolute;
-  z-index: 9;
-  width: 350px;
-  padding: 10px;
-  color: @color-gray-light-additional;
-  .lukk {
-    margin-bottom: 2rem;
-    button {
+.siteheader {
+  .panel-negativ {
+    &:before {
+      content: "";
+      border: solid transparent;
+      border-width: 10px;
       position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 32px;
-      height: 32px;
-      border: 0;
-      background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa.png') no-repeat;
-      &:hover {
-        background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa_hover.png') no-repeat;
+      height: 0;
+      width: 0;
+      right: 20px;
+      border-top-color: @gray-text;
+      top: 100%
+    }
+    position: absolute;
+    z-index: 9;
+    width: 350px;
+    padding: 10px;
+    color: @color-gray-light-additional;
+    .lukk {
+      margin-bottom: 2rem;
+      button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        border: 0;
+        background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa.png') no-repeat;
+        &:hover {
+          background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa_hover.png') no-repeat;
+        }
       }
     }
   }
