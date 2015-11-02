@@ -982,8 +982,6 @@ function setCorrectSecLevelUpgradeInfoText(securityLevel) {
     }
 }
 
-
-
 /* Set same height for titles in the global menu */
 
 $(function () {
@@ -1003,8 +1001,6 @@ $(function () {
 //Kalles fra HTML.
 function visGlobalmenyTooltip() {
     $('#globalmenu-upgrade-info-tooltip').removeClass('hidden');
-    $('#globalmenu-upgrade-info-tooltip').attr('aria-expanded', 'true');
-    $('#globalmenu-upgrade-info-button').attr('aria-expanded', 'true');
 }
 
 /* Plassering av hjelpetekstboks for paalogging */
