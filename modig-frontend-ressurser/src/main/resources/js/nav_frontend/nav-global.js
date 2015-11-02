@@ -1050,7 +1050,7 @@ $(function() {
 		var tooltip = $("#globalmenu-upgrade-info-tooltip")[0];
 		var tooltipbuttonOffset = $("#globalmenu-upgrade-info-button").offset();
 		var leftPosition = tooltipbuttonOffset.left - $(tooltip).width() + 21;
-		var topPosition = tooltipbuttonOffset.top - $(tooltip).height() - 26;
+		var topPosition = tooltipbuttonOffset.top - $(tooltip).height() - 34;
 
 		$(tooltip).offset({
 			top: topPosition,
