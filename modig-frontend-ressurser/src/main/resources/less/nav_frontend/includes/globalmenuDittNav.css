@@ -19,20 +19,22 @@
     border-bottom: 2px solid #3e3832;
 }
 .submenu-logg-inn .knapp:focus {
-     box-shadow: 0 0 0 2px #ffbd66;
- }
+    box-shadow: 0 0 0 2px #ffbd66;
+}
 .submenu-logg-inn .knapp:hover {
-     border-bottom: 3px solid #7f756c;
-     margin-bottom: -1px;
-     -webkit-transform: translateY(-1px);
-     -moz-transform: translateY(-1px);
-     -ms-transform: translateY(-1px);
-     -o-transform: translateY(-1px);
-     transform: translateY(-1px);
- }
+    border-bottom: 3px solid #7f756c;
+    margin-bottom: -1px;
+    -webkit-transform: translateY(-1px);
+    -moz-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    -o-transform: translateY(-1px);
+    transform: translateY(-1px);
+}
 .submenu-logg-inn {
     text-align: center;
     margin-top: 10rem;
+    padding-left: 120px;
+    padding-right: 120px;
 }
 .submenu-logg-inn.decorated {
     margin-bottom: 1rem;
@@ -43,14 +45,14 @@
 }
 
 .siteheader.menu-link-list a:focus {
-     box-shadow: 0 0 0 3px #ffbd66;
-     outline: none;
-     background: transparent;
+    box-shadow: 0 0 0 3px #ffbd66;
+    outline: none;
+    background: transparent;
 }
 
 
 .siteheader .link-btn:focus {
-     box-shadow: 0 0 0 2px #ffbd66;
+    box-shadow: 0 0 0 2px #ffbd66;
 }
 
 .siteheader a.locked {
@@ -58,13 +60,13 @@
     background-size: 0.9rem;
 }
 .siteheader a.locked:hover::before {
-     border: none;
+    border: none;
 }
 .siteheader a.locked:focus {
     background: transparent url('../../../img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat 1% 50%;
 }
 .siteheader a.locked:focus::before {
-     border: none;
+    border: none;
 }
 
 .siteheader .secLevelUpgradeInfo {
@@ -83,6 +85,8 @@
 }
 
 .siteheader .secLevelUpgradeInfo .logginninfo {
+    outline: none;
+    border: 0;
     display: inline-block;
     background: transparent url('../../../img/navno/globalmenuDittNav/sporsmaalstegn.png') no-repeat;
     width: 24px;
@@ -92,44 +96,42 @@
 }
 
 .siteheader .secLevelUpgradeInfo .logginninfo:hover {
-     background: transparent url('../../../img/navno/globalmenuDittNav/sporsmaalstegn_hover.png') no-repeat;
-     background-size: 1.3rem;
+    background: transparent url('../../../img/navno/globalmenuDittNav/sporsmaalstegn_hover.png') no-repeat;
+    background-size: 1.3rem;
 }
-.siteheader .secLevelUpgradeInfo .panel-negativ {
+.siteheader  .panel-negativ {
     background-color: #3e3832;
     color: #fff;
     position: absolute;
     z-index: 9;
-    left: 71.5%;
     width: 350px;
-    top: 45%;
     padding: 10px;
 }
 
-.siteheader .secLevelUpgradeInfo .panel-negativ .decorated {
+.siteheader .panel-negativ .decorated {
     font-size: 1rem;
     margin-bottom: 0px;
 }
-.siteheader .secLevelUpgradeInfo .panel-negativ:before {
-     content: "";
-     border: solid transparent;
-     border-width: 10px;
-     position: absolute;
-     height: 0;
-     width: 0;
-     left: 20px;
-     border-top-color: #3e3832;
-     top: 100%
- }
+.siteheader .panel-negativ:before {
+    content: "";
+    border: solid transparent;
+    border-width: 10px;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: 20px;
+    border-top-color: #3e3832;
+    top: 100%
+}
 
-.siteheader .secLevelUpgradeInfo .panel-negativ .lukk {
+.siteheader .panel-negativ .lukk {
     margin-bottom: 2rem;
     background: none;
     height: 0px;
     width: 0px;
     position: initial;
 }
-.siteheader .secLevelUpgradeInfo .panel-negativ .lukk  button {
+.siteheader .panel-negativ .lukk  button {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -138,11 +140,11 @@
     border: 0;
     background: transparent url('../../../img/navno/globalmenuDittNav/kryss_blaa.png') no-repeat;
 }
-.siteheader .secLevelUpgradeInfo .panel-negativ .lukk  button:hover {
-     background:transparent url('../../../img/navno/globalmenuDittNav/kryss_blaa_hover.png') no-repeat;
+.siteheader .panel-negativ .lukk  button:hover {
+    background:transparent url('../../../img/navno/globalmenuDittNav/kryss_blaa_hover.png') no-repeat;
 }
 
-.siteheader .secLevelUpgradeInfo .panel-negativ .hjelpetekst-tittel {
+.siteheader .panel-negativ .hjelpetekst-tittel {
     padding-bottom: 2rem;
     position: relative;
     text-align: center;
@@ -152,7 +154,7 @@
     margin-top: 0;
     color: #cccccc;
 }
-.siteheader .secLevelUpgradeInfo .panel-negativ .hjelpetekst-tekst {
+.siteheader .panel-negativ .hjelpetekst-tekst {
     color: #cccccc;
     font-size: 0.875rem;
 }
@@ -201,7 +203,7 @@
 }
 
 .tilbaketilgruppe .tilbaketilforsidelink.dittnav:hover::before {
-     background: transparent url('../../../img/navno/globalmenuDittNav/person_blaa.png') no-repeat;
+    background: transparent url('../../../img/navno/globalmenuDittNav/person_blaa.png') no-repeat;
 }
 .tilbaketilgruppe .tilbaketilforsidelink.dittnav:active::before {
     background: transparent url('../../../img/navno/globalmenuDittNav/person_svart.png') no-repeat;
@@ -310,6 +312,11 @@
     .tilbaketilgruppe .tilbaketittel {
         color: #ffffff !important;
     }
+
+    .submenu-logg-inn {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
 
 
@@ -318,15 +325,15 @@
     text-decoration: none;
 }
 .siteheader .lenke-fremhevet:hover {
-     border-bottom-color: #0067c5;
-     text-decoration: none;
+    border-bottom-color: #0067c5;
+    text-decoration: none;
 }
 .siteheader .lenke-fremhevet:active {
-     border-bottom-color: #634689;
-     text-decoration: none;
+    border-bottom-color: #634689;
+    text-decoration: none;
 }
 .siteheader .lenke-fremhevet:focus {
-     text-decoration: none;
+    text-decoration: none;
 }
 
 .siteheader.typo-etikett-stor {
@@ -346,12 +353,12 @@ button.mobile-toggler {
 .accessible-megamenu .accessible-megamenu-panel-group:first-child:nth-last-child(4),.accessible-megamenu .accessible-megamenu-panel-group:first-child:nth-last-child(4)~li{width:25%}
 
 .topnavsection .menu-link-list:before {
-     border-bottom: 2px solid #808080;
-     clear: both;
-     content: " ";
-     display: block;
-     margin: 0 auto;
-     width: 100%;
+    border-bottom: 2px solid #808080;
+    clear: both;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .subnavitems .accessible-megamenu-panel-group .globalmenu-tittel {
@@ -403,23 +410,23 @@ button.mobile-toggler {
 }
 
 .contrast .home-link:before {
-     display: inline-block;
-     content: "";
-     width: 46px;
-     height: 60px;
-     background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_gul.png') no-repeat;
-     background-position: 66% 20%;
-     background-size: 55%;
+    display: inline-block;
+    content: "";
+    width: 46px;
+    height: 60px;
+    background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_gul.png') no-repeat;
+    background-position: 66% 20%;
+    background-size: 55%;
 }
 
 .contrast .home-link:hover:before {
-     display: inline-block;
-     content: "";
-     width: 46px;
-     height: 60px;
-     background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
-     background-position: 66% 20%;
-     background-size: 55%;
+    display: inline-block;
+    content: "";
+    width: 46px;
+    height: 60px;
+    background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
+    background-position: 66% 20%;
+    background-size: 55%;
 }
 .contrast .home-link:active {
     outline: none;
@@ -427,8 +434,8 @@ button.mobile-toggler {
 }
 
 .contrast .home-link:active{
-   outline: none;
-   background-color: transparent;
+    outline: none;
+    background-color: transparent;
 }
 .contrast .siteheader .accessible-megamenu-panel .home-link.dittnav:before{
     background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_gul.png') no-repeat;
@@ -451,3 +458,4 @@ button.mobile-toggler {
 .toggle-varsler-container {
     display: none;
 }
+
