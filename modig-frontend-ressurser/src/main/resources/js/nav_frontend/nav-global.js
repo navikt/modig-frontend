@@ -1009,10 +1009,16 @@ function hideDittNavMenuSetLogin() {
 	$('a[data-sec-level]').first().closest("div").children("div.submenu-logg-inn").removeClass("hidden");
 }
 
-
 function setCorrectSecLevelUpgradeInfoText(securityLevel) {
     if (securityLevel < 4) {
         $('.secLevelUpgradeInfo').removeClass("hidden");
+        if (securityLevel === 3) {
+            $('.secLevel3Info').removeClass("hidden");
+            $('.secLevel3Info').removeAttr("aria-hidden");
+        } else {
+            $('.secLevel2Info').removeClass("hidden");
+            $('.secLevel2Info').removeAttr("aria-hidden");
+        }
     }
 }
 
@@ -1034,13 +1040,6 @@ $(function () {
 	});
 
 });
-
-//Kalles fra HTML.
-function visGlobalmenyTooltip() {
-    $('#globalmenu-upgrade-info-tooltip').removeClass('hidden');
-    $('#globalmenu-upgrade-info-tooltip').attr('aria-expanded', 'true');
-    $('#globalmenu-upgrade-info-button').attr('aria-expanded', 'true');
-}
 
 //////////////////////// END ////////////////////////
 
