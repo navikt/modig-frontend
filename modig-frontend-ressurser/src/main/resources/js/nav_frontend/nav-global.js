@@ -1044,7 +1044,7 @@ function visGlobalmenyTooltip() {
 
 //////////////////////// END ////////////////////////
 
-/* Plassering av hjelpetekstboks for paalogging */
+/* Plassering av hjelpetekstboks for paalogging til hoeyere sikkerhetsnivaa */
 
 $(function() {
 	$("#globalmenu-upgrade-info-button").click(function() {
@@ -1059,4 +1059,3 @@ $(function() {
 		});
 	});
 });
-

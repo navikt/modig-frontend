@@ -597,6 +597,10 @@ $(document).ready(function () {
                    _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
 
                 }
+
+                hideUpgradeInfoToolTip();
+
+
             }
 
             else if (target.is('[tabindex].mobile-submenu-expander')) { // tabindex kun hvis mobil layout
@@ -644,6 +648,9 @@ $(document).ready(function () {
             return false; 
           }
 
+             if(closedUpgradeInfoTooltip()){
+                 return false;
+             }
 
             if (this.interactiveArea.has(target).length === 0 && this.mobileMenuTogglers.filter(target).length === 0) {
 
@@ -657,6 +664,7 @@ $(document).ready(function () {
 
                 }
 
+                hideUpgradeInfoToolTip();
             }
   
         };
@@ -1151,6 +1159,26 @@ $(document).ready(function () {
                         isTabIndexNotNaN) &&
                             // the element and all of its ancestors must be visible
                             visible(element);
+    }
+
+
+    function hideUpgradeInfoToolTip() {
+        var tooltipUpgradeInfo = $("#globalmenu-upgrade-info-tooltip");
+        if (tooltipUpgradeInfo !== undefined && !tooltipUpgradeInfo.hasClass("hidden")) {
+            tooltipUpgradeInfo.addClass("hidden");
+        }
+    }
+
+    function closedUpgradeInfoTooltip() {
+        var tooltipUpgradeInfo = $("#globalmenu-upgrade-info-tooltip");
+        if (tooltipUpgradeInfo === null || tooltipUpgradeInfo.hasClass("hidden")){
+            return false;
+        }
+        var targetId = target.attr('id');
+        if (targetId !== undefined && targetId.indexOf("globalmenu-upgrade-info-close") !== -1) {
+            return true;
+        }
+        return false;
     }
         
     $.extend($.expr[":"], {
