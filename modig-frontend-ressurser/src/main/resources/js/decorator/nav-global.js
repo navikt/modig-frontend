@@ -979,6 +979,13 @@ function hideDittNavMenuSetLogin() {
 function setCorrectSecLevelUpgradeInfoText(securityLevel) {
     if (securityLevel < 4) {
         $('.secLevelUpgradeInfo').removeClass("hidden");
+        if (securityLevel === 3) {
+            $('.secLevel3Info').removeClass("hidden");
+            $('.secLevel3Info').removeAttr("aria-hidden");
+        } else {
+            $('.secLevel2Info').removeClass("hidden");
+            $('.secLevel2Info').removeAttr("aria-hidden");
+        }
     }
 }
 
@@ -998,10 +1005,6 @@ $(function () {
 	});
 
 });
-//Kalles fra HTML.
-function visGlobalmenyTooltip() {
-    $('#globalmenu-upgrade-info-tooltip').removeClass('hidden');
-}
 
 /* Plassering av hjelpetekstboks for paalogging */
 

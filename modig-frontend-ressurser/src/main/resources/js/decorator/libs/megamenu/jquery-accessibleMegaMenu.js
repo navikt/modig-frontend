@@ -648,7 +648,7 @@ $(document).ready(function () {
             return false;
           }
 
-             if(closedUpgradeInfoTooltip()){
+             if(closedUpgradeInfoTooltip(target)){
                  return false;
              }
 
@@ -1168,7 +1168,7 @@ $(document).ready(function () {
         }
     }
 
-    function closedUpgradeInfoTooltip() {
+    function closedUpgradeInfoTooltip(target) {
         var tooltipUpgradeInfo = $("#globalmenu-upgrade-info-tooltip");
         if (tooltipUpgradeInfo === null || tooltipUpgradeInfo.hasClass("hidden")){
             return false;
