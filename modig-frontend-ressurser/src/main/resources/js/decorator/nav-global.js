@@ -1007,5 +1007,20 @@ function visGlobalmenyTooltip() {
     $('#globalmenu-upgrade-info-button').attr('aria-expanded', 'true');
 }
 
+/* Plassering av hjelpetekstboks for paalogging */
+
+$(function() {
+    $("#globalmenu-upgrade-info-button").click(function() {
+        var tooltip = $("#globalmenu-upgrade-info-tooltip")[0];
+        var tooltipbuttonOffset = $("#globalmenu-upgrade-info-button").offset();
+        var leftPosition = tooltipbuttonOffset.left - 21;
+        var topPosition = tooltipbuttonOffset.top - $(tooltip).height() - 26;
+
+        $(tooltip).offset({
+            top: topPosition,
+            left: leftPosition
+        });
+    });
+});
 
 //////////////////////// END ////////////////////////
