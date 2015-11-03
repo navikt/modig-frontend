@@ -1,4 +1,3 @@
-/*.submenu-logg-inn {*/
 .submenu-logg-inn .knapp {
     color: #fff;
     background: #0067c5;
@@ -82,6 +81,14 @@
     padding-bottom: 1rem;
     padding-top: 1rem;
     margin-right: 0.5rem;
+}
+
+.siteheader .secLevelUpgradeInfo .secLevel2Info {
+    display: inline-block;
+}
+
+.siteheader .secLevelUpgradeInfo .secLevel2Info {
+    display: inline-block;
 }
 
 .siteheader .secLevelUpgradeInfo .logginninfo {

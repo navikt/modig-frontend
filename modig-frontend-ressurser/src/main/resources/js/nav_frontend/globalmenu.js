@@ -2,18 +2,6 @@ function FastClick(e,t){function n(e,t){return function(){return e.apply(t,argum
 }}):function(t,n,i){return!!e.data(t,i[3])},focusable:function(t){return o(t,!isNaN(e.attr(t,"tabindex")))},tabbable:function(t){var n=e.attr(t,"tabindex"),i=isNaN(n);return(i||n>=0)&&o(t,!i)}})}(jQuery,window,document),$(document).ready(function(){$("#mainmenu").accessibleMegaMenu({enableMobileMenu:!0}),$("#footer-content-menu").accessibleMegaMenu({uuidPrefix:"accessible-megafooter",menuClass:"accessible-megafooter",topNavItemClass:"letter",panelClass:"accessible-megafooter-panel",selectedTopNavItem:"selected-letter"})});
 
 
-//////////////////////// END ////////////////////////
-
-//Set styling based on securityLevel of user
-$(function () {
-    if (typeof navno.securityLevel === 'undefined') {
-        hideDittNavMenuSetLogin();
-    } else {
-        setLockedClassOnInaccessibleMenuElements();
-        setCorrectSecLevelUpgradeInfoText(navno.securityLevel);
-    }
-});
-
 function setLockedClassOnInaccessibleMenuElements() {
     $('a[data-sec-level]').each(function() {
         //If secLevel of the menu is larger than users secLevel set locked class for styling
@@ -34,10 +22,15 @@ function hideDittNavMenuSetLogin() {
 function setCorrectSecLevelUpgradeInfoText(securityLevel) {
     if (securityLevel < 4) {
         $('.secLevelUpgradeInfo').removeClass("hidden");
+        if (securityLevel === 3) {
+            $('.secLevel3Info').removeClass("hidden");
+            $('.secLevel3Info').removeAttr("aria-hidden");
+        } else {
+            $('.secLevel2Info').removeClass("hidden");
+            $('.secLevel2Info').removeAttr("aria-hidden");
+        }
     }
 }
-
-
 
 /* Set same height for titles in the global menu */
 
@@ -55,12 +48,6 @@ $(function () {
     });
 
 });
-//Kalles fra HTML.
-function visGlobalmenyTooltip() {
-    $('#globalmenu-upgrade-info-tooltip').removeClass('hidden');
-    $('#globalmenu-upgrade-info-tooltip').attr('aria-expanded', 'true');
-    $('#globalmenu-upgrade-info-button').attr('aria-expanded', 'true');
-}
 
 /* Plassering av hjelpetekstboks for paalogging */
 
@@ -78,4 +65,8 @@ $(function() {
     });
 });
 
-//////////////////////// END ////////////////////////
+
+/////////
+
+
+
