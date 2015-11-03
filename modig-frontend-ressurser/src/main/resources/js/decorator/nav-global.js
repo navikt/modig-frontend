@@ -946,9 +946,6 @@ $(function() {
 
 //////////////////////// END ////////////////////////
 
-
-//////////////////////// END ////////////////////////
-
 //Set styling based on securityLevel of user
 $(function () {
 	if (typeof navno.securityLevel === 'undefined') {
