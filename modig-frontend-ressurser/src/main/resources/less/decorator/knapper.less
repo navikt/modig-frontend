@@ -20,7 +20,8 @@
 
 @btn-row-border-color: @gray-icon;
 
-.knapp {
+.knapp,
+.side-innhold .knapp {
 	.mixin-knapp(); 
 	border: none;
 	color: @gray-text;
@@ -109,7 +110,8 @@ Merk at spinneren ikke vil fungere på input-felter (f.eks.
 */
 
 
-.knapp-spinner {
+.knapp-spinner,
+.side-innhold .knapp-spinner {
 	padding-right: 4rem;
 	position: relative;
 	.mixin-nav-transition(300ms, padding-right); 
@@ -133,13 +135,15 @@ Merk at spinneren ikke vil fungere på input-felter (f.eks.
 	opacity: 0; 
 }
 
-.knapp-stor {
+.knapp-stor,
+.side-innhold .knapp-stor {
 	.spinner-knapp:after {
 		top: .65rem; 	
 	}
 }
 
-.knapp-liten {
+.knapp-liten,
+.side-innhold .knapp-liten {
 
 	.spinner-knapp {
 		right: 1rem; 
@@ -155,10 +159,12 @@ Merk at spinneren ikke vil fungere på input-felter (f.eks.
 // KNAPPEVARIANTER
 // *****************************
 
-.knapp-fare {
+.knapp-fare,
+.side-innhold .knapp-fare {
 	.mixin-knappevariant(@btn-danger-background-color, @btn-danger-text-color, @btn-danger-shadow-color, @btn-danger-disabled-background-color, @btn-danger-background-color-active, @btn-danger-background-hover-color);
 }
 
-.knapp-hoved {
+.knapp-hoved,
+.side-innhold .knapp-hoved {
 	.mixin-knappevariant(@btn-primary-background-color, @btn-primary-text-color, @btn-primary-shadow-color, @btn-primary-disabled-background-color, @btn-primary-active-color, @btn-primary-background-hover-color);
 }
