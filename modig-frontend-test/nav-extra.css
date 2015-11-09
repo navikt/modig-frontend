@@ -597,7 +597,7 @@ img.ui-datepicker-trigger {
   background-color: #119b49;
 }
 .table-of-contents {
-  font-family: Modus, "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-family: Modus, "Helvetica", "Arial", "sans-serif";
 }
 .table-of-contents ol {
   list-style: none;
@@ -821,14 +821,14 @@ a.panel-ramme:hover {
   border: 0;
 }
 .skjema-fieldset legend {
-  font-family: Modus, "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-family: Modus, "Helvetica", "Arial", "sans-serif";
   font-size: 1.25rem;
   font-weight: 800;
   margin-bottom: .35rem;
 }
 .skjema-sporsmal {
   font-size: 1.0675rem;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-family: "Helvetica", "Arial", "sans-serif";
   font-weight: 600;
   margin-bottom: .5rem;
   margin-top: 0;
@@ -840,7 +840,7 @@ a.panel-ramme:hover {
 }
 .skjema-infotekst {
   font-size: 1.0675rem;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-family: "Helvetica", "Arial", "sans-serif";
 }
 @media (min-width: 30em) {
   .skjema-infotekst {
@@ -1307,7 +1307,7 @@ select {
   padding: 0;
   font-size: 1.0675rem;
   text-transform: uppercase;
-  font-family: Modus, "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-family: Modus, Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 @media (min-width: 30em) {

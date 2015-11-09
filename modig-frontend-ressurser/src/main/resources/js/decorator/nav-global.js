@@ -406,8 +406,7 @@ $(function() {
 
 					notificationEl.removeAttr('data-url').find('span').remove();
 					notificationEl.append($(html).find('section')).slideDown(800);
-				}
-				else {
+				} else {
 					$('.service-notification').remove();
 				}
 			}
@@ -573,7 +572,7 @@ $(function() {
 $(function() {
 	$('.logout-tooltip .lukk').on('click', function() {
 		$('.logout-tooltip').addClass('hidden');
-		$('.logout-tooltip .lukk').addClass('hidden');
+		$(this).addClass('hidden');
 	});
 });
 
@@ -588,7 +587,7 @@ $(function() {
 
 $(function() {
 	var $tooltip = $('.logout-tooltip');
-	$('#login-details span').first().on('mouseenter focusin', function() {
+	$('#login-details').find('span').first().on('mouseenter focusin', function() {
 		$tooltip.removeClass('hidden');
 	}).on('mouseleave focusout', function() {
 		$tooltip.addClass('hidden');
@@ -719,11 +718,18 @@ var dataLayer = dataLayer || [{}];
 
 $(function() {
 
-	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PM9RP3');
+	(function(w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({
+			'gtm.start': new Date().getTime(), event: 'gtm.js'
+		});
+		var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+		j.async = true;
+		j.src =
+			'//www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-PM9RP3');
 
 
 	var securityLevel = navno.securityLevel || 0;
@@ -731,9 +737,9 @@ $(function() {
 	var ytelse = navno.ytelse;
 
 	var innloggetInformasjon = {
-		'securityLevel' : securityLevel,
-		'fgKode' : fgKode,
-		'ytelse' : ytelse
+		'securityLevel': securityLevel,
+		'fgKode'       : fgKode,
+		'ytelse'       : ytelse
 	};
 
 	dataLayer.push(innloggetInformasjon);
@@ -746,11 +752,12 @@ $(function() {
  */
 
 $(function() {
-	if (window.addEventListener && $('#footer-content-menu').length > 0) {
+	var $fcmenu = $('#footer-content-menu');
+	if (window.addEventListener && $fcmenu.length > 0) {
 		// skip Ie8
 		var timeout, leftClicker = $('.letter-scroll-left');
 		var rightClicker = $('.letter-scroll-right');
-		var scrollElement = $('#footer-content-menu');
+		var scrollElement = $fcmenu;
 
 		leftClicker.click(function(e) {
 			e.preventDefault();
@@ -767,11 +774,11 @@ $(function() {
 				300);
 		});
 
-		var scrollEvents = new Array('mousedown', 'touchstart');
-		var stopTouchEvents = new Array('touchleave', 'touchcancel', 'touchend');
+		var scrollEvents = ['mousedown', 'touchstart'];
+		var stopTouchEvents = ['touchleave', 'touchcancel', 'touchend'];
 
 		for (var i = 0; i < 2; i++) {
-			leftClicker[0].addEventListener(scrollEvents[i], function(event) {
+			leftClicker[0].addEventListener(scrollEvents[i], function() {
 				timeout = setInterval(function() {
 						scrollElement.animate({
 								scrollLeft: '-=120'
@@ -780,7 +787,7 @@ $(function() {
 					},
 					300);
 			});
-			rightClicker[0].addEventListener(scrollEvents[i], function(event) {
+			rightClicker[0].addEventListener(scrollEvents[i], function() {
 				timeout = setInterval(function() {
 						scrollElement.animate({
 								scrollLeft: '+=120'
@@ -790,18 +797,18 @@ $(function() {
 					300);
 			});
 		}
-		for (var i = 0; i < 3; i++) {
-			leftClicker[0].addEventListener(stopTouchEvents[i], function(event) {
+		for (i = 0; i < 3; i++) {
+			leftClicker[0].addEventListener(stopTouchEvents[i], function() {
 				clearInterval(timeout);
 				return false;
 			});
-			rightClicker[0].addEventListener(stopTouchEvents[i], function(event) {
+			rightClicker[0].addEventListener(stopTouchEvents[i], function() {
 				clearInterval(timeout);
 				return false;
 			});
 		}
 
-		$(leftClicker).add(rightClicker).on('mouseup mouseout mouseleave', function(event) {
+		$(leftClicker).add(rightClicker).on('mouseup mouseout mouseleave', function() {
 			clearInterval(timeout);
 			return false;
 		});
@@ -819,7 +826,7 @@ navno.topLinkButtonPlaceholder = null;
 navno.topLinkStickyElement = null;
 navno.requiredScrollDistanceForSticky = null;
 
-navno.onScrollAndResize = function(event) {
+navno.onScrollAndResize = function() {
 	var viewPortBottom = $(document).scrollTop() + $(window).height();
 	var isBelowPageHeader = ($(document).scrollTop() > navno.requiredScrollDistanceForSticky);
 
@@ -838,7 +845,8 @@ function updatedScrollToTopLink() {
 }
 
 function scrollToTopHandler() {
-	navno.topLinkButtonPlaceholder = $('.placeholder');
+	var $placeholder = $('.placeholder');
+	navno.topLinkButtonPlaceholder = $placeholder;
 	navno.topLinkStickyElement = $('#top-scroll-link').parent();
 	navno.requiredScrollDistanceForSticky = ($('header.siteheader').height() + 500);
 
@@ -847,7 +855,7 @@ function scrollToTopHandler() {
 
 	if (($(window).height() * 2) + 200 < footerMenuTop) {
 		navno.topLinkButtonPlaceholder.removeClass('hide');
-		$('.placeholder').css('height', navno.topLinkButtonPlaceholder.height());
+		$placeholder.css('height', navno.topLinkButtonPlaceholder.height());
 		navno.buttonBottomOffset = navno.topLinkButtonPlaceholder.offset().top + navno.topLinkButtonPlaceholder.height();
 
 		if ($(document).scrollTop() > navno.requiredScrollDistanceForSticky && ($(document).scrollTop() + $(window).height()) < footerMenuTop) {
@@ -929,14 +937,11 @@ $(function() {
 	if (errorBody.length > 0) {
 		if (document.referrer.length > 0) {
 			errorBody.find('.btn').attr('href', document.referrer);
-		}
-		else {
+		} else {
 			errorBody.find('.btn').on('click touchend', function(e) {
 				e.preventDefault();
-
 				if (clickTouchHandeled === false) {
 					clickTouchHandeled = true;
-
 					window.history.back();
 				}
 			});
@@ -947,7 +952,7 @@ $(function() {
 //////////////////////// END ////////////////////////
 
 //Set styling based on securityLevel of user
-$(function () {
+$(function() {
 	if (typeof navno.securityLevel === 'undefined') {
 		hideDittNavMenuSetLogin();
 	} else {
@@ -961,37 +966,40 @@ function setLockedClassOnInaccessibleMenuElements() {
 		//If secLevel of the menu is larger than users secLevel set locked class for styling
 		if (this.getAttribute("data-sec-level") > navno.securityLevel) {
 			$(this).addClass("locked");
-            $(this).attr("aria-label", "Låst: ");
-		};
+			$(this).attr("aria-label", "Låst: ");
+		}
+		;
 	});
 }
 
 function hideDittNavMenuSetLogin() {
-	$('a[data-sec-level]').first().closest("ul.subnavitems").addClass("hidden");
-	$('a[data-sec-level]').first().closest("div").find('div.tilbaketilgruppe').addClass("hidden");
-	$('a[data-sec-level]').first().closest("div").children("div.submenu-logg-inn").removeClass("hidden");
+	var $dslevel = $('a[data-sec-level]');
+	$dslevel.first().closest("ul.subnavitems").addClass("hidden");
+	$dslevel.first().closest("div").find('div.tilbaketilgruppe').addClass("hidden");
+	$dslevel.first().closest("div").children("div.submenu-logg-inn").removeClass("hidden");
 }
 
 
 function setCorrectSecLevelUpgradeInfoText(securityLevel) {
-    if (securityLevel < 4) {
-        $('.secLevelUpgradeInfo').removeClass("hidden");
-        if (securityLevel === 3) {
-            $('.secLevel3Info').removeClass("hidden");
-            $('.secLevel3Info').removeAttr("aria-hidden");
-        } else {
-            $('.secLevel2Info').removeClass("hidden");
-            $('.secLevel2Info').removeAttr("aria-hidden");
-        }
-    }
+	if (securityLevel < 4) {
+		$('.secLevelUpgradeInfo').removeClass("hidden");
+		if (securityLevel === 3) {
+			var $sl3info = $('.secLevel3Info');
+			$sl3info.removeClass("hidden");
+			$sl3info.removeAttr("aria-hidden");
+		} else {
+			var $sl2info = $('.secLevel2Info');
+			$sl2info.removeClass("hidden");
+			$sl2info.removeAttr("aria-hidden");
+		}
+	}
 }
 
 /* Set same height for titles in the global menu */
 
-$(function () {
-
+$(function() {
 	$("li.topnavitem").each(function() {
-		var maxUndertittelhoyde = 0 ;
+		var maxUndertittelhoyde = 0;
 		var undertitler = $(this).find("h2.globalmenu-tittel");
 		undertitler.each(function() {
 			maxUndertittelhoyde = Math.max($(this).height(), maxUndertittelhoyde);
@@ -1006,17 +1014,16 @@ $(function () {
 /* Plassering av hjelpetekstboks for paalogging */
 
 $(function() {
-    $("#globalmenu-upgrade-info-button").click(function() {
-        var tooltip = $("#globalmenu-upgrade-info-tooltip")[0];
-        var tooltipbuttonOffset = $("#globalmenu-upgrade-info-button").offset();
-        var leftPosition = tooltipbuttonOffset.left -$(tooltip).width() + 21;
-        var topPosition = tooltipbuttonOffset.top - $(tooltip).height() - 34;
-
-        $(tooltip).offset({
-            top: topPosition,
-            left: leftPosition
-        });
-    });
+	$("#globalmenu-upgrade-info-button").click(function() {
+		var tooltip = $("#globalmenu-upgrade-info-tooltip")[0];
+		var tooltipbuttonOffset = $("#globalmenu-upgrade-info-button").offset();
+		var leftPosition = tooltipbuttonOffset.left - $(tooltip).width() + 21;
+		var topPosition = tooltipbuttonOffset.top - $(tooltip).height() - 34;
+		$(tooltip).offset({
+			top : topPosition,
+			left: leftPosition
+		});
+	});
 });
 
 //////////////////////// END ////////////////////////
