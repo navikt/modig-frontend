@@ -21,7 +21,6 @@ Some functions removed, some modified, others added.
 Original source: https://github.com/adobe-accessibility/Accessible-Mega-Menu
 */
 
-
 $(document).ready(function () {
 (function ($, window, document) {
 
@@ -329,12 +328,18 @@ $(document).ready(function () {
             var topli = element,
                 target = topli.find("a:first"),
                 href = target.attr('href'),
-                panel = topli.find('.accessible-megafooter-panel');
+                panel = topli.find('.accessible-megafooter-panel'),
+                panelWrapper = topli.find(".panel-wrapper"),
+                timeoutId,
+                getPanelHeight = function() {
+                  return panel.height() + 50; 
+                };
 
             if (!panel.find('ul').length > 0) {
 
             target.attr('aria-busy', 'true');
             panel.append('<div class="spinner"></div>');
+            panelWrapper.height(panel.find(".spinner").height() * 2);
 
             var jqxhr = $.ajax({
               type: "GET",
@@ -345,7 +350,6 @@ $(document).ready(function () {
               target.attr('aria-busy', 'false');
               panel.find('.spinner').remove();
               panel.find('p').remove(); // feilmelding
-
             })
 
             .fail(function() {
@@ -360,7 +364,14 @@ $(document).ready(function () {
 
                   if (!$('html').hasClass('no-csscolumns')) { // modernizr dependent
                   list.removeClass().addClass('footer-columns').appendTo(panel); // menu-link-list footer-columns
-
+                    panelWrapper.height(getPanelHeight());
+                    $(window).resize(function() {
+                      // throttling
+                      clearTimeout(timeoutId);
+                      timeoutId = setTimeout(function() {
+                        panelWrapper.height(getPanelHeight());
+                      }, 300);
+                    });
                   }
                   else { // special handling if no csscolumns support
                   _splitListItems(panel,list);
@@ -369,6 +380,7 @@ $(document).ready(function () {
                   }
 
                   else {
+                    panelWrapper.height(150);
                     panel.append('<p>Fant ikke innhold</p>');
                   }
             });
@@ -548,7 +560,6 @@ $(document).ready(function () {
                       });
               });
 
-
             _toggleExpandedEventHandlers.call(that);
 
           }
@@ -581,6 +592,7 @@ $(document).ready(function () {
                     && topli.find('.' + this.settings.panelClass).length === 1
                     && target[0] === toplink[0]) {
 
+
                       event.preventDefault(); // main menu item
                       event.stopPropagation();
 
@@ -596,9 +608,12 @@ $(document).ready(function () {
 
                 } else {
                    _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
+
                 }
 
                 hideUpgradeInfoToolTip();
+
+
             }
 
             else if (target.is('[tabindex].mobile-submenu-expander')) { // tabindex kun hvis mobil layout
@@ -617,7 +632,6 @@ $(document).ready(function () {
             }
 
            else if (target.is('button.mobile-toggler')) {
-
               if (!target.is('.m-open')) {
                     _toggleMobileMenuAndSearch.call(this, event);
 
@@ -638,7 +652,6 @@ $(document).ready(function () {
          * @private
          */
          _clickOutsideHandler = function (event) {
-
           var target = $(event.target);
 
           if ((window.navigator.msPointerEnabled || window.navigator.pointerEnabled) && target.context.localName === 'html') {
@@ -651,7 +664,6 @@ $(document).ready(function () {
              if(closedUpgradeInfoTooltip(target)){
                  return false;
              }
-
 
             if (this.interactiveArea.has(target).length === 0 && this.mobileMenuTogglers.filter(target).length === 0) {
 
@@ -935,6 +947,7 @@ $(document).ready(function () {
                     touchStartY = 0;
 
                 topnavitems.each(function (i, topnavitem) {
+
                     var topnavitemlink, topnavitempanel;
                     topnavitem = $(topnavitem);
                     topnavitem.addClass(settings.topNavItemClass);
@@ -1161,6 +1174,7 @@ $(document).ready(function () {
                             visible(element);
     }
 
+
     function hideUpgradeInfoToolTip() {
         var tooltipUpgradeInfo = $("#globalmenu-upgrade-info-tooltip");
         if (tooltipUpgradeInfo !== undefined && !tooltipUpgradeInfo.hasClass("hidden")) {
@@ -1202,7 +1216,6 @@ $(document).ready(function () {
     });
 }(jQuery, window, document));
 });
-
 
 
 
