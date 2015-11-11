@@ -328,12 +328,18 @@ $(document).ready(function () {
             var topli = element,
                 target = topli.find("a:first"), 
                 href = target.attr('href'),
-                panel = topli.find('.accessible-megafooter-panel');
+                panel = topli.find('.accessible-megafooter-panel'),
+                panelWrapper = topli.find(".panel-wrapper"),
+                timeoutId,
+                getPanelHeight = function() {
+                  return panel.height() + 50; 
+                };
 
             if (!panel.find('ul').length > 0) {
             
             target.attr('aria-busy', 'true');
             panel.append('<div class="spinner"></div>');
+            panelWrapper.height(panel.find(".spinner").height() * 2);
 
             var jqxhr = $.ajax({
               type: "GET",
@@ -344,7 +350,6 @@ $(document).ready(function () {
               target.attr('aria-busy', 'false');
               panel.find('.spinner').remove();
               panel.find('p').remove(); // feilmelding
-
             })
 
             .fail(function() {
@@ -358,16 +363,24 @@ $(document).ready(function () {
                   if (list.length > 0) {
 
                   if (!$('html').hasClass('no-csscolumns')) { // modernizr dependent
-                  list.removeClass().addClass('footer-columns').appendTo(panel); // menu-link-list footer-columns
-                  
+                    list.removeClass().addClass('footer-columns').appendTo(panel); // menu-link-list footer-columns
+                    panelWrapper.height(getPanelHeight());
+                    $(window).resize(function() {
+                      // throttling
+                      clearTimeout(timeoutId);
+                      timeoutId = setTimeout(function() {
+                        panelWrapper.height(getPanelHeight());
+                      }, 300);
+                    });
                   }
                   else { // special handling if no csscolumns support
-                  _splitListItems(panel,list);
+                    _splitListItems(panel,list);
                   }
 
                   }
 
                   else {
+                    panelWrapper.height(150);
                     panel.append('<p>Fant ikke innhold</p>');
                   } 
             });

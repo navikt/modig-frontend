@@ -66,23 +66,15 @@
 	.panel-wrapper {
 		height: 0;
 		visibility: hidden;
+		display: none;
 		.transition(height .5s);
-
 	}
 
 	&.js-menu-expanded {
 		.selected-letter {
 			.panel-wrapper {
+				display: block; 
 				visibility: visible;
-			}
-		}
-		.panel-wrapper {
-			height: 154em; // todo (max-height funker når pos absolute tas vekk fra .footer-contentlinks)
-			@media (min-width: @screen-medium) {
-				height: 57em;
-			}
-			@media (min-width: @screen-large) {
-				height: 45em;
 			}
 		}
 	}
