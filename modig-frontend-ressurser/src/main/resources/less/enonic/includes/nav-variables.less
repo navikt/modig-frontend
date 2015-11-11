@@ -1,3 +1,18 @@
+@screen-xxs: 15rem;
+//240px;  Fra mobil
+@screen-xs: 30rem;
+//480px;  Mobil
+@screen-small: 38.75rem;
+//620px;  // Custom
+@screen-medium: 48rem;
+//768px;  // Tablet
+@screen-medium-plus-rem-as-one-px: 48.0625rem;
+//769px;  // > Tablet
+@screen-large: 62rem;
+//992px;  // Fra desktop
+@screen-xl: 75rem;
+//1200px; // ikke i bruk
+
 .define-basepath-if-not-defined() {
   @baseImagePath: '../';
 }
@@ -11,7 +26,7 @@
 @gray:                   #555;
 @gray-light:             #d1d1d1; // linje rundt bokser etc
 @gray-lighter:           #F1F1F1; // body background
-
+@blue-dark:             #0067c5;
 
 @gray-footer-text:		 #B7B1A9; // samme lysegrå farge som MOD på copyrighttext i footer
 
@@ -19,7 +34,24 @@
 @blue:					 #0067c5;
 @blue-light:		     #0CA9E1; //#05a8e0;
 @orange:                 #f89406;
-
+@black:                 #000;
+@yellow:                #ffc40d;
+@mobile-link-blue:          #33b1dd;
+@bell-color:                #fcc05c;
+@blue-link:                 #0067c5;
+@gray-icon:                  #b7b1a9;
+@gray-text: #3e3832;
+@orange-focus: #ffbd66;
+@gray-background: #efefef;
+@white: #fff;
+@color-link-underline: 	@gray-icon;
+@color-link: 			@blue-link;
+@color-border: 			@gray-icon;
+@gray-inactive: #7f756c;
+@orange-info: #ff9100;
+@orange-warning: @orange-info;
+@color-gray-light-additional: 		#ccc;
+@blue-interaction-light: #0ca9e1;
 
 // Brand colors (bootstrap 3)
 // Ikke endret, brukes av buttons etc
@@ -92,6 +124,21 @@
 @em-as-12px:			0.75em;
 @em-as-11px:    		0.7em;
 @em-as-10px:			0.625em;
+
+
+//REM base fonts (1rem = 16px)
+// -------------------------
+@rem-as-38px:			2.375rem;
+@rem-as-30px:			1.875rem;
+@rem-as-24px:           1.5rem;
+@rem-as-20px:			1.25rem;
+@rem-as-18px:    		1.125rem;
+@rem-as-17px:           1.0675rem;
+@rem-as-16px:			1rem;
+@rem-as-14px:			0.875rem;
+@rem-as-12px:			0.75rem;
+@rem-as-11px:    		0.7rem;
+@rem-as-10px:			0.625rem;
 
 
 @font-size-base-em:		@em-as-14px;
@@ -472,3 +519,13 @@
 // 768px-979px
 @fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
 @fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
+
+// Media queries breakpoints
+// --------------------------------------------------
+@screen-xxs:                        15em;       //240px;  Fra mobil
+@screen-xs:     	                30em;		//480px;  Mobil
+@screen-small:  			        38.75em;	//620px;  Custom
+@screen-medium:	                    48em;		//768px;  Tablet
+@screen-medium-plus-em-as-one-px:   48.0625em;	//769px;  < Tablet
+@screen-large:                      62em;		//992px;  Fra desktop
+@screen-xl:		     		        75em;		//1200px; Ikke i bruk

@@ -2,11 +2,12 @@
 	"fileStructure": [
 		"/",
 		"css/", "css/bootstrap/", "css/modig/", "css/enonic/", "css/appres", "css/legacy/",
-		"img/", "img/modig/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder",
+		"img/", "img/modig/", "img/enonic/", "img/enonic/gfx/", "img/enonic/skjemaveileder", "img/varsel/", "img/navno/",
         "img/enonic/gfx/carousel/", "img/enonic/gfx/icons/", "img/enonic/gfx/mainmenu/", "img/enonic/gfx/tts/", "img/enonic/gfx/forms/",
         "img/appres/", "img/appres/legacy/", "img/appres/legacy/breadcrumb/", "img/appres/legacy/dittnav/",
         "img/appres/legacy/fellesinnlogging/", "img/appres/legacy/global/", "img/appres/legacy/ikoner/", "img/appres/legacy/logo/",
         "img/appres/legacy/tooltip/", "img/appres/legacy/tooltip/hjelpetekst/", "img/appres/legacy/venstremeny/",
+        "img/navno/globalmenuDittNav/",
 		"js/",
 		"js/bootstrap/", "js/bootstrap/jquery/",
 		"js/modig/", "js/modig/jquery/", "js/enonic/",
@@ -71,6 +72,8 @@
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/tooltip/", "toDir": "/generated-resources/img/appres/legacy/tooltip/" },
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/tooltip/hjelpetekst/", "toDir": "/generated-resources/img/appres/legacy/tooltip/hjelpetekst/" },
         { "fromDir": "/resources/META-INF/resources/img/appres/legacy/venstremeny/", "toDir": "/generated-resources/img/appres/legacy/venstremeny/" },
+        { "fromDir": "/resources/META-INF/resources/img/varsel/", "toDir": "/generated-resources/img/varsel/" },
+        { "fromDir": "/resources/META-INF/resources/img/navno/globalmenuDittNav/", "toDir": "/generated-resources/img/navno/globalmenuDittNav/" },
 
 		{ "fromDir": "/resources/META-INF/resources/img/modig/", "toDir": "/generated-resources/img/modig/" },
 		{ "fromDir": "/resources/META-INF/resources/img/appres/legacy/", "toDir": "/generated-resources/img/appres/legacy/" }
@@ -93,6 +96,8 @@
         { "fromDir": "/resources/js/jquery/", "toDir": "/generated-resources/js/appres/", "file": "jquery-1.11.1.js"},
         { "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/appres/", "file": "nav-global.js"},
         { "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/appres/", "file": "nav-innloggingslinjen.js"},
+        { "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/appres/", "file": "nav-globalmeny.js"},
+        { "fromDir": "/resources/js/enonic/navno/", "toDir": "/generated-resources/js/appres/", "file": "nav-varsling.js"},
         { "fromDir": "/resources/js/enonic/navno/libs/megamenu/", "toDir": "/generated-resources/js/appres/", "file": "jquery-accessibleMegaMenu.js"},
         { "fromDir": "/resources/js/enonic/navno/libs/", "toDir": "/generated-resources/js/appres/", "file": "matchmedia.js"},
         { "fromDir": "/resources/js/enonic/navno/libs/", "toDir": "/generated-resources/js/appres/", "file": "modernizr.2.7.1.min.js"}
@@ -111,7 +116,7 @@
             "files": ["jquery-1.11.1.js", "felles.js"] },
 
         { "fromDir": "/generated-resources/js/appres/", "toFile": "/generated-resources/js/appres/app-navno-concat.js",
-            "files": ["nav-global.js", "matchmedia.js", "jquery-accessibleMegaMenu.js"] },
+            "files": ["nav-global.js", "matchmedia.js", "jquery-accessibleMegaMenu.js", "nav-globalmeny.js", "nav-varsling.js"] },
 
         { "fromDir": "/resources/js/jquery/", "toFile": "/generated-resources/js/enonic/navno/jquery-tmp.js",
             "files": ["jquery-1.11.1.js"] },

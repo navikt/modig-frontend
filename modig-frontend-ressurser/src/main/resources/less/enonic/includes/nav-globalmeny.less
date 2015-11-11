@@ -1,0 +1,227 @@
+.submenu-logg-inn {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: .875rem;
+  padding-left: 120px;
+  padding-right: 120px;
+  p {
+    margin-bottom: 1rem !important;
+  }
+  .decorated {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+}
+
+a.locked {
+  background: url('@{baseImagePath}img/enonic/ikon_las_svart.png') no-repeat 1% 50%;
+  background-size: 0.9rem;
+  margin-left: -30px;
+  padding: 15px 0 15px 30px;
+
+  &:hover {
+    &:before {
+      border: none;
+    }
+  }
+  &:focus {
+    background: transparent url('@{baseImagePath}img/enonic/ikon_las_svart.png') no-repeat 1% 50%;
+    &:before {
+      border: none;
+    }
+  }
+
+}
+
+.secLevelUpgradeInfo {
+  margin-top: 2rem;
+  text-align: center;
+  .secLevel2Info, .secLevel3Info {
+    display: inline-block;
+  }
+  span {
+    background: transparent url('@{baseImagePath}img/enonic/ikon_las_svart.png') no-repeat;
+    padding-left: 1.7rem;
+    background-size: 1.1rem;
+    background-position: 0% 48%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin-right: 0.5rem
+  }
+
+  .logginninfo {
+    outline: none;
+    border: 0;
+    display: inline-block;
+    background: transparent url('@{baseImagePath}img/enonic/sporsmaalstegn.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    background-size: 1.3rem;
+    vertical-align: middle;
+    &:hover {
+      background: transparent url('@{baseImagePath}img/enonic/sporsmaalstegn_hover.png') no-repeat;
+      background-size: 1.3rem;
+    }
+  }
+}
+
+.siteheader {
+  .panel-negativ {
+    position: absolute;
+    z-index: 9;
+    width: 350px;
+    padding: 10px;
+    background-color: @gray-dark;
+    color: @white;
+    &:before {
+      content: "";
+      border: solid transparent;
+      border-width: 10px;
+      position: absolute;
+      height: 0;
+      width: 0;
+      right: 20px;
+      border-top-color: @gray-text;
+      top: 100%
+    }
+    .lukk {
+      margin-bottom: 2rem;
+      button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        border: 0;
+        background: transparent url('@{baseImagePath}img/enonic/kryss_blaa.png') no-repeat;
+        &:hover {
+          background: transparent url('@{baseImagePath}img/enonic/kryss_blaa_hover.png') no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.tilbaketilgruppe {
+  padding: 2px 0 2px 0px;
+  position: relative;
+  font-size: 14px;
+
+  .tilbaketittel {
+    color: black;
+    position: absolute;
+    bottom: 25px;
+    margin-left: 8px;
+  }
+
+  .home-link {
+    text-decoration: none;
+    display: inline-block;
+    color: @blue-link;
+
+    .tilbaketilforsidelink {
+      position: absolute;
+      margin-left: 8px;
+    }
+    &:before {
+      display: inline-block;
+      content: "";
+      width: 46px;
+      height: 60px;
+      background: transparent url('@{baseImagePath}img/enonic/gfx/mainmenu/hjem_sort.png') no-repeat;
+      background-position: 66% 20%;
+      background-size: 55%;
+    }
+    &.dittnav {
+      &:before {
+        display: inline-block;
+        content: "";
+        width: 46px;
+        height: 60px;
+        background: transparent url('@{baseImagePath}img/enonic/person_graa.png') no-repeat;
+        background-position: 0% 0%;
+        background-size: 90%;
+      }
+      &:hover {
+        &:before {
+          background: transparent url('@{baseImagePath}img/enonic/person_blaa.png') no-repeat;
+        }
+      }
+      &:active {
+        outline: none;
+        &:before {
+          background: transparent url('@{baseImagePath}img/enonic/person_svart.png') no-repeat;
+        }
+      }
+    }
+
+    &:hover {
+      &:before {
+        display: inline-block;
+        content: "";
+        width: 46px;
+        height: 60px;
+        background: transparent url('@{baseImagePath}img/enonic/gfx/mainmenu/hjem_blaa.png') no-repeat;
+        background-position: 66% 20%;
+        background-size: 55%;
+      }
+    }
+    &:active, &:focus {
+      outline: none;
+      background-color: transparent;
+      .tilbaketilforsidelink{
+        background-color: @orange-focus;
+        box-shadow: 0 0 0 3px @orange-focus;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  a.lenke-fremhevet {
+    color: @blue-interaction-light;
+  }
+  a.locked {
+    background: url('@{baseImagePath}img/enonic/ikon_las_hvit.png') no-repeat 1% 50%;
+    &:hover, &:active, &:focus {
+      background: url('@{baseImagePath}img/enonic/ikon_las_hvit.png') no-repeat 1% 50%;
+      color: @blue-interaction-light;
+    }
+  }
+  .secLevelUpgradeInfo {
+    display: none;
+  }
+
+  .submenu-logg-inn {
+    margin-top: 1rem;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .accessible-megamenu-panel {
+    .tilbaketilgruppe {
+      .home-link {
+        &.dittnav {
+          &:before {
+            background: transparent url('@{baseImagePath}img/enonic/person_hvit.png') no-repeat 42% 30%;
+            background-size: 62%;
+          }
+
+          &:hover, &:active, &:focus {
+            &:before {
+              background: transparent url('@{baseImagePath}img/enonic/person_blaa.png') no-repeat 42% 30%;
+              background-size: 62%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu-link-list a {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+

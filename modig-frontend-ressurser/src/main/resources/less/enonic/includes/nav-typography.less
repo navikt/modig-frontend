@@ -1,6 +1,24 @@
 // Body text
 // -------------------------
 
+
+.lenke-fremhevet {
+  border-bottom: 1px solid #b7b1a9;
+  &:hover {
+    border-bottom-color: #0067c5;
+    text-decoration: none;
+  }
+  &:active {
+    border-bottom-color: #634689;
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  text-decoration: none;
+}
+
+
 p, .paragraph, input, button, .article-body li {
 	font-size: @em-as-16px;
 }

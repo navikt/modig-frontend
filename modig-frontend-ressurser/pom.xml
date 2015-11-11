@@ -29,6 +29,16 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
+                <directory>src/main/generated-resources/img/navno/globalmenuDittNav</directory>
+                <targetPath>img/enonic</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/generated-resources/img/varsel</directory>
+                <targetPath>img/enonic</targetPath>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
                 <directory>src/main/generated-resources/img/appres/legacy</directory>
                 <targetPath>img/appres/legacy</targetPath>
             </resource>
