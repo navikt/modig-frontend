@@ -28,7 +28,10 @@ $(function () {
             nyeEntall: varslerKnapp.attr('data-tekst-visalle-nye-entall'),
             ingenvarsler: varslerKnapp.attr('data-tekst-ingenvarsler'),
             error: varslerKnapp.attr('data-tekst-error'),
-            lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst')
+            lenketekst: varslerKnapp.attr('data-tekst-varselurl-lenketekst'),
+            ingenVarsler: 'Ingen varsler',
+            harVarslerMenAlleErLest: 'Varsler',
+            harUlesteVarsler: 'Uleste varsler'
         };
 
     if ( !('withCredentials' in new XMLHttpRequest()) && window.location.href.indexOf(tjenesterBaseUrl) < 0 ) {
@@ -57,7 +60,8 @@ $(function () {
             if (data.antallUleste > 0) {
                 harNyeVarsler();
             } else if (data.nyesteVarsler.length === 0) {
-                varslerKnapp.attr('aria-label', 'Ingen varsler');
+                varslerKnapp.attr('aria-label', tekster.ingenVarsler);
+                varslerKnappMobil.attr('aria-label', tekster.ingenVarsler);
             }
 
             varsler = data.nyesteVarsler.map(function (varsel) {
@@ -267,14 +271,16 @@ $(function () {
     }
 
     function fjernUsettStatusPaaIkoner() {
-        varslerKnapp.attr('aria-label', 'Varsler');
+        varslerKnapp.attr('aria-label', tekster.harVarslerMenAlleErLest);
+        varslerKnappMobil.attr('aria-label', tekster.harVarslerMenAlleErLest);
         var harNyeVarsler = 'har-nye-varsler';
         varselikonContainer.removeClass(harNyeVarsler);
         varslerKnappMobil.removeClass(harNyeVarsler);
     }
 
     function harNyeVarsler() {
-        varslerKnapp.attr('aria-label', 'Uleste varsler');
+        varslerKnapp.attr('aria-label', tekster.harUlesteVarsler);
+        varslerKnappMobil.attr('aria-label', tekster.harUlesteVarsler);
         varselikonContainer.addClass('har-nye-varsler');
         varslerKnappMobil.addClass('har-nye-varsler');
     }
