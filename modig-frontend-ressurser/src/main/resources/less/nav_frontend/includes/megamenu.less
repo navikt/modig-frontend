@@ -584,6 +584,12 @@
 	@media (min-width: 60em) {
 		.sitesearch {
 			margin-left: 20px;
+          .inputwrapper {
+            border: 2px solid @gray-lighter;
+            .input-sitesearch {
+              padding-left: 3px;
+            }
+          }
 		}
 
 		.topnavsection {
@@ -836,7 +842,6 @@
 
 	.sitesearch {
 		padding: 9px 0 0 0;
-		border-bottom: 1px solid @text-color;
 		vertical-align: top;
 		display: inline-block;
 		margin-left: 10px;
@@ -846,9 +851,7 @@
 		}
 
 		.btn-sitesearch {
-			background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/sok_liten_morkeblaa.png') no-repeat top left;
-			// background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/sok_liten_morkeblaa.svg') no-repeat top left;
-
+			background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/sok_liten_graa.png') no-repeat top left;
 		}
 	}
 
