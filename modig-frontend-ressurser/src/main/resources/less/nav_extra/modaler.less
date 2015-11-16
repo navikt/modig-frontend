@@ -6,6 +6,10 @@
 	width: 100%; 
 	height: 100%; 
 	z-index: @zindex-modal-background;
+
+	&.modal-bakteppe-alert {
+		z-index: @zindex-modal-alert-background;
+	}
 }
 
 .modal-vindu {
@@ -23,7 +27,7 @@
 	position: fixed;
     top: 50%;
     left: 50%;
-    z-index: 1050;	
+    z-index: @zindex-modal-alert;	
     border: 0; 
     .mixin-transform(translate(-50%, -50%));
     margin: 0; 
