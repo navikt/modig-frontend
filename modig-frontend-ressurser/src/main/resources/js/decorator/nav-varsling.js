@@ -34,6 +34,11 @@ $(function () {
             harUlesteVarsler: 'Uleste varsler'
         };
 
+    if (ikonerIkkeFinnesIDOM()) {
+        // Vi kjører i en app som ikke skal vise varsler
+        return;
+    }
+
     if ( !('withCredentials' in new XMLHttpRequest()) && window.location.href.indexOf(tjenesterBaseUrl) < 0 ) {
         // Browseren støtter ikke Cross Origin Resource Sharing (CORS) via XMLHttpRequest
         return;
@@ -283,6 +288,10 @@ $(function () {
         varslerKnappMobil.attr('aria-label', tekster.harUlesteVarsler);
         varselikonContainer.addClass('har-nye-varsler');
         varslerKnappMobil.addClass('har-nye-varsler');
+    }
+
+    function ikonerIkkeFinnesIDOM() {
+        return !varslerKnapp.length || !varslerKnappMobil.length;
     }
 
     $(document).on('click', function (event) {
