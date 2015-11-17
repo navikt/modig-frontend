@@ -1,12 +1,13 @@
-//.toggle-varsler-container {
-//  visibility: hidden !important;
-//}
-
 .submenu-logg-inn {
+  padding-left: 120px;
+  padding-right: 120px;
+  text-align: center;
+  margin-top: 10rem;
+
   .knapp {
-    color: #fff;
-    background: #0067c5;
-    border-bottom-color: #3e3832;
+    color: @white;
+    background: @blue-dark;
+    border-bottom-color: @gray-dark;
     font-weight: 600;
     cursor: pointer;
     display: inline-block;
@@ -19,12 +20,12 @@
     line-height: 1;
     padding: 10px 40px;
     border: none;
-    border-bottom: 2px solid #3e3832;
+    border-bottom: 2px solid @orange-focus;
     &:focus {
       box-shadow: 0 0 0 2px #ffbd66;
     }
     &:hover {
-      border-bottom: 3px solid #7f756c;
+      border-bottom: 3px solid @gray-inactive;
       margin-bottom: -1px;
       -webkit-transform: translateY(-1px);
       -moz-transform: translateY(-1px);
@@ -33,11 +34,6 @@
       transform: translateY(-1px);
     }
   }
-
-  padding-left: 120px;
-  padding-right: 120px;
-  text-align: center;
-  margin-top: 10rem;
   .decorated {
     margin-bottom: 1rem;
   }
@@ -68,7 +64,7 @@ a.locked {
     }
   }
   &:focus {
-    background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat 1% 50%;
+    background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png');
     &:before {
       border: none;
     }
@@ -79,10 +75,9 @@ a.locked {
   margin-top: 2rem;
   text-align: center;
   span {
-    background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat;
     padding-left: 1.7rem;
     background-size: 1.1rem;
-    background-position: 0% 48%;
+    background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_svart.png') no-repeat 0% 48%;
     padding-bottom: 1rem;
     padding-top: 1rem;
     margin-right: 0.5rem;
@@ -102,8 +97,7 @@ a.locked {
     background-size: 1.3rem;
     vertical-align: middle;
     &:hover {
-      background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/sporsmaalstegn_hover.png') no-repeat;
-      background-size: 1.3rem;
+      background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/sporsmaalstegn_hover.png');
     }
   }
 }
@@ -117,13 +111,12 @@ a.locked {
   }
   &:before {
     content: "";
-    border: solid transparent;
-    border-width: 10px;
     position: absolute;
     height: 0;
     width: 0;
     right: 20px;
-    border-top-color: #3e3832;
+    border: 10px solid transparent;
+    border-top-color: @gray-dark;
     top: 100%
   }
   position: absolute;
@@ -141,7 +134,7 @@ a.locked {
       border: 0;
       background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa.png') no-repeat;
       &:hover {
-        background:transparent url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa_hover.png') no-repeat;
+        background-image:url('@{baseImagePath}img/navno/globalmenuDittNav/kryss_blaa_hover.png');
       }
     }
   }
@@ -149,7 +142,7 @@ a.locked {
     padding-bottom: 2rem;
     position: relative;
     text-align: center;
-    font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    font-family: "Helvetica", "Arial", "sans-serif";
     font-weight: 600;
     font-size: 1rem;
     margin-top: 0;
@@ -168,10 +161,8 @@ a.locked {
 
   .typo-normal {
     font-size: 0.875rem;
-    font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    font-family: "Helvetica", "Arial", "sans-serif";
   }
-
-
 }
 
 //Teit hack pga denne fokusmarkeringen skal kunne gjelde pa header og footer i enkelte apper
@@ -208,8 +199,7 @@ a.locked {
       content: "";
       width: 46px;
       height: 60px;
-      background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat;
-      background-position: 66% 20%;
+      background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_sort.png') no-repeat 66% 20%;
       background-size: 55%;
     }
     &.dittnav {
@@ -218,19 +208,18 @@ a.locked {
         content: "";
         width: 46px;
         height: 60px;
-        background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_graa.png') no-repeat;
-        background-position: 0% 0%;
+        background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_graa.png') no-repeat 0% 0%;
         background-size: 90%;
       }
       &:hover {
         &:before {
-          background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png') no-repeat;
+          background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png');
         }
       }
       &:active {
         outline: none;
         &:before {
-          background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_svart.png') no-repeat;
+          background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/person_svart.png');
         }
       }
     }
@@ -241,8 +230,7 @@ a.locked {
         content: "";
         width: 46px;
         height: 60px;
-        background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
-        background-position: 66% 20%;
+        background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat 66% 20%;
         background-size: 55%;
       }
     }
@@ -270,8 +258,8 @@ a.locked {
     a.locked {
       background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_hvit.png') no-repeat 1% 50%;
       &:hover, &:active, &:focus {
-        background: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_hvit.png') no-repeat 1% 50%;
-        color: #0ca9e1;
+        background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_hvit.png');
+        color: @blue-light;
       }
     }
   }
@@ -289,14 +277,13 @@ a.locked {
       .home-link {
         &.dittnav {
           &:before {
-            background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_hvit.png') no-repeat 42% 30%;
+            background: url('@{baseImagePath}img/navno/globalmenuDittNav/person_hvit.png') no-repeat 42% 30%;;
             background-size: 62%;
           }
 
           &:hover, &:active, &:focus {
             &:before {
-              background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png') no-repeat 42% 30%;
-              background-size: 62%;
+              background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png');
             }
           }
         }
