@@ -19,20 +19,23 @@ function setLockedClassOnInaccessibleMenuElements() {
 }
 
 function hideDittNavMenuSetLogin() {
-    $('a[data-sec-level]').first().closest("ul.subnavitems").addClass("hidden");
-    $('a[data-sec-level]').first().closest("div").find('div.tilbaketilgruppe').addClass("hidden");
-    $('a[data-sec-level]').first().closest("div").children("div.submenu-logg-inn").removeClass("hidden");
+    var adsl = $('a[data-sec-level]').first();
+    adsl.closest("ul.subnavitems").addClass("hidden");
+    adsl.closest("div").find('div.tilbaketilgruppe').addClass("hidden");
+    adsl.closest("div").children("div.submenu-logg-inn").removeClass("hidden");
 }
 
 function setCorrectSecLevelUpgradeInfoText(securityLevel) {
     if (securityLevel < 4) {
         $('.secLevelUpgradeInfo').removeClass("hidden");
         if (securityLevel === 3) {
-            $('.secLevel3Info').removeClass("hidden");
-            $('.secLevel3Info').removeAttr("aria-hidden");
+            var secLevel3Info = $('.secLevel3Info');
+            secLevel3Info.removeClass("hidden");
+            secLevel3Info.removeAttr("aria-hidden");
         } else {
-            $('.secLevel2Info').removeClass("hidden");
-            $('.secLevel2Info').removeAttr("aria-hidden");
+            var secLevel2Info = $('.secLevel2Info');
+            secLevel2Info.removeClass("hidden");
+            secLevel2Info.removeAttr("aria-hidden");
         }
     }
 }
