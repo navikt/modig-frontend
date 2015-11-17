@@ -1,6 +1,6 @@
 var dataLayer = dataLayer || [{}];
 
-$(function() {
+(function() {
 
     (function(w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -27,4 +27,4 @@ $(function() {
     };
 
     dataLayer.push(innloggetInformasjon);
-});
+})();
