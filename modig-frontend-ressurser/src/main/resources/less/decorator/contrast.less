@@ -6,10 +6,10 @@
   .contrast {
 
     a.locked {
-      background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_gra.png') no-repeat 1% 50% !important;
+      background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_gra.png') !important;
     }
     .secLevelUpgradeInfo span {
-      background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_gra.png') no-repeat 1% 50% !important;
+      background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/ikon_las_gra.png') !important;
     }
     //
     //  Basic, "catch all" kontrast fra modig
@@ -169,8 +169,7 @@
           content: "";
           width: 46px;
           height: 60px;
-          background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_gul.png') no-repeat;
-          background-position: 66% 20%;
+          background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_gul.png') no-repeat 66% 20%;
           background-size: 55%;
         }
 
@@ -180,21 +179,19 @@
             content: "";
             width: 46px;
             height: 60px;
-            background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat;
-            background-position: 66% 20%;
+            background: transparent url('@{baseImagePath}img/navno/gfx/mainmenu/hjem_blaa.png') no-repeat 66% 20%;
             background-size: 55%;
           }
         }
 
         &.dittnav {
           &:before {
-            background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_gul.png') no-repeat;
-            background-position: 0% 0%;
+            background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_gul.png') no-repeat 0% 0%;
             background-size: 90%;
           }
           &:hover {
             &:before {
-              background: transparent url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png') no-repeat;
+              background-image: url('@{baseImagePath}img/navno/globalmenuDittNav/person_blaa.png');
             }
           }
         }
