@@ -102,8 +102,7 @@
 
   }
   .btn-sitesearch {
-    margin: 0;
-    padding: 0;
+    margin: 0 2px 0 0;
     border: none;
     text-indent: -9999em;
     width: 17px;
@@ -836,17 +835,39 @@
 
   .sitesearch {
     padding: 9px 0 0 0;
-    border-bottom: 1px solid @text-color;
     vertical-align: top;
     display: inline-block;
     margin-left: 10px;
 
-    .input-sitesearch {
-      margin: 0 .1em 0 0;
+    .inputwrapper {
+      line-height: normal;
+      border: 2px solid @gray-light;
+      border-radius: 2px;
+
+      input:focus::-webkit-input-placeholder {
+        color: @gray-dark;
+      }
+      input:focus:-moz-placeholder {
+        color: @gray-dark;
+      }
+      input:focus::-moz-placeholder {
+        color: @gray-dark;
+      }
+      input:focus:-ms-input-placeholder {
+        color: @gray-dark;
+      }
+
+      .input-sitesearch {
+        padding-left: 3px;
+        font-style: italic;
+        margin: 2px;
+      }
     }
 
     .btn-sitesearch {
-      background: transparent url('@{baseImagePath}img/enonic/gfx/mainmenu/sok_liten_morkeblaa.png') no-repeat top left;
+      margin: 2px;
+      line-height: normal;
+      background: transparent url('@{baseImagePath}img/enonic/gfx/mainmenu/sok_liten_graa.png') no-repeat top left;
     }
   }
 

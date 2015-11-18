@@ -696,45 +696,6 @@ $(function () {
 });
 //////////////////////// END ////////////////////////
 
-
-/*
- * Google Analytics stuff
- */
-
-$(function () {
-	if (typeof ga !== 'undefined' && ga.hasOwnProperty('loaded') && ga.loaded === true) {
-
-		$('.visuallyhidden.focusable').eq(0).one('focus.google-analytics', function () {
-			ga('send', 'event', 'Tastatur', 'focus', $(this).text());
-		});
-		$('#high-contrast').find('button').on('click.google-analytics', function () {
-			var mode = '';
-			if ($('body').hasClass('contrast')) {
-				mode = 'av';
-			}
-			else {
-				mode = 'på';
-			}
-			ga('send', 'event', 'Høykontrast ' + mode, 'klikk', $(this).text());
-		});
-		/* $('#footer-content-menu').find('.letter > a').on('click.google-analytics', function () { // request må kjøres etter lenkeliste er lastet inn pga ytelse
-		 ga('send', 'event', 'Innhold A-Å', 'klikk', $(this).text());
-		 });*/
-		$('.carousel-control').on('click.google-analytics', function () {
-			ga('send', 'event', 'Karusell', 'klikk', 'Høyre/venstre');
-		});
-		$('.carousel-dropdown').find('.btn').on('click.google-analytics', function () {
-			ga('send', 'event', 'Karusell', 'klikk', 'Se alle');
-		});
-
-		$('#play-btn').one('click.google-analytics', function () {
-			var pageTitle = $('#pagecontent').find('h1').eq(0).text() || document.title;
-			ga('send', 'event', 'Talesyntese', 'Play', pageTitle);
-		});
-	}
-});
-//////////////////////// END ////////////////////////
-
 /*
  * Footer content letters scrolling/swiping (A-Å)
  */
