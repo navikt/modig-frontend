@@ -176,11 +176,16 @@ $(function () {
 
     function leggPaaLenkeHvisUrlFinnes(varsel) {
         if (varsel.url) {
-            return '</br><a href="' + varsel.url + '">'
-                + wrapISpan(tekster.lenketekst) + wrapISpan('&nbsp;- ' + varsel.formattertDato, 'visuallyhidden') + '</a></br>';
+            return '</br>' + lenkeLabelForSkjemlesere(varsel)
+                + '<a aria-labelledby="' + varsel.id + 'meny" href="' + varsel.url + '">'
+                + wrapISpan(tekster.lenketekst) + '</a></br>';
         }
 
         return '';
+    }
+
+    function lenkeLabelForSkjemlesere(varsel) {
+        return '<label id="' + varsel.id + 'meny" class="hidden">' + wrapISpan(tekster.lenketekst) + ' - ' + varsel.formattertDato + '</label>';
     }
 
     function meldingSettEllerIkke(varsel) {
