@@ -159,6 +159,8 @@ $(document).ready(function () {
             _toggleMobileMenuAndSearch,     
             _getFooterLinks, // custom func
             _splitListItems, // custom func
+            _isElementinViewport, // custom func
+            _scrollElementIntoViewport, // custom func
             _getTouchEvent = function(event) {
                       return event.originalEvent.targetTouches ? event.originalEvent.targetTouches[0] : event;
                     };
@@ -323,6 +325,32 @@ $(document).ready(function () {
 
         };
 
+        _isElementinViewport = function(el) {
+          //special bonus for those using jQuery
+          if (typeof jQuery === "function" && el instanceof jQuery) {
+              el = el[0];
+          }
+
+          var rect = el.getBoundingClientRect();
+
+          return (
+              rect.top >= 0 &&
+              rect.left >= 0 &&
+              rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+              rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+          );
+        };
+
+        _scrollElementIntoViewport = function(el) {
+          setTimeout(function() {
+            if(!_isElementinViewport(el)) {
+              $("html, body").animate({
+                scrollTop: el.offset().top
+              }, 300);
+            }
+          }, 300)
+        };
+
           _getFooterLinks = function (element) {
             
             var topli = element,
@@ -332,7 +360,11 @@ $(document).ready(function () {
                 panelWrapper = topli.find(".panel-wrapper"),
                 timeoutId, 
                 setPanelWrapperHeight = function() {
-                  panelWrapper.height(panel.height() + 50);
+                  var currentHeight = panelWrapper.height(); 
+                  var newHeight = panel.height() + 50;
+                  if(newHeight > currentHeight) {
+                    panelWrapper.height(newHeight);
+                  }
                 };
 
             if (!panel.find('ul').length > 0) {
@@ -362,45 +394,34 @@ $(document).ready(function () {
 
                   if (list.length > 0) {
 
-                  if (!$('html').hasClass('no-csscolumns')) { // modernizr dependent
-                    list.removeClass().addClass('footer-columns').appendTo(panel); // menu-link-list footer-columns
-                  }
-                  else { // special handling if no csscolumns support
-                    _splitListItems(panel,list);
-                  }
+                    if (!$('html').hasClass('no-csscolumns')) { // modernizr dependent
+                      list.removeClass().addClass('footer-columns').appendTo(panel); // menu-link-list footer-columns
+                    }
+                    else { // special handling if no csscolumns support
+                      _splitListItems(panel,list);
+                    }
 
-                  setPanelWrapperHeight(); 
-                  $(window).resize(function() {
-                    // throttling
-                    clearTimeout(timeoutId);
-                    timeoutId = setTimeout(setPanelWrapperHeight, 300);
-                  });                  
+                    setPanelWrapperHeight(); 
+                    $(window).resize(function() {
+                      // throttling
+                      clearTimeout(timeoutId);
+                      timeoutId = setTimeout(setPanelWrapperHeight, 300);
+                    });          
+
+                    _scrollElementIntoViewport(panelWrapper);        
 
                   }
 
                   else {
                     panelWrapper.height(150);
+                    _scrollElementIntoViewport(panelWrapper);
                     panel.append('<p>Fant ikke innhold</p>');
                   } 
             });
             
           }// if content is not allready loaded
 
-
-           setTimeout(function() {
-            var scrollTarget = $(window).scrollTop() + $(window).height(),
-                offset = topli.offset().top,
-                distanceFromFold = scrollTarget - offset;
-
-                if (distanceFromFold < 300) { // scroll down to link list if A-Z is close to the fold
-                  $('html,body').animate({
-                  scrollTop: $(window).scrollTop() + (300 - distanceFromFold)
-               });
-                }
-              
-            }, 500);
-          };
-
+        };
 
         /**
          * @name jQuery.fn.accessibleMegaMenu~_getPlugin
@@ -481,10 +502,9 @@ $(document).ready(function () {
                var footerLinksContainer = topli.find('.accessible-megafooter-panel');
 
                 if (footerLinksContainer.length > 0) {
-                     if (!footerLinksContainer.hasClass('content-loaded')) {
-                          _getFooterLinks (topli);
-                       }
-            
+                  if (!footerLinksContainer.hasClass('content-loaded')) {
+                    _getFooterLinks (topli);
+                  } 
                 }
 
                 topli.siblings().removeClass(settings.selectedTopNavItem)
@@ -500,6 +520,8 @@ $(document).ready(function () {
                     .addClass(settings.jsAnimatedClass) // custom
                     .filter('.' + settings.panelClass)
                     .attr('aria-hidden', 'false');              
+
+                _scrollElementIntoViewport(footerLinksContainer);
 
                  menu.addClass(settings.jsMenuExpandedClass); // animate down // custom
 
