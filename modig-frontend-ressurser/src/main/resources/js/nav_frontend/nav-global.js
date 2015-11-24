@@ -522,20 +522,6 @@ $(function () {
 });
 //////////////////////// END ////////////////////////
 
-
-/*
- * SVG stuff
- */
-$(function () {
-	if (!Modernizr.svg && document.getElementById('svg-banner')) {
-		var elem = document.getElementById('svg-banner');
-		var fallback = elem.getAttribute('data-fallback');
-		elem.setAttribute('src', fallback);
-	}
-});
-//////////////////////// END ////////////////////////
-
-
 /*
  * Hover / focus events
  */
