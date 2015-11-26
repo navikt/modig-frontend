@@ -138,13 +138,13 @@
 	.footer-columns {
 		// klasse settes av js for nettlesere som støtter css columns
 
-		column-count: 1;
+		.content-columns(1);
 
 		@media (min-width: @screen-medium) {
-			column-count: 3;
+			.content-columns(3);
 		}
 		@media (min-width: @screen-large) {
-			column-count: 4;
+			.content-columns(4);
 		}
 		li {
 			display: inline-block;
