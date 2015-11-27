@@ -522,7 +522,9 @@ $(document).ready(function () {
                     .filter('.' + settings.panelClass)
                     .attr('aria-hidden', 'false');
 
-                _scrollElementIntoViewport(footerLinksContainer);
+                if (footerLinksContainer.length > 0) {
+                  _scrollElementIntoViewport(footerLinksContainer);
+                }
 
                  menu.addClass(settings.jsMenuExpandedClass); // animate down // custom
 
