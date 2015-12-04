@@ -1,0 +1,195 @@
+.nav-datovelger {
+	.bn_date {
+		border: none;
+		background: url(@{modig-frontend-images-root-url}/kalender.svg) no-repeat -6px;
+		background-size: 53px;
+		width: 41px;
+		height: 41px;
+		vertical-align: -7px;
+		&:hover, &:focus {
+			background-image: url(@{modig-frontend-images-root-url}/kalender_hover.svg);
+		}
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 3px @color-focus;
+		}
+	}
+
+	.nav-dato {
+		display: inline-block;
+	}
+
+	.month-wrap {
+		position: relative;
+	}
+
+	.bn_prev-label, .bn_next-label {
+		position: absolute;
+		left: -3000px;
+	}
+
+	.bn_prev, .bn_next {
+		position: absolute;
+		top: 3px;
+		height: 20px;
+		width: 10px;
+		cursor: pointer;
+		z-index: 10;
+		&:focus {
+			outline: 0;
+			box-shadow: 0 0 0 3px @color-focus;
+		}
+	}
+
+	.bn_prev {
+		left: 0;
+		&:before {
+			content: " ";
+			border-bottom: 10px solid transparent;
+			border-right: 9px solid #0067c5;
+			border-top: 10px solid transparent;
+			position: absolute;
+		}
+	}
+
+	.bn_next {
+		right: 0;
+		&:after {
+			content: " ";
+			border-bottom: 10px solid transparent;
+			border-left: 9px solid #0067c5;
+			border-top: 10px solid transparent;
+			position: absolute;
+		}
+	}
+
+	.month {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+	}
+
+	.cal-wrap {
+		position: absolute;
+		background-color: @white;
+		border: 1px solid @color-border;
+		padding: 20px;
+		border-radius: 2px;
+	}
+
+	.cal {
+		margin-top: 35px;
+		font-size: @rem-as-17px;
+		font-weight: 600;
+		text-align: center;
+		border-top: 1px solid @color-border;
+		&:focus {
+			outline: 0;
+		}
+		abbr[title] {
+			border: none;
+		}
+		th {
+			padding-top: 10px;
+			&:first-child {
+				width: 36px;
+			}
+		}
+		th, td {
+			width: 50px;
+			height: 40px;
+		}
+		td {
+			&[role=gridcell] {
+				cursor: pointer;
+				&:hover, &.focus {
+					background-color: @color-focus;
+				}
+			}
+			&.today {
+				background-color: @color-background;
+				color: @color-text;
+				&.focus {
+					color: @color-text;
+				}
+			}
+			&.ukenr {
+				color: @color-inactive;
+				font-weight: 400;
+				font-style: italic;
+				border-right: 1px solid @color-border;
+				text-align: left;
+				width: 36px;
+			}
+			&:last-child {
+				color: @red-nav;
+			}
+		}
+	}
+
+	.offscreen {
+		position: absolute;
+		left: -200em;
+		top: -100em;
+	}
+
+	[aria-hidden="true"] {
+		visibility: hidden;
+		height: 0;
+		opacity: 0;
+	}
+
+	[aria-hidden="false"] {
+		visibility: visible;
+		height: auto;
+		opacity: 1;
+		-webkit-transition: opacity 0.5s ease-out;
+		transition: opacity 0.5s ease-out;
+	}
+
+	.bn_info {
+		position: relative;
+		float: right;
+		bottom: 0;
+		border: none;
+		background: none;
+		width: 24px;
+		height: 24px;
+		padding: 0;
+		color: @color-border;
+		font-weight: 600;
+		font-size: @rem-as-24px;
+		font-family: serif;
+		font-style: italic;
+		&:hover {
+			color: @color-link;
+		}
+		&.opp {
+			&:before {
+				border-top: none;
+				border-bottom: 9px solid #0067c5;
+			}
+		}
+	}
+
+	.shortcut_info {
+		height: 0;
+		overflow: hidden;
+		background: @white;
+		margin-top: 16px;
+		dl {
+			margin-top: 8px;
+			line-height: 1.5;
+		}
+		dt, dd {
+			float: left;
+			margin: 0;
+		}
+		dt {
+			width: 190px;
+		}
+		dd + dt {
+			clear: left;
+		}
+	}
+}
