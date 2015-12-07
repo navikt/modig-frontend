@@ -44,27 +44,34 @@
 
 .mixin-lukk-knapp-mork() {
   .mixin-lukk-knapp();
-  background: transparent url("/@{appPrefixUrl}/img/kryss_blaa.svg") no-repeat;
   &:hover, &:focus, &:active {
-    background: url("/@{appPrefixUrl}/img/kryss_blaa_hover.svg");
+    background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-kryss-sort.svg');
   }
 }
 
 .mixin-lukk-knapp-lys() {
   .mixin-lukk-knapp();
-  background: transparent url("/@{appPrefixUrl}/img/kryss.svg") no-repeat;
+  
   &:hover, &:focus, &:active {
-    background: url("/@{appPrefixUrl}/img/kryss_hover.svg");
+    background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-kryss-hvit.svg');
   }
 }
 
 .mixin-lukk-knapp() {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 32px;
-  height: 32px;
-  border: 0;
+  top: .5rem;
+  right: .5rem;
+  width: 2rem;
+  height: 2rem;
+  background: transparent no-repeat center center;
+  background-size: 50% 50%;
+  border: 1px solid @blue-light; 
+  background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-kryss-blaa.svg');
+
+  &:hover, &:focus, &:active {
+	background-color: @blue-light;
+  }
+
   &:focus {
     outline: none;
     .mixin-focus-outline(3px);
