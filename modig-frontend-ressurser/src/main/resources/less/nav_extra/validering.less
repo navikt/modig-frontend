@@ -74,14 +74,17 @@
 	// Om man har feilområde inne i et annet feilområde
 	// og kun har feil på det ytterste, må man sette det innerste
 	// tilbake til standard utseende.
-	.skjema-feilomrade:not(.har-valideringsfeil) {
-		.skjema-feilmelding {
-			display: none;
-		}
+	.skjema-enkeltfeil, .skjema-feilomrade{
+		&:not(.har-valideringsfeil) {
 
-		input:not([type="submit"]), textarea {
-			border: 1px solid @gray-icon;
-			background: none;
+			.skjema-feilmelding {
+				display: none;
+			}
+
+			input:not([type="submit"]), textarea {
+				border: 1px solid @gray-icon;
+				background: none;
+			}
 		}
 	}
 }
