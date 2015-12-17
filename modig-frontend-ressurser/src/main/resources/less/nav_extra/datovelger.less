@@ -1,13 +1,21 @@
+input.datovelger {
+	font-size: @rem-as-14px;
+	width: 100px;
+}
+
 .nav-datovelger {
+	display: inline-block;
 	.bn_date {
+		position: absolute;
+		top: 16px;
+		left: 95px;
 		border: none;
-		background: url(@{modig-frontend-images-root-url}/kalender.svg) no-repeat -6px;
-		background-size: 53px;
-		width: 41px;
-		height: 41px;
-		vertical-align: -7px;
+		background: url(kalender.svg) no-repeat center;
+		background-size: 45px 45px;
+		width: 45px;
+		height: 45px;
 		&:hover, &:focus {
-			background-image: url(@{modig-frontend-images-root-url}/kalender_hover.svg);
+			background-image: url(kalender_hover.svg);
 		}
 		&:focus {
 			outline: none;
@@ -46,9 +54,15 @@
 		&:before {
 			content: " ";
 			border-bottom: 10px solid transparent;
-			border-right: 9px solid #0067c5;
+			border-right: 9px solid @color-link;
 			border-top: 10px solid transparent;
 			position: absolute;
+		}
+		&[aria-disabled=true] {
+			&:before {
+				border-right: 9px solid @color-inactive;
+				cursor: default;
+			}
 		}
 	}
 
@@ -57,9 +71,15 @@
 		&:after {
 			content: " ";
 			border-bottom: 10px solid transparent;
-			border-left: 9px solid #0067c5;
+			border-left: 9px solid @color-link;
 			border-top: 10px solid transparent;
 			position: absolute;
+		}
+		&[aria-disabled=true] {
+			&:after {
+				border-left: 9px solid @color-inactive;
+				cursor: default;
+			}
 		}
 	}
 
@@ -71,6 +91,9 @@
 
 	.cal-wrap {
 		position: absolute;
+		left: 0;
+		top: 56px;
+		z-index: 100;
 		background-color: @white;
 		border: 1px solid @color-border;
 		padding: 20px;
@@ -79,7 +102,6 @@
 
 	.cal {
 		margin-top: 35px;
-		font-size: @rem-as-17px;
 		font-weight: 600;
 		text-align: center;
 		border-top: 1px solid @color-border;
@@ -96,8 +118,8 @@
 			}
 		}
 		th, td {
-			width: 50px;
-			height: 40px;
+			width: 44px;
+			height: 34px;
 		}
 		td {
 			&[role=gridcell] {
@@ -124,6 +146,13 @@
 			&:last-child {
 				color: @red-nav;
 			}
+			&.inactive {
+				color: @color-border;
+				&:hover {
+					background-color: @white;
+					cursor: default;
+				}
+			}
 		}
 	}
 
@@ -147,22 +176,26 @@
 		transition: opacity 0.5s ease-out;
 	}
 
+	.info-wrap {
+		text-align: right;
+	}
+
 	.bn_info {
+		display: inline;
 		position: relative;
-		float: right;
-		bottom: 0;
-		border: none;
-		background: none;
-		width: 24px;
-		height: 24px;
-		padding: 0;
+		padding: 0 7px;
 		color: @color-border;
 		font-weight: 600;
 		font-size: @rem-as-24px;
 		font-family: serif;
 		font-style: italic;
+		cursor: pointer;
 		&:hover {
 			color: @color-link;
+		}
+		&:focus {
+			outline: 0;
+			box-shadow: 0 0 0 3px @color-focus;
 		}
 		&.opp {
 			&:before {
@@ -176,20 +209,17 @@
 		height: 0;
 		overflow: hidden;
 		background: @white;
-		margin-top: 16px;
-		dl {
+		table {
 			margin-top: 8px;
-			line-height: 1.5;
 		}
-		dt, dd {
-			float: left;
-			margin: 0;
+		th, td {
+			vertical-align: top;
+			padding: 2px 5px 2px 0;
 		}
-		dt {
-			width: 190px;
-		}
-		dd + dt {
-			clear: left;
+		th {
+			text-align: left;
+			font-weight: normal;
+			width: 160px;
 		}
 	}
 }
