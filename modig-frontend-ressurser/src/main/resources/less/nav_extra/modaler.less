@@ -35,7 +35,14 @@
 
 .modal-lukk {
 	text-indent: -9999px; 
+	position: absolute; 
+	top: .5rem;
+	right: .5rem;	
 	.mixin-lukk-knapp-lys(); 		
+}
+
+.modal-lukk-negativ {
+	.mixin-lukk-knapp-mork(); 
 }
 
 @media(min-height: @screen-small) {

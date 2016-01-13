@@ -43,14 +43,19 @@
 }
 
 .mixin-lukk-knapp-mork() {
-  .mixin-lukk-knapp();
+  background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-kryss-blaa.svg');
+  border-color: @color-blue-additional; 
+
   &:hover, &:focus, &:active {
+  	background-color: @color-blue-additional;
+  	border-color: @color-blue-additional; 
     background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-kryss-sort.svg');
   }
 }
 
 .mixin-lukk-knapp-lys() {
   .mixin-lukk-knapp();
+  background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-kryss-sort.svg');
   
   &:hover, &:focus, &:active {
     background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-kryss-hvit.svg');
@@ -58,18 +63,15 @@
 }
 
 .mixin-lukk-knapp() {
-  position: absolute;
-  top: .5rem;
-  right: .5rem;
   width: 2rem;
   height: 2rem;
   background: transparent no-repeat center center;
-  background-size: 50% 50%;
-  border: 1px solid @blue-light; 
-  background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-kryss-blaa.svg');
+  background-size: 40% 40%;
+  border: 1px solid @color-border; 
 
   &:hover, &:focus, &:active {
-	background-color: @blue-light;
+	background-color: @color-link;
+	border-color: @color-link; 
   }
 
   &:focus {
