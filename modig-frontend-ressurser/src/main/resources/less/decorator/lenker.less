@@ -35,38 +35,27 @@ a {
 	margin-left: 2rem; 
 }
 
-.lenke-uthevet, a.lenke-uthevet {
-	.mixin-knapp(); 
-	background-color: transparent; 
-	border: 2px solid @blue-link;
-	padding: 8px 38px 10px 38px;
-	color: @blue-link; 
-
-	&:hover {
-		text-decoration: underline; 
-		border: 2px solid @blue-link;
-	}
-
-	&:focus {
-		.mixin-focus-outline(3px);
-	}
-
-	&:active {
-		border-color: @color-link-active;
-		color: @color-link-active; 
-	}
-}
-
 .lenke-legg-til:before {
 	content: "+ ";
 }
 
-.contrast .lenke-uthevet, .contrast a.lenke-uthevet {
-	color: @yellow; 
-	border-color: @yellow; 
+input.lenke-fremhevet, button.lenke-fremhevet {
+	background-color: transparent; 
+	padding: 0; 
+	border-top-width: 0; 
+	border-right-width: 0;
+	border-left-width: 0; 
+	color: @color-link; 
 
-	&:active {
-		color: @color-focus;
-		border-color: @color-focus; 
+	&:focus {
+		background-color: @color-focus;
+		outline: none; 
+		color: @color-link-visited; 
+	}
+}
+
+.contrast {
+	input.lenke-fremhevet:hover, button.lenke-fremhevet:hover {
+		color: @color-link!important; 
 	}
 }
