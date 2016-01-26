@@ -12,7 +12,7 @@ a {
 	}
 }
 
-.lenke-fremhevet, .side-innhold a {
+.lenke-fremhevet, .side-innhold a:not(.knapp) {
 	border-bottom: 1px solid @color-link-underline;	
 }
 
@@ -20,7 +20,7 @@ a {
 	border-bottom: 0;  
 }
 
-.lenke-alene, .side-innhold a, .lenke-fremhevet {
+.lenke-fremhevet, .side-innhold a:not(.knapp) {
 
 	&:hover {
 		border-bottom-color: @color-link;
