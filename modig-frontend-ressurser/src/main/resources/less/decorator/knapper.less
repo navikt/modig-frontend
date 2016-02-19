@@ -1,30 +1,30 @@
 @btn-background-color: transparent;
 @btn-background-hover-color: @color-link;
-@btn-text-color: @color-link; 
-@btn-border-color: @color-link; 
+@btn-text-color: @color-link;
+@btn-border-color: @color-link;
 @btn-disabled-background-color: #ccc;
 
 @btn-primary-background-color: @blue-link;
 @btn-primary-background-hover-color: #1976CB;
 @btn-primary-active-color: @blue-active;
-@btn-primary-text-color: @white; 
+@btn-primary-text-color: @white;
 @btn-primary-shadow-color: @gray-text;
 
 @btn-danger-background-color: @red-error;
 @btn-danger-background-hover-color: #C91919;
 @btn-danger-background-color-active: @red-error-active;
-@btn-danger-text-color: @white; 
+@btn-danger-text-color: @white;
 @btn-danger-shadow-color: @red-error-active;
 
 @btn-row-border-color: @gray-icon;
 
-.knapp, 
+.knapp,
 .contrast .knapp,
 .contrast .knapp-fare,
 .contrast .knapp-hoved {
 	padding: 8px 38px 10px 38px;
 	border: 2px solid @btn-border-color;
-	box-shadow: none; 
+	box-shadow: none;
 
 	&:hover {
 		box-shadow: none;
@@ -39,7 +39,7 @@
 .contrast .knapp-fare,
 .contrast .knapp-hoved {
 	&:hover, &:active, &:visited {
-		transform: none; 
+		transform: none;
 	}
 }
 
@@ -53,8 +53,8 @@
 	outline: none;
 	letter-spacing: 1px;
 	border-radius: 2px;
-	font-size: @rem-as-16px; 
-	line-height: 1; 
+	font-size: @rem-as-16px;
+	line-height: 1;
 	color: @btn-text-color;
 	background: @btn-background-color;
 
@@ -68,12 +68,12 @@
 
 	&:focus {
 		outline: none;
-		.mixin-focus-outline(3px); 
-	}	
+		.mixin-focus-outline(3px);
+	}
 
 	&:hover {
 		background-color: @btn-background-hover-color;
-		color: @white; 	
+		color: @white;
 	}
 
 	&:focus:hover {
@@ -81,12 +81,12 @@
 	}
 
 	&:focus:hover:active {
-		color: @white; 
-		.mixin-focus-outline(3px); 
+		color: @white;
+		.mixin-focus-outline(3px);
 	}
 
-	&:active, 
-	&.er-aktiv, 
+	&:active,
+	&.er-aktiv,
 	&:active:hover {
 		color: @white;
 		background: @blue-active;
@@ -94,36 +94,44 @@
 		.mixin-transform(translateY(2px));
 	}
 
-	&.er-inaktiv, 
-	&.er-inaktiv:hover, 
-	&.er-inaktiv:hover:active, 
-	&.er-inaktiv:active, 
+	&.er-inaktiv,
+	&.er-inaktiv:hover,
+	&.er-inaktiv:hover:active,
+	&.er-inaktiv:active,
 	&.er-inaktiv:active:focus,
 	&.er-inaktiv:focus,
 	&.er-inaktiv:focus:hover {
 		background: @btn-disabled-background-color;
 		border-color: @btn-disabled-background-color;
-		color: @gray-inactive; 
-		transform: none; 
+		color: @gray-inactive;
+		transform: none;
 		box-shadow: none;
 	}
 
 	+ .knapp {
 		margin-left: .5rem;
-	}	
+	}
 
+}
+
+.knapp-negativ {
+	color: @white;
+	&:hover, &:active, &:focus {
+		border: 1px solid @white;
+		background: @btn-background-color;
+	}
 }
 
 .knapp.er-inaktiv .spinner-knapp:after {
 	border-top-color: rgba(0, 0, 0, .5);
 	border-left-color: rgba(0, 0, 0, .5);
 	border-bottom-color: rgba(0, 0, 0, .25);
-	border-right-color: rgba(0, 0, 0, .25);	
+	border-right-color: rgba(0, 0, 0, .25);
 }
 
 .knapp-hoved, .knapp-fare {
-	border: 0; 
-	padding: 10px 40px 12px; 
+	border: 0;
+	padding: 10px 40px 12px;
 
 	&:hover {
 		.mixin-transform(translateY(-1px));
@@ -138,12 +146,12 @@
 	}
 
 	&.er-inaktiv:hover, &.er-inaktiv:active:hover {
-		box-shadow: none; 
+		box-shadow: none;
 		.mixin-transform(none);
 	}
 
 	&.knapp-liten, &.knapp-liten:hover {
-		padding: 10px 20px 12px; 
+		padding: 10px 20px 12px;
 	}
 
 	&.knapp-stor, &.knapp-stor:hover {
@@ -153,9 +161,9 @@
 }
 
 .knapp-hoved {
-	background-color: @btn-primary-background-color; 
-	color: @btn-primary-text-color; 
-	box-shadow: 0 -2px 0 @btn-primary-shadow-color inset; 
+	background-color: @btn-primary-background-color;
+	color: @btn-primary-text-color;
+	box-shadow: 0 -2px 0 @btn-primary-shadow-color inset;
 
 	&:hover {
 		background-color: @btn-primary-background-hover-color;
@@ -165,12 +173,12 @@
 	}
 
 	&:active {
-		box-shadow: none; 
-	}	
+		box-shadow: none;
+	}
 
 	&:active, &:active:hover {
 		background-color: @btn-primary-active-color;
-		box-shadow: none; 
+		box-shadow: none;
 	}
 
 	&:focus {
@@ -180,17 +188,17 @@
 }
 
 .knapp-fare {
-	background-color: @btn-danger-background-color; 
-	color: @btn-primary-text-color; 
-	box-shadow: 0 -2px 0 @btn-danger-shadow-color inset; 
+	background-color: @btn-danger-background-color;
+	color: @btn-primary-text-color;
+	box-shadow: 0 -2px 0 @btn-danger-shadow-color inset;
 
 	&:hover {
 		background-color: @btn-danger-background-hover-color;
-		box-shadow: 0 -2px 0 @btn-danger-shadow-color inset, 0 1px 0 @btn-danger-shadow-color; 	
+		box-shadow: 0 -2px 0 @btn-danger-shadow-color inset, 0 1px 0 @btn-danger-shadow-color;
 	}
 
 	&:active {
-		box-shadow: none; 
+		box-shadow: none;
 	}
 
 	&:active, &:active:hover {
@@ -206,8 +214,8 @@
 
 }
 
-.knapp-liten, 
-.knapp-liten:hover, 
+.knapp-liten,
+.knapp-liten:hover,
 .contrast .knapp-liten,
 .contrast .knapp-liten.knapp-fare,
 .contrast .knapp-liten.knapp-hoved {
@@ -229,11 +237,11 @@
 	padding-right: 3rem;
 
 	&.knapp-liten, &.knapp-liten:hover {
-		padding-right: 3rem; 
+		padding-right: 3rem;
 	}
 
 	&.knapp-stor, &.knapp-stor:hover {
-		padding-right: 3.5rem; 
+		padding-right: 3.5rem;
 	}
 }
 
@@ -250,24 +258,24 @@
 // Selve spinneren
 
 .knapp-spinner .spinner-knapp:after {
-	opacity: 1; 
+	opacity: 1;
 }
 
-.spinner-knapp:after { 
+.spinner-knapp:after {
 	.mixin-nav-spinner();
 	position: absolute;
-	opacity: 0; 
+	opacity: 0;
 	content: "";
-	border-radius: 50%;		
-	top: .5rem; 
-	right: 1rem; 
+	border-radius: 50%;
+	top: .5rem;
+	right: 1rem;
 	.mixin-nav-transition(300ms);
 }
 
 // Tiltander/knappevarianter som skal ha hvit spinner
 
-.knapp-hoved, 
-.knapp-fare, 
+.knapp-hoved,
+.knapp-fare,
 .knapp:hover {
 	.spinner-knapp:after {
 		border-top-color: @white;
@@ -282,14 +290,14 @@
 // -------------------------------
 
 .contrast {
-	.knapp, 
-	.knapp-hoved, 
+	.knapp,
+	.knapp-hoved,
 	.knapp-fare {
 		color: @yellow;
-		border-color: #fff; 
+		border-color: #fff;
 
 		&:hover {
-			text-decoration: underline; 
+			text-decoration: underline;
 			border: 2px solid @yellow;
 		}
 
@@ -306,18 +314,18 @@
 		}
 
 		&.er-inaktiv {
-			border-color: gray; 
-			color: gray; 
+			border-color: gray;
+			color: gray;
 			&:active, &:hover {
-				text-decoration: none; 
+				text-decoration: none;
 				color: gray;
-				border-color: gray; 
+				border-color: gray;
 			}
 		}
 	}
 
-	.knapp, 
-	.knapp-fare, 
+	.knapp,
+	.knapp-fare,
 	.knapp-hoved {
 		.spinner-knapp:after {
 			border-top-color: @white;
@@ -328,11 +336,11 @@
 	}
 
 	.knapp-liten.knapp-spinner {
-		padding-right: 3rem; 
+		padding-right: 3rem;
 	}
 
 	.knapp-spinner, .knapp-stor.knapp-spinner {
-		padding-right: 3rem; 
+		padding-right: 3rem;
 	}
 
 }
