@@ -1,7 +1,7 @@
 {
   "name": "modig-frontend",
   "version": "3.0.101",
-  "description": "Felles resursser for alle appene",
+  "description": "Felles ressurser for alle appene",
   "main": "index.js",
   "scripts": {
     "test": "run test"
