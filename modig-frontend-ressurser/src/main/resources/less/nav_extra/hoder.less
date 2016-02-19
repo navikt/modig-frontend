@@ -1,16 +1,12 @@
 .hode { 
-
 	// Gir elementet et rundt ikon over. Ikonet er i utgangspunktet svart.
-
-	// Merk: 
-	
+	// Merk:
 	// * Klassen må kombineres med andre klasser for å få ikon og farge
 	// * Klassen kan brukes på alle slags HTML-elementer, h1-h6, p, mv. 
-
-	margin-top: 0; 
+	margin-top: 0;
 	position: relative; 
 	padding-top: 3.6rem;
-
+	text-align: center;
 	&:before {
 		content: "";
 		width: 2rem;
@@ -28,13 +24,10 @@
 }
 
 .tittel-dekorert, .hode-dekorert {
-
 	// Gir hodet/tittelen en midtstilt strek under. Streken er i utgangspunktet svart.
-
-	padding-bottom: 2rem; 
+	padding-bottom: 2rem;
 	position: relative;
 	text-align: center; 	
-
 	&:after {
 		content: "";
 		width: 2rem; 
@@ -45,7 +38,6 @@
 		background-color: @color-text; 
 		.mixin-transform(translateX(-50%));
 	}	
-
 }
 
 
