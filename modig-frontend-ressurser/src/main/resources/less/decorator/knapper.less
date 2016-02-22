@@ -116,6 +116,12 @@
 .knapp.knapp-negativ {
 	color: @white;
 	border: 1px solid @white;
+	&:hover, &:active {
+		border-bottom: none;
+	}
+	&:hover, &:active, &:focus {
+		background: @btn-background-color;
+	}
 }
 
 .knapp.er-inaktiv .spinner-knapp:after {
