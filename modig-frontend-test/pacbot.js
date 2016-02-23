@@ -48,7 +48,7 @@ exports.config = function() {
 
     config.layouts = {
         'index.html': '_layouts/index.html'
-    }
+    };
 
     // Return the config object.
     return config;
