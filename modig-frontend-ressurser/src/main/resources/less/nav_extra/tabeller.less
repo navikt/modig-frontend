@@ -2,6 +2,7 @@
 // Tabeller
 // --------------------------------------------------
 
+
 table {
     background-color: @table-bg;
 }
@@ -9,7 +10,7 @@ table {
 caption {
     padding-top: @table-cell-padding;
     padding-bottom: @table-cell-padding;
-    color: @text-muted;
+    color: @gray-inactive;
     text-align: left;
 }
 
@@ -60,7 +61,7 @@ th {
 
     // Nesting
     .tabell {
-        background-color: @body-bg;
+        background-color: @gray-background;
     }
 }
 
@@ -73,7 +74,7 @@ th {
         > tr {
             > th,
             > td {
-                padding: .table-condensed-cell-padding;
+                padding: @table-condensed-cell-padding;
             }
         }
     }
@@ -166,7 +167,7 @@ table {
     overflow-x: auto;
     min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 
-    @media screen and (max-width: @screen-xs-max) {
+    @media screen and (max-width: @screen-xl) {
         width: 100%;
         margin-bottom: (@line-height-computed * 0.75);
         overflow-y: hidden;
@@ -222,7 +223,6 @@ table {
                     }
                 }
             }
-
         }
     }
 }

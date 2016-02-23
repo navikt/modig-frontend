@@ -7,7 +7,7 @@
 @modig-frontend-images-root-url: "../img";
 
 .define-basepath-if-not-defined() {
-	@baseImagePath: '../';
+    @baseImagePath: '../';
 }
 
 .define-basepath-if-not-defined();
@@ -45,38 +45,37 @@
 
 @yellow: #ffc40d;
 
-@color-green-additional:      		#5fb484;
-@color-orange-additional:     		#e49333;
-@color-purple-additional:     		#806b98;
-@color-blue-additional:     		#66cbec;
-@color-blue-dark-additional:     	#337c92;
-@color-gray-additional:       		#aba19c;
-@color-gray-light-additional: 		#ccc;
-@color-gray-lighter-additional:		#bdbab7;
+@color-green-additional: #5fb484;
+@color-orange-additional: #e49333;
+@color-purple-additional: #806b98;
+@color-blue-additional: #66cbec;
+@color-blue-dark-additional: #337c92;
+@color-gray-additional: #aba19c;
+@color-gray-light-additional: #ccc;
+@color-gray-lighter-additional: #bdbab7;
 
 @blue-light: @color-blue-additional;
 
 // Verdi-agnostiske farger. Bruk fortrinnsvis disse i koden!
 
-@color-focus: 			@orange-focus; 
+@color-focus: @orange-focus;
 
-@color-link: 			@blue-link;
-@color-link-lighter: 	@blue-light;
-@color-link-active: 	@blue-active;
-@color-link-visited:	@purple-visited;
-@color-link-underline: 	@gray-icon;
+@color-link: @blue-link;
+@color-link-lighter: @blue-light;
+@color-link-active: @blue-active;
+@color-link-visited: @purple-visited;
+@color-link-underline: @gray-icon;
 
-@color-text: 			@gray-text;
+@color-text: @gray-text;
+@color-placeholder: @gray-inactive;
 
-@color-placeholder: 	@gray-inactive;
+@color-error: @red-error;
+@color-success: @green-success;
+@color-warning: @orange-info;
 
-@color-error:			@red-error;
-@color-success: 		@green-success;
-@color-warning: 		@orange-info;
-
-@color-background:		@gray-background;
-@color-inactive: 		@gray-inactive; 
-@color-border: 			@gray-icon; 
+@color-background: @gray-background;
+@color-inactive: @gray-inactive;
+@color-border: @gray-icon;
 @color-background-highcontrast: @black;
 
 // FONT-FAMILY
@@ -89,9 +88,6 @@
 
 @font-family-regular: @font-family-sans-serif;
 @font-family-profile: @font-family-modus;
-
-
-
 
 //family base fonts (1rem = 16px)
 // --------------------------------------------------
@@ -167,18 +163,35 @@
 @container-large-desktop: ((1140px + @grid-gutter-width));
 @container-lg: @container-large-desktop;
 
-// Tooltip/hjelpetekst
+// TOOLTIP/HJELPETEKST
 // --------------------------------------------------
 
 @tooltip-arrow-width: 5px;
 @tooltip-arrow-color: @black;
-@tooltip-background-color: @gray-text; 
+@tooltip-background-color: @gray-text;
 
-
-// Skjema
+// SKJEMA
 // --------------------------------------------------
 
 @nav-checkbox-hover-color: @blue-link;
 @nav-checkbox-checked-color: @blue-link;
 @nav-checkbox-outline-color: @color-border;
 @nav-input-disabled-color: @gray-icon;
+
+// TABELLER
+// --------------------------------------------------
+
+@table-cell-padding: 8px;
+@table-condensed-cell-padding: 5px;
+
+@table-bg: transparent;
+@table-bg-accent: #f9f9f9;
+@table-bg-hover: #f5f5f5;
+@table-bg-active: @table-bg-hover;
+
+@table-border-color: #ddd;
+
+@state-success-bg:  #dff0d8;
+@state-info-bg:     #d9edf7;
+@state-warning-bg:  @pink-error-bg;
+@state-danger-bg:   @pink-error-bg;
