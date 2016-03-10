@@ -1,0 +1,95 @@
+// Vanlig Høyremeny
+//-----------------------
+
+.hoyremeny {
+    border: 1px solid @color-border;
+    margin-bottom: 1rem;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            font-size: @rem-as-14px;
+            font-weight: 600;
+            border-bottom: 1px solid @color-border;
+            a {
+                position: relative;
+                color: @color-text;
+                padding: 10px 20px;
+                display: block;
+                text-decoration: none;
+                background-color: @white;
+                border-bottom: none;
+                margin-bottom: 1px;
+                span {
+                    display: block;
+                    position: relative;
+                }
+            }
+            &:last-child {
+                border: none;
+            }
+        }
+        li a.aktiv {
+            background: @color-blue-dark-additional;
+            color: @white;
+        }
+        li a:hover {
+            color: @color-link;
+            border-bottom-color: @color-border;
+        }
+        li a:focus {
+            box-shadow: 0 0 0 2px @color-focus;
+            outline: none;
+        }
+        li a.aktiv {
+            box-shadow: 0 0 0 1px @color-blue-dark-additional;
+            &:before {
+                position: absolute;
+                display: inline-block;
+                content: "";
+                width: 16px;
+                height: 16px;
+                border-left: 1px solid @color-border;
+                border-top: 1px solid @color-border;
+                background: @color-blue-dark-additional;
+                transform: rotate(-45deg);
+                left: -10px;
+                top: 11.5px;
+            }
+            &:focus {
+                box-shadow: 0 0 0 2px @color-focus;
+                outline: none;
+                &:before {
+                    border-left: 2px solid @color-focus;
+                    border-top: 2px solid @color-focus;
+                    outline: none;
+                }
+            }
+            &:hover {
+                color: @white;
+                &:after {
+                    border: 3px solid @white;
+                }
+            }
+        }
+        li a {
+            &:after {
+                border: 3px solid @color-link;
+                border-radius: 50%;
+                display: inline-block;
+                content: " ";
+                position: absolute;
+                left: 8px;
+                top: 17px;
+                opacity: 0;
+                transition: opacity .2s ease-in-out;
+            }
+            &:hover:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
