@@ -55,43 +55,8 @@
     }
 }
 
-@media (min-width: @screen-small) {
-    // 620px
-    .lenkeliste {
-        width: 48%;
-        &:nth-child(-n+2) {
-            border-top: 1px solid @color-border;
-        }
-        &:nth-of-type(2n) {
-            margin-right: 0;
-        }
-        &:nth-of-type(2n+1) {
-            margin-left: 0;
-        }
-    }
-}
-
 @media (min-width: @screen-medium) {
     // 768px
-    .lenkeliste {
-        width: 32%;
-        &:nth-child(-n+3) {
-            border-top: 1px solid @color-border;
-        }
-        &:nth-of-type(2n) {
-            margin-right: 1%;
-        }
-        &:nth-of-type(2n+1) {
-            margin-left: 1%;
-        }
-        &:nth-of-type(3n) {
-            margin-right: 0;
-        }
-        &:nth-of-type(3n+1) {
-            margin-left: 0;
-        }
-    }
-
     .lenkelister-kol-1 {
         .lenkeliste {
             width: 100%;
