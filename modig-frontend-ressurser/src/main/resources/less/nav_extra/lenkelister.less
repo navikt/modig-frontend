@@ -12,8 +12,8 @@
     position: relative;
     list-style: none;
     border-bottom: 1px solid @color-border;
-    margin-right: 0;
     width: 100%;
+    margin-right: 0;
     &:last-child {
         margin-right: 0;
     }
@@ -61,15 +61,6 @@
         .lenkeliste {
             width: 100%;
             margin-right: 0;
-            &:nth-child(-n+3) {
-                border-top: none;
-            }
-            &:nth-of-type(2n) {
-                margin-right: 0;
-            }
-            &:nth-of-type(2n+1) {
-                margin-left: 0;
-            }
             &:first-child {
                 border-top: 1px solid @color-border;
             }
@@ -78,20 +69,13 @@
 
     .lenkelister-kol-2 {
         .lenkeliste {
-            width: 48%;
+            width: 49%;
+            margin-right: 2%;
             &:nth-child(-n+2) {
                 border-top: 1px solid @color-border;
             }
             &:nth-of-type(2n) {
                 margin-right: 0;
-            }
-            &:nth-of-type(2n+1) {
-                margin-left: 0;
-                margin-right: 2%;
-                border-top: none;
-            }
-            &:first-child {
-                border-top: 1px solid @color-border;
             }
         }
     }
@@ -99,20 +83,12 @@
     .lenkelister-kol-3 {
         .lenkeliste {
             width: 32%;
+            margin-right: 2%;
             &:nth-child(-n+3) {
                 border-top: 1px solid @color-border;
             }
-            &:nth-of-type(2n) {
-                margin-right: 1%;
-            }
-            &:nth-of-type(2n+1) {
-                margin-left: 1%;
-            }
             &:nth-of-type(3n) {
                 margin-right: 0;
-            }
-            &:nth-of-type(3n+1) {
-                margin-left: 0;
             }
         }
     }
@@ -120,26 +96,12 @@
     .lenkelister-kol-4 {
         .lenkeliste {
             width: 23.5%;
+            margin-right: 2%;
             &:nth-child(-n+4) {
                 border-top: 1px solid @color-border;
             }
-            &:nth-of-type(2n) {
-                margin-right: 1%;
-            }
-            &:nth-of-type(2n+1) {
-                margin-left: 1%;
-            }
-            &:nth-of-type(3n) {
-                margin-right: 1%;
-            }
-            &:nth-of-type(3n+1) {
-                margin-left: 1%;
-            }
             &:nth-of-type(4n) {
                 margin-right: 0;
-            }
-            &:nth-of-type(4n+1) {
-                margin-left: 0;
             }
         }
     }
