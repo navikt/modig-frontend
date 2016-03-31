@@ -3,6 +3,7 @@
     width: 100%;
     & > span {
         display: block;
+        margin-top: 0.5rem;
     }
     .select-container {
         margin-left: 0.5rem;
@@ -10,10 +11,10 @@
             border-left: 1.5px solid @color-link;
             border-top: 1.5px solid @color-link;
             border-right: none;
-            top: 14px;
+            top: 10px;
             width: 7px;
             height: 7px;
-            transform: rotate(45deg);
+            transform: rotate(-135deg);
         }
     }
     select {
@@ -21,8 +22,8 @@
     }
 }
 
-@media (min-width: @screen-xs) {
-    // 480px;
+@media (min-width: @screen-small) {
+    // 620px;
     .verktoykasse {
         width: auto;
         & > span {
