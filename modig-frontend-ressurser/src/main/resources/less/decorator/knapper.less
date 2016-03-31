@@ -54,7 +54,7 @@
 	font-size: @rem-as-16px;
 	line-height: 1;
 	color: @btn-text-color;
-	background: @btn-background-color;
+	background-color: @btn-background-color;
 	&:hover {
 		border-color: @btn-background-hover-color;
 	}
@@ -80,7 +80,7 @@
 	&.er-aktiv,
 	&:active:hover {
 		color: @white;
-		background: @blue-active;
+		background-color: @blue-active;
 		border-color: @blue-active;
 		.mixin-transform(translateY(2px));
 	}
@@ -91,7 +91,7 @@
 	&.er-inaktiv:active:focus,
 	&.er-inaktiv:focus,
 	&.er-inaktiv:focus:hover {
-		background: @btn-disabled-background-color;
+		background-color: @btn-disabled-background-color;
 		border-color: @btn-disabled-background-color;
 		color: @gray-inactive;
 		transform: none;
@@ -109,7 +109,7 @@
 		border-bottom: none;
 	}
 	&:hover, &:active, &:focus {
-		background: @btn-background-color;
+		background-color: @btn-background-color;
 	}
 }
 
