@@ -1,0 +1,28 @@
+.verktoykasse {
+    float: right;
+    .select-container {
+        margin-left: 0.5rem;
+        &:after {
+            border-left: 1.5px solid @color-link;
+            border-top: 1.5px solid @color-link;
+            border-right: none;
+            top: 14px;
+            width: 7px;
+            height: 7px;
+            transform: rotate(45deg);
+        }
+    }
+    select {
+        padding: 0.3rem 1.7rem 0.3rem 0.3rem;
+    }
+}
+
+@media (min-width: @screen-xs) {
+    // 480px;
+    .verktoykasse {
+        option, select {
+            font-size: @rem-as-14px;
+        }
+    }
+}
+
