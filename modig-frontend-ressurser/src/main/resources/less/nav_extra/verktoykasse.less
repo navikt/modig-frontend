@@ -1,5 +1,8 @@
 .verktoykasse {
     float: right;
+    & > span {
+        display: block;
+    }
     .select-container {
         margin-left: 0.5rem;
         &:after {
@@ -20,6 +23,9 @@
 @media (min-width: @screen-xs) {
     // 480px;
     .verktoykasse {
+        & > span {
+            display: inline;
+        }
         option, select {
             font-size: @rem-as-14px;
         }
