@@ -43,8 +43,7 @@
     margin-bottom: 20px;
 }
 
-label,
-.label {
+label, .label {
     display: block;
     margin-bottom: .25rem;
     line-height: 1.4;
@@ -117,21 +116,18 @@ select {
         -ms-appearance: none;
         appearance: none;
     }
-
     select::-ms-expand {
         display: none; // Skjuler pil i IE10
     }
-
     &:after {
         pointer-events: none; // gjør at en kan klikke igjennom denne (pilen), slik at select åpner seg
-        content: "";
-        border-top: 6px solid @gray-text;
-        border-right: 6px solid transparent;
-        border-left: 6px solid transparent;
-        position: absolute;
-        right: 0.7rem;
-        top: 44%;
-        z-index: 4;
+        border-left: 1.5px solid @color-link;
+        border-top: 1.5px solid @color-link;
+        border-right: none;
+        top: 10px;
+        width: 7px;
+        height: 7px;
+        transform: rotate(-135deg);
     }
 }
 
@@ -151,7 +147,6 @@ select {
 
 .textarea-meta-container {
     position: relative;
-
     textarea {
         resize: none;
         overflow-y: hidden;
@@ -159,7 +154,6 @@ select {
         overflow-y: hidden;
         resize: none;
     }
-
 }
 
 textarea:focus + .textarea-metatekst,
@@ -255,7 +249,6 @@ textarea.vis-meta {
 .nav-radioknapp {
     position: absolute;
     opacity: 0;
-
     + label {
         padding-left: 2rem;
         padding-top: 1px;
@@ -265,7 +258,6 @@ textarea.vis-meta {
         cursor: pointer;
         margin-bottom: 0;
     }
-
     + label:before {
         content: "";
         position: absolute;
@@ -280,19 +272,15 @@ textarea.vis-meta {
 .nav-checkbox {
     position: absolute;
     opacity: 0;
-
     &:hover + label:before {
         border-color: @nav-checkbox-hover-color;
     }
-
     &:focus + label:before {
         .mixin-focus-outline(3px);
     }
-
     &:disabled + label:before {
         background-color: @nav-input-disabled-color;
     }
-
     + label:before {
         content: "";
         width: 20px;
@@ -303,7 +291,6 @@ textarea.vis-meta {
         left: 0;
         top: 0;
     }
-
     &:checked + label:before {
         background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-checkbox.svg');
         border-color: @nav-checkbox-checked-color;
@@ -316,7 +303,6 @@ textarea.vis-meta {
 }
 
 .nav-radioknapp {
-
     + label:before {
         border: 1px solid @nav-checkbox-outline-color;
         box-shadow: 0 0 0 14px @white inset;
@@ -327,7 +313,6 @@ textarea.vis-meta {
         top: 0;
         .mixin-nav-transition(300ms, box-shadow);
     }
-
     &:checked + label:before {
         border: 2px solid @nav-checkbox-checked-color;
         width: 18px;
@@ -335,12 +320,10 @@ textarea.vis-meta {
         box-shadow: 0 0 0 3px @white inset, 0 0 0 12px @nav-checkbox-checked-color inset;
         .mixin-nav-transition(300ms, box-shadow);
     }
-
     &:focus + label:before {
         box-shadow: 0 0 0 3px @color-focus, 0 0 0 12px @white inset;
         .mixin-nav-transition(300ms, box-shadow);
     }
-
     &:checked:focus + label:before {
         box-shadow: 0 0 0 3px @color-focus, 0 0 0 3px @white inset, 0 0 0 12px @nav-checkbox-checked-color inset;
         .mixin-nav-transition(300ms, box-shadow);
@@ -353,49 +336,38 @@ textarea.vis-meta {
 // -----------------------------------------
 
 .contrast {
-
     .nav-checkbox {
-
         + label:before {
             background-color: @color-background-highcontrast;
             border-color: @white;
         }
-
         &:checked + label:before {
             border-color: @white;
         }
-
     }
-
     .nav-checkbox:checked + label:before {
         background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-checkbox-hoykontrast.svg');
         background-color: @white;
     }
 
     .nav-radioknapp {
-
         + label:before {
             box-shadow: 0 0 0 1px @white, 0 0 0 12px @black inset;
         }
-
         &:checked + label:before {
             box-shadow: 0 0 0 2px @white, 0 0 0 5px @black inset, 0 0 0 12px @white inset;
         }
-
         &:focus + label:before {
             box-shadow: 0 0 0 1px @white, 0 0 0 5px @yellow, 0 0 0 12px @black inset;
         }
-
         &:checked:focus + label:before {
             box-shadow: 0 0 0 3px @white, 0 0 0 5px @yellow, 0 0 0 5px @black inset, 0 0 0 12px @white inset;
         }
-
     }
 
     .textarea-antall-tegn.er-negativ {
         color: @red-error !important; // Important for å overskrive sterk selector i dekoratør
     }
-
 }
 
 // -----------------------------------------
@@ -405,13 +377,9 @@ textarea.vis-meta {
 @media (min-width: @screen-small) {
 
     /*
-
     INPUT TYPE="TEXT":
-
     Eksempel på bruk:
-
     <form>
-
         <div class="skjema-horisontal">
             <div class="nav-input">
                 <label for="navn">Navn</label>
@@ -423,27 +391,23 @@ textarea.vis-meta {
         </div>
 
     </form>
-
     */
-    .skjema-horisontal {
 
+    .skjema-horisontal {
         .nav-input {
             display: table;
             margin-bottom: 1rem;
             width: 100%;
         }
-
         label, .input-container {
             display: table-cell;
         }
-
         label {
             width: 200px;
             text-align: right;
             vertical-align: top;
             padding: .5rem 1rem 0 0;
         }
-
     }
 
     /*
@@ -484,16 +448,12 @@ textarea.vis-meta {
 
     */
     .skjemagruppe-horisontal {
-
         display: table;
-
         .nav-input {
             display: table-cell;
             padding-right: 2rem;
         }
-
     }
-
 }
 
 // -----------------------------------------
