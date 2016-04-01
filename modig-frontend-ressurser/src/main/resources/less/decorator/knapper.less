@@ -25,11 +25,9 @@
 	padding: 8px 38px 10px 38px;
 	border: 2px solid @btn-border-color;
 	box-shadow: none;
-
 	&:hover {
 		box-shadow: none;
 	}
-
 	&:focus, &:focus:hover {
 		.mixin-focus-outline(3px);
 	}
@@ -56,44 +54,36 @@
 	font-size: @rem-as-16px;
 	line-height: 1;
 	color: @btn-text-color;
-	background: @btn-background-color;
-
+	background-color: @btn-background-color;
 	&:hover {
 		border-color: @btn-background-hover-color;
 	}
-
 	&:active {
 		border-color: @blue-active;
 	}
-
 	&:focus {
 		outline: none;
 		.mixin-focus-outline(3px);
 	}
-
 	&:hover {
 		background-color: @btn-background-hover-color;
 		color: @white;
 	}
-
 	&:focus:hover {
 		color: @white;
 	}
-
 	&:focus:hover:active {
 		color: @white;
 		.mixin-focus-outline(3px);
 	}
-
 	&:active,
 	&.er-aktiv,
 	&:active:hover {
 		color: @white;
-		background: @blue-active;
+		background-color: @blue-active;
 		border-color: @blue-active;
 		.mixin-transform(translateY(2px));
 	}
-
 	&.er-inaktiv,
 	&.er-inaktiv:hover,
 	&.er-inaktiv:hover:active,
@@ -101,13 +91,12 @@
 	&.er-inaktiv:active:focus,
 	&.er-inaktiv:focus,
 	&.er-inaktiv:focus:hover {
-		background: @btn-disabled-background-color;
+		background-color: @btn-disabled-background-color;
 		border-color: @btn-disabled-background-color;
 		color: @gray-inactive;
 		transform: none;
 		box-shadow: none;
 	}
-
 	+ .knapp {
 		margin-left: .5rem;
 	}
@@ -120,7 +109,7 @@
 		border-bottom: none;
 	}
 	&:hover, &:active, &:focus {
-		background: @btn-background-color;
+		background-color: @btn-background-color;
 	}
 }
 
@@ -134,86 +123,80 @@
 .knapp-hoved, .knapp-fare {
 	border: 0;
 	padding: 10px 40px 12px;
-
 	&:hover {
 		.mixin-transform(translateY(-1px));
 	}
-
 	&:focus, &:active:focus {
 		.mixin-focus-outline(3px);
 	}
-
 	&:active, &.er-aktiv {
 		box-shadow: none;
 	}
-
 	&.er-inaktiv:hover, &.er-inaktiv:active:hover {
 		box-shadow: none;
 		.mixin-transform(none);
 	}
-
 	&.knapp-liten, &.knapp-liten:hover {
 		padding: 10px 20px 12px;
 	}
-
 	&.knapp-stor, &.knapp-stor:hover {
 		padding: 12px 50px 14px;
 	}
-
 }
 
 .knapp-hoved {
 	background-color: @btn-primary-background-color;
 	color: @btn-primary-text-color;
 	box-shadow: 0 -2px 0 @btn-primary-shadow-color inset;
-
 	&:hover {
 		background-color: @btn-primary-background-hover-color;
 		border-color: @btn-primary-background-hover-color;
 		border-bottom-color: @btn-primary-shadow-color;
 		box-shadow: 0 -2px 0 @btn-primary-shadow-color inset, 0 1px 0 @btn-primary-shadow-color;
 	}
-
 	&:active {
 		box-shadow: none;
 	}
-
 	&:active, &:active:hover {
 		background-color: @btn-primary-active-color;
 		box-shadow: none;
 	}
-
 	&:focus {
 		box-shadow: 0 -2px 0 @btn-primary-shadow-color inset, 0 0 0 3px @color-focus;
 	}
-
 }
 
 .knapp-fare {
 	background-color: @btn-danger-background-color;
 	color: @btn-primary-text-color;
 	box-shadow: 0 -2px 0 @btn-danger-shadow-color inset;
-
 	&:hover {
 		background-color: @btn-danger-background-hover-color;
 		box-shadow: 0 -2px 0 @btn-danger-shadow-color inset, 0 1px 0 @btn-danger-shadow-color;
 	}
-
 	&:active {
 		box-shadow: none;
 	}
-
 	&:active, &:active:hover {
 		background-color: @btn-danger-background-color-active;
 	}
-
 	&:focus {
 		box-shadow: 0 -2px 0 @btn-danger-shadow-color inset, 0 0 0 3px @color-focus;
 	}
 }
 
-.knapp-ikon {
+.knapp.knapp-ikon {
+	padding-left: 2.4rem;
+	background-position: 1rem 9px;
+    background-repeat: no-repeat;
+}
 
+.knapp.knapp-liten.knapp-ikon {
+    padding-left: 2.4rem;
+}
+
+.knapp.knapp-mini.knapp-ikon {
+    padding-left: 2.4rem;
 }
 
 .knapp-liten,
@@ -237,11 +220,9 @@
 .knapp-spinner {
 	position: relative;
 	padding-right: 3rem;
-
 	&.knapp-liten, &.knapp-liten:hover {
 		padding-right: 3rem;
 	}
-
 	&.knapp-stor, &.knapp-stor:hover {
 		padding-right: 3.5rem;
 	}
@@ -297,24 +278,19 @@
 	.knapp-fare {
 		color: @yellow;
 		border-color: #fff;
-
 		&:hover {
 			text-decoration: underline;
 			border: 2px solid @yellow;
 		}
-
 		&:focus:hover {
 			color: @yellow;
 		}
-
 		&:active {
 			color: @yellow;
 		}
-
 		&:focus {
 			box-shadow: 0 0 0 3px @color-focus;
 		}
-
 		&.er-inaktiv {
 			border-color: gray;
 			color: gray;
@@ -325,7 +301,6 @@
 			}
 		}
 	}
-
 	.knapp,
 	.knapp-fare,
 	.knapp-hoved {
@@ -336,13 +311,10 @@
 			border-right-color: rgba(255, 255, 255, .25);
 		}
 	}
-
 	.knapp-liten.knapp-spinner {
 		padding-right: 3rem;
 	}
-
 	.knapp-spinner, .knapp-stor.knapp-spinner {
 		padding-right: 3rem;
 	}
-
 }

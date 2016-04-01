@@ -1,0 +1,128 @@
+.spinner {
+    position: relative;
+    &:before {
+        content: "";
+        animation: rotering 2s infinite linear;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.spinner-xxs {
+    width: 16px;
+    height: 16px;
+    &:before {
+        background: url(spinner.svg) no-repeat;
+        background-size: 16px 16px;
+        animation-duration: .8s;
+    }
+}
+
+.spinner-xs {
+    width: 20px;
+    height: 20px;
+    &:before {
+        background: url(spinner.svg) no-repeat;
+        background-size: 20px 20px;
+        animation-duration: .9s;
+    }
+}
+
+.spinner-s {
+    width: 24px;
+    height: 24px;
+    &:before {
+        background: url(spinner.svg) no-repeat;
+        background-size: 24px 24px;
+        animation-duration: 1s;
+    }
+}
+
+.spinner-m {
+    width: 32px;
+    height: 32px;
+    &:before {
+        background: url(spinner.svg) no-repeat;
+        background-size: 32px 32px;
+        animation-duration: 1.1s;
+    }
+}
+
+.spinner-l {
+    width: 40px;
+    height: 40px;
+    &:before {
+        background: url(spinner.svg) no-repeat;
+        background-size: 40px 40px;
+        animation-duration: 1.2s;
+    }
+}
+
+.spinner-xl {
+    width: 64px;
+    height: 64px;
+    &:before {
+        background: url(spinner-stroke.svg) no-repeat;
+        background-size: 64px 64px;
+        animation-duration: 1.6s;
+    }
+}
+
+.spinner-xxl {
+    width: 128px;
+    height: 128px;
+    &:before {
+        background: url(spinner-stroke.svg) no-repeat;
+        background-size: 128px 128px;
+        animation-duration: 2s;
+    }
+}
+
+.spinner-negativ {
+    &.spinner-xxs:before {
+        background: url(spinner-negativ.svg) no-repeat;
+        background-size: 16px 16px;
+        animation-duration: .8s;
+    }
+    &.spinner-xs:before {
+        background: url(spinner-negativ.svg) no-repeat;
+        background-size: 20px 20px;
+        animation-duration: .9s;
+    }
+    &.spinner-s:before {
+        background: url(spinner-negativ.svg) no-repeat;
+        background-size: 24px 24px;
+        animation-duration: 1s;
+    }
+    &.spinner-m:before {
+        background: url(spinner-negativ.svg) no-repeat;
+        background-size: 32px 32px;
+        animation-duration: 1.1s;
+    }
+    &.spinner-l:before {
+        background: url(spinner-negativ.svg) no-repeat;
+        background-size: 40px 40px;
+        animation-duration: 1.2s;
+    }
+    &.spinner-xl:before {
+        background: url(spinner-stroke-negativ.svg) no-repeat;
+        background-size: 64px 64px;
+        animation-duration: 1.6s;
+    }
+    &.spinner-xxl:before {
+        background: url(spinner-stroke-negativ.svg) no-repeat;
+        background-size: 128px 128px;
+        animation-duration: 2s;
+    }
+}
+
+@keyframes rotering {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

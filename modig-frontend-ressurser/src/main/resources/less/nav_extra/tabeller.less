@@ -41,7 +41,7 @@ th {
     // Bottom align for column headings
     > thead > tr > th {
         vertical-align: bottom;
-        border-bottom: 1px solid @table-border-color;
+        border-bottom: 2px solid @table-border-color;
     }
     // Remove top border from thead by default
     > caption + thead,
@@ -111,6 +111,12 @@ th {
 .tabell-striper {
     > tbody > tr:nth-of-type(odd) {
         background-color: @table-bg-accent;
+    }
+    a {
+        border-bottom-style: dashed;
+        &:hover {
+            border-bottom: 1px solid @color-link;
+        }
     }
 }
 
