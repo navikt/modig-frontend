@@ -115,22 +115,25 @@ select {
         -moz-appearance: none;
         -ms-appearance: none;
         appearance: none;
+        &:after {
+            pointer-events: none; // gjør at en kan klikke igjennom denne (pilen), slik at select åpner seg
+            content: "";
+            position: absolute;
+            border-left: 1.5px solid @color-text;
+            border-top: 1.5px solid @color-text;
+            border-right: none;
+            top: 10px;
+            right: 11px;
+            width: 7px;
+            height: 7px;
+            transform: rotate(-135deg);
+        }
+        &:active:after {
+            transform: rotate(45deg)
+        }
     }
     select::-ms-expand {
         display: none; // Skjuler pil i IE10
-    }
-    &:after {
-        pointer-events: none; // gjør at en kan klikke igjennom denne (pilen), slik at select åpner seg
-        content: "";
-        position: absolute;
-        border-left: 1.5px solid @color-text;
-        border-top: 1.5px solid @color-text;
-        border-right: none;
-        top: 10px;
-        right: 11px;
-        width: 7px;
-        height: 7px;
-        transform: rotate(-135deg);
     }
 }
 
