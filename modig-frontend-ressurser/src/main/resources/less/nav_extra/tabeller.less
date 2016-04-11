@@ -40,6 +40,9 @@ th {
         font-weight: normal;
     }
 
+    th[colspan] {
+        .vertikal-strek;
+    }
     > thead,
     > tbody,
     > tfoot {
@@ -73,6 +76,9 @@ th {
         }
     }
 
+    > tbody td {
+        .vertikal-strek;
+    }
 
     // Cells
     > th:first-child{
@@ -98,24 +104,6 @@ th {
         vertical-align: bottom;
     }
 
-    td.vertikal-strek {
-        position: relative;
-        &:after {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            border-right: 1px solid @color-border;
-            right: 0;
-            top: 25%;
-            width: 0;
-            height: 50%;
-            padding: 0;
-        }
-        &:last-child {
-            &:after {
-                border-right: none;
-            }
-        }
     & tbody tr:last-child td {
         border-bottom: 1px solid @table-border-color;
     }
