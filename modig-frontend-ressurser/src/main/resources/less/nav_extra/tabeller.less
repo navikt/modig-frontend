@@ -43,6 +43,22 @@ th {
     th[colspan] {
         .vertikal-strek;
     }
+
+    tbody tr.tabell-sum{
+        border-bottom: 2px solid @table-border-color;
+        th {
+            font-weight: bold;
+        }
+    }
+
+    .har-underrader {
+        &.er-apen th, &.er-apen td {
+            border-top: 2px solid @black;
+            font-weight: bold;
+        }
+    }
+
+
     > thead,
     > tbody,
     > tfoot {
