@@ -14,32 +14,87 @@ caption {
     text-align: left;
 }
 
-th {
-    text-align: left;
-}
 
+th {
+    font-weight: bold;
+}
 // Baseline styles
+
 
 .tabell {
     width: 100%;
     max-width: 100%;
     margin-bottom: @line-height-computed;
-    // Cells
+
+    // Border bottom for column headings
+    & tbody tr:last-child th {
+        border-bottom: 1px solid @table-border-color;
+    }
+
+    & thead {
+        border-bottom: 1px solid @table-border-color;
+    }
+
+    // Normal weight for row headers
+    > tbody > tr > th {
+        font-weight: normal;
+    }
+
     > thead,
     > tbody,
     > tfoot {
+
         > tr {
-            > th,
-            > td {
+
+            > th:first-child{
+                text-align:left;
+                vertical-align: top;
+            }
+
+            > th.undertittel {
+                font-weight: normal;
+            }
+
+            > th.gruppetittel {
+                text-align: center;
+            }
+
+            > td:first-child{
+                text-align: left;
+            }
+
+            > td, th {
                 padding: @table-cell-padding;
                 line-height: @line-height-base;
                 border-top: 1px solid @table-border-color;
-                border-bottom: 1px solid @table-border-color;
+                text-align: center;
             }
+
         }
     }
+
+
+    // Cells
+    > th:first-child{
+        text-align:left;
+        vertical-align: top;
+    }
+
+
+    > td:first-child{
+        text-align: left;
+    }
+
+    > th,
+    > td {
+        padding: @table-cell-padding;
+        line-height: @line-height-base;
+        border-top: 1px solid @table-border-color;
+        text-align: center;
+    }
+
     // Bottom align for column headings
-    > thead > tr > th {
+    & thead tr th {
         vertical-align: bottom;
     }
 
@@ -61,6 +116,8 @@ th {
                 border-right: none;
             }
         }
+    & tbody tr:last-child td {
+        border-bottom: 1px solid @table-border-color;
     }
 
     // Account for multiple tbody instances
