@@ -58,6 +58,21 @@ th {
         }
     }
 
+    & thead,
+    & tbody,
+    & tfoot {
+        & tr {
+            & th,
+            & td{
+                a:not(.knapp):not(.lenkeuthevert) {
+                    border-bottom-style: dashed;
+                    &:hover {
+                        border-bottom: 1px solid @blue-interaction;
+                    }
+                }
+            }
+        }
+    }
 
     > thead,
     > tbody,
