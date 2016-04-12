@@ -134,6 +134,15 @@ select {
     }
 }
 
+.contrast {
+    .select-container {
+        &:after {
+            border-left-color: @white;
+            border-top-color: @white;
+        }
+    }
+}
+
 .old-browser .select-container {
     // fiks for Ie9
     &:after {
