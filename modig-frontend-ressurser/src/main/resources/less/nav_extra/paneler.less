@@ -74,10 +74,11 @@
     background-color: @color-background;
 }
 
-a.panel, .panel-klikkbart {
+.panel-klikkbart {
     // Lenkepanel
     // <a href="http://www.nav.no" class="panel panel-klikkbart">Gå til Nav.no</a>
     display: block;
+    background-image: url("@{modig-frontend-images-root-url}/ikoner-svg/ikon-alarm.svg"), url("@{modig-frontend-images-root-url}/ikoner-svg/ikon-pil-klikkbart.svg");
     color: @color-text;
     border-bottom: none;
     cursor: pointer;
@@ -88,6 +89,7 @@ a.panel, .panel-klikkbart {
     }
     &:hover {
         box-shadow: #ccc 0 0 4px 2px;
+        background-image: url("@{modig-frontend-images-root-url}/ikoner-svg/ikon-alarm_hover.svg"), url("@{modig-frontend-images-root-url}/ikoner-svg/ikon-pil-klikkbart_hover.svg");
     }
 }
 

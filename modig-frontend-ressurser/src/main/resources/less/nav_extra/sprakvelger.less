@@ -1,0 +1,27 @@
+.sprakvelger {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    &.select-container {
+        select {
+            background: url("@{modig-frontend-images-root-url}/ikoner-svg/ikon-globe.svg") no-repeat 10px 7px;
+            background-size: 16px 16px;
+            padding-left: 32px;
+            font-size: @rem-as-14px;
+            option {
+                font-size: @rem-as-14px;
+            }
+        }
+    }
+}
+
+.contrast {
+    .sprakvelger {
+        &.select-container {
+            select {
+                background: url("@{modig-frontend-images-root-url}/ikoner-svg/ikon-globe-negativ.svg") no-repeat 10px 7px;
+                background-size: 16px 16px;
+            }
+        }
+    }
+}
