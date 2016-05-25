@@ -1,41 +1,26 @@
-@mobile-link-blue:          #33b1dd;
-@bell-color:                #fcc05c;
+@modig-frontend-images-root-url: '/META-INF/resources/img';
+@mobile-link-blue: #33b1dd;
+@bell-color: #fcc05c;
 
 .toggle-varsler-container {
     display: inline-block;
-    height: 31px;
-    width: 31px;
+    height: 42px;
+    width: 42px;
     position: relative;
     vertical-align: middle;
     margin-left: 20px;
-
     &.har-nye-varsler {
-        border: 1px solid @bell-color;
-        border-radius: 50%;
-
-        &:hover {
-            border: 1px solid @blue-link;
-            border-radius: 50%;
-        }
-
         .toggle-varsler {
-            background: url('@{modig-frontend-images-root-url}/varsel/bjelle1x.png') no-repeat center;
-            background-size: 17px 20px;
+            background: url('@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg') no-repeat center;
+            background-size: 90% 90%;
             width: 100%;
             height: 100%;
             display: block;
-
-            -webkit-animation: ding-dong 6s infinite; /* Safari 4+ */
-            -moz-animation:    ding-dong 6s infinite; /* Fx 5+ */
-            -o-animation:      ding-dong 6s infinite; /* Opera 12+ */
-            animation:         ding-dong 6s infinite; /* IE 10+, Fx 29+ */
-            -ms-transform-origin: 50% 10%; /* IE 9 */
-            -webkit-transform-origin: 50% 10%; /* Chrome, Safari, Opera */
+            animation: ding-dong 6s infinite; /* IE 10+, Fx 29+ */
             transform-origin: 50% 10%;
-
-            &:hover {
-                background: url('@{modig-frontend-images-root-url}/varsel/varsel_blaa_pulse.png') no-repeat center;
-                background-size: 17px 20px;
+            &:active {
+                background: url('@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel_active.svg') no-repeat center;
+                background-size: 90% 90%;
             }
         }
     }
@@ -44,58 +29,56 @@
 .mixin-roter(@deg: 45deg) {
     behavior: url(ms-transform.htc);
     transform: rotate(@deg);
-    -moz-transform:rotate(@deg);
-    -webkit-transform:rotate(@deg);
-    -o-transform:rotate(@deg);
-    -ms-transform:rotate(@deg);
 }
 
 .toggle-varsler {
-    background: url('@{modig-frontend-images-root-url}/varsel/varsel_graa.png') no-repeat center;
+    background: url('@{modig-frontend-images-root-url}/varsel/alarm.svg') no-repeat center;
+    background-size: 90% 90%;
     border: 0;
     position: absolute;
     left: 0;
     height: 100%;
     width: 100%;
-
     &:hover {
-        background: url('@{modig-frontend-images-root-url}/varsel/varsel_blaa.png') no-repeat center;
+        background: url('@{modig-frontend-images-root-url}/varsel/alarm_hover.svg') no-repeat center;
+        background-size: 90% 90%;
     }
-
     &:focus {
+        background: url('@{modig-frontend-images-root-url}/varsel/alarm_hover.svg') no-repeat center;
+        background-size: 90% 90%;
         box-shadow: 0 0 0 2px @orange-focus;
-        border-radius: 50%;
         outline: none;
     }
-
+    &:active {
+        background: url('@{modig-frontend-images-root-url}/varsel/alarm_active.svg') no-repeat center;
+        background-size: 90% 90%;
+    }
     &.skjul {
         display: none;
     }
 }
 
-@media
-(-webkit-min-device-pixel-ratio: 1.5),
-(min-resolution: 144dpi){
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
     .varsel-bjelle {
-        background-image: url("@{modig-frontend-images-root-url}/varsel/bjelle1.5x.png");
+        background-image: url("@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg");
+        background-size: 90% 90%;
     }
 }
 
-@media
-(-webkit-min-device-pixel-ratio: 2),
+@media (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
     .varsel-bjelle {
-        background-image: url("@{modig-frontend-images-root-url}/varsel/bjelle2x.pn");
+        background-image: url("@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg");
+        background-size: 90% 90%;
     }
 }
 
 .varsel-container {
     margin-bottom: 14px;
     .clearfix();
-
     &:last-child {
         margin-bottom: 0;
-
         .varsel-innhold-container {
             border-bottom: none;
         }
@@ -120,11 +103,9 @@
     box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.1);
     font-size: @rem-as-14px;
     display: none;
-
     &.open {
         display: block;
     }
-
     &:before {
         content: "";
         position: absolute;
@@ -132,22 +113,17 @@
         right: 26px;
         border: 8px solid #fff;
         z-index: 1000;
-		transform-origin: 0 0;
-		-ms-transform-origin: 0 0;
-		transform: rotate(135deg);
-		-ms-transform: rotate(135deg);
-		box-shadow: -2px 2px 3px 0 rgba(100, 100, 100, 0.1);
+        transform-origin: 0 0;
+        transform: rotate(135deg);
+        box-shadow: -2px 2px 3px 0 rgba(100, 100, 100, 0.1);
     }
-
     a {
         padding-top: 4px;
         text-decoration: none;
-
         span {
             border-bottom: 1px solid @color-link-underline;
             pointer-events: none;
         }
-
         &:hover {
             text-decoration: none;
             span {
@@ -155,7 +131,6 @@
             }
         }
     }
-
     .tekstblokk {
         margin-right: 12px;
         margin-bottom: 0;
@@ -164,9 +139,7 @@
 
 .ingen-varsler-container {
     margin: 50px auto;
-    width: 64px;
-    height: 64px;
-    background: url('@{modig-frontend-images-root-url}/navno/gfx/ajaxloader/hvit/loader_hvit_64.gif') no-repeat center;
+    &:extend(.spinner-xl);
 }
 
 .skillelinje-topp {
@@ -183,7 +156,6 @@
 .varsel-dato {
     color: @gray-inactive;
     font-size: @rem-as-12px;
-
     margin-bottom: 2px;
 }
 
@@ -202,69 +174,93 @@
 
 .sett {
     color: @gray-inactive;
-
     .varsel-kort-dato {
         background-color: transparent;
     }
 }
 
-@-webkit-keyframes ding-dong {
-	0%, 30%, 15%, 30%, 45%, 100% { .mixin-roter(0deg); }
-	1% { .mixin-roter(-60deg); }
-	31% { .mixin-roter(-20deg); }
-	3%, 33% { .mixin-roter(40deg); }
-	5%, 35% { .mixin-roter(-30deg); }
-	7%, 37% { .mixin-roter(15deg); }
-	9%, 39% { .mixin-roter(-15deg); }
-	11%, 41% { .mixin-roter(10deg); }
-	13%, 43% { .mixin-roter(-5deg); }
-	14%, 44% { .mixin-roter(2deg); }
-	14.5%, 44.5% { .mixin-roter(-1deg); }
-}
-
-@-moz-keyframes ding-dong {
-	0%, 30%, 15%, 30%, 45%, 100% { .mixin-roter(0deg); };
-
-1% { .mixin-roter(-60deg); }
-31% { .mixin-roter(-20deg); }
-3%, 33% { .mixin-roter(40deg); }
-5%, 35% { .mixin-roter(-30deg); }
-7%, 37% { .mixin-roter(15deg); }
-9%, 39% { .mixin-roter(-15deg); }
-11%, 41% { .mixin-roter(10deg); }
-13%, 43% { .mixin-roter(-5deg); }
-14%, 44% { .mixin-roter(2deg); }
-14.5%, 44.5% { .mixin-roter(-1deg); }
-}
-@-o-keyframes ding-dong {
-0%, 30%, 15%, 30%, 45%, 100% { .mixin-roter(0deg); };
-
-1% { .mixin-roter(-60deg); }
-31% { .mixin-roter(-20deg); }
-3%, 33% { .mixin-roter(40deg); }
-5%, 35% { .mixin-roter(-30deg); }
-7%, 37% { .mixin-roter(15deg); }
-9%, 39% { .mixin-roter(-15deg); }
-11%, 41% { .mixin-roter(10deg); }
-13%, 43% { .mixin-roter(-5deg); }
-14%, 44% { .mixin-roter(2deg); }
-14.5%, 44.5% { .mixin-roter(-1deg); }
-}
 @keyframes ding-dong {
-0%, 30%, 15%, 30%, 45%, 100% { .mixin-roter(0deg); };
+    0%, 30%, 15%, 30%, 45%, 100% {
+        .mixin-roter(0deg);
+    }
 
-1% { .mixin-roter(-60deg); }
-31% { .mixin-roter(-20deg); }
-3%, 33% { .mixin-roter(40deg); }
-5%, 35% { .mixin-roter(-30deg); }
-7%, 37% { .mixin-roter(15deg); }
-9%, 39% { .mixin-roter(-15deg); }
-11%, 41% { .mixin-roter(10deg); }
-13%, 43% { .mixin-roter(-5deg); }
-14%, 44% { .mixin-roter(2deg); }
-14.5%, 44.5% { .mixin-roter(-1deg); }
+;
+
+1
+%
+{
+    .mixin-roter(-60deg);
 }
-
+31
+%
+{
+    .mixin-roter(-20deg);
+}
+3
+%
+,
+33
+%
+{
+    .mixin-roter(40deg);
+}
+5
+%
+,
+35
+%
+{
+    .mixin-roter(-30deg);
+}
+7
+%
+,
+37
+%
+{
+    .mixin-roter(15deg);
+}
+9
+%
+,
+39
+%
+{
+    .mixin-roter(-15deg);
+}
+11
+%
+,
+41
+%
+{
+    .mixin-roter(10deg);
+}
+13
+%
+,
+43
+%
+{
+    .mixin-roter(-5deg);
+}
+14
+%
+,
+44
+%
+{
+    .mixin-roter(2deg);
+}
+14.5
+%
+,
+44.5
+%
+{
+    .mixin-roter(-1deg);
+}
+}
 
 @media (max-width: @screen-medium) {
     header {
@@ -294,26 +290,20 @@
         right: auto;
         padding: 15px;
         display: none;
-
         &:before {
             border: none;
         }
-
         &.m-open {
             display: block;
         }
-
         .varsel-kort-dato {
             display: none;
         }
-
         .ingen-varsler-container {
-            background: url('@{modig-frontend-images-root-url}/navno/gfx/ajaxloader/svart/loader_svart_64.gif') no-repeat center;
+            &:extend(.spinner-xl);
         }
-
         a {
             color: @mobile-link-blue;
-
             &:hover {
                 text-decoration: none;
                 span {
@@ -353,17 +343,14 @@
     }
 
     .toggle-varsler-mobile {
-        background: url('@{modig-frontend-images-root-url}/varsel/varsel_mobil_graa.png') no-repeat center;
+        background: url('@{modig-frontend-images-root-url}/varsel/alarm.svg') no-repeat center;
         vertical-align: middle;
-
         &.m-open {
-            background: url('@{modig-frontend-images-root-url}/varsel/varsel_mobil_blaa.png') no-repeat center;
+            background: url('@{modig-frontend-images-root-url}/varsel/alarm_hover.svg') no-repeat center;
         }
-
         &.har-nye-varsler {
-            background: url('@{modig-frontend-images-root-url}/varsel/varsel_mobil_oransje.png') no-repeat center;
+            background: url('@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg') no-repeat center;
         }
-
         &.skjul {
             visibility: hidden;
         }
@@ -375,3 +362,4 @@
         margin-left: 10px;
     }
 }
+
