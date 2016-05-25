@@ -11,7 +11,9 @@
     margin-left: 20px;
     &.har-nye-varsler {
         .toggle-varsler {
-            background: url('@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg') no-repeat center;
+            background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg');
+            background-repeat: no-repeat;
+            background-position: center;
             background-size: 90% 90%;
             width: 100%;
             height: 100%;
@@ -19,7 +21,9 @@
             animation: ding-dong 6s infinite; /* IE 10+, Fx 29+ */
             transform-origin: 50% 10%;
             &:active {
-                background: url('@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel_active.svg') no-repeat center;
+                background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg');
+                background-repeat: no-repeat;
+                background-position: center;
                 background-size: 90% 90%;
             }
         }
@@ -32,7 +36,9 @@
 }
 
 .toggle-varsler {
-    background: url('@{modig-frontend-images-root-url}/varsel/alarm.svg') no-repeat center;
+    background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm.svg');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: 90% 90%;
     border: 0;
     position: absolute;
@@ -40,17 +46,23 @@
     height: 100%;
     width: 100%;
     &:hover {
-        background: url('@{modig-frontend-images-root-url}/varsel/alarm_hover.svg') no-repeat center;
+        background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm_hover.svg');
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: 90% 90%;
     }
     &:focus {
-        background: url('@{modig-frontend-images-root-url}/varsel/alarm_hover.svg') no-repeat center;
+        background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm_hover.svg');
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: 90% 90%;
         box-shadow: 0 0 0 2px @orange-focus;
         outline: none;
     }
     &:active {
-        background: url('@{modig-frontend-images-root-url}/varsel/alarm_active.svg') no-repeat center;
+        background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm_active.svg');
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: 90% 90%;
     }
     &.skjul {
@@ -61,7 +73,7 @@
 @media (-webkit-min-device-pixel-ratio: 1.5),
 (min-resolution: 144dpi) {
     .varsel-bjelle {
-        background-image: url("@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg");
+        background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg');
         background-size: 90% 90%;
     }
 }
@@ -69,7 +81,7 @@
 @media (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
     .varsel-bjelle {
-        background-image: url("@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg");
+        background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg');
         background-size: 90% 90%;
     }
 }
@@ -275,13 +287,19 @@
     }
 
     .toggle-varsler-mobile {
-        background: url('@{modig-frontend-images-root-url}/varsel/alarm.svg') no-repeat center;
+        background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm.svg');
+        background-repeat: no-repeat;
+        background-position: center;
         vertical-align: middle;
         &.m-open {
-            background: url('@{modig-frontend-images-root-url}/varsel/alarm_hover.svg') no-repeat center;
+            background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm_hover.svg');
+            background-repeat: no-repeat;
+            background-position: center;
         }
         &.har-nye-varsler {
-            background: url('@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg') no-repeat center;
+            background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/varsel/alarm-nytt-varsel.svg');
+            background-repeat: no-repeat;
+            background-position: center;
         }
         &.skjul {
             visibility: hidden;
