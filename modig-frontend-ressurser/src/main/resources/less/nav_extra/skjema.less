@@ -76,12 +76,11 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 select {
-    padding: .37rem;
+    padding: .45rem;
     line-height: 1.2;
-    height: 1.2rem;
     border-radius: 1px;
     border: 1px solid @gray-icon;
-    box-sizing: content-box;
+    box-sizing: border-box;;
     &:focus {
         outline: 0;
         .mixin-focus-outline(3px);
@@ -103,6 +102,12 @@ select {
 textarea,
 select {
     line-height: 1.2;
+}
+
+select {
+    padding: .37rem;
+    height: 1.2rem;
+    box-sizing: content-box;
 }
 
 .select-container {
