@@ -1,0 +1,31 @@
+.nav-varsler {
+  .varsel {
+    display: flex;
+    &:not(:last-child) {
+      border-bottom: 1px solid #7f756c;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .varsel-ikon {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      margin-right: 8px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        padding: 0.5rem;
+      }
+    }
+    .varsel-innhold {
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .text-inactive {
+      color: #7f756c;
+    }
+  }
+}
