@@ -20,13 +20,91 @@
       }
     }
     .varsel-innhold {
-      word-break: break-all;
+      overflow-wrap: break-word;
       p {
         margin-bottom: 0;
       }
     }
     .text-inactive {
       color: #7f756c;
+    }
+  }
+  .varsler-display {
+    position: absolute;
+    width: 330px;
+    padding: 20px 16px 20px 16px;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.1);
+    font-size: 0.875rem;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 26px;
+      border: 8px solid #fff;
+      z-index: 1000;
+      transform-origin: 0 0;
+      transform: rotate(135deg);
+      box-shadow: -2px 2px 3px 0 rgba(100, 100, 100, 0.1);
+    }
+
+    .varsel-container {
+      &:not(:last-child) {
+        border-bottom: 1px solid #7f756c;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+      }
+    }
+    .nav-varsler {
+      margin-bottom: 1rem;
+    }
+    .vis-alle-lenke {
+      text-align: center;
+    }
+
+    .varsel {
+      padding: 4px;
+
+      .varsel-ikon {
+        background: no-repeat center;
+      }
+      .varsel-innhold {
+        color: #3e3832;
+      }
+      &:focus {
+        background-color: transparent;
+        outline: 2px solid #ffbd66;
+      }
+
+      &:hover {
+        background-color: #0067c5;
+
+        .varsel-ikon {
+          background-color: transparent;
+        }
+
+        .varsel-innhold {
+          color: #ffffff;
+        }
+        .varsel-dato {
+          color: #ffffff;
+        }
+      }
+    }
+    .fiks-line-break {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-all;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
     }
   }
 }
