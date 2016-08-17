@@ -1,17 +1,14 @@
 .nav-varsler {
   .varsel {
     display: flex;
-    &:not(:last-child) {
-      border-bottom: 1px solid #7f756c;
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
-    }
+    padding: 4px;
 
     .varsel-ikon {
       flex: 0 0 40px;
       width: 40px;
       height: 40px;
       margin-right: 8px;
+      background: no-repeat center;
 
       img {
         height: 100%;
@@ -21,22 +18,13 @@
     }
     .varsel-innhold {
       overflow-wrap: break-word;
+      color: #3e3832;
       p {
         margin-bottom: 0;
       }
     }
     .text-inactive {
       color: #7f756c;
-    }
-  }
-  .varsel {
-    padding: 4px;
-
-    .varsel-ikon {
-      background: no-repeat center;
-    }
-    .varsel-innhold {
-      color: #3e3832;
     }
     &:focus {
       background-color: transparent;
@@ -56,6 +44,13 @@
       .varsel-dato {
         color: #ffffff;
       }
+    }
+  }
+  .varsel-container {
+    &:not(:last-child) {
+      border-bottom: 1px solid #7f756c;
+      padding-bottom: 12px;
+      margin-bottom: 12px;
     }
   }
   .fiks-line-break {
