@@ -18,37 +18,39 @@
     }
     .varsel-innhold {
       overflow-wrap: break-word;
-      color: #3e3832;
+      color: @gray-text;
+
+      .varsel-dato {
+        color: @gray-inactive;
+      }
       p {
         margin-bottom: 0;
       }
     }
-    .text-inactive {
-      color: #7f756c;
-    }
     &:focus {
       background-color: transparent;
-      outline: 2px solid #ffbd66;
+      outline: 2px solid @orange-focus;
     }
 
     &:hover {
-      background-color: #0067c5;
+      background-color: @blue-link;
 
       .varsel-ikon {
         background-color: transparent;
       }
 
       .varsel-innhold {
-        color: #ffffff;
-      }
-      .varsel-dato {
-        color: #ffffff;
+        color: @white;
+
+        .varsel-dato {
+          color: @white;
+        }
       }
     }
   }
   .varsel-container {
     &:not(:last-child) {
-      border-bottom: 1px solid #7f756c;
+      border-bottom: 1px solid @gray-inactive;
       padding-bottom: 12px;
       margin-bottom: 12px;
     }
