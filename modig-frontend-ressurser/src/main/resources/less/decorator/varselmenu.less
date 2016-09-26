@@ -5,6 +5,14 @@
     background: @farge url("@{modig-frontend-images-root-url}/varsel/@{ikon}.svg") no-repeat center;
   }
 }
+.varsel-container-mixin() {
+  border-bottom: 1px solid @gray-inactive;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.varsler-display .varsel-liste .varsel-container {
+  .varsel-container-mixin();
+}
 .nav-varsler {
   .varsel {
     display: flex;
@@ -35,9 +43,7 @@
   }
   .varsel-container {
     &:not(:last-child) {
-      border-bottom: 1px solid @gray-inactive;
-      padding-bottom: 12px;
-      margin-bottom: 12px;
+      .varsel-container-mixin();
     }
   }
   .fiks-line-break {
