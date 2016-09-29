@@ -1,0 +1,63 @@
+@modig-frontend-images-root-url: "../../img";
+.varselikon-mixin(@type: "", @ikon, @farge) {
+  @classname: ~'@{type}';
+  &@{classname} {
+    background: @farge url("@{modig-frontend-images-root-url}/varsel/@{ikon}.svg") no-repeat center;
+  }
+}
+.varsel-container-mixin() {
+  border-bottom: 1px solid @gray-inactive;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.varsler-display .varsel-liste .varsel-container {
+  .varsel-container-mixin();
+}
+.nav-varsler {
+  .hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .varsel {
+    display: flex;
+    padding: 4px;
+
+    .varsel-ikon {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      margin-right: 8px;
+      .varselikon-mixin("", "alarm", #ffe4c2);
+      .varselikon-mixin(".boble", "bubblechat-2", #f1d8d4);
+      .varselikon-mixin(".kalender", "calendar-3", #ecefcc);
+      .varselikon-mixin(".dokument", "dokument_normal", #e0dae7);
+      .varselikon-mixin(".digisyfo", "first-aid-plaster", #e0f5fb);
+    }
+    .varsel-innhold {
+      overflow-wrap: break-word;
+      color: @gray-text;
+
+      .varsel-dato {
+        color: @gray-inactive;
+      }
+      p {
+        margin-bottom: 4px;
+      }
+    }
+  }
+  .varsel-container {
+    &:not(:last-child) {
+      .varsel-container-mixin();
+    }
+  }
+  .fiks-line-break {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+}
