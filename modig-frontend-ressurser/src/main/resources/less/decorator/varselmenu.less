@@ -13,6 +13,7 @@
 .varsler-display .varsel-liste .varsel-container {
     .varsel-container-mixin();
 }
+
 .nav-varsler {
     .hide-text {
         text-indent: 100%;
@@ -33,6 +34,14 @@
             .varselikon-mixin(".kalender", "calendar-3", #ecefcc);
             .varselikon-mixin(".dokument", "dokument_normal", #e0dae7);
             .varselikon-mixin(".digisyfo", "first-aid-plaster", #e0f5fb);
+
+            .contrast & {
+                .varselikon-mixin("", "alarm_gul", #ffe4c2);
+                .varselikon-mixin(".boble", "bubblechat-2_gul", #f1d8d4);
+                .varselikon-mixin(".kalender", "calendar-3_gul", #ecefcc);
+                .varselikon-mixin(".dokument", "dokument_normal_gul", #e0dae7);
+                .varselikon-mixin(".digisyfo", "first-aid-plaster_gul", #e0f5fb);
+            }
         }
         .varsel-innhold {
             overflow-wrap: break-word;
