@@ -41,7 +41,7 @@
     }
 }
 
-.knapp, .side-innhold .knapp {
+.knapp {
     font-family: @font-family-profile;
     font-weight: 600;
     cursor: pointer;
@@ -57,6 +57,8 @@
     background-color: @btn-background-color;
     &:hover {
         border-color: @btn-background-hover-color;
+        background-color: @btn-background-hover-color;
+        color: @white;
     }
     &:active {
         border-color: @blue-active;
@@ -64,10 +66,6 @@
     &:focus {
         outline: none;
         .mixin-focus-outline(3px);
-    }
-    &:hover {
-        background-color: @btn-background-hover-color;
-        color: @white;
     }
     &:focus:hover {
         color: @white;
