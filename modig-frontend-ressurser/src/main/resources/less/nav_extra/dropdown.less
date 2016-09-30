@@ -1,0 +1,102 @@
+// Dropdown - fra collapse-bootstrap-dropdown.less
+//-------------------
+
+.dropup,
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+  outline: 0;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+  border-top: 4px solid @white;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+}
+
+.dropdown .caret {
+  margin-top: 0.375rem;
+  margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  float: left;
+  text-align: left;
+  width: 100%;
+  padding: 5px 0;
+  margin: 0;
+  list-style: none;
+  background-color: @gray-inactive;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 1px;
+  overflow: hidden;
+  background-color: @gray-inactive;
+  border-bottom: 1px solid @black;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 0.25em 0 0.25em 27px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  color: @white;
+  white-space: nowrap;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  text-decoration: none;
+  color: @blue-interaction;
+}
+
+.dropdown-menu > li.active {
+  > a {
+    color: @blue-interaction;
+    &:after {
+      .bullet-point(2px, @blue-interaction, 13%, 40%); // mixin
+      text-decoration: none;
+      outline: 0;
+    }
+  }
+}
+
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  color: @gray-inactive;
+}
+
+.open > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
