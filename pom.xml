@@ -29,7 +29,6 @@
 
 	<modules>
 		<module>modig-frontend-ressurser</module>
-		<module>modig-frontend-wicket</module>
 	</modules>
 
 	<build>
