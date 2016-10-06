@@ -5,7 +5,7 @@
 	<artifactId>modig-frontend</artifactId>
 	<groupId>no.nav.modig</groupId>
 	<packaging>pom</packaging>
-	<version>4.0.7-SNAPSHOT</version>
+	<version>4.0.7</version>
 
 	<parent>
 		<groupId>no.nav.sbl</groupId>
@@ -48,7 +48,7 @@
 	<scm>
 		<developerConnection>scm:git:http://stash.devillo.no/scm/felles/modig-frontend.git</developerConnection>
 		<url>http://stash.devillo.no/projects/FELLES/repos/modig-frontend/</url>
-		<tag>HEAD</tag>
+		<tag>modig-frontend-4.0.7</tag>
 	</scm>
 
 </project>
