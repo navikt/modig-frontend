@@ -13,10 +13,10 @@
 	<defs>
 		<rect id="SVGID_1_" width="32" height="32"/>
 	</defs>
-	<clipPath id="SVGID_2_">
+	<clipPath id="SVGID_2_" transform="translate(1,-1)">
 		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
 	</clipPath>
-	<g class="st0">
+	<g class="st0" transform="translate(-1,1)">
 		<g>
 			<g>
 				<path class="st1" d="M28.8,23.7c-1.6,0-2.8-1.4-2.8-3.1v-5.5c0-4.5-2.5-8.6-6.3-10.3c-0.4-1.9-2-3.3-3.8-3.3s-3.4,1.4-3.8,3.3
