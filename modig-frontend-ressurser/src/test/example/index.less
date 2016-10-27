@@ -1,0 +1,34 @@
+@sourcePath: './../../main/resources/less';
+
+@import '@{sourcePath}/includes/mixins.less';
+@import '@{sourcePath}/includes/variables.less';
+@import '@{sourcePath}/decorator/modus.less';
+@import '@{sourcePath}/nav_extra/typografi.less';
+@import '@{sourcePath}/nav_extra/paneler.less';
+@import '@{sourcePath}/nav_extra/knapper.less';
+@import '@{sourcePath}/nav_extra/knapperader.less';
+@import '@{sourcePath}/nav_extra/skjema.less';
+@import '@{sourcePath}/nav_extra/utilities.less';
+@import '@{sourcePath}/nav_extra/datovelger.less';
+@import '@{sourcePath}/decorator/grid.less';
+@import '@{sourcePath}/decorator/utilities.less';
+
+@import '@{sourcePath}/modules/toggle/toggle.less';
+@import '@{sourcePath}/modules/tallvelger/tallvelger.less';
+@import '@{sourcePath}/modules/sporsmal/sporsmal.less';
+
+.modules-page {
+  background-color: @gray-background;
+}
+.eksempel {
+  .panel;
+  .panel-komprimert;
+  &__header {
+    .typo-innholdstittel;
+    .blokk-xs;
+  }
+  &__innhold {
+    .panel;
+    .panel-ramme;
+  }
+}

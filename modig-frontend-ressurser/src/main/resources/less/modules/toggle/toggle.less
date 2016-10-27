@@ -1,0 +1,36 @@
+.toggle {
+  .panel-ramme;
+  display: table;
+  padding: 4px;
+
+  &__radio {
+    position: absolute;
+    opacity: 0;
+  }
+  &__label {
+    .knapp;
+    .knapp-hoved;
+    .knapp-liten;
+    margin: 0;
+    box-shadow: none;
+
+    &:hover, &--hover,
+    &:active, &--active,
+    &:active:hover, &--active--hover {
+      transform: none;
+      box-shadow: none;
+    }
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+  &__radio:not(:checked) + &__label {
+    background: none;
+    box-shadow: none;
+    color: @gray-text;
+  }
+  &__radio:focus + &__label, &__radio--focus + &__label,
+  &__radio:active + &__label, &__radio--active + &__label {
+    .mixin-focus-outline(3px);
+  }
+}

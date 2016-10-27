@@ -11,10 +11,19 @@
     &:focus {
         outline: 3px @color-focus solid;
     }
+
+    @media (min-width: @screen-xs) {
+        padding: 2rem 2rem 2.25rem 2rem;
+    }
+
 }
 
 .panel-komprimert {
     padding: .5rem 1rem;
+
+    @media (min-width: @screen-xs) {
+        padding: 1.25rem 2rem;
+    }
 }
 
 .panel-stablet {
@@ -134,12 +143,6 @@ a.panel-ramme:hover {
 
 @media (min-width: @screen-xs) {
     // 480px
-    .panel {
-        padding: 2rem 2rem 2.25rem 2rem;
-    }
-    .panel-komprimert {
-        padding: 1.25rem 2rem;
-    }
     .panel-ikon {
         padding-right: 2.8rem;
     }

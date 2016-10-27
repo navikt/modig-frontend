@@ -1,0 +1,20 @@
+.sporsmal {
+  &__tekst {
+    .typo-element;
+    .blokk-xxxs;
+  }
+  &-tekst, &-tall, &-epost, &-tall, &-tlfnummer, &-check, &-radio {
+    .blokk-m;
+  }
+  &-tekst, &-tall, &-epost, &-tall, &-tlfnummer {
+    &_l input {  .blokk-m; .input-l;  }
+    &_m input {  .blokk-m; .input-m;  }
+    &_s input {  .blokk-m; .input-s;  }
+  }
+  &-check input[type=checkbox] {
+    .nav-checkbox
+  }
+  &-radio input[type=radio] {
+    .nav-radioknapp;
+  }
+}

@@ -25,10 +25,11 @@
     padding: 8px 38px 10px 38px;
     border: 2px solid @btn-border-color;
     box-shadow: none;
-    &:hover {
+    &:hover, &--hover {
         box-shadow: none;
     }
-    &:focus, &:focus:hover {
+    &:focus, &--focus,
+    &:focus:hover, &--focus--hover {
         .mixin-focus-outline(3px);
     }
 }
@@ -55,28 +56,28 @@
     line-height: 1;
     color: @btn-text-color;
     background-color: @btn-background-color;
-    &:hover {
+    &:hover, &--hover {
         border-color: @btn-background-hover-color;
         background-color: @btn-background-hover-color;
         color: @white;
     }
-    &:active {
+    &:active, &--active {
         border-color: @blue-active;
     }
-    &:focus {
+    &:focus, &--focus {
         outline: none;
         .mixin-focus-outline(3px);
     }
-    &:focus:hover {
+    &:focus:hover, &--focus--hover {
         color: @white;
     }
-    &:focus:hover:active {
+    &:focus:hover:active, &--focus--hover--active {
         color: @white;
         .mixin-focus-outline(3px);
     }
-    &:active,
+    &:active, &--active,
     &.er-aktiv,
-    &:active:hover {
+    &:active:hover, &--active--hover {
         color: @white;
         background-color: @blue-active;
         border-color: @blue-active;
@@ -134,7 +135,7 @@
         box-shadow: none;
         .mixin-transform(none);
     }
-    &.knapp-liten, &.knapp-liten:hover {
+    &.knapp-liten, &.knapp-liten:hover, &.knapp-liten.knapp-liten--hover {
         padding: 10px 20px 12px;
     }
     &.knapp-stor, &.knapp-stor:hover {
@@ -146,20 +147,21 @@
     background-color: @btn-primary-background-color;
     color: @btn-primary-text-color;
     box-shadow: 0 -2px 0 @btn-primary-shadow-color inset;
-    &:hover {
+    &:hover, &--hover {
         background-color: @btn-primary-background-hover-color;
         border-color: @btn-primary-background-hover-color;
         border-bottom-color: @btn-primary-shadow-color;
         box-shadow: 0 -2px 0 @btn-primary-shadow-color inset, 0 1px 0 @btn-primary-shadow-color;
     }
-    &:active {
+    &:active, &--active {
         box-shadow: none;
     }
-    &:active, &:active:hover {
+    &:active, &--active
+    &:active:hover, &--active--hover {
         background-color: @btn-primary-active-color;
         box-shadow: none;
     }
-    &:focus {
+    &:focus, &--focus {
         box-shadow: 0 -2px 0 @btn-primary-shadow-color inset, 0 0 0 3px @color-focus;
     }
 }
@@ -197,7 +199,7 @@
 }
 
 .knapp-liten,
-.knapp-liten:hover,
+.knapp-liten:hover, .knapp-liten--hover,
 .contrast .knapp-liten,
 .contrast .knapp-liten.knapp-fare,
 .contrast .knapp-liten.knapp-hoved {
@@ -302,7 +304,7 @@
         &:active {
             color: @yellow;
         }
-        &:focus {
+        &:focus, &--focus {
             box-shadow: 0 0 0 3px @color-focus;
         }
         &.er-inaktiv {

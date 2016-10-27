@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./index.less" rel="stylesheet/less" type="text/css" />
+    <script type="application/javascript" src="./less.min.js"></script>
+</head>
+<body class="modules-page">
+    <div class="container">
+        <h1 class="typo-sidetittel text-center blokk-s">Modules</h1>
+
+        <div class="eksempel">
+            <h2 class="eksempel__header">Toggle</h2>
+            <div class="eksempel__innhold">
+                <form>
+                    <h3 class="typo-undertittel">Standard visning</h3>
+                    <div class="toggle blokk-m">
+                        <input type="radio" class="toggle__radio" name="toggle" id="val1" checked="checked">
+                        <label for="val1" class="toggle__label">Value 1</label>
+                        <input type="radio" class="toggle__radio" name="toggle" id="val2">
+                        <label for="val2" class="toggle__label">Value 2</label>
+                        <input type="radio" class="toggle__radio" name="toggle" id="val3">
+                        <label for="val3" class="toggle__label">Value 3</label>
+                    </div>
+
+                    <h3 class="typo-undertittel">State visning</h3>
+                    <div class="toggle">
+                        <input type="radio" class="toggle__radio" id="ex2-val1" checked="checked">
+                        <label for="ex2-val1" class="toggle__label">Normal</label>
+                        <input type="radio" class="toggle__radio" id="ex2-val2" checked="checked">
+                        <label for="ex2-val2" class="toggle__label toggle__label--hover">Hover</label>
+                        <input type="radio" class="toggle__radio" id="ex2-val3" checked="checked">
+                        <label for="ex2-val3" class="toggle__label toggle__label--active">Active</label>
+                        <input type="radio" class="toggle__radio toggle__radio--focus" id="ex2-val4" checked="checked">
+                        <label for="ex2-val4" class="toggle__label">Focus</label>
+                        <input type="radio" class="toggle__radio toggle__radio--focus" id="ex2-val5" checked="checked">
+                        <label for="ex2-val5" class="toggle__label toggle__label--hover">hoverFocus</label>
+                        <input type="radio" class="toggle__radio toggle__radio--focus" id="ex2-val6" checked="checked">
+                        <label for="ex2-val6" class="toggle__label toggle__label--active">activeFocus</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="eksempel">
+            <h2 class="eksempel__header">Datovelger</h2>
+            <div class="eksempel__innhold">
+                <form>
+                    <div class="datovelger">
+                        <label class="datovelger__label" for="datovelger">Termindato?</label>
+                        <input type="date" id="datovelger" class="datovelger__input">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="eksempel">
+            <h2 class="eksempel__header">Tallvelger</h2>
+            <div class="eksempel__innhold">
+                <form>
+                    <div class="tallvelger">
+                        <button type="button" class="tallvelger__button">-</button>
+                        <input type="number" class="tallvelger__input" value="0.2">
+                        <button type="button" class="tallvelger__button">+</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="eksempel">
+            <h2 class="eksempel__header">Spørsmål</h2>
+            <div class="eksempel__innhold">
+                <form>
+                    <h3 class="typo-undertittel">Checkbokser</h3>
+                    <div class="sporsmal-check">
+                        <p class="sporsmal__tekst">Hva er spørsmålet?, Etc også videre</p>
+                        <input type="checkbox" name="check" checked="checked" id="check1">
+                        <label for="check1">Valg nr 1</label>
+                        <input type="checkbox" name="check" checked="checked" id="check2">
+                        <label for="check2">Valg nr 1</label>
+                        <input type="checkbox" name="check" checked="checked" id="check3">
+                        <label for="check3">Valg nr 1</label>
+                    </div>
+                    <h3 class="typo-undertittel">Radiobokser</h3>
+                    <div class="sporsmal-radio">
+                        <p class="sporsmal__tekst">Hva er spørsmålet?, Etc også videre</p>
+                        <input type="radio" name="sporsmal-radio" checked="checked" id="radio-sporsmal1">
+                        <label for="radio-sporsmal1">Valg nr 1</label>
+                        <input type="radio" name="sporsmal-radio" id="radio-sporsmal2">
+                        <label for="radio-sporsmal2">Valg nr 1</label>
+                        <input type="radio" name="sporsmal-radio" id="radio-sporsmal3">
+                        <label for="radio-sporsmal3">Valg nr 1</label>
+                    </div>
+                    <h3 class="typo-undertittel">Andre spørsmål</h3>
+                    <div class="sporsmal-tekst">
+                        <label class="sporsmal__tekst" for="tekst-sporsmal">Hva er spørsmålet?, Etc også videre</label>
+                        <input type="text" id="tekst-sporsmal">
+                    </div>
+                    <div class="sporsmal-tall">
+                        <label class="sporsmal__tekst" for="tekst-sporsmal">Hva er spørsmålet?, Etc også videre</label>
+                        <input type="number" id="tekst-tall">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>exports = window;</script>
+    <script type="application/javascript" src="datepicker.js"></script>
+    <script type="application/javascript" src="tallvelger.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = { modal: true, noCalendar: true };
+            Array.from(document.querySelectorAll('.datovelger__input')).forEach((element) => {
+                NavDatePickers.push(new DatePicker(element, options));
+            });
+
+            Array.from(document.querySelectorAll('.tallvelger')).forEach((element) => {
+                Tallvelger.create(element);
+            });
+        });
+    </script>
+</body>
+</html>
