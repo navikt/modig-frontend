@@ -18,6 +18,10 @@
 
 @btn-row-border-color: @gray-icon;
 
+@btn-blue-negative-hover: @blue-link-negative;
+@btn-blue-negative-active: @blue-active-negative;
+@btn-negative-gray-text-color: @gray-text;
+
 .knapp,
 .contrast .knapp,
 .contrast .knapp-fare,
@@ -103,11 +107,16 @@
 .knapp.knapp-negativ {
     color: @white;
     border: 1px solid @white;
-    &:hover, &:active {
-        border-bottom: none;
+
+    &:hover, &:focus {
+        border: 2px solid @btn-blue-negative-hover;
+        background-color: @btn-blue-negative-hover;
+        color: @btn-negative-gray-text-color;
     }
-    &:hover, &:active, &:focus {
-        background-color: @btn-background-color;
+    &:active{
+        border: 2px solid @btn-blue-negative-active;
+        background-color: @btn-blue-negative-active;
+        color: @btn-negative-gray-text-color;
     }
 }
 
