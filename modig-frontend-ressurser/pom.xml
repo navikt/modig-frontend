@@ -5,7 +5,7 @@
     <parent>
         <groupId>no.nav.modig</groupId>
         <artifactId>modig-frontend</artifactId>
-        <version>MF2.HL4.2016.4</version>
+        <version>MF2.HL4.2016.5-SNAPSHOT</version>
     </parent>
 
     <artifactId>modig-frontend-ressurser</artifactId>
