@@ -102,6 +102,13 @@
 	};
 }
 
+.hode-stopp {
+	.mixin-hode(@color-error);
+	&:before {
+		background-image: data-uri('image/svg+xml;charset=UTF-8', '@{modig-frontend-images-root-url}/ikoner-svg/ikon-stopp.svg');
+	};
+}
+
 /*hode-vedlegg og hode-soknad brukes kun i søknadinnsending (temporær videreføring av gamle ikoner)*/
 
 .hode-vedlegg {
