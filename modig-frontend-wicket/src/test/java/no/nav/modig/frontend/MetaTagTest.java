@@ -36,6 +36,6 @@ public class MetaTagTest {
                 });
 
         tester.startPage(HomePage.class);
-        tester.assertContains("<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\"  />");
+        tester.assertContains("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"  />");
     }
 }
