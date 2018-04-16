@@ -5,7 +5,7 @@
 	<artifactId>modig-frontend</artifactId>
 	<groupId>no.nav.modig</groupId>
 	<packaging>pom</packaging>
-	<version>4.0.16</version>
+	<version>4.0.17-SNAPSHOT</version>
 
 	<modules>
 		<module>modig-frontend-ressurser</module>
@@ -130,6 +130,6 @@
 		<developerConnection>scm:git:git@github.com:navikt/modig-frontend.git</developerConnection>
 		<connection>scm:git:git@github.com:navikt/modig-frontend.git</connection>
 		<url>https://github.com/navikt/modig-frontend</url>
-		<tag>modig-frontend-4.0.16</tag>
+		<tag>HEAD</tag>
 	</scm>
 </project>
