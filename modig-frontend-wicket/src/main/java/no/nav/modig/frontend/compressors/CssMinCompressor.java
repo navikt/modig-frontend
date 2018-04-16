@@ -12,7 +12,7 @@ import java.net.URL;
 
 /**
  * Compresses CSS using cssmin and Rhino
- * <p/>
+ * <br>
  * Using YUIs version of css min found here: https://github.com/yui/ycssmin
  */
 public class CssMinCompressor implements ICssCompressor {

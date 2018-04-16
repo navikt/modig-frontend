@@ -24,9 +24,9 @@ import java.util.List;
 
 /**
  * Resource for compiled less files. Compiles less files and serves them as css.
- * <p/>
+ * <br>
  * NOT A PART OF THE PUBLIC API
- * <p/>
+ * <br>
  * Use {@link no.nav.modig.frontend.FrontendConfigurator} to setup less compilation
  */
 public class CompiledLessResource extends AbstractResource implements IStaticCacheableResource {
