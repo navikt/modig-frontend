@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/navikt/modig-frontend.svg?branch=modig-frontend_4)](https://travis-ci.org/navikt/modig-frontend)
+
 # modig-frontend
 
 Dette er NAV sitt tidligere frontend-kjernebibliotek, som siden
