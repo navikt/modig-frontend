@@ -18,7 +18,7 @@ For å release en ny versjon:
 
 ```bash
 # pass på at vi har siste versjon av koden
-git checkout master && git pull
+git checkout modig-frontend_4 && git pull
 
 # Denne kommandoen oppdaterer git-repoet med versjoner osv.
 mvn release:prepare
