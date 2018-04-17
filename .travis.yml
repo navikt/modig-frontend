@@ -4,7 +4,7 @@ deploy:
   provider: script
   script: "./travis/deploy.sh"
   on:
-    branch: modig-frontend_3
+    branch: modig-frontend_1
 env:
   global:
   - OSSRH_JIRA_USERNAME=navikt
